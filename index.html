@@ -40,7 +40,7 @@
         .content {
             text-align: center;
             color: white;
-            padding: 2rem;
+            padding: 0 2rem;
         }
         .content a {
             color: white;
@@ -49,14 +49,14 @@
         }
         .content h1 {
             font-size: 4rem;
-            text-shadow: 0 0 10px rgba(36, 170, 96, 0.6);
+            text-shadow: 0 0 10px rgba(36, 170, 96, 1);
             line-height: 1;
             margin: 2rem 0;
         }
         .content h1 svg {
             width: 24rem;
             max-width: 100%;
-            filter: drop-shadow(0 0 10px rgba(36, 170, 96, 0.4));
+            filter: drop-shadow(0 0 10px rgba(36, 170, 96, 1));
         }
         .date {
             font-size: 2.4rem;
@@ -104,6 +104,17 @@
         @media only screen and (min-width: 600px) {
             .footer {
                 display: block;
+            }
+        }
+        @media only screen and (max-width: 600px) {
+            .content h1 {
+                font-size: 3rem;
+            }
+            .date {
+                font-size: 1.8rem;
+            }
+            .location {
+                font-size: 1.4rem;
             }
         }
     </style>
