@@ -30,7 +30,7 @@
             font-size: 1.125rem;
             line-height: 1.5;
             background-color: black;
-            background-image: linear-gradient(180deg,black, rgba(36, 170, 96, 0.8)), linear-gradient(0deg, black, rgba(150, 148, 255, 0.6));
+            background-image: linear-gradient(300deg,rgba(17, 76, 44, 0), rgba(36, 170, 96, 0.8)), linear-gradient(160deg, black, rgba(150, 148, 255, 0.3));
             background-position: center 0;
             background-repeat: no-repeat;
             background-attachment: fixed;
@@ -124,11 +124,11 @@
     <script type="text/javascript">
         window.onload = function() {
             // Rotating background colours
-            setInterval(rotateBackground, 60);
-            var i = 180;
+            setInterval(rotateBackground, 45);
+            var i = 300;
             function rotateBackground () {
                 i++;
-                document.body.style.backgroundImage = "linear-gradient("+i+"deg, black, rgba(36, 170, 96, 0.8)), linear-gradient(0deg, black, rgba(150, 148, 255, 0.6))";
+                document.body.style.backgroundImage = "linear-gradient("+i+"deg, rgba(17, 76, 44, 0), rgba(36, 170, 96, 0.8)), linear-gradient(160deg, black, rgba(150, 148, 255, 0.3))";
                 return i;
             }
 
