@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .typo-h1 {
+    @apply font-display font-semibold text-2xl md:text-4xl lg:text-5xl antialiased;
+  }
+
+  .typo-h2 {
+    @apply font-display font-semibold text-2xl md:text-3xl lg:text-4xl antialiased;
+  }
+
+  .typo-h3 {
+    @apply font-display font-semibold text-2xl md:text-3xl antialiased;
+  }
+
+  .typo-h4 {
+    @apply font-display font-semibold text-xl md:text-2xl antialiased;
+  }
+
+  .typo-h5 {
+    @apply font-display font-semibold text-lg uppercase antialiased tracking-wider;
+  }
+
+  .typo-h6 {
+    @apply font-display font-semibold text-base antialiased;
+  }
+
+  .typo-blockquote {
+    @apply font-body font-light text-lg lg:text-xl antialiased;
+  }
+
+  .typo-intro {
+    @apply font-body text-base font-semibold antialiased;
+  }
+
+  .typo-body {
+    @apply font-body text-base font-light antialiased;
+  }
+
+  .typo-small {
+    @apply font-body text-sm font-light antialiased;
+  }
+
+  .container-xl {
+    @apply mx-auto px-4;
+    max-width: 1440px;
+  }
+
+  .container-lg {
+    @apply mx-auto px-4;
+    max-width: 1300px;
+  }
+
+  .container-md {
+    @apply mx-auto px-4;
+    max-width: 1100px;
+  }
+
+  .container-sm {
+    @apply mx-auto px-4;
+    max-width: 900px;
+  }
+
+  .gradient-light {
+    background-image: linear-gradient(180deg, rgba(66, 86, 231, 0.1) -118.75%, rgba(255, 255, 255, 0.1) 100%);
+  }
+
+  .gradient-indigo {
+    background-image: linear-gradient(180deg, #4256E7 0%, #7F91EB 100%);
+  }
+
+  .gradient-indigo-rev {
+    background-image: linear-gradient(0deg, #4256E7 0%, #7F91EB 100%);
+  }
+
+  .gradient-accent {
+    background-image: linear-gradient(85.9deg, #E388A8 0%, #7A91EE 100%);
+  }
+
+  .row {
+    @apply -mx-4 flex flex-row flex-wrap;
+  }
+
+  .col {
+    @apply px-4;
+  }
+
+  .col-shrink {
+    @apply col flex-none;
+  }
+
+  .col-full {
+    @apply col flex-1/1 min-w-full;
+  }
+
+  .col-1 {
+    @apply col flex-1/12 min-w-1/12;
+  }
+
+  .col-2 {
+    @apply col flex-2/12 min-w-2/12;
+  }
+
+  .col-3 {
+    @apply col flex-3/12 min-w-3/12;
+  }
+
+  .col-4 {
+    @apply col flex-4/12 min-w-4/12;
+  }
+
+  .col-5 {
+    @apply col flex-5/12 min-w-5/12;
+  }
+
+  .col-6 {
+    @apply col flex-6/12 min-w-6/12;
+  }
+
+  .col-7 {
+    @apply col flex-7/12 min-w-7/12;
+  }
+
+  .col-8 {
+    @apply col flex-8/12 min-w-8/12;
+  }
+
+  .col-9 {
+    @apply col flex-9/12 min-w-9/12;
+  }
+
+  .col-10 {
+    @apply col flex-10/12 min-w-10/12;
+  }
+
+  .col-11 {
+    @apply col flex-11/12 min-w-11/12;
+  }
+
+  .btn-primary {
+    @apply bg-black text-white;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-indigo-600 hover:bg-indigo-200;
+  }
+
+  .btn-accent {
+    @apply bg-green-600 text-white;
+  }
+
+  .btn-primary-alt {
+    @apply bg-green-600 text-white;
+  }
+
+  .btn-secondary-alt {
+    @apply bg-white text-green-600 hover:bg-green-200;
+  }
+
+  .btn-accent-alt {
+
+  }
+
+  .typed {
+    background: linear-gradient(180deg, #EE8899 0%, #AC77E7 100%);
+    -webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
+  }
+}
+
+@layer utilities {
+  .shadow {
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  }
+}
