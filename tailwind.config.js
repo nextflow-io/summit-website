@@ -26,6 +26,7 @@ module.exports = {
             '9xl': ['7.5rem', '1'],
         },
         borderRadius: {
+            sm: '4px',
             md: '12px',
             full: '9999px',
         },
@@ -34,6 +35,8 @@ module.exports = {
                 gray: {
                   50: '#F8F9FA',
                   300: '#D1D5DA',
+                  800: '#444444',
+                  900: '#111111',
                 },
                 green: {
                   600: '#26AF64',
