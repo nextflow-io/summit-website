@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button, ExpansionPanel, List } from 'website-components';
+
+import { Button, ExpansionPanel, Link, List, Marquee } from 'website-components';
 
 import LogoNextflow from '../images/logo-nextflow.svg';
 
@@ -25,6 +26,11 @@ const IndexPage = () => {
           </Button>
         </div>
       </div>
+      <Marquee>
+        <span className="typo-blockquote">
+          Become a speaker or submit poster.
+        </span>
+      </Marquee>
       <div className="py-20 bg-gray-900 text-white">
         <div className="container-lg">
           <h2 className="typo-h2">
@@ -32,7 +38,11 @@ const IndexPage = () => {
           </h2>
           <div className="mt-8">
             <ExpansionPanel.Group>
-              <ExpansionPanel className="border border-gray-800">
+              <ExpansionPanel
+                className="border border-gray-800"
+                iconClassName="text-green-500"
+                activeIconClassName="text-white"
+              >
                 <ExpansionPanel.Summary>
                   <span className="typo-intro">
                     Nextflow Summit themes
@@ -58,7 +68,11 @@ const IndexPage = () => {
                   </List>
                 </ExpansionPanel.Detail>
               </ExpansionPanel>
-              <ExpansionPanel className="border border-gray-800">
+              <ExpansionPanel
+                className="border border-gray-800"
+                iconClassName="text-green-500"
+                activeIconClassName="text-white"
+              >
                 <ExpansionPanel.Summary>
                   <span className="typo-intro">
                     Hackathon
@@ -70,7 +84,11 @@ const IndexPage = () => {
                   </p>
                 </ExpansionPanel.Detail>
               </ExpansionPanel>
-              <ExpansionPanel className="border border-gray-800">
+              <ExpansionPanel
+                className="border border-gray-800"
+                iconClassName="text-green-500"
+                activeIconClassName="text-white"
+              >
                 <ExpansionPanel.Summary>
                   <span className="typo-intro">
                     Key dates
@@ -78,11 +96,28 @@ const IndexPage = () => {
                 </ExpansionPanel.Summary>
                 <ExpansionPanel.Detail>
                   <p className="typo-body">
-                    Intro paragraph, theme
+                    Call for talk abstracts: June 17 - July 22 (Abstracts will be read and speakers notified on a
+                    rolling basis, so apply soon )
+                  </p>
+                  <p className="typo-body">
+                    Accepted speakers notified: July 29
+                  </p>
+                  <p className="typo-body">
+                    Registration to Nextflow summit and nf-core hackathon: July 1 - September 9
+                  </p>
+                  <p className="typo-body">
+                    nf core hackathon: October 10-12
+                  </p>
+                  <p className="typo-body">
+                    Nextflow summit: October 12-14
                   </p>
                 </ExpansionPanel.Detail>
               </ExpansionPanel>
-              <ExpansionPanel className="border border-gray-800">
+              <ExpansionPanel
+                className="border border-gray-800"
+                iconClassName="text-green-500"
+                activeIconClassName="text-white"
+              >
                 <ExpansionPanel.Summary>
                   <span className="typo-intro">
                     Venue location
@@ -90,11 +125,17 @@ const IndexPage = () => {
                 </ExpansionPanel.Summary>
                 <ExpansionPanel.Detail>
                   <p className="typo-body">
-                    Intro paragraph, theme
+                    <Link to="https://goo.gl/maps/K3chvdYLa9BfDpaD9">
+                      Torre Glòries, Avinguda Diagonal, 211, 08018 Barcelona, Spain
+                    </Link>
                   </p>
                 </ExpansionPanel.Detail>
               </ExpansionPanel>
-              <ExpansionPanel className="border border-gray-800">
+              <ExpansionPanel
+                className="border border-gray-800"
+                iconClassName="text-green-500"
+                activeIconClassName="text-white"
+              >
                 <ExpansionPanel.Summary>
                   <span className="typo-intro">
                     Streaming
@@ -102,11 +143,25 @@ const IndexPage = () => {
                 </ExpansionPanel.Summary>
                 <ExpansionPanel.Detail>
                   <p className="typo-body">
-                    Intro paragraph, theme
+                    Streamed live on:
+                  </p>
+                  <p className="typo-body">
+                    <Link to="/">
+                      youtube
+                    </Link>
+                  </p>
+                  <p className="typo-body">
+                    <Link to="/">
+                      gathertown
+                    </Link>
                   </p>
                 </ExpansionPanel.Detail>
               </ExpansionPanel>
-              <ExpansionPanel className="border border-gray-800">
+              <ExpansionPanel
+                className="border border-gray-800"
+                iconClassName="text-green-500"
+                activeIconClassName="text-white"
+              >
                 <ExpansionPanel.Summary>
                   <span className="typo-intro">
                     Sponsors

@@ -31,6 +31,19 @@ module.exports = {
             full: '9999px',
         },
         extend: {
+            keyframes: {
+              scroll: {
+                '0%': {
+                  'transform': 'translateX(0%)'
+                },
+                '100%': {
+                  'transform': 'translateX(-100%)'
+                }
+              }
+            },
+            animation: {
+              scroll: 'scroll 6s linear infinite',
+            },
             colors: {
                 gray: {
                   50: '#F8F9FA',
