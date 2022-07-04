@@ -37,7 +37,7 @@ module.exports = {
                   'transform': 'translateX(0%)'
                 },
                 '100%': {
-                  'transform': 'translateX(-100%)'
+                  'transform': 'translateX(calc(-100% - 32px))'
                 }
               }
             },
@@ -48,7 +48,9 @@ module.exports = {
                 gray: {
                   50: '#F8F9FA',
                   300: '#D1D5DA',
-                  800: '#444444',
+                  600: '#5B6166',
+                  700: '#444444',
+                  800: '#282828',
                   900: '#111111',
                 },
                 green: {

@@ -14,6 +14,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `people`,
+        path: `${__dirname}/src/content/people`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `images`,
         path: `${__dirname}/src/images`,
       },
@@ -40,25 +47,25 @@ module.exports = {
         },
     },
     {
-        resolve: 'gatsby-plugin-mdx',
-        options: {
-            extensions: ['.mdx', '.md'],
-            gatsbyRemarkPlugins: [
-                'gatsby-remark-relative-images',
-                {
-                    resolve: 'gatsby-remark-images',
-                    options: {
-                        maxWidth: 907,
-                        quality: 100,
-                        withWebp: true,
-                        ignoreFileExtensions: [],
-                    },
-                },
-                'gatsby-remark-copy-linked-files',
-                'gatsby-remark-smartypants',
-                'gatsby-remark-external-links',
-            ],
-        },
+      resolve: 'gatsby-plugin-mdx',
+      options: {
+        extensions: ['.mdx', '.md'],
+        gatsbyRemarkPlugins: [
+          'gatsby-remark-relative-images',
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 907,
+              quality: 100,
+              withWebp: true,
+              ignoreFileExtensions: [],
+            },
+          },
+          'gatsby-remark-copy-linked-files',
+          'gatsby-remark-smartypants',
+          'gatsby-remark-external-links',
+        ],
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,

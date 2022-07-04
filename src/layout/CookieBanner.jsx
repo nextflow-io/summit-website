@@ -33,7 +33,7 @@ const CookieBanner = () => {
               This website uses cookies to offer you a better browsing experience.
               Find out more on
               {' '}
-              <Link to="/privacy-policy/" className="text-indigo-600">
+              <Link to="/privacy-policy/" className="text-green-600">
                 how we use cookies
               </Link>
               .

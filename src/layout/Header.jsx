@@ -7,7 +7,7 @@ import { Button, Link } from 'website-components';
 import Logo from '../images/logo.svg';
 import LogoNextflow from '../images/logo-nextflow.svg';
 
-const Header = () => {
+const Header = ({ location }) => {
   const [navOpened, setNavOpened] = useState(false);
 
   const handleNav = (url) => {
@@ -24,41 +24,65 @@ const Header = () => {
           </a>
           <div className="lg:flex items-center hidden">
             <Link
-              to="/program"
+              to="/program/"
               noBorder
-              className="bg-black bg-opacity-10 text-white font-body py-1 px-4 rounded-sm mr-px font-normal tracking-wide"
+              className={classnames(
+                'bg-black bg-opacity-10 font-body py-1 px-4 rounded-sm mr-px font-normal tracking-wide',
+                {
+                  'text-white': !location.pathname.includes('/program/'),
+                  'text-green-600': location.pathname.includes('/program/')
+                }
+              )}
             >
               Program
             </Link>
             <Link
-              to="/speakers"
+              to="/speakers/"
               noBorder
-              className="bg-black bg-opacity-10 text-white font-body py-1 px-4 rounded-sm mr-px font-normal tracking-wide"
+              className={classnames(
+                'bg-black bg-opacity-10 font-body py-1 px-4 rounded-sm mr-px font-normal tracking-wide',
+                {
+                  'text-white': !location.pathname.includes('/speakers/'),
+                  'text-green-600': location.pathname.includes('/speakers/')
+                }
+              )}
             >
               Speakers
             </Link>
             <Link
-              to="/call-of-abstracts"
+              to="/call-for-abstracts/"
               noBorder
-              className="bg-black bg-opacity-10 text-white font-body py-1 px-4 rounded-sm mr-px font-normal tracking-wide"
+              className={classnames(
+                'bg-black bg-opacity-10 font-body py-1 px-4 rounded-sm mr-px font-normal tracking-wide',
+                {
+                  'text-white': !location.pathname.includes('/call-for-abstracts/'),
+                  'text-green-600': location.pathname.includes('/call-for-abstracts/')
+                }
+              )}
             >
-              Call of abstracts
+              Call for abstracts
             </Link>
             <Link
-              to="/venue"
+              to="/venue/"
               noBorder
-              className="bg-black bg-opacity-10 text-white font-body py-1 px-4 rounded-sm mr-px font-normal tracking-wide"
+              className={classnames(
+                'bg-black bg-opacity-10 font-body py-1 px-4 rounded-sm mr-px font-normal tracking-wide',
+                {
+                  'text-white': !location.pathname.includes('/venue/'),
+                  'text-green-600': location.pathname.includes('/venue/')
+                }
+              )}
             >
               Venue
             </Link>
             <Button
-                to="/"
+                to="/register/"
                 variant="accent"
                 size="sm"
                 className="hover:opacity-80 ml-2"
                 noShadow
             >
-              Register - July 1
+              Register
             </Button>
           </div>
           <div className="lg:hidden">

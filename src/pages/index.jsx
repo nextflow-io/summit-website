@@ -1,179 +1,196 @@
 import React from 'react';
 
-import { Button, ExpansionPanel, Link, List, Marquee } from 'website-components';
+import {
+    Accordion,
+    Button,
+    Link,
+    List,
+    LocationIcon,
+    Marquee,
+    YoutubeRectangleIcon,
+} from 'website-components';
 
+import Seo from '../components/Seo';
+
+import LogoGather from '../images/icons/gather.svg';
 import LogoNextflow from '../images/logo-nextflow.svg';
 
 const IndexPage = () => {
   return (
     <>
-      <div className="py-20 bg-green-600 text-white">
+      <Seo
+        title="Nextflow Summit 2022"
+      />
+      <div className="py-16 bg-green-600 text-white">
         <div className="container-lg">
           <img src={LogoNextflow} className="h-14 mb-4" alt="Nextflow Logo" />
           <h1 className="typo-h2 uppercase mb-4">
             Summit 2022
           </h1>
           <p className="typo-blockquote max-w-xl mb-4">
-            See the latest developments and innovations from the Nextflow world and join the nf-core hackathon.
+            Join us for the latest developments and innovations from the Nextflow world.
           </p>
           <p className="typo-intro uppercase mb-8">
-            In person or virtually
+            In person
+            <span className="mx-2">
+              |
+            </span>
+            Virtual
             <br />
-            Barcelona, 12-14 October 2022
+            Barcelona, October 12-14, 2022
           </p>
-          <Button to="/" variant="primary" size="md" arrow>
+          <Button to="/program/" variant="primary" size="md" arrow>
             View program
           </Button>
         </div>
       </div>
-      <Marquee>
+      <Marquee to="/call-for-abstracts/">
         <span className="typo-blockquote">
-          Become a speaker or submit poster.
+          Call for abstracts now open
         </span>
       </Marquee>
-      <div className="py-20 bg-gray-900 text-white">
+      <div className="py-16 bg-gray-900 text-white">
         <div className="container-lg">
           <h2 className="typo-h2">
-            Must know
+            Key information
           </h2>
           <div className="mt-8">
-            <ExpansionPanel.Group>
-              <ExpansionPanel
+            <Accordion>
+              <Accordion.Item
                 className="border border-gray-800"
                 iconClassName="text-green-500"
                 activeIconClassName="text-white"
               >
-                <ExpansionPanel.Summary>
+                <Accordion.Summary>
                   <span className="typo-intro">
-                    Nextflow Summit themes
+                    Nextflow Summit I Oct 12-14
                   </span>
-                </ExpansionPanel.Summary>
-                <ExpansionPanel.Detail>
+                </Accordion.Summary>
+                <Accordion.Detail>
                   <p className="typo-body mb-4">
-                    Intro paragraph
+                    A showcase of the latest developments and innovations from the Nextflow world held in Barcelona and
+                    virtually:
                   </p>
                   <List type="bullet" iconClassName="text-white">
                     <List.Item className="typo-body">
-                      Nextflow - describe
+                      Nextflow - central tool, language, and plugins
                     </List.Item>
                     <List.Item className="typo-body">
-                      Community - describe
+                      Community - pipelines, applications, and use cases
                     </List.Item>
                     <List.Item className="typo-body">
-                      Ecosystem - describe
+                      Ecosystem - infastructure and environments
                     </List.Item>
                     <List.Item className="typo-body">
-                      Software - describe
+                      Software - containers and tool packaging
                     </List.Item>
                   </List>
-                </ExpansionPanel.Detail>
-              </ExpansionPanel>
-              <ExpansionPanel
+                </Accordion.Detail>
+              </Accordion.Item>
+              <Accordion.Item
                 className="border border-gray-800"
                 iconClassName="text-green-500"
                 activeIconClassName="text-white"
               >
-                <ExpansionPanel.Summary>
+                <Accordion.Summary>
                   <span className="typo-intro">
-                    Hackathon
+                    nf-core Hackathon I Oct 10-12
                   </span>
-                </ExpansionPanel.Summary>
-                <ExpansionPanel.Detail>
+                </Accordion.Summary>
+                <Accordion.Detail>
                   <p className="typo-body">
-                    Intro paragraph, theme
+                    An in-person and virtual hackathon to develop nf-core together. Held in Barcelona and on Gather (virtually) prior to the Nextflow Summit.
                   </p>
-                </ExpansionPanel.Detail>
-              </ExpansionPanel>
-              <ExpansionPanel
+                </Accordion.Detail>
+              </Accordion.Item>
+              <Accordion.Item
                 className="border border-gray-800"
                 iconClassName="text-green-500"
                 activeIconClassName="text-white"
               >
-                <ExpansionPanel.Summary>
+                <Accordion.Summary>
                   <span className="typo-intro">
                     Key dates
                   </span>
-                </ExpansionPanel.Summary>
-                <ExpansionPanel.Detail>
-                  <p className="typo-body">
-                    Call for talk abstracts: June 17 - July 22 (Abstracts will be read and speakers notified on a
-                    rolling basis, so apply soon )
-                  </p>
-                  <p className="typo-body">
-                    Accepted speakers notified: July 29
-                  </p>
-                  <p className="typo-body">
-                    Registration to Nextflow summit and nf-core hackathon: July 1 - September 9
-                  </p>
-                  <p className="typo-body">
-                    nf core hackathon: October 10-12
-                  </p>
-                  <p className="typo-body">
-                    Nextflow summit: October 12-14
-                  </p>
-                </ExpansionPanel.Detail>
-              </ExpansionPanel>
-              <ExpansionPanel
+                </Accordion.Summary>
+                <Accordion.Detail>
+                  <List type="bullet" iconClassName="text-white">
+                    <List.Item className="typo-body">
+                      July 1: Registration for the Nextflow Summit opens
+                    </List.Item>
+                    <List.Item className="typo-body">
+                      July 22: Call for talk abstracts closes
+                    </List.Item>
+                    <List.Item className="typo-body">
+                      July 29:  Accepted speakers notified
+                    </List.Item>
+                    <List.Item className="typo-body">
+                      September 9: Registration for the Nextflow Summit closes
+                    </List.Item>
+                    <List.Item className="typo-body">
+                      October 10-12: nf-core Hackathon
+                    </List.Item>
+                    <List.Item className="typo-body">
+                      October 12-14: Nextflow Summit
+                    </List.Item>
+                  </List>
+                </Accordion.Detail>
+              </Accordion.Item>
+              <Accordion.Item
                 className="border border-gray-800"
                 iconClassName="text-green-500"
                 activeIconClassName="text-white"
               >
-                <ExpansionPanel.Summary>
+                <Accordion.Summary>
                   <span className="typo-intro">
                     Venue location
                   </span>
-                </ExpansionPanel.Summary>
-                <ExpansionPanel.Detail>
-                  <p className="typo-body">
-                    <Link to="https://goo.gl/maps/K3chvdYLa9BfDpaD9">
-                      Torre Glòries, Avinguda Diagonal, 211, 08018 Barcelona, Spain
-                    </Link>
+                </Accordion.Summary>
+                <Accordion.Detail>
+                  <p className="typo-body flex items-center">
+                    <LocationIcon />
+                    <span className="ml-2">
+                      <Link to="https://goo.gl/maps/K3chvdYLa9BfDpaD9">
+                        Torre Glòries, Avinguda Diagonal, 211, 08018 Barcelona, Spain
+                      </Link>
+                    </span>
                   </p>
-                </ExpansionPanel.Detail>
-              </ExpansionPanel>
-              <ExpansionPanel
+                </Accordion.Detail>
+              </Accordion.Item>
+              <Accordion.Item
                 className="border border-gray-800"
                 iconClassName="text-green-500"
                 activeIconClassName="text-white"
               >
-                <ExpansionPanel.Summary>
+                <Accordion.Summary>
                   <span className="typo-intro">
                     Streaming
                   </span>
-                </ExpansionPanel.Summary>
-                <ExpansionPanel.Detail>
-                  <p className="typo-body">
-                    Streamed live on:
+                </Accordion.Summary>
+                <Accordion.Detail>
+                  <p className="typo-body mb-4">
+                    Talks at the Nextflow Summit will be streamed live on YouTube and Gather for remote attendees, and
+                    will available after the event.
                   </p>
-                  <p className="typo-body">
-                    <Link to="/">
-                      youtube
-                    </Link>
+                  <p className="typo-body flex items-center mb-4">
+                    <span className="mr-2">
+                      <Link to="/">
+                        YouTube
+                      </Link>
+                    </span>
+                    <YoutubeRectangleIcon />
                   </p>
-                  <p className="typo-body">
-                    <Link to="/">
-                      gathertown
-                    </Link>
+                  <p className="typo-body flex items-center">
+                    <span className="mr-2">
+                      <Link to="/">
+                        Gather
+                      </Link>
+                    </span>
+                    <img src={LogoGather} alt="Gather logo" className="h-6" />
                   </p>
-                </ExpansionPanel.Detail>
-              </ExpansionPanel>
-              <ExpansionPanel
-                className="border border-gray-800"
-                iconClassName="text-green-500"
-                activeIconClassName="text-white"
-              >
-                <ExpansionPanel.Summary>
-                  <span className="typo-intro">
-                    Sponsors
-                  </span>
-                </ExpansionPanel.Summary>
-                <ExpansionPanel.Detail>
-                  <p className="typo-body">
-                    Intro paragraph, theme
-                  </p>
-                </ExpansionPanel.Detail>
-              </ExpansionPanel>
-            </ExpansionPanel.Group>
+                </Accordion.Detail>
+              </Accordion.Item>
+            </Accordion>
           </div>
         </div>
       </div>
