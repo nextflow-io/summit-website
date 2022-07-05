@@ -13,14 +13,14 @@ const defaultProps = {
 };
 
 const Layout = ({ children, location }) => (
-  <div className="flex flex-col h-screen w-screen">
+  <>
     <Header location={location} />
     <main>
       {children}
     </main>
     <CookieBanner />
     <Footer />
-  </div>
+  </>
 );
 
 Layout.propTypes = propTypes;
