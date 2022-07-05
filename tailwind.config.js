@@ -42,16 +42,34 @@ module.exports = {
               },
               flow: {
                 '0%': {
-                  'transform': 'translate(-120%, -100%)',
+                  'background-position': '-2000px -2000px',
+                  'background-size': '2380px 2000px',
+                },
+                '10%': {
+                  'background-position': '-1500px -1500px',
+                  'background-size': '2380px 2000px',
+                },
+                '25%': {
+                  'background-position': '-500px -500px',
+                  'background-size': '2380px 2000px',
+                },
+                '50%': {
+                  'background-position': '-300px -300px',
+                  'background-size': '2975px 2500px',
+                },
+                '70%': {
+                  'background-position': '-800px -800px',
+                  'background-size': '3570px 3000px',
                 },
                 '100%': {
-                  'transform': 'translate(120%, 80%)',
+                  'background-position': '500px 500px',
+                  'background-size': '2380px 2000px',
                 }
               }
             },
             animation: {
               scroll: 'scroll 6s linear infinite',
-              flow: 'flow 10s linear infinite',
+              flow: 'flow 8s linear infinite',
             },
             colors: {
                 gray: {
