@@ -10,6 +10,7 @@ import {
     YoutubeRectangleIcon,
 } from 'website-components';
 
+import HeroAnimation from '../components/HeroAnimation';
 import Seo from '../components/Seo';
 
 import LogoGather from '../images/icons/gather.svg';
@@ -21,8 +22,11 @@ const IndexPage = () => {
       <Seo
         title="Nextflow Summit 2022"
       />
-      <div className="py-16 bg-green-600 text-white">
-        <div className="container-lg">
+      <div className="relative bg-black text-white py-16 md:py-24">
+        <div className="absolute inset-0 overflow-hidden">
+          <HeroAnimation className="animate-flow" />
+        </div>
+        <div className="container-lg py-16 relative">
           <img src={LogoNextflow} className="h-14 mb-4" alt="Nextflow Logo" />
           <h1 className="typo-h2 uppercase mb-4">
             Summit 2022

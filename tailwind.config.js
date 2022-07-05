@@ -39,10 +39,19 @@ module.exports = {
                 '100%': {
                   'transform': 'translateX(calc(-100% - 32px))'
                 }
+              },
+              flow: {
+                '0%': {
+                  'transform': 'translate(-120%, -100%)',
+                },
+                '100%': {
+                  'transform': 'translate(120%, 80%)',
+                }
               }
             },
             animation: {
               scroll: 'scroll 6s linear infinite',
+              flow: 'flow 10s linear infinite',
             },
             colors: {
                 gray: {

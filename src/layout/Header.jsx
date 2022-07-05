@@ -15,9 +15,18 @@ const Header = ({ location }) => {
     navigate(url);
   };
 
+  const pageRelatedClassName = {
+    'relative bg-black': location.pathname !== '/',
+    'absolute bg-transparent': location.pathname === '/',
+  };
+
   return (
     <>
-      <header className="relative z-10 inset-x-0 top-0 bg-black">
+      <header className={classnames(
+        'z-10 inset-x-0 top-0',
+        pageRelatedClassName,
+      )}
+      >
         <div className="container-lg flex flex-wrap items-center justify-between w-full h-16 md:h-24">
           <a href="/" className="block uppercase">
               <img src={Logo} className="h-10" alt="" />
