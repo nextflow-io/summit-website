@@ -21,7 +21,7 @@ const Footer = () => {
             </div>
             <div className="flex items-center md:justify-end">
               <div className="mr-4">
-                <Link to="http://twitter.com/hashtag/NextflowSummit" noBorder>
+                <Link to="https://twitter.com/hashtag/NextflowSummit?src=hashtag_click" noBorder>
                   <TwitterIcon className="w-5 h-5" />
                 </Link>
               </div>
