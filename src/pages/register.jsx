@@ -54,7 +54,7 @@ const RegisterPage = () => {
                   Nextflow Summit 2022
                 </h3>
                 <p className="typo-body mt-6">
-                  Join the nf-core hackathon held in Barcelona and virtually.
+                  Join the Nextflow Summit held in Barcelona and virtually.
                 </p>
               </div>
               <img src={LogoNextflow} className="h-20 mx-auto" alt="Nextflow" />
