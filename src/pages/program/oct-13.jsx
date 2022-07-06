@@ -2,7 +2,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
 import React from 'react';
 
-import { Button, Card, Link, List, Marquee, YoutubeRectangleIcon } from 'website-components';
+import { Button, Card, Link, List, YoutubeRectangleIcon } from 'website-components';
 
 import Tabs from '../../components/Tabs';
 import Seo from '../../components/Seo';
@@ -26,11 +26,6 @@ const ProgramOct13Page = ({ location }) => {
           </p>
         </div>
       </div>
-      <Marquee to="/call-for-abstracts/" type="accent">
-        <span className="typo-blockquote">
-          Call for abstracts now open
-        </span>
-      </Marquee>
       <div id="events" className="py-20 bg-gray-900 text-white">
         <div className="container-lg">
           <div>

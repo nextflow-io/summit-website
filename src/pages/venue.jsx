@@ -2,7 +2,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
 import React from 'react';
 
-import { Accordion, Button, Link, List, LocationIcon, Marquee } from 'website-components';
+import { Accordion, Button, Link, List, LocationIcon } from 'website-components';
 
 import LocationMap from '../components/LocationMap';
 import Seo from '../components/Seo';
@@ -59,11 +59,6 @@ const VanuePage = () => {
           </div>
         </div>
       </div>
-      <Marquee to="/call-for-abstracts/" type="accent">
-        <span className="typo-blockquote">
-          Call for abstracts now open
-        </span>
-      </Marquee>
       <div className="py-20 bg-gray-900 text-white">
         <div className="container-lg">
           <div className="row">

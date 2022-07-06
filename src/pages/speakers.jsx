@@ -8,7 +8,6 @@ import {
   Link,
   LinkedInIcon,
   List,
-  Marquee,
   TwitterIcon
 } from 'website-components';
 
@@ -58,11 +57,6 @@ const SpeakersPage = () => {
           </Button>
         </div>
       </div>
-      <Marquee to="/call-for-abstracts/" type="accent">
-        <span className="typo-blockquote">
-          Call for abstracts now open
-        </span>
-      </Marquee>
       <div className="py-20 bg-gray-900 text-white">
         <div className="container-lg">
           <div className="row mt-4">

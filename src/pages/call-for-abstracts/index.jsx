@@ -2,7 +2,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
 import React from 'react';
 
-import { Button, Link, List, Marquee } from 'website-components';
+import { Button, Link, List } from 'website-components';
 
 import Seo from '../../components/Seo';
 
@@ -54,11 +54,6 @@ const CallForAbstractsPage = () => {
           </Button>
         </div>
       </div>
-      <Marquee type="accent">
-        <span className="typo-blockquote">
-          Call for abstracts now open
-        </span>
-      </Marquee>
       <div className="py-20 bg-gray-900 text-white">
         <div className="container-lg">
           <div className="row flex-wrap lg:flex-nowrap">

@@ -6,7 +6,6 @@ import {
     Link,
     List,
     LocationIcon,
-    Marquee,
     YoutubeRectangleIcon,
 } from 'website-components';
 
@@ -48,11 +47,6 @@ const IndexPage = () => {
           </Button>
         </div>
       </div>
-      <Marquee to="/call-for-abstracts/">
-        <span className="typo-blockquote">
-          Call for abstracts now open
-        </span>
-      </Marquee>
       <div className="py-16 bg-gray-900 text-white">
         <div className="container-lg">
           <h2 className="typo-h2">

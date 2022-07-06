@@ -2,7 +2,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
 import React from 'react';
 
-import { AngleLeftIcon, Button, Link, List, Marquee } from 'website-components';
+import { AngleLeftIcon, Button, Link, List } from 'website-components';
 
 import Seo from '../../components/Seo';
 
