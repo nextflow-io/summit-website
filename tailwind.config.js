@@ -43,27 +43,21 @@ module.exports = {
               flow: {
                 '0%': {
                   'background-position': '-2000px -2000px',
-                  'background-size': '2380px 2000px',
                 },
                 '10%': {
                   'background-position': '-1500px -1500px',
-                  'background-size': '2380px 2000px',
                 },
-                '25%': {
-                  'background-position': '-500px -500px',
-                  'background-size': '2380px 2000px',
+                '30%': {
+                  'background-position': '-400px -400px',
                 },
                 '50%': {
-                  'background-position': '-300px -300px',
-                  'background-size': '2975px 2500px',
+                  'background-position': '-100px -100px',
                 },
                 '70%': {
-                  'background-position': '-800px -800px',
-                  'background-size': '3570px 3000px',
+                  'background-position': '-300px -500px',
                 },
                 '100%': {
                   'background-position': '500px 500px',
-                  'background-size': '2380px 2000px',
                 }
               }
             },

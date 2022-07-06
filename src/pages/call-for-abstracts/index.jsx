@@ -61,7 +61,7 @@ const CallForAbstractsPage = () => {
       </Marquee>
       <div className="py-20 bg-gray-900 text-white">
         <div className="container-lg">
-          <div className="row flex-wrap">
+          <div className="row flex-wrap lg:flex-nowrap">
             <div className="col-full lg:col-6 order-2 lg:order-1 mt-4 lg:mt-0">
               <h2 className="typo-h2 mb-4">
                 Talks and posters
