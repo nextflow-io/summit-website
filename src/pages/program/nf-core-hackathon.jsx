@@ -70,7 +70,7 @@ const NfCoreHackathonPage = ({ location }) => {
                   to learn more.
                 </p>
                 <p className="typo-body">
-                  <Link to="">
+                  <Link to="https://goo.gl/maps/K3chvdYLa9BfDpaD9">
                     Torre Glòries, Avinguda Diagonal, 211, 08018 Barcelona, Spain
                   </Link>
                   <span className="mx-2">
