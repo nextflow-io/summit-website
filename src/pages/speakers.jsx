@@ -58,7 +58,7 @@ const SpeakersPage = () => {
           </Button>
         </div>
       </div>
-      <Marquee to="/call-for-abstracts/">
+      <Marquee to="/call-for-abstracts/" type="accent">
         <span className="typo-blockquote">
           Call for abstracts now open
         </span>
@@ -119,7 +119,7 @@ const SpeakersPage = () => {
                       Apply now to present a talk or poster - the call for abstracts is open, closing date July 22, 2022.
                     </p>
                     <div className="mt-auto">
-                      <Button to="/call-for-abstracts/" variant="secondary" size="md">
+                      <Button to="https://seqera.typeform.com/summit-22-talks" variant="secondary" size="md">
                         Apply now
                       </Button>
                     </div>

@@ -54,7 +54,7 @@ const CallForAbstractsPage = () => {
           </Button>
         </div>
       </div>
-      <Marquee>
+      <Marquee type="accent">
         <span className="typo-blockquote">
           Call for abstracts now open
         </span>

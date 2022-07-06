@@ -18,13 +18,11 @@ const InstructionsPage = () => {
       <div className="py-16 bg-gray-900 text-white">
         <div className="container-md">
           <div className="mb-4">
-            <div className="inline-flex items-center">
-              <AngleLeftIcon />
-              <span className="ml-1">
-                <Link to="/call-for-abstracts/" className="typo-intro" noBorder>
-                  Back
-                </Link>
-              </span>
+            <div className="inline-flex items-center hover:text-green-600">
+              <AngleLeftIcon className="h-6 w-6 inline-block mr-1" />
+              <Link to="/call-for-abstracts/" className="typo-intro" noBorder>
+                Back
+              </Link>
             </div>
           </div>
           <h1 className="typo-h2 mb-4">
@@ -75,7 +73,7 @@ const InstructionsPage = () => {
                 In person and recorded for live streaming and sharing online after the event
               </List.Item>
             </List>
-            <Link to="/call-for-abstracts/" noBorder className="typo-body text-green-600">
+            <Link to="https://seqera.typeform.com/summit-22-talks" noBorder className="typo-body text-green-600">
               Apply now
             </Link>
           </div>
@@ -135,7 +133,7 @@ const InstructionsPage = () => {
                 </List>
               </List.Item>
             </List>
-            <Link to="/call-for-abstracts/" noBorder className="typo-body text-green-600">
+            <Link to="https://seqera.typeform.com/summit-22-talks" noBorder className="typo-body text-green-600">
               Apply now
             </Link>
           </div>

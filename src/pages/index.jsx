@@ -154,7 +154,7 @@ const IndexPage = () => {
                   <p className="typo-body flex items-center">
                     <LocationIcon />
                     <span className="ml-2">
-                      <Link to="https://goo.gl/maps/K3chvdYLa9BfDpaD9">
+                      <Link to="https://goo.gl/maps/K3chvdYLa9BfDpaD9" className="hover:text-green-600">
                         Torre Glòries, Avinguda Diagonal, 211, 08018 Barcelona, Spain
                       </Link>
                     </span>

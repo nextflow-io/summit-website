@@ -69,22 +69,6 @@
     max-width: 900px;
   }
 
-  .gradient-light {
-    background-image: linear-gradient(180deg, rgba(66, 86, 231, 0.1) -118.75%, rgba(255, 255, 255, 0.1) 100%);
-  }
-
-  .gradient-indigo {
-    background-image: linear-gradient(180deg, #4256E7 0%, #7F91EB 100%);
-  }
-
-  .gradient-indigo-rev {
-    background-image: linear-gradient(0deg, #4256E7 0%, #7F91EB 100%);
-  }
-
-  .gradient-accent {
-    background-image: linear-gradient(85.9deg, #E388A8 0%, #7A91EE 100%);
-  }
-
   .row {
     @apply -mx-4 flex flex-row flex-wrap;
   }
@@ -179,5 +163,9 @@
 @layer utilities {
   .shadow {
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .bg-gradient-accent {
+    background-image: linear-gradient(90deg, #000 10%, #158944 25%, #20746E 40%, #000 65%, #000 100%);
   }
 }

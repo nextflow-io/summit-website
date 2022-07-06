@@ -26,7 +26,7 @@ const ProgramOct13Page = ({ location }) => {
           </p>
         </div>
       </div>
-      <Marquee to="/call-for-abstracts/">
+      <Marquee to="/call-for-abstracts/" type="accent">
         <span className="typo-blockquote">
           Call for abstracts now open
         </span>

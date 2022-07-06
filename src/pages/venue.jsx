@@ -59,7 +59,7 @@ const VanuePage = () => {
           </div>
         </div>
       </div>
-      <Marquee to="/call-for-abstracts/">
+      <Marquee to="/call-for-abstracts/" type="accent">
         <span className="typo-blockquote">
           Call for abstracts now open
         </span>
@@ -75,7 +75,7 @@ const VanuePage = () => {
                 Torre Glòries
               </h2>
               <p className="typo-body">
-                <Link to="https://goo.gl/maps/K3chvdYLa9BfDpaD9">
+                <Link to="https://goo.gl/maps/K3chvdYLa9BfDpaD9" className="hover:text-green-600">
                   Torre Glòries, Avinguda Diagonal, 211, 08018 Barcelona, Spain
                 </Link>
                 <LocationIcon className="inline-block w-6 h-6 ml-2" />
