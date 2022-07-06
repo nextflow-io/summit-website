@@ -2,7 +2,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
 import React from 'react';
 
-import { Button, Card, Link, List, Marquee } from 'website-components';
+import { Button, Card, Link, List, LocationIcon, Marquee, YoutubeRectangleIcon } from 'website-components';
 
 import Tabs from '../../components/Tabs';
 import Seo from '../../components/Seo';
@@ -58,57 +58,59 @@ const ProgramPage = ({ location }) => {
           </div>
           <div className="row mt-4">
             <div className="col-full md:col-9">
-              <div className="bg-black border border-gray-800 p-8 rounded-md shadow-xl">
+              <div className="bg-black border border-gray-800 px-4 py-6 lg:p-8 rounded-md shadow-xl">
                 <p className="typo-intro text-green-600 mb-4">
                   2-4:40 PM (160 min)
                 </p>
                 <h3 className="typo-h4 mb-4">
-                  Summit arrivals and registation
+                  Summit arrivals and registration
                 </h3>
-                <div className="flex items-center">
+                <div className="flex flex-wrap flex-col lg:flex-row lg:items-center">
                   <p className="typo-body">
                     Oct 12 , 2022, 2 PM CET
                   </p>
-                  <span className="mx-2">|</span>
+                  <span className="hidden lg:block mx-2">|</span>
                   <div>
                     <Link to="/" className="typo-body">
                       Torre Glòries, Avinguda Diagonal, 211, 08018 Barcelona, Spain
                     </Link>
+                    <LocationIcon className="inline-block h-6 w-6 ml-2" />
                   </div>
                 </div>
               </div>
-              <div className="bg-black border border-gray-800 p-8 rounded-md shadow-xl mt-4">
+              <div className="bg-black border border-gray-800 px-4 py-6 lg:p-8 rounded-md shadow-xl mt-4">
                 <p className="typo-intro text-green-600 mb-4">
                   5-5:20 PM (20 min)
                 </p>
                 <h3 className="typo-h4 mb-4">
                   Summit welcome
                 </h3>
-                <div className="flex items-center">
+                <div className="flex flex-wrap flex-col lg:flex-row lg:items-center">
                   <div className="flex items-center">
                     <div className="h-8 w-8 bg-indigo-600 rounded-full mr-4" />
                     <span className="typo-intro text-green-600">
                       Evan Floden
                     </span>
                   </div>
-                  <span className="mx-2">|</span>
-                  <span className="typo-body">
+                  <span className="hidden lg:block mx-2">|</span>
+                  <span className="typo-body mt-2 lg:mt-0">
                     Oct 12 , 2022, 5 PM CET
                   </span>
-                  <span className="mx-2">|</span>
+                  <span className="hidden lg:block mx-2">|</span>
                   <span>
                     <Link to="/" className="typo-body text-gray-600">
                       Watch on youtube
                     </Link>
+                    <YoutubeRectangleIcon className="inline-block h-6 w-6 ml-2 text-gray-600" />
                   </span>
                 </div>
               </div>
-              <div className="bg-black border border-gray-800 p-8 rounded-md shadow-xl mt-4">
+              <div className="bg-black border border-gray-800 px-4 py-6 lg:p-8 rounded-md shadow-xl mt-4">
                 <div className="flex items-center justify-between mb-4">
                   <p className="typo-intro text-green-600">
                     5:20 - 7 PM (100 min)
                   </p>
-                  <div className="flex">
+                  <div className="hidden lg:flex">
                     <span className="typo-small rounded-full px-4 py-1 bg-gray-800 uppercase mr-2">
                       Nextflow
                     </span>
@@ -126,7 +128,7 @@ const ProgramPage = ({ location }) => {
                 <p className="typo-body mb-4">
                   The session will be composed of multiple talks given by several speakers. Details will be announced soon.
                 </p>
-                <div className="flex items-center">
+                <div className="flex flex-wrap flex-col lg:flex-row lg:items-center">
                   <div className="flex items-center">
                     <div className="h-8 w-8 bg-indigo-600 rounded-full -mr-4" />
                     <div className="h-8 w-8 bg-green-600 rounded-full mr-4" />
@@ -134,19 +136,20 @@ const ProgramPage = ({ location }) => {
                       Several Speakers
                     </span>
                   </div>
-                  <span className="mx-2">|</span>
-                  <span className="typo-body">
+                  <span className="hidden lg:block mx-2">|</span>
+                  <span className="typo-body mt-2 lg:mt-0">
                     Oct 12 , 2022, 5:20 PM CET
                   </span>
-                  <span className="mx-2">|</span>
+                  <span className="hidden lg:block mx-2">|</span>
                   <span>
                     <Link to="/" className="typo-body text-gray-600">
                       Watch on youtube
                     </Link>
+                    <YoutubeRectangleIcon className="inline-block h-6 w-6 ml-2 text-gray-600" />
                   </span>
                 </div>
               </div>
-              <div className="bg-black border border-gray-800 p-8 rounded-md shadow-xl mt-4">
+              <div className="bg-black border border-gray-800 p-4 lg:py-8 rounded-md shadow-xl mt-4">
                 <div className="flex items-center justify-between mb-4">
                   <p className="typo-intro text-green-600">
                     7:20 PM - ...

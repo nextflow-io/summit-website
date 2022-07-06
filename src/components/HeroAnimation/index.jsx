@@ -6,7 +6,7 @@ import ImageSource from '../../images/visuals/spot.svg';
 const HeroAnimation = ({ className }) => {
   return (
     <div
-      className="animate-flow absolute inset-0 bg-no-repeat"
+      className="animate-flow absolute inset-0 bg-no-repeat transform-gpu"
       style={{ backgroundImage: `url(${ImageSource})` }}
     />
   );

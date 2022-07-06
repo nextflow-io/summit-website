@@ -43,7 +43,7 @@ const IndexPage = () => {
             <br />
             Barcelona, October 12-14, 2022
           </p>
-          <Button to="/program/" variant="primary" size="md" arrow>
+          <Button to="/program/" variant="accent" size="md" arrow>
             View program
           </Button>
         </div>

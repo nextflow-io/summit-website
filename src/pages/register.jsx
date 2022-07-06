@@ -30,7 +30,7 @@ const RegisterPage = () => {
       </div>
       <div className="py-20 bg-gray-900 text-white">
         <div className="container-lg">
-          <div className="row">
+          <div className="row flex-wrap">
             <div className="col-full md:col-6">
               <div className="bg-black border border-gray-800 rounded-md p-8 shadow-xl relative">
                 <p className="typo-intro text-green-600">

@@ -30,8 +30,8 @@ const VanuePage = () => {
       />
       <div className="py-20 bg-gray-900 text-white">
         <div className="container-lg">
-          <div className="row flex-nowrap">
-            <div className="col-6">
+          <div className="row lg:flex-nowrap">
+            <div className="col-full lg:col-6">
               <h1 className="typo-h2 mb-4">
                 Barcelona
               </h1>
@@ -42,7 +42,7 @@ const VanuePage = () => {
                 includes several Roman archaeological sites and the city was, of course, the birthplace of Nextflow.
               </p>
             </div>
-            <div className="col-6 ml-1/12">
+            <div className="col-full lg:col-6 lg:ml-1/12">
               <div className="relative">
                 <div
                   className="absolute inset-0 bg-center bg-cover bg-no-repeat rounded-sm"
@@ -50,7 +50,8 @@ const VanuePage = () => {
                 />
                 <Image
                   image={getImage(data.heroImage)}
-                  className="w-full relative top-6 left-6 rounded-sm"
+                  className="w-full relative lg:top-6 lg:left-6"
+                  imgClassName="rounded-sm"
                   alt="Barcelona"
                 />
               </div>
@@ -66,10 +67,10 @@ const VanuePage = () => {
       <div className="py-20 bg-gray-900 text-white">
         <div className="container-lg">
           <div className="row">
-            <div className="col-6 -ml-1/12">
+            <div className="col-full lg:col-6 lg:-ml-1/12 order-2 lg:order-1">
               <LocationMap />
             </div>
-            <div className="col-6 ml-1/12">
+            <div className="col-full lg:col-6 lg:ml-1/12 order-1 lg:order-2">
               <h2 className="typo-h2 mb-4">
                 Torre Glòries
               </h2>
@@ -82,7 +83,7 @@ const VanuePage = () => {
               <p className="typo-body mb-4">
                 Floor -1 (auditorium, foyer, and restaurants)
               </p>
-              <p className="typo-body">
+              <p className="typo-body mb-4">
                 Torre Glòries is one of the tallest and most striking skyscrapers in Barcelona. This remarkable building
                 is situated in the technological district and has become an important element in the city’s urban
                 landscape, especially when it's lit up at night.

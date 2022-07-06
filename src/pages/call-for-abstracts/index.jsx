@@ -61,8 +61,8 @@ const CallForAbstractsPage = () => {
       </Marquee>
       <div className="py-20 bg-gray-900 text-white">
         <div className="container-lg">
-          <div className="row flex-nowrap">
-            <div className="col-6">
+          <div className="row flex-wrap">
+            <div className="col-full lg:col-6 order-2 lg:order-1 mt-4 lg:mt-0">
               <h2 className="typo-h2 mb-4">
                 Talks and posters
               </h2>
@@ -81,7 +81,7 @@ const CallForAbstractsPage = () => {
                 View instructions
               </Button>
             </div>
-            <div className="col-6 ml-1/12">
+            <div className="col-full lg:col-6 lg:ml-1/12 order-1 lg:order-2">
               <div className="relative">
                 <div
                   className="absolute inset-0 bg-center bg-cover bg-no-repeat rounded-sm"
@@ -89,7 +89,7 @@ const CallForAbstractsPage = () => {
                 />
                 <Image
                   image={getImage(data.summitImage)}
-                  className="w-full relative top-6 left-6"
+                  className="w-full relative lg:top-6 lg:left-6"
                   imgClassName="rounded-sm"
                   alt="Summit"
                 />
@@ -101,7 +101,7 @@ const CallForAbstractsPage = () => {
       <div className="py-20 bg-gray-900 text-white">
         <div className="container-lg">
           <div className="row">
-            <div className="col-6 -ml-1/12">
+            <div className="col-full lg:col-6 lg:-ml-1/12">
               <div className="relative">
                 <div
                   className="absolute inset-0 bg-center bg-cover bg-no-repeat rounded-sm"
@@ -109,13 +109,13 @@ const CallForAbstractsPage = () => {
                 />
                 <Image
                   image={getImage(data.churchImage)}
-                  className="w-full relative top-6 -left-6"
+                  className="w-full relative lg:top-6 lg:-left-6"
                   imgClassName="rounded-sm"
                   alt="Church"
                 />
               </div>
             </div>
-            <div className="col-6 ml-1/12">
+            <div className="col-full lg:col-6 lg:ml-1/12 mt-4 lg:mt-0">
               <h2 className="typo-h2 mb-4">
                 Travel bursaries
               </h2>
