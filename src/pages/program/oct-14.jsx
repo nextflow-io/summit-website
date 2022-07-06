@@ -153,7 +153,7 @@ const ProgramOct14Page = ({ location }) => {
 
               <div className="bg-black border border-gray-800 px-4 py-6 lg:p-8 rounded-md shadow-xl mt-4">
                 <p className="typo-intro text-green-600 mb-4">
-                  12 AM (20 min)
+                  1:20 - 2:20 PM (60 min)
                 </p>
                 <h3 className="typo-h4 mb-4">
                   Closing
