@@ -63,7 +63,7 @@ const NfCoreHackathonPage = ({ location }) => {
                   The nf-core hackathon will be held before the Nextflow Summit, from 10-12 Oct, 2022.
                 </p>
                 <p className="typo-body mb-4">
-                  <Link to="/" className="text-green-600">
+                  <Link to="https://nf-co.re/events/2022/hackathon-october-2022" className="text-green-600">
                     Visit the nf-core hackathon event page
                   </Link>
                   {' '}
