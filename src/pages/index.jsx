@@ -120,7 +120,7 @@ const IndexPage = () => {
                 <Accordion.Detail>
                   <List type="bullet" iconClassName="text-white">
                     <List.Item className="typo-body">
-                      July 1: Registration for the Nextflow Summit opens
+                      July 7: Registration for the Nextflow Summit opens
                     </List.Item>
                     <List.Item className="typo-body">
                       July 22: Call for talk abstracts closes
