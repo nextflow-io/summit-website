@@ -10,10 +10,10 @@ import {
 const Footer = () => {
   return (
     <>
-      <footer className="bg-gray-900 text-white mt-auto">
+      <footer className="bg-gray-900 text-white mt-auto relative">
         <div className="container-lg">
           <div className="border-white border-t opacity-40" />
-          <div className="flex justify-between py-4">
+          <div className="flex justify-between items-center h-12">
             <div>
               <Link to="https://seqera.io/" noBorder className="typo-small">
                 &copy; 2022 Seqera Labs

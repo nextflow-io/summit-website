@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, createContext } from 'react';
 import CookieBanner from './CookieBanner';
 import Header from './Header';
 import Footer from './Footer';
@@ -12,16 +12,18 @@ const defaultProps = {
   children: null,
 };
 
-const Layout = ({ children, location }) => (
-  <>
-    <Header location={location} />
-    <main>
-      {children}
-    </main>
-    <CookieBanner />
-    <Footer />
-  </>
-);
+const Layout = ({ children, location }) => {
+  return (
+    <>
+      <Header location={location} />
+      <main className="min-h-[calc(100vh_-_7rem_-_1px)] md:min-h-[calc(100vh_-_9rem_-_1px)]">
+        {children}
+      </main>
+      <CookieBanner />
+      <Footer />
+    </>
+  );
+};
 
 Layout.propTypes = propTypes;
 Layout.defaultProps = defaultProps;
