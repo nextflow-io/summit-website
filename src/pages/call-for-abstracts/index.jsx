@@ -43,7 +43,7 @@ const CallForAbstractsPage = () => {
             Submit your talk or poster for one of the key themes: Nextflow, community, ecosystem, or software.
           </p>
           <p className="typo-body">
-            Now - July 22, 2022: Call for abstracts
+            June 17 - July 22, 2022: Call for abstracts
           </p>
           <p className="typo-body max-w-xl mb-6 mx-auto">
             Abstracts will be read and speakers notified on a rolling basis, so apply soon! Accepted speakers will be
