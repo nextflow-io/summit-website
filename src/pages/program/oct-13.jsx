@@ -21,8 +21,8 @@ const ProgramOct13Page = ({ location }) => {
             A week of Nextflow goodness
           </h1>
           <p className="typo-body max-w-2xl mb-4 mx-auto">
-            We believe that Nextflow Summit should be available to everyone, everywhere. That’s why the hackathon and
-            talks will be streamed live, and presentations will be made available after the event.
+            We believe that the Nextflow Summit should be available to everyone, everywhere. That’s why the Nextflow
+            Summit and nf-core Hackathon will be streamed live and presentations made available after the event.
           </p>
         </div>
       </div>
@@ -61,7 +61,7 @@ const ProgramOct13Page = ({ location }) => {
               <div className="bg-black border border-gray-800 px-4 py-6 lg:p-8 rounded-md shadow-xl">
                 <div className="flex items-center justify-between mb-4">
                   <p className="typo-intro text-green-600">
-                    11-12 AM (60 min)
+                    11 AM - 12 PM (60 min)
                   </p>
                   <div className="hidden lg:flex">
                     <span className="typo-small rounded-full px-4 py-1 bg-gray-800 uppercase mr-2">
@@ -73,7 +73,7 @@ const ProgramOct13Page = ({ location }) => {
                   </div>
                 </div>
                 <h3 className="typo-h4 mb-4">
-                  Session
+                  Talks
                 </h3>
                 <p className="typo-body mb-4">
                   The session will be composed of multiple talks given by several speakers. Details will be announced soon.
@@ -88,11 +88,11 @@ const ProgramOct13Page = ({ location }) => {
                   </div>
                   <span className="hidden lg:block mx-2">|</span>
                   <span className="typo-body mt-2 lg:mt-0">
-                    Oct 13 2022, 11 AM CET
+                    Oct 13, 2022, 11 AM CET
                   </span>
                   <span className="hidden lg:block mx-2">|</span>
                   <span>
-                    <Link to="/" className="typo-body text-gray-600">
+                    <Link to="https://www.youtube.com/c/nextflow" className="typo-body text-gray-600">
                       Watch on youtube
                     </Link>
                     <YoutubeRectangleIcon className="inline-block h-6 w-6 ml-2 text-gray-600" />
@@ -103,7 +103,7 @@ const ProgramOct13Page = ({ location }) => {
               <div className="bg-black border border-gray-800 px-4 py-6 lg:p-8 rounded-md shadow-xl mt-4">
                 <div className="flex items-center justify-between mb-4">
                   <p className="typo-intro text-green-600">
-                    12 AM (20 min)
+                    12 - 12:20 PM (20 min)
                   </p>
                   <div className="hidden lg:flex">
                     <span className="typo-small rounded-full px-4 py-1 bg-gray-800 uppercase">
@@ -116,7 +116,7 @@ const ProgramOct13Page = ({ location }) => {
                 </h3>
                 <div className="flex items-center">
                   <span className="typo-body">
-                    Oct 13 2022, 12 AM CET
+                    Oct 13, 2022, 12 PM CET
                   </span>
                 </div>
               </div>
@@ -136,7 +136,7 @@ const ProgramOct13Page = ({ location }) => {
                   </div>
                 </div>
                 <h3 className="typo-h4 mb-4">
-                  Session
+                  Talks
                 </h3>
                 <p className="typo-body mb-4">
                   The session will be composed of multiple talks given by several speakers. Details will be announced soon.
@@ -151,11 +151,11 @@ const ProgramOct13Page = ({ location }) => {
                   </div>
                   <span className="hidden lg:block mx-2">|</span>
                   <span className="typo-body mt-2 lg:mt-0">
-                    Oct 13 2022, 12:20 AM CET
+                    Oct 13, 2022, 12:20 PM CET
                   </span>
                   <span className="hidden lg:block mx-2">|</span>
                   <span>
-                    <Link to="/" className="typo-body text-gray-600">
+                    <Link to="https://www.youtube.com/c/nextflow" className="typo-body text-gray-600">
                       Watch on youtube
                     </Link>
                     <YoutubeRectangleIcon className="inline-block h-6 w-6 ml-2 text-gray-600" />
@@ -179,7 +179,7 @@ const ProgramOct13Page = ({ location }) => {
                 </h3>
                 <div className="flex items-center">
                   <span className="typo-body">
-                    Oct 13 2022, 1:20 PM CET
+                    Oct 13, 2022, 1:20 PM CET
                   </span>
                 </div>
               </div>
@@ -199,7 +199,7 @@ const ProgramOct13Page = ({ location }) => {
                   </div>
                 </div>
                 <h3 className="typo-h4 mb-4">
-                  Session
+                  Talks
                 </h3>
                 <p className="typo-body mb-4">
                   The session will be composed of multiple talks given by several speakers. Details will be announced soon.
@@ -214,11 +214,11 @@ const ProgramOct13Page = ({ location }) => {
                   </div>
                   <span className="hidden lg:block mx-2">|</span>
                   <span className="typo-body mt-2 lg:mt-0">
-                    Oct 13 2022, 2:20 PM CET
+                    Oct 13, 2022, 2:20 PM CET
                   </span>
                   <span className="hidden lg:block mx-2">|</span>
                   <span>
-                    <Link to="/" className="typo-body text-gray-600">
+                    <Link to="https://www.youtube.com/c/nextflow" className="typo-body text-gray-600">
                       Watch on youtube
                     </Link>
                     <YoutubeRectangleIcon className="inline-block h-6 w-6 ml-2 text-gray-600" />
@@ -229,7 +229,7 @@ const ProgramOct13Page = ({ location }) => {
               <div className="bg-black border border-gray-800 px-4 py-6 lg:p-8 rounded-md shadow-xl mt-4">
                 <div className="flex items-center justify-between mb-4">
                   <p className="typo-intro text-green-600">
-                    3:20 - 4 AM (40 min)
+                    3:20 - 4 PM (40 min)
                   </p>
                   <div className="hidden lg:flex">
                     <span className="typo-small rounded-full px-4 py-1 bg-gray-800 uppercase">
@@ -242,7 +242,7 @@ const ProgramOct13Page = ({ location }) => {
                 </h3>
                 <div className="flex items-center">
                   <span className="typo-body">
-                    Oct 13 2022, 3:20 PM CET
+                    Oct 13, 2022, 3:20 PM CET
                   </span>
                 </div>
               </div>
@@ -250,14 +250,11 @@ const ProgramOct13Page = ({ location }) => {
               <div className="bg-black border border-gray-800 px-4 py-6 lg:p-8 rounded-md shadow-xl mt-4">
                 <div className="flex items-center justify-between mb-4">
                   <p className="typo-intro text-green-600">
-                    4 PM - 5:20 PM (80 min)
+                    4 - 5:20 PM (80 min)
                   </p>
                   <div className="hidden lg:flex">
                     <span className="typo-small rounded-full px-4 py-1 bg-gray-800 uppercase mr-2">
                       Nextflow
-                    </span>
-                    <span className="typo-small rounded-full px-4 py-1 bg-gray-800 uppercase mr-2">
-                      Software
                     </span>
                     <span className="typo-small rounded-full px-4 py-1 bg-gray-800 uppercase">
                       Community
@@ -280,11 +277,74 @@ const ProgramOct13Page = ({ location }) => {
                   </div>
                   <span className="hidden lg:block mx-2">|</span>
                   <span className="typo-body mt-2 lg:mt-0">
-                    Oct 13 2022, 4 PM CET
+                    Oct 13, 2022, 4 PM CET
                   </span>
                   <span className="hidden lg:block mx-2">|</span>
                   <span>
-                    <Link to="/" className="typo-body text-gray-600">
+                    <Link to="https://www.youtube.com/c/nextflow" className="typo-body text-gray-600">
+                      Watch on youtube
+                    </Link>
+                    <YoutubeRectangleIcon className="inline-block h-6 w-6 ml-2 text-gray-600" />
+                  </span>
+                </div>
+              </div>
+
+              <div className="bg-black border border-gray-800 px-4 py-6 lg:p-8 rounded-md shadow-xl mt-4">
+                <div className="flex items-center justify-between mb-4">
+                  <p className="typo-intro text-green-600">
+                    5:20 - 5:40 PM (20 min)
+                  </p>
+                  <div className="hidden lg:flex">
+                    <span className="typo-small rounded-full px-4 py-1 bg-gray-800 uppercase">
+                      Social
+                    </span>
+                  </div>
+                </div>
+                <h3 className="typo-h4 mb-4">
+                  Coffee break
+                </h3>
+                <div className="flex items-center">
+                  <span className="typo-body">
+                    Oct 13, 2022, 5:20 PM CET
+                  </span>
+                </div>
+              </div>
+
+              <div className="bg-black border border-gray-800 px-4 py-6 lg:p-8 rounded-md shadow-xl mt-4">
+                <div className="flex items-center justify-between mb-4">
+                  <p className="typo-intro text-green-600">
+                    5:40 - 7 PM (80 min)
+                  </p>
+                  <div className="hidden lg:flex">
+                    <span className="typo-small rounded-full px-4 py-1 bg-gray-800 uppercase mr-2">
+                      Nextflow
+                    </span>
+                    <span className="typo-small rounded-full px-4 py-1 bg-gray-800 uppercase">
+                      Community
+                    </span>
+                  </div>
+                </div>
+                <h3 className="typo-h4 mb-4">
+                  Talks
+                </h3>
+                <p className="typo-body mb-4">
+                  The session will be composed of multiple talks given by several speakers. Details will be announced soon.
+                </p>
+                <div className="flex flex-wrap flex-col lg:flex-row lg:items-center">
+                  <div className="flex items-center">
+                    <div className="h-8 w-8 bg-indigo-600 rounded-full -mr-4" />
+                    <div className="h-8 w-8 bg-green-600 rounded-full mr-4" />
+                    <span className="typo-intro text-green-600">
+                      Several Speakers
+                    </span>
+                  </div>
+                  <span className="hidden lg:block mx-2">|</span>
+                  <span className="typo-body mt-2 lg:mt-0">
+                    Oct 13, 2022, 5:40 PM CET
+                  </span>
+                  <span className="hidden lg:block mx-2">|</span>
+                  <span>
+                    <Link to="https://www.youtube.com/c/nextflow" className="typo-body text-gray-600">
                       Watch on youtube
                     </Link>
                     <YoutubeRectangleIcon className="inline-block h-6 w-6 ml-2 text-gray-600" />
@@ -304,14 +364,14 @@ const ProgramOct13Page = ({ location }) => {
                   </div>
                 </div>
                 <h3 className="typo-h4 mb-4">
-                  Summit Social
+                  Summit dinner
                 </h3>
                 <p className="typo-body mb-4">
                   Dinner
                 </p>
                 <div className="flex items-center">
                   <span className="typo-body">
-                    Oct 13 2022, 3:20 PM CET
+                    Oct 13, 2022, 7 PM CET
                   </span>
                 </div>
               </div>

@@ -26,7 +26,7 @@ const Footer = () => {
                 </Link>
               </div>
               <div className="mr-4">
-                <Link to="https://www.youtube.com/channel/UCB-5LCKLdTKVn2F4V4KlPbQ" noBorder>
+                <Link to="https://www.youtube.com/c/nextflow" noBorder>
                   <YoutubeRectangleIcon className="w-5 h-5" />
                 </Link>
               </div>

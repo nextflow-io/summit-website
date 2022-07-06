@@ -174,11 +174,11 @@ const IndexPage = () => {
                 <Accordion.Detail>
                   <p className="typo-body mb-4">
                     Talks at the Nextflow Summit will be streamed live on YouTube and Gather for remote attendees, and
-                    will available after the event.
+                    will be available after the event.
                   </p>
                   <p className="typo-body flex items-center mb-4">
                     <span className="mr-2">
-                      <Link to="/">
+                      <Link to="https://www.youtube.com/c/nextflow">
                         YouTube
                       </Link>
                     </span>
@@ -186,7 +186,7 @@ const IndexPage = () => {
                   </p>
                   <p className="typo-body flex items-center">
                     <span className="mr-2">
-                      <Link to="/">
+                      <Link to="https://www.gather.town">
                         Gather
                       </Link>
                     </span>

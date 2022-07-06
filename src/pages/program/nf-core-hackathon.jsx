@@ -21,8 +21,8 @@ const NfCoreHackathonPage = ({ location }) => {
             A week of Nextflow goodness
           </h1>
           <p className="typo-body max-w-2xl mb-4 mx-auto">
-            We believe that Nextflow Summit should be available to everyone, everywhere. That’s why the hackathon and
-            talks will be streamed live, and presentations will be made available after the event.
+            We believe that the Nextflow Summit should be available to everyone, everywhere. That’s why the Nextflow
+            Summit and nf-core Hackathon will be streamed live and presentations made available after the event.
           </p>
         </div>
       </div>
@@ -80,8 +80,8 @@ const NfCoreHackathonPage = ({ location }) => {
                 </p>
               </div>
               <p className="typo-body mt-4">
-                After the hackathon, join us on Nextflow Summit 2022 which is held in the same place and starts right
-                after.
+                Join us for the Nextflow Summit 2022 being held at the same venue and virtually, starting shortly after
+                the hackathon.
               </p>
             </div>
           </div>

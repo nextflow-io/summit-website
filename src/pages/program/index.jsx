@@ -21,8 +21,8 @@ const ProgramPage = ({ location }) => {
             A week of Nextflow goodness
           </h1>
           <p className="typo-body max-w-2xl mb-4 mx-auto">
-            We believe that Nextflow Summit should be available to everyone, everywhere. That’s why the hackathon and
-            talks will be streamed live, and presentations will be made available after the event.
+            We believe that the Nextflow Summit should be available to everyone, everywhere. That’s why the Nextflow
+            Summit and nf-core Hackathon will be streamed live and presentations made available after the event.
           </p>
         </div>
       </div>
@@ -60,14 +60,14 @@ const ProgramPage = ({ location }) => {
             <div className="col-full md:col-9">
               <div className="bg-black border border-gray-800 px-4 py-6 lg:p-8 rounded-md shadow-xl">
                 <p className="typo-intro text-green-600 mb-4">
-                  2-4:40 PM (160 min)
+                  2 - 5 PM (180 min)
                 </p>
                 <h3 className="typo-h4 mb-4">
                   Summit arrivals and registration
                 </h3>
                 <div className="flex flex-wrap flex-col lg:flex-row lg:items-center">
                   <p className="typo-body">
-                    Oct 12 , 2022, 2 PM CET
+                    Oct 12, 2022, 2 PM CET
                   </p>
                   <span className="hidden lg:block mx-2">|</span>
                   <div>
@@ -80,7 +80,7 @@ const ProgramPage = ({ location }) => {
               </div>
               <div className="bg-black border border-gray-800 px-4 py-6 lg:p-8 rounded-md shadow-xl mt-4">
                 <p className="typo-intro text-green-600 mb-4">
-                  5-5:20 PM (20 min)
+                  5 - 5:20 PM (20 min)
                 </p>
                 <h3 className="typo-h4 mb-4">
                   Summit welcome
@@ -94,11 +94,11 @@ const ProgramPage = ({ location }) => {
                   </div>
                   <span className="hidden lg:block mx-2">|</span>
                   <span className="typo-body mt-2 lg:mt-0">
-                    Oct 12 , 2022, 5 PM CET
+                    Oct 12, 2022, 5 PM CET
                   </span>
                   <span className="hidden lg:block mx-2">|</span>
                   <span>
-                    <Link to="/" className="typo-body text-gray-600">
+                    <Link to="https://www.youtube.com/c/nextflow" className="typo-body text-gray-600">
                       Watch on youtube
                     </Link>
                     <YoutubeRectangleIcon className="inline-block h-6 w-6 ml-2 text-gray-600" />
@@ -123,7 +123,7 @@ const ProgramPage = ({ location }) => {
                   </div>
                 </div>
                 <h3 className="typo-h4 mb-4">
-                  Session
+                  Talks
                 </h3>
                 <p className="typo-body mb-4">
                   The session will be composed of multiple talks given by several speakers. Details will be announced soon.
@@ -138,11 +138,11 @@ const ProgramPage = ({ location }) => {
                   </div>
                   <span className="hidden lg:block mx-2">|</span>
                   <span className="typo-body mt-2 lg:mt-0">
-                    Oct 12 , 2022, 5:20 PM CET
+                    Oct 12, 2022, 5:20 PM CET
                   </span>
                   <span className="hidden lg:block mx-2">|</span>
                   <span>
-                    <Link to="/" className="typo-body text-gray-600">
+                    <Link to="https://www.youtube.com/c/nextflow" className="typo-body text-gray-600">
                       Watch on youtube
                     </Link>
                     <YoutubeRectangleIcon className="inline-block h-6 w-6 ml-2 text-gray-600" />
@@ -152,7 +152,7 @@ const ProgramPage = ({ location }) => {
               <div className="bg-black border border-gray-800 p-4 lg:py-8 rounded-md shadow-xl mt-4">
                 <div className="flex items-center justify-between mb-4">
                   <p className="typo-intro text-green-600">
-                    7:20 PM - ...
+                    7 PM - ...
                   </p>
                   <div className="flex">
                     <span className="typo-small rounded-full px-4 py-1 bg-gray-800 uppercase">
@@ -161,14 +161,14 @@ const ProgramPage = ({ location }) => {
                   </div>
                 </div>
                 <h3 className="typo-h4 mb-4">
-                  Summit Social
+                  Summit social
                 </h3>
                 <p className="typo-body mb-4">
                   Drinks, cocktails and networking
                 </p>
                 <div className="flex items-center">
                   <span className="typo-body">
-                    Oct 12 , 2022, 5:20 PM CET
+                    Oct 12, 2022, 7 PM CET
                   </span>
                 </div>
               </div>

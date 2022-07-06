@@ -144,7 +144,7 @@ const VanuePage = () => {
               >
                 <Accordion.Summary>
                   <p className="typo-intro">
-                    From Getting around El Prat Airport
+                    Getting around El Prat Airport
                   </p>
                 </Accordion.Summary>
                 <Accordion.Detail>
