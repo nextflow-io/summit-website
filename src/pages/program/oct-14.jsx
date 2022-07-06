@@ -61,7 +61,7 @@ const ProgramOct14Page = ({ location }) => {
               <div className="bg-black border border-gray-800 px-4 py-6 lg:p-8 rounded-md shadow-xl">
                 <div className="flex items-center justify-between mb-4">
                   <p className="typo-intro text-green-600">
-                    11 - 12 AM (60 min)
+                    11 AM - 12 PM (60 min)
                   </p>
                   <div className="hidden lg:flex">
                     <span className="typo-small rounded-full px-4 py-1 bg-gray-800 uppercase mr-2">
