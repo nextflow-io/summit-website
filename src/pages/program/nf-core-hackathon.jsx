@@ -49,7 +49,7 @@ const NfCoreHackathonPage = ({ location }) => {
             <div className="col-full lg:col-9">
               <div className="bg-black border border-gray-800 shadow-xl px-4 py-6 lg:p-8 rounded-md">
                 <p className="typo-intro text-green-600 mb-4">
-                  9 AM, Oct 10 - 5 PM, Oct 12, 2022
+                  9:00 AM, Oct 10 - 5:00 PM, Oct 12, 2022
                 </p>
                 <h3 className="typo-h4 mb-4">
                   Start - Finish
