@@ -7,7 +7,7 @@ module.exports = {
     description: `Nextflow Summit 2022`,
     author: `@nextflowio`,
     siteUrl: siteUrl,
-    image: `/images/share-image.png`,
+    image: `/images/share-image.jpg`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
