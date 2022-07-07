@@ -96,8 +96,15 @@ const IndexPage = () => {
                   </span>
                 </Accordion.Summary>
                 <Accordion.Detail>
-                  <p className="typo-body">
+                  <p className="typo-body mb-4">
                     An in-person and virtual hackathon to develop nf-core together. Held in Barcelona and on Gather (virtually) prior to the Nextflow Summit.
+                  </p>
+                  <p className="typo-body">
+                    <Link to="https://nf-co.re/events/2022/hackathon-october-2022" className="text-green-600">
+                      Visit the nf-core hackathon event page
+                    </Link>
+                    {' '}
+                    to learn more.
                   </p>
                 </Accordion.Detail>
               </Accordion.Item>

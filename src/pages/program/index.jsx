@@ -55,14 +55,14 @@ const ProgramPage = ({ location }) => {
             <div className="col-full md:col-9">
               <div className="bg-black border border-gray-800 px-4 py-6 lg:p-8 rounded-md shadow-xl">
                 <p className="typo-intro text-green-600 mb-4">
-                  2 - 5 PM (180 min)
+                  2:00 - 5:00 PM (180 min)
                 </p>
                 <h3 className="typo-h4 mb-4">
                   Summit arrivals and registration
                 </h3>
                 <div className="flex flex-wrap flex-col lg:flex-row lg:items-center">
                   <p className="typo-body">
-                    Oct 12, 2022, 2 PM CET
+                    Oct 12, 2022, 2:00 PM CET
                   </p>
                   <span className="hidden lg:block mx-2">|</span>
                   <div>
@@ -75,7 +75,7 @@ const ProgramPage = ({ location }) => {
               </div>
               <div className="bg-black border border-gray-800 px-4 py-6 lg:p-8 rounded-md shadow-xl mt-4">
                 <p className="typo-intro text-green-600 mb-4">
-                  5 - 5:20 PM (20 min)
+                  5:00 - 5:20 PM (20 min)
                 </p>
                 <h3 className="typo-h4 mb-4">
                   Summit welcome
@@ -89,7 +89,7 @@ const ProgramPage = ({ location }) => {
                   </div>
                   <span className="hidden lg:block mx-2">|</span>
                   <span className="typo-body mt-2 lg:mt-0">
-                    Oct 12, 2022, 5 PM CET
+                    Oct 12, 2022, 5:00 PM CET
                   </span>
                   <span className="hidden lg:block mx-2">|</span>
                   <span>
@@ -103,7 +103,7 @@ const ProgramPage = ({ location }) => {
               <div className="bg-black border border-gray-800 px-4 py-6 lg:p-8 rounded-md shadow-xl mt-4">
                 <div className="flex items-center justify-between mb-4">
                   <p className="typo-intro text-green-600">
-                    5:20 - 7 PM (100 min)
+                    5:20 - 7:00 PM (100 min)
                   </p>
                   <div className="hidden lg:flex">
                     <span className="typo-small rounded-full px-4 py-1 bg-gray-800 uppercase mr-2">
@@ -147,7 +147,7 @@ const ProgramPage = ({ location }) => {
               <div className="bg-black border border-gray-800 p-4 lg:py-8 rounded-md shadow-xl mt-4">
                 <div className="flex items-center justify-between mb-4">
                   <p className="typo-intro text-green-600">
-                    7 PM - ...
+                    7:00 - 8:30 PM (90 min)
                   </p>
                   <div className="flex">
                     <span className="typo-small rounded-full px-4 py-1 bg-gray-800 uppercase">
@@ -163,7 +163,7 @@ const ProgramPage = ({ location }) => {
                 </p>
                 <div className="flex items-center">
                   <span className="typo-body">
-                    Oct 12, 2022, 7 PM CET
+                    Oct 12, 2022, 7:00 PM CET
                   </span>
                 </div>
               </div>

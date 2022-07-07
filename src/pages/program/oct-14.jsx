@@ -56,7 +56,7 @@ const ProgramOct14Page = ({ location }) => {
               <div className="bg-black border border-gray-800 px-4 py-6 lg:p-8 rounded-md shadow-xl">
                 <div className="flex items-center justify-between mb-4">
                   <p className="typo-intro text-green-600">
-                    11 AM - 12 PM (60 min)
+                    11:00 AM - 12:00 PM (60 min)
                   </p>
                   <div className="hidden lg:flex">
                     <span className="typo-small rounded-full px-4 py-1 bg-gray-800 uppercase mr-2">
@@ -83,7 +83,7 @@ const ProgramOct14Page = ({ location }) => {
                   </div>
                   <span className="hidden lg:block mx-2">|</span>
                   <span className="typo-body mt-2 lg:mt-0">
-                    Oct 14, 2022, 11 AM CET
+                    Oct 14, 2022, 11:00 AM CET
                   </span>
                   <span className="hidden lg:block mx-2">|</span>
                   <span>
@@ -97,7 +97,7 @@ const ProgramOct14Page = ({ location }) => {
               <div className="bg-black border border-gray-800 px-4 py-6 lg:p-8 rounded-md shadow-xl mt-4">
                 <div className="flex items-center justify-between mb-4">
                   <p className="typo-intro text-green-600">
-                    12 - 12:20 PM (20 min)
+                    12:00 - 12:20 PM (20 min)
                   </p>
                   <div className="hidden lg:flex">
                     <span className="typo-small rounded-full px-4 py-1 bg-gray-800 uppercase">
@@ -110,7 +110,7 @@ const ProgramOct14Page = ({ location }) => {
                 </h3>
                 <div className="flex items-center">
                   <span className="typo-body">
-                    Oct 14, 2022, 12 PM CET
+                    Oct 14, 2022, 12:00 PM CET
                   </span>
                 </div>
               </div>
