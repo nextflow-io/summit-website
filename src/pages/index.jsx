@@ -12,8 +12,12 @@ import {
 import HeroAnimation from '../components/HeroAnimation';
 import Seo from '../components/Seo';
 
-import LogoGather from '../images/icons/gather.svg';
-import LogoNextflow from '../images/logo-nextflow.svg';
+import IconGather from '../images/icons/gather.svg';
+import IconNextflow from '../images/logo-nextflow.svg';
+
+import LogoAWS from '../images/logos/aws.svg';
+import LogoSeqera from '../images/logos/seqera.svg';
+import LogoQuilt from '../images/logos/quilt.svg';
 
 const IndexPage = () => {
   return (
@@ -26,7 +30,7 @@ const IndexPage = () => {
           <HeroAnimation className="animate-flow" />
         </div>
         <div className="container-lg py-16 relative">
-          <img src={LogoNextflow} className="h-14 mb-4" alt="Nextflow Logo" />
+          <img src={IconNextflow} className="h-14 mb-4" alt="Nextflow Logo" />
           <h1 className="typo-h2 uppercase mb-4">
             Summit 2022
           </h1>
@@ -45,6 +49,32 @@ const IndexPage = () => {
           <Button to="/program/" variant="accent" size="md" arrow>
             View program
           </Button>
+        </div>
+      </div>
+      <div className="text-white">
+        <div className="py-6 text-center">
+          <h2 className="typo-h6 uppercase">
+            Sponsored by
+          </h2>
+        </div>
+        <div className="container-xl">
+          <div className="flex flex-wrap">
+            <div className="w-full sm:w-1/3 px-1">
+              <div className="bg-gray-800 h-24 sm:h-40 px-4 flex items-center justify-center">
+                <img src={LogoAWS} className="h-12" alt="AWS logo" />
+              </div>
+            </div>
+            <div className="w-full sm:w-1/3 px-1">
+              <div className="bg-gray-800 h-24 sm:h-40 px-4 flex items-center justify-center">
+                <img src={LogoSeqera} className="h-10" alt="Seqera logo" />
+              </div>
+            </div>
+            <div className="w-full sm:w-1/3 px-1">
+              <div className="bg-gray-800 h-24 sm:h-40 px-4 flex items-center justify-center">
+                <img src={LogoQuilt} className="h-12" alt="Quilt logo" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div className="py-16 bg-gray-900 text-white">
@@ -191,7 +221,7 @@ const IndexPage = () => {
                         Gather
                       </Link>
                     </span>
-                    <img src={LogoGather} alt="Gather logo" className="h-6" />
+                    <img src={IconGather} alt="Gather logo" className="h-6" />
                   </p>
                 </Accordion.Detail>
               </Accordion.Item>
