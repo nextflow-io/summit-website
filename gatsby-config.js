@@ -79,6 +79,14 @@ module.exports = {
         icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [
+          "G-T8GZ4N0LD7"
+        ]
+      }
+    },
     'gatsby-plugin-postcss',
     {
       resolve: 'gatsby-plugin-sitemap',
