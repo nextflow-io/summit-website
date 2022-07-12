@@ -2,7 +2,7 @@
 slug: /speakers/brendan-bouffler/
 name: Brendan Bouffler
 email:
-position: Head of Developer Relations, HPC Engineering
+position: Head of Developer Relations, HPC Engineering at Amazon Web Services
 image: ../../../images/people/brendanbouffler.png
 github:
 twitter: https://twitter.com/boofla
