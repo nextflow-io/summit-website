@@ -3,12 +3,11 @@ slug: /speakers/brendan-bouffler/
 name: Brendan Bouffler
 email:
 position: Head of Developer Relations, HPC Engineering
-image: ../../../images/people/brendanbpuffler.png
+image: ../../../images/people/brendanbouffler.png
 github:
 twitter: https://twitter.com/boofla
 linkedin: https://www.linkedin.com/in/brendanbouffler
 tags:
-  - Social
   - Ecosystem
 meta:
   title: "Brendan Bouffler"
