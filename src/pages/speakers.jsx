@@ -21,6 +21,7 @@ const SpeakersPage = () => {
     query {
       speakers: allPeople(sort: {fields: name}) {
         nodes {
+          slug
           name
           position
           tags
@@ -68,12 +69,15 @@ const SpeakersPage = () => {
                       <Image
                         image={getImage(speaker.image)}
                         className="w-full"
+                        imgClassName="md:rounded-l-md"
                         alt={speaker.name}
                       />
                     </div>
                     <div className="w-full md:w-2/3 p-6 inline-flex flex-col">
                       <h3 className="typo-h4 text-green-600 mb-4">
-                        {speaker.name}
+                        <Link to={speaker.slug} noBorder>
+                          {speaker.name}
+                        </Link>
                       </h3>
                       <p className="typo-h5 mb-4">
                         {speaker.position}
