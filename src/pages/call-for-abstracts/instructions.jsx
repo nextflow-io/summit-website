@@ -17,13 +17,11 @@ const InstructionsPage = () => {
       />
       <div className="py-16 bg-gray-900 text-white">
         <div className="container-md">
-          <div className="mb-4">
-            <div className="inline-flex items-center hover:text-green-600">
-              <AngleLeftIcon className="h-6 w-6 inline-block mr-1" />
-              <Link to="/call-for-abstracts/" className="typo-intro" noBorder>
-                Back
-              </Link>
-            </div>
+          <div className="inline-flex items-center hover:text-green-600 mb-4">
+            <AngleLeftIcon className="h-6 w-6 inline-block mr-1" />
+            <Link to="/call-for-abstracts/" className="typo-intro" noBorder>
+              Back
+            </Link>
           </div>
           <h1 className="typo-h2 mb-4">
             Instructions
