@@ -20,10 +20,16 @@ const ProgramOct14Page = ({ location }) => {
           <h1 className="typo-h2 mb-4">
             A week of Nextflow goodness
           </h1>
-          <p className="typo-body max-w-2xl mb-4 mx-auto">
+          <p className="typo-body max-w-2xl mx-auto mb-4">
             We believe that the Nextflow Summit should be available to everyone, everywhere. That’s why the Nextflow
             Summit and nf-core Hackathon will be streamed live and presentations made available after the event.
           </p>
+          <p className="typo-body max-w-2xl mx-auto mb-4">
+            Nextflow Summit begins at 5:00&nbsp;PM CET on Wednesday, October&nbsp;12, and closes 2:30&nbsp;PM CET Friday, October&nbsp;14.
+          </p>
+          <Button to="/assets/program.pdf" variant="accent" size="md">
+            Download program PDF
+          </Button>
         </div>
       </div>
       <div id="events" className="py-20 bg-gray-900 text-white">
@@ -35,6 +41,9 @@ const ProgramOct14Page = ({ location }) => {
               </Tabs.Item>
               <Tabs.Item to="/program/">
                 Nextflow Summit
+              </Tabs.Item>
+              <Tabs.Item to="/program/community-events/">
+                Community Events
               </Tabs.Item>
             </Tabs>
           </div>

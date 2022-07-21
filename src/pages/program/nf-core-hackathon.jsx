@@ -24,6 +24,9 @@ const NfCoreHackathonPage = ({ location }) => {
             We believe that the Nextflow Summit should be available to everyone, everywhere. That’s why the Nextflow
             Summit and nf-core Hackathon will be streamed live and presentations made available after the event.
           </p>
+          <p className="typo-body max-w-2xl mx-auto mb-4">
+            Nextflow Summit begins at 5:00&nbsp;PM CET on Wednesday, October&nbsp;12, and closes 2:30&nbsp;PM CET Friday, October&nbsp;14.
+          </p>
         </div>
       </div>
       <div id="events" className="py-20 bg-gray-900 text-white">
@@ -35,6 +38,9 @@ const NfCoreHackathonPage = ({ location }) => {
               </Tabs.Item>
               <Tabs.Item to="/program/" inactive>
                 Nextflow Summit
+              </Tabs.Item>
+              <Tabs.Item to="/program/community-events/">
+                Community Events
               </Tabs.Item>
             </Tabs>
           </div>
