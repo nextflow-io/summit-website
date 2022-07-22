@@ -123,8 +123,8 @@ const CommunityEventsPage = ({ location }) => {
                     Nextflow and nf-core training
                   </h3>
                   <p className="typo-body mb-4">
-                    We encourage anyone to host a local community streaming event. Use our poster template to share with
-                    your community and add the event to this website.
+                    Get ready for the nf-core hackathon by joining the Nextflow and nf-core training event virtually on
+                    Gather. Three events will be run in parallel to cater for all time zones.
                   </p>
                   <div className="flex flex-wrap flex-col lg:flex-row lg:items-center">
                     <span className="typo-body mt-2 lg:mt-0">
@@ -132,7 +132,7 @@ const CommunityEventsPage = ({ location }) => {
                     </span>
                     <span className="hidden lg:block mx-2">|</span>
                     <span>
-                      <Link to="https://www.youtube.com/c/nextflow" className="typo-body text-green-600">
+                      <Link to="https://nf-co.re/events/2022/training-october-2022" className="typo-body text-green-600">
                         Learn more
                       </Link>
                     </span>
