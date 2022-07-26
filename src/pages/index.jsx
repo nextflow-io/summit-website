@@ -1,3 +1,5 @@
+import { useStaticQuery, graphql } from 'gatsby';
+import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
 import React, { useEffect, useContext } from 'react';
 
 import {
@@ -20,6 +22,18 @@ import LogoSeqera from '../images/logos/seqera.svg';
 import LogoQuilt from '../images/logos/quilt.svg';
 
 const IndexPage = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      communityImage: file(relativePath: {eq: "photos/community.jpg"}) {
+        childImageSharp {
+          gatsbyImageData(
+            placeholder: NONE
+          )
+        }
+      }
+    }
+  `);
+
   return (
     <>
       <Seo
@@ -226,6 +240,39 @@ const IndexPage = () => {
                 </Accordion.Detail>
               </Accordion.Item>
             </Accordion>
+          </div>
+          <div className="mt-8">
+            <div className="bg-black border border-gray-800 rounded-md shadow-xl overflow-hidden">
+              <div className="flex flex-col md:flex-row">
+                <div className="w-full md:w-5/12">
+                  <Image
+                    image={getImage(data.communityImage)}
+                    className="w-full h-full"
+                    imgClassName="md:rounded-l-md"
+                    alt="Host community streaming event"
+                  />
+                </div>
+                <div className="w-full md:w-7/12 p-6 inline-flex flex-col">
+                  <h3 className="typo-h4 mb-4">
+                    And there is even more, join community events
+                  </h3>
+                  <p className="typo-body">
+                    Join some of the side events that are hosted by community members. Tranings, streamings, and more.
+                  </p>
+                  <div className="flex flex-wrap flex-col lg:flex-row lg:items-center">
+                    <div className="mt-4">
+                      <Button
+                        to="/program/community-events/"
+                        variant="secondary"
+                        size="md"
+                      >
+                        View community events
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
