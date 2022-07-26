@@ -83,15 +83,21 @@ const SpeakersPage = () => {
                         {speaker.position}
                       </p>
                       <div className="flex mb-4">
-                        <Link to={speaker.github} noBorder className="text-white hover:text-green-600 mr-4">
-                          <GitHubIcon />
-                        </Link>
-                        <Link to={speaker.twitter} noBorder className="text-white hover:text-green-600 mr-4">
-                          <TwitterIcon />
-                        </Link>
-                        <Link to={speaker.linkedin} noBorder className="text-white hover:text-green-600">
-                          <LinkedInIcon />
-                        </Link>
+                        {speaker.github && (
+                          <Link to={speaker.github} noBorder className="text-white hover:text-green-600 mr-4">
+                            <GitHubIcon />
+                          </Link>
+                        )}
+                        {speaker.twitter && (
+                          <Link to={speaker.twitter} noBorder className="text-white hover:text-green-600 mr-4">
+                            <TwitterIcon />
+                          </Link>
+                        )}
+                        {speaker.linkedin && (
+                          <Link to={speaker.linkedin} noBorder className="text-white hover:text-green-600">
+                            <LinkedInIcon />
+                          </Link>
+                        )}
                       </div>
                       <div className="flex mt-8 md:mt-auto">
                         {speaker.tags.map((tag) => (

@@ -46,21 +46,29 @@ const SpeakerPage = ({ data }) => {
             <p className="typo-h5 mb-4">
               {speaker.position}
             </p>
-            <div className="mb-4">
-              <Link to={`mailto:${speaker.email}`} className="typo-body" noBorder>
-                {speaker.email}
-              </Link>
-            </div>
+            {speaker.email && (
+              <div className="mb-4">
+                <Link to={`mailto:${speaker.email}`} className="typo-body" noBorder>
+                  {speaker.email}
+                </Link>
+              </div>
+            )}
             <div className="flex mb-4">
-              <Link to={speaker.github} noBorder className="text-white hover:text-green-600 mr-4">
-                <GitHubIcon />
-              </Link>
-              <Link to={speaker.twitter} noBorder className="text-white hover:text-green-600 mr-4">
-                <TwitterIcon />
-              </Link>
-              <Link to={speaker.linkedin} noBorder className="text-white hover:text-green-600">
-                <LinkedInIcon />
-              </Link>
+              {speaker.github && (
+                <Link to={speaker.github} noBorder className="text-white hover:text-green-600 mr-4">
+                  <GitHubIcon />
+                </Link>
+              )}
+              {speaker.twitter && (
+                <Link to={speaker.twitter} noBorder className="text-white hover:text-green-600 mr-4">
+                  <TwitterIcon />
+                </Link>
+              )}
+              {speaker.linkedin && (
+                <Link to={speaker.linkedin} noBorder className="text-white hover:text-green-600">
+                  <LinkedInIcon />
+                </Link>
+              )}
             </div>
           </div>
         </div>
