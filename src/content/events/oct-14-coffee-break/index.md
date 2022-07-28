@@ -3,5 +3,7 @@ timeframe: 12:00 - 12:20 PM (20 min)
 title: Coffee break
 tags:
   - Social
-datetime: Oct 14, 2022, 12:00 PM CET
+datetime: 2022-10-14T12:00:00.000Z
+date: Oct 14, 2022
+time: 12:00 PM
 ---

@@ -4,5 +4,7 @@ title: Summit dinner
 description: Dinner
 tags:
   - Social
-datetime: Oct 13, 2022, 7:00 PM CET
+datetime: 2022-10-13T19:00:00.000Z
+date: Oct 13, 2022
+time: 7:00 PM
 ---

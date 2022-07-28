@@ -21,7 +21,26 @@ exports.createSchemaCustomization = ({ actions }) => {
         tags: [String]
         meta: MetaFields
       }
+    `,
     `
+      type Event implements Node {
+        slug: String
+        title: String
+        description: String
+        datetime: Date @dateformat
+        date: String
+        time: String
+        timeframe: String
+        speakers: [People] @link(by: "name")
+        location: String
+        locationUrl: String
+        youtube: String
+        youtubeUrl: String
+        tags: [String]
+        meta: MetaFields
+        content: Mdx
+      }
+    `,
   ];
 
   createTypes(typeDefs);
@@ -42,7 +61,7 @@ exports.onCreateNode = ({ node, actions, getNode, createNodeId, createContentDig
     }
 
     if (parent.internal.type === 'File' && parent.sourceInstanceName === 'people') {
-      const peopleContent = {
+      const content = {
         slug: node.frontmatter.slug,
         name: node.frontmatter.name,
         email: node.frontmatter.email,
@@ -62,9 +81,40 @@ exports.onCreateNode = ({ node, actions, getNode, createNodeId, createContentDig
         children: [],
         internal: {
           type: 'People',
-          contentDigest: createContentDigest(peopleContent),
+          contentDigest: createContentDigest(content),
         },
-        ...peopleContent,
+        ...content,
+      });
+    }
+
+    if (parent.internal.type === 'File' && parent.sourceInstanceName === 'events') {
+      const content = {
+        slug: node.frontmatter.slug,
+        title: node.frontmatter.title,
+        description: node.frontmatter.description,
+        datetime: node.frontmatter.datetime,
+        date: node.frontmatter.date,
+        time: node.frontmatter.time,
+        timeframe: node.frontmatter.timeframe,
+        speakers: node.frontmatter.speakers,
+        location: node.frontmatter.location,
+        locationUrl: node.frontmatter.locationUrl,
+        youtube: node.frontmatter.youtube,
+        youtubeUrl: node.frontmatter.youtubeUrl,
+        tags: node.frontmatter.tags,
+        meta: node.frontmatter.meta,
+        content: node,
+      };
+
+      createNode({
+        id: createNodeId(`event-post-${node.id}`),
+        parent: node.id,
+        children: [],
+        internal: {
+          type: 'Event',
+          contentDigest: createContentDigest(content),
+        },
+        ...content,
       });
     }
   }
