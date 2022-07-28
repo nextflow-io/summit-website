@@ -4,6 +4,8 @@ title: Talks
 description: The session will be composed of multiple talks given by several speakers. Details will be announced soon.
 speakers:
   - Evan Floden
+  - Phil Ewels
+  - Paolo di Tommaso
 tags:
   - Nextflow
   - Community

@@ -7,6 +7,8 @@ date: Oct 12, 2022
 time: 5:20 PM
 speakers:
   - Evan Floden
+  - Phil Ewels
+  - Paolo di Tommaso
 tags:
   - Nextflow
   - Software
