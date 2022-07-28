@@ -2,7 +2,7 @@
 slug: /speakers/james-fellows-yates/
 name: James Fellows Yates
 email: james_fellows_yates@eva.mpg.de
-position: Postdoctoral bioinformatician at the Leibniz Institute for Natural Product Research and Infection Biology and Max Planck Institute for Evolutionary Anthropology
+position: Postdoctoral Bioinformatician at the Leibniz Institute for Natural Product Research and Infection Biology and Max Planck Institute for Evolutionary Anthropology
 image: ../../../images/people/jamesfellowsyates.png
 github: https://github.com/jfy133
 twitter: https://twitter.com/jfy133
@@ -14,3 +14,5 @@ meta:
   description: "Nextflow Summit 2022 Poster Presenter"
 ---
 James Fellows Yates is a postdoctoral bioinformatician developing pipelines focusing on metagenomics and microbiomes, as well as high-throughput palaeogenomics. He is am a member of the nf-core core team, and the lead developer for nf-core/eager, nf-core/funcscan, and nf-core/taxprofiler.
+
+James will be presenting his work titled "Efficient parallel taxonomic profiling for metagenomics with nf-core/taxprofiler".
