@@ -19,4 +19,4 @@ Solenne is a molecular biologist and bioinformatician passionate about the compl
 
 She did her PhD in France studying the dog genome (mostly the non-coding part) to find and characterize variants implicated in neurological disorders. She then joined the Wasserman lab in 2019 to work on the Silent Genomes Project, a project aiming to reduce health care disparities and improve diagnostic success for children with rare genetic diseases from Indigenous populations in Canada. Within this large project, Solenne focuses on the development of the Indigenous Background Variant Library, which is a database of DNA variants present in a group of people without severe genetic conditions, to help filter out frequent variants in patients affected with rare genetic disorders.
 
-Solenne will be presenting her work titled "A workflow to generate a variant catalogue from Whole Genome Sequences"
+Solenne will be presenting her work titled "A workflow to generate a variant catalogue from Whole Genome Sequences".
