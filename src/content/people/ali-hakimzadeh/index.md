@@ -18,3 +18,5 @@ Ali Hakimzadeh is a junior researcher in ecoinformatics at the University of Tar
 Ali worked as a bioinformatician using RNASeq analysis for developing third-generation Leishmaniasis vaccines at the University of Siena in Italy before joining the University of Tartu in 2021. He is mainly focused on developing novel bioinformatics tools for differential gene expression analysis.
 
 Ali's work centered on bioinformatics research, including developing algorithms and software for HTS studies in various disciplines.
+
+Ali will be presenting his work titled "An Overview of Bioinformatic pipelines for metabarcoding data analyses".
