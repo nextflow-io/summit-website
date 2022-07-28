@@ -2,7 +2,7 @@
 slug: /speakers/stephen-rudd/
 name: Stephen Rudd
 email: stephen.rudd@nanoporetech.com
-position: Product Management at Oxford Nanopore
+position: Product Manager at Oxford Nanopore
 image: ../../../images/people/stephenrudd.png
 github: https://github.com/epi2me-labs
 twitter: https://twitter.com/SAGRudd

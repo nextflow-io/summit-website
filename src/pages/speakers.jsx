@@ -120,7 +120,7 @@ const SpeakersPage = () => {
                       More coming soon
                     </h3>
                     <p className="typo-body mb-4">
-                      Apply now to present a talk or poster - the call for abstracts is open, closing date July 22, 2022.
+                      Apply now to present a poster - the call for speakers is now closed but abstracts for posters can still be submitted.
                     </p>
                     <div className="mt-auto">
                       <Button to="https://seqera.typeform.com/summit-22-talks" variant="secondary" size="md">
