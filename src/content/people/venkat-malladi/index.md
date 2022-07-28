@@ -2,7 +2,7 @@
 slug: /speakers/venkat-malladi/
 name: Venkat Malladi
 email: vmalladi@microsoft.com
-position: Senior Scientist – Bioinformatics with Microsoft
+position: Senior Scientist – Bioinformatics at Microsoft
 image: ../../../images/people/venkatmalladi.png
 github: https://github.com/vsmalladi
 twitter: https://twitter.com/katatonikkat

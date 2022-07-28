@@ -2,7 +2,7 @@
 slug: /speakers/ali-hakimzadeh
 name: Ali Hakimzadeh
 email: ali.hakimzadeh@ut.ee
-position: Junior researcher at the Mycology and Microbiology Center
+position: Junior Researcher at the Mycology and Microbiology Center
 image: ../../../images/people/alihakimzadeh.png
 github: https://github.com/alihkz94
 twitter: https://twitter.com/Bioinfo94
