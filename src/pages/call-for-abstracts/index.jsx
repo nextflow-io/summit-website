@@ -46,7 +46,7 @@ const CallForAbstractsPage = () => {
             Call for speakers is now closed.
           </p>
           <p className="typo-body max-w-xl mb-6 mx-auto">
-            Poster abstract submission will remain open until September 9. Abstracts will be read and speakers notified on a rolling basis, so apply soon!
+            Poster abstract submission will remain open until September 9.
           </p>
           <Button to="https://seqera.typeform.com/summit-22-talks" variant="accent" size="md" arrow>
             Apply now
