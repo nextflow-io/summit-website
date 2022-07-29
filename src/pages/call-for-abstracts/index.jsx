@@ -37,17 +37,16 @@ const CallForAbstractsPage = () => {
       <div className="py-32 bg-gray-900 text-white">
         <div className="container-lg text-center">
           <h1 className="typo-h2 mb-4">
-            Call for abstracts open
+            Call for poster abstracts still open
           </h1>
           <p className="typo-body max-w-md mb-8 mx-auto">
-            Submit your talk or poster for one of the key themes: Nextflow, community, ecosystem, or software.
+            Submit your abstract for one of the key themes: Nextflow, community, ecosystem, or software.
           </p>
           <p className="typo-body">
-            Call for abstracts: June 17 - July 22, 2022
+            Call for speakers is now closed.
           </p>
           <p className="typo-body max-w-xl mb-6 mx-auto">
-            Abstracts will be read and speakers notified on a rolling basis, so apply soon! Accepted speakers will be
-            notified by July 29.
+            Poster abstract submission will remain open until September 9.
           </p>
           <Button to="https://seqera.typeform.com/summit-22-talks" variant="accent" size="md" arrow>
             Apply now
