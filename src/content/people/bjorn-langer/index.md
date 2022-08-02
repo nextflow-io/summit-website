@@ -3,7 +3,7 @@ slug: /speakers/bjorn-langer/
 name: Björn Langer
 email: 
 position: Postdoctoral Researcher at the Centre for Genomic Regulation
-image: ../../../images/placeholder.svg
+image: ../../../images/people/empty.png
 github: https://github.com/bjlang
 twitter: 
 linkedin: 
