@@ -18,3 +18,5 @@ Priyanka Surana is a Senior Bioinformatician at Wellcome Sanger Institute, devel
 Before joining Sanger in 2021, Priyanka worked at the University of Sydney in Australia. She focused on developing scalable bioinformatics pipelines and building community relationships. This involved establishing connections with other national bioinformatics organizations to build an ecosystem of platforms providing researchers with sophisticated data analysis and digital asset stewardship capabilities. It was through this work that Priyanka became involved with the Nextflow project.
 
 Priyanka’s career has spanned from lab work and bioinformatics research in structural biology and genomics, through to pipeline development and public engagement. She is passionate about promoting public awareness about scientific research and increasing diversity in science.
+
+Priyanka will be presenting her work titled "Automated production engine to decode the tree of life".
