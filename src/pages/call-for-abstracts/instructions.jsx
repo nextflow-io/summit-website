@@ -57,7 +57,7 @@ const InstructionsPage = () => {
                 Community - pipelines, applications, and use cases
               </List.Item>
               <List.Item className="typo-body">
-                Ecosystem - infastructure and environments
+                Ecosystem - infrastructure and environments
               </List.Item>
               <List.Item className="typo-body">
                 Software - containers and tool packaging
