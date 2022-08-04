@@ -9,7 +9,7 @@ twitter: https://twitter.com/kubranarci
 linkedin: https://www.linkedin.com/in/kubranarci/	
 tags:
   - Community
-  - Poster
+  - Poster presenter
 meta:
   title: "Kübra Narcı"
   description: "Nextflow Summit 2022 Poster Presenter"

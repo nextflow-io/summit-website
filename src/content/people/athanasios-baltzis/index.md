@@ -8,7 +8,7 @@ github: https://github.com/athbaltzis
 twitter: https://twitter.com/ath_baltzis
 tags:
   - Ecosystem
-  - Poster
+  - Poster presenter
 meta:
   title: "Athanasios Baltzis"
   description: "Nextflow Summit 2022 Poster Presenter"
