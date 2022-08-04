@@ -9,6 +9,7 @@ twitter:
 linkedin: 
 tags:
   - Community
+  - Poster
 meta:
   title: "Björn Langer"
   description: "Nextflow Summit 2022 Poster Presenter"

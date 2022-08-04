@@ -9,6 +9,7 @@ twitter: https://twitter.com/delagoya
 linkedin: 
 tags:
   - Ecosystem
+  - Speaker
 meta:
   title: "Angel Pizarro"
   description: "Nextflow Summit 2022 Speaker"

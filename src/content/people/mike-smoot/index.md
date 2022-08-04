@@ -9,6 +9,7 @@ twitter:
 linkedin: https://www.linkedin.com/in/mike-smoot-75ab242/
 tags:
   - Ecosystem
+  - Speaker
 meta:
   title: "Mike Smoot"
   description: "Nextflow Summit 2022 Speaker"

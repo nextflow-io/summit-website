@@ -9,6 +9,7 @@ twitter: https://twitter.com/rpetit3
 linkedin: https://www.linkedin.com/in/rpetit3
 tags:
   - Community
+  - Speaker
 meta:
   title: "Robert Petit"
   description: "Nextflow Summit 2022 Speaker"

@@ -9,6 +9,7 @@ twitter: https://twitter.com/quiltdata
 linkedin: https://www.linkedin.com/in/aneeshkarve
 tags:
   - Ecosystem
+  - Speaker
 meta:
   title: "Aneesh Karve"
   description: "Nextflow Summit 2022 Speaker"

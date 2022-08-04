@@ -9,6 +9,7 @@ twitter: https://twitter.com/tallphil
 linkedin: https://www.linkedin.com/in/philewels/
 tags:
   - Community
+  - Speaker
 meta:
   title: "Phil Ewels"
   description: "Nextflow Summit 2022 Speaker"

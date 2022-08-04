@@ -9,6 +9,7 @@ twitter: https://twitter.com/CorreardSolenne
 linkedin: https://www.linkedin.com/in/solenne-correard-2a4675114
 tags:
   - Community
+  - Speaker
 meta:
   title: "Solenne Correard"
   description: "Nextflow Summit 2022 Speaker"

@@ -9,6 +9,7 @@ twitter: https://twitter.com/Bioinfo94
 linkedin: https://www.linkedin.com/in/ali-hakimzadeh-15a16678/
 tags:
   - Community
+  - Poster
 meta:
   title: "Ali Hakimzadeh"
   description: "Nextflow Summit 2022 Poster Presenter"

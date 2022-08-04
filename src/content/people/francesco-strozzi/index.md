@@ -9,6 +9,7 @@ twitter: https://twitter.com/fstrozzi
 linkedin: https://www.linkedin.com/in/francescostrozzi
 tags:
   - Community
+  - Speaker
 meta:
   title: "Francesco	Strozzi"
   description: "Nextflow Summit 2022 Speaker"

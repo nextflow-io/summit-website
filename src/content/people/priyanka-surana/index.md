@@ -9,6 +9,7 @@ twitter:
 linkedin: http://linkedin.com/in/priyanka-surana/
 tags:
   - Community
+  - Speaker
 meta:
   title: "Priyanka Surana"
   description: "Nextflow Summit 2022 Speaker"

@@ -9,6 +9,7 @@ twitter: https://twitter.com/RikeHanssen
 linkedin: https://www.linkedin.com/in/friederike-hanssen/	
 tags:
   - Community
+  - Speaker
 meta:
   title: "Friederike Hanssen"
   description: "Nextflow Summit 2022 Speaker"

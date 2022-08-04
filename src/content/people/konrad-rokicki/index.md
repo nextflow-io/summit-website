@@ -9,6 +9,7 @@ twitter: https://twitter.com/konrad_rokicki
 linkedin: https://www.linkedin.com/in/krokicki
 tags:
   - Community
+  - Speaker
 meta:
   title: "Konrad Rokicki"
   description: "Nextflow Summit 2022 Speaker"

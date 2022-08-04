@@ -9,6 +9,7 @@ twitter: https://twitter.com/boofla
 linkedin: https://www.linkedin.com/in/brendanbouffler
 tags:
   - Ecosystem
+  - Speaker
 meta:
   title: "Brendan Bouffler"
   description: "Nextflow Summit 2022 Speaker"

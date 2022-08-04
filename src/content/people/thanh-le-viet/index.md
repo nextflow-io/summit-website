@@ -9,6 +9,7 @@ twitter: https://twitter.com/thanhleviet
 linkedin: https://www.linkedin.com/in/levietthanh/
 tags:
   - Ecosystem
+  - Speaker
 meta:
   title: "Thanh Le Viet"
   description: "Nextflow Summit 2022 Speaker"

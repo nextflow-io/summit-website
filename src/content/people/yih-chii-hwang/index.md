@@ -9,6 +9,7 @@ twitter: https://twitter.com/yihchii
 linkedin: https://www.linkedin.com/in/yihchii/
 tags:
   - Ecosystem
+  - Speaker
 meta:
   title: "Yih-Chii Hwang"
   description: "Nextflow Summit 2022 Speaker"

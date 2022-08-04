@@ -9,6 +9,7 @@ twitter:
 linkedin: https://www.linkedin.com/in/ra%C3%BAl-alc%C3%A1ntara-arag%C3%B3n-846a0452/
 tags:
   - Community
+  - Speaker
 meta:
   title: "Raul Alcantara Aragon"
   description: "Nextflow Summit 2022 Speaker"
