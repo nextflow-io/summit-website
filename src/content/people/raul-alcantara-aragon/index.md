@@ -2,7 +2,7 @@
 slug: /speakers/raul-alcantara-aragon/
 name: Raul Alcantara Aragon
 email: 
-position: Bioinformatician at CNAG-CRG
+position: Senior Software Developer at the Wellcome Sanger Institute
 image: ../../../images/people/raulalcantaraaragon.png
 github: https://github.com/rulixxx
 twitter: 
