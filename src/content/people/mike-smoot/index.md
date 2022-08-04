@@ -2,7 +2,7 @@
 slug: /speakers/mike-smoot/
 name: Mike Smoot
 email: msmoot@illumina.com
-position: Principal Software Engineer at Illumina.
+position: Principal Software Engineer at Illumina
 image: ../../../images/people/mikesmoot.png
 github: 
 twitter: 
