@@ -13,7 +13,7 @@ meta:
   title: "Yih-Chii Hwang"
   description: "Nextflow Summit 2022 Speaker"
 ---
-Yih-Chii is a Principal Scientist at DNAnexusⓇ, leading a team to support customers performing large-scale high-throughput sequencing data analysis and biomedical data processing on the cloud.
+Yih-Chii is a Principal Scientist at DNAnexus<sup>Ⓡ</sup>, leading a team to support customers performing large-scale high-throughput sequencing data analysis and biomedical data processing on the cloud.
 
 Yih-Chii’s career has focused on a variety of computational biology areas including genomics, epigenomics, and translational informatics. She participates in the Genome in a Bottle (GIAB) consortium for curating genetic variants benchmark sets of human genomes. She has also developed portable GWAS pipelines for processing and analyzing UK Biobank data.  
 
