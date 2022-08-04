@@ -2,7 +2,7 @@
 slug: /speakers/yih-chii-hwang/
 name: Yih-Chii Hwang
 email: yhwang@dnanexus.com
-position: Principal Scientist at DNAnexus
+position: Principal Scientist at DNAnexus<sup>Ⓡ</sup>
 image: ../../../images/people/yihchiihwang.png
 github: https://github.com/yihchii
 twitter: https://twitter.com/yihchii
