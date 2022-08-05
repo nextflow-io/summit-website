@@ -2,12 +2,13 @@
 slug: /speakers/athanasios-baltzis/
 name: Athanasios Baltzis
 email: athanasios.baltzis@crg.eu
-position: PhD Fellow at the Centre for Genomic Regulation
+position: Ph.D. Fellow at the Centre for Genomic Regulation
 image: ../../../images/people/athanasiosbaltzis.png
 github: https://github.com/athbaltzis
 twitter: https://twitter.com/ath_baltzis
 tags:
   - Ecosystem
+  - Poster presenter
 meta:
   title: "Athanasios Baltzis"
   description: "Nextflow Summit 2022 Poster Presenter"

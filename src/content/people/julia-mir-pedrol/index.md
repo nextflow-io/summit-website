@@ -10,6 +10,7 @@ linkedin: https://www.linkedin.com/in/juliamirpedrol/
 tags:
   - Community
   - Tools
+  - Speaker
 meta:
   title: "Júlia Mir Pedrol"
   description: "Nextflow Summit 2022 Speaker"

@@ -10,6 +10,7 @@ linkedin: https://www.linkedin.com/in/evan-floden-36137018/
 tags:
   - Social
   - Ecosystem
+  - Speaker
 meta:
   title: "Evan Floden"
   description: "Nextflow Summit 2022 Speaker"

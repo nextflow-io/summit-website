@@ -2,13 +2,14 @@
 slug: /speakers/mike-smoot/
 name: Mike Smoot
 email: msmoot@illumina.com
-position: Principal Software Engineer at Illumina.
+position: Principal Software Engineer at Illumina
 image: ../../../images/people/mikesmoot.png
 github: 
 twitter: 
 linkedin: https://www.linkedin.com/in/mike-smoot-75ab242/
 tags:
   - Ecosystem
+  - Speaker
 meta:
   title: "Mike Smoot"
   description: "Nextflow Summit 2022 Speaker"

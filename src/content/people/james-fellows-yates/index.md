@@ -9,6 +9,7 @@ twitter: https://twitter.com/jfy133
 linkedin: https://www.linkedin.com/in/james-fellows-yates-999859179/
 tags:
   - Community
+  - Poster presenter
 meta:
   title: "James Fellows Yates"
   description: "Nextflow Summit 2022 Poster Presenter"

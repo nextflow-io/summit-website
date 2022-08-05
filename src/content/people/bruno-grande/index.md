@@ -9,6 +9,7 @@ twitter:
 linkedin: https://www.linkedin.com/in/brunograndephd/
 tags:
   - Ecosystem
+  - Poster presenter
 meta:
   title: "Bruno Grande"
   description: "Nextflow Summit 2022 Poster Presenter"

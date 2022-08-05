@@ -2,13 +2,14 @@
 slug: /speakers/raul-alcantara-aragon/
 name: Raul Alcantara Aragon
 email: 
-position: Bioinformatician at CNAG-CRG
+position: Senior Software Developer at the Wellcome Sanger Institute
 image: ../../../images/people/raulalcantaraaragon.png
 github: https://github.com/rulixxx
 twitter: 
 linkedin: https://www.linkedin.com/in/ra%C3%BAl-alc%C3%A1ntara-arag%C3%B3n-846a0452/
 tags:
   - Community
+  - Speaker
 meta:
   title: "Raul Alcantara Aragon"
   description: "Nextflow Summit 2022 Speaker"
