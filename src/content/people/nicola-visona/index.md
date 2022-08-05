@@ -3,7 +3,7 @@ slug: /speakers/nicola-visona/
 name: Nicola Visonà
 email: n.visona@unimc.it
 position: Ph.D. Student at the Università degli Studi di Macerata
-image: ../../../images/people/empty.png
+image: ../../../images/people/nicolavisona.png
 github: https://github.com/Eskimuz
 twitter: https://twitter.com/VisonaNicola
 linkedin: 
