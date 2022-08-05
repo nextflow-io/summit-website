@@ -2,7 +2,7 @@
 slug: /speakers/friederikehanssen/
 name: Friederike Hanssen
 email: friederike.hanssen@qbic.uni-tuebingen.de
-position: Ph.D. Student at the Quantitative Biology Center
+position: Ph.D. Student at the Quantitative Biology Center, University of Tübingen
 image: ../../../images/people/friederikehanssen.png
 github: https://github.com/FriederikeHanssen
 twitter: https://twitter.com/RikeHanssen

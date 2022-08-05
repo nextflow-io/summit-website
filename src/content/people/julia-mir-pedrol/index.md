@@ -2,7 +2,7 @@
 slug: /speakers/julia-mir-pedrol/
 name: Júlia Mir Pedrol
 email: julia.mir-pedrol@qbic.uni-tuebingen.de
-position: Bioinformatician at the Quantitative Biology Center
+position: Bioinformatician at the Quantitative Biology Center, University of Tübingen
 image: ../../../images/people/juliamirpedrol.png
 github: https://github.com/mirpedrol
 twitter: https://twitter.com/juliamirpedrol
