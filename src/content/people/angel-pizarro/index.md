@@ -2,13 +2,14 @@
 slug: /speakers/angelpizarro/
 name: Angel Pizarro
 email: pizarroa@amazon.com
-position: Principal Developer Advocate for HPC at AWS
+position: Principal Developer Advocate for HPC at Amazon Web Services
 image: ../../../images/people/angelpizarro.png
 github: https://github.com/delagoya
 twitter: https://twitter.com/delagoya
 linkedin: 
 tags:
   - Ecosystem
+  - Speaker
 meta:
   title: "Angel Pizarro"
   description: "Nextflow Summit 2022 Speaker"

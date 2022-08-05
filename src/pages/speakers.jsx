@@ -117,16 +117,11 @@ const SpeakersPage = () => {
                   </div>
                   <div className="w-full md:w-2/3 p-6 inline-flex flex-col">
                     <h3 className="typo-h4 text-green-600 mb-4">
-                      More coming soon
+                      More coming...
                     </h3>
                     <p className="typo-body mb-4">
-                      Apply now to present a poster - the call for speakers is now closed but poster abstracts can still be submitted.
+                      More presenters will be announced soon!
                     </p>
-                    <div className="mt-auto">
-                      <Button to="https://seqera.typeform.com/summit-22-talks" variant="secondary" size="md">
-                        Apply now
-                      </Button>
-                    </div>
                   </div>
                 </div>
               </div>

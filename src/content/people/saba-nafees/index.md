@@ -2,13 +2,14 @@
 slug: /speakers/saba-nafees/
 name: Saba Nafees
 email: saba.nafees314@gmail.com
-position: Data Scientist at Chan Zuckerberg Biohub
+position: Data Scientist at the Chan Zuckerberg Biohub
 image: ../../../images/people/sabanafees.png
 github: https://github.com/snafees
 twitter: https://twitter.com/saba_nafees314
 linkedin: https://www.linkedin.com/in/saba-nafees/
 tags:
   - Community
+  - Speaker
 meta:
   title: "Saba	Nafees"
   description: "Nextflow Summit 2022 Speaker"

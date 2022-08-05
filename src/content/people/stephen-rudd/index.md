@@ -9,6 +9,7 @@ twitter: https://twitter.com/SAGRudd
 linkedin: https://www.linkedin.com/in/stephen-rudd-27650a1/
 tags:
   - Ecosystem
+  - Speaker
 meta:
   title: "Stephen Rudd"
   description: "Nextflow Summit 2022 Speaker"

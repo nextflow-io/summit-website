@@ -9,6 +9,7 @@ twitter: https://twitter.com/katatonikkat
 linkedin: https://www.linkedin.com/in/venkatmalladi/
 tags:
   - Ecosystem
+  - Speaker
 meta:
   title: "Venkat Malladi"
   description: "Nextflow Summit 2022 Speaker"

@@ -8,6 +8,7 @@ twitter: https://twitter.com/PaoloDiTommaso
 linkedin: https://www.linkedin.com/in/paoloditommaso/
 tags:
   - Nextflow
+  - Speaker
 meta:
   title: "Paolo di Tommaso"
   description: "Nextflow Summit 2022 Speaker"

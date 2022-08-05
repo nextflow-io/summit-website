@@ -2,13 +2,14 @@
 slug: /speakers/kubra-narci/
 name: Kübra Narcı
 email: kuebra.narci@dkfz-heidelberg.de
-position: Bioinformatician at German Human Genome-Phenome Archive
+position: Bioinformatician at the German Human Genome-Phenome Archive
 image: ../../../images/people/kubranarci.png
 github: https://github.com/kubranarci
 twitter: https://twitter.com/kubranarci
 linkedin: https://www.linkedin.com/in/kubranarci/	
 tags:
   - Community
+  - Poster presenter
 meta:
   title: "Kübra Narcı"
   description: "Nextflow Summit 2022 Poster Presenter"

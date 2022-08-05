@@ -2,13 +2,14 @@
 slug: /speakers/priyanka-surana/
 name: Priyanka Surana
 email: ps22@sanger.ac.uk
-position: Senior Bioinformatician at Wellcome Sanger Institute
+position: Senior Bioinformatician at the Wellcome Sanger Institute
 image: ../../../images/people/priyankasurana.png
 github: https://github.com/priyanka-surana
 twitter: 
 linkedin: http://linkedin.com/in/priyanka-surana/
 tags:
   - Community
+  - Speaker
 meta:
   title: "Priyanka Surana"
   description: "Nextflow Summit 2022 Speaker"
