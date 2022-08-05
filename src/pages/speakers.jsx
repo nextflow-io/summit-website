@@ -117,10 +117,10 @@ const SpeakersPage = () => {
                   </div>
                   <div className="w-full md:w-2/3 p-6 inline-flex flex-col">
                     <h3 className="typo-h4 text-green-600 mb-4">
-                      More coming
+                      More coming...
                     </h3>
                     <p className="typo-body mb-4">
-                      More presenters will be announced soon
+                      More presenters will be announced soon!
                     </p>
                   </div>
                 </div>
