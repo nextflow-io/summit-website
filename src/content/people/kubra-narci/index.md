@@ -2,7 +2,7 @@
 slug: /speakers/kubra-narci/
 name: Kübra Narcı
 email: kuebra.narci@dkfz-heidelberg.de
-position: Bioinformatician at German Human Genome-Phenome Archive
+position: Bioinformatician at the German Human Genome-Phenome Archive
 image: ../../../images/people/kubranarci.png
 github: https://github.com/kubranarci
 twitter: https://twitter.com/kubranarci

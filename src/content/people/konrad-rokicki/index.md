@@ -2,7 +2,7 @@
 slug: /speakers/konrad-rokicki/
 name: Konrad Rokicki
 email: 
-position: Software Engineering Manager at Janelia Research Campus
+position: Software Engineering Manager at the Janelia Research Campus
 image: ../../../images/people/konradrokicki.png
 github: https://github.com/krokicki
 twitter: https://twitter.com/konrad_rokicki

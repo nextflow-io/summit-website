@@ -2,7 +2,7 @@
 slug: /speakers/solenne-correard/
 name: Solenne Correard
 email: 
-position: Postdoctoral fellow at the Centre for Molecular Medicine and Therapeutics, University of British Columbia
+position: Postdoctoral fellow at the Centre for Molecular Medicine and Therapeutics
 image: ../../../images/people/solennecorreard.png
 github: https://github.com/scorreard
 twitter: https://twitter.com/CorreardSolenne
