@@ -21,3 +21,5 @@ Vladimir's Ph.D. research was devoted to phylogeography and population genetics 
 
 Currently, Vladimir focuses on the drivers of the global distribution of soil fungal communities and microbial functional diversity based on soil metagenome sequencing across Europe. In collaboration with the Global Biodiversity Information Facility (GBIF), he is developing a pipeline for phylogenetic diversity analysis of the extensive (billion-record scale) worldwide species occurrence data.
 
+Vladimir will be presenting his work "NextITS: a pipeline for metabarcoding fungi with full-length ITS sequenced with PacBio" and 
+"PhyloNext: a pipeline for phylogenetic diversity analysis of GBIF-mediated data in the cloud".

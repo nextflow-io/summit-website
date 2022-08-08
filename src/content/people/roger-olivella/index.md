@@ -2,7 +2,7 @@
 slug: /speakers/roger-olivella/
 name: Roger Olivella
 email: roger.olivella@crg.eu
-position: Senior Bioinformatician at Centre for Genomic Regulation
+position: Senior Bioinformatician at the Centre for Genomic Regulation
 image: ../../../images/people/rogerolivella.png
 github: https://github.com/rolivella
 twitter: https://twitter.com/roger_olivella
