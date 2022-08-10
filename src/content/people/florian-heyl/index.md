@@ -1,4 +1,3 @@
-Florian	Heyl
 ---
 slug: /speakers/florian-heyl/
 name: Florian Heyl
