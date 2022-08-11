@@ -150,28 +150,6 @@ const VanuePage = () => {
                   </p>
                 </Accordion.Detail>
               </Accordion.Item>
-              <Accordion.Item
-                className="border border-gray-800"
-                iconClassName="text-green-500"
-                activeIconClassName="text-white"
-              >
-                <Accordion.Summary>
-                  <p className="typo-intro">
-                    Visas
-                  </p>
-                </Accordion.Summary>
-                <Accordion.Detail>
-                  <p className="typo-body">
-                  EU citizens do not need a visa to visit Spain. Visitors from non-EU countries may require 
-                  a visa and must possess a passport valid for at least three months.
-                  </p>
-                  <p className="typo-body">
-                  Please check the entry requirements for Spain to review visa rules for your own situation. 
-                  Visa invitation letters can be issued to attendees from countries requiring a visa to enter Spain. 
-                  If you require an invitation letter please <a href = "mailto: info@seqera.io">contact us by email</a>.
-                  </p>
-                </Accordion.Detail>
-              </Accordion.Item>
             </Accordion>
           </div>
         </div>
