@@ -164,7 +164,8 @@ const VanuePage = () => {
                   <p className="typo-body">
                   EU citizens do not need a visa to visit Spain. Visitors from non-EU countries may require 
                   a visa and must possess a passport valid for at least three months.
-
+                  </p>
+                  <p className="typo-body">
                   Please check the entry requirements for Spain to review visa rules for your own situation. 
                   Visa invitation letters can be issued to attendees from countries requiring a visa to enter Spain. 
                   If you require an invitation letter please <a href = "mailto: info@seqera.io">contact us by email</a>.
