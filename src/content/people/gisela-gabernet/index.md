@@ -1,4 +1,3 @@
-Gisela	Gabernet
 ---
 slug: /speakers/gisela-gabernet/
 name: Gisela Gabernet
