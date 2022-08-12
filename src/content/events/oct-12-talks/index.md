@@ -16,3 +16,6 @@ tags:
 youtube: Watch on Youtube
 youtubeUrl: https://www.youtube.com/c/nextflow
 ---
+The session will be composed of multiple talks given by several speakers. Details will be announced soon.
+
+[Link text](/link/)
