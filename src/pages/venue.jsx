@@ -164,7 +164,11 @@ const VanuePage = () => {
                   </p>
                   <p className="typo-body">
                     Up-to-date information on health measures, travel restrictions, and mask wearing can be found at
-                    Re-open EU.
+                    {' '}
+                    <Link to="https://reopen.europa.eu/">
+                      Re-open EU
+                    </Link>
+                    .
                   </p>
                 </Accordion.Detail>
               </Accordion.Item>
@@ -186,7 +190,12 @@ const VanuePage = () => {
                   </p>
                   <p className="typo-body">
                     If you need to apply for a visa to enter Spain we can issue you with a personalized invitation
-                    letter to assist your application. If this pertains to you please contact us by email at hr@seqera.io.
+                    letter to assist your application. If this pertains to you please contact us by email at
+                    {' '}
+                    <Link to="mailto:hr@seqera.io">
+                      hr@seqera.io
+                    </Link>
+                    .
                   </p>
                 </Accordion.Detail>
               </Accordion.Item>
