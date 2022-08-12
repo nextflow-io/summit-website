@@ -48,13 +48,14 @@ const SpeakersPage = () => {
       <div className="py-32 bg-gray-900 text-white">
         <div className="container-lg text-center">
           <h1 className="typo-h2 mb-4">
-            Join us for the Nextflow event
+            More than 25 speakers to look forward to
           </h1>
           <p className="typo-body max-w-xl mb-6 mx-auto">
-            Join us in Barcelona or virtually to hear about the latest developments and innovations in the Nextflow world.
+            The call for speakers is now closed. The call for posters  will remain open until September 9 or until all
+            places are filled.
           </p>
           <Button to="/call-for-abstracts/" variant="accent" size="md" arrow>
-            Call for abstracts
+            Call for abstracts - posters
           </Button>
         </div>
       </div>
