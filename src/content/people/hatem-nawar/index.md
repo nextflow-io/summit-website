@@ -1,4 +1,3 @@
-Hatem Nawar
 ---
 slug: /speakers/hatem-nawar/
 name: Hatem Nawar
