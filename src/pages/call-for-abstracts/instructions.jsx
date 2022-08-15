@@ -27,53 +27,19 @@ const InstructionsPage = () => {
             Instructions
           </h1>
           <p className="typo-body">
-            The call for abstracts is open untill July 22, 2022. Abstracts will be read and presenters notified on a
-            rolling basis, so apply soon. The final abstracts will be accepted and presenters notified at the end of
-            July.
+            The call for talks is now closed. The call for posters will remain open until September 9 or when all spaces
+            are filled.
           </p>
           <div className="bg-black border border-gray-800 rounded-md p-8 mt-10">
             <h2 className="typo-h3 mb-4">
               Talks
             </h2>
-            <h3 className="typo-intro mb-4">
-              Formats
-            </h3>
-            <List type="bullet" iconClassName="text-white" className="mb-8">
-              <List.Item className="typo-body">
-                Long-form - approx. 40 min, including time for Q&A
-              </List.Item>
-              <List.Item className="typo-body">
-                Lightning - approx. 20 min, including time for Q&A
-              </List.Item>
-            </List>
-            <h3 className="typo-intro mb-4">
-              Themes
-            </h3>
-            <List type="bullet" iconClassName="text-white" className="mb-8">
-              <List.Item className="typo-body">
-                Nextflow - central tool, language, and plugins
-              </List.Item>
-              <List.Item className="typo-body">
-                Community - pipelines, applications, and use cases
-              </List.Item>
-              <List.Item className="typo-body">
-                Ecosystem - infrastructure and environments
-              </List.Item>
-              <List.Item className="typo-body">
-                Software - containers and tool packaging
-              </List.Item>
-            </List>
-            <h3 className="typo-intro mb-4">
-              Where
-            </h3>
-            <List type="bullet" iconClassName="text-white" className="mb-4">
-              <List.Item className="typo-body">
-                In person and recorded for live streaming and sharing online after the event
-              </List.Item>
-            </List>
-            <Link to="https://seqera.typeform.com/summit-22-talks" noBorder className="typo-body text-green-600">
-              Apply now
-            </Link>
+            <p className="typo-body mb-4">
+              The call for talks is now closed. Keep an eye on our speakers page to who has been selected to present.
+            </p>
+            <span className="typo-body bg-gray-800 rounded-sm py-2 px-4">
+              Closed
+            </span>
           </div>
           <div className="bg-black border border-gray-800 rounded-md p-8 mt-10">
             <h2 className="typo-h3 mb-4">

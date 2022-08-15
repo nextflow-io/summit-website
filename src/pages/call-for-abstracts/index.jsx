@@ -37,7 +37,7 @@ const CallForAbstractsPage = () => {
       <div className="py-32 bg-gray-900 text-white">
         <div className="container-lg text-center">
           <h1 className="typo-h2 mb-4">
-            Call for poster abstracts still open
+            Call for abstracts
           </h1>
           <p className="typo-body max-w-md mb-8 mx-auto">
             Submit your abstract for one of the key themes: Nextflow, community, ecosystem, or software.
@@ -65,10 +65,20 @@ const CallForAbstractsPage = () => {
               </p>
               <List type="bullet" iconClassName="text-white" className="mb-6">
                 <List.Item className="typo-body">
-                  Talks – presented in person in Barcelona
+                  <span className="mr-2">
+                    Talks – presented in person in Barcelona
+                  </span>
+                  <span className="typo-body bg-gray-800 rounded-sm py-2 px-4">
+                    Closed
+                  </span>
                 </List.Item>
                 <List.Item className="typo-body">
-                  Posters - presented in person or virtually
+                  <span className="mr-2">
+                    Posters - presented in person or virtually
+                  </span>
+                  <span className="typo-body bg-gray-800 rounded-sm py-2 px-4">
+                    Open
+                  </span>
                 </List.Item>
               </List>
               <Button to="/call-for-abstracts/instructions/" size="md" variant="secondary">

@@ -4,6 +4,7 @@ import React from 'react';
 
 import { Accordion, Button, Link, List, LocationIcon } from 'website-components';
 
+import AccommodationCard from '../components/AccommodationCard';
 import LocationMap from '../components/LocationMap';
 import Seo from '../components/Seo';
 
@@ -18,6 +19,53 @@ const VanuePage = () => {
           gatsbyImageData(
             placeholder: NONE
           )
+        }
+      }
+      promotedAccommodations: allAccommodation(
+        filter: {promotionCode: {eq: "NEXTFLOW22"}}
+      ) {
+        nodes {
+          id
+          title
+          image {
+            childImageSharp {
+              gatsbyImageData(
+                placeholder: NONE
+                width: 850
+              )
+            }
+          }
+          stars
+          url
+          breakfast
+          walkingTime
+          adultOne
+          adultsTwo
+          tax
+          promotionCode
+        }
+      }
+      otherAccommodations: allAccommodation(
+        filter: {promotionCode: {ne: "NEXTFLOW22"}}
+      ) {
+        nodes {
+          id
+          title
+          image {
+            childImageSharp {
+              gatsbyImageData(
+                placeholder: NONE
+              )
+            }
+          }
+          stars
+          url
+          breakfast
+          walkingTime
+          adultOne
+          adultsTwo
+          tax
+          promotionCode
         }
       }
     }
@@ -90,10 +138,67 @@ const VanuePage = () => {
       <div className="py-20 bg-gray-900 text-white">
         <div className="container-lg">
           <h2 className="typo-h2">
-            Getting there
+            Local information
           </h2>
           <div className="mt-8">
             <Accordion>
+              <Accordion.Item
+                className="border border-gray-800"
+                iconClassName="text-green-500"
+                activeIconClassName="text-white"
+              >
+                <Accordion.Summary>
+                  <p className="typo-intro">
+                    Health and safety (COVID-19)
+                  </p>
+                </Accordion.Summary>
+                <Accordion.Detail>
+                  <p className="typo-body mb-4">
+                    Travel and testing requirements for entry into Spain vary by country. For those entering Spain from
+                    an EU Member State or Schengen Associated country the COVID-19 travel restrictions have been lifted
+                    and providing proof of vaccination, recovery from COVID-19 or negative test results is no longer
+                    required. For those entering Spain from outside an EU Member State or Schengen Associated country
+                    some COVID-19 travel restrictions still apply and providing proof of vaccination, recovery from
+                    COVID-19 or negative test results is still required. Please note that wearing facemasks is
+                    compulsory on all means of public transport in Spain.
+                  </p>
+                  <p className="typo-body">
+                    Up-to-date information on health measures, travel restrictions, and mask wearing can be found at
+                    {' '}
+                    <Link to="https://reopen.europa.eu/">
+                      Re-open EU
+                    </Link>
+                    .
+                  </p>
+                </Accordion.Detail>
+              </Accordion.Item>
+              <Accordion.Item
+                className="border border-gray-800"
+                iconClassName="text-green-500"
+                activeIconClassName="text-white"
+              >
+                <Accordion.Summary>
+                  <p className="typo-intro">
+                    Visas
+                  </p>
+                </Accordion.Summary>
+                <Accordion.Detail>
+                  <p className="typo-body mb-4">
+                    EU citizens do not need a visa to visit Barcelona. Citizens of non-EU countries may require a visa
+                    and must possess a passport valid for at least three months. Please check the entry requirements
+                    for Spain to review visa rules for your own situation.
+                  </p>
+                  <p className="typo-body">
+                    If you need to apply for a visa to enter Spain we can issue you with a personalized invitation
+                    letter to assist your application. If this pertains to you please contact us by email at
+                    {' '}
+                    <Link to="mailto:hr@seqera.io">
+                      hr@seqera.io
+                    </Link>
+                    .
+                  </p>
+                </Accordion.Detail>
+              </Accordion.Item>
               <Accordion.Item
                 className="border border-gray-800"
                 iconClassName="text-green-500"
@@ -106,10 +211,10 @@ const VanuePage = () => {
                 </Accordion.Summary>
                 <Accordion.Detail>
                   <p className="typo-body">
-                    Barcelona Sants is the main railway station in Barcelona. It has direct rail links with other European
-                    cities, including Paris, Zurich, and Milan, and high-speed trains to other major centers in Spain.
-                    The city center can be reached easily from Barcelona Sants using public transport. Tickets for local
-                    public transport can be purchased from the station.
+                    Barcelona Sants is the main railway station in Barcelona. It has direct rail links with other
+                    European cities, including Paris, Zurich, and Milan, and high-speed trains to other major centers in
+                    Spain. The city center can be reached easily from Barcelona Sants using public transport. Tickets
+                    for local public transport can be purchased from the station.
                   </p>
                 </Accordion.Detail>
               </Accordion.Item>
@@ -139,7 +244,7 @@ const VanuePage = () => {
               >
                 <Accordion.Summary>
                   <p className="typo-intro">
-                    Getting around
+                    City transport
                   </p>
                 </Accordion.Summary>
                 <Accordion.Detail>
@@ -151,6 +256,35 @@ const VanuePage = () => {
                 </Accordion.Detail>
               </Accordion.Item>
             </Accordion>
+          </div>
+        </div>
+      </div>
+      <div className="py-20 bg-gray-900 text-white">
+        <div className="container-lg">
+          <h2 className="typo-h2">
+            Accommodation
+          </h2>
+          <div className="mt-8">
+            <h3 className="typo-h5">
+              Hotels with promotion code: NEXTFLOW22 for dates: 10-14 October 2022
+            </h3>
+            <div className="row">
+              {data.promotedAccommodations.nodes.map((acc) => (
+                <div className="col-full lg:col-4 mt-4">
+                  <AccommodationCard acc={acc} />
+                </div>
+              ))}
+            </div>
+            <h3 className="typo-h5 mt-8">
+              Nearby hotels without promotion code
+            </h3>
+            <div className="row">
+              {data.otherAccommodations.nodes.map((acc) => (
+                <div className="col-full lg:col-4 mt-4">
+                  <AccommodationCard acc={acc} />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
