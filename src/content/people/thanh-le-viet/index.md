@@ -2,7 +2,7 @@
 slug: /speakers/thanh-le-viet/
 name: Thanh Le Viet
 email: 
-position: Bioinformatician at the Quadram Institute
+position: Bioinformatician at the Quadram Institute Bioscience
 image: ../../../images/people/thanhleviet.png
 github: https://github.com/thanhleviet
 twitter: https://twitter.com/thanhleviet
