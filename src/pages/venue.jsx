@@ -21,6 +21,13 @@ const VanuePage = () => {
           )
         }
       }
+      sustainabilityImage: file(relativePath: {eq: "photos/sustainability.png"}) {
+        childImageSharp {
+          gatsbyImageData(
+            placeholder: NONE
+          )
+        }
+      }
       promotedAccommodations: allAccommodation(
         filter: {promotionCode: {eq: "NEXTFLOW22"}}
       ) {
@@ -284,6 +291,51 @@ const VanuePage = () => {
                   <AccommodationCard acc={acc} />
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="py-20 bg-gray-900 text-white">
+        <div className="container-lg">
+          <div className="row flex-wrap lg:flex-nowrap">
+            <div className="col-full lg:col-6 order-2 lg:order-1 mt-4 lg:mt-0">
+              <h2 className="typo-h2 mb-4">
+                Sustainability
+              </h2>
+              <p className="typo-body mb-4">
+                The nf-core Hackathon and Nextflow Summit are committed to minimizing their environmental footprints.
+              </p>
+              <List type="bullet" iconClassName="text-white" className="mb-6">
+                <List.Item className="typo-body">
+                  Both events will limit packaging, single use products, and where possible, utilize compostable materials.
+                </List.Item>
+                <List.Item className="typo-body">
+                  Printing of programmes and promotional material will be kept to a minimum with all conference material also being made available online.
+                </List.Item>
+                <List.Item className="typo-body">
+                  In-person attendees are encouraged to make environmentally sustainable travel choices by utilizing public transport and making use of green initiatives at hotels.
+                </List.Item>
+                <List.Item className="typo-body">
+                  Provided catering offers vegan options with a smaller environmental footprint.
+                </List.Item>
+                <List.Item className="typo-body">
+                  All attendees are  encouraged to make an optional donation towards sustainability during the registration process.
+                </List.Item>
+              </List>
+            </div>
+            <div className="col-full lg:col-6 lg:ml-1/12 order-1 lg:order-2">
+              <div className="relative">
+                <div
+                  className="absolute inset-0 bg-center bg-cover bg-no-repeat rounded-sm"
+                  style={{ backgroundImage: `url(${PlaceholderRectangle})` }}
+                />
+                <Image
+                  image={getImage(data.sustainabilityImage)}
+                  className="w-full relative lg:top-6 lg:left-6"
+                  imgClassName="rounded-sm"
+                  alt="Sustainability"
+                />
+              </div>
             </div>
           </div>
         </div>
