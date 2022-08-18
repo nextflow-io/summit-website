@@ -1,8 +1,8 @@
 ---
 slug: /speakers/julien-lagarde/
-name: 
+name: Julien Lagarde
 email: julien.lagarde@flomics.com
-position: 
+position: Head of Bioinformatics at Flomics Biotech
 image: ../../../images/people/julienlagarde.png
 github: https://github.com/julienlag
 twitter: https://twitter.com/julienlag
