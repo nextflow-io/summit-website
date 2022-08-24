@@ -46,10 +46,6 @@ function Seo({ description, lang, meta, title, image }) {
           content: metaDescription,
         },
         {
-          property: `og:image`,
-          content: `${siteUrl}${defaultImage}`,
-        },
-        {
           property: `og:type`,
           content: `website`,
         },
