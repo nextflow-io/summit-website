@@ -3,7 +3,7 @@ slug: /speakers/alan-hoyle/
 name: Alan Hoyle
 email: alanh@unc.edu
 position: Bioinformatics Scientist at UNC Lineberger Comprehensive Cancer Center
-image: ../../../images/people/alanhoyle.png
+ogimage: ../../../images/people/alanhoyle.png
 github:
 twitter: https://twitter.com/alanh42
 linkedin: https://www.linkedin.com/in/alanhoyle/
