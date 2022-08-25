@@ -14,6 +14,8 @@ function Seo({ description, lang, meta, title, image }) {
             author
             siteUrl
             image
+            ogimage
+            og:image
           }
         }
       }
