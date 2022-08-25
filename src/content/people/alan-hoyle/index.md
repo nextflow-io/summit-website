@@ -13,9 +13,8 @@ tags:
 meta:
   title: "Alan Hoyle"
   description: "Nextflow Summit 2022 Speaker"
-  ogimage: ../../../images/people/alanhoyle_card.png
-  og:image: ../../../images/people/alanhoyle_card.png
-  image: ../../../images/people/alanhoyle_card.png
+  defaultImage: ../../../images/people/alanhoyle_card.png
+
 ---
 Alan Hoyle is a bioinformatics scientist who was an undergrad at UNC and never left.  After years working on the campus learning management systems, he shifted to working at the Lineberger Comprehensive Cancer Center and has developed and modified workflows for investigators.  He has worked on large scale projects like TCGA, small projects for individual students and investigators, and made some tiny contributions to well-known third-party tools.  
 
