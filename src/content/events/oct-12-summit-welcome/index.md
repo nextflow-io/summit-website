@@ -1,5 +1,5 @@
 ---
-timeframe: 5:00 - 5:20 PM (20 min)
+timeframe: 5:00 - 5:30 PM (30 min)
 title: Summit welcome
 description:
 datetime: 2022-10-12T17:00:00.000Z

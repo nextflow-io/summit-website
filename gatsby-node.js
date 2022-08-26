@@ -32,6 +32,8 @@ exports.createSchemaCustomization = ({ actions }) => {
         time: String
         timeframe: String
         speakers: [People] @link(by: "name")
+        events: [Event] @link(by: "slug")
+        isChild: Boolean
         location: String
         locationUrl: String
         youtube: String
@@ -111,6 +113,8 @@ exports.onCreateNode = ({ node, actions, getNode, createNodeId, createContentDig
         date: node.frontmatter.date,
         time: node.frontmatter.time,
         timeframe: node.frontmatter.timeframe,
+        events: node.frontmatter.events,
+        isChild: node.frontmatter.isChild,
         speakers: node.frontmatter.speakers,
         location: node.frontmatter.location,
         locationUrl: node.frontmatter.locationUrl,

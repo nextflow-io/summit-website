@@ -1,20 +1,24 @@
 ---
-timeframe: 5:20 - 7:00 PM (100 min)
+slug: oct-12-talks
+timeframe: 5:30 - 7:00 PM (90 min)
 title: Talks
-description: The session will be composed of multiple talks given by several speakers. Details will be announced soon.
-datetime: 2022-10-12T17:20:00.000Z
+datetime: 2022-10-12T17:30:00.000Z
 date: Oct 12, 2022
-time: 5:20 PM
+time: 5:30 PM
+events:
+  - oct-12-designing-mechanisms-into-bactopia-to-support-its-users-and-contributie-back-to-the-community
+  - oct-12-nf-core-community-updates
+  - oct-12-automated-production-engine-to-decode-the-tree-of-life
+  - oct-12-aws-sponsor
 speakers:
-  - Evan Floden
+  - Robert Petit
   - Phil Ewels
-  - Paolo di Tommaso
+  - Priyanka Surana
+  - Brendan Bouffler
 tags:
   - Nextflow
   - Software
   - Community
-youtube: Watch on Youtube
-youtubeUrl: https://www.youtube.com/c/nextflow
 ---
 The session will be composed of multiple talks given by several speakers. Details will be announced soon.
 
