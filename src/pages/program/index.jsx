@@ -183,6 +183,7 @@ const ProgramPage = ({ location }) => {
                           {event.events.map((childEvent) => (
                             <EventCard
                               event={childEvent}
+                              hidden={isFiltered(childEvent)}
                               isChild
                             />
                           ))}

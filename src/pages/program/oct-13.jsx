@@ -13,11 +13,13 @@ import LogoNextflow from '../../images/logo-nextflow.svg';
 
 const ProgramOct13Page = ({ location }) => {
   const [ activeTag, setActiveTag ] = useState('');
+  const [ expandedEvent, setExpandedEvent ] = useState('');
 
   const data = useStaticQuery(graphql`
     query {
-      events: allEvent(filter: {date: {eq: "Oct 13, 2022"}}, sort: {fields: datetime}) {
+      events: allEvent(filter: {date: {eq: "Oct 13, 2022"}, isChild: {ne: true}}, sort: {fields: datetime}) {
         nodes {
+          id
           timeframe
           title
           description
@@ -37,6 +39,30 @@ const ProgramOct13Page = ({ location }) => {
                   placeholder: NONE
                   width: 32
                 )
+              }
+            }
+          }
+          events {
+            timeframe
+            title
+            description
+            date
+            time
+            tags
+            location
+            locationUrl
+            youtube
+            youtubeUrl
+            speakers {
+              name
+              image {
+                childImageSharp {
+                  gatsbyImageData(
+                    height: 32
+                    placeholder: NONE
+                    width: 32
+                  )
+                }
               }
             }
           }
@@ -61,6 +87,22 @@ const ProgramOct13Page = ({ location }) => {
     }
 
     return true;
+  }
+
+  const isExpandable = (event) => {
+    return event.events && event.events.length > 0;
+  }
+
+  const isExpanded = (event) => {
+    return event.id === expandedEvent;
+  }
+
+  const expand = (event) => {
+    if (event.id === expandedEvent) {
+      setExpandedEvent('');
+    } else {
+      setExpandedEvent(event.id);
+    }
   }
 
   const events = data.events.nodes;
@@ -125,11 +167,31 @@ const ProgramOct13Page = ({ location }) => {
               <span className="block typo-body text-center">end</span>
             </div>
             <div className="col-full lg:col-9">
-              {events.map((event) => (
-                <EventCard
-                  event={event}
-                  hidden={isFiltered(event)}
-                />
+              {events.map((event, i) => (
+                <>
+                  <EventCard
+                    event={event}
+                    hidden={isFiltered(event)}
+                    expanded={isExpanded(event)}
+                    isExpandable={isExpandable(event)}
+                    onExpand={() => { expand(event) }}
+                  />
+                  {isExpanded(event) && (
+                    <>
+                      {event.events && (
+                        <div>
+                          {event.events.map((childEvent) => (
+                            <EventCard
+                              event={childEvent}
+                              hidden={isFiltered(childEvent)}
+                              isChild
+                            />
+                          ))}
+                        </div>
+                      )}
+                    </>
+                  )}
+                </>
               ))}
             </div>
             <div className="hidden lg:block lg:col-2 mt-4">

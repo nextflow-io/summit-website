@@ -1,7 +1,8 @@
 ---
 slug: oct-12-talks
 timeframe: 5:30 - 7:00 PM (90 min)
-title: Talks
+title: "Session: Talks"
+description: Talks from Robert Petit, Phil Ewels, Priyanka Surana and Brendan Bouffler.
 datetime: 2022-10-12T17:30:00.000Z
 date: Oct 12, 2022
 time: 5:30 PM
@@ -20,6 +21,3 @@ tags:
   - Software
   - Community
 ---
-The session will be composed of multiple talks given by several speakers. Details will be announced soon.
-
-[Link text](/link/)
