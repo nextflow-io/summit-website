@@ -13,6 +13,8 @@ tags:
 meta:
   title: "Annick Renevey"
   description: "Nextflow Summit 2022 Speaker"
+  image: ../../../images/share/speaker-annick-renevey.jpg
+
 ---
 Annick Renevey is a bioinformatician at the Clinical Genomics unit at SciLifeLab Stockholm, Sweden. She works on a range of clinical diagnostic pipelines. In particular, a pipeline for the detection of gene fusions from RNA sequencing data of tumors: nf-core/rnafusion. Her work includes the implementation of these pipelines in production setting, leveraging the advantages of the Nextflow and nf-core communities.
 

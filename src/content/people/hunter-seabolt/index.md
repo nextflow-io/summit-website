@@ -13,6 +13,8 @@ tags:
 meta:
   title: "Hunter Seabolt"
   description: "Nextflow Summit 2022 Poster Presenter"
+  image: ../../../images/share/speaker-hunter-seabolt.jpg
+
 ---
 Hunter Seabolt is the Bioinformatics Lead Scientist for the Advanced Molecular Detection contract serving the scientific computing and bioinformatics needs of the Centers for Disease Control and Prevention (CDC).  His work for CDC spans a diverse array of subject areas, such as pathogen discovery from environmental metagenomes, large-scale comparison of isolate genomes for AMR detection and genomic surveillance, and the production of novel software tools for the public health science toolkit. 
  

@@ -13,6 +13,8 @@ tags:
 meta:
   title: "Nicola Visonà"
   description: "Nextflow Summit 2022 Speaker"
+  image: ../../../images/share/speaker-nicola-visona.jpg
+
 ---
 Nicola is a Ph.D. student in quantitative economics at the University of Macerata. He is working on Agent-Based Models of industrial transition in a historical context.
 

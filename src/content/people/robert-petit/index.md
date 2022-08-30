@@ -13,6 +13,8 @@ tags:
 meta:
   title: "Robert Petit"
   description: "Nextflow Summit 2022 Speaker"
+  image: ../../../images/share/speaker-robert-petit.jpg
+
 ---
 Robert Petit is a Senior Bioinformatics Scientist at Wyoming Public Health Laboratory in Wyoming, USA. He has developed numerous bioinformatic tools, including Bactopia, a Nextflow pipeline for the complete analysis of bacterial genomes. He is also an active member of the bioinformatic community and regular contributor to open-source projects, such as Bioconda and nf-core/modules.
 

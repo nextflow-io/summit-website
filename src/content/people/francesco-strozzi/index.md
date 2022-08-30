@@ -13,6 +13,8 @@ tags:
 meta:
   title: "Francesco	Strozzi"
   description: "Nextflow Summit 2022 Speaker"
+  image: ../../../images/share/speaker-francesco-strozzi.jpg
+
 ---
 During his career Francesco worked at the crossroad between academia and industry, primary in the genomics field. He is very passionate about biology and technology, and since 2005 he focused on the development of data analysis pipelines and the application of computational methods to high throughput data, to drive translational and pre-clinical research projects in a wide range of contexts from biotechnology, to immunology and drug discovery.
  

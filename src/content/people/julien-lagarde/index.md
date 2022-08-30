@@ -13,6 +13,8 @@ tags:
 meta:
   title: "Julien Lagarde"
   description: "Nextflow Summit 2022 Poster Presenter"
+  image: ../../../images/share/speaker-julien-lagarde.jpg
+
 ---
 Julien Lagarde is the Head of Bioinformatics at Flomics Biotech (Barcelona) with a long experience in human genomics and transcriptomics. Interested in RNA, liquid biopsies, cancer diagnostics all things geeky. Julien is a big fan of workflow management systems and a recent Nextflow convert!
 

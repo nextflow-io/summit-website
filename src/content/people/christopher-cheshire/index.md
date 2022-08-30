@@ -13,6 +13,8 @@ tags:
 meta:
   title: "Christopher Cheshire"
   description: "Nextflow Summit 2022 Poster Presenter"
+  image: ../../../images/share/speaker-christopher-cheshire.jpg
+
 ---
 Christopher Cheshire is a Post-doctoral Research Fellow at the Francis Crick Institute in the Briscoe lab. He holds a PhD In Genetics and Bioinformatics from the UCL, UK.
 

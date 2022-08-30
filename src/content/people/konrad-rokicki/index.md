@@ -13,6 +13,8 @@ tags:
 meta:
   title: "Konrad Rokicki"
   description: "Nextflow Summit 2022 Speaker"
+  image: ../../../images/share/speaker-konrad-rokicki.jpg
+
 ---
 Konrad Rokicki leads the software engineering group at Janelia Research Campus, where his team has been establishing the use of containerization technologies and workflow systems for improving the portability and reproducibility of large-scale microscopy image analysis. He holds an M.S. in Computer Science from George Washington University.
  
