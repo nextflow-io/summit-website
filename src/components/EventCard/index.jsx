@@ -58,7 +58,16 @@ const EventCard = ({ event, hidden, expanded, isExpandable, onExpand, isChild })
       )}
       {!isExpandable && (
         <h3 className="typo-h4 mb-4">
-          {event.title}
+          {event.hasPage && (
+            <Link to={`/program/${event.slug}/`} noBorder>
+              {event.title}
+            </Link>
+          )}
+          {!event.hasPage && (
+            <span>
+              {event.title}
+            </span>
+          )}
         </h3>
       )}
       {event.description && (

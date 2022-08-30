@@ -6,6 +6,7 @@ datetime: 2022-10-13T15:20:00.000Z
 date: Oct 13, 2022
 time: 15:20 AM
 isChild: true
+hasPage: true
 speakers:
   - "Júlia Mir Pedrol"
 tags:

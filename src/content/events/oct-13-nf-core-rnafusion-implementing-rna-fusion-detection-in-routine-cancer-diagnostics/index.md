@@ -6,6 +6,7 @@ datetime: 2022-10-13T16:35:00.000Z
 date: Oct 13, 2022
 time: 16:35 PM
 isChild: true
+hasPage: true
 speakers:
   - Annick Renevey
 tags:

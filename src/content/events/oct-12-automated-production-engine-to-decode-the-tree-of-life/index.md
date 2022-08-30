@@ -6,6 +6,7 @@ datetime: 2022-10-12T18:15:00.000Z
 date: Oct 12, 2022
 time: 6:15 PM
 isChild: true
+hasPage: true
 speakers:
   - Priyanka Surana
 tags:

@@ -6,6 +6,7 @@ datetime: 2022-10-13T18:15:00.000Z
 date: Oct 13, 2022
 time: 6:15 PM
 isChild: true
+hasPage: true
 speakers:
   - Yih-Chii Hwang
 tags:

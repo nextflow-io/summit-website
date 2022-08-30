@@ -6,6 +6,7 @@ datetime: 2022-10-13T11:15:00.000Z
 date: Oct 13, 2022
 time: 11:15 AM
 isChild: true
+hasPage: true
 speakers:
   - Hatem Nawar
 tags:

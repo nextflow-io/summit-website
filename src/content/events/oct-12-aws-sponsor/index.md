@@ -6,6 +6,7 @@ datetime: 2022-10-12T18:30:00.000Z
 date: Oct 12, 2022
 time: 6:30 PM
 isChild: true
+hasPage: true
 speakers:
   - Brendan Bouffler
 tags:

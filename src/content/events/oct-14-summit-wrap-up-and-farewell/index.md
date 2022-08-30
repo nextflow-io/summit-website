@@ -7,6 +7,7 @@ tags:
 speakers:
   - Evan Floden
 isChild: true
+hasPage: true
 datetime: 2022-10-14T13:15:00.000Z
 date: Oct 14, 2022
 time: 1:15 PM

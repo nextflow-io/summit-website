@@ -6,6 +6,7 @@ datetime: 2022-10-14T10:30:00.000Z
 date: Oct 14, 2022
 time: 11:00 AM
 isChild: true
+hasPage: true
 speakers:
   - Solenne Correard
 tags:

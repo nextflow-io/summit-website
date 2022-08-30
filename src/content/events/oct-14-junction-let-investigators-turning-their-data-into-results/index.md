@@ -6,6 +6,7 @@ datetime: 2022-10-14T10:45:00.000Z
 date: Oct 14, 2022
 time: 10:45 AM
 isChild: true
+hasPage: true
 speakers:
   - Alan Hoyle
 tags:

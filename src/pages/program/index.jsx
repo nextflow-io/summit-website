@@ -19,6 +19,7 @@ const ProgramPage = ({ location }) => {
     query {
       events: allEvent(filter: {date: {eq: "Oct 12, 2022"}, isChild: {ne: true}}, sort: {fields: datetime}) {
         nodes {
+          slug
           id
           timeframe
           title
@@ -30,6 +31,7 @@ const ProgramPage = ({ location }) => {
           locationUrl
           youtube
           youtubeUrl
+          hasPage
           speakers {
             name
             image {
@@ -43,6 +45,7 @@ const ProgramPage = ({ location }) => {
             }
           }
           events {
+            slug
             timeframe
             title
             description
@@ -53,6 +56,7 @@ const ProgramPage = ({ location }) => {
             locationUrl
             youtube
             youtubeUrl
+            hasPage
             speakers {
               name
               image {

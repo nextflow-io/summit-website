@@ -6,6 +6,7 @@ datetime: 2022-10-13T11:00:00.000Z
 date: Oct 13, 2022
 time: 11:00 AM
 isChild: true
+hasPage: true
 speakers:
   - Tony Zeljkovic
 tags:

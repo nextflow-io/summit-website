@@ -34,6 +34,7 @@ exports.createSchemaCustomization = ({ actions }) => {
         speakers: [People] @link(by: "name")
         events: [Event] @link(by: "slug")
         isChild: Boolean
+        hasPage: Boolean
         location: String
         locationUrl: String
         youtube: String
@@ -120,6 +121,7 @@ exports.onCreateNode = ({ node, actions, getNode, createNodeId, createContentDig
         locationUrl: node.frontmatter.locationUrl,
         youtube: node.frontmatter.youtube,
         youtubeUrl: node.frontmatter.youtubeUrl,
+        hasPage: node.frontmatter.hasPage,
         tags: node.frontmatter.tags,
         meta: node.frontmatter.meta,
         content: node,
@@ -169,6 +171,7 @@ exports.onCreateNode = ({ node, actions, getNode, createNodeId, createContentDig
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage, createRedirect } = actions;
 
+  const eventTemplate = path.resolve('src/templates/event.jsx');
   const speakerTemplate = path.resolve('src/templates/speaker.jsx');
 
   const result = await graphql(`
@@ -176,6 +179,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       speakers: allPeople {
         nodes {
           slug
+        }
+      }
+      events: allEvent {
+        nodes {
+          slug
+          hasPage
         }
       }
     }
@@ -197,6 +206,20 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       },
     });
   });
+
+  const events = result.data.events.nodes;
+
+  events.forEach((event) => {
+    if (event.hasPage) {
+      createPage({
+        path: `/program/${event.slug}/`,
+        component: eventTemplate,
+        context: {
+          slug: event.slug,
+        }
+      });
+    }
+  })
 };
 
 exports.onCreateWebpackConfig = ({ actions, loaders }) => {

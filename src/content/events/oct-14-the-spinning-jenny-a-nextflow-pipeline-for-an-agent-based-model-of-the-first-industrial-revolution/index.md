@@ -6,6 +6,7 @@ datetime: 2022-10-14T11:30:00.000Z
 date: Oct 14, 2022
 time: 11:30 AM
 isChild: true
+hasPage: true
 speakers:
   - Nicola Visonà
 tags:

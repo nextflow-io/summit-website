@@ -6,6 +6,7 @@ datetime: 2022-10-14T12:30:00.000Z
 date: Oct 14, 2022
 time: 12:30 PM
 isChild: true
+hasPage: true
 speakers:
   - Bryan Lajoie
 tags:

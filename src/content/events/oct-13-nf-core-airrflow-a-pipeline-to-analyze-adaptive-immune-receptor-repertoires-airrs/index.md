@@ -6,6 +6,7 @@ datetime: 2022-10-13T10:45:00.000Z
 date: Oct 13, 2022
 time: 10:45 AM
 isChild: true
+hasPage: true
 speakers:
   - Gisela Gabernet
 tags:
