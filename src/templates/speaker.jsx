@@ -22,6 +22,7 @@ const SpeakerPage = ({ data }) => {
       <Seo
         title={speaker.meta.title}
         description={speaker.meta.description}
+        image={speaker.meta.image.publicURL}
       />
       <div className="text-white container-md py-10 md:py-20">
         <div className="inline-flex items-center hover:text-green-600 mb-4">
@@ -110,6 +111,9 @@ export const pageQuery = graphql`
       meta {
         title
         description
+        image {
+          publicURL
+        }
       }
     }
   }
