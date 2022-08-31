@@ -14,10 +14,10 @@ tags:
 youtube: Watch on Youtube
 youtubeUrl: https://www.youtube.com/c/nextflow
 ---
-The goal of this panel conversation is to bring together our nextflow community to learn from a diverse set of panelists who will share their stories, struggles and successes. The aims of this conversation are to highlight the general gaps that are ubiquitous across the programming and technical communities, the importance of bringing women and students from underrepresented communities together, and ways to share our knowledge beyond our workplaces. The session will be interactive and will conclude with audience Q&A and discussion.
+<div className="mb-4">
+  <small className="typo-small">
+    Yih-Chii Hwang, Nicolas Goffard
+  </small>
+</div>
 
-<Button to="https://github.com/nf-core/rnafusion">
-  View project
-</Button>
-
-**Other authors:** Martin Proks, Maxime Garcia, Rickard Hammarén, Praveen Raj, Philip Ewels, Anders Jemt, Valtteri Wirta
+Nextflow is a powerful workflow language for bioinformatics analysis. It has been widely applied by researchers in analyzing and processing genetic sequencing data, such as genomics and transcriptomics data. When research subjects are human patients, privacy and management of these data while processing is critical and is regulated in many jurisdictions. Bioinformaticians in drug development who want to enable Nextflow pipelines across the enterprise must maintain compliance with GxP quality guidelines and regulations for the production and distribution of pharmaceutical and diagnostics products. This poster will discuss the different approaches to the deployment of Nextflow pipelines in these regulated environments.

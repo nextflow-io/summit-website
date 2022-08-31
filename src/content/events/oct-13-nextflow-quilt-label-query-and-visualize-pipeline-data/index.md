@@ -1,6 +1,6 @@
 ---
 slug: oct-13-nextflow-quilt-label-query-and-visualize-pipeline-data
-timeframe: 12:50 PM - 1:20 PM (30 min)
+timeframe: 12:50 - 1:20 PM (30 min)
 title: "Nextflow + Quilt: Label, query and visualize pipeline data"
 datetime: 2022-10-13T12:50:00.000Z
 date: Oct 13, 2022

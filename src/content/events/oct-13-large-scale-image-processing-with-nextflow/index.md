@@ -1,23 +1,29 @@
 ---
-slug: oct-13-epi2me-labs-and-democratising-nanopore-sequence-analysis
-timeframe: 12:20 PM - 12:35 PM (15 min)
-title: "EPI2ME Labs and democratising Nanopore sequence analysis"
-datetime: 2022-10-13T11:50:00.000Z
+slug: oct-13-large-scale-image-processing-with-nextflow
+timeframe: 4:20 - 4:35 PM (15 min)
+title: "Large scale image processing with Nextflow"
+datetime: 2022-10-13T16:20:00.000Z
 date: Oct 13, 2022
-time: 11:50 AM
+time: 4:20 PM
 isChild: true
 hasPage: true
 speakers:
-  - Stephen Rudd
+  - Konrad Rokicki
 tags:
-  - Ecosystem
+  - Community
 youtube: Watch on Youtube
 youtubeUrl: https://www.youtube.com/c/nextflow
 ---
-Oxford Nanopore Technologies develops and sells DNA and RNA sequencing products. The technology is based on sensing changes in current flow as nucleic acid molecules transit a biological nanopore. Our goal is to enable the analysis of anything, by anyone, anywhere. Our MinION sequencing device is small and portable; it is commonly used in combination with Windows laptops. This presentation will introduce how we are simplifying the DNA sequence analysis processes for non- bioinformaticians who may also be sequencing in the field.
+<div className="mb-4">
+  <small className="typo-small">
+    Konrad Rokicki, Cristian Goina, Yuhan Wang
+  </small>
+</div>
 
-The sequence data produced by Oxford Nanopore sequencing devices has specific characteristics; the data becomes available in real-time and DNA sequences of up to hundreds of kilobases in size may be routinely sequenced. A starting dataset may contain multiple demultiplex folders each containing hundreds of FASTQ files that are prepared over the course of a 72-hour sequencing run. These characteristics offer new analysis horizons but demand flexible approaches to data orchestration and integration.
+<div>
+  <Button to="https://github.com/JaneliaSciComp/multifish" variant="accent" size="md" arrow>
+    View project
+  </Button>
+</div>
 
-We have been using Nextflow to develop such data analysis workflows that are relevant to our users. The scope of workflows developed ranges from the analysis of multiplexed SARS-CoV-2 genome sequences, through whole human genome analysis, and into broader real-time metagenomic classification. I will introduce our solution to the real-time analysis of metagenomic sequence data during the presentation. All our workflows are freely available from our GitHub repository, [https://github.com/epi2me-labs](https://labs.epi2me.io).
-
-EPI2ME Labs is our multi-platform desktop environment developed to support users who are less confident with the terminal through their data analyses. EPI2ME Labs provides a JupyterLab interface to a collection of structured tutorials and the workflows referenced above. EPI2ME Labs offers a clean GUI to specify and run analyses, present results, and maintain logging information. This product will be introduced along with pointers as to how it may be extended to run workflows from other sources. EPI2ME Labs is available for download from [https://labs.epi2me.io](https://labs.epi2me.io) – the software is also pre-installed on GridION sequencing devices.
+Biomedical image analysis is a rapidly expanding field and presents unique challenges for pipelines and workflows. Terabyte-scale microscopy data pushes the limits of existing workflow solutions, while also requiring the integration of diverse software solutions for block-based image processing tasks such as image stitching, registration, machine-learning-based segmentation, and spot detection. I will describe the EASI-FISH analysis pipeline for spatial transcriptomics, show some of the Nextflow DSL2 workflows we developed, and discuss the approaches we used to deal with large image data sets and polyglot tool sets (MATLAB, Java, Spark, Python, Dask).

@@ -6,13 +6,14 @@ position: Research fellow at the Institute of Ecology and Earth Sciences, Univer
 image: ../../../images/people/vladimirmikryukov.png
 github: https://github.com/vmikk
 twitter: https://mobile.twitter.com/vmikkkk
-linkedin: 
+linkedin:
 tags:
   - Community
   - Poster Presenter
 meta:
   title: "Vladimir Mikryukov"
   description: "Nextflow Summit 2022 Poster Presenter"
+  image: ../../../images/share/share-image.jpg
 ---
 
 Vladimir Mikryukov is a molecular ecologist with special interests in ecological genetics, biodiversity, and metagenomics. He is a research fellow at the Ecology of Biological Interactions Workgroup at the Institute of Ecology and Earth Sciences of the University of Tartu and a member of the Mycology and Microbiology Center (MMC, Estonia).
@@ -21,5 +22,5 @@ Vladimir's Ph.D. research was devoted to phylogeography and population genetics 
 
 Currently, Vladimir focuses on the drivers of the global distribution of soil fungal communities and microbial functional diversity based on soil metagenome sequencing across Europe. In collaboration with the Global Biodiversity Information Facility (GBIF), he is developing a pipeline for phylogenetic diversity analysis of the extensive (billion-record scale) worldwide species occurrence data.
 
-Vladimir will be presenting his work "NextITS: a pipeline for metabarcoding fungi with full-length ITS sequenced with PacBio" and 
+Vladimir will be presenting his work "NextITS: a pipeline for metabarcoding fungi with full-length ITS sequenced with PacBio" and
 "PhyloNext: a pipeline for phylogenetic diversity analysis of GBIF-mediated data in the cloud".

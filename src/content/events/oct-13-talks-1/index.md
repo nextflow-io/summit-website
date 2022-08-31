@@ -1,5 +1,5 @@
 ---
-timeframe: 10:00 AM - 11:30 PM (90 min)
+timeframe: 10:00 - 11:30 AM (90 min)
 title: "Session 1: Talks"
 description: Talks from Gisela Gabernet, Tony Zeljkovic and Hatem Nawar.
 speakers:

@@ -4,8 +4,8 @@ name: Tony Zeljkovic
 email: tonyzeljkovic@curative.com
 position: Bioinformatics Consultant at Curative
 image: ../../../images/people/tonyzeljkovic.png
-github: 
-twitter: 
+github:
+twitter:
 linkedin: https://www.linkedin.com/in/tony-zeljkovic/
 tags:
   - Ecosystem
@@ -13,6 +13,7 @@ tags:
 meta:
   title: "Tony Zeljkovic"
   description: "Nextflow Summit 2022 Speaker"
+  image: ../../../images/share/share-image.jpg
 ---
 Tony has a passion for breaking Byzantine legacy thinking and delivering bioinformatics solutions that scale, automate and accelerate.
 

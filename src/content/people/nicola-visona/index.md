@@ -6,13 +6,14 @@ position: Ph.D. Student at the Università degli Studi di Macerata
 image: ../../../images/people/nicolavisona.png
 github: https://github.com/Eskimuz
 twitter: https://twitter.com/VisonaNicola
-linkedin: 
+linkedin:
 tags:
   - Community
   - Speaker
 meta:
   title: "Nicola Visonà"
   description: "Nextflow Summit 2022 Speaker"
+  image: ../../../images/share/share-image.jpg
 ---
 Nicola is a Ph.D. student in quantitative economics at the University of Macerata. He is working on Agent-Based Models of industrial transition in a historical context.
 

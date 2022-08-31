@@ -6,13 +6,14 @@ position: Ph.D. Student at the Quantitative Biology Center, University of Tübin
 image: ../../../images/people/friederikehanssen.png
 github: https://github.com/FriederikeHanssen
 twitter: https://twitter.com/RikeHanssen
-linkedin: https://www.linkedin.com/in/friederike-hanssen/	
+linkedin: https://www.linkedin.com/in/friederike-hanssen/
 tags:
   - Community
   - Speaker
 meta:
   title: "Friederike Hanssen"
   description: "Nextflow Summit 2022 Speaker"
+  image: ../../../images/share/share-image.jpg
 ---
 Friederike Hanssen is a PhD Student at the Quantitative Biology Center working on nextflow pipeline development with a focus on further developing nf-core/sarek, a pipeline for germline and somatic variant calling, and applying it in various data analysis projects.
 

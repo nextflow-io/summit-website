@@ -1,9 +1,9 @@
 ---
-timeframe: 3:20 - 4:00 PM (40 min)
+timeframe: 3:35 - 4:05 PM (30 min)
 title: Poster session
 tags:
   - Social
-datetime: 2022-10-13T15:20:00.000Z
+datetime: 2022-10-13T15:35:00.000Z
 date: Oct 13, 2022
-time: 3:20 PM
+time: 3:35 PM
 ---
