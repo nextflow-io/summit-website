@@ -1,17 +1,27 @@
 ---
-timeframe: 12:20 - 1:20 PM (60 min)
-title: Talks
-description: The session will be composed of multiple talks given by several speakers. Details will be announced soon.
+timeframe: 11:30 AM - 1:30 PM (120 min)
+title: "Session 8: Talks"
+description: Talks from Nicola Visonà, Francesco Strozzi, Raul Alcantara Aragon, Thanh Le Viet and Bryan Lajoie.
 speakers:
-  - Evan Floden
-  - Phil Ewels
-  - Paolo di Tommaso
+  - Nicola Visonà
+  - Francesco Strozzi
+  - Raul Alcantara Aragon
+  - Thanh Le Viet
+  - Bryan Lajoie
 tags:
-  - Software
+  - Community
   - Ecosystem
-datetime: 2022-10-14T12:20:00.000Z
+events:
+  - oct-14-the-spinning-jenny-a-nextflow-pipeline-for-an-agent-based-model-of-the-first-industrial-revolution
+  - oct-14-applying-and-deploying-alphafold-at-scale-to-decode-the-human-gut-microbiome-proteome
+  - oct-14-from-zero-to-nextflow-bringing-nanorate-nanoseq-into-a-workflow
+  - oct-14-automated-bioinformatics-infrastructure-for-large-scale-sars-cov-2-genomic-surveillance-at-qib
+  - oct-14-workflow-automation-using-the-aviti-benchtop-sequencing-system-and-nextflow-tower
+  - oct-14-nf-core-hackathon-report
+  - oct-14-summit-wrap-up-and-farewell
+datetime: 2022-10-14T11:30:00.000Z
 date: Oct 14, 2022
-time: 12:20 PM
+time: 11:30 AM
 youtube: Watch on Youtube
 youtubeUrl: https://www.youtube.com/c/nextflow
 ---

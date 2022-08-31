@@ -1,6 +1,6 @@
 ---
 slug: /speakers/julia-mir-pedrol/
-name: Júlia Mir Pedrol
+name: "Júlia Mir Pedrol"
 email: julia.mir-pedrol@qbic.uni-tuebingen.de
 position: Bioinformatician at the Quantitative Biology Center, University of Tübingen
 image: ../../../images/people/juliamirpedrol.png
@@ -14,6 +14,7 @@ tags:
 meta:
   title: "Júlia Mir Pedrol"
   description: "Nextflow Summit 2022 Speaker"
+  image: ../../../images/share/share-image.jpg
 ---
 Júlia Mir Pedrol is a Bioinformatician at the Quantitative Biology Center at the University of Tübingen, working as a Python developer for nf-core tools and involved in the development of a pipeline for CRISPR-Cas9 analysis.
 

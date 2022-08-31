@@ -5,7 +5,7 @@ email: ps22@sanger.ac.uk
 position: Senior Bioinformatician at the Wellcome Sanger Institute
 image: ../../../images/people/priyankasurana.png
 github: https://github.com/priyanka-surana
-twitter: 
+twitter:
 linkedin: http://linkedin.com/in/priyanka-surana/
 tags:
   - Community
@@ -13,6 +13,7 @@ tags:
 meta:
   title: "Priyanka Surana"
   description: "Nextflow Summit 2022 Speaker"
+  image: ../../../images/share/share-image.jpg
 ---
 Priyanka Surana is a Senior Bioinformatician at Wellcome Sanger Institute, developing an automated series of workflows to decode the biodiversity on the islands of Britain and Ireland through genomics. She holds a PhD in Bioinformatics and Computational Biology with a minor in Statistics from the Iowa State University, USA.
 

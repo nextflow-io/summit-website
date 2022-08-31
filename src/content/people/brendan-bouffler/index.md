@@ -13,6 +13,7 @@ tags:
 meta:
   title: "Brendan Bouffler"
   description: "Nextflow Summit 2022 Speaker"
+  image: ../../../images/share/share-image.jpg
 ---
 Brendan Bouffler has 25 years of experience in the global tech industry creating large-scale systems for HPC environments. He has been responsible for designing and building hundreds of HPC systems for researchers and engineers worldwide. A number of these efforts fed the Top500 list, with a few placing in the top five.
 

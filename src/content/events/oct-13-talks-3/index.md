@@ -1,17 +1,22 @@
 ---
-timeframe: 2:20 - 3:20 PM (60 min)
-title: Talks
-description: The session will be composed of multiple talks given by several speakers. Details will be announced soon.
+timeframe: 2:15 - 3:45 PM (90 min)
+title: "Session 4: Talks"
+description: Talks from Paolo Di Tommaso, Júlia Mir Pedrol and Cédric Notredame.
 speakers:
-  - Evan Floden
-  - Phil Ewels
   - Paolo di Tommaso
+  - "Júlia Mir Pedrol"
+  - "Cédric Notredame"
 tags:
+  - Ecosystem
   - Nextflow
-  - Community
-datetime: 2022-10-13T14:20:00.000Z
+  - Software
+events:
+  - oct-13-nextflow-and-the-future-of-containers
+  - oct-13-pipeline-parameter-validation-with-the-nf-core-json-schema
+  - oct-13-new-pipeline-resources-for-reproducible-analysis
+datetime: 2022-10-13T14:15:00.000Z
 date: Oct 13, 2022
-time: 2:20 PM
+time: 2:15 PM
 youtube: Watch on Youtube
 youtubeUrl: https://www.youtube.com/c/nextflow
 ---

@@ -1,4 +1,4 @@
-import { graphql } from 'gatsby';
+import { graphql, navigate } from 'gatsby';
 import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import React from 'react';
@@ -8,6 +8,7 @@ import Seo from '../components/Seo';
 
 import {
   AngleLeftIcon,
+  Button,
   GitHubIcon,
   Link,
   LinkedInIcon,
@@ -22,13 +23,16 @@ const SpeakerPage = ({ data }) => {
       <Seo
         title={speaker.meta.title}
         description={speaker.meta.description}
+        image={speaker.meta.image.publicURL}
       />
       <div className="text-white container-md py-10 md:py-20">
         <div className="inline-flex items-center hover:text-green-600 mb-4">
-          <AngleLeftIcon className="h-6 w-6 inline-block mr-1" />
-          <Link to="/speakers/" className="typo-intro" noBorder>
-            Back
-          </Link>
+          <Button onClick={() => { navigate(-1) }} className="typo-intro">
+            <AngleLeftIcon className="h-6 w-6 inline-block mr-1" />
+            <span>
+              Back
+            </span>
+          </Button>
         </div>
         <div className="flex flex-col md:flex-row">
           <div className="w-full md:w-1/3">
@@ -110,6 +114,9 @@ export const pageQuery = graphql`
       meta {
         title
         description
+        image {
+          publicURL
+        }
       }
     }
   }

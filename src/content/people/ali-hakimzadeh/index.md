@@ -13,6 +13,7 @@ tags:
 meta:
   title: "Ali Hakimzadeh"
   description: "Nextflow Summit 2022 Poster Presenter"
+  image: ../../../images/share/share-image.jpg
 ---
 Ali Hakimzadeh is a junior researcher in ecoinformatics at the University of Tartu, where he develops practical tools for bioinformatic analysis of lengthy DNA reads produced from third-generation DNA sequencing systems. The script collection integrates with the PIPECRAFT workflow.
 

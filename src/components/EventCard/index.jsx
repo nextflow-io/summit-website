@@ -2,18 +2,33 @@ import classnames from 'classnames';
 import { GatsbyImage as Image, getImage } from "gatsby-plugin-image";
 import React from 'react';
 
-import { Link, LocationIcon, YoutubeRectangleIcon } from 'website-components';
+import { AngleDownIcon, ArrowRightIcon, Link, LocationIcon, YoutubeRectangleIcon } from 'website-components';
 
-const EventCard = ({ event, hidden }) => {
+const EventCard = ({ event, hidden, expanded, isExpandable, onExpand, isChild }) => {
   return (
     <div className={classnames(
-      'bg-black border border-gray-800 px-4 py-6 lg:p-8 rounded-md shadow-xl mt-4 relative',
-      {
-        'hidden': hidden,
-      },
-    )}
+        'bg-black border border-gray-800 px-4 py-6 lg:p-8 rounded-md shadow-xl mt-4 relative',
+        {
+          'hidden': hidden,
+          'cursor-pointer': isExpandable,
+          'ml-10 lg:ml-14': isChild,
+        },
+      )}
+      onClick={() => { if (isExpandable) { onExpand() } }}
     >
-      <span className="typo-body bg-gray-900 absolute left-0 -top-px -translate-x-24">{event.time}</span>
+      {!isChild && (
+        <span className="typo-body bg-gray-900 absolute left-0 -top-px -translate-x-24">
+          {event.time}
+        </span>
+      )}
+      {isChild && (
+        <>
+          <span className="typo-body bg-gray-900 absolute left-0 top-1/2 -translate-y-1/2 -translate-x-24 -ml-14">
+            {event.time}
+          </span>
+          <ArrowRightIcon className="h-6 w-6 absolute left-0 top-1/2 -translate-y-1/2 -translate-x-10 lg:-translate-x-12" />
+        </>
+      )}
       <div className="flex items-center justify-between mb-4">
         <p className="typo-intro text-green-600">
           {event.timeframe}
@@ -28,9 +43,33 @@ const EventCard = ({ event, hidden }) => {
           </div>
         )}
       </div>
-      <h3 className="typo-h4 mb-4">
-        {event.title}
-      </h3>
+      {isExpandable && (
+        <h3 className="typo-h4 mb-4 inline-flex items-center">
+          <AngleDownIcon
+            className={classnames(
+              'h-6 w-6 mr-2',
+              {
+                'rotate-180': expanded,
+              }
+            )}
+          />
+          {event.title}
+        </h3>
+      )}
+      {!isExpandable && (
+        <h3 className="typo-h4 mb-4">
+          {event.hasPage && (
+            <Link to={`/program/${event.slug}/`} noBorder className="hover:text-green-600">
+              {event.title}
+            </Link>
+          )}
+          {!event.hasPage && (
+            <span>
+              {event.title}
+            </span>
+          )}
+        </h3>
+      )}
       {event.description && (
         <p className="typo-body mb-4">
           {event.description}

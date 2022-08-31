@@ -1,7 +1,7 @@
 ---
 slug: /speakers/solenne-correard/
 name: Solenne Correard
-email: 
+email:
 position: Postdoctoral fellow at the Centre for Molecular Medicine and Therapeutics, University of British Columbia
 image: ../../../images/people/solennecorreard.png
 github: https://github.com/scorreard
@@ -13,6 +13,7 @@ tags:
 meta:
   title: "Solenne Correard"
   description: "Nextflow Summit 2022 Speaker"
+  image: ../../../images/share/share-image.jpg
 ---
 Solenne Correard is a postdoctoral fellow in the Wasserman lab, at the Centre for Molecular Medicine and Therapeutics (CMMT), University of British Columbia situated at the BC Children's Hospital Research Institute, in Vancouver, Canada.
 

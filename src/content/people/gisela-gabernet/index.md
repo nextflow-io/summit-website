@@ -13,6 +13,7 @@ tags:
 meta:
   title: "Gisela Gabernet"
   description: "Nextflow Summit 2022 Speaker"
+  image: ../../../images/share/share-image.jpg
 ---
 Gisela Gabernet is a Team Leader for Research & Development in Data Science at the Quantitative Biology Centre, a Bioinformatics Core facility of the University of Tübingen, Germany. Her team focuses on developing Nextflow pipelines for various NGS data analysis tasks, which are also part of the nf-core project. She is a core member of the nf-core community since 2020.
 
