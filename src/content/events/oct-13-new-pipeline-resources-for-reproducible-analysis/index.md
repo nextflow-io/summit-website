@@ -1,10 +1,10 @@
 ---
 slug: oct-13-new-pipeline-resources-for-reproducible-analysis
-timeframe: 10:00 - 10:30 AM (15 min)
+timeframe: 15:30 - 15:45 AM (15 min)
 title: "New pipeline resources for reproducible analysis"
-datetime: 2022-10-13T10:00:00.000Z
+datetime: 2022-10-13T15:30:00.000Z
 date: Oct 13, 2022
-time: 10:00 AM
+time: 3:30 PM
 isChild: true
 hasPage: true
 speakers:
