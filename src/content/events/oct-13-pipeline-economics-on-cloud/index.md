@@ -10,10 +10,8 @@ hasPage: true
 speakers:
   - Hatem Nawar
 tags:
-  - Community
+  - Ecosystem
 youtube: Watch on Youtube
 youtubeUrl: https://www.youtube.com/c/nextflow
 ---
 Runaway costs when running your pipelines on Cloud is among the most common concerns of any organisation or research team. In this session we will explore how Cloud Economics work, and discus some common tricks that can help you optimise your running cost on Cloud.
-
-**Other authors:** Julio Cesar Espinoza, Elias Salfati, Avinash Abhyankar
