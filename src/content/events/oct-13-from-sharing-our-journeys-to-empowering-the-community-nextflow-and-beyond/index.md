@@ -4,7 +4,7 @@ timeframe: 5:00 - 5:30 PM (30 min)
 title: "From sharing our journeys to empowering the community: Nextflow & beyond"
 datetime: 2022-10-13T17:00:00.000Z
 date: Oct 13, 2022
-time: 5:)0 PM
+time: 5:00 PM
 isChild: true
 hasPage: true
 speakers:
