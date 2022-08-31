@@ -1,4 +1,5 @@
 ---
+slug: oct-12-summit-welcome
 timeframe: 5:00 - 5:30 PM (30 min)
 title: Summit welcome
 description:
@@ -9,6 +10,7 @@ speakers:
   - Evan Floden
 tags:
   - Community
+hasPage: true
 youtube: Watch on Youtube
 youtubeUrl: https://www.youtube.com/c/nextflow
 ---

@@ -14,12 +14,13 @@ tags:
 youtube: Watch on Youtube
 youtubeUrl: https://www.youtube.com/c/nextflow
 ---
-<div>
-  <Button to="https://github.com/quiltdata/quilt/">
-    View project
-  </Button>
-</div>
 
 Quilt is an open platform for storing, labeling, and managing data. Quilt integrates instrument data, metadata, analysis, and visualizations into reusable datasets. Together Nexflow and Quilt provide users with an open platform for reproducible science. Quilt's data versioning and Nextflow's reproducible pipelines allow users to run any version of a pipeline against current and past versions of a dataset, and to trace the lineage of every result.
 
 This talk will show how Nextflow users can use Quilt to version pipeline inputs, and package pipeline outputs into labeled, findable, and queryable datasets. We will provide examples of running pipelines against multiple versions of a dataset, querying pipeline outputs on metadata tags across multiple runs, and automatically producing documentation with integrated reports and visualizations.
+
+<div>
+  <Button to="https://github.com/quiltdata/quilt/" variant="secondary" size="md" arrow>
+    View project
+  </Button>
+</div>

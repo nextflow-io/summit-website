@@ -20,12 +20,6 @@ youtubeUrl: https://www.youtube.com/c/nextflow
   </small>
 </div>
 
-<div>
-  <Button to="https://github.com/nf-core/sarek/" variant="accent" size="md" arrow>
-    View project
-  </Button>
-</div>
-
 High-throughput, efficient, and reproducible pipelines are needed to ensure homogeneous data processing across different compute infrastructures with affordable resource usage.
 We present nf-core/sarek 3.0, to explore single-nucleotide variants, structural variation, microsatellite instability, and copy-number alterations of germline, tumor-only, and tumor-normal pairs.
 
@@ -34,3 +28,9 @@ We reduced compute resources and increased turn-around times, which minimizes co
 Other improvements include modularization of processes which facilitates maintainability and customization, and a broader repertoire of available tools.
 
 We have re-processed 54 whole-genome-sequenced tumor-normal pairs of the TCGA-LIHC cohort, as well as on-site data, including 100 cholangiocarcinoma and 20 colorectal carcinoma panels to investigate the relationship of genomic variation to drug responsiveness.
+
+<div>
+  <Button to="https://github.com/nf-core/sarek/" variant="secondary" size="md" arrow>
+    View project
+  </Button>
+</div>

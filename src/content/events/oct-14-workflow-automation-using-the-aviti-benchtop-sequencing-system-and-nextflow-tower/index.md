@@ -20,14 +20,14 @@ youtubeUrl: https://www.youtube.com/c/nextflow
   </small>
 </div>
 
-<div>
-  <Button to="https://www.elementbiosciences.com/blog" variant="accent" size="md" arrow>
-    View project
-  </Button>
-</div>
-
 Element Biosciences is passionate about developing new and disruptive solutions in the genomics space.  In March of 2022, we announced the commercial launch of the Element AVITI™ System, a benchtop sequencer with an output of 800M+ read pairs per flow cell and base calling accuracy surpassing 90% Q30 at a 2x150 bp read length.   
 
 Sequencing data from AVITI platform can be streamed to the customer’s desired location on AWS, GCP, or a local server while the run is in progress.  After the run is complete, FASTQ files can be generated using the bases2fastq software.
 
 To further enable AVITI customers, we have partnered with Seqera Labs to combine Nextflow Tower’s event driven automation capabilities with the event driven architecture of the AVITI sequencing platform.  The integration with Tower simplifies Cloud set-up, enables task monitoring, and offers a path to full secondary analysis automation.
+
+<div>
+  <Button to="https://www.elementbiosciences.com/blog" variant="secondary" size="md" arrow>
+    View project
+  </Button>
+</div>
