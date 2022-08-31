@@ -13,7 +13,7 @@ tags:
 meta:
   title: "James Fellows Yates"
   description: "Nextflow Summit 2022 Poster Presenter"
-  image: ../../../images/share/speaker-james-fellows-yates.jpg
+  image: ../../../images/share/share-image.jpg
 ---
 James Fellows Yates is a postdoctoral bioinformatician developing pipelines focusing on metagenomics and microbiomes, as well as high-throughput palaeogenomics. He is a member of the nf-core core team, and the lead developer for nf-core/eager, nf-core/funcscan, and nf-core/taxprofiler.
 
