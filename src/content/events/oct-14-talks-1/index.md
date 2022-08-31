@@ -1,6 +1,6 @@
 ---
 timeframe: 10:00 - 11:15 AM (75 min)
-title: "Session 1: Talks"
+title: "Session 7: Talks"
 description: Talks from Mike Smoot, Solenne Correard, Alan Hoyle and Matt Vaughn.
 speakers:
   - Mike Smoot

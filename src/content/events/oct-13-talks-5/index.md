@@ -1,6 +1,6 @@
 ---
 timeframe: 5:45 - 7:00 PM (80 min)
-title: "Session 5: Talks"
+title: "Session 6: Talks"
 description: Talks from Evan Floden, Yih-Chii Hwang and Venkat Malladi.
 speakers:
   - Evan Floden

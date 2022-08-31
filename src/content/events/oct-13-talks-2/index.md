@@ -1,6 +1,6 @@
 ---
 timeframe: 11:50 AM - 1:20 PM (90 min)
-title: "Session 2: Talks"
+title: "Session 3: Talks"
 description: Talks from Harshil Patel, Friederike Hanssen, Angel Pizarro and Aneesh Karve.
 speakers:
   - Harshil Patel

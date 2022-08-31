@@ -1,6 +1,6 @@
 ---
 timeframe: 4:05 - 5:25 PM (80 min)
-title: "Session 4: Talks"
+title: "Session 5: Talks"
 description: Talks from Stephen Rudd, Konrad Rokicki, Annick Renevey and Saba Nafees.
 speakers:
   - Stephen Rudd

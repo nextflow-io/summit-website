@@ -1,6 +1,6 @@
 ---
 timeframe: 2:20 - 3:35 PM (75 min)
-title: "Session 3: Talks"
+title: "Session 4: Talks"
 description: Talks from Paolo Di Tommaso and Júlia Mir Pedrol
 speakers:
   - Paolo di Tommaso
