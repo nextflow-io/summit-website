@@ -1,30 +1,25 @@
 ---
 slug: oct-13-nextflow-quilt-label-query-and-visualize-pipeline-data
-timeframe: 12:20 PM - 12:35 PM (15 min)
+timeframe: 12:50 PM - 1:20 PM (30 min)
 title: "Nextflow + Quilt: Label, query and visualize pipeline data"
-datetime: 2022-10-13T11:50:00.000Z
+datetime: 2022-10-13T12:50:00.000Z
 date: Oct 13, 2022
-time: 11:50 AM
+time: 12:50 PM
 isChild: true
 hasPage: true
 speakers:
   - Aneesh Karve
 tags:
-  - Community
+  - Ecosystem
 youtube: Watch on Youtube
 youtubeUrl: https://www.youtube.com/c/nextflow
 ---
-High-throughput, efficient, and reproducible pipelines are needed to ensure homogeneous data processing across different compute infrastructures with affordable resource usage.
-We present nf-core/sarek 3.0, to explore single-nucleotide variants, structural variation, microsatellite instability, and copy-number alterations of germline, tumor-only, and tumor-normal pairs.
+<div>
+  <Button to="https://github.com/quiltdata/quilt/">
+    View project
+  </Button>
+</div>
 
-We reduced compute resources and increased turn-around times, which minimizes costs on commercial clouds, facilitating the integration of publicly hosted data from repositories with in-house patient cohorts.
+Quilt is an open platform for storing, labeling, and managing data. Quilt integrates instrument data, metadata, analysis, and visualizations into reusable datasets. Together Nexflow and Quilt provide users with an open platform for reproducible science. Quilt's data versioning and Nextflow's reproducible pipelines allow users to run any version of a pipeline against current and past versions of a dataset, and to trace the lineage of every result.
 
-Other improvements include modularization of processes which facilitates maintainability and customization, and a broader repertoire of available tools.
-
-We have re-processed 54 whole-genome-sequenced tumor-normal pairs of the TCGA-LIHC cohort, as well as on-site data, including 100 cholangiocarcinoma and 20 colorectal carcinoma panels to investigate the relationship of genomic variation to drug responsiveness.
-
-<Button to="https://github.com/nf-core/sarek/">
-  View project
-</Button>
-
-**Other authors:** Maxime Garcia, Susanne Jodoin, Nick Smith, Francesco Lescai, Gavin Mackenzie, Oskar Wacker, Anders Sune Pedersen, Lasse Folkersen, Edmund Miller, Gisela Gabernet, Sven Nahnsen
+This talk will show how Nextflow users can use Quilt to version pipeline inputs, and package pipeline outputs into labeled, findable, and queryable datasets. We will provide examples of running pipelines against multiple versions of a dataset, querying pipeline outputs on metadata tags across multiple runs, and automatically producing documentation with integrated reports and visualizations.

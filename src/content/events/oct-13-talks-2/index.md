@@ -8,8 +8,8 @@ speakers:
   - Angel Pizarro
   - Aneesh Karve
 tags:
-  - Nextflow
   - Community
+  - Ecosystem
 events:
   - oct-13-nf-core-modules-re-usable-unit-tested-dsl2-wrapper-scripts-for-the-nextflow-community
   - oct-13-nf-core-sarek-a-workflow-for-germline-tumor-only-and-somatic-analysis-of-ngs-data
