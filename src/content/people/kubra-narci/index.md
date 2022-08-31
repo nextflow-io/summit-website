@@ -13,7 +13,7 @@ tags:
 meta:
   title: "Kübra Narcı"
   description: "Nextflow Summit 2022 Poster Presenter"
-  image: ../../../images/share/speaker-kubra-narci.jpg
+  image: ../../../images/share/share-image.jpg
 ---
 Dr. Kübra Narcı is a bioinformatician at German Human Genome-Phenome Archive (GHGA). Based at the DKFZ in Heidelberg, Kübra works on processing of data and the development, standardization, optimization and maintenance of the bioinformatic workflows using Nextflow and part of nf-core community. Before moving to Germany, she obtained her PhD in Medical Informatics at METU, Turkey. There, she developed  methodology to perform a pathway-based analysis with a series of expression profiles from cancer data using a nonconventional network analysis strategy, differential expression analysis, clustering approaches and visualizations.
 
