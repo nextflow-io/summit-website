@@ -1,10 +1,10 @@
 ---
 slug: oct-13-nextflow-and-the-future-of-containers
-timeframe: 2:20 - 3:20 PM (60 min)
+timeframe: 2:15 - 3:15 PM (60 min)
 title: "Nextflow and the future of containers"
-datetime: 2022-10-13T14:20:00.000Z
+datetime: 2022-10-13T14:15:00.000Z
 date: Oct 13, 2022
-time: 2:20 PM
+time: 2:15 PM
 isChild: true
 hasPage: true
 speakers:

@@ -1,10 +1,10 @@
 ---
 slug: oct-13-nf-core-sarek-a-workflow-for-germline-tumor-only-and-somatic-analysis-of-ngs-data
-timeframe: 12:20 - 12:35 PM (15 min)
+timeframe: 12:15 - 12:30 PM (15 min)
 title: "nf-core/sarek: A workflow for germline, tumor-only, and somatic analysis of NGS data"
-datetime: 2022-10-13T12:20:00.000Z
+datetime: 2022-10-13T12:15:00.000Z
 date: Oct 13, 2022
-time: 12:20 PM
+time: 12:15 PM
 isChild: true
 hasPage: true
 speakers:

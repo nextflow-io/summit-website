@@ -1,5 +1,5 @@
 ---
-timeframe: 11:30 - 11:50 AM (20 min)
+timeframe: 11:30 - 11:45 AM (15 min)
 title: Coffee break
 tags:
   - Social
