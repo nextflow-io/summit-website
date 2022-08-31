@@ -17,7 +17,5 @@ speakers:
   - Priyanka Surana
   - Brendan Bouffler
 tags:
-  - Nextflow
-  - Software
   - Community
 ---

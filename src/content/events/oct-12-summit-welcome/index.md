@@ -7,6 +7,8 @@ date: Oct 12, 2022
 time: 5:00 PM
 speakers:
   - Evan Floden
+tags:
+  - Community
 youtube: Watch on Youtube
 youtubeUrl: https://www.youtube.com/c/nextflow
 ---

@@ -10,7 +10,7 @@ hasPage: true
 speakers:
   - Robert Petit
 tags:
-  - Nextflow
+  - Community
 youtube: Watch on Youtube
 youtubeUrl: https://www.youtube.com/c/nextflow
 ---
@@ -18,9 +18,11 @@ youtubeUrl: https://www.youtube.com/c/nextflow
   Robert Petit, Taylor Fearing, Chayse Rowley, Jim Mildenberger, and Timothy D. Read
 </small>
 
-<Button to="https://bactopia.github.io/" variant="primary" size="md">
-  View project
-</Button>
+<div>
+  <Button to="https://bactopia.github.io/" variant="accent" size="md" arrow>
+    View project
+  </Button>
+</div>
 
 Bactopia is a Nextflow pipeline for the complete analysis of bacterial genomes. Users can process Illumina and/or Nanopore sequences with more than 150 open-source bioinformatic tools and publicly available datasets. Furthermore, 50 additional workflows, called Bactopia Tools, are available for downstream comparative analyses, such as pan-genome, phylogenetic and functional analyses.
 
