@@ -14,6 +14,12 @@ tags:
 youtube: Watch on Youtube
 youtubeUrl: https://www.youtube.com/c/nextflow
 ---
+<div className="mb-4">
+  <small className="typo-small">
+    Nicola Visonà, Luca Cozzuto
+  </small>
+</div>
+
 The Industrial Revolution was an economic phenomenon where a technological breakthrough, the steam engine, was widely adopted in England to mechanize production. The economic impulse given by this gave rise to the modern industrial economy.
 
 Here, we present a pipeline for modeling the process based on Robert Allen's work. He argued that the industrial revolution was made possible by the unique wage structure of England at the time compared to its international competitors.
@@ -21,5 +27,3 @@ Here, we present a pipeline for modeling the process based on Robert Allen's wor
 This incentivized firms to substitute labor with capital through investments in industrial machines, which allowed them to produce more with less labor.
 
 The pipeline is written in Nextflow and uses a containerized version of NetLogo: a multi-agent programmable modeling environment. The pipeline allows exploring different parametrizations in parallel using Monte Carlo randomization using a number of heterogeneous agents.
-
-**Other authors:** Luca Cozzuto

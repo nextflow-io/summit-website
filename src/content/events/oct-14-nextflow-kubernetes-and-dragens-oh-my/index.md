@@ -4,7 +4,7 @@ timeframe: 10:00 - 10:30 AM (30 min)
 title: "Nextflow, Kubernetes, and DRAGENs, Oh My!"
 datetime: 2022-10-14T10:00:00.000Z
 date: Oct 14, 2022
-time: 11:00 AM
+time: 10:00 AM
 isChild: true
 hasPage: true
 speakers:

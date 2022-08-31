@@ -14,6 +14,10 @@ tags:
 youtube: Watch on Youtube
 youtubeUrl: https://www.youtube.com/c/nextflow
 ---
-NextFlow workflows can run on many systems. One of these, AWS Batch, helps scientists easily run large numbers of jobs in the cloud without needing to manage virtual machines or storage resources. However, Batch by default only leverages a subset of AWS resource types. In this talk, we will describe ways to take advantage of new kinds of processors and GPUs, larger memory, and faster storage in NextFlow pipelines on Batch. We will discuss how these options can help reduce costs and improve job turnaround time using real-world benchmarks and examples.
+<div className="mb-4">
+  <small className="typo-small">
+    Matt Vaughn, Angel Pizarro
+  </small>
+</div>
 
-**Other authors:** Angel Pizarro
+NextFlow workflows can run on many systems. One of these, AWS Batch, helps scientists easily run large numbers of jobs in the cloud without needing to manage virtual machines or storage resources. However, Batch by default only leverages a subset of AWS resource types. In this talk, we will describe ways to take advantage of new kinds of processors and GPUs, larger memory, and faster storage in NextFlow pipelines on Batch. We will discuss how these options can help reduce costs and improve job turnaround time using real-world benchmarks and examples.

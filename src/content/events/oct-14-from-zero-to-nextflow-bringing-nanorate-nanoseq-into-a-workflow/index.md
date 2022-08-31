@@ -14,10 +14,16 @@ tags:
 youtube: Watch on Youtube
 youtubeUrl: https://www.youtube.com/c/nextflow
 ---
+<div className="mb-4">
+  <small className="typo-small">
+    Raul Alcantara Aragon, Federico Abascal, Robert J. Osborne, Alex Cagan, Iñigo Martincorena
+  </small>
+</div>
+
+<div>
+  <Button to="https://github.com/cancerit/NanoSeq" variant="accent" size="md" arrow>
+    View project
+  </Button>
+</div>
+
 In the field of cancer research there has been a renewed interest in understanding mutational processes of normal tissue. A variation on duplex sequencing, nanorate sequencing (NanoSeq), allows identification of somatic mutations with a very low error rates ( less than five errors per billion base pairs in single DNA molecules). Analysis of these type of experiments requires a multitude of scripts and programs, written in a diverse set of languages (R, Perl, Python & C++) by two members of the Martincorena group at Sanger. Initially all of this code was organised under one Python wrapper to simplify the analysis. However, it soon became apparent that a third layer of organisation would be necessary in order to turn this code into a workflow capable of handling the large throughput required by researchers. Nextflow seemed to be a natural choice for designing this workflow. I will detail this journey into Nextflow of how a simple DSL1 flow grew into a batch capable DSL2 workflow.
-
-<Button to="https://github.com/cancerit/NanoSeq">
-  View project
-</Button>
-
-**Other authors:** Federico Abascal, Robert J. Osborne, Alex Cagan, Iñigo Martincorena
