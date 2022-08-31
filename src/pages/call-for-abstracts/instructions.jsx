@@ -50,10 +50,10 @@ const InstructionsPage = () => {
             </h3>
             <List type="bullet" iconClassName="text-white" className="mb-8">
               <List.Item className="typo-body">
-                In-person
+                In-person: Printed A0 (841 x 1188 mm), portrait. PDF to be uploaded for online audience.
               </List.Item>
               <List.Item className="typo-body">
-                Virtual
+                Virtual: PDF, A0 portrait.
               </List.Item>
             </List>
             <h3 className="typo-intro mb-4">
