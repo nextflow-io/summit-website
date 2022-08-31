@@ -20,6 +20,8 @@ youtubeUrl: https://www.youtube.com/c/nextflow
   </small>
 </div>
 
+<hr className="border-t border-gray-50 mb-4 opacity-20" />
+
 Bactopia is a Nextflow pipeline for the complete analysis of bacterial genomes. Users can process Illumina and/or Nanopore sequences with more than 150 open-source bioinformatic tools and publicly available datasets. Furthermore, 50 additional workflows, called Bactopia Tools, are available for downstream comparative analyses, such as pan-genome, phylogenetic and functional analyses.
 
 We designed Bactopia to help support and contribute back to the bioinformatics community. To include a tool in Bactopia, it must be available on Bioconda, and all Bactopia Tools must be available from nf-core/modules. By implementing these design principles, we have been able to make more than 140 contributions back to the wider bioinformatic community.

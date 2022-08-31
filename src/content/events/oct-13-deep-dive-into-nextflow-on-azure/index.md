@@ -20,6 +20,8 @@ youtubeUrl: https://www.youtube.com/c/nextflow
   </small>
 </div>
 
+<hr className="border-t border-gray-50 mb-4 opacity-20" />
+
 Bioinformatic pipelines are compute intensive. Pipelines are made up of multiple different interdependent tasks. Using the power of Azure, we can dynamically assign the right type and amount of compute for the task, scaling up and down as needed.  
 
 This talk will walk you through how to setup Azure infrastructure and Nextflow to run genomics analysis pipelines in the cloud. You will learn how to create Azure Batch Compute Environments. Using these resources, you will build architecture that runs Nextflow entirely on Azure. We will discuss how to optimize your pipeline configuration to be cost andtime efficient, by providing benchmarking of some common community pipelines. You will also learn how Microsoft is integrating Nextflow into its Genomics on Azure ecosystem that supports secure, optimized, and scalable research on an extensible platform.   

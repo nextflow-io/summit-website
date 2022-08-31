@@ -20,6 +20,8 @@ youtubeUrl: https://www.youtube.com/c/nextflow
   </small>
 </div>
 
+<hr className="border-t border-gray-50 mb-4 opacity-20" />
+
 Darwin Tree of Life, a collaboration between 10 UK partners, aims to capture the biodiversity on the islands of Britain and Ireland through genomics. To analyse this diversity of life, we are building a series of production grade workflows that take raw data from the sequencing machines to (1) assemble and curate the genome, (2) submit the data to public databases, (3) create automated genome notes, (4) and run standard downstream analysis. Here, we focus on genome notes, semi-automated peer-reviewed publications that summarise key methods and results for each genome. The pipelines generating genome notes serve as the back end for a public platform to automatically gather results for any species, write the genome note, and submit it to the publisher. We are one of the initiatives working towards the goal of sequencing all complex life on Earth. This should help in conservation, to understand the interconnectedness of all life, and to build a new economy based on biological materials.
 
 <div>

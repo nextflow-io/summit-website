@@ -3,6 +3,7 @@
 module.exports = {
     content: [
         'src/**/*.jsx',
+        'src/**/*.md',
         'node_modules/website-components/**/*.jsx',
     ],
     theme: {

@@ -20,6 +20,8 @@ youtubeUrl: https://www.youtube.com/c/nextflow
   </small>
 </div>
 
+<hr className="border-t border-gray-50 mb-4 opacity-20" />
+
 The Industrial Revolution was an economic phenomenon where a technological breakthrough, the steam engine, was widely adopted in England to mechanize production. The economic impulse given by this gave rise to the modern industrial economy.
 
 Here, we present a pipeline for modeling the process based on Robert Allen's work. He argued that the industrial revolution was made possible by the unique wage structure of England at the time compared to its international competitors.
