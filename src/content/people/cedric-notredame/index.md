@@ -1,6 +1,6 @@
 ---
 slug: /speakers/cedric-notredame/
-name: "Cédric Notredame"
+name: Cedric Notredame
 email: cedric.notredame@crg.eu
 position: Senior Principal Investigator at the Center for Genomic Regulation
 image: ../../../images/people/cedricnotredame.png
@@ -11,7 +11,7 @@ tags:
   - Community
   - Speaker
 meta:
-  title: "Cédric Notredame"
+  title: "Cedric Notredame"
   description: "Nextflow Summit 2022 Speaker"
   image: ../../../images/share/share-image.jpg
 ---

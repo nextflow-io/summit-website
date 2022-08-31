@@ -1,6 +1,6 @@
 ---
 slug: oct-13-new-pipeline-resources-for-reproducible-analysis
-timeframe: 15:30 - 15:45 AM (15 min)
+timeframe: 3:30 - 3:45 AM (15 min)
 title: "New pipeline resources for reproducible analysis"
 datetime: 2022-10-13T15:30:00.000Z
 date: Oct 13, 2022
@@ -8,7 +8,7 @@ time: 3:30 PM
 isChild: true
 hasPage: true
 speakers:
-  - "Cédric Notredame"
+  - Cedric Notredame
 tags:
   - Community
 youtube: Watch on Youtube
