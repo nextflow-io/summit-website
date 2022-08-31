@@ -1,4 +1,4 @@
-import { graphql, navigate } from 'gatsby';
+import { graphql } from 'gatsby';
 import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import React from 'react';
@@ -29,12 +29,10 @@ const EventPage = ({ data }) => {
       />
       <div className="text-white container-md py-10 md:py-20">
         <div className="inline-flex items-center hover:text-green-600 mb-4">
-          <Button onClick={() => { navigate(-1) }} className="typo-intro">
-            <AngleLeftIcon className="h-6 w-6 inline-block mr-1" />
-            <span>
-              Back
-            </span>
-          </Button>
+          <AngleLeftIcon className="h-6 w-6 inline-block mr-1" />
+          <Link to="/program/" noBorder>
+            Back
+          </Link>
         </div>
         <div className="mt-5 md:mt-10">
           <div className="flex flex-wrap flex-col lg:flex-row lg:items-center">

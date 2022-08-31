@@ -14,9 +14,11 @@ tags:
 youtube: Watch on Youtube
 youtubeUrl: https://www.youtube.com/c/nextflow
 ---
-<small className="typo-small mb-4">
-  Gisela Gabernet, Susanna Marquez, Alexander Peltzer, Robert Bjornson, Christoph Ruschil, Markus C. Kowarik, Steven H. Kleinstein, Sven Nahnsen
-</small>
+<div className="mb-4">
+  <small className="typo-small">
+    Gisela Gabernet, Susanna Marquez, Alexander Peltzer, Robert Bjornson, Christoph Ruschil, Markus C. Kowarik, Steven H. Kleinstein, Sven Nahnsen
+  </small>
+</div>
 
 Adaptive Immune Receptor Repertoire sequencing (AIRR-seq) is a sequencing technique that allows obtaining the genetic code of specific receptors present on the surface of B and T lymphocytes. The collection of B or T-cell receptors in an individual is referred to as the “repertoire”. AIRR-seq can be used to study the immune state of individuals, identify signatures of immune responses, and guide the development of vaccines and antibody therapies.
 
