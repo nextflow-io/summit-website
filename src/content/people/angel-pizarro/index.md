@@ -1,5 +1,5 @@
 ---
-slug: /speakers/angelpizarro/
+slug: /speakers/angel-pizarro/
 name: Angel Pizarro
 email: pizarroa@amazon.com
 position: Principal Developer Advocate for HPC at Amazon Web Services

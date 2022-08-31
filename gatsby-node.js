@@ -79,6 +79,8 @@ exports.onCreateNode = ({ node, actions, getNode, createNodeId, createContentDig
     }
 
     if (parent.internal.type === 'File' && parent.sourceInstanceName === 'people') {
+      console.log(node.frontmatter.slug, node.frontmatter.name);
+
       const content = {
         slug: node.frontmatter.slug,
         name: node.frontmatter.name,
