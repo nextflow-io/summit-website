@@ -4,7 +4,7 @@ import React from 'react';
 
 import { AngleDownIcon, ArrowRightIcon, Link, LocationIcon, YoutubeRectangleIcon } from 'website-components';
 
-const EventCard = ({ event, hidden, expanded, isExpandable, onExpand, isChild }) => {
+const EventCard = ({ event, hidden, expanded, isExpandable, onExpand, isChild, disableTimeline }) => {
   return (
     <div className={classnames(
         'bg-black border border-gray-800 px-4 py-6 lg:p-8 rounded-md shadow-xl mt-4 relative',
@@ -16,17 +16,21 @@ const EventCard = ({ event, hidden, expanded, isExpandable, onExpand, isChild })
       )}
       onClick={() => { if (isExpandable) { onExpand() } }}
     >
-      {!isChild && (
-        <span className="typo-body bg-gray-900 absolute left-0 -top-px -translate-x-24">
-          {event.time}
-        </span>
-      )}
-      {isChild && (
+      {!disableTimeline && (
         <>
-          <span className="typo-body bg-gray-900 absolute left-0 top-1/2 -translate-y-1/2 -translate-x-24 -ml-14">
-            {event.time}
-          </span>
-          <ArrowRightIcon className="h-6 w-6 absolute left-0 top-1/2 -translate-y-1/2 -translate-x-10 lg:-translate-x-12" />
+          {!isChild && (
+            <span className="typo-body bg-gray-900 absolute left-0 -top-px -translate-x-24">
+              {event.time}
+            </span>
+          )}
+          {isChild && (
+            <>
+              <span className="typo-body bg-gray-900 absolute left-0 top-1/2 -translate-y-1/2 -translate-x-24 -ml-14">
+                {event.time}
+              </span>
+              <ArrowRightIcon className="h-6 w-6 absolute left-0 top-1/2 -translate-y-1/2 -translate-x-10 lg:-translate-x-12" />
+            </>
+          )}
         </>
       )}
       <div className="flex items-center justify-between mb-4">

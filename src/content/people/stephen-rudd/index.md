@@ -13,7 +13,7 @@ tags:
 meta:
   title: "Stephen Rudd"
   description: "Nextflow Summit 2022 Speaker"
-  image: ../../../images/share/share-image.jpg
+  image: ../../../images/share/speaker-stephen-rudd.jpg
 ---
   Stephen works in the Product Management team at Oxford Nanopore and is responsible for bioinformatics solutions. Working with a number of different internal teams, we develop and support a collection of tutorials and nextflow based pipelines for the analysis of Nanopore sequence data. Our content is all open-source (EPI2ME Labs) and we provide tools for running workflows on the desktop and in the cloud.
 

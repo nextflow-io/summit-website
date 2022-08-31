@@ -20,4 +20,6 @@ youtubeUrl: https://www.youtube.com/c/nextflow
   </small>
 </div>
 
+<hr className="border-t border-gray-50 mb-4 opacity-20" />
+
 Nextflow is a powerful workflow language for bioinformatics analysis. It has been widely applied by researchers in analyzing and processing genetic sequencing data, such as genomics and transcriptomics data. When research subjects are human patients, privacy and management of these data while processing is critical and is regulated in many jurisdictions. Bioinformaticians in drug development who want to enable Nextflow pipelines across the enterprise must maintain compliance with GxP quality guidelines and regulations for the production and distribution of pharmaceutical and diagnostics products. This poster will discuss the different approaches to the deployment of Nextflow pipelines in these regulated environments.

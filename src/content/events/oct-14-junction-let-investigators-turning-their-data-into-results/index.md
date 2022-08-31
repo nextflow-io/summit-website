@@ -20,6 +20,8 @@ youtubeUrl: https://www.youtube.com/c/nextflow
   </small>
 </div>
 
+<hr className="border-t border-gray-50 mb-4 opacity-20" />
+
 jUNCtion is a web application that allows our investigators turn their raw sequencing data into results.
 
 It integrates with our LIMS system and can pull the FASTQ paths into a "Study", allow the investigators to select and run one or more Nextflow workflows on the data, and presents the data back to them via the web. Results can also be shared with other investigators or other campus labs.  

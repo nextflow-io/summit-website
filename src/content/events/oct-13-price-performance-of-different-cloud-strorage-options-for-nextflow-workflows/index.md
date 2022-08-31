@@ -20,4 +20,6 @@ youtubeUrl: https://www.youtube.com/c/nextflow
   </small>
 </div>
 
+<hr className="border-t border-gray-50 mb-4 opacity-20" />
+
 The cloud gives you the option to leverage different types of storage for your workflows, with different performance and cost characteristics. Specifically, we are interested in running price/performance benchmarks using Amazon S3 object storage as a baseline for parallel NFS systems (Amazon FSx and Amazon EFS). We report the benchmark results from several nf-core NextFlow pipelines.

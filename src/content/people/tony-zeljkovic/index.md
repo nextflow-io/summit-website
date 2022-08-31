@@ -13,7 +13,7 @@ tags:
 meta:
   title: "Tony Zeljkovic"
   description: "Nextflow Summit 2022 Speaker"
-  image: ../../../images/share/share-image.jpg
+  image: ../../../images/share/speaker-tony-zeljkovic.jpg
 ---
 Tony has a passion for breaking Byzantine legacy thinking and delivering bioinformatics solutions that scale, automate and accelerate.
 

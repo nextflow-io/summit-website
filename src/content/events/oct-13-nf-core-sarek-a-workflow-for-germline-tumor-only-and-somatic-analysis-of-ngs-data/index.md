@@ -20,6 +20,8 @@ youtubeUrl: https://www.youtube.com/c/nextflow
   </small>
 </div>
 
+<hr className="border-t border-gray-50 mb-4 opacity-20" />
+
 High-throughput, efficient, and reproducible pipelines are needed to ensure homogeneous data processing across different compute infrastructures with affordable resource usage.
 We present nf-core/sarek 3.0, to explore single-nucleotide variants, structural variation, microsatellite instability, and copy-number alterations of germline, tumor-only, and tumor-normal pairs.
 

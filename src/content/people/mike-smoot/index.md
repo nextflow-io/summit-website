@@ -13,7 +13,7 @@ tags:
 meta:
   title: "Mike Smoot"
   description: "Nextflow Summit 2022 Speaker"
-  image: ../../../images/share/share-image.jpg
+  image: ../../../images/share/speaker-mike-smoot.jpg
 ---
 Mike Smoot is the principal software engineer at Illumina. He has been a longtime bioinformatics software engineer from fasta-adjacent code, to Cytoscape, and multiple AI projects. Most recently he has been architecting systems to deal with all manner of workflows where Nextflow has made his life much, much easier.
 

@@ -14,7 +14,7 @@ tags:
 meta:
   title: "Evan Floden"
   description: "Nextflow Summit 2022 Speaker"
-  image: ../../../images/share/share-image.jpg
+  image: ../../../images/share/speaker-evan-floden.jpg
 ---
 Evan Floden is CEO and co-founder of Seqera Labs and an early member of the Nextflow project. He holds a Doctorate in Biomedicine from Universitat Pompeu Fabra for the large-scale deployment of analyses and is the author of 14 peer-reviewed articles.
 

@@ -13,7 +13,7 @@ tags:
 meta:
   title: "Solenne Correard"
   description: "Nextflow Summit 2022 Speaker"
-  image: ../../../images/share/share-image.jpg
+  image: ../../../images/share/speaker-solenne-correard.jpg
 ---
 Solenne Correard is a postdoctoral fellow in the Wasserman lab, at the Centre for Molecular Medicine and Therapeutics (CMMT), University of British Columbia situated at the BC Children's Hospital Research Institute, in Vancouver, Canada.
 
