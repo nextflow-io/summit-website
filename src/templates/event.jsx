@@ -5,6 +5,7 @@ import React from 'react';
 
 import CustomMDXProvider from '../components/CustomMDXProvider';
 import Seo from '../components/Seo';
+import SpeakerCard from '../components/SpeakerCard';
 
 import {
   AngleLeftIcon,
@@ -109,11 +110,26 @@ const EventPage = ({ data }) => {
           <h1 className="typo-h2 text-green-600 mb-4 mt-8">
             {event.title}
           </h1>
-          <CustomMDXProvider>
-            <MDXRenderer>
-              {event.content.body}
-            </MDXRenderer>
-          </CustomMDXProvider>
+          <div className="flex mt-8 md:mt-auto">
+            {event.tags.map((tag) => (
+              <div className="typo-small rounded-full px-4 py-1 bg-gray-800 uppercase mr-2">
+                {tag}
+              </div>
+            ))}
+          </div>
+          <div className="mt-8">
+            <CustomMDXProvider>
+              <MDXRenderer>
+                {event.content.body}
+              </MDXRenderer>
+            </CustomMDXProvider>
+          </div>
+          {event.speakers.map((speaker) => (
+            <SpeakerCard
+              speaker={speaker}
+              className="mt-8 first:mt-0"
+            />
+          ))}
         </div>
       </div>
     </>
@@ -141,13 +157,17 @@ export const pageQuery = graphql`
         body
       }
       speakers {
+        slug
         name
+        position
+        tags
+        github
+        linkedin
+        twitter
         image {
           childImageSharp {
             gatsbyImageData(
-              height: 32
               placeholder: NONE
-              width: 32
             )
           }
         }
