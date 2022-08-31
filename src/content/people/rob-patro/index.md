@@ -1,7 +1,7 @@
 ---
 slug: /speakers/rob-patro/
 name: Rob Patro
-email:
+email: rob@cs.umd.edu
 position: Associate professor in the Computer Science department at the University of Maryland
 image: ../../../images/people/robpatro.jpg
 github: https://github.com/rob-p
