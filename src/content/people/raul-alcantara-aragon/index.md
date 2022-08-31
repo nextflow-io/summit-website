@@ -13,7 +13,7 @@ tags:
 meta:
   title: "Raul Alcantara Aragon"
   description: "Nextflow Summit 2022 Speaker"
-  image: ../../../images/share/share-image.jpg
+  image: ../../../images/share/speaker-raul-alcantara-aragon.jpg
 ---
 Raul is a physics graduate from ITESM in Mexico. He obtained an MS in Biophysics from Washington University St. Louis, where he studied protein structural models. He worked as a production Bioinformatician at CNAG-CRG and is currently part of the CASM Informatics support group at the Sanger Institute.
 
