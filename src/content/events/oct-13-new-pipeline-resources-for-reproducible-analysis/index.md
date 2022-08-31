@@ -8,7 +8,7 @@ time: 3:30 PM
 isChild: true
 hasPage: true
 speakers:
-  - Cedric Notredame
+  - "Cédric Notredame"
 tags:
   - Community
 youtube: Watch on Youtube
