@@ -1,10 +1,10 @@
 ---
 slug: oct-13-from-sharing-our-journeys-to-empowering-the-community-nextflow-and-beyond
-timeframe: 4:50 - 5:25 PM (35 min)
+timeframe: 5:00 - 5:30 PM (30 min)
 title: "From sharing our journeys to empowering the community: Nextflow & beyond"
-datetime: 2022-10-13T16:50:00.000Z
+datetime: 2022-10-13T17:00:00.000Z
 date: Oct 13, 2022
-time: 4:50 PM
+time: 5:)0 PM
 isChild: true
 hasPage: true
 speakers:

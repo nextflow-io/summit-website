@@ -1,10 +1,10 @@
 ---
 slug: oct-13-nf-core-rnafusion-implementing-rna-fusion-detection-in-routine-cancer-diagnostics
-timeframe: 4:35 - 4:50 PM (15 min)
+timeframe: 4:45 - 5:00 PM (15 min)
 title: "nf-core/rnafusion: Implementing RNA-fusion detection in routine cancer diagnostics"
-datetime: 2022-10-13T16:35:00.000Z
+datetime: 2022-10-13T16:45:00.000Z
 date: Oct 13, 2022
-time: 4:35 PM
+time: 4:45 PM
 isChild: true
 hasPage: true
 speakers:

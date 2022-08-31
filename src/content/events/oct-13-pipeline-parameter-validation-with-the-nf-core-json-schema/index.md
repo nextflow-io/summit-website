@@ -1,10 +1,10 @@
 ---
 slug: oct-13-pipeline-parameter-validation-with-the-nf-core-json-schema
-timeframe: 3:20 - 3:35 PM (15 min)
+timeframe: 3:15 - 3:30 PM (15 min)
 title: "Pipeline parameter validation with the nf-core JSON schema"
-datetime: 2022-10-13T15:20:00.000Z
+datetime: 2022-10-13T15:15:00.000Z
 date: Oct 13, 2022
-time: 3:20 PM
+time: 3:15 PM
 isChild: true
 hasPage: true
 speakers:

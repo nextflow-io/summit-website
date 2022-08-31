@@ -1,10 +1,10 @@
 ---
 slug: oct-13-price-performance-of-different-cloud-strorage-options-for-nextflow-workflows
-timeframe: 12:35 - 12:50 PM (15 min)
+timeframe: 12:30 - 12:45 PM (15 min)
 title: "Price/performance of different cloud strorage options for Nextflow workflows"
-datetime: 2022-10-13T12:35:00.000Z
+datetime: 2022-10-13T12:30:00.000Z
 date: Oct 13, 2022
-time: 12:35 PM
+time: 12:30 PM
 isChild: true
 hasPage: true
 speakers:

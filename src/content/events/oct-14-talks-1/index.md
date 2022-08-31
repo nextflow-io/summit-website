@@ -15,9 +15,9 @@ events:
   - oct-14-a-workflow-to-generate-a-variant-catalogue-from-whole-genome-sequences
   - oct-14-junction-let-investigators-turning-their-data-into-results
   - oct-14-options-for-leveling-up-your-nextflow-workflows-on-aws-batch
-datetime: 2022-10-14T11:00:00.000Z
+datetime: 2022-10-14T10:00:00.000Z
 date: Oct 14, 2022
-time: 11:00 AM
+time: 10:00 AM
 youtube: Watch on Youtube
 youtubeUrl: https://www.youtube.com/c/nextflow
 ---
