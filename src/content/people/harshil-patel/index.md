@@ -13,5 +13,5 @@ tags:
 meta:
   title: "Harshil Patel"
   description: "Nextflow Summit 2022 Speaker"
-  image: ../../../images/share/share-image.jpg
+  image: ../../../images/share/speaker-harshil-patel.jpg
 ---

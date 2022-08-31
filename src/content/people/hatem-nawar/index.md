@@ -13,7 +13,7 @@ tags:
 meta:
   title: "Hatem Nawar"
   description: "Nextflow Summit 2022 Speaker"
-  image: ../../../images/share/share-image.jpg
+  image: ../../../images/share/speaker-hatem-nawar.jpg
 ---
 Hatem Nawar is a Google Cloud Customer Engineer focusing on Life Sciences & Genomics. In his role he works with researchers and organizations enabling them to  use Google’s capabilities in big data, compute, analytics and machine learning in critical areas of study and research. Prior to Google, Hatem held various technical positions at Nokia, Intel and Siemens. Hatem holds an MBA from the American University in Cairo and BSc of Computer Science from Cairo University
 

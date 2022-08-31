@@ -13,7 +13,7 @@ tags:
 meta:
   title: "Thanh Le Viet"
   description: "Nextflow Summit 2022 Speaker"
-  image: ../../../images/share/share-image.jpg
+  image: ../../../images/share/speaker-thanh-le-viet.jpg
 ---
 Thanh Le Viet is a Bioinformatics Scientific Programmer in Bioinformatics and Informatics Support Group at the Quadram Institute Bioscience (QIB), Norwich, UK. Thanh has a PhD in Evolution, Ecology, Genetic Resources and Paleontology from the University of Montpellier, France. He started using Nextflow from 2017 when he was working as a bioinformatician for developing bioinformatics pipelines for AMR National Reference Laboratory at Oxford University Clinical Research Unit, Vietnam.
 
