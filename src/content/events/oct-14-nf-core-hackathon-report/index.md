@@ -14,3 +14,12 @@ time: 1:00 PM
 youtube: Watch on Youtube
 youtubeUrl: https://www.youtube.com/c/nextflow
 ---
+
+The nf-core community will run a hackathon in the days leading up to the Nextflow Summit.
+In this talk I will summarise what we worked on during the event and celebrate some of our achievements.
+
+<div>
+  <Button to="https://nf-co.re/events/2022/hackathon-october-2022" variant="secondary" size="md" arrow>
+    View event page
+  </Button>
+</div>

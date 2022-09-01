@@ -14,3 +14,18 @@ tags:
 youtube: Watch on Youtube
 youtubeUrl: https://www.youtube.com/c/nextflow
 ---
+
+The nf-core community collaborates to build a curated set of analysis pipelines built using Nextflow.
+We continuously develop best-practices for pipelines to enable reproducible, portable and scalable analysis workloads.
+Importantly, we focus on collaboration and openness, keeping one pipeline per data / analysis type to foster new contributions.
+
+Started in 2018, nf-core has enjoyed explosive growth in parallel to the mass adoption of Nextflow.
+Our community contiunes to grow apace and now offers ready-to-run pipelines for nearly 70 different applications.
+
+In this talk I will introduce the project and give an update on the latest and greatest achievements.
+
+<div>
+  <Button to="https://nf-co.re/" variant="secondary" size="md" arrow>
+    View project
+  </Button>
+</div>
