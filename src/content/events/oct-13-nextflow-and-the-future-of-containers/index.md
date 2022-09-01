@@ -15,3 +15,11 @@ tags:
 youtube: Watch on Youtube
 youtubeUrl: https://www.youtube.com/c/nextflow
 ---
+
+Containers have become an essential component in the toolset of scientific workflow developers enabling the deployment of data analysis pipelines at scale in a portable and reproducible manner. However, the increasing complexity and reliance on containers pose new challenges: developers may be required to build several dozen container images and maintain them across different cloud registries. This forces developers to switch the context from the scientific application logic and waste significant amounts of time on “infrastructural” tasks. Moreover, the same software may require container builds depending on CPU architecture, storage environment and custom low-level libraries to run in an efficient manner. Community curated collections such as Biocontainers mitigate this problem, even though they do not provide an ideal answer. This presentation will introduce a novel solution available to Nextflow developers to streamline the provisioning of containers for data analysis pipelines and takes advantage of community standards.
+
+<div>
+  <Button to="https://nextflow.io/" variant="secondary" size="md" arrow>
+    View project
+  </Button>
+</div>
