@@ -1,7 +1,7 @@
 ---
-slug: oct-12-designing-mechanisms-into-bactopia-to-support-its-users-and-contributie-back-to-the-community
+slug: oct-12-designing-mechanisms-into-bactopia-to-support-its-users-and-contribute-back-to-the-community
 timeframe: 5:30 - 5:45 PM (15 min)
-title: Designing mechanisms into Bactopia to support its users and contributie back to the community
+title: Designing mechanisms into Bactopia to support its users and contribute back to the community
 datetime: 2022-10-12T17:30:00.000Z
 date: Oct 12, 2022
 time: 5:30 PM
