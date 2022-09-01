@@ -126,7 +126,7 @@ const ProgramOct14Page = ({ location }) => {
             Summit and nf-core Hackathon will be streamed live and presentations made available after the event.
           </p>
           <p className="typo-body max-w-2xl mx-auto mb-4">
-            Nextflow Summit begins at 5:00&nbsp;PM CET on Wednesday, October&nbsp;12, and closes 2:30&nbsp;PM CET Friday, October&nbsp;14.
+            Nextflow Summit begins at 5:00&nbsp;PM CET on Wednesday, October&nbsp;12, and closes 1:30&nbsp;PM CET Friday, October&nbsp;14.
           </p>
           <Button to="/assets/program.pdf" variant="accent" size="md">
             Download program PDF
