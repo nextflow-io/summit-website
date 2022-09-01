@@ -13,7 +13,7 @@ tags:
 meta:
   title: "Vladimir Mikryukov"
   description: "Nextflow Summit 2022 Poster Presenter"
-  image: ../../../images/share/share-image.jpg
+  image: ../../../images/share/speaker-vladimir-mikryukov.jpg
 ---
 
 Vladimir Mikryukov is a molecular ecologist with special interests in ecological genetics, biodiversity, and metagenomics. He is a research fellow at the Ecology of Biological Interactions Workgroup at the Institute of Ecology and Earth Sciences of the University of Tartu and a member of the Mycology and Microbiology Center (MMC, Estonia).
