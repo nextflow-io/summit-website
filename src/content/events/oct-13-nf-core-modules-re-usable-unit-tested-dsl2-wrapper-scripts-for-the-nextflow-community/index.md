@@ -19,9 +19,9 @@ In July 2020, Nextflow provided a syntax extension called DSL2 that permits the 
 
 We have since created a centralised repository called [nf-core/modules](https://github.com/nf-core/modules) specifically for the purpose of hosting Nextflow DSL2 module files containing tool-specific process definitions and their associated documentation. Each module contribution is reviewed independently and must pass unit tests before merging into the codebase, as well as adhering to a set of best practices in order to make them standardised, re-usable, portable and reproducible. nf-core/modules has now become a reference for [almost 600](https://nf-co.re/modules) standardised wrapper scripts for software tools such as fastqc, bwa, samtools etc. that are re-usable within any Nextflow pipeline.
 
-Extensive documentation and video content is available for adding and using [nf-core/modules](https://github.com/nf-core/modules). The nf-core community have also extended the nf-core/tools Python package to [include functionality](https://github.com/nf-core/tools#modules) to install, update, lint and unit test modules in pipelines.
+Extensive documentation and video content is available for adding and using nf-core/modules. The nf-core community have also extended the nf-core/tools Python package to [include functionality](https://github.com/nf-core/tools#modules) to install, update, lint and unit test modules in pipelines.
 
-This talk will provide an overview of the current and future plans for [nf-core/modules](https://github.com/nf-core/modules).
+This talk will provide an overview of the current and future plans for nf-core/modules.
 
 <div>
   <Button to="https://nf-co.re/modules" variant="secondary" size="md" arrow>
