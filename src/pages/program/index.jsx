@@ -13,11 +13,14 @@ import LogoNextflow from '../../images/logo-nextflow.svg';
 
 const ProgramPage = ({ location }) => {
   const [ activeTag, setActiveTag ] = useState('');
+  const [ expandedEvent, setExpandedEvent ] = useState('');
 
   const data = useStaticQuery(graphql`
     query {
-      events: allEvent(filter: {date: {eq: "Oct 12, 2022"}}, sort: {fields: datetime}) {
+      events: allEvent(filter: {date: {eq: "Oct 12, 2022"}, isChild: {ne: true}}, sort: {fields: datetime}) {
         nodes {
+          slug
+          id
           timeframe
           title
           description
@@ -28,6 +31,7 @@ const ProgramPage = ({ location }) => {
           locationUrl
           youtube
           youtubeUrl
+          hasPage
           speakers {
             name
             image {
@@ -37,6 +41,32 @@ const ProgramPage = ({ location }) => {
                   placeholder: NONE
                   width: 32
                 )
+              }
+            }
+          }
+          events {
+            slug
+            timeframe
+            title
+            description
+            date
+            time
+            tags
+            location
+            locationUrl
+            youtube
+            youtubeUrl
+            hasPage
+            speakers {
+              name
+              image {
+                childImageSharp {
+                  gatsbyImageData(
+                    height: 32
+                    placeholder: NONE
+                    width: 32
+                  )
+                }
               }
             }
           }
@@ -63,6 +93,22 @@ const ProgramPage = ({ location }) => {
     return true;
   }
 
+  const isExpandable = (event) => {
+    return event.events && event.events.length > 0;
+  }
+
+  const isExpanded = (event) => {
+    return event.id === expandedEvent;
+  }
+
+  const expand = (event) => {
+    if (event.id === expandedEvent) {
+      setExpandedEvent('');
+    } else {
+      setExpandedEvent(event.id);
+    }
+  }
+
   const events = data.events.nodes;
 
   return (
@@ -80,7 +126,7 @@ const ProgramPage = ({ location }) => {
             Summit and nf-core Hackathon will be streamed live and presentations made available after the event.
           </p>
           <p className="typo-body max-w-2xl mx-auto mb-4">
-            Nextflow Summit begins at 5:00&nbsp;PM CET on Wednesday, October&nbsp;12, and closes 2:30&nbsp;PM CET Friday, October&nbsp;14.
+            Nextflow Summit begins at 5:00&nbsp;PM CET on Wednesday, October&nbsp;12, and closes 1:30&nbsp;PM CET Friday, October&nbsp;14.
           </p>
           <Button to="/assets/program.pdf" variant="accent" size="md">
             Download program PDF
@@ -125,11 +171,31 @@ const ProgramPage = ({ location }) => {
               <span className="block typo-body text-center">end</span>
             </div>
             <div className="col-full lg:col-9">
-              {events.map((event) => (
-                <EventCard
-                  event={event}
-                  hidden={isFiltered(event)}
-                />
+              {events.map((event, i) => (
+                <>
+                  <EventCard
+                    event={event}
+                    hidden={isFiltered(event)}
+                    expanded={isExpanded(event)}
+                    isExpandable={isExpandable(event)}
+                    onExpand={() => { expand(event) }}
+                  />
+                  {isExpanded(event) && (
+                    <>
+                      {event.events && (
+                        <div>
+                          {event.events.map((childEvent) => (
+                            <EventCard
+                              event={childEvent}
+                              hidden={isFiltered(childEvent)}
+                              isChild
+                            />
+                          ))}
+                        </div>
+                      )}
+                    </>
+                  )}
+                </>
               ))}
             </div>
             <div className="hidden lg:block lg:col-2 mt-4">

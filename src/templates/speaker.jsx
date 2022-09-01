@@ -4,10 +4,12 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import React from 'react';
 
 import CustomMDXProvider from '../components/CustomMDXProvider';
+import EventCard from '../components/EventCard';
 import Seo from '../components/Seo';
 
 import {
   AngleLeftIcon,
+  Button,
   GitHubIcon,
   Link,
   LinkedInIcon,
@@ -22,11 +24,12 @@ const SpeakerPage = ({ data }) => {
       <Seo
         title={speaker.meta.title}
         description={speaker.meta.description}
+        image={speaker.meta.image.publicURL}
       />
       <div className="text-white container-md py-10 md:py-20">
         <div className="inline-flex items-center hover:text-green-600 mb-4">
           <AngleLeftIcon className="h-6 w-6 inline-block mr-1" />
-          <Link to="/speakers/" className="typo-intro" noBorder>
+          <Link to="/speakers/" noBorder>
             Back
           </Link>
         </div>
@@ -79,6 +82,16 @@ const SpeakerPage = ({ data }) => {
             </MDXRenderer>
           </CustomMDXProvider>
         </div>
+        <div className="mt-5 md:mt-10">
+          {data.events.nodes.map((event) => (
+            <div className="mt-8 first:mt-0">
+              <EventCard
+                event={event}
+                disableTimeline
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </>
   )
@@ -110,6 +123,41 @@ export const pageQuery = graphql`
       meta {
         title
         description
+        image {
+          publicURL
+        }
+      }
+    }
+    events: allEvent(
+      filter: {speakers: {elemMatch: {slug: {eq: $slug }}}, isChild: {eq: true}}
+      sort: {fields: datetime}
+    ) {
+      nodes {
+        slug
+        id
+        timeframe
+        title
+        description
+        date
+        time
+        tags
+        location
+        locationUrl
+        youtube
+        youtubeUrl
+        hasPage
+        speakers {
+          name
+          image {
+            childImageSharp {
+              gatsbyImageData(
+                height: 32
+                placeholder: NONE
+                width: 32
+              )
+            }
+          }
+        }
       }
     }
   }

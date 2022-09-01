@@ -13,6 +13,7 @@ tags:
 meta:
   title: "Saba	Nafees"
   description: "Nextflow Summit 2022 Speaker"
+  image: ../../../images/share/speaker-saba-nafees.jpg
 ---
 Saba is a scientist, activist, entrepreneur, and lifelong student. She is a data scientist at Chan Zuckerberg Biohub, working at the intersection of infectious disease and computational biology.  
 

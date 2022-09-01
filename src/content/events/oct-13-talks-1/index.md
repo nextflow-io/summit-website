@@ -1,17 +1,22 @@
 ---
-timeframe: 11:00 AM - 12:00 PM (60 min)
-title: Talks
-description: The session will be composed of multiple talks given by several speakers. Details will be announced soon.
+timeframe: 10:00 - 11:30 AM (90 min)
+title: "Session 2: Talks"
+description: Talks from Gisela Gabernet, Tony Zeljkovic and Hatem Nawar.
 speakers:
-  - Evan Floden
-  - Phil Ewels
-  - Paolo di Tommaso
+  - Rob Patro
+  - Gisela Gabernet
+  - Tony Zeljkovic
+  - Hatem Nawar
 tags:
-  - Nextflow
+  - Keynote
   - Community
-datetime: 2022-10-13T11:00:00.000Z
+  - Ecosystem
+events:
+  - oct-13-keynote
+  - oct-13-nf-core-airrflow-a-pipeline-to-analyze-adaptive-immune-receptor-repertoires-airrs
+  - oct-13-unlocking-automated-bioinformatics-for-large-scale-healthcare
+  - oct-13-pipeline-economics-on-cloud
+datetime: 2022-10-13T10:00:00.000Z
 date: Oct 13, 2022
-time: 11:00 AM
-youtube: Watch on Youtube
-youtubeUrl: https://www.youtube.com/c/nextflow
+time: 10:00 AM
 ---

@@ -2,7 +2,7 @@
 import { MDXProvider } from '@mdx-js/react';
 import React from 'react';
 
-import { Link, List } from 'website-components';
+import { Button, Link, List } from 'website-components';
 
 import PropTypes from '../../utils/PropTypes';
 
@@ -146,6 +146,7 @@ const CustomMDXProvider = ({ children }) => (
         ol: CustomOrderedlist,
         li: CustomListItem,
         a: InlineLink,
+        Button: Button,
         Table: CustomTable,
         code: Pre,
       }}

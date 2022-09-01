@@ -13,6 +13,7 @@ tags:
 meta:
   title: "Athanasios Baltzis"
   description: "Nextflow Summit 2022 Poster Presenter"
+  image: ../../../images/share/share-image.jpg
 ---
 Athanasios Baltzis is a Ph.D. Fellow in the Comparative Bioinformatics Group at Centre for Genomic Regulation working on the applications of protein structures in multiple sequence alignment and phylogenetics with a keen interest in protein structure modelling.
 

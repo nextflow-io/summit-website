@@ -13,6 +13,7 @@ tags:
 meta:
   title: "Roger Olivella"
   description: "Nextflow Summit 2022 Poster Presenter"
+  image: ../../../images/share/share-image.jpg
 ---
 Roger Olivella is a Bioinformatician in the Proteomics Unit at the CRG, Barcelona, since 2015. He is the main developer of QCloud, a proteomics web tool that helps to assess the performance of mass spectrometers. The QCloud was implemented using Nextflow as a workflow manager and OpenMS for the proteomics computations.
 
