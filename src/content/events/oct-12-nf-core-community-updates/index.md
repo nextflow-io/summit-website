@@ -29,4 +29,3 @@ In this talk I will introduce the project and give an update on the latest and g
     View project
   </Button>
 </div>
-Footer
