@@ -10,7 +10,7 @@ hasPage: true
 speakers:
   - Brendan Bouffler
 tags:
-  - Community
+  - Ecosystem
 youtube: Watch on Youtube
 youtubeUrl: https://www.youtube.com/c/nextflow
 ---
