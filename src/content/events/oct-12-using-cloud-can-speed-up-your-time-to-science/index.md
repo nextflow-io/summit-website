@@ -1,5 +1,5 @@
 ---
-slug: oct-12-aws-sponsor
+slug: oct-12-using-cloud-can-speed-up-your-time-to-science
 timeframe: 6:30 - 7:00 PM (30 min)
 title:  Using cloud can speed up your time to science. Why every scientist (and citizen) should care.
 datetime: 2022-10-12T18:30:00.000Z
