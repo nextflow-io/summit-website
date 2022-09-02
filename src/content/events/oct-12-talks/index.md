@@ -18,4 +18,5 @@ speakers:
   - Brendan Bouffler
 tags:
   - Community
+  - Ecosystem
 ---
