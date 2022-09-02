@@ -10,7 +10,7 @@ events:
   - oct-12-designing-mechanisms-into-bactopia-to-support-its-users-and-contribute-back-to-the-community
   - oct-12-nf-core-community-updates
   - oct-12-automated-production-engine-to-decode-the-tree-of-life
-  - oct-12-aws-sponsor
+  - oct-12-using-cloud-can-speed-up-your-time-to-science
 speakers:
   - Robert Petit
   - Phil Ewels
