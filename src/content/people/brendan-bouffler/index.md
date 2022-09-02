@@ -15,6 +15,8 @@ meta:
   description: "Nextflow Summit 2022 Speaker"
   image: ../../../images/share/speaker-brendan-bouffler.jpg
 ---
-Brendan Bouffler has 25 years of experience in the global tech industry creating large-scale systems for HPC environments. He has been responsible for designing and building hundreds of HPC systems for researchers and engineers worldwide. A number of these efforts fed the Top500 list, with a few placing in the top five.
+Brendan Bouffler has 25 years of experience in the global tech industry creating large-scale systems for HPC environments. He’s been responsible for designing and building thousands of systems for researchers and engineers, in every continent. Many of these efforts fed the top500 list, including some that made the top 5.
 
-After leading the HPC organization in Asia for a hardware provider, Brendan joined Amazon in 2014 when it became clear to him that cloud would become the indispensable computing tool that the global research and engineering communities required to enable the discoveries that would change the world. He holds a degree in physics and has an interest in testing several of its laws as they apply to bicycles - an interest that has frequently resulted in hospitalization. Brendan is based in London and Seattle.
+After leading the HPC organization in Asia for a hardware maker, Brendan joined Amazon in 2014 when it became clear to him that cloud would become the exceptional computing tool the global research & engineering community needed to bring forward the discoveries that would change the world for us all.
+
+He holds a degree in Physics and an interest in testing several of its laws as they apply to bicycles. This has frequently resulted in hospitalization. He is based in London.
