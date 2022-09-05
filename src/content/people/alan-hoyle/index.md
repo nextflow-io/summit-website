@@ -19,4 +19,4 @@ Alan Hoyle is a bioinformatics scientist who was an undergrad at UNC and never l
 
 After years of using a locally-developed workflow runner, eventually gluing containerization to the back end of it, and then dabbling with another commonly-used workflow language, a colleague found Nextflow and the team has never looked back.  
 
-Alan will be presenting his work titled "jUNCtion: let investigators turning their data into results".
+Alan will be presenting his work titled "jUNCtion: Let investigators turn their data into results".
