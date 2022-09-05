@@ -1,7 +1,7 @@
 ---
 slug: oct-14-junction-let-investigators-turning-their-data-into-results
 timeframe: 10:45 - 11:00 AM (15 min)
-title: "jUNCtion: Let investigators turning their data into results"
+title: "jUNCtion: Let investigators turn their data into results"
 datetime: 2022-10-14T10:45:00.000Z
 date: Oct 14, 2022
 time: 10:45 AM
