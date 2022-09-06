@@ -42,6 +42,9 @@ const RegisterPage = () => {
                 <p className="typo-body mt-6">
                   Join the nf-core hackathon held in Barcelona and virtually.
                 </p>
+                <p className="typo-small text-gray-600">
+                  Registration for the in-person hackathon is now closed.
+                </p>
               </div>
               <img src={LogoNfCore} className="h-28 mx-auto -mt-4" alt="nf-core hackathon" />
             </div>
@@ -55,6 +58,9 @@ const RegisterPage = () => {
                 </h3>
                 <p className="typo-body mt-6">
                   Join the Nextflow Summit held in Barcelona and virtually.
+                </p>
+                <p className="typo-small text-gray-600">
+                  Registration for the in-person summit closes September 9th.
                 </p>
               </div>
               <img src={LogoNextflow} className="h-20 mx-auto" alt="Nextflow" />
