@@ -26,7 +26,7 @@ const SpeakerPage = ({ data }) => {
         description={speaker.meta.description}
         image={speaker.meta.image.publicURL}
       />
-      <div className="text-white container-md py-10 md:py-20">
+      <div className="text-white container-sm py-10 md:py-20">
         <div className="inline-flex items-center hover:text-green-600 mb-4">
           <AngleLeftIcon className="h-6 w-6 inline-block mr-1" />
           <Link to="/speakers/" noBorder>
