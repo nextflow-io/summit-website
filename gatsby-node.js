@@ -59,6 +59,18 @@ exports.createSchemaCustomization = ({ actions }) => {
         content: Mdx
       }
     `,
+    `
+      type Poster implements Node {
+        slug: String
+        title: String
+        url: String
+        image: File @fileByRelativePath
+        speakers: [People] @link(by: "name")
+        tags: [String]
+        meta: MetaFields
+        content: Mdx
+      }
+    `,
   ];
 
   createTypes(typeDefs);
@@ -167,6 +179,30 @@ exports.onCreateNode = ({ node, actions, getNode, createNodeId, createContentDig
         ...content,
       });
     }
+
+    if (parent.internal.type === 'File' && parent.sourceInstanceName === 'posters') {
+      const content = {
+        slug: node.frontmatter.slug,
+        title: node.frontmatter.title,
+        image: node.frontmatter.image,
+        url: node.frontmatter.url,
+        speakers: node.frontmatter.speakers,
+        tags: node.frontmatter.tags,
+        meta: node.frontmatter.meta,
+        content: node,
+      };
+
+      createNode({
+        id: createNodeId(`poster-post-${node.id}`),
+        parent: node.id,
+        children: [],
+        internal: {
+          type: 'Poster',
+          contentDigest: createContentDigest(content),
+        },
+        ...content,
+      });
+    }
   }
 };
 
@@ -175,6 +211,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const eventTemplate = path.resolve('src/templates/event.jsx');
   const speakerTemplate = path.resolve('src/templates/speaker.jsx');
+  const posterTemplate = path.resolve('src/templates/poster.jsx');
 
   const result = await graphql(`
     {
@@ -187,6 +224,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         nodes {
           slug
           hasPage
+        }
+      }
+      posters: allPoster {
+        nodes {
+          slug
         }
       }
     }
@@ -221,7 +263,19 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         }
       });
     }
-  })
+  });
+
+  const posters = result.data.posters.nodes;
+
+  posters.forEach((poster) => {
+    createPage({
+      path: `/posters/${poster.slug}/`,
+      component: posterTemplate,
+      context: {
+        slug: poster.slug,
+      }
+    });
+  });
 };
 
 exports.onCreateWebpackConfig = ({ actions, loaders }) => {

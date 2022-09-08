@@ -199,10 +199,7 @@ const ProgramOct13Page = ({ location }) => {
               ))}
             </div>
             <div className="hidden lg:block lg:col-2 mt-4">
-              <h3 className="typo-intro mb-4">
-                Explore key topics:
-              </h3>
-              <div className="mt-2">
+              <div>
                 <button
                   aria-label="All topics"
                   className={classnames(

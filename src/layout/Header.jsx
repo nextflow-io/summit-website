@@ -64,6 +64,19 @@ const Header = ({ location }) => {
               Speakers
             </Link>
             <Link
+              to="/posters/"
+              noBorder
+              className={classnames(
+                'bg-black bg-opacity-10 font-body py-1 px-4 rounded-sm mr-px font-normal tracking-wide',
+                {
+                  'text-white': !location.pathname.includes('/posters/'),
+                  'text-green-600': location.pathname.includes('/posters/')
+                }
+              )}
+            >
+              Posters
+            </Link>
+            <Link
               to="/call-for-abstracts/"
               noBorder
               className={classnames(
@@ -147,6 +160,15 @@ const Header = ({ location }) => {
                   className="typo-intro"
               >
                   Speakers
+              </Button>
+            </div>
+            <div className="mt-4">
+              <Button
+                  onClick={() => { handleNav('/posters/') }}
+                  noShadow
+                  className="typo-intro"
+              >
+                  Posters
               </Button>
             </div>
             <div className="mt-4">
