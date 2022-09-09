@@ -39,10 +39,10 @@ const CallForAbstractsPage = () => {
           <h1 className="typo-h2 mb-4">
             Call for abstracts
           </h1>
-          <p className="typo-body max-w-md mb-8 mx-auto">
+          <p className="typo-body max-w-md mb-4 mx-auto">
             Submit your abstract for one of the key themes: Nextflow, community, ecosystem, or software.
           </p>
-          <p className="typo-body">
+          <p className="typo-body max-w-xl mb-8 mx-auto">
             The call for speakers is now closed. The call for posters will remain open until September 16 or until all
             places are filled.
           </p>

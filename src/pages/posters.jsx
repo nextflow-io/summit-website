@@ -84,7 +84,7 @@ const PostersPage = () => {
             coffee breaks.
           </p>
           <Button to="/call-for-abstracts/" variant="accent" size="md" arrow>
-            Call for abstracts - posters
+            Call for abstracts
           </Button>
         </div>
       </div>
