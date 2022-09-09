@@ -1,5 +1,6 @@
+import classnames from 'classnames';
 import { useStaticQuery, graphql } from 'gatsby';
-import React from 'react';
+import React, { useState } from 'react';
 
 import {
   Button,
@@ -42,8 +43,31 @@ const PostersPage = () => {
           }
         }
       }
+      tags: allPoster {
+        group(field: tags) {
+          tag: fieldValue
+          totalCount
+        }
+      }
     }
   `);
+
+  const [ activeTag, setActiveTag ] = useState('');
+
+  const isFiltered = (poster) => {
+    if (activeTag === '') {
+      return false;
+    }
+
+    if (poster.tags && poster.tags.length > 0) {
+      return !poster.tags.includes(activeTag);
+    }
+
+    return true;
+  }
+
+  const posters = data.posters.nodes;
+  const tags = data.tags.group;
 
   return (
     <>
@@ -69,14 +93,50 @@ const PostersPage = () => {
           <div className="row mt-4">
             <div className="col-full lg:col-10">
               <div className="row">
-                {data.posters.nodes.map((poster) => (
-                  <div className="col-full lg:col-6 mt-4">
+                {posters.map((poster) => (
+                  <div className={classnames('col-full lg:col-6 mt-4', {
+                    'hidden': isFiltered(poster),
+                  })}>
                     <PosterCard
                       poster={poster}
                     />
                   </div>
                 ))}
               </div>
+            </div>
+            <div className="hidden lg:block lg:col-2 mt-4">
+              <div>
+                <button
+                  aria-label="All topics"
+                  className={classnames(
+                    'typo-small rounded-full px-4 py-1 uppercase mr-2',
+                    {
+                      'bg-green-600': activeTag === '',
+                      'bg-gray-800': activeTag !== '',
+                    }
+                  )}
+                  onClick={() => { setActiveTag('') }}
+                >
+                  All topics
+                </button>
+              </div>
+              {data.tags.group.map(({ tag }) => (
+                <div className="mt-2">
+                  <button
+                    aria-label={tag}
+                    className={classnames(
+                      'typo-small rounded-full px-4 py-1 uppercase mr-2',
+                      {
+                        'bg-green-600': activeTag === tag,
+                        'bg-gray-800': activeTag !== tag,
+                      }
+                    )}
+                    onClick={() => { setActiveTag(tag) }}
+                  >
+                    {tag}
+                  </button>
+                </div>
+              ))}
             </div>
           </div>
         </div>
