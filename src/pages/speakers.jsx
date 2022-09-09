@@ -47,7 +47,7 @@ const SpeakersPage = () => {
             More than 25 speakers to look forward to
           </h1>
           <p className="typo-body max-w-xl mb-6 mx-auto">
-            The call for speakers is now closed. The call for posters  will remain open until September 9 or until all
+            The call for speakers is now closed. The call for posters  will remain open until September 16 or until all
             places are filled.
           </p>
           <Button to="/call-for-abstracts/" variant="accent" size="md" arrow>
