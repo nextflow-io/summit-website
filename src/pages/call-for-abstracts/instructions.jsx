@@ -27,7 +27,7 @@ const InstructionsPage = () => {
             Instructions
           </h1>
           <p className="typo-body">
-            The call for talks is now closed. The call for posters will remain open until September 9 or when all spaces
+            The call for talks is now closed. The call for posters will remain open until September 16 or when all spaces
             are filled.
           </p>
           <div className="bg-black border border-gray-800 rounded-md p-8 mt-10">

@@ -186,7 +186,7 @@ const IndexPage = () => {
                       July 29:  Accepted speakers notified
                     </List.Item>
                     <List.Item className="typo-body">
-                      September 9: Registration for the Nextflow Summit closes
+                      September 16: Registration for the Nextflow Summit closes
                     </List.Item>
                     <List.Item className="typo-body">
                       October 10-12: nf-core Hackathon

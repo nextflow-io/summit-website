@@ -21,7 +21,7 @@ const RegisterPage = () => {
             Join the Nextflow Summit 2022 with nf-core hackathon
           </h1>
           <p className="typo-body max-w-md mb-6 mx-auto">
-            Places are limited, so register now to reserve your spot. Registration closes September 9 or when sold out.
+            Places are limited, so register now to reserve your spot. Registration closes September 16.
           </p>
           <Button to="https://forms.creacongresos.com/nextflowsummit/" variant="accent" size="md" arrow>
             Register
@@ -60,7 +60,7 @@ const RegisterPage = () => {
                   Join the Nextflow Summit held in Barcelona and virtually.
                 </p>
                 <p className="typo-small text-gray-600">
-                  Registration for the in-person summit closes September 9th.
+                  Registration for the in-person summit closes September 16th.
                 </p>
               </div>
               <img src={LogoNextflow} className="h-20 mx-auto" alt="Nextflow" />
