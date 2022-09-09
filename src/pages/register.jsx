@@ -21,7 +21,7 @@ const RegisterPage = () => {
             Join the Nextflow Summit 2022 with nf-core hackathon
           </h1>
           <p className="typo-body max-w-md mb-6 mx-auto">
-            Places are limited, so register now to reserve your spot. Registration closes September 9 or when sold out.
+            Places are limited, so register now to reserve your spot. Registration closes <strike>September 9</strike> <em>extended until September 16</em>.
           </p>
           <Button to="https://forms.creacongresos.com/nextflowsummit/" variant="accent" size="md" arrow>
             Register
