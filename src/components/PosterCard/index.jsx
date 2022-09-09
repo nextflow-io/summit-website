@@ -1,3 +1,4 @@
+import classnames from 'classnames';
 import { GatsbyImage as Image, getImage } from "gatsby-plugin-image";
 import React from 'react';
 
