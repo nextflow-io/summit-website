@@ -2,7 +2,7 @@
 slug: /speakers/marta-sanvicente-garcia/
 name: Marta Sanvicente García
 email: marta.sanvicente@upf.edu
-position: Ph.D Student at the Universitat Pompeu Fabra
+position: Ph.D. Student at the Universitat Pompeu Fabra
 image: ../../../images/people/martasanvicentegarcia.png
 github:
 twitter:
