@@ -1,8 +1,8 @@
 ---
-slug: /speakers/marta-sanvicente-garcía
+slug: /speakers/marta-sanvicente-garcia
 email: marta.sanvicente@upf.edu
 position: Ph.D. Student at the Universitat Pompeu Fabra
-image: ../../../images/people/empty.png
+image: ../../../images/people/martasanvicentegarcia.png
 github: 
 twitter: 
 linkedin: 
@@ -10,7 +10,7 @@ tags:
   - Community
   - Poster presenter
 meta:
-  title: "Marta Sanvicente García"
+  title: "Marta Sanvicente Garcia"
   description: "Nextflow Summit 2022 Poster Presenter"
   image: ../../../images/share/share-image.jpg
 ---
