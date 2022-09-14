@@ -302,7 +302,7 @@ const VanuePage = () => {
                     </List.Item>
                     <List.Item className="typo-body">
                       <span className="mr-2">
-                        Comply with the instructions of Docker staff and alert us if something is wrong
+                        Comply with the instructions of the event staff and alert us if something is wrong
                       </span>
                     </List.Item>
                   </List>
