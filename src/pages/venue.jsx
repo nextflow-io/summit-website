@@ -310,7 +310,7 @@ const VanuePage = () => {
                   <p className="typo-body">
                     You can check the full version of the Code of Conduct clicking
                     {' '}
-                    <Link to="#">
+                    <Link to="/assets/code_of_conduct.pdf">
                       here
                     </Link>
                     .
