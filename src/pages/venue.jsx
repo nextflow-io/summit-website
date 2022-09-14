@@ -287,7 +287,7 @@ const VanuePage = () => {
                     </List.Item>
                     <List.Item className="typo-body">
                       <span className="mr-2">
-                        Refrain from harassing speech, content, and other harassing behavior
+                        Refrain from harassing speech, content, and other unwelcome behaviour
                       </span>
                     </List.Item>
                     <List.Item className="typo-body">
