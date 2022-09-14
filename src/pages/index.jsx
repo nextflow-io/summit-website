@@ -22,6 +22,7 @@ import LogoElementBio from '../images/logos/element-biosciences.svg';
 import LogoNanopore from '../images/logos/nanopore.svg';
 import LogoSeqera from '../images/logos/seqera.svg';
 import LogoQuilt from '../images/logos/quilt.svg';
+import LogoGoogle from '../images/logos/googlecloud.svg';
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -75,27 +76,32 @@ const IndexPage = () => {
         </div>
         <div className="container-xl">
           <div className="flex flex-wrap">
-            <div className="w-full sm:w-1/5 px-1">
+            <div className="w-full sm:w-1/6 px-1">
               <div className="bg-gray-800 h-24 sm:h-40 px-4 flex items-center justify-center">
                 <img src={LogoAWS} className="h-12" alt="AWS logo" />
               </div>
             </div>
-            <div className="w-full sm:w-1/5 px-1">
+            <div className="w-full sm:w-1/6 px-1">
+              <div className="bg-gray-800 h-24 sm:h-40 px-4 flex items-center justify-center">
+                <img src={LogoGoogle} className="h-12" alt="Google logo" />
+              </div>
+            </div>
+            <div className="w-full sm:w-1/6 px-1">
               <div className="bg-gray-800 h-24 sm:h-40 px-4 flex items-center justify-center">
                 <img src={LogoSeqera} className="h-10" alt="Seqera logo" />
               </div>
             </div>
-            <div className="w-full sm:w-1/5 px-1">
+            <div className="w-full sm:w-1/6 px-1">
               <div className="bg-gray-800 h-24 sm:h-40 px-4 flex items-center justify-center">
                 <img src={LogoQuilt} className="h-12" alt="Quilt logo" />
               </div>
             </div>
-            <div className="w-full sm:w-1/5 px-1">
+            <div className="w-full sm:w-1/6 px-1">
               <div className="bg-gray-800 h-24 sm:h-40 px-4 flex items-center justify-center">
                 <img src={LogoNanopore} className="h-10" alt="Nanopore logo" />
               </div>
             </div>
-            <div className="w-full sm:w-1/5 px-1">
+            <div className="w-full sm:w-1/6 px-1">
               <div className="bg-gray-800 h-24 sm:h-40 px-4 flex items-center justify-center">
                 <img src={LogoElementBio} className="h-10" alt="Element Biosciences logo" />
               </div>
