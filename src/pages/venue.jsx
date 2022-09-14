@@ -262,6 +262,61 @@ const VanuePage = () => {
                   </p>
                 </Accordion.Detail>
               </Accordion.Item>
+              <Accordion.Item
+                className="border border-gray-800"
+                iconClassName="text-green-500"
+                activeIconClassName="text-white"
+              >
+                <Accordion.Summary>
+                  <p className="typo-intro">
+                    Code of Conduct
+                  </p>
+                </Accordion.Summary>
+                <Accordion.Detail>
+                  <p className="typo-body mb-4">
+                  <List type="bullet" iconClassName="text-white" className="mb-6">
+                    <List.Item className="typo-body">
+                      <span className="mr-2">
+                        Be nice and respectful to others
+                      </span>
+                    </List.Item>
+                    <List.Item className="typo-body">
+                      <span className="mr-2">
+                        Collaborate to create a safe and supportive environment for all participants
+                      </span>
+                    </List.Item>
+                    <List.Item className="typo-body">
+                      <span className="mr-2">
+                        Refrain from harassing speech, content, and other harassing behavior
+                      </span>
+                    </List.Item>
+                    <List.Item className="typo-body">
+                      <span className="mr-2">
+                        Be open to alternate points of view
+                      </span>
+                    </List.Item>
+                    <List.Item className="typo-body">
+                      <span className="mr-2">
+                        Respect the privacy of others
+                      </span>
+                    </List.Item>
+                    <List.Item className="typo-body">
+                      <span className="mr-2">
+                        Comply with the instructions of Docker staff and alert us if something is wrong
+                      </span>
+                    </List.Item>
+                  </List>
+                  </p>
+                  <p className="typo-body">
+                    You can check the full version of the Code of Conduct clicking
+                    {' '}
+                    <Link to="#">
+                      here
+                    </Link>
+                    .
+                  </p>
+                </Accordion.Detail>
+              </Accordion.Item>
             </Accordion>
           </div>
         </div>
