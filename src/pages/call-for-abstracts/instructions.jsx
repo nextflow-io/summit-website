@@ -97,9 +97,6 @@ const InstructionsPage = () => {
                 </List>
               </List.Item>
             </List>
-            <Link to="https://seqera.typeform.com/summit-22-talks" noBorder className="typo-body text-green-600">
-              Apply now
-            </Link>
           </div>
         </div>
       </div>

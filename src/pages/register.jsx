@@ -82,7 +82,9 @@ const RegisterPage = () => {
               >
                 <Accordion.Summary>
                   <p className="typo-intro">
-                    In-person
+                    <span className="mr-2">
+                      In-person
+                    </span>
                     <span className="typo-body bg-gray-800 rounded-sm py-2 px-4">
                       Sold out
                     </span>

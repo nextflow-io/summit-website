@@ -50,9 +50,6 @@ const SpeakersPage = () => {
             The call for speakers is now closed. The call for posters  will remain open until September 16 or until all
             places are filled.
           </p>
-          <Button to="/call-for-abstracts/" variant="accent" size="md" arrow>
-            Call for abstracts - posters
-          </Button>
         </div>
       </div>
       <div className="py-20 bg-gray-900 text-white">
