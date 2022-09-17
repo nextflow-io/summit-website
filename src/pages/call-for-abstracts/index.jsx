@@ -43,12 +43,8 @@ const CallForAbstractsPage = () => {
             Submit your abstract for one of the key themes: Nextflow, community, ecosystem, or software.
           </p>
           <p className="typo-body max-w-xl mb-8 mx-auto">
-            The call for speakers is now closed. The call for posters will remain open until September 16 or until all
-            places are filled.
+            The call for speakers is now closed.
           </p>
-          <Button to="https://seqera.typeform.com/summit-22-talks" variant="accent" size="md" arrow>
-            Apply now
-          </Button>
         </div>
       </div>
       <div className="py-20 bg-gray-900 text-white">
@@ -75,7 +71,7 @@ const CallForAbstractsPage = () => {
                     Posters - presented in person or virtually
                   </span>
                   <span className="typo-body bg-gray-800 rounded-sm py-2 px-4">
-                    Open
+                    Closed
                   </span>
                 </List.Item>
               </List>
