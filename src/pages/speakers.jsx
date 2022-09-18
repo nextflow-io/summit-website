@@ -47,7 +47,7 @@ const SpeakersPage = () => {
             More than 25 speakers to look forward to
           </h1>
           <p className="typo-body max-w-xl mb-6 mx-auto">
-            The call for speakers is now closed.
+            Nextflow Summit begins at 5:00 PM CET on Wednesday, October 12, and closes 1:30 PM CET Friday, October 14.
           </p>
         </div>
       </div>
