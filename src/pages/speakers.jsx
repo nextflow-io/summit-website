@@ -47,7 +47,7 @@ const SpeakersPage = () => {
             More than 25 speakers to look forward to
           </h1>
           <p className="typo-body max-w-xl mb-6 mx-auto">
-            Nextflow Summit begins at 5:00 PM CET on Wednesday, October 12, and closes 1:30 PM CET Friday, October 14.
+            Nextflow Summit begins at 5:00&nbsp;PM CET on Wednesday, October&nbsp;12, and closes 1:30&nbsp;PM CET Friday, October&nbsp;14.
           </p>
         </div>
       </div>
