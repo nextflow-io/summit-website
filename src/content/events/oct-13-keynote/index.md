@@ -1,7 +1,7 @@
 ---
 slug: oct-13-keynote
 timeframe: 10:00 - 10:45 AM (45 min)
-title: "Title to be announced"
+title: “What could be next(flow): Workflows as augmented execution contexts to improve provenance tracking and interoperability”
 datetime: 2022-10-13T10:00:00.000Z
 date: Oct 13, 2022
 time: 10:00 AM
