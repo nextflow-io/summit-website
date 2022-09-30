@@ -241,7 +241,7 @@ const IndexPage = () => {
                   </p>
                   <p className="typo-body flex items-center mb-4">
                     <span className="mr-2">
-                      <Link to="https://www.youtube.com/c/nextflow">
+                      <Link to="https://youtube.com/playlist?list=PLPZ8WHdZGxmUdAJlHowo7zL2pN3x97d32">
                         YouTube
                       </Link>
                     </span>

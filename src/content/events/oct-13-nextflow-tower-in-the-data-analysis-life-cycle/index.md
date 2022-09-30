@@ -12,5 +12,5 @@ speakers:
 tags:
   - Ecosystem
 youtube: Watch on Youtube
-youtubeUrl: https://www.youtube.com/c/nextflow
+youtubeUrl: https://youtu.be/Tqw9r2B6bWk
 ---

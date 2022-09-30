@@ -12,7 +12,7 @@ speakers:
 tags:
   - Community
 youtube: Watch on Youtube
-youtubeUrl: https://www.youtube.com/c/nextflow
+youtubeUrl: https://youtu.be/YUZVtPkIgqM
 ---
 
 The nf-core community collaborates to build a curated set of analysis pipelines built using Nextflow.
