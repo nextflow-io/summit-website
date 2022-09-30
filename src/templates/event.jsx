@@ -89,8 +89,8 @@ const EventPage = ({ data }) => {
               <>
                 <span className="hidden lg:block mx-2">|</span>
                 <div>
-                  <Link to="https://goo.gl/maps/K3chvdYLa9BfDpaD9" className="typo-body">
-                    Torre Glòries, Avinguda Diagonal, 211, 08018 Barcelona, Spain
+                  <Link to={event.locationUrl} className="typo-body">
+                    {event.location}
                   </Link>
                   <LocationIcon className="inline-block h-6 w-6 ml-2" />
                 </div>
