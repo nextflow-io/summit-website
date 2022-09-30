@@ -135,8 +135,25 @@ const VanuePage = () => {
               </p>
               <p className="typo-body mb-4">
                 Torre Glòries is one of the tallest and most striking skyscrapers in Barcelona. This remarkable building
-                is situated in the technological district and has become an important element in the city’s urban
+                is situated in the technological district and has become an important element in the city's urban
                 landscape, especially when it's lit up at night.
+              </p>
+              <h2 className="typo-h2 mb-4">
+                Shôko
+              </h2>
+              <p className="typo-body">
+                <Link to="https://g.page/shokobarcelona" className="hover:text-green-600">
+                  Shôko, Passeig Marítim de la Barceloneta, 36, 08005 Barcelona, Spain
+                </Link>
+                <LocationIcon className="inline-block w-6 h-6 ml-2" />
+              </p>
+              <p className="typo-body mb-4">
+                Summit dinner - Thu, Oct 13
+              </p>
+              <p className="typo-body mb-4">
+                The Nextflow Summit dinner will be held at Shôko, a cosmopolitan Restaurant &amp; Lounge Club,
+                located in one of the most attractive areas of the city, the Paseo Marítimo de la Barceloneta,
+                with amazing views to the Mediterranean Sea.
               </p>
             </div>
           </div>
