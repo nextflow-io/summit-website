@@ -1,7 +1,7 @@
 ---
 timeframe: 7:00 - 10:00 PM (180 min)
 title: Summit dinner
-description: Dinner
+description: The Summit dinner will be held at Shôko, a Restaurant &amp; Lounge Club.
 tags:
   - Social
 datetime: 2022-10-13T19:00:00.000Z
