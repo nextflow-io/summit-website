@@ -133,7 +133,7 @@ const EventCard = ({ event, hidden, expanded, isExpandable, onExpand, isChild, d
           <>
             <span className="hidden lg:block mx-2">|</span>
             <div>
-              <Link to={location.locationUrl} className="typo-body">
+              <Link to={event.locationUrl} className="typo-body">
                 {event.location}
               </Link>
               <LocationIcon className="inline-block h-6 w-6 ml-2" />
