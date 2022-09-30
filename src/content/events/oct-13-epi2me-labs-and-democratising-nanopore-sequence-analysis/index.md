@@ -12,7 +12,7 @@ speakers:
 tags:
   - Ecosystem
 youtube: Watch on Youtube
-youtubeUrl: https://www.youtube.com/c/nextflow
+youtubeUrl: https://youtu.be/G3jWR_Tk0Xo
 ---
 Oxford Nanopore Technologies develops and sells DNA and RNA sequencing products. The technology is based on sensing changes in current flow as nucleic acid molecules transit a biological nanopore. Our goal is to enable the analysis of anything, by anyone, anywhere. Our MinION sequencing device is small and portable; it is commonly used in combination with Windows laptops. This presentation will introduce how we are simplifying the DNA sequence analysis processes for non- bioinformaticians who may also be sequencing in the field.
 

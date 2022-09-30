@@ -12,7 +12,7 @@ speakers:
 tags:
   - Ecosystem
 youtube: Watch on Youtube
-youtubeUrl: https://www.youtube.com/c/nextflow
+youtubeUrl: https://youtu.be/p70HZ5eFhks
 ---
 A key feature of Nextflow is its ability to use 'parameters' - configuration variables that can be overwritten at runtime in config files or on the command line. Parameters are a flexible and powerful concept, yet their flexibility can be a problem - developers may need to write a significant amount of code to validate user inputs.
 

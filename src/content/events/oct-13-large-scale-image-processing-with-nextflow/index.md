@@ -12,7 +12,7 @@ speakers:
 tags:
   - Community
 youtube: Watch on Youtube
-youtubeUrl: https://www.youtube.com/c/nextflow
+youtubeUrl: https://youtu.be/G3jWR_Tk0Xo
 ---
 <div className="mb-4">
   <small className="typo-small">

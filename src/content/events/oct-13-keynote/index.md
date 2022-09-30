@@ -12,6 +12,6 @@ speakers:
 tags:
   - Keynote
 youtube: Watch on Youtube
-youtubeUrl: https://www.youtube.com/c/nextflow
+youtubeUrl: https://youtu.be/ZZODaSfdEH8
 ---
 Abstract coming soon!

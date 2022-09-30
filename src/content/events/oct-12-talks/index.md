@@ -19,4 +19,6 @@ speakers:
 tags:
   - Community
   - Ecosystem
+youtube: Watch on Youtube
+youtubeUrl: https://youtu.be/YUZVtPkIgqM
 ---

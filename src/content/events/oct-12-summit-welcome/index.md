@@ -12,5 +12,5 @@ tags:
   - Community
 hasPage: true
 youtube: Watch on Youtube
-youtubeUrl: https://www.youtube.com/c/nextflow
+youtubeUrl: https://youtu.be/YUZVtPkIgqM
 ---

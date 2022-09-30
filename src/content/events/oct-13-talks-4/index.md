@@ -19,5 +19,5 @@ datetime: 2022-10-13T16:15:00.000Z
 date: Oct 13, 2022
 time: 4:15 PM
 youtube: Watch on Youtube
-youtubeUrl: https://www.youtube.com/c/nextflow
+youtubeUrl: https://youtu.be/G3jWR_Tk0Xo
 ---
