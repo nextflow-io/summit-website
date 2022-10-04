@@ -2,7 +2,7 @@
 slug: efficient-parallel-taxonomic-profiling-for-metagenomics-with-nf-core-taxprofiler
 title: Efficient parallel taxonomic profiling for metagenomics with nf-core/taxprofiler
 url: https://github.com/nf-core/taxprofiler
-image: ../../../images/visuals/poster.png
+image: ../../../images/posters/efficient-parallel.pdf
 speakers:
   - James Fellows Yates
 tags:

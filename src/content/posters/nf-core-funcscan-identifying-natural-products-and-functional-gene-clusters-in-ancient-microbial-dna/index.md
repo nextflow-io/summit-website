@@ -2,7 +2,7 @@
 slug: nf-core-funcscan-identifying-natural-products-and-functional-gene-clusters-in-ancient-microbial-dna
 title: "nf-core/funcscan: Identifying natural products and functional gene clusters in ancient microbial DNA"
 url: https://www.leibniz-hki.de/en
-image: ../../../images/visuals/poster.png
+image: ../../../images/posters/nf-core-funscan.pdf
 speakers: 
   - Jasmin Frangenberg
 tags:
