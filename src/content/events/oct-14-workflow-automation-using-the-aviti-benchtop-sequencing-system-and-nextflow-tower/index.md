@@ -8,7 +8,7 @@ time: 12:30 PM
 isChild: true
 hasPage: true
 speakers:
-  - Bryan Lajoie
+  - Edmund Miller
 tags:
   - Community
 youtube: Watch on Youtube
@@ -16,7 +16,7 @@ youtubeUrl: https://youtu.be/S9FDUEBSYCg
 ---
 <div className="mb-4">
   <small className="typo-small">
-    Bryan Lajoie, Edmund Miller, Dan McKean, Max Mass, Rosi Bajari, Claudia Dennler, Semyon Kruglyak
+    Edmund Miller, Bryan Lajoie, Dan McKean, Max Mass, Rosi Bajari, Claudia Dennler, Semyon Kruglyak
   </small>
 </div>
 
