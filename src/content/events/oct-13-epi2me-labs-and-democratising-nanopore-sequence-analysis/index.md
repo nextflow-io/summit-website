@@ -1,6 +1,6 @@
 ---
 slug: oct-13-epi2me-labs-and-democratising-nanopore-sequence-analysis
-timeframe: 4:15 - 4:30 PM (15 min)
+timeframe: 4:15 - 4:45 PM (30 min)
 title: "EPI2ME Labs and democratising Nanopore sequence analysis"
 datetime: 2022-10-13T16:15:00.000Z
 date: Oct 13, 2022
