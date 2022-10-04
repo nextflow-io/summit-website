@@ -1,13 +1,13 @@
 ---
 timeframe: 11:30 AM - 1:30 PM (120 min)
 title: "Session 8: Talks"
-description: Talks from Nicola Visonà, Francesco Strozzi, Raul Alcantara Aragon, Thanh Le Viet and Bryan Lajoie.
+description: Talks from Nicola Visonà, Francesco Strozzi, Raul Alcantara Aragon, Thanh Le Viet and Edmund Miller.
 speakers:
   - Nicola Visonà
   - Francesco Strozzi
   - Raul Alcantara Aragon
   - Thanh Le Viet
-  - Bryan Lajoie
+  - Edmund Miller
 tags:
   - Community
   - Ecosystem
