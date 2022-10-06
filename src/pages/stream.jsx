@@ -8,16 +8,14 @@ import Seo from "../components/Seo";
 import YoutubeIframe from "../components/YoutubeIframe";
 
 import IconGather from "../images/icons/gather.svg";
-import PlaceholderRectangle from '../images/visuals/placeholder-rectangle.svg';
+import PlaceholderRectangle from "../images/visuals/placeholder-rectangle.svg";
 
 const RegisterPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      gatherHeroImage: file(relativePath: {eq: "visuals/gather.png"}) {
+      gatherHeroImage: file(relativePath: { eq: "visuals/gather.png" }) {
         childImageSharp {
-          gatsbyImageData(
-            placeholder: NONE
-          )
+          gatsbyImageData(placeholder: NONE)
         }
       }
     }
@@ -28,17 +26,27 @@ const RegisterPage = () => {
       <div className="py-32 bg-gray-900 text-white">
         <div className="container-lg text-center">
           <h1 className="typo-h2 mb-4">Join the Nextflow Summit 2022 online</h1>
-          <p className="typo-body mx-auto">
-            Virtual attendees can join our online venue with Gather.
-          </p>
+          <p className="typo-body mx-auto">Virtual attendees can join our online venue with Gather.</p>
           <p className="typo-body mb-6 mx-auto">
             If you missed the registration, you can still watch the talks live on YouTube.
           </p>
-          <Button to="https://forms.creacongresos.com/nextflowsummit/" variant="accent" size="md" arrow className="mx-3">
+          <Button
+            to="https://forms.creacongresos.com/nextflowsummit/"
+            variant="accent"
+            size="md"
+            arrow
+            className="mx-3 mb-3"
+          >
             <img src={IconGather} alt="Gather logo" className="h-6 mr-3" />
             Join Gather
           </Button>
-          <Button to="https://youtube.com/playlist?list=PLPZ8WHdZGxmUdAJlHowo7zL2pN3x97d32" variant="accent" size="md" arrow className="mx-3">
+          <Button
+            to="https://youtube.com/playlist?list=PLPZ8WHdZGxmUdAJlHowo7zL2pN3x97d32"
+            variant="accent"
+            size="md"
+            arrow
+            className="mx-3"
+          >
             <YoutubeRectangleIcon className="inline-block h-6 w-6 mr-2" />
             Watch on YouTube
           </Button>
@@ -71,25 +79,31 @@ const RegisterPage = () => {
                     </List.Item>
                     <List.Item className="typo-body">Enter the space and enjoy the Nextflow Summit!</List.Item>
                   </List>
-                  <Button to="https://forms.creacongresos.com/nextflowsummit/" variant="secondary" size="sm" arrow>
+                  <Button
+                    to="https://forms.creacongresos.com/nextflowsummit/"
+                    variant="secondary"
+                    size="sm"
+                    arrow
+                    className="mb-5"
+                  >
                     <img src={IconGather} alt="Gather logo" className="h-6 mr-3 opacity-50" />
                     Join Gather
                   </Button>
                 </div>
                 <div className="col-full lg:col-6 lg:ml-1/12">
-              <div className="relative">
-                <div
-                  className="absolute inset-0 bg-center bg-cover bg-no-repeat rounded-sm"
-                  style={{ backgroundImage: `url(${PlaceholderRectangle})` }}
-                />
-                <Image
-                  image={getImage(data.gatherHeroImage)}
-                  className="w-full relative lg:top-6 lg:left-6"
-                  imgClassName="rounded-sm"
-                  alt="Gather"
-                />
-              </div>
-            </div>
+                  <div className="relative">
+                    <div
+                      className="absolute inset-0 bg-center bg-cover bg-no-repeat rounded-sm"
+                      style={{ backgroundImage: `url(${PlaceholderRectangle})` }}
+                    />
+                    <Image
+                      image={getImage(data.gatherHeroImage)}
+                      className="w-full relative lg:top-6 lg:left-6"
+                      imgClassName="rounded-sm"
+                      alt="Gather"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -110,6 +124,7 @@ const RegisterPage = () => {
                   variant="secondary"
                   size="sm"
                   arrow
+                  className="mb-5"
                 >
                   <YoutubeRectangleIcon className="inline-block h-6 w-6 mr-2" />
                   Watch on YouTube
@@ -122,7 +137,10 @@ const RegisterPage = () => {
                   className="absolute inset-0 bg-center bg-cover bg-no-repeat rounded-sm"
                   style={{ backgroundImage: `url(${PlaceholderRectangle})` }}
                 />
-                <YoutubeIframe listId="PLPZ8WHdZGxmUdAJlHowo7zL2pN3x97d32" className="relative lg:top-6 lg:-left-6"></YoutubeIframe>
+                <YoutubeIframe
+                  listId="PLPZ8WHdZGxmUdAJlHowo7zL2pN3x97d32"
+                  className="relative lg:top-6 lg:-left-6"
+                ></YoutubeIframe>
               </div>
             </div>
           </div>
