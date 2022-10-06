@@ -2,6 +2,7 @@
 slug: nextits-a-pipeline-for-metabarcoding-fungi-with-full-length-its-sequenced-with-pacbio
 title: "NextITS: a pipeline for metabarcoding fungi with full-length ITS sequenced with PacBio"
 image: ../../../images/visuals/poster.png
+poster_id: 12
 speakers:
   - Vladimir Mikryukov
 tags:

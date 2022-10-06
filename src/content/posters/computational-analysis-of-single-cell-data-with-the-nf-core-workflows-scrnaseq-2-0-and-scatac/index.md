@@ -3,6 +3,7 @@ slug: computational-analysis-of-single-cell-data-with-the-nf-core-workflows-scrn
 title: Computational analysis of single cell data with the nf-core workflows scrnaseq 2.0 and scatac
 url: https://nf-co.re/scrnaseq/2.0.0
 image: ../../../images/visuals/poster.png
+poster_id: 10
 speakers:
   - Florian Heyl
 tags:

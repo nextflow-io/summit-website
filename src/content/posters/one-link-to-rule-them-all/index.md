@@ -3,6 +3,7 @@ slug: one-link-to-rule-them-all
 title: "One Link to Rule Them All"
 url: https://quiltdata.com
 image: ../../../images/visuals/poster.png
+poster_id: 19
 speakers:
   - Ernest Prabhakar
 tags:
