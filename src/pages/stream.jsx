@@ -66,7 +66,6 @@ const RegisterPage = () => {
                   <p className="typo-body mb-4">
                     We recommend trying Gather out before the Summit begins to make yourself familiar with the platform.
                   </p>
-                  <p className="typo-body mb-4">If you’re attending remotely, follow these steps to enter Gather:</p>
                   <List type="bullet" iconClassName="text-white" className="mb-5">
                     <List.Item className="typo-body">
                       Use the button below to launch Gather, any time after October 7
