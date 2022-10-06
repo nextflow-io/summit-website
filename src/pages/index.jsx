@@ -236,25 +236,18 @@ const IndexPage = () => {
                 </Accordion.Summary>
                 <Accordion.Detail>
                   <p className="typo-body mb-4">
-                    Talks at the Nextflow Summit will be streamed live on YouTube and Gather for remote attendees, and
-                    will be available after the event.
+                    Talks at the Nextflow Summit will be streamed live on <Link to="https://youtube.com/playlist?list=PLPZ8WHdZGxmUdAJlHowo7zL2pN3x97d32">YouTube</Link> and <Link to="https://app.gather.town/app/X08wvNfA0ndXyDDE/Nextflow%20summit">Gather</Link> for remote attendees and will be available after the event.
                   </p>
-                  <p className="typo-body flex items-center mb-4">
-                    <span className="mr-2">
-                      <Link to="https://youtube.com/playlist?list=PLPZ8WHdZGxmUdAJlHowo7zL2pN3x97d32">
-                        YouTube
-                      </Link>
-                    </span>
-                    <YoutubeRectangleIcon />
-                  </p>
-                  <p className="typo-body flex items-center">
-                    <span className="mr-2">
-                      <Link to="https://www.gather.town">
-                        Gather
-                      </Link>
-                    </span>
-                    <img src={IconGather} alt="Gather logo" className="h-6" />
-                  </p>
+                  <Button
+                    to="/stream/"
+                    variant="secondary"
+                    size="sm"
+                    arrow
+                    className="mx-3 mb-3"
+                  >
+                    <img src={IconGather} alt="Gather logo" className="h-6 mr-3 opacity-50" />
+                    Join Online
+                  </Button>
                 </Accordion.Detail>
               </Accordion.Item>
             </Accordion>
