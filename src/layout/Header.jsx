@@ -109,7 +109,7 @@ const Header = ({ location }) => {
                 className="hover:opacity-80 ml-2"
                 noShadow
             >
-              Stream
+              Join Online
             </Button>
           </div>
           <div className="lg:hidden">
