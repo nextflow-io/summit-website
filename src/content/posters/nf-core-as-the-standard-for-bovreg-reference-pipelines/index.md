@@ -3,6 +3,7 @@ slug: nf-core-as-the-standard-for-bovreg-reference-pipelines
 title: nf-core as the standard for BovReg reference pipelines
 url: https://www.bovreg.eu/
 image: ../../../images/visuals/poster.png
+poster_id: 8
 speakers:
   - Björn Langer
 tags:

@@ -3,6 +3,7 @@ slug: flow-the-open-nextflow-based-sequencing-analysis-platform
 title: Flow - The Open, Nextflow-Based, Sequencing Analysis Platform
 url: https://goodwright.com
 image: ../../../images/visuals/poster.png
+poster_id: 14
 speakers:
   - Sam Ireland
 tags:
