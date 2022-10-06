@@ -12,7 +12,7 @@ speakers:
 tags:
   - Ecosystem
 youtube: Watch on Youtube
-youtubeUrl: https://youtu.be/cw_WKIB0zRc
+youtubeUrl: https://youtu.be/ZZODaSfdEH8
 ---
 Quilt is an open platform for storing, labeling, and managing data. Quilt integrates instrument data, metadata, analysis, and visualizations into reusable datasets. Together Nexflow and Quilt provide users with an open platform for reproducible science. Quilt's data versioning and Nextflow's reproducible pipelines allow users to run any version of a pipeline against current and past versions of a dataset, and to trace the lineage of every result.
 

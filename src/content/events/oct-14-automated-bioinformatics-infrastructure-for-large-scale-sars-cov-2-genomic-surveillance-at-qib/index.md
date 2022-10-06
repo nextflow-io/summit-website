@@ -12,7 +12,7 @@ speakers:
 tags:
   - Ecosystem
 youtube: Watch on Youtube
-youtubeUrl: https://youtu.be/S9FDUEBSYCg
+youtubeUrl: https://youtu.be/SouMSDJBE1U
 ---
 <div className="mb-4">
   <small className="typo-small">
