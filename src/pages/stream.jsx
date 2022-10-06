@@ -31,7 +31,7 @@ const RegisterPage = () => {
             If you missed the registration, you can still watch the talks live on YouTube.
           </p>
           <Button
-            to="https://forms.creacongresos.com/nextflowsummit/"
+            to="https://app.gather.town/app/X08wvNfA0ndXyDDE/Nextflow%20summit"
             variant="accent"
             size="md"
             arrow
@@ -80,7 +80,7 @@ const RegisterPage = () => {
                     <List.Item className="typo-body">Enter the space and enjoy the Nextflow Summit!</List.Item>
                   </List>
                   <Button
-                    to="https://forms.creacongresos.com/nextflowsummit/"
+                    to="https://app.gather.town/app/X08wvNfA0ndXyDDE/Nextflow%20summit"
                     variant="secondary"
                     size="sm"
                     arrow
