@@ -3,6 +3,7 @@ slug: leveraging-nextflow-and-bactopia-for-automated-plant-pathogen-characteriza
 title: Leveraging Nextflow and Bactopia for automated plant pathogen characterization
 url: https://www.ars.usda.gov/pacific-west-area/corvallis-or/horticultural-crops-research-unit/hcru/
 image: ../../../images/visuals/poster.png
+poster_id: 18
 speakers:
   - Zachary Foster
 tags:

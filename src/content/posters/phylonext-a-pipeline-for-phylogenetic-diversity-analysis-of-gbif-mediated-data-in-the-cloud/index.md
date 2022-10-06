@@ -3,6 +3,7 @@ slug: phylonext-a-pipeline-for-phylogenetic-diversity-analysis-of-gbif-mediated-
 title: "PhyloNext: a pipeline for phylogenetic diversity analysis of GBIF-mediated data in the cloud"
 url: https://github.com/vmikk/PhyloNext
 image: ../../../images/visuals/poster.png
+poster_id: 13
 speakers:
   - Vladimir Mikryukov
 tags:

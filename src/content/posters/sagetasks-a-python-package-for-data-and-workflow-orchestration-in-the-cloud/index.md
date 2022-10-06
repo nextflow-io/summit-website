@@ -3,6 +3,7 @@ slug: sagetasks-a-python-package-for-data-and-workflow-orchestration-in-the-clou
 title: "sagetasks: a Python package for data and workflow orchestration in the cloud"
 url: https://github.com/sage-Bionetworks-workflows/sagetasks
 image: ../../../images/visuals/poster.png
+poster_id: 5
 speakers:
   - Bruno Grande
 tags:

@@ -16,7 +16,7 @@ import PlaceholderVisual from '../images/placeholder.svg';
 const PostersPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      posters: allPoster(sort: {fields: title}) {
+      posters: allPoster(sort: {fields: poster_id}) {
         nodes {
           slug
           title
@@ -29,6 +29,7 @@ const PostersPage = () => {
               )
             }
           }
+          poster_id
           speakers {
             name
             image {
