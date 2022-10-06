@@ -2,7 +2,7 @@ import classnames from 'classnames';
 import { GatsbyImage as Image, getImage } from "gatsby-plugin-image";
 import React from 'react';
 
-import { Link } from 'website-components';
+import { Button, Link, SlackIcon } from 'website-components';
 
 const PosterCard = ({ poster }) => (
   <div className="bg-black border border-gray-800 rounded-sm shadow-xl h-full group">

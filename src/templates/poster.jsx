@@ -7,12 +7,8 @@ import {
   AngleLeftIcon,
   Button,
   DownloadIcon,
-  GitHubIcon,
   Link,
-  LinkedInIcon,
-  LocationIcon,
-  TwitterIcon,
-  YoutubeRectangleIcon,
+  SlackIcon
 } from 'website-components';
 
 import CustomMDXProvider from '../components/CustomMDXProvider';
@@ -99,6 +95,7 @@ const PosterPage = ({ data }) => {
           </h1>
           <div className="flex mt-8 md:mt-auto">
             <Button to={"https://nextflow.slack.com/channels/summit-2022-poster-" + poster.poster_id} variant="accent" size="sm" arrow>
+              <SlackIcon className="h-4 w-4 inline-block mr-2" />
               Ask a question on Slack
             </Button>
           </div>
