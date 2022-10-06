@@ -4,13 +4,13 @@ title: Building the Flomics bioinformatics infrastructure from the ground up
 image: ../../../images/visuals/poster.png
 poster_id: 1
 speakers:
-  - Julien Lagarde
+  - Cristina Tuñí i Domínguez
 tags:
   - Ecosystem
 ---
 <div className="mb-8">
   <small className="typo-small">
-    Julien Lagarde, André Lopes, Pedro Ferreira, Cristina Tuñí, Lluc Cabus, Joao Curado
+    Cristina Tuñí i Domínguez, Julien Lagarde, André Lopes, Pedro Ferreira, Cristina Tuñí, Lluc Cabus, Joao Curado
   </small>
 </div>
 
