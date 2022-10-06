@@ -48,7 +48,7 @@ const RegisterPage = () => {
         <div className="container-lg">
           <div className="row flex-nowrap">
             <div className="col-full">
-              <h2 className="typo-h2 mb-4">Instructions for Gather</h2>
+              <h2 className="typo-h2 mb-4">Join us online on Gather</h2>
               <div className="row flex-wrap lg:flex-nowrap">
                 <div className="col-full lg:col-6 mt-4 lg:mt-0">
                   <p className="typo-body mb-4">
