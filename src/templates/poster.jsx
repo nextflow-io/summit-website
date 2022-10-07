@@ -7,6 +7,7 @@ import {
   AngleLeftIcon,
   DownloadIcon,
   Link,
+  Button,
   SlackIcon
 } from 'website-components';
 
