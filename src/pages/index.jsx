@@ -12,9 +12,9 @@ import {
 } from 'website-components';
 
 import HeroAnimation from '../components/HeroAnimation';
+import GatherIcon from "../components/icons/GatherIcon";
 import Seo from '../components/Seo';
 
-import IconGather from '../images/icons/gather.svg';
 import IconNextflow from '../images/logo-nextflow.svg';
 
 import LogoAWS from '../images/logos/aws.svg';
@@ -245,7 +245,7 @@ const IndexPage = () => {
                     arrow
                     className="mx-3 mb-3"
                   >
-                    <img src={IconGather} alt="Gather logo" className="h-6 mr-3 opacity-50" />
+                    <GatherIcon className="h-6 mr-3 opacity-50" />
                     Join Online
                   </Button>
                 </Accordion.Detail>

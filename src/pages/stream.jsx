@@ -4,10 +4,10 @@ import React from "react";
 
 import { Accordion, Button, Box, Link, List, YoutubeRectangleIcon } from "website-components";
 
+import GatherIcon from "../components/icons/GatherIcon";
 import Seo from "../components/Seo";
 import YoutubeIframe from "../components/YoutubeIframe";
 
-import IconGather from "../images/icons/gather.svg";
 import PlaceholderRectangle from "../images/visuals/placeholder-rectangle.svg";
 
 const RegisterPage = () => {
@@ -37,7 +37,7 @@ const RegisterPage = () => {
             arrow
             className="mx-3 mb-3"
           >
-            <img src={IconGather} alt="Gather logo" className="h-6 mr-3" />
+            <GatherIcon className="inline-block h-6 w-6 mr-3" />
             Join Gather
           </Button>
           <Button
@@ -47,7 +47,7 @@ const RegisterPage = () => {
             arrow
             className="mx-3"
           >
-            <YoutubeRectangleIcon className="inline-block h-6 w-6 mr-2" />
+            <YoutubeRectangleIcon className="inline-block h-6 w-6 mr-3" />
             Watch on YouTube
           </Button>
         </div>
@@ -85,7 +85,7 @@ const RegisterPage = () => {
                     arrow
                     className="mb-5"
                   >
-                    <img src={IconGather} alt="Gather logo" className="h-6 mr-3 opacity-50" />
+                    <GatherIcon className="inline-block h-6 w-6 mr-2" />
                     Join Gather
                   </Button>
                 </div>

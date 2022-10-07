@@ -6,10 +6,10 @@ import {
   Button,
 } from 'website-components';
 
+import GatherIcon from "../components/icons/GatherIcon";
 import Seo from '../components/Seo';
 import PosterCard from '../components/PosterCard';
 
-import IconGather from "../images/icons/gather.svg";
 import LogoNextflow from '../images/logo-nextflow.svg';
 import PlaceholderVisual from '../images/placeholder.svg';
 
@@ -90,7 +90,7 @@ const PostersPage = () => {
             arrow
             className="mx-3 mb-3"
           >
-            <img src={IconGather} alt="Gather logo" className="h-6 mr-3" />
+            <GatherIcon className="inline-block h-6 w-6 mr-3" />
             Join Online
           </Button>
         </div>

@@ -11,11 +11,10 @@ import {
   SlackIcon
 } from 'website-components';
 
+import GatherIcon from "../components/icons/GatherIcon";
 import CustomMDXProvider from '../components/CustomMDXProvider';
 import Seo from '../components/Seo';
 import SpeakerCard from '../components/SpeakerCard';
-
-import IconGather from '../images/icons/gather.svg';
 
 const PosterPage = ({ data }) => {
   const { poster, posterImage } = data;
@@ -84,7 +83,7 @@ const PosterPage = ({ data }) => {
                       Gather
                     </Link>
                   </span>
-                  <img src={IconGather} alt="Gather logo" className="inline-block h-6 w-5 ml-2 opacity-50" />
+                  <GatherIcon className="inline-block h-6 w-6 ml-2 opacity-50" />
                 </div>
               </>
             )}
