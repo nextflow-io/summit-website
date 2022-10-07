@@ -3,13 +3,11 @@ import React from 'react';
 
 import {
   Button,
-  List,
 } from 'website-components';
 
 import Seo from '../components/Seo';
 import SpeakerCard from '../components/SpeakerCard';
 
-import LogoNextflow from '../images/logo-nextflow.svg';
 import PlaceholderVisual from '../images/placeholder.svg';
 
 const SpeakersPage = () => {

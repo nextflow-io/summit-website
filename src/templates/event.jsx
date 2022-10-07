@@ -9,12 +9,8 @@ import SpeakerCard from '../components/SpeakerCard';
 
 import {
   AngleLeftIcon,
-  Button,
-  GitHubIcon,
   Link,
-  LinkedInIcon,
   LocationIcon,
-  TwitterIcon,
   YoutubeRectangleIcon,
 } from 'website-components';
 
