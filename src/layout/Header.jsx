@@ -103,13 +103,13 @@ const Header = ({ location }) => {
               Venue
             </Link>
             <Button
-                to="/register/"
+                to="/stream/"
                 variant="accent"
                 size="sm"
                 className="hover:opacity-80 ml-2"
                 noShadow
             >
-              Register
+              Join Online
             </Button>
           </div>
           <div className="lg:hidden">

@@ -4,9 +4,9 @@ import React, { useState } from 'react';
 
 import {
   Button,
-  List,
 } from 'website-components';
 
+import GatherIcon from "../components/icons/GatherIcon";
 import Seo from '../components/Seo';
 import PosterCard from '../components/PosterCard';
 
@@ -81,9 +81,18 @@ const PostersPage = () => {
             Posters
           </h1>
           <p className="typo-body max-w-xl mb-6 mx-auto">
-            View published posters below and chat to the author in person, or on Gather.town during poster sessions and
-            coffee breaks.
+            Chat to the author either in person, on Gather, or on Slack during poster sessions and coffee breaks.
           </p>
+          <Button
+            to="/stream/"
+            variant="accent"
+            size="md"
+            arrow
+            className="mx-3 mb-3"
+          >
+            <GatherIcon className="inline-block h-6 w-6 mr-3" />
+            Join Online
+          </Button>
         </div>
       </div>
       <div className="py-20 bg-gray-900 text-white">
