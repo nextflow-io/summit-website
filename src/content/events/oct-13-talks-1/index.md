@@ -1,7 +1,7 @@
 ---
 timeframe: 10:00 - 11:30 AM (90 min)
 title: "Session 2: Talks"
-description: Talks from Gisela Gabernet, Tony Zeljkovic and Hatem Nawar.
+description: Keynote talk from Rob Patro, then talks from Gisela Gabernet, Tony Zeljkovic and Hatem Nawar.
 speakers:
   - Rob Patro
   - Gisela Gabernet
