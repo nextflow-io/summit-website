@@ -16,7 +16,7 @@ import PlaceholderVisual from '../images/placeholder.svg';
 const PostersPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      posters: allPoster(sort: {fields: title}) {
+      posters: allPoster(sort: {fields: poster_id}) {
         nodes {
           slug
           title
@@ -29,6 +29,7 @@ const PostersPage = () => {
               )
             }
           }
+          poster_id
           speakers {
             name
             image {
@@ -83,9 +84,6 @@ const PostersPage = () => {
             View published posters below and chat to the author in person, or on Gather.town during poster sessions and
             coffee breaks.
           </p>
-          <Button to="/call-for-abstracts/" variant="accent" size="md" arrow>
-            Call for abstracts
-          </Button>
         </div>
       </div>
       <div className="py-20 bg-gray-900 text-white">

@@ -21,7 +21,7 @@ const RegisterPage = () => {
             Join the Nextflow Summit 2022 with nf-core hackathon
           </h1>
           <p className="typo-body max-w-md mb-6 mx-auto">
-            Places are limited, so register now to reserve your spot. Registration closes September 16.
+            Register free for virtual attendance. In-person places are sold out.
           </p>
           <Button to="https://forms.creacongresos.com/nextflowsummit/" variant="accent" size="md" arrow>
             Register
@@ -82,7 +82,12 @@ const RegisterPage = () => {
               >
                 <Accordion.Summary>
                   <p className="typo-intro">
-                    In-person
+                    <span className="mr-2">
+                      In-person
+                    </span>
+                    <span className="typo-body bg-gray-800 rounded-sm py-2 px-4">
+                      Sold out
+                    </span>
                   </p>
                 </Accordion.Summary>
                 <Accordion.Detail>

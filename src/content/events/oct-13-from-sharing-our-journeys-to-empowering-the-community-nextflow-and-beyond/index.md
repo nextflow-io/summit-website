@@ -12,6 +12,6 @@ speakers:
 tags:
   - Community
 youtube: Watch on Youtube
-youtubeUrl: https://www.youtube.com/c/nextflow
+youtubeUrl: https://youtu.be/ZZODaSfdEH8
 ---
 The goal of this panel conversation is to bring together our nextflow community to learn from a diverse set of panelists who will share their stories, struggles and successes. The aims of this conversation are to highlight the general gaps that are ubiquitous across the programming and technical communities, the importance of bringing women and students from underrepresented communities together, and ways to share our knowledge beyond our workplaces. The session will be interactive and will conclude with audience Q&A and discussion.

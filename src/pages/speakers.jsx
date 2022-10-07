@@ -45,12 +45,8 @@ const SpeakersPage = () => {
             More than 25 speakers to look forward to
           </h1>
           <p className="typo-body max-w-xl mb-6 mx-auto">
-            The call for speakers is now closed. The call for posters  will remain open until September 16 or until all
-            places are filled.
+            Nextflow Summit begins at 5:00&nbsp;PM CET on Wednesday, October&nbsp;12, and closes 1:30&nbsp;PM CET Friday, October&nbsp;14.
           </p>
-          <Button to="/call-for-abstracts/" variant="accent" size="md" arrow>
-            Call for abstracts - posters
-          </Button>
         </div>
       </div>
       <div className="py-20 bg-gray-900 text-white">

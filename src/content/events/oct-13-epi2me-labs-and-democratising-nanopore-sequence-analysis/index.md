@@ -1,6 +1,6 @@
 ---
 slug: oct-13-epi2me-labs-and-democratising-nanopore-sequence-analysis
-timeframe: 4:15 - 4:30 PM (15 min)
+timeframe: 4:15 - 4:45 PM (30 min)
 title: "EPI2ME Labs and democratising Nanopore sequence analysis"
 datetime: 2022-10-13T16:15:00.000Z
 date: Oct 13, 2022
@@ -12,7 +12,7 @@ speakers:
 tags:
   - Ecosystem
 youtube: Watch on Youtube
-youtubeUrl: https://www.youtube.com/c/nextflow
+youtubeUrl: https://youtu.be/ZZODaSfdEH8
 ---
 Oxford Nanopore Technologies develops and sells DNA and RNA sequencing products. The technology is based on sensing changes in current flow as nucleic acid molecules transit a biological nanopore. Our goal is to enable the analysis of anything, by anyone, anywhere. Our MinION sequencing device is small and portable; it is commonly used in combination with Windows laptops. This presentation will introduce how we are simplifying the DNA sequence analysis processes for non- bioinformaticians who may also be sequencing in the field.
 

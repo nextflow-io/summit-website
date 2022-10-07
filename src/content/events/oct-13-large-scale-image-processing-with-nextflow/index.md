@@ -1,10 +1,10 @@
 ---
 slug: oct-13-large-scale-image-processing-with-nextflow
-timeframe: 4:30 - 4:45 PM (15 min)
+timeframe: 4:45 - 5:00 PM (15 min)
 title: "Large scale image processing with Nextflow"
-datetime: 2022-10-13T16:30:00.000Z
+datetime: 2022-10-13T16:45:00.000Z
 date: Oct 13, 2022
-time: 4:30 PM
+time: 4:45 PM
 isChild: true
 hasPage: true
 speakers:
@@ -12,7 +12,7 @@ speakers:
 tags:
   - Community
 youtube: Watch on Youtube
-youtubeUrl: https://www.youtube.com/c/nextflow
+youtubeUrl: https://youtu.be/ZZODaSfdEH8
 ---
 <div className="mb-4">
   <small className="typo-small">

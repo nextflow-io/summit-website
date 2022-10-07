@@ -2,6 +2,7 @@
 slug: building-the-flomics-bioinformatics-infrastructure-from-the-ground-up
 title: Building the Flomics bioinformatics infrastructure from the ground up
 image: ../../../images/visuals/poster.png
+poster_id: 1
 speakers:
   - Julien Lagarde
 tags:

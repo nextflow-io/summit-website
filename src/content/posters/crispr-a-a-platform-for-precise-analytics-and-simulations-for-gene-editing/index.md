@@ -3,6 +3,7 @@ slug: crispr-a-a-platform-for-precise-analytics-and-simulations-for-gene-editing
 title: "CRISPR-Analytics (CRISPR-A): a platform for precise analytics and simulations for gene editing"
 url: https://bitbucket.org/synbiolab/crispr-a_nextflow/
 image: ../../../images/visuals/poster.png
+poster_id: 17
 speakers:
   - Marta Sanvicente García
 tags:

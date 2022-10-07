@@ -7,6 +7,7 @@ import {
   AngleLeftIcon,
   DownloadIcon,
   Link,
+  SlackIcon
 } from 'website-components';
 
 import CustomMDXProvider from '../components/CustomMDXProvider';
@@ -88,9 +89,16 @@ const PosterPage = ({ data }) => {
             )}
           </div>
           <h1 className="typo-h2 text-green-600 mb-4 mt-8">
+            <span className="bg-gray-800 rounded-full px-4 py-1 ml-2 float-right">#{poster.poster_id}</span>
             {poster.title}
           </h1>
           <div className="flex mt-8 md:mt-auto">
+            <Button to={"https://nextflow.slack.com/channels/summit-2022-poster-" + poster.poster_id} variant="accent" size="sm" arrow>
+              <SlackIcon className="h-4 w-4 inline-block mr-2" />
+              Ask a question on Slack
+            </Button>
+          </div>
+          <div className="flex mt-4">
             {poster.tags.map((tag) => (
               <div className="typo-small rounded-full px-4 py-1 bg-gray-800 uppercase mr-2">
                 {tag}
@@ -224,6 +232,7 @@ export const pageQuery = graphql`
     poster: poster(slug: { eq: $slug }) {
       title
       url
+      poster_id
       image {
         childImageSharp {
           gatsbyImageData(

@@ -2,7 +2,7 @@ import classnames from 'classnames';
 import { GatsbyImage as Image, getImage } from "gatsby-plugin-image";
 import React from 'react';
 
-import { Link } from 'website-components';
+import { Button, Link, SlackIcon } from 'website-components';
 
 const PosterCard = ({ poster }) => (
   <div className="bg-black border border-gray-800 rounded-sm shadow-xl h-full group">
@@ -18,6 +18,7 @@ const PosterCard = ({ poster }) => (
       </Link>
       <div className="px-4 py-6 bg-black rounded-b-sm w-full group-hover:bg-gray-800">
         <h4 className="typo-h5">
+          <span className="bg-gray-800 typo-small rounded-full px-4 py-1 ml-2 float-right">#{poster.poster_id}</span>
           <Link to={`/posters/${poster.slug}/`} noBorder>
             {poster.title}
           </Link>
