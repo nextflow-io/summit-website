@@ -5,7 +5,6 @@ import React from 'react';
 
 import {
   AngleLeftIcon,
-  Button,
   DownloadIcon,
   Link,
   SlackIcon
@@ -116,17 +115,37 @@ const PosterPage = ({ data }) => {
           <div className="mt-8">
             <div className="bg-black border border-gray-800 rounded-sm shadow-xl h-full">
               <div className="flex flex-col h-full w-full">
-                <Image
-                  image={getImage(posterImage)}
-                  className="rounded-t-sm w-full max-h-[460px]"
-                  imageClassName="rounded-t-sm"
-                  objectPosition="50% 0%"
-                  alt={poster.title}
-                />
+                {poster.image && (
+                  <Image
+                    image={getImage(poster.image)}
+                    className="rounded-t-sm w-full max-h-[460px]"
+                    imageClassName="rounded-t-sm"
+                    objectPosition="50% 0%"
+                    alt={poster.title}
+                  />
+                )}
+                {!poster.image && (
+                  <Image
+                    image={getImage(posterImage)}
+                    className="rounded-t-sm w-full max-h-[460px]"
+                    imageClassName="rounded-t-sm"
+                    objectPosition="50% 0%"
+                    alt={poster.title}
+                  />
+                )}
                 <div className="px-4 py-6 bg-black rounded-b-sm w-full flex flex-row items-center justify-between">
                   <div>
                     <h4 className="typo-h5">
-                      {poster.title}
+                      {poster.poster && (
+                        <Link to={poster.poster.publicURL} className="hover:text-green-600" noBorder target="_blank">
+                          {poster.title}
+                        </Link>
+                      )}
+                      {!poster.poster && (
+                        <>
+                          {poster.title}
+                        </>
+                      )}
                     </h4>
                     <div className="inline-flex mt-2">
                       {poster.tags.map((tag) => (
@@ -181,11 +200,13 @@ const PosterPage = ({ data }) => {
                       </>
                     )}
                   </div>
-                  <div>
-                    <DownloadIcon
-                      className="h-6 w-6 opacity-50 mx-4"
-                    />
-                  </div>
+                  {poster.poster && (
+                    <Link to={poster.poster.publicURL} noBorder className="text-gray-300 hover:text-white" target="_blank">
+                      <DownloadIcon
+                        className="h-6 w-6 mx-4"
+                      />
+                    </Link>
+                  )}
                 </div>
               </div>
             </div>
@@ -218,6 +239,9 @@ export const pageQuery = graphql`
             placeholder: NONE
           )
         }
+      }
+      poster {
+        publicURL
       }
       tags
       speakers {

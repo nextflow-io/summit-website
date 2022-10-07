@@ -65,6 +65,7 @@ exports.createSchemaCustomization = ({ actions }) => {
         title: String
         url: String
         image: File @fileByRelativePath
+        poster: File @fileByRelativePath
         speakers: [People] @link(by: "name")
         tags: [String]
         meta: MetaFields
