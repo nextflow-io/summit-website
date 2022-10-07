@@ -80,7 +80,7 @@ const PosterPage = ({ data }) => {
                 <span className="hidden lg:block mx-2">|</span>
                 <div className="inline-flex items-center">
                   <span>
-                    <Link to="https://gather.town/" className="inline typo-body text-gray-600">
+                    <Link to="/stream/" className="inline typo-body text-gray-600">
                       Gather
                     </Link>
                   </span>
