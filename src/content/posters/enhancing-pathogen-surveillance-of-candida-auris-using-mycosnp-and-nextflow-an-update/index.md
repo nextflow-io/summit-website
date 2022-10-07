@@ -2,7 +2,8 @@
 slug: enhancing-pathogen-surveillance-of-candida-auris-using-mycosnp-and-nextflow-an-update
 title: "Enhancing pathogen surveillance of Candida auris using MycoSNP and Nextflow: an update"
 url: https://github.com/CDCgov/mycosnp-nf
-image: ../../../images/visuals/poster.png
+image: ../../../images/visuals/enhancing-pathogen-surveillance-of-candida-auris-using-mycosnp-and-nextflow-an-update.png
+poster: /assets/enhancing-pathogen-surveillance-of-candida-auris-using-mycosnp-and-nextflow-an-update.pdf
 poster_id: 4
 speakers:
   - Hunter Seabolt
