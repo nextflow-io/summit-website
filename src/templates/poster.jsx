@@ -202,11 +202,10 @@ const PosterPage = ({ data }) => {
                     )}
                   </div>
                   {poster.poster && (
-                    <Link to={poster.poster.publicURL} noBorder className="text-gray-300 hover:text-white" target="_blank">
-                      <DownloadIcon
-                        className="h-6 w-6 mx-4"
-                      />
-                    </Link>
+                    <Button to={poster.poster.publicURL} variant="accent"  size="sm" target="_blank">
+                      <DownloadIcon className="h-6 w-6 mr-2" />
+                      Download
+                    </Button>
                   )}
                 </div>
               </div>
