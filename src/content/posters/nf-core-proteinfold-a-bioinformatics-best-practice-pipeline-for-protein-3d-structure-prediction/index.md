@@ -2,7 +2,8 @@
 slug: nf-core-proteinfold-a-bioinformatics-best-practice-pipeline-for-protein-3d-structure-prediction
 title: "nf-core/proteinfold: a bioinformatics best-practice pipeline for protein 3D structure prediction"
 url: https://github.com/nf-core/cutandrun
-image: ../../../images/visuals/poster.png
+image: ../../../images/visuals/nf-core-proteinfold-a-bioinformatics-best-practice-pipeline-for-protein-3d-structure-prediction.png
+poster: /assets/nf-core-proteinfold-a-bioinformatics-best-practice-pipeline-for-protein-3d-structure-prediction.pdf
 poster_id: 2
 speakers:
   - Athanasios Baltzis
