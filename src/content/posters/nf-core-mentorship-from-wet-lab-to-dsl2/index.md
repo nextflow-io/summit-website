@@ -2,7 +2,8 @@
 slug: nf-core-mentorship-from-wet-lab-to-dsl2
 title: "nf-core mentorship: From wet lab to DSL2"
 url: https://github.com/suchitrathapa/metaphlankrona
-image: ../../../images/visuals/poster.png
+image: ../../../images/visuals/nf-core-mentorship-from-wet-lab-to-dsl2.png
+poster: /assets/nf-core-mentorship-from-wet-lab-to-dsl2.pdf
 poster_id: 16
 speakers:
   - Suchitra Thapa
