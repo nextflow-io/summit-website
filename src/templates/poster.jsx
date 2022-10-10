@@ -5,9 +5,9 @@ import React from 'react';
 
 import {
   AngleLeftIcon,
-  Button,
   DownloadIcon,
   Link,
+  Button,
   SlackIcon
 } from 'website-components';
 
@@ -115,17 +115,37 @@ const PosterPage = ({ data }) => {
           <div className="mt-8">
             <div className="bg-black border border-gray-800 rounded-sm shadow-xl h-full">
               <div className="flex flex-col h-full w-full">
-                <Image
-                  image={getImage(posterImage)}
-                  className="rounded-t-sm w-full max-h-[460px]"
-                  imageClassName="rounded-t-sm"
-                  objectPosition="50% 0%"
-                  alt={poster.title}
-                />
+                {poster.image && (
+                  <Image
+                    image={getImage(poster.image)}
+                    className="rounded-t-sm w-full max-h-[460px]"
+                    imageClassName="rounded-t-sm"
+                    objectPosition="50% 0%"
+                    alt={poster.title}
+                  />
+                )}
+                {!poster.image && (
+                  <Image
+                    image={getImage(posterImage)}
+                    className="rounded-t-sm w-full max-h-[460px]"
+                    imageClassName="rounded-t-sm"
+                    objectPosition="50% 0%"
+                    alt={poster.title}
+                  />
+                )}
                 <div className="px-4 py-6 bg-black rounded-b-sm w-full flex flex-row items-center justify-between">
                   <div>
                     <h4 className="typo-h5">
-                      {poster.title}
+                      {poster.poster && (
+                        <Link to={poster.poster.publicURL} className="hover:text-green-600" noBorder target="_blank">
+                          {poster.title}
+                        </Link>
+                      )}
+                      {!poster.poster && (
+                        <>
+                          {poster.title}
+                        </>
+                      )}
                     </h4>
                     <div className="inline-flex mt-2">
                       {poster.tags.map((tag) => (
@@ -138,15 +158,17 @@ const PosterPage = ({ data }) => {
                       <>
                         {poster.speakers.length === 1 && (
                           <div className="flex items-center mt-4">
-                            <Image
-                              image={getImage(poster.speakers[0].image)}
-                              alt={poster.speakers[0].name}
-                              imgClassName="rounded-full"
-                              className="mr-4 h-8 w-8"
-                            />
-                            <span className="typo-intro text-green-600">
+                            <Link to={poster.speakers[0].slug} resetClassName="mb-0">
+                              <Image
+                                image={getImage(poster.speakers[0].image)}
+                                alt={poster.speakers[0].name}
+                                imgClassName="rounded-full"
+                                className="mr-4 h-8 w-8"
+                              />
+                            </Link>
+                            <Link to={poster.speakers[0].slug} className="border-none typo-intro text-green-600">
                               {poster.speakers[0].name}
-                            </span>
+                            </Link>
                           </div>
                         )}
                         {poster.speakers.length === 2 && (
@@ -180,11 +202,12 @@ const PosterPage = ({ data }) => {
                       </>
                     )}
                   </div>
-                  <div>
-                    <DownloadIcon
-                      className="h-6 w-6 opacity-50 mx-4"
-                    />
-                  </div>
+                  {poster.poster && (
+                    <Button to={poster.poster.publicURL} variant="accent"  size="sm" target="_blank">
+                      <DownloadIcon className="h-6 w-6 mr-2" />
+                      Download
+                    </Button>
+                  )}
                 </div>
               </div>
             </div>
@@ -217,6 +240,9 @@ export const pageQuery = graphql`
             placeholder: NONE
           )
         }
+      }
+      poster {
+        publicURL
       }
       tags
       speakers {

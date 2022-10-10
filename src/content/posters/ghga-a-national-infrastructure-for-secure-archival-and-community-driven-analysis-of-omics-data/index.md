@@ -2,7 +2,8 @@
 slug: ghga-a-national-infrastructure-for-secure-archival-and-community-driven-analysis-of-omics-data
 title: GHGA - A national infrastructure for secure archival and community-driven analysis of omics data
 url: https://github.com/ghga-de
-image: ../../../images/visuals/poster.png
+image: ../../../images/visuals/ghga-a-national-infrastructure-for-secure-archival-and-community-driven-analysis-of-omics-data.png
+poster: /assets/ghga-a-national-infrastructure-for-secure-archival-and-community-driven-analysis-of-omics-data.pdf
 poster_id: 11
 speakers:
   - Kübra Narcı

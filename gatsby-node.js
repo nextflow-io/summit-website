@@ -65,6 +65,7 @@ exports.createSchemaCustomization = ({ actions }) => {
         title: String
         url: String
         image: File @fileByRelativePath
+        poster: File @fileByRelativePath
         speakers: [People] @link(by: "name")
         tags: [String]
         meta: MetaFields
@@ -185,6 +186,7 @@ exports.onCreateNode = ({ node, actions, getNode, createNodeId, createContentDig
         slug: node.frontmatter.slug,
         title: node.frontmatter.title,
         image: node.frontmatter.image,
+        poster: node.frontmatter.poster,
         poster_id: node.frontmatter.poster_id,
         url: node.frontmatter.url,
         speakers: node.frontmatter.speakers,

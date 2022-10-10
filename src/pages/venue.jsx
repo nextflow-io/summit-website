@@ -2,13 +2,12 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
 import React from 'react';
 
-import { Accordion, Button, Link, List, LocationIcon } from 'website-components';
+import { Accordion, Link, List, LocationIcon } from 'website-components';
 
 import AccommodationCard from '../components/AccommodationCard';
 import LocationMap from '../components/LocationMap';
 import Seo from '../components/Seo';
 
-import LogoNextflow from '../images/logo-nextflow.svg';
 import PlaceholderRectangle from '../images/visuals/placeholder-rectangle.svg';
 
 const VanuePage = () => {

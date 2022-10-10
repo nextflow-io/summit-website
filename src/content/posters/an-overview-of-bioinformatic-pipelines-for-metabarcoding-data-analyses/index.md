@@ -2,7 +2,8 @@
 slug: an-overview-of-bioinformatic-pipelines-for-metabarcoding-data-analyses
 title: An Overview of Bioinformatic pipelines for metabarcoding data analyses
 url: https://nf-co.re/scrnaseq/2.0.0
-image: ../../../images/visuals/poster.png
+image: ../../../images/visuals/an-overview-of-bioinformatic-pipelines-for-metabarcoding-data-analyses.png
+poster: /assets/an-overview-of-bioinformatic-pipelines-for-metabarcoding-data-analyses.pdf
 poster_id: 9
 speakers:
   - Ali Hakimzadeh
