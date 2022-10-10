@@ -1,7 +1,7 @@
 ---
-slug: oct-13-nextflow-quilt-label-query-and-visualize-pipeline-data
+slug: oct-13-add-versioning-verifiability-and-visualization-to-your-pipeline-with-one-link
 timeframe: 12:45 - 1:45 PM (30 min)
-title: "Nextflow + Quilt: Label, query and visualize pipeline data"
+title: "Add versioning, verifiability, and visualization to your pipeline with one link"
 datetime: 2022-10-13T12:45:00.000Z
 date: Oct 13, 2022
 time: 12:45 PM
