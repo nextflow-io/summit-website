@@ -186,6 +186,7 @@ exports.onCreateNode = ({ node, actions, getNode, createNodeId, createContentDig
         slug: node.frontmatter.slug,
         title: node.frontmatter.title,
         image: node.frontmatter.image,
+        poster: node.frontmatter.poster,
         poster_id: node.frontmatter.poster_id,
         url: node.frontmatter.url,
         speakers: node.frontmatter.speakers,
