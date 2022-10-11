@@ -1,7 +1,8 @@
 ---
 slug: building-the-flomics-bioinformatics-infrastructure-from-the-ground-up
 title: Building the Flomics bioinformatics infrastructure from the ground up
-image: ../../../images/visuals/poster.png
+image: ../../../images/visuals/building-the-flomics-bioinformatics-infrastructure-from-the-ground-up.png
+posters: /assets/building-the-flomics-bioinformatics-infrastructure-from-the-ground-up.pdf
 poster_id: 1
 speakers:
   - Cristina Tuñí i Domínguez
