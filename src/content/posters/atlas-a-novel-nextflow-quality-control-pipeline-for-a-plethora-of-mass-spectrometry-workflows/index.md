@@ -1,7 +1,8 @@
 ---
 slug: atlas-a-novel-nextflow-quality-control-pipeline-for-a-plethora-of-mass-spectrometry-workflows
 title: "atlas: a novel Nextflow quality control pipeline for a plethora of mass spectrometry workflows"
-image: ../../../images/visuals/poster.png
+image: ../../../images/visuals/atlas-a-novel-nextflow-quality-control-pipeline-for-a-plethora-of-mass-spectrometry-workflows.png
+posters: /assets/atlas-a-novel-nextflow-quality-control-pipeline-for-a-plethora-of-mass-spectrometry-workflows.pdf
 poster_id: 3
 speakers:
   - Roger Olivella
