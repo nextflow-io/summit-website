@@ -2,7 +2,8 @@
 slug: a-computational-effient-system-for-improving-sars-cov-2-sequencing-surveillance
 title: A computational effient system for improving SARS-CoV-2 sequencing surveillance
 url: https://www.tigem.it/newsroom/publications/copy2_of_therapeutic-homology-independent-targeted-integration-in-retina-and-liver/
-image: ../../../images/visuals/poster.png
+image: ../../../images/visuals/a-computational-effient-system-for-improving-sars-cov-2-sequencing-surveillance.png
+poster: /assets/a-computational-effient-system-for-improving-sars-cov-2-sequencing-surveillance.pdf
 poster_id: 15
 speakers:
   - Marcello Salvi
