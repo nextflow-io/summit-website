@@ -1,7 +1,7 @@
 ---
 timeframe: 11:30 AM - 1:30 PM (120 min)
 title: "Session 8: Talks"
-description: Talks from Nicola Visonà, Francesco Strozzi, Raul Alcantara Aragon, Thanh Le Viet and Edmund Miller.
+description: Talks from Nicola Visonà, Francesco Strozzi, Raul Alcantara Aragon, Thanh Le Viet, Edmund Miller and Phil Ewels.
 speakers:
   - Nicola Visonà
   - Francesco Strozzi
