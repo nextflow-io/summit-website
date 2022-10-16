@@ -137,7 +137,6 @@ const RegisterPage = () => {
                   style={{ backgroundImage: `url(${PlaceholderRectangle})` }}
                 />
                 <YoutubeIframe
-                  id="SouMSDJBE1U"
                   listId="PLPZ8WHdZGxmUdAJlHowo7zL2pN3x97d32"
                   className="relative lg:top-6 lg:-left-6"
                 ></YoutubeIframe>
