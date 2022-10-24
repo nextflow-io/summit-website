@@ -5,10 +5,13 @@ import React from 'react';
 
 import CustomMDXProvider from '../components/CustomMDXProvider';
 import Seo from '../components/Seo';
+import YoutubeIframe from "../components/YoutubeIframe";
 import SpeakerCard from '../components/SpeakerCard';
+import PlaceholderRectangle from "../images/visuals/placeholder-rectangle.svg";
 
 import {
   AngleLeftIcon,
+  Button,
   Link,
   LocationIcon,
   YoutubeRectangleIcon,
@@ -121,6 +124,20 @@ const EventPage = ({ data }) => {
               </MDXRenderer>
             </CustomMDXProvider>
           </div>
+          {event.youtube && (
+            <>
+              <div
+                className="bg-center bg-cover bg-no-repeat rounded-sm p-1 mt-6 mb-3 mx-1"
+                style={{ backgroundImage: `url(${PlaceholderRectangle})` }}
+              >
+                <YoutubeIframe Id={event.youtubeUrl}></YoutubeIframe>
+              </div>
+              <Button to={event.youtubeUrl} variant="secondary" size="sm" className="my-3">
+                {event.youtube}
+                <YoutubeRectangleIcon className="inline-block h-6 w-6 ml-2" />
+              </Button>
+            </>
+          )}
           {event.speakers.map((speaker) => (
             <SpeakerCard
               speaker={speaker}

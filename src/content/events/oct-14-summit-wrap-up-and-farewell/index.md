@@ -10,6 +10,7 @@ speakers:
   - Evan Floden
 tags:
   - Community
+hasPage: true
 youtube: Watch on Youtube
 youtubeUrl: https://youtu.be/SouMSDJBE1U
 ---
