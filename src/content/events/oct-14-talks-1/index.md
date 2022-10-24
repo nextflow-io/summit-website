@@ -18,6 +18,4 @@ events:
 datetime: 2022-10-14T10:00:00.000Z
 date: Oct 14, 2022
 time: 10:00 AM
-youtube: Watch on Youtube
-youtubeUrl: https://youtu.be/SouMSDJBE1U
 ---
