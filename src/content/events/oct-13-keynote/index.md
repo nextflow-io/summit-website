@@ -12,6 +12,6 @@ speakers:
 tags:
   - Keynote
 youtube: Watch on Youtube
-youtubeUrl: https://youtu.be/ZZODaSfdEH8
+youtubeUrl: https://youtu.be/vNrKFT5eT8U
 ---
 Abstract coming soon!

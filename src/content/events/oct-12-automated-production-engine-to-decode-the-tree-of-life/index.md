@@ -12,7 +12,7 @@ speakers:
 tags:
   - Community
 youtube: Watch on Youtube
-youtubeUrl: https://youtu.be/YUZVtPkIgqM
+youtubeUrl: https://youtu.be/Zort8tv7iRI
 ---
 <div className="mb-4">
   <small className="typo-small">

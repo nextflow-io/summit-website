@@ -12,7 +12,7 @@ speakers:
 tags:
   - Community
 youtube: Watch on Youtube
-youtubeUrl: https://youtu.be/ZZODaSfdEH8
+youtubeUrl: https://youtu.be/7dTjF1-HRnI
 ---
 
 In July 2020, Nextflow provided a syntax extension called DSL2 that permits the re-use of module libraries both within and between pipelines. The new DSL came with the promise of simplifying the implementation and maintenance of data analysis pipelines, especially for the nf-core community which hosts over 50 pipelines that share functionality and core features.
