@@ -130,7 +130,7 @@ const EventPage = ({ data }) => {
                 className="bg-center bg-cover bg-no-repeat rounded-sm p-1 mt-6 mb-3 mx-1"
                 style={{ backgroundImage: `url(${PlaceholderRectangle})` }}
               >
-                <YoutubeIframe Id={event.youtubeUrl}></YoutubeIframe>
+                <YoutubeIframe id={event.youtubeUrl}></YoutubeIframe>
               </div>
               <Button to={event.youtubeUrl} variant="secondary" size="sm" className="my-3">
                 {event.youtube}
