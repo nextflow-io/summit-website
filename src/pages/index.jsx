@@ -236,7 +236,7 @@ const IndexPage = () => {
                 </Accordion.Summary>
                 <Accordion.Detail>
                   <p className="typo-body mb-4">
-                    Talks at the Nextflow Summit will be streamed live on <Link to="https://youtube.com/playlist?list=PLPZ8WHdZGxmUdAJlHowo7zL2pN3x97d32">YouTube</Link> and <Link to="https://app.gather.town/app/X08wvNfA0ndXyDDE/Nextflow%20summit">Gather</Link> for remote attendees and will be available after the event.
+                    Talks at the Nextflow Summit will be streamed live on <Link to="https://youtube.com/playlist?list=PLPZ8WHdZGxmUdAJlHowo7zL2pN3x97d32">YouTube</Link> and <Link to="/stream">Gather</Link> for remote attendees and will be available after the event.
                   </p>
                   <Button
                     to="/stream/"
