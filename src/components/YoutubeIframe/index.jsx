@@ -4,6 +4,10 @@ import PropTypes from '../../utils/PropTypes';
 import * as styles from './YoutubeIframe.module.css';
 
 const YoutubeIframe = ({ id, listId, className }) => {
+
+  if (id) {
+    id = id.replace('https://youtu.be/', '');
+  }
   let videoSource = `https://www.youtube.com/embed/${id}`;
 
   if (listId) {
