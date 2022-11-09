@@ -522,7 +522,6 @@ const GalleryPage = () => {
           </div>
         </div>
       </div>
-
     </>
   );
 };
