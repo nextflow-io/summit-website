@@ -337,100 +337,6 @@ const GalleryPage = () => {
       <div className="py-20 bg-gray-900 text-white">
         <div className="container-lg">
           <h2 className="typo-h2">
-            Nextflow Summit Social Dinner at Shoko
-          </h2>
-          <div className="row">
-            <div className="col-full lg:col-3 mt-8">
-              <Image
-                image={getImage(data.summitDinnerImage1)}
-                className="w-full h-[200px]"
-                imgClassName="rounded-sm"
-                alt="Nextflow Summit Social Dinner at Shoko"
-              />
-            </div>
-            <div className="col-full lg:col-3 mt-8">
-              <Image
-                image={getImage(data.summitDinnerImage2)}
-                className="w-full h-[200px]"
-                imgClassName="rounded-sm"
-                alt="Nextflow Summit Social Dinner at Shoko"
-              />
-            </div>
-            <div className="col-full lg:col-4 mt-8">
-              <Image
-                image={getImage(data.summitDinnerImage3)}
-                className="w-full h-[200px]"
-                imgClassName="rounded-sm"
-                alt="Nextflow Summit Social Dinner at Shoko"
-              />
-            </div>
-            <div className="col-full lg:col-2 mt-8">
-              <Image
-                image={getImage(data.summitDinnerImage4)}
-                className="w-full h-[200px]"
-                imgClassName="rounded-sm"
-                alt="Nextflow Summit Social Dinner at Shoko"
-              />
-            </div>
-            <div className="col-full lg:col-4 mt-8">
-              <Image
-                image={getImage(data.summitDinnerImage5)}
-                className="w-full h-[200px]"
-                imgClassName="rounded-sm"
-                alt="Nextflow Summit Social Dinner at Shoko"
-              />
-            </div>
-            <div className="col-full lg:col-3 mt-8">
-              <Image
-                image={getImage(data.summitDinnerImage6)}
-                className="w-full h-[200px]"
-                imgClassName="rounded-sm"
-                alt="Nextflow Summit Social Dinner at Shoko"
-              />
-            </div>
-            <div className="col-full lg:col-5 mt-8">
-              <Image
-                image={getImage(data.summitDinnerImage7)}
-                className="w-full h-[200px]"
-                imgClassName="rounded-sm"
-                alt="Nextflow Summit Social Dinner at Shoko"
-              />
-            </div>
-            <div className="col-full lg:col-5 mt-8">
-              <Image
-                image={getImage(data.summitDinnerImage8)}
-                className="w-full h-[200px]"
-                imgClassName="rounded-sm"
-                alt="Nextflow Summit Social Dinner at Shoko"
-              />
-            </div>
-            <div className="col-full lg:col-3 mt-8">
-              <Image
-                image={getImage(data.summitDinnerImage9)}
-                className="w-full h-[200px]"
-                imgClassName="rounded-sm"
-                alt="Nextflow Summit Social Dinner at Shoko"
-              />
-            </div>
-            <div className="col-full lg:col-4 mt-8">
-              <Image
-                image={getImage(data.summitDinnerImage10)}
-                className="w-full h-[200px]"
-                imgClassName="rounded-sm"
-                alt="Nextflow Summit Social Dinner at Shoko"
-              />
-            </div>
-          </div>
-          <div className="mt-8">
-            <Button to="https://photos.app.goo.gl/Hp5Ybf3YUFT5PQA49" variant="accent" size="md" arrow>
-              See 58 more images in Google Photos
-            </Button>
-          </div>
-        </div>
-      </div>
-      <div className="py-20 bg-gray-900 text-white">
-        <div className="container-lg">
-          <h2 className="typo-h2">
             Nextflow Summit
           </h2>
           <div className="row">
@@ -522,6 +428,101 @@ const GalleryPage = () => {
           </div>
         </div>
       </div>
+      <div className="py-20 bg-gray-900 text-white">
+        <div className="container-lg">
+          <h2 className="typo-h2">
+            Nextflow Summit Social Dinner at Shoko
+          </h2>
+          <div className="row">
+            <div className="col-full lg:col-3 mt-8">
+              <Image
+                image={getImage(data.summitDinnerImage1)}
+                className="w-full h-[200px]"
+                imgClassName="rounded-sm"
+                alt="Nextflow Summit Social Dinner at Shoko"
+              />
+            </div>
+            <div className="col-full lg:col-3 mt-8">
+              <Image
+                image={getImage(data.summitDinnerImage2)}
+                className="w-full h-[200px]"
+                imgClassName="rounded-sm"
+                alt="Nextflow Summit Social Dinner at Shoko"
+              />
+            </div>
+            <div className="col-full lg:col-4 mt-8">
+              <Image
+                image={getImage(data.summitDinnerImage3)}
+                className="w-full h-[200px]"
+                imgClassName="rounded-sm"
+                alt="Nextflow Summit Social Dinner at Shoko"
+              />
+            </div>
+            <div className="col-full lg:col-2 mt-8">
+              <Image
+                image={getImage(data.summitDinnerImage4)}
+                className="w-full h-[200px]"
+                imgClassName="rounded-sm"
+                alt="Nextflow Summit Social Dinner at Shoko"
+              />
+            </div>
+            <div className="col-full lg:col-4 mt-8">
+              <Image
+                image={getImage(data.summitDinnerImage5)}
+                className="w-full h-[200px]"
+                imgClassName="rounded-sm"
+                alt="Nextflow Summit Social Dinner at Shoko"
+              />
+            </div>
+            <div className="col-full lg:col-3 mt-8">
+              <Image
+                image={getImage(data.summitDinnerImage6)}
+                className="w-full h-[200px]"
+                imgClassName="rounded-sm"
+                alt="Nextflow Summit Social Dinner at Shoko"
+              />
+            </div>
+            <div className="col-full lg:col-5 mt-8">
+              <Image
+                image={getImage(data.summitDinnerImage7)}
+                className="w-full h-[200px]"
+                imgClassName="rounded-sm"
+                alt="Nextflow Summit Social Dinner at Shoko"
+              />
+            </div>
+            <div className="col-full lg:col-5 mt-8">
+              <Image
+                image={getImage(data.summitDinnerImage8)}
+                className="w-full h-[200px]"
+                imgClassName="rounded-sm"
+                alt="Nextflow Summit Social Dinner at Shoko"
+              />
+            </div>
+            <div className="col-full lg:col-3 mt-8">
+              <Image
+                image={getImage(data.summitDinnerImage9)}
+                className="w-full h-[200px]"
+                imgClassName="rounded-sm"
+                alt="Nextflow Summit Social Dinner at Shoko"
+              />
+            </div>
+            <div className="col-full lg:col-4 mt-8">
+              <Image
+                image={getImage(data.summitDinnerImage10)}
+                className="w-full h-[200px]"
+                imgClassName="rounded-sm"
+                alt="Nextflow Summit Social Dinner at Shoko"
+              />
+            </div>
+          </div>
+          <div className="mt-8">
+            <Button to="https://photos.app.goo.gl/Hp5Ybf3YUFT5PQA49" variant="accent" size="md" arrow>
+              See 58 more images in Google Photos
+            </Button>
+          </div>
+        </div>
+      </div>
+
     </>
   );
 };
