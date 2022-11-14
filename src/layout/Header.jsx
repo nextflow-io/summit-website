@@ -77,6 +77,19 @@ const Header = ({ location }) => {
               Posters
             </Link>
             <Link
+              to="/gallery/"
+              noBorder
+              className={classnames(
+                'bg-black bg-opacity-10 font-body py-1 px-4 rounded-sm mr-px font-normal tracking-wide',
+                {
+                  'text-white': !location.pathname.includes('/gallery/'),
+                  'text-green-600': location.pathname.includes('/gallery/')
+                }
+              )}
+            >
+              Gallery
+            </Link>
+            <Link
               to="/call-for-abstracts/"
               noBorder
               className={classnames(
