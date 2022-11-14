@@ -517,7 +517,7 @@ const GalleryPage = () => {
           </div>
           <div className="mt-8">
             <Button to="https://photos.app.goo.gl/82mXfCrx3ukMy2zm9" variant="accent" size="md" arrow>
-              See more in Google Photos
+              See 115 more images in Google Photos
             </Button>
           </div>
         </div>
