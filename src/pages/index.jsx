@@ -16,6 +16,7 @@ import GatherIcon from "../components/icons/GatherIcon";
 import Seo from '../components/Seo';
 
 import IconNextflow from '../images/logo-nextflow.svg';
+import PlaceholderRectangle from '../images/visuals/placeholder-rectangle.svg';
 
 import LogoAWS from '../images/logos/aws.svg';
 import LogoElementBio from '../images/logos/element-biosciences.svg';
@@ -47,25 +48,50 @@ const IndexPage = () => {
           <HeroAnimation className="animate-flow" />
         </div>
         <div className="container-lg py-16 relative">
-          <img src={IconNextflow} className="h-14 mb-4" alt="Nextflow Logo" />
-          <h1 className="typo-h2 uppercase mb-4">
-            Summit 2022
-          </h1>
-          <p className="typo-blockquote max-w-xl mb-4">
-            Join us for the latest developments and innovations from the Nextflow world.
-          </p>
-          <p className="typo-intro uppercase mb-8">
-            In person
-            <span className="mx-2">
-              |
-            </span>
-            Virtual
-            <br />
-            Barcelona, October 12-14, 2022
-          </p>
-          <Button to="/program/" variant="accent" size="md" arrow>
-            View program
-          </Button>
+          <div className="row items-center">
+            <div className="col-full lg:col-6">
+              <img src={IconNextflow} className="h-14 mb-4" alt="Nextflow Logo" />
+              <h1 className="typo-h2 uppercase mb-4">
+                Summit 2022
+              </h1>
+              <p className="typo-blockquote max-w-xl mb-4">
+                Join us for the latest developments and innovations from the Nextflow world.
+              </p>
+              <p className="typo-intro uppercase mb-8">
+                In person
+                <span className="mx-2">
+                  |
+                </span>
+                Virtual
+                <br />
+                Barcelona, October 12-14, 2022
+              </p>
+              <Button to="/program/" variant="accent" size="md" arrow>
+                View program
+              </Button>
+            </div>
+            <div className="col-full lg:col-6 mt-12 lg:mt-0">
+              <div className="relative">
+                <div
+                  className="hidden lg:block absolute w-full h-full bg-center bg-cover bg-no-repeat rounded-md -mt-6 ml-6"
+                  style={{ backgroundImage: `url(${PlaceholderRectangle})` }}
+                />
+                <div className="relative">
+                  <div class="hubspot-form">
+                    <h3 class="text-green-600 typo-h5 uppercase">
+                      Summit 2023 dates announced!
+                    </h3>
+                    <p class="typo-body mb-4">
+                      Join us in Barcelona and Boston in 2023 <span class="ml-2">🇪🇸 &nbsp; 🇺🇸</span>
+                    </p>
+                    <Button to="/summit-2023-preregistration/" variant="accent" size="md" arrow>
+                      Find out more
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div className="text-white">
