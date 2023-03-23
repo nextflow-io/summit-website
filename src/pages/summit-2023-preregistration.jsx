@@ -1,5 +1,3 @@
-import { useStaticQuery, graphql } from 'gatsby';
-import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
 import React from 'react';
 
 import { List } from 'website-components';
@@ -11,23 +9,12 @@ import IconNextflow from '../images/logo-nextflow.svg';
 import PlaceholderRectangle from '../images/visuals/placeholder-rectangle.svg';
 
 const Preregistration2023Page = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      socialCard: file(relativePath: {eq: "share/2023_summit_preregistration.jpg"}) {
-        childImageSharp {
-          gatsbyImageData(
-            placeholder: NONE
-          )
-        }
-      }
-    }
-  `);
 
   return (
     <>
       <Seo
         title="Nextflow Summit 2023 pre-registration"
-        image={getImage(data.socialCard)}
+        image="/images/2023_summit_preregistration.jpg"
       />
       <div className="pt-24 pb-32 bg-gray-900 text-white">
         <div className="container-lg">
@@ -74,7 +61,7 @@ const Preregistration2023Page = () => {
                   style={{ backgroundImage: `url(${PlaceholderRectangle})` }}
                 />
                 <div className="relative">
-                  <HubspotEmbedForm title="Register to receive the updates" formId="9bed0089-48cc-482a-adcc-afcb2f597ae9" />
+                  <HubspotEmbedForm title="Register to receive updates" formId="9bed0089-48cc-482a-adcc-afcb2f597ae9" />
                 </div>
               </div>
             </div>
