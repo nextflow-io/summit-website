@@ -12,10 +12,12 @@ const defaultProps = {
   children: null,
 };
 
-const Layout = ({ children, location }) => {
+const Layout = ({ children, location, pageContext }) => {
   return (
     <>
-      <Header location={location} />
+      {pageContext.layout !== 'Plain' && (
+          <Header location={location} />
+      )}
       <main className="min-h-[calc(100vh_-_7rem_-_1px)] md:min-h-[calc(100vh_-_9rem_-_1px)]">
         {children}
       </main>

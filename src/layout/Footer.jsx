@@ -16,7 +16,7 @@ const Footer = () => {
           <div className="flex justify-between items-center h-12">
             <div>
               <Link to="https://seqera.io/" noBorder className="typo-small">
-                &copy; 2022 Seqera Labs
+                &copy; 2022-2023 Seqera Labs
               </Link>
             </div>
             <div className="flex items-center md:justify-end">

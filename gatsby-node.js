@@ -92,8 +92,6 @@ exports.onCreateNode = ({ node, actions, getNode, createNodeId, createContentDig
     }
 
     if (parent.internal.type === 'File' && parent.sourceInstanceName === 'people') {
-      console.log(node.frontmatter.slug, node.frontmatter.name);
-
       const content = {
         slug: node.frontmatter.slug,
         name: node.frontmatter.name,
@@ -280,6 +278,26 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     });
   });
 };
+
+exports.onCreatePage = async ({ page, actions }) => {
+  const { createPage, deletePage } = actions
+
+  if (page.path.match(/^\/summit-2023-preregistration/)) {
+    deletePage(page)
+
+    const pageContext = {
+      layout: "Plain",
+    }
+
+    createPage({
+      ...page,
+      context: {
+        ...page.context,
+        ...pageContext,
+      },
+    })
+  }
+}
 
 exports.onCreateWebpackConfig = ({ actions, loaders }) => {
   actions.setWebpackConfig({

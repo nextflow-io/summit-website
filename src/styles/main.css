@@ -9,6 +9,79 @@
 }
 
 @layer components {
+  .hubspot-form {
+		@apply bg-black text-white border border-gray-800 p-4 lg:p-8 rounded-md shadow-lg;
+	}
+
+	.hubspot-form .hs-form-field {
+		@apply mt-4 first:mt-0;
+	}
+
+	.hubspot-form label {
+		@apply typo-small;
+	}
+
+  .hubspot-form .hs-fieldtype-text .hs-input {
+    @apply cursor-default bg-gray-900 w-full p-4 block border border-gray-800 outline-none;
+  }
+
+  .hubspot-form .hs-fieldtype-select .hs-input {
+    @apply cursor-default w-full p-4 block border border-gray-200 appearance-none;
+    background-image: url('../images/icons/down.svg');
+    background-repeat: no-repeat;
+    background-position: center right 16px;
+  }
+
+  .hubspot-form .hs-error-msg {
+    @apply text-red-600 mt-2 block;
+  }
+
+	.hubspot-form .hs-button.primary.large {
+		@apply text-base font-body font-medium leading-none antialiased select-none transition-all duration-200 cursor-pointer;
+		@apply px-8 py-4 rounded-full w-full;
+		@apply btn-accent hover:opacity-[0.95];
+	}
+
+	.hubspot-form .hs-form-booleancheckbox-display {
+		@apply flex text-xs;
+	}
+
+	.hubspot-form .hs-form-booleancheckbox-display .hs-input[type=checkbox] {
+		@apply w-auto;
+	}
+
+  .hubspot-form .hs-form-checkbox .hs-input[type=checkbox] {
+		@apply w-auto mr-4;
+	}
+
+	.hubspot-form .legal-consent-container {
+		@apply my-4 typo-small text-xs;
+	}
+
+	.hubspot-form .legal-consent-container a {
+		@apply border-b border-current pb-px;
+	}
+
+	.hubspot-form .legal-consent-container .field.hs-form-field {
+		@apply mb-0 mt-2;
+	}
+
+	.hubspot-form .submitted-message {
+		@apply typo-h4;
+	}
+
+  .hubspot-form .hs-richtext.hs-main-font-element {
+    @apply my-4 typo-small text-xs;
+  }
+
+  .hubspot-form .hs-richtext.hs-main-font-element a {
+    @apply cursor-pointer hover:no-underline border-b border-current pb-px;
+  }
+
+  .hubspot-form .hs-field-desc {
+    @apply typo-small my-2;
+  }
+
   .typo-h1 {
     @apply font-display font-semibold text-2xl md:text-4xl lg:text-5xl antialiased;
   }
