@@ -1,3 +1,5 @@
+import { useStaticQuery, graphql } from 'gatsby';
+import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
 import React from 'react';
 
 import { List } from 'website-components';
@@ -9,10 +11,23 @@ import IconNextflow from '../images/logo-nextflow.svg';
 import PlaceholderRectangle from '../images/visuals/placeholder-rectangle.svg';
 
 const Preregistration2023Page = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      socialCard: file(relativePath: {eq: "share/2023_summit_preregistration.jpg"}) {
+        childImageSharp {
+          gatsbyImageData(
+            placeholder: NONE
+          )
+        }
+      }
+    }
+  `);
+
   return (
     <>
       <Seo
         title="Nextflow Summit 2023 pre-registration"
+        image={getImage(data.socialCard)}
       />
       <div className="pt-24 pb-32 bg-gray-900 text-white">
         <div className="container-lg">
