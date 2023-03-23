@@ -21,7 +21,7 @@
 		@apply typo-small;
 	}
 
-  .hubspot-form .hs-input {
+  .hubspot-form .hs-fieldtype-text .hs-input {
     @apply cursor-default bg-gray-900 w-full p-4 block border border-gray-800 outline-none;
   }
 
@@ -48,6 +48,10 @@
 
 	.hubspot-form .hs-form-booleancheckbox-display .hs-input[type=checkbox] {
 		@apply w-auto;
+	}
+
+  .hubspot-form .hs-form-checkbox .hs-input[type=checkbox] {
+		@apply w-auto mr-4;
 	}
 
 	.hubspot-form .legal-consent-container {

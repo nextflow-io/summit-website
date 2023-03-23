@@ -279,6 +279,26 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   });
 };
 
+exports.onCreatePage = async ({ page, actions }) => {
+  const { createPage, deletePage } = actions
+
+  if (page.path.match(/^\/summit-2023-preregistration/)) {
+    deletePage(page)
+
+    const pageContext = {
+      layout: "Plain",
+    }
+
+    createPage({
+      ...page,
+      context: {
+        ...page.context,
+        ...pageContext,
+      },
+    })
+  }
+}
+
 exports.onCreateWebpackConfig = ({ actions, loaders }) => {
   actions.setWebpackConfig({
     module: {
