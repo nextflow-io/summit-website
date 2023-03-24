@@ -48,7 +48,7 @@ const Preregistration2023Page = () => {
                 If you're interested in attending either the Barcelona or Boston events, please fill out the form
                 on this page to stay up-to-date on all the latest event news and updates.
                 You can also join the main <Link to="https://seqera.io/newsletter/" className="hover:text-green-600 transition-colors">Seqera Labs newsletter</Link>{ " " }
-                for a quarterly newsletter about the entire Nextflow ecosystem.
+                for a bimonthly newsletter about the entire Nextflow ecosystem.
               </p>
               <p className="typo-body mt-4">
                 Please note that this form is a registration of
