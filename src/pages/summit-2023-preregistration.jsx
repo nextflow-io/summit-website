@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { List } from 'website-components';
+import { Link } from 'website-components';
 
 import HubspotEmbedForm from '../components/HubspotEmbedForm';
 import Seo from '../components/Seo';
@@ -45,8 +45,10 @@ const Preregistration2023Page = () => {
                 technology, share their experiences, and collaborate on innovative projects.
               </p>
               <p className="typo-body mt-4">
-                If you're interested in attending either the Barcelona or Boston events, please fill out the form below
-                to stay up-to-date on all the latest news and updates.
+                If you're interested in attending either the Barcelona or Boston events, please fill out the form
+                on this page to stay up-to-date on all the latest event news and updates.
+                You can also join the main <Link to="https://seqera.io/newsletter/" className="hover:text-green-600 transition-colors">Seqera Labs newsletter</Link>{ " " }
+                for a quarterly newsletter about the entire Nextflow ecosystem.
               </p>
               <p className="typo-body mt-4">
                 Please note that this form is a registration of
