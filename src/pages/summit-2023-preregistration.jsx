@@ -34,7 +34,7 @@ const Preregistration2023Page = () => {
               <h3 class="text-green-600 typo-h5 uppercase mt-6">
                 🇺🇸 Boston Hackathon &amp; Summit
               </h3>
-              <p class="tracking-wider">November 2023 (dates to be confirmed)</p>
+              <p class="tracking-wider">November 28-30, 2023</p>
               <p className="typo-intro mt-6">
                 We're excited to announce that this year's summit will take place in two of the world's most vibrant
                 cities: Barcelona and Boston.
