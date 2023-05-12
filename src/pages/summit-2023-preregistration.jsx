@@ -14,7 +14,7 @@ const Preregistration2023Page = () => {
     <>
       <Seo
         title="Nextflow Summit 2023 pre-registration"
-        image="/images/2023_summit_preregistration.jpg"
+        image="/images/2023_summit_register_interest.jpg"
       />
       <div className="pt-24 pb-32 bg-gray-900 text-white">
         <div className="container-lg">
