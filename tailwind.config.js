@@ -78,6 +78,12 @@ module.exports = {
                 green: {
                   300: '#4CA58A',
                 },
+                red: {
+                  300: '#EC625D',
+                },
+                blue: {
+                  600: '#4184F3',
+                },
                 indigo: {
                   100: '#E8EAFF',
                   200: '#DEEBFD',
