@@ -207,19 +207,19 @@
   }
 
   .btn-secondary {
-    @apply bg-transparent text-green-600 border border-green-600 hover:bg-green-600 hover:text-white;
+    @apply bg-transparent text-green-300 border border-green-300 hover:bg-green-300 hover:text-black;
   }
 
   .btn-accent {
-    @apply bg-green-600 text-white;
+    @apply bg-green-300 text-black;
   }
 
   .btn-primary-alt {
-    @apply bg-green-600 text-white;
+    @apply bg-green-300 text-black;
   }
 
   .btn-secondary-alt {
-    @apply bg-white text-green-600 hover:bg-green-200;
+    @apply bg-white text-green-300 hover:bg-green-200;
   }
 
   .btn-accent-alt {
