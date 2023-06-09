@@ -10,6 +10,9 @@ import HeroAnimation from '../components/HeroAnimation';
 import NextflowLogo from '../components/NextflowLogo';
 import Seo from '../components/Seo';
 
+import HackathonIcon from '../components/icons/HackathonIcon';
+import MountainIcon from '../components/icons/MountainIcon';
+
 import LogoAWS from '../images/logos/aws.svg';
 import LogoElementBio from '../images/logos/element-biosciences.svg';
 import LogoSeqera from '../images/logos/seqera.svg';
@@ -40,7 +43,6 @@ const IndexPage = () => {
         <div className="container-lg py-16 relative">
           <div className="row items-center">
             <div className="col-full lg:col-6">
-              <NextflowLogo className="h-14 text-green-300" />
               <h1 className="typo-h1 mt-4">
                 <span className="text-green-300">
                   nextflow
@@ -92,7 +94,9 @@ const IndexPage = () => {
         <div className="row">
           <div className="col-full lg:col-6 mt-4">
             <div className="bg-black border border-gray-800 px-4 py-6 lg:p-8 rounded-md shadow-xl relative">
-              <div className="border border-white rounded-md h-20 w-20" />
+              <div className="text-green-300">
+                <HackathonIcon />
+              </div>
               <h3 className="typo-h4 mt-4">
                 Hackathon | Oct 16-18
               </h3>
@@ -104,7 +108,9 @@ const IndexPage = () => {
           </div>
           <div className="col-full lg:col-6 mt-8 md:mt-4">
             <div className="bg-black border border-gray-800 px-4 py-6 lg:p-8 rounded-md shadow-xl relative">
-              <div className="border border-white rounded-md h-20 w-20" />
+              <div className="text-green-300">
+                <MountainIcon />
+              </div>
               <h3 className="typo-h4 mt-4">
                 SUMMIT | Oct 18-20
               </h3>
