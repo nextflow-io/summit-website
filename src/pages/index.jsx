@@ -6,6 +6,7 @@ import {
   Button,
 } from 'website-components';
 
+import EventSwitcher from '../components/EventSwitcher';
 import HeroAnimation from '../components/HeroAnimation';
 import NextflowLogo from '../components/NextflowLogo';
 import Seo from '../components/Seo';
@@ -36,11 +37,12 @@ const IndexPage = () => {
       <Seo
         title="Nextflow Summit 2022"
       />
-      <div className="relative bg-black text-white py-16 md:py-24">
+      <div className="relative bg-black text-white">
         <div className="absolute inset-0 overflow-hidden">
           <HeroAnimation className="animate-flow" />
         </div>
-        <div className="container-lg py-16 relative">
+        <div className="container-lg py-20 relative">
+          <EventSwitcher />
           <div className="row items-center">
             <div className="col-full lg:col-6">
               <h1 className="typo-h1 mt-4">
