@@ -1,5 +1,9 @@
 import React from 'react';
 
+import {
+  Marquee,
+} from 'website-components';
+
 import Seo from '../components/Seo';
 
 const TravelPage = () => {
@@ -27,6 +31,9 @@ const TravelPage = () => {
           </div>
         </div>
       </div>
+      <Marquee className="typo-body bg-green-300 text-black" to="/call-for-abstracts/">
+        Call for abstracts now open
+      </Marquee>
     </>
   );
 };
