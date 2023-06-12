@@ -6,7 +6,7 @@ import {
 
 const EventSwitcher = () => {
   return (
-    <div className="inline-block bg-gradient-to-r from-blue-600 to-red-300 text-black typo-blockquote px-6 py-2 rounded-full absolute top-10 -right-5">
+    <div className="inline-block bg-gradient-to-r from-blue-600 to-red-300 text-black typo-blockquote px-6 py-2 rounded-full">
       <Link to="/" className="font-medium">
         Barcelona
       </Link>

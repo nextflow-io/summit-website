@@ -6,6 +6,7 @@ import {
   Button,
 } from 'website-components';
 
+import CountDown from '../components/CountDown';
 import EventSwitcher from '../components/EventSwitcher';
 import HeroAnimation from '../components/HeroAnimation';
 import NextflowLogo from '../components/NextflowLogo';
@@ -42,7 +43,9 @@ const IndexPage = () => {
           <HeroAnimation className="animate-flow" />
         </div>
         <div className="container-lg py-20 relative">
-          <EventSwitcher />
+          <div className="absolute top-10 -right-5">
+            <EventSwitcher />
+          </div>
           <div className="row items-center">
             <div className="col-full lg:col-6">
               <h1 className="typo-h1 mt-4">
@@ -78,6 +81,9 @@ const IndexPage = () => {
                 </Button>
               </div>
             </div>
+          </div>
+          <div className="flex md:absolute bottom-10 right-4 mt-16">
+            <CountDown />
           </div>
         </div>
       </div>
