@@ -1,3 +1,5 @@
+import { useStaticQuery, graphql } from 'gatsby';
+import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
 import React from 'react';
 
 import {
@@ -12,6 +14,18 @@ import LogoSeqera from '../images/logos/seqera.svg';
 import LogoQuilt from '../images/logos/quilt.svg';
 
 const SponsorsPage = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      heroImage: file(relativePath: {eq: "photos/audience.jpg"}) {
+        childImageSharp {
+          gatsbyImageData(
+            placeholder: NONE
+          )
+        }
+      }
+    }
+  `);
+
   return (
     <>
       <Seo
@@ -37,8 +51,13 @@ const SponsorsPage = () => {
                 </Button>
               </div>
             </div>
-            <div className="col-full lg:col-6 lg:ml-1/12">
-
+            <div className="col-full lg:col-5 lg:ml-1/12">
+              <Image
+                image={getImage(data.heroImage)}
+                alt="Join us in Barcelona or virtually"
+                className="rounded-sm shadow-xl"
+                imgClassName="rounded-sm"
+              />
             </div>
           </div>
         </div>

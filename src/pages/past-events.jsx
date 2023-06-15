@@ -37,7 +37,7 @@ const PastEventsPage = () => {
           </div>
         </div>
       </div>
-      <Marquee className="typo-body bg-green-300 text-black" to="/call-for-abstracts/">
+      <Marquee className="typo-body bg-green-300 text-black" to="/call-for-abstracts/" type="reset">
         Call for abstracts now open
       </Marquee>
     </>

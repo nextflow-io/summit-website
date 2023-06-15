@@ -1,3 +1,5 @@
+import { useStaticQuery, graphql } from 'gatsby';
+import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
 import React from 'react';
 
 import {
@@ -11,6 +13,18 @@ import HackathonIcon from '../components/icons/HackathonIcon';
 import MountainIcon from '../components/icons/MountainIcon';
 
 const AgendaPage = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      heroImage: file(relativePath: {eq: "photos/agenda.jpg"}) {
+        childImageSharp {
+          gatsbyImageData(
+            placeholder: NONE
+          )
+        }
+      }
+    }
+  `);
+
   return (
     <>
       <Seo
@@ -35,13 +49,18 @@ const AgendaPage = () => {
                 </Button>
               </div>
             </div>
-            <div className="col-full lg:col-6 lg:ml-1/12">
-
+            <div className="col-full lg:col-5 lg:ml-1/12">
+              <Image
+                image={getImage(data.heroImage)}
+                alt="Join us in Barcelona or virtually"
+                className="rounded-sm shadow-xl"
+                imgClassName="rounded-sm"
+              />
             </div>
           </div>
         </div>
       </div>
-      <Marquee className="typo-body bg-green-300 text-black" to="/call-for-abstracts/">
+      <Marquee className="typo-body bg-green-300 text-black" to="/call-for-abstracts/" type="reset">
         Call for abstracts now open
       </Marquee>
       <div className="container-lg text-white py-16">
