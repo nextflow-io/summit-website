@@ -1,5 +1,6 @@
 import React from 'react';
 import CookieBanner from './CookieBanner';
+import { LayoutProvider } from './Context';
 import EventSwitcher from '../components/EventSwitcher';
 import Header from './Header';
 import Footer from './Footer';
@@ -15,7 +16,7 @@ const defaultProps = {
 
 const Layout = ({ children, location, pageContext }) => {
   return (
-    <>
+    <LayoutProvider location={location}>
       {pageContext.layout !== 'Plain' && (
           <Header location={location} />
       )}
@@ -27,7 +28,7 @@ const Layout = ({ children, location, pageContext }) => {
       </main>
       <CookieBanner />
       <Footer />
-    </>
+    </LayoutProvider>
   );
 };
 

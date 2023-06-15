@@ -1,6 +1,6 @@
 import classnames from 'classnames';
 import { navigate } from 'gatsby';
-import React, { useState } from 'react';
+import React from 'react';
 import {
     Button,
     CloseIcon,
@@ -10,13 +10,15 @@ import {
 
 import Logo from '../images/logo.svg';
 
+import { useLayoutState, useLayoutActions } from './Context';
+
 const navs = [
   {
     title: 'Agenda',
     path: '/agenda/',
   },
   {
-    title: 'Travel - Barcelona',
+    title: 'Travel',
     path: '/travel/',
   },
   {
@@ -30,24 +32,35 @@ const navs = [
 ];
 
 const Header = ({ location }) => {
-  const [navOpened, setNavOpened] = useState(false);
+  const { activeEvent, menuOpen } = useLayoutState();
+
+  const { toggleMenu, closeMenu } = useLayoutActions();
 
   const handleNav = (url) => {
-    setNavOpened(false);
     navigate(url);
+    closeMenu();
+  };
+
+  const resolvePath = (path) => {
+    if (activeEvent === 'boston') {
+      return `/boston${path}`;
+    }
+
+    return path;
   };
 
   return (
     <>
       <header className="bg-black relative z-10 inset-x-0 top-0">
         <div className="container-lg flex flex-wrap items-center justify-between w-full h-16 md:h-24">
-          <Link to="/" noBorder className="block uppercase">
-              <img src={Logo} className="h-8 lg:h-10" alt="" />
+          <Link to={resolvePath('/')} noBorder className="block uppercase">
+            <img src={Logo} className="h-8 lg:h-10" alt="" />
           </Link>
           <div className="lg:flex items-center hidden">
             {navs.map((nav) => (
               <Link
-                to={nav.path}
+                key={nav.path}
+                to={resolvePath(nav.path)}
                 noBorder
                 className={classnames(
                   'bg-black bg-opacity-10 font-body py-1 px-4 rounded-sm mr-px font-normal tracking-wide',
@@ -61,27 +74,27 @@ const Header = ({ location }) => {
               </Link>
             ))}
             <Button
-                to="/call-for-abstracts/"
-                variant="secondary"
-                size="sm"
-                className="hover:opacity-80 ml-4"
-                noShadow
+              to={resolvePath('/call-for-abstracts/')}
+              variant="secondary"
+              size="sm"
+              className="hover:opacity-80 ml-4"
+              noShadow
             >
               Call for abstracts
             </Button>
             <Button
-                to="/register/"
-                variant="accent"
-                size="sm"
-                className="hover:opacity-80 ml-4"
-                noShadow
+              to={resolvePath('/register/')}
+              variant="accent"
+              size="sm"
+              className="hover:opacity-80 ml-4"
+              noShadow
             >
               Register
             </Button>
           </div>
           <div className="lg:hidden">
             <Button
-              onClick={() => { setNavOpened(true); }}
+              onClick={() => { toggleMenu(); }}
               noShadow
               className="text-white"
             >
@@ -93,18 +106,23 @@ const Header = ({ location }) => {
       <div className={classnames(
         'bg-black text-white fixed inset-0 z-20 px-4 transition-all',
         {
-          'invisible opacity-0': !navOpened,
-          'opacity-100 visible': navOpened,
+          'invisible opacity-0': !menuOpen,
+          'opacity-100 visible': menuOpen,
         },
       )}
       >
         <div className="flex flex-col h-full">
           <div className="h-16 flex justify-between items-center">
-            <Link to="/" noBorder className="block uppercase">
-                <img src={Logo} className="h-8 lg:h-10" alt="Nextflow Summit 2022 logo" />
+            <Link
+              to={resolvePath('/')}
+              onClick={closeMenu}
+              noBorder
+              className="block uppercase"
+            >
+              <img src={Logo} className="h-8 lg:h-10" alt="Nextflow Summit 2022 logo" />
             </Link>
             <Button
-              onClick={() => { setNavOpened(false); }}
+              onClick={toggleMenu}
               noShadow
             >
               <CloseIcon />
@@ -112,14 +130,15 @@ const Header = ({ location }) => {
           </div>
           <div className="flex-1 py-16 overflow-y-auto text-center">
             {navs.map((nav) => (
-              <div className="mt-4 first:mt-0">
-                <Button
-                  onClick={() => { handleNav(nav.path) }}
-                  noShadow
-                  className="typo-intro"
+              <div className="mt-4 first:mt-0" key={nav.path}>
+                <Link
+                  key={nav.path}
+                  to={resolvePath(nav.path)}
+                  onClick={closeMenu}
+                  noBorder
                 >
                   {nav.title}
-                </Button>
+                </Link>
               </div>
             ))}
             <div className="mt-4">
