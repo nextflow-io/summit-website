@@ -4,11 +4,14 @@ import React from 'react';
 
 import {
   Button,
+  Reveal,
+  RevealOnScroll,
 } from 'website-components';
 
 import CountDown from '../../components/CountDown';
 import HeroAnimation from '../../components/HeroAnimation';
 import NextflowLogo from '../../components/NextflowLogo';
+import RegisterCTA from '../../components/RegisterCTA';
 import Seo from '../../components/Seo';
 
 import HackathonIcon from '../../components/icons/HackathonIcon';
@@ -83,20 +86,22 @@ const IndexPage = () => {
           </div>
         </div>
       </div>
-      <div className="container-xl py-8">
-        <Image
-          image={getImage(data.summitImage)}
-          alt="Nextflow Summit 2023"
-        />
-      </div>
+      <RevealOnScroll className="container-xl py-8">
+        <Reveal>
+          <Image
+            image={getImage(data.summitImage)}
+            alt="Nextflow Summit 2023"
+          />
+        </Reveal>
+      </RevealOnScroll>
       <div className="container-lg text-white py-16">
         <div className="text-center">
           <h2 className="typo-h6 uppercase">
             Key information
           </h2>
         </div>
-        <div className="row">
-          <div className="col-full lg:col-6 mt-4">
+        <RevealOnScroll className="row">
+          <Reveal className="col-full lg:col-6 mt-4">
             <div className="bg-black border border-gray-800 px-4 py-6 lg:p-8 rounded-md shadow-xl relative">
               <div className="text-green-300">
                 <HackathonIcon />
@@ -109,8 +114,8 @@ const IndexPage = () => {
                 prior to the Nextflow SUMMIT.
               </p>
             </div>
-          </div>
-          <div className="col-full lg:col-6 mt-8 md:mt-4">
+          </Reveal>
+          <Reveal className="col-full lg:col-6 mt-8 md:mt-4">
             <div className="bg-black border border-gray-800 px-4 py-6 lg:p-8 rounded-md shadow-xl relative">
               <div className="text-green-300">
                 <MountainIcon />
@@ -123,8 +128,8 @@ const IndexPage = () => {
                 streamed online.
               </p>
             </div>
-          </div>
-          <div className="col-full mt-8">
+          </Reveal>
+          <Reveal className="col-full mt-8">
             <div className="bg-black border border-gray-800 px-4 py-6 lg:p-8 rounded-md shadow-xl relative">
               <div className="text-center">
                 <h3 className="typo-h4">
@@ -230,23 +235,10 @@ const IndexPage = () => {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+          </Reveal>
+        </RevealOnScroll>
       </div>
-      <div className="bg-indigo-800 text-white">
-        <div className="container-lg py-16 text-center">
-          <h2 className="typo-h2">
-            Step into the future of data-driven science at the Nextflow SUMMIT
-            <br />
-            held in Barcelona, October 16-20.
-          </h2>
-          <div className="mt-4">
-            <Button to="/" variant="accent" size="md">
-              Register
-            </Button>
-          </div>
-        </div>
-      </div>
+      <RegisterCTA />
       <div className="text-white py-8">
         <div className="text-center">
           <h2 className="typo-h6 uppercase">
@@ -283,13 +275,27 @@ const IndexPage = () => {
           <div className="row">
             <div className="col-full lg:col-4 bg-green-300 text-indigo-800 py-14">
               <h2 className="typo-h2">
-                SUMMIT 2023 2 locations:
+                SUMMIT 2023
+                <br />
+                2 locations:
               </h2>
+              <div className="flex">
+                <div className="mr-4 mt-8">
+                  <Button to="/" variant="primary" theme="alternative" size="md">
+                    Barcelona
+                  </Button>
+                </div>
+                <div className="mt-8">
+                  <Button to="/boston/" variant="secondary" theme="alternative" size="md">
+                    Boston
+                  </Button>
+                </div>
+              </div>
             </div>
             <div className="col-full lg:col-8 bg-indigo-800 py-14">
               <div className="px-8">
-                <div className="row">
-                  <div className="col-full lg:col-6">
+                <RevealOnScroll className="row">
+                  <Reveal className="col-full lg:col-6">
                     <div className="bg-black text-white border border-gray-800 rounded-md shadow-xl relative overflow-hidden">
                       <div className="p-20 bg-blue-600"></div>
                       <div className="px-4 py-6 lg:p-8">
@@ -315,8 +321,8 @@ const IndexPage = () => {
                         </p>
                       </div>
                     </div>
-                  </div>
-                  <div className="col-full lg:col-6 mt-8 lg:mt-0">
+                  </Reveal>
+                  <Reveal className="col-full lg:col-6 mt-8 lg:mt-0">
                     <div className="bg-black text-white border border-gray-800 rounded-md shadow-xl relative overflow-hidden">
                       <div className="p-20 bg-red-300"></div>
                       <div className="px-4 py-6 lg:p-8">
@@ -342,8 +348,8 @@ const IndexPage = () => {
                         </p>
                       </div>
                     </div>
-                  </div>
-                </div>
+                  </Reveal>
+                </RevealOnScroll>
               </div>
             </div>
           </div>

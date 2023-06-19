@@ -215,11 +215,11 @@
   }
 
   .btn-primary-alt {
-    @apply bg-green-300 text-black;
+    @apply bg-blue-600 text-black;
   }
 
   .btn-secondary-alt {
-    @apply bg-white text-green-300 hover:bg-green-200;
+    @apply bg-red-300 text-black;
   }
 
   .btn-accent-alt {
