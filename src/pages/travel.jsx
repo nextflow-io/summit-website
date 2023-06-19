@@ -17,6 +17,13 @@ import Seo from '../components/Seo';
 const TravelPage = () => {
   const data = useStaticQuery(graphql`
     query {
+      heroImage: file(relativePath: {eq: "photos/barcelona.jpg"}) {
+        childImageSharp {
+          gatsbyImageData(
+            placeholder: NONE
+          )
+        }
+      }
       hackathonMapImage: file(relativePath: {eq: "maps/barcelona-hackathon.jpg"}) {
         childImageSharp {
           gatsbyImageData(
