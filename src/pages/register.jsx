@@ -47,7 +47,7 @@ const RegisterPage = () => {
               Places are limited, so register now to reserve your spot. Registration closes September 9, or when sold out.
             </p>
             <div className="mt-4">
-              <Button to="/program/" variant="accent" size="md">
+              <Button to="/register/" variant="accent" size="md">
                 Register
               </Button>
             </div>

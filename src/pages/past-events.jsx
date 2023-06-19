@@ -33,7 +33,7 @@ const PastEventsPage = () => {
                 management.
               </p>
               <div className="mt-4">
-                <Button to="/program/" variant="secondary" size="md">
+                <Button to="/register/" variant="secondary" size="md">
                   View gallery
                 </Button>
               </div>

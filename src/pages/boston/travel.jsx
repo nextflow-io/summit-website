@@ -137,7 +137,7 @@ const TravelPage = () => {
             held in Barcelona, October 16-20.
           </h2>
           <div className="mt-4">
-            <Button to="/register/" variant="accent" size="md">
+            <Button to="/boston/register/" variant="accent" size="md">
               Register
             </Button>
           </div>

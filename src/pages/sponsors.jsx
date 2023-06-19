@@ -46,7 +46,7 @@ const SponsorsPage = () => {
                 A range of sponsorship opportunities to suit your needs. Get in contact to find out more.
               </p>
               <div className="mt-4">
-                <Button to="/program/" variant="secondary" size="md">
+                <Button to="/register/" variant="secondary" size="md">
                   Contact us
                 </Button>
               </div>

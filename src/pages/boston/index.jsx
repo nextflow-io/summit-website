@@ -75,7 +75,7 @@ const IndexPage = () => {
                 Boston, October 12-14, 2022
               </p>
               <div className="max-w-[320px] mt-4">
-                <Button to="/program/" variant="accent" size="md" className="w-full">
+                <Button to="/boston/register/" variant="accent" size="md" className="w-full">
                   Register
                 </Button>
               </div>

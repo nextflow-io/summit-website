@@ -44,7 +44,7 @@ const AgendaPage = () => {
                 breakthroughs in workflow management.
               </p>
               <div className="mt-4">
-                <Button to="/program/" variant="accent" size="md">
+                <Button to="/register/" variant="accent" size="md">
                   Register
                 </Button>
               </div>
@@ -85,7 +85,7 @@ const AgendaPage = () => {
                 The program will be available once the call for abstracts has closed.
               </p>
               <div className="mt-4">
-                <Button to="/program/" variant="secondary" size="md">
+                <Button to="/register/" variant="secondary" size="md">
                   View program
                 </Button>
               </div>
@@ -106,7 +106,7 @@ const AgendaPage = () => {
                 The program will be available once the call for abstracts has closed.
               </p>
               <div className="mt-4">
-                <Button to="/program/" variant="secondary" size="md">
+                <Button to="/register/" variant="secondary" size="md">
                   View program
                 </Button>
               </div>

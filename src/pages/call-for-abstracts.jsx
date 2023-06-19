@@ -48,7 +48,7 @@ const CallForAbstractsPage = () => {
               abstracts will be accepted and presenters will be notified by the end of July.
             </p>
             <div className="mt-4">
-              <Button to="/program/" variant="accent" size="md">
+              <Button to="/register/" variant="accent" size="md">
                 Apply now
               </Button>
             </div>
