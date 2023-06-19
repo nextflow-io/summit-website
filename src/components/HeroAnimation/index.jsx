@@ -1,14 +1,14 @@
 import React from 'react';
 import CircleVisualSrc from '../../images/visuals/circle.png';
+import CircleRedVisualSrc from '../../images/visuals/circle-red.png';
 
-const HeroAnimation = ({ className }) => {
-
+const HeroAnimation = ({ className, variant }) => {
   return (
     <div
       style={{
         backgroundPosition: 'center center',
         backgroundSize: '96px 96px',
-        backgroundImage: `url(${CircleVisualSrc})`
+        backgroundImage: `url(${(variant === 'red') ? CircleRedVisualSrc : CircleVisualSrc})`
       }}
       className="absolute inset-0"
     >

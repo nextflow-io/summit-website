@@ -39,7 +39,7 @@ const IndexPage = () => {
       />
       <div className="relative bg-black text-white">
         <div className="absolute inset-0 overflow-hidden">
-          <HeroAnimation className="animate-flow" />
+          <HeroAnimation className="animate-flow" variant="red" />
         </div>
         <div className="container-lg py-20 relative">
           <div className="row items-center">

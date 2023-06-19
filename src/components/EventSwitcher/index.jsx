@@ -1,3 +1,4 @@
+import classnames from 'classnames';
 import React from 'react';
 
 import {
@@ -6,18 +7,33 @@ import {
 
 import { useLayoutState } from '../../layout/Context';
 
-const EventSwitcher = () => {
+import GlobeIconSrc from '../../images/icons/globe.svg';
+
+const EventSwitcher = ({ className }) => {
   const { activeEvent } = useLayoutState();
 
   return (
-    <div className="inline-block bg-gradient-to-r from-blue-600 to-red-300 text-black typo-blockquote px-6 py-2 rounded-full">
-      <Link to="/" className="font-medium" noBorder={activeEvent !== 'barcelona'}>
+    <div className={classnames('inline-flex items-center bg-gradient-to-r from-blue-600 to-red-300 text-black text-xl font-light leading-8 px-4 py-3 rounded-full', className)}> 
+      <img src={GlobeIconSrc} className="h-6 w-6 mr-3" alt="globe icon" />
+      <Link
+        to="/"
+        noBorder
+        className={classnames({
+          'font-medium border-b-2 border-black': activeEvent === 'barcelona',
+        })}
+      >
         Barcelona
       </Link>
-      <span className="italic mx-4">
+      <span className="italic mr-4 ml-3">
         or
       </span>
-      <Link to="/boston/" noBorder={activeEvent !== 'boston'}>
+      <Link
+        to="/boston/"
+        noBorder
+        className={classnames({
+          'font-medium border-b-2 border-black': activeEvent === 'boston',
+        })}
+      >
         Boston
       </Link>
     </div>
