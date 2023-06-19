@@ -7,10 +7,10 @@ import {
   Marquee,
 } from 'website-components';
 
-import Seo from '../../components/Seo';
-
+import Card from '../../components/Card';
 import HackathonIcon from '../../components/icons/HackathonIcon';
 import MountainIcon from '../../components/icons/MountainIcon';
+import Seo from '../../components/Seo';
 
 const AgendaPage = () => {
   const data = useStaticQuery(graphql`
@@ -44,7 +44,7 @@ const AgendaPage = () => {
                 breakthroughs in workflow management.
               </p>
               <div className="mt-4">
-                <Button to="/program/" variant="accent" size="md">
+                <Button to="/register/" variant="accent" size="md">
                   Register
                 </Button>
               </div>
@@ -71,7 +71,7 @@ const AgendaPage = () => {
         </div>
         <div className="row">
           <div className="col-full lg:col-6 mt-4">
-            <div className="bg-black border border-gray-800 px-4 py-6 lg:p-8 rounded-md shadow-xl relative">
+            <Card>
               <div className="text-green-300">
                 <HackathonIcon />
               </div>
@@ -89,10 +89,10 @@ const AgendaPage = () => {
                   View program
                 </Button>
               </div>
-            </div>
+            </Card>
           </div>
           <div className="col-full lg:col-6 mt-8 md:mt-4">
-            <div className="bg-black border border-gray-800 px-4 py-6 lg:p-8 rounded-md shadow-xl relative">
+            <Card>
               <div className="text-green-300">
                 <MountainIcon />
               </div>
@@ -110,7 +110,7 @@ const AgendaPage = () => {
                   View program
                 </Button>
               </div>
-            </div>
+            </Card>
           </div>
         </div>
       </div>
