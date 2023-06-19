@@ -38,7 +38,7 @@ const IndexPage = () => {
   return (
     <>
       <Seo
-        title="Nextflow Summit 2022"
+        title="Nextflow Summit 2023"
       />
       <div className="relative bg-black text-white">
         <div className="absolute inset-0 overflow-hidden">
@@ -47,14 +47,9 @@ const IndexPage = () => {
         <div className="container-lg py-20 relative">
           <div className="row items-center">
             <div className="col-full lg:col-6">
-              <h1 className="typo-h1 mt-4">
-                <span className="text-green-300">
-                  nextflow
-                </span>
-                <br />
-                <span className="uppercase">
-                  summit
-                </span>
+              <NextflowLogo className="h-12 text-green-300" />
+              <h1 className="typo-h1 uppercase mt-4">
+                summit
               </h1>
               <p className="typo-blockquote font-medium text-red-300 max-w-xl mt-4">
                 <i className="italic">
