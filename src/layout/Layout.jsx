@@ -21,7 +21,7 @@ const Layout = ({ children, location, pageContext }) => {
           <Header location={location} />
       )}
       <div className="fixed top-20 md:top-32 w-full z-10">
-        <div className="container-lg flex justify-center lg:justify-end">
+        <div className="container-xl flex justify-center lg:justify-end">
           <EventSwitcher />
         </div>
       </div>

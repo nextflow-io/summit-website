@@ -51,7 +51,7 @@ const IndexPage = () => {
               <h1 className="typo-h1 uppercase mt-4">
                 summit
               </h1>
-              <p className="typo-blockquote font-medium text-blue-600 max-w-xl mt-4">
+              <p className="typo-blockquote font-medium text-blue-600 max-w-xl">
                 <i className="italic">
                   Barcelona
                 </i>

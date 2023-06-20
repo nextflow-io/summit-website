@@ -13,7 +13,7 @@ const EventSwitcher = ({ className }) => {
   const { activeEvent } = useLayoutState();
 
   return (
-    <div className={classnames('inline-flex items-center bg-gradient-to-r from-blue-600 to-red-300 text-black text-xl font-light leading-8 px-4 py-3 rounded-full', className)}>
+    <div className={classnames('inline-flex items-center bg-gradient-to-r from-blue-600 to-red-300 text-black text-xl font-light leading-8 px-4 py-3 rounded-l-full', className)}>
       <img src={GlobeIconSrc} className="h-6 w-6 mr-3" alt="globe icon" />
       <Link
         to="/"
