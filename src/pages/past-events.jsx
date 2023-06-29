@@ -65,7 +65,7 @@ const PastEventsPage = () => {
         <div className="mt-4">
           <Card>
             <h3 className="typo-h4">
-              SUMMIT 2022
+              SUMMIT 2023
             </h3>
             <p className="typo-body mt-4">
               Oct 12, 2022

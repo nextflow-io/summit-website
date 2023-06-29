@@ -17,7 +17,16 @@ const RegisterCTA = () => {
         <h2 className="typo-h2">
           Step into the future of data-driven science at the Nextflow SUMMIT
           <br />
-          held in Barcelona, October 16-20.
+          {activeEvent === 'barcelona' && (
+            <>
+              held in Barcelona, October 16-20.
+            </>
+          )}
+          {activeEvent === 'boston' && (
+            <>
+              held in Boston, November 29-30.
+            </>
+          )}
         </h2>
         <div className="mt-4">
           <Button to={(activeEvent === 'boston' ? '/boston/register/' : '/register/')} variant="accent" size="md">

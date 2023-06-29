@@ -119,7 +119,7 @@ const Header = ({ location }) => {
               noBorder
               className="block uppercase"
             >
-              <img src={Logo} className="h-8 lg:h-10" alt="Nextflow Summit 2022 logo" />
+              <img src={Logo} className="h-8 lg:h-10" alt="Nextflow SUMMIT 2023 logo" />
             </Link>
             <Button
               onClick={toggleMenu}

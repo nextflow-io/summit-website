@@ -33,38 +33,17 @@ module.exports = {
         },
         extend: {
             keyframes: {
-              scroll: {
-                '0%': {
-                  'transform': 'translateX(0%)'
-                },
-                '100%': {
-                  'transform': 'translateX(calc(-100% - 32px))'
-                }
-              },
               flow: {
                 '0%': {
-                  'background-position': '-2000px -2000px',
-                },
-                '10%': {
-                  'background-position': '-1500px -1500px',
-                },
-                '30%': {
-                  'background-position': '-400px -400px',
-                },
-                '50%': {
-                  'background-position': '-100px -100px',
-                },
-                '70%': {
-                  'background-position': '-300px -500px',
+                  'transform': 'translateX(0)',
                 },
                 '100%': {
-                  'background-position': '500px 500px',
-                }
-              }
+                  'transform': 'translateX(-96px)',
+                },
+              },
             },
             animation: {
-              scroll: 'scroll 6s linear infinite',
-              flow: 'flow 8s linear infinite',
+              flow: 'flow 3s linear infinite',
             },
             colors: {
                 gray: {

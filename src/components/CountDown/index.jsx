@@ -3,7 +3,7 @@ import React from 'react';
 import { useLayoutState } from '../../layout/Context';
 
 const BARCELONA_START_DATE = 'October 12, 2023';
-const BOSTON_START_DATE = 'October 14, 2023';
+const BOSTON_START_DATE = 'November 29, 2023';
 
 const daysLeft = (date) => {
   const oneDay = 24 * 60 * 60 * 1000;
