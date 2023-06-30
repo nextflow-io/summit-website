@@ -26,11 +26,6 @@ module.exports = {
             '8xl': ['5.5rem', '1'],
             '9xl': ['7.5rem', '1'],
         },
-        borderRadius: {
-            sm: '4px',
-            md: '12px',
-            full: '9999px',
-        },
         extend: {
             keyframes: {
               flow: {
@@ -143,6 +138,11 @@ module.exports = {
             shadow: {
                 default: '0px 5px 10px rgba(0, 0, 0, 0.1)',
                 xl: '0 2px 21px 11px rgba(0,0,0,0.05)',
+            },
+            borderRadius: {
+                sm: '4px',
+                md: '12px',
+                full: '9999px',
             },
         },
     },

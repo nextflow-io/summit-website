@@ -68,28 +68,11 @@ const CallForAbstractsPage = () => {
                 Talks
               </h2>
               <h3 className="typo-intro mt-8">
-                Themes
-              </h3>
-              <List type="bullet" iconClassName="text-white" className="mt-4">
-                <List.Item className="typo-body">
-                  Nextflow - central tool, language, and plugins
-                </List.Item>
-                <List.Item className="typo-body">
-                  Community - pipelines, applications, and use cases
-                </List.Item>
-                <List.Item className="typo-body">
-                  Ecosystem - infrastructure and environments
-                </List.Item>
-                <List.Item className="typo-body">
-                  Software - containers and tool packaging
-                </List.Item>
-              </List>
-              <h3 className="typo-intro mt-8">
                 Where
               </h3>
               <List type="bullet" iconClassName="text-white" className="mt-4">
                 <List.Item className="typo-body">
-                  In person and recorded for live streaming and sharing online after the event
+                  In person at the Nextflow SUMMIT
                 </List.Item>
               </List>
               <h3 className="typo-intro mt-8">
@@ -97,10 +80,10 @@ const CallForAbstractsPage = () => {
               </h3>
               <List type="bullet" iconClassName="text-white" className="mt-4">
                 <List.Item className="typo-body">
-                  Long-form - 30 min, including time for Q&A
+                  Long-form (30 min)
                 </List.Item>
                 <List.Item className="typo-body">
-                  Lightning - 15 min, including time for Q&A
+                  Lightning (15 min)
                 </List.Item>
               </List>
             </Card>
@@ -116,42 +99,19 @@ const CallForAbstractsPage = () => {
                 Posters
               </h2>
               <h3 className="typo-intro mt-8">
-                Themes
-              </h3>
-              <List type="bullet" iconClassName="text-white" className="mt-4">
-                <List.Item className="typo-body">
-                  Nextflow - central tool, language, and plugins
-                </List.Item>
-                <List.Item className="typo-body">
-                  Community - pipelines, applications, and use cases
-                </List.Item>
-                <List.Item className="typo-body">
-                  Ecosystem - infrastructure and environments
-                </List.Item>
-                <List.Item className="typo-body">
-                  Software - containers and tool packaging
-                </List.Item>
-              </List>
-              <h3 className="typo-intro mt-8">
                 Where
               </h3>
               <List type="bullet" iconClassName="text-white" className="mt-4">
                 <List.Item className="typo-body">
                   Poster session at the Nextflow SUMMIT
                 </List.Item>
-                <List.Item className="typo-body">
-                  Nextflow SUMMIT website during and after the event
-                </List.Item>
               </List>
               <h3 className="typo-intro mt-8">
-                Formats
+                Requirements
               </h3>
               <List type="bullet" iconClassName="text-white" className="mt-4">
                 <List.Item className="typo-body">
-                  A printed A0 portrait formatted (max 841 x 1188 mm) poster
-                </List.Item>
-                <List.Item className="typo-body">
-                  A high-quality A0 portrait formatted PDF file
+                  An A0 portrait printed poster
                 </List.Item>
               </List>
             </Card>

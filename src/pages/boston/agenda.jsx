@@ -15,7 +15,7 @@ import Seo from '../../components/Seo';
 const AgendaPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      heroImage: file(relativePath: {eq: "photos/agenda.jpg"}) {
+      heroImage: file(relativePath: {eq: "photos/agenda-boston.jpg"}) {
         childImageSharp {
           gatsbyImageData(
             placeholder: NONE

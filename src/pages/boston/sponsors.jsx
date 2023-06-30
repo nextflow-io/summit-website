@@ -16,7 +16,7 @@ import LogoQuilt from '../../images/logos/quilt.svg';
 const SponsorsPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      heroImage: file(relativePath: {eq: "photos/audience.jpg"}) {
+      heroImage: file(relativePath: {eq: "photos/audience-boston.jpg"}) {
         childImageSharp {
           gatsbyImageData(
             placeholder: NONE

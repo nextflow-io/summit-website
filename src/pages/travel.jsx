@@ -12,6 +12,7 @@ import {
 import Card from '../components/Card';
 import LaptopIcon from '../components/icons/LaptopIcon';
 import MountainIcon from '../components/icons/MountainIcon';
+import LocationMap from '../components/LocationMap';
 import RegisterCTA from '../components/RegisterCTA';
 import Seo from '../components/Seo';
 
@@ -33,6 +34,13 @@ const TravelPage = () => {
         }
       }
       summitMapImage: file(relativePath: {eq: "maps/barcelona-summit.jpg"}) {
+        childImageSharp {
+          gatsbyImageData(
+            placeholder: NONE
+          )
+        }
+      }
+      redPattern: file(relativePath: {eq: "visuals/red-pattern-md.jpg"}) {
         childImageSharp {
           gatsbyImageData(
             placeholder: NONE
@@ -74,7 +82,7 @@ const TravelPage = () => {
       <Marquee className="typo-body bg-green-300 text-black" to="/call-for-abstracts/" type="reset">
         Call for abstracts now open
       </Marquee>
-      <div className="container-lg text-white py-16">
+      <div className="container-md text-white py-16">
         <div className="text-center">
           <h2 className="typo-h6 uppercase">
             Location
@@ -90,10 +98,11 @@ const TravelPage = () => {
                 Hackathon | Oct 16-20
               </h3>
               <div className="mt-4">
-                <Image
-                  image={getImage(data.hackathonMapImage)}
-                  alt="Hackathon"
-                  imgClassName="rounded-sm"
+                <LocationMap
+                  coordinates={{
+                    lat: 41.4021444,
+                    lng: 2.1885241,
+                  }}
                 />
               </div>
               <div className="flex items-center mt-8">
@@ -101,7 +110,7 @@ const TravelPage = () => {
                   <LocationIcon />
                 </div>
                 <p className="typo-body">
-                  <Link to="https://www.google.com/maps/place/Torre+Glòries/@41.4034089,2.1874044,17z/data=!3m2!4b1!5s0x12a4a29400221bfb:0x9fc1000420ad7d81!4m5!3m4!1s0x12a4a323dbd5241d:0x95abc33040714e90!8m2!3d41.4034049!4d2.1895931">
+                  <Link to="https://goo.gl/maps/7JNdvsYapPsaasog7">
                     Hotel SB Glow Carrer Badajoz 148-154, 08018 Barcelona, Spain
                   </Link>
                 </p>
@@ -117,10 +126,11 @@ const TravelPage = () => {
                 SUMMIT | Oct 18-20
               </h3>
               <div className="mt-4">
-                <Image
-                  image={getImage(data.summitMapImage)}
-                  alt="Hackathon"
-                  imgClassName="rounded-sm"
+                <LocationMap
+                  coordinates={{
+                    lat: 41.4034049,
+                    lng: 2.1870182,
+                  }}
                 />
               </div>
               <div className="flex items-center mt-8">
@@ -128,7 +138,7 @@ const TravelPage = () => {
                   <LocationIcon />
                 </div>
                 <p className="typo-body">
-                  <Link to="https://www.google.com/maps/place/Torre+Glòries/@41.4034089,2.1874044,17z/data=!3m2!4b1!5s0x12a4a29400221bfb:0x9fc1000420ad7d81!4m5!3m4!1s0x12a4a323dbd5241d:0x95abc33040714e90!8m2!3d41.4034049!4d2.1895931">
+                  <Link to="https://goo.gl/maps/DMDJhRJmbof6Lx6E9">
                     Torre Glories, Avinguda Diagonal, 211, 08018 Barcelona, Spain
                   </Link>
                 </p>
@@ -138,6 +148,34 @@ const TravelPage = () => {
         </div>
       </div>
       <RegisterCTA />
+      <div className="container-lg py-16">
+        <Card paddingClassName="p-0">
+          <div className="flex flex-wrap md:flex-nowrap">
+            <div className="w-full md:w-1/3">
+              <Image
+                image={getImage(data.redPattern)}
+                alt="red dots visual"
+                className="h-full"
+                imgClassName="rounded-t-md md:rounded-tr-none md:rounded-l-md"
+              />
+            </div>
+            <div className="w-full md:w-2/3 py-8 px-8">
+              <h2 className="typo-h3">
+                Nextflow SUMMIT: Boston
+              </h2>
+              <p className="typo-body mt-4">
+                In 2023, our event is also coming to the US for the first time. Connect with local users and meet the
+                Nextflow / nf-core teams for an unforgettable face-to-face experience!
+              </p>
+              <div className="mt-16">
+                <Button to="/boston/" variant="secondary" theme="alternative" size="md" arrow>
+                  Learn more
+                </Button>
+              </div>
+            </div>
+          </div>
+        </Card>
+      </div>
     </>
   );
 };

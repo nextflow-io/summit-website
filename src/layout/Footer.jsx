@@ -19,17 +19,17 @@ const Footer = () => {
             </div>
             <div className="flex items-center md:justify-end">
               <div className="mr-4">
-                <Link to="https://twitter.com/hashtag/NextflowSummit?src=hashtag_click" className="hover:text-green-600" noBorder>
+                <Link to="https://twitter.com/hashtag/NextflowSummit?src=hashtag_click" className="hover:text-green-300" noBorder>
                   <TwitterIcon className="w-6 h-6" />
                 </Link>
               </div>
               <div className="mr-4">
-                <Link to="https://www.youtube.com/c/nextflow" className="hover:text-green-600" noBorder>
+                <Link to="https://www.youtube.com/c/nextflow" className="hover:text-green-300" noBorder>
                   <YoutubeRectangleIcon className="w-6 h-6" />
                 </Link>
               </div>
               <div className="mr-4">
-                <Link to="https://www.nextflow.io/slack-invite.html" className="hover:text-green-600" noBorder>
+                <Link to="https://www.nextflow.io/slack-invite.html" className="hover:text-green-300" noBorder>
                   <SlackIcon className="w-6 h-6" />
                 </Link>
               </div>

@@ -10,7 +10,8 @@ import {
 } from 'website-components';
 
 import Card from '../../components/Card';
-import HackathonIcon from '../../components/icons/HackathonIcon';
+import LaptopIcon from '../../components/icons/LaptopIcon';
+import LocationMap from '../../components/LocationMap';
 import MountainIcon from '../../components/icons/MountainIcon';
 import RegisterCTA from '../../components/RegisterCTA';
 import Seo from '../../components/Seo';
@@ -18,7 +19,7 @@ import Seo from '../../components/Seo';
 const TravelPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      heroImage: file(relativePath: {eq: "photos/barcelona.jpg"}) {
+      heroImage: file(relativePath: {eq: "photos/boston.jpg"}) {
         childImageSharp {
           gatsbyImageData(
             placeholder: NONE
@@ -33,6 +34,13 @@ const TravelPage = () => {
         }
       }
       summitMapImage: file(relativePath: {eq: "maps/barcelona-summit.jpg"}) {
+        childImageSharp {
+          gatsbyImageData(
+            placeholder: NONE
+          )
+        }
+      }
+      bluePattern: file(relativePath: {eq: "visuals/blue-pattern-md.jpg"}) {
         childImageSharp {
           gatsbyImageData(
             placeholder: NONE
@@ -55,9 +63,9 @@ const TravelPage = () => {
                 Boston
               </h1>
               <p className="typo-body max-w-3xl mb-4">
-                Boston offers a unique blend of rich artistic and architectural heritage, serving as a vibrant hub
-                for art and technology. Visiting allows you to explore the birthplace of Nextflow, gaining insights
-                into its groundbreaking origins and development.
+                Boston offers a captivating fusion of historical significance and innovative spirit, making it a dynamic
+                center for art and technology. Boston's vibrant atmosphere fosters an environment where art and
+                technology coexist, offering a captivating experience for visitors seeking a deep appreciation for both.
               </p>
             </div>
             <div className="col-full lg:col-5 lg:ml-1/12">
@@ -74,7 +82,7 @@ const TravelPage = () => {
       <Marquee className="typo-body bg-green-300 text-black" to="/call-for-abstracts/" type="reset">
         Call for abstracts now open
       </Marquee>
-      <div className="container-lg text-white py-16">
+      <div className="container-md text-white py-16">
         <div className="text-center">
           <h2 className="typo-h6 uppercase">
             Location
@@ -84,16 +92,16 @@ const TravelPage = () => {
           <div className="col-full lg:col-6 mt-4">
             <Card>
               <div className="text-green-300">
-                <HackathonIcon />
+                <LaptopIcon />
               </div>
               <h3 className="typo-h4 mt-4">
-                Hackathon | Oct 16-18
+                Hackathon | Nov 28-29
               </h3>
               <div className="mt-4">
-                <Image
-                  image={getImage(data.hackathonMapImage)}
-                  alt="Hackathon"
-                  imgClassName="rounded-sm"
+                <LocationMap coordinates={{
+                    lat: 42.3512003,
+                    lng: -71.0721188,
+                  }}
                 />
               </div>
               <div className="flex items-center mt-8">
@@ -101,8 +109,8 @@ const TravelPage = () => {
                   <LocationIcon />
                 </div>
                 <p className="typo-body">
-                  <Link to="https://www.google.com/maps/place/Torre+Glòries/@41.4034089,2.1874044,17z/data=!3m2!4b1!5s0x12a4a29400221bfb:0x9fc1000420ad7d81!4m5!3m4!1s0x12a4a323dbd5241d:0x95abc33040714e90!8m2!3d41.4034049!4d2.1895931">
-                    Hotel SB Glow Carrer Badajoz 148-154, 08018 Barcelona, Spain
+                  <Link to="https://goo.gl/maps/GuHdtLUGEEL8ztRQ9">
+                    Boston Park Plaza, 50 Park Plaza, Boston, MA 02116, United States
                   </Link>
                 </p>
               </div>
@@ -114,13 +122,13 @@ const TravelPage = () => {
                 <MountainIcon />
               </div>
               <h3 className="typo-h4 mt-4">
-                SUMMIT | Oct 18-20
+                SUMMIT | Nov 29-30
               </h3>
               <div className="mt-4">
-                <Image
-                  image={getImage(data.summitMapImage)}
-                  alt="Hackathon"
-                  imgClassName="rounded-sm"
+                <LocationMap coordinates={{
+                    lat: 42.3512003,
+                    lng: -71.0721188,
+                  }}
                 />
               </div>
               <div className="flex items-center mt-8">
@@ -128,8 +136,8 @@ const TravelPage = () => {
                   <LocationIcon />
                 </div>
                 <p className="typo-body">
-                  <Link to="https://www.google.com/maps/place/Torre+Glòries/@41.4034089,2.1874044,17z/data=!3m2!4b1!5s0x12a4a29400221bfb:0x9fc1000420ad7d81!4m5!3m4!1s0x12a4a323dbd5241d:0x95abc33040714e90!8m2!3d41.4034049!4d2.1895931">
-                    Torre Glories, Avinguda Diagonal, 211, 08018 Barcelona, Spain
+                  <Link to="https://goo.gl/maps/GuHdtLUGEEL8ztRQ9">
+                    Boston Park Plaza, 50 Park Plaza, Boston, MA 02116, United States
                   </Link>
                 </p>
               </div>
@@ -138,6 +146,35 @@ const TravelPage = () => {
         </div>
       </div>
       <RegisterCTA />
+      <div className="container-lg py-16">
+        <Card paddingClassName="p-0">
+          <div className="flex flex-wrap md:flex-nowrap">
+            <div className="w-full md:w-1/3">
+              <Image
+                image={getImage(data.bluePattern)}
+                alt="blue dots visual"
+                className="h-full"
+                imgClassName="rounded-t-md md:rounded-tr-none md:rounded-l-md"
+              />
+            </div>
+            <div className="w-full md:w-2/3 py-8 px-8">
+              <h2 className="typo-h3">
+                Nextflow SUMMIT: Barcelona
+              </h2>
+              <p className="typo-body mt-4">
+                In 2023, we have two Nextflow SUMMIT events - one in Europe and one in the US. See below for more about
+                the European event - connect with local users and meet the Nextflow and nf-core teams in Barcelona, the
+                birth place of Nextflow.
+              </p>
+              <div className="mt-16">
+                <Button to="/" variant="primary" theme="alternative" size="md" arrow>
+                  Learn more
+                </Button>
+              </div>
+            </div>
+          </div>
+        </Card>
+      </div>
     </>
   );
 };
