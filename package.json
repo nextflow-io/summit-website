@@ -52,5 +52,11 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
+  },
+  "overrides": {
+    "google-maps-react": {
+      "react": "^18.2.0",
+      "react-dom": "^18.2.0"
+    }
   }
 }
