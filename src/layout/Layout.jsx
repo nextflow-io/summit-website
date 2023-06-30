@@ -20,10 +20,8 @@ const Layout = ({ children, location, pageContext }) => {
       {pageContext.layout !== 'Plain' && (
           <Header location={location} />
       )}
-      <div className="fixed top-20 md:top-32 w-full z-10">
-        <div className="container-xl flex justify-end">
-          <EventSwitcher />
-        </div>
+      <div className="fixed top-20 right-0 md:top-32 z-10">
+        <EventSwitcher />
       </div>
       <main className="min-h-[calc(100vh_-_7rem_-_1px)] md:min-h-[calc(100vh_-_9rem_-_1px)]">
         {children}

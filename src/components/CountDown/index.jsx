@@ -2,23 +2,31 @@ import React from 'react';
 
 import { useLayoutState } from '../../layout/Context';
 
-const BARCELONA_START_DATE = 'October 12, 2023';
+const BARCELONA_START_DATE = 'October 16, 2023';
 const BOSTON_START_DATE = 'November 29, 2023';
 
-const daysLeft = (date) => {
-  const oneDay = 24 * 60 * 60 * 1000;
+const hoursLeft = (toDate) => {
+  const oneHour = 60 * 60 * 1000;
   const nowDate = new Date();
-  return Math.round((date - nowDate) / oneDay);
+  return Math.floor((toDate - nowDate) / oneHour);
 };
 
-const weeksLeft = (toDate) => {
-  const days = daysLeft(toDate);
-  return Math.round(days / 7);
+const daysLeft = (toDate) => {
+  const hours = hoursLeft(toDate);
+  return Math.floor(hours / 24);
 };
 
-const monthLeft = (toDate) => {
+const monthsLeft = (toDate) => {
   const days = daysLeft(toDate);
-  return Math.round(days / 30);
+  return Math.floor(days / 30);
+};
+
+const timeLeft = (toDate) => {
+  return {
+    hours: hoursLeft(toDate) % 24,
+    days: daysLeft(toDate) % 30,
+    months: monthsLeft(toDate),
+  };
 };
 
 const Counter = () => {
@@ -34,7 +42,7 @@ const Counter = () => {
       <div className="bg-gray-900 flex rounded-md shadow-xl">
         <div className="p-4 text-center">
           <span className="typo-h4 block">
-            {monthLeft(startDate)}
+            {timeLeft(startDate).months}
           </span>
           <span className="typo-intro block">
             months
@@ -42,18 +50,18 @@ const Counter = () => {
         </div>
         <div className="p-4 text-center">
           <span className="typo-h4 block">
-            {weeksLeft(startDate)}
+            {timeLeft(startDate).days}
           </span>
           <span className="typo-intro block">
-            weeks
+            days
           </span>
         </div>
         <div className="p-4 text-center">
           <span className="typo-h4 block">
-            {daysLeft(startDate)}
+            {timeLeft(startDate).hours}
           </span>
           <span className="typo-intro block">
-            days
+            hours
           </span>
         </div>
       </div>
