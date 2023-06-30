@@ -1,0 +1,47 @@
+@font-face {
+  font-family: 'Degular';
+  src: url('Degular-Regular.woff') format('woff'),
+       url('Degular-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Degular';
+  src: url('Degular-Italic.woff') format('woff'),
+       url('Degular-Italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Degular';
+  src: url('Degular-Semibold.woff') format('woff'),
+       url('Degular-Semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Degular';
+  src: url('Degular-SemiboldItalic.woff') format('woff'),
+       url('Degular-SemiboldItalic.woff2') format('woff2');
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Degular';
+  src: url('Degular-Bold.woff') format('woff'),
+       url('Degular-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Degular';
+  src: url('Degular-BoldItalic.woff') format('woff'),
+       url('Degular-BoldItalic.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+}

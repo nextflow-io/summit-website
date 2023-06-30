@@ -33,7 +33,7 @@ const RegisterPage = () => {
       <HeroDots className="text-center" variant="red">
         <div className="container-lg">
           <div className="max-w-3xl mx-auto">
-            <h1 className="typo-h2">
+            <h1 className="typo-display1">
               Join the Nextflow SUMMIT and nf-core Hackathon
             </h1>
             <div className="max-w-xl mx-auto mt-4">

@@ -34,7 +34,7 @@ const AgendaPage = () => {
         <div className="container-lg">
           <div className="row lg:flex-nowrap">
             <div className="col-full lg:col-6">
-              <h1 className="typo-h2 mb-4">
+              <h1 className="typo-display1 mb-4">
                 Join us
                 <br />
                 in Barcelona or virtually
@@ -115,8 +115,8 @@ const AgendaPage = () => {
         </div>
       </div>
       <div className="bg-indigo-800 text-white">
-        <div className="container-lg py-16 text-center">
-          <h2 className="typo-h2">
+        <div className="container-sm py-16 text-center">
+          <h2 className="typo-display2">
             Immerse yourself in a vibrant atmosphere of knowledge exchange, networking, and collaboration, as we shape
             the path to revolutionary discoveries in the life sciences and more.
           </h2>
@@ -129,7 +129,7 @@ const AgendaPage = () => {
           </div>
           <div className="col-full lg:col-6 py-16">
             <div className="px-4 lg:px-12">
-              <h2 className="typo-h2">
+              <h2 className="typo-display1">
                 20+ Speakers
               </h2>
               <p className="typo-body mt-2">

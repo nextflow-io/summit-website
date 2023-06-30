@@ -8,7 +8,7 @@ module.exports = {
     ],
     theme: {
         fontFamily: {
-            display: ['SF UI Display', 'Helvetica', 'sans-serif'],
+            display: ['Degular', 'Helvetica', 'sans-serif'],
             body: ['SF UI Display', 'Helvetica', 'sans-serif'],
         },
         fontSize: {

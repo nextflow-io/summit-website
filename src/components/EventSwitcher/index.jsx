@@ -13,14 +13,14 @@ const EventSwitcher = ({ className }) => {
   const { activeEvent } = useLayoutState();
 
   return (
-    <div className={classnames('inline-flex items-center bg-gradient-to-r from-blue-600 to-red-300 text-black text-xl font-light leading-8 px-4 py-3 rounded-l-full', className)}>
+    <div className={classnames('typo-display3 inline-flex items-center bg-gradient-to-r from-blue-600 to-red-300 text-black px-4 py-3 rounded-l-full', className)}>
       <img src={GlobeIconSrc} className="h-6 w-6 mr-3" alt="globe icon" />
       <Link
         to="/"
         noBorder
-        className={classnames('border-b-2 min-w-[107px]', {
+        className={classnames('border-b-2 min-w-[103px]', {
           'border-transparent': activeEvent !== 'barcelona',
-          'font-medium border-black': activeEvent === 'barcelona',
+          'font-bold border-black': activeEvent === 'barcelona',
         })}
       >
         Barcelona
@@ -31,9 +31,9 @@ const EventSwitcher = ({ className }) => {
       <Link
         to="/boston/"
         noBorder
-        className={classnames('border-b-2 min-w-[76px]', {
+        className={classnames('border-b-2 min-w-[73px]', {
           'border-transparent': activeEvent !== 'boston',
-          'font-medium border-black': activeEvent === 'boston',
+          'font-bold border-black': activeEvent === 'boston',
         })}
       >
         Boston

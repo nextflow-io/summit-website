@@ -59,7 +59,7 @@ const TravelPage = () => {
         <div className="container-lg">
           <div className="row lg:flex-nowrap">
             <div className="col-full lg:col-6">
-              <h1 className="typo-h2 mb-4">
+              <h1 className="typo-display1 mb-4">
                 Boston
               </h1>
               <p className="typo-body max-w-3xl mb-4">

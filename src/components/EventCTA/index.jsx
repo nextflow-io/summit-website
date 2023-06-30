@@ -36,7 +36,7 @@ const EventCTA = () => {
       <div className="container-xl">
         <div className="row">
           <div className="col-full lg:col-4 bg-green-300 text-indigo-800 py-14">
-            <h2 className="typo-h2">
+            <h2 className="typo-display1">
               SUMMIT 2023
               <br />
               2 locations:
