@@ -41,9 +41,18 @@ module.exports = {
                   'transform': 'translateX(-96px)',
                 },
               },
+              scroll: {
+                '0%': {
+                  'transform': 'translateX(0%)'
+                },
+                '100%': {
+                  'transform': 'translateX(calc(-100% - 32px))'
+                }
+              },
             },
             animation: {
               flow: 'flow 3s linear infinite',
+              scroll: 'scroll 6s linear infinite',
             },
             colors: {
                 gray: {

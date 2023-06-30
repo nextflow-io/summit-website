@@ -12,6 +12,7 @@ import {
 import Card from '../../components/Card';
 import HackathonIcon from '../../components/icons/HackathonIcon';
 import MountainIcon from '../../components/icons/MountainIcon';
+import RegisterCTA from '../../components/RegisterCTA';
 import Seo from '../../components/Seo';
 
 const TravelPage = () => {
@@ -136,20 +137,7 @@ const TravelPage = () => {
           </div>
         </div>
       </div>
-      <div className="bg-indigo-800 text-white">
-        <div className="container-lg py-16 text-center">
-          <h2 className="typo-h2">
-            Step into the future of data-driven science at the Nextflow SUMMIT
-            <br />
-            held in Barcelona, October 16-20.
-          </h2>
-          <div className="mt-4">
-            <Button to="/boston/register/" variant="accent" size="md">
-              Register
-            </Button>
-          </div>
-        </div>
-      </div>
+      <RegisterCTA />
     </>
   );
 };

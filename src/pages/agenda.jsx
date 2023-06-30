@@ -8,7 +8,7 @@ import {
 } from 'website-components';
 
 import Card from '../components/Card';
-import HackathonIcon from '../components/icons/HackathonIcon';
+import LaptopIcon from '../components/icons/LaptopIcon';
 import MountainIcon from '../components/icons/MountainIcon';
 import Seo from '../components/Seo';
 
@@ -44,7 +44,7 @@ const AgendaPage = () => {
                 breakthroughs in workflow management.
               </p>
               <div className="mt-4">
-                <Button to="/register/" variant="accent" size="md">
+                <Button to="/register/" variant="accent" size="md" arrow>
                   Register
                 </Button>
               </div>
@@ -63,7 +63,7 @@ const AgendaPage = () => {
       <Marquee className="typo-body bg-green-300 text-black" to="/call-for-abstracts/" type="reset">
         Call for abstracts now open
       </Marquee>
-      <div className="container-lg text-white py-16">
+      <div className="container-md text-white py-16">
         <div className="text-center">
           <h2 className="typo-h6 uppercase">
             Program
@@ -73,15 +73,15 @@ const AgendaPage = () => {
           <div className="col-full lg:col-6 mt-4">
             <Card>
               <div className="text-green-300">
-                <HackathonIcon />
+                <LaptopIcon />
               </div>
               <h3 className="typo-h4 mt-4">
                 Hackathon | Oct 16-18
               </h3>
-              <p className="typo-intro text-green-300 mt-4">
+              <p className="typo-intro text-green-300 mt-8">
                 2.5 days · 100 people · hackathon
               </p>
-              <p className="typo-body mt-4">
+              <p className="typo-body mt-2">
                 The program will be available once the call for abstracts has closed.
               </p>
               <div className="mt-4">
@@ -99,10 +99,10 @@ const AgendaPage = () => {
               <h3 className="typo-h4 mt-4">
                 SUMMIT | Oct 18-20
               </h3>
-              <p className="typo-intro text-green-300 mt-4">
+              <p className="typo-intro text-green-300 mt-8">
                 2.5 days · 200 people · talks, posters and more
               </p>
-              <p className="typo-body mt-4">
+              <p className="typo-body mt-2">
                 The program will be available once the call for abstracts has closed.
               </p>
               <div className="mt-4">
@@ -120,6 +120,28 @@ const AgendaPage = () => {
             Immerse yourself in a vibrant atmosphere of knowledge exchange, networking, and collaboration, as we shape
             the path to revolutionary discoveries in the life sciences and more.
           </h2>
+        </div>
+      </div>
+      <div className="container-lg text-white">
+        <div className="row">
+          <div className="col-full lg:col-6 bg-blue-600">
+
+          </div>
+          <div className="col-full lg:col-6 py-16">
+            <div className="px-4 lg:px-12">
+              <h2 className="typo-h2">
+                20+ Speakers
+              </h2>
+              <p className="typo-body mt-2">
+                Stay tuned for exciting announcements of our distinguished speakers, and meantime check out talks given last year.
+              </p>
+              <div className="mt-8">
+                <Button to="https://www.youtube.com/playlist?list=PLPZ8WHdZGxmUdAJlHowo7zL2pN3x97d32" variant="secondary" size="md">
+                  Watch talks from 2022
+                </Button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>

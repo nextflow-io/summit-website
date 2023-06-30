@@ -10,8 +10,9 @@ import {
 } from 'website-components';
 
 import Card from '../components/Card';
-import HackathonIcon from '../components/icons/HackathonIcon';
+import LaptopIcon from '../components/icons/LaptopIcon';
 import MountainIcon from '../components/icons/MountainIcon';
+import RegisterCTA from '../components/RegisterCTA';
 import Seo from '../components/Seo';
 
 const TravelPage = () => {
@@ -83,10 +84,10 @@ const TravelPage = () => {
           <div className="col-full lg:col-6 mt-4">
             <Card>
               <div className="text-green-300">
-                <HackathonIcon />
+                <LaptopIcon />
               </div>
               <h3 className="typo-h4 mt-4">
-                Hackathon | Oct 16-18
+                Hackathon | Oct 16-20
               </h3>
               <div className="mt-4">
                 <Image
@@ -136,20 +137,7 @@ const TravelPage = () => {
           </div>
         </div>
       </div>
-      <div className="bg-indigo-800 text-white">
-        <div className="container-lg py-16 text-center">
-          <h2 className="typo-h2">
-            Step into the future of data-driven science at the Nextflow SUMMIT
-            <br />
-            held in Barcelona, October 16-20.
-          </h2>
-          <div className="mt-4">
-            <Button to="/register/" variant="accent" size="md">
-              Register
-            </Button>
-          </div>
-        </div>
-      </div>
+      <RegisterCTA />
     </>
   );
 };

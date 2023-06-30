@@ -7,6 +7,7 @@ import {
 } from 'website-components';
 
 import Card from '../components/Card';
+import RegisterCTA from '../components/RegisterCTA';
 import Seo from '../components/Seo';
 import Tabs from '../components/Tabs';
 
@@ -62,49 +63,94 @@ const PastEventsPage = () => {
             2017
           </Tabs.Item>
         </Tabs>
-        <div className="mt-4">
-          <Card>
-            <h3 className="typo-h4">
-              SUMMIT 2023
-            </h3>
-            <p className="typo-body mt-4">
-              Oct 12, 2022
-              <span className="mx-2">|</span>
-              <Link to="/">
-                Visit website
-              </Link>
-            </p>
-          </Card>
-        </div>
-        <div className="mt-4">
-          <Card>
-            <h3 className="typo-h4">
-              nf-core hackathon 2022
-            </h3>
-            <p className="typo-body mt-4">
-              Oct 12, 2022
-              <span className="mx-2">|</span>
-              <Link to="/">
-                Visit website
-              </Link>
-            </p>
-          </Card>
-        </div>
+        {year === '2022' && (
+          <>
+            <div className="mt-4">
+              <Card>
+                <h3 className="typo-h4">
+                  SUMMIT 2023
+                </h3>
+                <p className="typo-body mt-4">
+                  Oct 12, 2022
+                  <span className="mx-2">|</span>
+                  <Link to="/">
+                    Visit website
+                  </Link>
+                </p>
+              </Card>
+            </div>
+            <div className="mt-4">
+              <Card>
+                <h3 className="typo-h4">
+                  nf-core hackathon 2022
+                </h3>
+                <p className="typo-body mt-4">
+                  Oct 12, 2022
+                  <span className="mx-2">|</span>
+                  <Link to="/">
+                    Visit website
+                  </Link>
+                </p>
+              </Card>
+            </div>
+          </>
+        )}
+        {year === '2019' && (
+          <>
+            <div className="mt-4">
+              <Card>
+                <h3 className="typo-h4">
+                  Nextflow Camp 2019
+                </h3>
+                <p className="typo-body mt-4">
+                  Sep 19-20, 2019
+                  <span className="mx-2">|</span>
+                  <Link to="https://www.nextflow.io/nfcamp/2019/program.html">
+                    Visit website
+                  </Link>
+                </p>
+              </Card>
+            </div>
+          </>
+        )}
+        {year === '2018' && (
+          <>
+            <div className="mt-4">
+              <Card>
+                <h3 className="typo-h4">
+                  nf-hack18
+                </h3>
+                <p className="typo-body mt-4">
+                  Nov 22-23, 2018
+                  <span className="mx-2">|</span>
+                  <Link to="https://github.com/nextflow-io/nf-hack18/blob/master/schedule.md">
+                    Visit website
+                  </Link>
+                </p>
+              </Card>
+            </div>
+          </>
+        )}
+        {year === '2017' && (
+          <>
+            <div className="mt-4">
+              <Card>
+                <h3 className="typo-h4">
+                  nf-hack17
+                </h3>
+                <p className="typo-body mt-4">
+                  Sep 14-20, 2019
+                  <span className="mx-2">|</span>
+                  <Link to="https://github.com/nextflow-io/nf-hack17/blob/master/schedule.md">
+                    Visit website
+                  </Link>
+                </p>
+              </Card>
+            </div>
+          </>
+        )}
       </div>
-      <div className="bg-indigo-800 text-white">
-        <div className="container-lg py-16 text-center">
-          <h2 className="typo-h2">
-            Step into the future of data-driven science at the Nextflow SUMMIT
-            <br />
-            held in Barcelona, October 16-20.
-          </h2>
-          <div className="mt-4">
-            <Button to="/" variant="accent" size="md">
-              Register
-            </Button>
-          </div>
-        </div>
-      </div>
+      <RegisterCTA />
     </>
   );
 };

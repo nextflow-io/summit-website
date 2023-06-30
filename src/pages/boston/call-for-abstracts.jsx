@@ -37,7 +37,7 @@ const CallForAbstractsPage = () => {
       <Seo
         title="Call for abstracts"
       />
-      <HeroDots className="text-center">
+      <HeroDots className="text-center" variant="red">
         <div className="container-lg relative">
           <div className="max-w-3xl mx-auto">
             <h1 className="typo-h2">

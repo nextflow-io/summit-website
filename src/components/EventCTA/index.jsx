@@ -43,12 +43,12 @@ const EventCTA = () => {
             </h2>
             <div className="flex">
               <div className="mr-4 mt-8">
-                <Button to="/" variant="primary" theme="alternative" size="md">
+                <Button to="/" variant="primary" theme="alternative" size="md" arrow>
                   Barcelona
                 </Button>
               </div>
               <div className="mt-8">
-                <Button to="/boston/" variant="secondary" theme="alternative" size="md">
+                <Button to="/boston/" variant="secondary" theme="alternative" size="md" arrow>
                   Boston
                 </Button>
               </div>
