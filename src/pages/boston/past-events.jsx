@@ -34,7 +34,7 @@ const PastEventsPage = () => {
                 management.
               </p>
               <div className="mt-4">
-                <Button to="/boston/register/" variant="secondary" size="md">
+                <Button to="/2022/gallery/" variant="secondary" size="md">
                   View gallery
                 </Button>
               </div>
@@ -73,7 +73,7 @@ const PastEventsPage = () => {
                 <p className="typo-body mt-4">
                   Oct 12, 2022
                   <span className="mx-2">|</span>
-                  <Link to="/">
+                  <Link to="/2022/">
                     Visit website
                   </Link>
                 </p>
@@ -87,7 +87,7 @@ const PastEventsPage = () => {
                 <p className="typo-body mt-4">
                   Oct 12, 2022
                   <span className="mx-2">|</span>
-                  <Link to="/">
+                  <Link to="https://nf-co.re/events/2022/hackathon-october-2022">
                     Visit website
                   </Link>
                 </p>
