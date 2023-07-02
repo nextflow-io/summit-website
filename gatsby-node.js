@@ -1,4 +1,5 @@
 const path = require('path');
+const fs = require('fs');
 
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
@@ -292,4 +293,11 @@ exports.onCreateWebpackConfig = ({ actions, loaders }) => {
       ],
     },
   });
+};
+
+// Move to /2022/
+exports.onPostBuild = function() {
+  fs.renameSync(path.join(__dirname, 'public'), path.join(__dirname, 'public-tmp'));
+  fs.mkdirSync(path.join(__dirname, 'public'));
+  fs.renameSync(path.join(__dirname, 'public-tmp'), path.join(__dirname, 'public', '2022'));
 };
