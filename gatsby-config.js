@@ -1,5 +1,4 @@
 const siteUrl = `https://summit.nextflow.io/2022/`;
-const pathPrefix: `/2022`,
 const path = require('path');
 
 module.exports = {
@@ -10,7 +9,7 @@ module.exports = {
     siteUrl: siteUrl,
     image: `/images/share-image.jpg`,
   },
-  pathPrefix: pathPrefix,
+  pathPrefix: `/2022`,
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
