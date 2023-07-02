@@ -46,7 +46,7 @@ const SponsorsPage = () => {
                 A range of sponsorship opportunities to suit your needs. Get in contact to find out more.
               </p>
               <div className="mt-4">
-                <Button to="/register/" variant="secondary" size="md">
+                <Button to="mailto:sponsorships@seqera.io" variant="secondary" size="md">
                   Contact us
                 </Button>
               </div>
