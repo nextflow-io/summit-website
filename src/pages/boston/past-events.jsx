@@ -4,14 +4,13 @@ import {
   Button,
   Link,
   Marquee,
+  YoutubeIframe
 } from 'website-components';
 
 import Card from '../../components/Card';
 import RegisterCTA from '../../components/RegisterCTA';
 import Seo from '../../components/Seo';
 import Tabs from '../../components/Tabs';
-
-import VideoSrc from '../../images/visuals/video-placeholder.svg';
 
 const PastEventsPage = () => {
   const [ year, setYear ] = useState('2022');
@@ -39,9 +38,7 @@ const PastEventsPage = () => {
                 </Button>
               </div>
             </div>
-            <div className="col-full lg:col-6 lg:ml-1/12">
-              <img src={VideoSrc} alt="Past Events" />
-            </div>
+            <YoutubeIframe id="szWI3EW2ijY" className="col-full lg:col-6 lg:ml-1/12"></YoutubeIframe>
           </div>
         </div>
       </div>
