@@ -1,4 +1,4 @@
-const siteUrl = `https://summit.nextflow.io/`;
+const siteUrl = `https://summit.nextflow.io/2022/`;
 const path = require('path');
 
 module.exports = {
