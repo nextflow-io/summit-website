@@ -9,9 +9,10 @@ import {
 import Seo from '../../components/Seo';
 
 import LogoAWS from '../../images/logos/aws.svg';
-import LogoElementBio from '../../images/logos/element-biosciences.svg';
+import LogoMicrosoft from '../../images/logos/microsoft.svg';
+import LogoPixelgen from '../../images/logos/pixelgen.svg';
 import LogoSeqera from '../../images/logos/seqera.svg';
-import LogoQuilt from '../../images/logos/quilt.svg';
+import LogoZS from '../../images/logos/ZS.svg';
 
 const SponsorsPage = () => {
   const data = useStaticQuery(graphql`
@@ -70,24 +71,29 @@ const SponsorsPage = () => {
         </div>
         <div className="container-xl mt-2">
           <div className="flex flex-wrap">
-            <div className="w-full sm:w-1/4 px-1">
+            <div className="w-full sm:w-1/5 px-1">
               <div className="bg-gray-800 h-24 sm:h-40 px-4 flex items-center justify-center">
                 <img src={LogoAWS} className="h-12" alt="AWS logo" />
               </div>
             </div>
-            <div className="w-full sm:w-1/4 px-1">
+            <div className="w-full sm:w-1/5 px-1">
               <div className="bg-gray-800 h-24 sm:h-40 px-4 flex items-center justify-center">
                 <img src={LogoSeqera} className="h-10" alt="Seqera logo" />
               </div>
             </div>
-            <div className="w-full sm:w-1/4 px-1">
+            <div className="w-full sm:w-1/5 px-1">
               <div className="bg-gray-800 h-24 sm:h-40 px-4 flex items-center justify-center">
-                <img src={LogoQuilt} className="h-12" alt="Quilt logo" />
+                <img src={LogoZS} className="h-14" alt="ZS logo" />
               </div>
             </div>
-            <div className="w-full sm:w-1/4 px-1">
+            <div className="w-full sm:w-1/5 px-1">
               <div className="bg-gray-800 h-24 sm:h-40 px-4 flex items-center justify-center">
-                <img src={LogoElementBio} className="h-10" alt="Element Biosciences logo" />
+                <img src={LogoMicrosoft} className="h-10" alt="Microsoft logo" />
+              </div>
+            </div>
+            <div className="w-full sm:w-1/5 px-1">
+              <div className="bg-gray-800 h-24 sm:h-40 px-4 flex items-center justify-center">
+                <img src={LogoPixelgen} className="h-14" alt="Pixelgen logo" />
               </div>
             </div>
           </div>
