@@ -100,7 +100,7 @@ const AgendaPage = () => {
                 SUMMIT | Oct 18-20
               </h3>
               <p className="typo-intro text-green-300 mt-8">
-                2.5 days · 200 people · talks, posters and more
+                2.5 days · 200 people · talks, posters, and more
               </p>
               <p className="typo-body mt-2">
                 The program will be available once the call for abstracts has closed.

@@ -25,7 +25,7 @@ const RegisterCTA = () => {
             )}
             {activeEvent === 'boston' && (
               <>
-                held in Boston, November 29-30.
+                held in Boston, November 28-30.
               </>
             )}
           </h2>

@@ -41,7 +41,7 @@ const RegisterPage = () => {
         <div className="container-lg">
           <div className="max-w-3xl mx-auto">
             <h1 className="typo-display1">
-              Join the Nextflow SUMMIT and nf-core Hackathon
+              Join the Nextflow SUMMIT and <span style={{ "white-space": "nowrap" }}>nf-core</span> Hackathon
             </h1>
             <div className="max-w-xl mx-auto mt-4">
               <p className="typo-body">
@@ -73,16 +73,16 @@ const RegisterPage = () => {
               </h2>
               <List type="bullet" iconClassName="text-white" className="mt-8">
                 <List.Item className="typo-body">
-                  Nextflow SUMMIT - academic: €149 (€180 incl. VAT)
+                  Nextflow SUMMIT - academic: €198 (€250 incl. VAT)
                 </List.Item>
                 <List.Item className="typo-body">
-                  Nextflow SUMMIT  -  corporate: €349 (€422 incl. VAT)
+                  Nextflow SUMMIT  -  corporate: €387 (€490 incl. VAT)
                 </List.Item>
                 <List.Item className="typo-body">
                   Nextflow SUMMIT  - invited guests: free
                 </List.Item>
                 <List.Item className="typo-body">
-                  nf-core Hackathon: €49 (€59 incl. VAT)
+                  nf-core Hackathon: €79 (€100 incl. VAT)
                 </List.Item>
               </List>
             </Card>

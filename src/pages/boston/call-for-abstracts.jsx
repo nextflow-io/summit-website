@@ -45,10 +45,10 @@ const CallForAbstractsPage = () => {
             </h1>
             <p className="typo-body mt-4">
               Act fast as abstracts will be reviewed and presenters will be notified on an ongoing basis. Final
-              abstracts will be accepted and presenters will be notified by the end of July.
+              abstracts will be accepted and presenters will be notified by early August.
             </p>
             <div className="mt-4">
-              <Button to="/boston/register/" variant="accent" size="md">
+              <Button to="https://form.typeform.com/to/hVPzQTbf" variant="accent" size="md">
                 Apply now
               </Button>
             </div>

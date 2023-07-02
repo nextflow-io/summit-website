@@ -4,6 +4,7 @@ import React from 'react';
 
 import {
   Button,
+  Link,
   Marquee,
 } from 'website-components';
 
@@ -35,9 +36,7 @@ const AgendaPage = () => {
           <div className="row lg:flex-nowrap">
             <div className="col-full lg:col-6">
               <h1 className="typo-display1 mb-4">
-                Join us
-                <br />
-                in Boston or virtually
+                Join us in Boston
               </h1>
               <p className="typo-body max-w-3xl mb-4">
                 This premier event brings together leading experts, innovators, and researchers to showcase the latest
@@ -76,10 +75,10 @@ const AgendaPage = () => {
                 <LaptopIcon />
               </div>
               <h3 className="typo-h4 mt-4">
-                Hackathon | Oct 16-18
+                Hackathon | Nov 28-29
               </h3>
               <p className="typo-intro text-green-300 mt-4">
-                2.5 days · 100 people · hackathon
+                1.5 days · 50 people · hackathon
               </p>
               <p className="typo-body mt-4">
                 The program will be available once the call for abstracts has closed.
@@ -97,10 +96,10 @@ const AgendaPage = () => {
                 <MountainIcon />
               </div>
               <h3 className="typo-h4 mt-4">
-                SUMMIT | Oct 18-20
+                SUMMIT | Nov 29-30
               </h3>
               <p className="typo-intro text-green-300 mt-4">
-                2.5 days · 200 people · talks, posters and more
+                1.5 days · 100 people · talks, networking, and more
               </p>
               <p className="typo-body mt-4">
                 The program will be available once the call for abstracts has closed.
@@ -133,7 +132,10 @@ const AgendaPage = () => {
                 20+ Speakers
               </h2>
               <p className="typo-body mt-2">
-                Stay tuned for exciting announcements of our distinguished speakers, and meantime check out talks given last year.
+                This year we are thrilled to have Erik Garrison join us as keynote speaker, author of the recent <Link to="https://www.nature.com/articles/s41586-023-05896-x">Nature paper</Link> <em>“A draft human pangenome reference”</em>.
+              </p>
+              <p className="typo-body mt-2">
+                Stay tuned for more exciting announcements of our distinguished speakers. Until then, you can watch the talks from last year below:
               </p>
               <div className="mt-8">
                 <Button to="https://www.youtube.com/playlist?list=PLPZ8WHdZGxmUdAJlHowo7zL2pN3x97d32" variant="secondary" size="md">
