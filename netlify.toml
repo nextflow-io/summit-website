@@ -3,6 +3,6 @@
 
 [[redirects]]
   from = "/2022/*"
-  to = "https://nextflowsummit2022.netlify.app/2022/:splat"
+  to = "https://nextflow-summit-2022.netlify.app/2022/:splat"
   status = 200
   force = true
