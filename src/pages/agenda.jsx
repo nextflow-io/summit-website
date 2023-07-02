@@ -85,9 +85,14 @@ const AgendaPage = () => {
                 The program will be available once the call for abstracts has closed.
               </p>
               <div className="mt-4">
+                <span className="typo-body bg-gray-800 rounded-sm py-2 px-4">
+                  Program coming soon
+                </span>
+                {/*
                 <Button to="/register/" variant="secondary" size="md">
                   View program
                 </Button>
+                 */}
               </div>
             </Card>
           </div>
@@ -106,9 +111,14 @@ const AgendaPage = () => {
                 The program will be available once the call for abstracts has closed.
               </p>
               <div className="mt-4">
+                <span className="typo-body bg-gray-800 rounded-sm py-2 px-4">
+                  Program coming soon
+                </span>
+                {/*
                 <Button to="/register/" variant="secondary" size="md">
                   View program
                 </Button>
+                 */}
               </div>
             </Card>
           </div>

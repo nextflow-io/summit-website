@@ -84,9 +84,14 @@ const AgendaPage = () => {
                 The program will be available once the call for abstracts has closed.
               </p>
               <div className="mt-4">
+                <span className="typo-body bg-gray-800 rounded-sm py-2 px-4">
+                  Program coming soon
+                </span>
+                {/*
                 <Button to="/boston/register/" variant="secondary" size="md">
                   View program
                 </Button>
+                */}
               </div>
             </Card>
           </div>
@@ -105,9 +110,14 @@ const AgendaPage = () => {
                 The program will be available once the call for abstracts has closed.
               </p>
               <div className="mt-4">
+                <span className="typo-body bg-gray-800 rounded-sm py-2 px-4">
+                  Program coming soon
+                </span>
+                {/*
                 <Button to="/boston/register/" variant="secondary" size="md">
                   View program
                 </Button>
+                */}
               </div>
             </Card>
           </div>
@@ -132,7 +142,7 @@ const AgendaPage = () => {
                 20+ Speakers
               </h2>
               <p className="typo-body mt-2">
-                This year we are thrilled to have Erik Garrison join us as keynote speaker, author of the recent <Link to="https://www.nature.com/articles/s41586-023-05896-x">Nature paper</Link> <em>“A draft human pangenome reference”</em>.
+                This year we are thrilled to have <strong>Erik Garrison</strong> join us as keynote speaker, author of the recent <Link to="https://www.nature.com/articles/s41586-023-05896-x">Nature paper</Link> <em>“A draft human pangenome reference”</em>.
               </p>
               <p className="typo-body mt-2">
                 Stay tuned for more exciting announcements of our distinguished speakers. Until then, you can watch the talks from last year below:
