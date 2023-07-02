@@ -32,6 +32,14 @@ const Header = ({ location }) => {
         pageRelatedClassName,
       )}
       >
+        <div className="w-full h-12 flex items-center text-white bg-white/10 border-b border-white/20">
+          <div className="container-lg hidden lg:block">
+            You are viewing the archived website of the Nextflow Summit 2022, see &nbsp;<Link to="https://summit.nextflow.io">https://summit.nextflow.io</Link>&nbsp; for the latest event.
+          </div>
+          <div className="container-lg lg:hidden">
+            Archived site. See the &nbsp;<Link to="https://summit.nextflow.io">latest event</Link>.
+          </div>
+        </div>
         <div className="container-lg flex flex-wrap items-center justify-between w-full h-16 md:h-24">
           <Link to="/" noBorder className="block uppercase">
               <img src={Logo} className="h-8 lg:h-10" alt="" />
