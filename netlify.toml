@@ -6,3 +6,8 @@
   to = "https://nextflow-summit-2022.netlify.app/2022/:splat"
   status = 200
   force = true
+
+[[redirects]]
+  from = "/posters/*"
+  to = "/2022/posters/:splat"
+  status = 301
