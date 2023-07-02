@@ -1,87 +1,94 @@
-/program/community-events/          /2022/program/community-events/
-/program/oct-12-automated-production-engine-to-decode-the-tree-of-life/         /2022/program/oct-12-automated-production-engine-to-decode-the-tree-of-life/
-/program/oct-12-designing-mechanisms-into-bactopia-to-support-its-users-and-contribute-back-to-the-community/           /2022/program/oct-12-designing-mechanisms-into-bactopia-to-support-its-users-and-contribute-back-to-the-community/
-/program/oct-12-nf-core-community-updates/          /2022/program/oct-12-nf-core-community-updates/
-/program/oct-12-summit-welcome/         /2022/program/oct-12-summit-welcome/
-/program/oct-12-using-cloud-can-speed-up-your-time-to-science/          /2022/program/oct-12-using-cloud-can-speed-up-your-time-to-science/
-/program/oct-13-add-versioning-verifiability-and-visualization-to-your-pipeline-with-one-link/          /2022/program/oct-13-add-versioning-verifiability-and-visualization-to-your-pipeline-with-one-link/
-/program/oct-13-bringing-gxp-compliance-to-nextflow-workflows/          /2022/program/oct-13-bringing-gxp-compliance-to-nextflow-workflows/
-/program/oct-13-deep-dive-into-nextflow-on-azure/           /2022/program/oct-13-deep-dive-into-nextflow-on-azure/
-/program/oct-13-epi2me-labs-and-democratising-nanopore-sequence-analysis/           /2022/program/oct-13-epi2me-labs-and-democratising-nanopore-sequence-analysis/
-/program/oct-13-from-sharing-our-journeys-to-empowering-the-community-nextflow-and-beyond/          /2022/program/oct-13-from-sharing-our-journeys-to-empowering-the-community-nextflow-and-beyond/
-/program/oct-13-keynote/            /2022/program/oct-13-keynote/
-/program/oct-13-large-scale-image-processing-with-nextflow/         /2022/program/oct-13-large-scale-image-processing-with-nextflow/
-/program/oct-13-new-pipeline-resources-for-reproducible-analysis/           /2022/program/oct-13-new-pipeline-resources-for-reproducible-analysis/
-/program/oct-13-nextflow-and-the-future-of-containers/          /2022/program/oct-13-nextflow-and-the-future-of-containers/
-/program/oct-13-nextflow-tower-in-the-data-analysis-life-cycle/         /2022/program/oct-13-nextflow-tower-in-the-data-analysis-life-cycle/
-/program/oct-13-nf-core-airrflow-a-pipeline-to-analyze-adaptive-immune-receptor-repertoires-airrs/          /2022/program/oct-13-nf-core-airrflow-a-pipeline-to-analyze-adaptive-immune-receptor-repertoires-airrs/
-/program/oct-13-nf-core-modules-re-usable-unit-tested-dsl2-wrapper-scripts-for-the-nextflow-community/          /2022/program/oct-13-nf-core-modules-re-usable-unit-tested-dsl2-wrapper-scripts-for-the-nextflow-community/
-/program/oct-13-nf-core-sarek-a-workflow-for-germline-tumor-only-and-somatic-analysis-of-ngs-data/          /2022/program/oct-13-nf-core-sarek-a-workflow-for-germline-tumor-only-and-somatic-analysis-of-ngs-data/
-/program/oct-13-pipeline-economics-on-cloud/            /2022/program/oct-13-pipeline-economics-on-cloud/
-/program/oct-13-pipeline-parameter-validation-with-the-nf-core-json-schema/         /2022/program/oct-13-pipeline-parameter-validation-with-the-nf-core-json-schema/
-/program/oct-13-price-performance-of-different-cloud-strorage-options-for-nextflow-workflows/           /2022/program/oct-13-price-performance-of-different-cloud-strorage-options-for-nextflow-workflows/
-/program/oct-13-unlocking-automated-bioinformatics-for-large-scale-healthcare/          /2022/program/oct-13-unlocking-automated-bioinformatics-for-large-scale-healthcare/
-/program/oct-13/            /2022/program/oct-13/
-/program/oct-14-a-workflow-to-generate-a-variant-catalogue-from-whole-genome-sequences/         /2022/program/oct-14-a-workflow-to-generate-a-variant-catalogue-from-whole-genome-sequences/
-/program/oct-14-applying-and-deploying-alphafold-at-scale-to-decode-the-human-gut-microbiome-proteome/          /2022/program/oct-14-applying-and-deploying-alphafold-at-scale-to-decode-the-human-gut-microbiome-proteome/
-/program/oct-14-automated-bioinformatics-infrastructure-for-large-scale-sars-cov-2-genomic-surveillance-at-qib/         /2022/program/oct-14-automated-bioinformatics-infrastructure-for-large-scale-sars-cov-2-genomic-surveillance-at-qib/
-/program/oct-14-from-zero-to-nextflow-bringing-nanorate-nanoseq-into-a-workflow/            /2022/program/oct-14-from-zero-to-nextflow-bringing-nanorate-nanoseq-into-a-workflow/
-/program/oct-14-junction-let-investigators-turning-their-data-into-results/         /2022/program/oct-14-junction-let-investigators-turning-their-data-into-results/
-/program/oct-14-nextflow-kubernetes-and-dragens-oh-my/          /2022/program/oct-14-nextflow-kubernetes-and-dragens-oh-my/
-/program/oct-14-nf-core-hackathon-report/           /2022/program/oct-14-nf-core-hackathon-report/
-/program/oct-14-options-for-leveling-up-your-nextflow-workflows-on-aws-batch/           /2022/program/oct-14-options-for-leveling-up-your-nextflow-workflows-on-aws-batch/
-/program/oct-14-summit-wrap-up-and-farewell/            /2022/program/oct-14-summit-wrap-up-and-farewell/
-/program/oct-14-the-spinning-jenny-a-nextflow-pipeline-for-an-agent-based-model-of-the-first-industrial-revolution/         /2022/program/oct-14-the-spinning-jenny-a-nextflow-pipeline-for-an-agent-based-model-of-the-first-industrial-revolution/
-/program/oct-14-workflow-automation-using-the-aviti-benchtop-sequencing-system-and-nextflow-tower/          /2022/program/oct-14-workflow-automation-using-the-aviti-benchtop-sequencing-system-and-nextflow-tower/
-/program/oct-14/            /2022/program/oct-14/
-/speakers/alan-hoyle/           /2022/speakers/alan-hoyle/
-/speakers/ali-hakimzadeh            /2022/speakers/ali-hakimzadeh
-/speakers/aneesh-karve/         /2022/speakers/aneesh-karve/
-/speakers/angel-pizarro/            /2022/speakers/angel-pizarro/
-/speakers/annick-renevey/           /2022/speakers/annick-renevey/
-/speakers/athanasios-baltzis/           /2022/speakers/athanasios-baltzis/
-/speakers/bjorn-langer/         /2022/speakers/bjorn-langer/
-/speakers/brendan-bouffler/         /2022/speakers/brendan-bouffler/
-/speakers/bruno-grande/         /2022/speakers/bruno-grande/
-/speakers/cedric-notredame/         /2022/speakers/cedric-notredame/
-/speakers/cristina-tuni/            /2022/speakers/cristina-tuni/
-/speakers/edmund-miller/            /2022/speakers/edmund-miller/
-/speakers/ernest-prabhakar/         /2022/speakers/ernest-prabhakar/
-/speakers/evan-floden/          /2022/speakers/evan-floden/
-/speakers/florian-heyl/         /2022/speakers/florian-heyl/
-/speakers/francesco-strozzi/            /2022/speakers/francesco-strozzi/
-/speakers/friederike-hanssen/           /2022/speakers/friederike-hanssen/
-/speakers/gisela-gabernet/          /2022/speakers/gisela-gabernet/
-/speakers/harshilpatel/         /2022/speakers/harshilpatel/
-/speakers/hatem-nawar/          /2022/speakers/hatem-nawar/
-/speakers/hunter-seabolt/           /2022/speakers/hunter-seabolt/
-/speakers/james-fellows-yates/          /2022/speakers/james-fellows-yates/
-/speakers/jasmin-frangenberg/           /2022/speakers/jasmin-frangenberg/
-/speakers/julia-mir-pedrol/         /2022/speakers/julia-mir-pedrol/
-/speakers/konrad-rokicki/           /2022/speakers/konrad-rokicki/
-/speakers/kubra-narci/          /2022/speakers/kubra-narci/
-/speakers/luca-cozzuto/         /2022/speakers/luca-cozzuto/
-/speakers/marcello-salvi            /2022/speakers/marcello-salvi
-/speakers/marta-sanvicente-garcia/          /2022/speakers/marta-sanvicente-garcia/
-/speakers/matt-vaughn/          /2022/speakers/matt-vaughn/
-/speakers/mike-smoot/           /2022/speakers/mike-smoot/
-/speakers/nicola-visona/            /2022/speakers/nicola-visona/
-/speakers/paolo-di-tommaso/         /2022/speakers/paolo-di-tommaso/
-/speakers/phil-ewels/           /2022/speakers/phil-ewels/
-/speakers/priyanka-surana/          /2022/speakers/priyanka-surana/
-/speakers/raul-alcantara-aragon/            /2022/speakers/raul-alcantara-aragon/
-/speakers/rob-patro/            /2022/speakers/rob-patro/
-/speakers/robert-petit/         /2022/speakers/robert-petit/
-/speakers/roger-olivella/           /2022/speakers/roger-olivella/
-/speakers/saba-nafees/          /2022/speakers/saba-nafees/
-/speakers/sam-ireland/          /2022/speakers/sam-ireland/
-/speakers/solenne-correard/         /2022/speakers/solenne-correard/
-/speakers/stephen-rudd/         /2022/speakers/stephen-rudd/
-/speakers/suchitra-thapa/           /2022/speakers/suchitra-thapa/
-/speakers/thanh-le-viet/            /2022/speakers/thanh-le-viet/
-/speakers/tony-zeljkovic/           /2022/speakers/tony-zeljkovic/
-/speakers/venkat-malladi/           /2022/speakers/venkat-malladi/
-/speakers/vladimir-mikryukov/           /2022/speakers/vladimir-mikryukov/
-/speakers/yih-chii-hwang/           /2022/speakers/yih-chii-hwang/
-/speakers/zachary-foster/           /2022/speakers/zachary-foster/
-/venue/         /2022/venue/
+# 2022 - archive site proxy
+/2022/*       https://nextflow-summit-2022.netlify.app/2022/:splat    200!
+
+# 2022 - redirect all posters
+/posters/*    /2022/posters/:splat    301
+
+# 2022 - specific pages
+/program/community-events/          /2022/program/community-events/    301
+/program/oct-12-automated-production-engine-to-decode-the-tree-of-life/         /2022/program/oct-12-automated-production-engine-to-decode-the-tree-of-life/    301
+/program/oct-12-designing-mechanisms-into-bactopia-to-support-its-users-and-contribute-back-to-the-community/           /2022/program/oct-12-designing-mechanisms-into-bactopia-to-support-its-users-and-contribute-back-to-the-community/    301
+/program/oct-12-nf-core-community-updates/          /2022/program/oct-12-nf-core-community-updates/    301
+/program/oct-12-summit-welcome/         /2022/program/oct-12-summit-welcome/    301
+/program/oct-12-using-cloud-can-speed-up-your-time-to-science/          /2022/program/oct-12-using-cloud-can-speed-up-your-time-to-science/    301
+/program/oct-13-add-versioning-verifiability-and-visualization-to-your-pipeline-with-one-link/          /2022/program/oct-13-add-versioning-verifiability-and-visualization-to-your-pipeline-with-one-link/    301
+/program/oct-13-bringing-gxp-compliance-to-nextflow-workflows/          /2022/program/oct-13-bringing-gxp-compliance-to-nextflow-workflows/    301
+/program/oct-13-deep-dive-into-nextflow-on-azure/           /2022/program/oct-13-deep-dive-into-nextflow-on-azure/    301
+/program/oct-13-epi2me-labs-and-democratising-nanopore-sequence-analysis/           /2022/program/oct-13-epi2me-labs-and-democratising-nanopore-sequence-analysis/    301
+/program/oct-13-from-sharing-our-journeys-to-empowering-the-community-nextflow-and-beyond/          /2022/program/oct-13-from-sharing-our-journeys-to-empowering-the-community-nextflow-and-beyond/    301
+/program/oct-13-keynote/            /2022/program/oct-13-keynote/    301
+/program/oct-13-large-scale-image-processing-with-nextflow/         /2022/program/oct-13-large-scale-image-processing-with-nextflow/    301
+/program/oct-13-new-pipeline-resources-for-reproducible-analysis/           /2022/program/oct-13-new-pipeline-resources-for-reproducible-analysis/    301
+/program/oct-13-nextflow-and-the-future-of-containers/          /2022/program/oct-13-nextflow-and-the-future-of-containers/    301
+/program/oct-13-nextflow-tower-in-the-data-analysis-life-cycle/         /2022/program/oct-13-nextflow-tower-in-the-data-analysis-life-cycle/    301
+/program/oct-13-nf-core-airrflow-a-pipeline-to-analyze-adaptive-immune-receptor-repertoires-airrs/          /2022/program/oct-13-nf-core-airrflow-a-pipeline-to-analyze-adaptive-immune-receptor-repertoires-airrs/    301
+/program/oct-13-nf-core-modules-re-usable-unit-tested-dsl2-wrapper-scripts-for-the-nextflow-community/          /2022/program/oct-13-nf-core-modules-re-usable-unit-tested-dsl2-wrapper-scripts-for-the-nextflow-community/    301
+/program/oct-13-nf-core-sarek-a-workflow-for-germline-tumor-only-and-somatic-analysis-of-ngs-data/          /2022/program/oct-13-nf-core-sarek-a-workflow-for-germline-tumor-only-and-somatic-analysis-of-ngs-data/    301
+/program/oct-13-pipeline-economics-on-cloud/            /2022/program/oct-13-pipeline-economics-on-cloud/    301
+/program/oct-13-pipeline-parameter-validation-with-the-nf-core-json-schema/         /2022/program/oct-13-pipeline-parameter-validation-with-the-nf-core-json-schema/    301
+/program/oct-13-price-performance-of-different-cloud-strorage-options-for-nextflow-workflows/           /2022/program/oct-13-price-performance-of-different-cloud-strorage-options-for-nextflow-workflows/    301
+/program/oct-13-unlocking-automated-bioinformatics-for-large-scale-healthcare/          /2022/program/oct-13-unlocking-automated-bioinformatics-for-large-scale-healthcare/    301
+/program/oct-13/            /2022/program/oct-13/    301
+/program/oct-14-a-workflow-to-generate-a-variant-catalogue-from-whole-genome-sequences/         /2022/program/oct-14-a-workflow-to-generate-a-variant-catalogue-from-whole-genome-sequences/    301
+/program/oct-14-applying-and-deploying-alphafold-at-scale-to-decode-the-human-gut-microbiome-proteome/          /2022/program/oct-14-applying-and-deploying-alphafold-at-scale-to-decode-the-human-gut-microbiome-proteome/    301
+/program/oct-14-automated-bioinformatics-infrastructure-for-large-scale-sars-cov-2-genomic-surveillance-at-qib/         /2022/program/oct-14-automated-bioinformatics-infrastructure-for-large-scale-sars-cov-2-genomic-surveillance-at-qib/    301
+/program/oct-14-from-zero-to-nextflow-bringing-nanorate-nanoseq-into-a-workflow/            /2022/program/oct-14-from-zero-to-nextflow-bringing-nanorate-nanoseq-into-a-workflow/    301
+/program/oct-14-junction-let-investigators-turning-their-data-into-results/         /2022/program/oct-14-junction-let-investigators-turning-their-data-into-results/    301
+/program/oct-14-nextflow-kubernetes-and-dragens-oh-my/          /2022/program/oct-14-nextflow-kubernetes-and-dragens-oh-my/    301
+/program/oct-14-nf-core-hackathon-report/           /2022/program/oct-14-nf-core-hackathon-report/    301
+/program/oct-14-options-for-leveling-up-your-nextflow-workflows-on-aws-batch/           /2022/program/oct-14-options-for-leveling-up-your-nextflow-workflows-on-aws-batch/    301
+/program/oct-14-summit-wrap-up-and-farewell/            /2022/program/oct-14-summit-wrap-up-and-farewell/    301
+/program/oct-14-the-spinning-jenny-a-nextflow-pipeline-for-an-agent-based-model-of-the-first-industrial-revolution/         /2022/program/oct-14-the-spinning-jenny-a-nextflow-pipeline-for-an-agent-based-model-of-the-first-industrial-revolution/    301
+/program/oct-14-workflow-automation-using-the-aviti-benchtop-sequencing-system-and-nextflow-tower/          /2022/program/oct-14-workflow-automation-using-the-aviti-benchtop-sequencing-system-and-nextflow-tower/    301
+/program/oct-14/            /2022/program/oct-14/    301
+/speakers/alan-hoyle/           /2022/speakers/alan-hoyle/    301
+/speakers/ali-hakimzadeh            /2022/speakers/ali-hakimzadeh    301
+/speakers/aneesh-karve/         /2022/speakers/aneesh-karve/    301
+/speakers/angel-pizarro/            /2022/speakers/angel-pizarro/    301
+/speakers/annick-renevey/           /2022/speakers/annick-renevey/    301
+/speakers/athanasios-baltzis/           /2022/speakers/athanasios-baltzis/    301
+/speakers/bjorn-langer/         /2022/speakers/bjorn-langer/    301
+/speakers/brendan-bouffler/         /2022/speakers/brendan-bouffler/    301
+/speakers/bruno-grande/         /2022/speakers/bruno-grande/    301
+/speakers/cedric-notredame/         /2022/speakers/cedric-notredame/    301
+/speakers/cristina-tuni/            /2022/speakers/cristina-tuni/    301
+/speakers/edmund-miller/            /2022/speakers/edmund-miller/    301
+/speakers/ernest-prabhakar/         /2022/speakers/ernest-prabhakar/    301
+/speakers/evan-floden/          /2022/speakers/evan-floden/    301
+/speakers/florian-heyl/         /2022/speakers/florian-heyl/    301
+/speakers/francesco-strozzi/            /2022/speakers/francesco-strozzi/    301
+/speakers/friederike-hanssen/           /2022/speakers/friederike-hanssen/    301
+/speakers/gisela-gabernet/          /2022/speakers/gisela-gabernet/    301
+/speakers/harshilpatel/         /2022/speakers/harshilpatel/    301
+/speakers/hatem-nawar/          /2022/speakers/hatem-nawar/    301
+/speakers/hunter-seabolt/           /2022/speakers/hunter-seabolt/    301
+/speakers/james-fellows-yates/          /2022/speakers/james-fellows-yates/    301
+/speakers/jasmin-frangenberg/           /2022/speakers/jasmin-frangenberg/    301
+/speakers/julia-mir-pedrol/         /2022/speakers/julia-mir-pedrol/    301
+/speakers/konrad-rokicki/           /2022/speakers/konrad-rokicki/    301
+/speakers/kubra-narci/          /2022/speakers/kubra-narci/    301
+/speakers/luca-cozzuto/         /2022/speakers/luca-cozzuto/    301
+/speakers/marcello-salvi            /2022/speakers/marcello-salvi    301
+/speakers/marta-sanvicente-garcia/          /2022/speakers/marta-sanvicente-garcia/    301
+/speakers/matt-vaughn/          /2022/speakers/matt-vaughn/    301
+/speakers/mike-smoot/           /2022/speakers/mike-smoot/    301
+/speakers/nicola-visona/            /2022/speakers/nicola-visona/    301
+/speakers/paolo-di-tommaso/         /2022/speakers/paolo-di-tommaso/    301
+/speakers/phil-ewels/           /2022/speakers/phil-ewels/    301
+/speakers/priyanka-surana/          /2022/speakers/priyanka-surana/    301
+/speakers/raul-alcantara-aragon/            /2022/speakers/raul-alcantara-aragon/    301
+/speakers/rob-patro/            /2022/speakers/rob-patro/    301
+/speakers/robert-petit/         /2022/speakers/robert-petit/    301
+/speakers/roger-olivella/           /2022/speakers/roger-olivella/    301
+/speakers/saba-nafees/          /2022/speakers/saba-nafees/    301
+/speakers/sam-ireland/          /2022/speakers/sam-ireland/    301
+/speakers/solenne-correard/         /2022/speakers/solenne-correard/    301
+/speakers/stephen-rudd/         /2022/speakers/stephen-rudd/    301
+/speakers/suchitra-thapa/           /2022/speakers/suchitra-thapa/    301
+/speakers/thanh-le-viet/            /2022/speakers/thanh-le-viet/    301
+/speakers/tony-zeljkovic/           /2022/speakers/tony-zeljkovic/    301
+/speakers/venkat-malladi/           /2022/speakers/venkat-malladi/    301
+/speakers/vladimir-mikryukov/           /2022/speakers/vladimir-mikryukov/    301
+/speakers/yih-chii-hwang/           /2022/speakers/yih-chii-hwang/    301
+/speakers/zachary-foster/           /2022/speakers/zachary-foster/    301
+/venue/         /2022/venue/    301
