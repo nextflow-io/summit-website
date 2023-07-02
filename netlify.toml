@@ -1,9 +1,8 @@
 [build.environment]
     NODE_VERSION = "16.15.0"
 
-# TODO: Uncomment this once we go live with 2023
-# [[redirects]]
-#   from = "https://nextflow-summit-2022.netlify.app/*"
-#   to = "https://summit.nextflow.io/:splat"
-#   status = 301
-#   force = true
+[[redirects]]
+    from = "https://nextflow-summit-2022.netlify.app/*"
+    to = "https://summit.nextflow.io/:splat"
+    status = 301
+    force = true
