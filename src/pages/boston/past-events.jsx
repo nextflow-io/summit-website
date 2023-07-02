@@ -3,14 +3,14 @@ import React, { useState } from 'react';
 import {
   Button,
   Link,
-  Marquee,
-  YoutubeIframe
+  Marquee
 } from 'website-components';
 
 import Card from '../../components/Card';
 import RegisterCTA from '../../components/RegisterCTA';
 import Seo from '../../components/Seo';
 import Tabs from '../../components/Tabs';
+import YoutubeIframe from '../../components/YoutubeIframe';
 
 const PastEventsPage = () => {
   const [ year, setYear ] = useState('2022');
@@ -38,7 +38,9 @@ const PastEventsPage = () => {
                 </Button>
               </div>
             </div>
-            <YoutubeIframe id="szWI3EW2ijY" className="col-full lg:col-6 lg:ml-1/12"></YoutubeIframe>
+            <div className="col-full lg:col-6">
+              <YoutubeIframe id="szWI3EW2ijY" className="relative top-6"></YoutubeIframe>
+            </div>
           </div>
         </div>
       </div>
