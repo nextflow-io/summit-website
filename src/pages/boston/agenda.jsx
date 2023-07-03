@@ -43,7 +43,7 @@ const AgendaPage = () => {
                 breakthroughs in workflow management.
               </p>
               <div className="mt-4">
-                <Button to="/boston/register/" variant="accent" size="md" arrow>
+                <Button to="/boston/register/" variant="primary" size="md" arrow>
                   Register
                 </Button>
               </div>
@@ -101,7 +101,7 @@ const AgendaPage = () => {
                 <MountainIcon />
               </div>
               <h3 className="typo-h4 mt-4">
-                SUMMIT | Nov 29-30
+                Summit | Nov 29-30
               </h3>
               <p className="typo-intro text-green-300 mt-4">
                 1.5 days · 100 people · talks, networking, and more
@@ -123,7 +123,7 @@ const AgendaPage = () => {
           </div>
         </div>
       </div>
-      <div className="bg-indigo-800 text-white">
+      <div className="bg-green-300 text-black">
         <div className="container-sm py-16 text-center">
           <h2 className="typo-display2">
             Immerse yourself in a vibrant atmosphere of knowledge exchange, networking, and collaboration, as we shape

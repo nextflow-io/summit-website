@@ -12,7 +12,7 @@ const RegisterCTA = () => {
   const { activeEvent } = useLayoutState();
 
   return (
-    <RevealOnScroll className="bg-indigo-800 text-white">
+    <RevealOnScroll className="bg-green-300 text-black">
       <Reveal className="container-sm py-16">
         <div className="max-w-[600px] mx-auto text-center">
           <h2 className="typo-display2">

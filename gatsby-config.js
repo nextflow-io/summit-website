@@ -18,6 +18,13 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `accommodations`,
+        path: `${__dirname}/src/content/accommodations`,
+      },
+    },
     'gatsby-plugin-image',
     'gatsby-transformer-yaml',
     {

@@ -87,7 +87,7 @@ const IndexPage = () => {
                 Barcelona, October 16-20, 2023
               </p>
               <div className="max-w-[320px] mt-4">
-                <Button to="/register/" variant="accent" size="md" arrow>
+                <Button to="/register/" variant="primary" size="md" arrow>
                   Register
                 </Button>
               </div>
@@ -133,7 +133,7 @@ const IndexPage = () => {
                 <MountainIcon />
               </div>
               <h3 className="typo-h4 mt-4">
-                SUMMIT | Oct 18-20
+                Summit | Oct 18-20
               </h3>
               <p className="typo-body mt-4">
                 A showcase of the latest developments and innovations from the Nextflow world held in Barcelona and

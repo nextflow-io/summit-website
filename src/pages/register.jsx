@@ -52,7 +52,7 @@ const RegisterPage = () => {
               </p>
             </div>
             <div className="mt-4">
-              <Button to="/register/" variant="accent" size="md">
+              <Button to="/register/" variant="primary" size="md">
                 Register
               </Button>
             </div>

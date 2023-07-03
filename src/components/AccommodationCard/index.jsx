@@ -28,9 +28,9 @@ const AccommodationCard = ({ acc }) => (
         />
         <div className="absolute inset-0 bg-gradient-accent opacity-90 rounded-sm" />
       </div>
-      <div className="relative">
+      <div className="relative text-black">
         <div>
-          <h4 className="typo-h5 inline uppercase border-b border-white">
+          <h4 className="typo-h5 inline uppercase border-b border-black">
             {acc.title}
           </h4>
         </div>
@@ -47,7 +47,7 @@ const AccommodationCard = ({ acc }) => (
         </div>
         <ul className="mt-4">
           <li className="typo-body">
-            Walking time to venue: {acc.walkingTime}
+            {(acc.walkingTime.includes('min') ? `Walking time to venue: ${acc.walkingTime}` : acc.walkingTime)}
           </li>
           {acc.breakfast !== null && (
             <li className="typo-body">

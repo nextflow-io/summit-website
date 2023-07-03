@@ -93,7 +93,7 @@ const Header = ({ location }) => {
             </Button>
             <Button
               to={resolvePath('/register/')}
-              variant="accent"
+              variant="primary"
               size="sm"
               className="hover:opacity-80 ml-4"
               noShadow

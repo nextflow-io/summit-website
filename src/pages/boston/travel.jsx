@@ -9,6 +9,7 @@ import {
   Marquee,
 } from 'website-components';
 
+import AccommodationCard from '../../components/AccommodationCard';
 import Card from '../../components/Card';
 import LaptopIcon from '../../components/icons/LaptopIcon';
 import LocationMap from '../../components/LocationMap';
@@ -45,6 +46,26 @@ const TravelPage = () => {
           gatsbyImageData(
             placeholder: NONE
           )
+        }
+      }
+      accommodations: allAccommodation(
+        filter: {location: {eq: "Boston"}}
+      ) {
+        nodes {
+          id
+          title
+          image {
+            childImageSharp {
+              gatsbyImageData(
+                placeholder: NONE
+                width: 850
+              )
+            }
+          }
+          stars
+          breakfast
+          url
+          walkingTime
         }
       }
     }
@@ -122,7 +143,7 @@ const TravelPage = () => {
                 <MountainIcon />
               </div>
               <h3 className="typo-h4 mt-4">
-                SUMMIT | Nov 29-30
+                Summit | Nov 29-30
               </h3>
               <div className="mt-4">
                 <LocationMap coordinates={{
@@ -146,6 +167,21 @@ const TravelPage = () => {
         </div>
       </div>
       <RegisterCTA />
+      <div className="container-lg text-white py-16">
+        <h2 className="typo-h2">
+          Accommodation
+        </h2>
+        <p className="typo-body mt-4">
+          Hotels close to the venue:
+        </p>
+        <div className="row">
+          {data.accommodations.nodes.map((acc) => (
+            <div className="col-full lg:col-4 mt-4">
+              <AccommodationCard acc={acc} />
+            </div>
+          ))}
+        </div>
+      </div>
       <div className="container-lg py-16">
         <Card paddingClassName="p-0">
           <div className="flex flex-wrap md:flex-nowrap">

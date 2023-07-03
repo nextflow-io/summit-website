@@ -69,7 +69,7 @@ const IndexPage = () => {
                 Boston, November 29-30, 2023
               </p>
               <div className="max-w-[320px] mt-4">
-                <Button to="/boston/register/" variant="accent" size="md" arrow>
+                <Button to="/boston/register/" variant="primary" size="md" arrow>
                   Register
                 </Button>
               </div>
@@ -114,7 +114,7 @@ const IndexPage = () => {
                 <MountainIcon />
               </div>
               <h3 className="typo-h4 mt-4">
-                SUMMIT | Nov 29-30
+                Summit | Nov 29-30
               </h3>
               <p className="typo-body mt-4">
                 A showcase of the latest developments and innovations from the Nextflow world held in Boston.

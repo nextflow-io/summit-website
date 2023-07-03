@@ -9,6 +9,7 @@ import {
   Marquee,
 } from 'website-components';
 
+import AccommodationCard from '../components/AccommodationCard';
 import Card from '../components/Card';
 import LaptopIcon from '../components/icons/LaptopIcon';
 import MountainIcon from '../components/icons/MountainIcon';
@@ -45,6 +46,49 @@ const TravelPage = () => {
           gatsbyImageData(
             placeholder: NONE
           )
+        }
+      }
+      promotedAccommodations: allAccommodation(
+        filter: {location: {eq: "Barcelona"}, promotionCode: {eq: "NEXTFLOW 2023"}}
+      ) {
+        nodes {
+          id
+          title
+          image {
+            childImageSharp {
+              gatsbyImageData(
+                placeholder: NONE
+                width: 850
+              )
+            }
+          }
+          stars
+          url
+          breakfast
+          walkingTime
+          adultOne
+          adultsTwo
+          tax
+          promotionCode
+        }
+      }
+      otherAccommodations: allAccommodation(
+        filter: {location: {eq: "Barcelona"}, promotionCode: {ne: "NEXTFLOW 2023"}}
+      ) {
+        nodes {
+          id
+          title
+          image {
+            childImageSharp {
+              gatsbyImageData(
+                placeholder: NONE
+              )
+            }
+          }
+          stars
+          breakfast
+          url
+          walkingTime
         }
       }
     }
@@ -123,7 +167,7 @@ const TravelPage = () => {
                 <MountainIcon />
               </div>
               <h3 className="typo-h4 mt-4">
-                SUMMIT | Oct 18-20
+                Summit | Oct 18-20
               </h3>
               <div className="mt-4">
                 <LocationMap
@@ -148,6 +192,31 @@ const TravelPage = () => {
         </div>
       </div>
       <RegisterCTA />
+      <div className="container-lg text-white py-16">
+        <h2 className="typo-h2">
+          Accommodation
+        </h2>
+        <p className="typo-body mt-4">
+          Hotels with promotion code: NEXTFLOW23 for dates: 16-20 October 2023
+        </p>
+        <div className="row">
+          {data.promotedAccommodations.nodes.map((acc) => (
+            <div className="col-full lg:col-4 mt-4">
+              <AccommodationCard acc={acc} />
+            </div>
+          ))}
+        </div>
+        <p className="typo-body mt-4">
+          Nearby hotels without promotion code
+        </p>
+        <div className="row">
+          {data.otherAccommodations.nodes.map((acc) => (
+            <div className="col-full lg:col-4 mt-4">
+              <AccommodationCard acc={acc} />
+            </div>
+          ))}
+        </div>
+      </div>
       <div className="container-lg py-16">
         <Card paddingClassName="p-0">
           <div className="flex flex-wrap md:flex-nowrap">
