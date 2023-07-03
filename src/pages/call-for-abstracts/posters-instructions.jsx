@@ -106,7 +106,7 @@ const PostersInstructionsPage = () => {
               </List.Item>
             </List>
             <p className="typo-body mt-4">
-              Further details on how to upload you poster and optional video will be sent to prior to the event.
+              Further details on how to upload your poster will be sent to prior to the event.
             </p>
             <div className="mt-8">
               <Link to="https://seqera.typeform.com/summit2023" className="typo-body text-green-300" noBorder>
