@@ -18,7 +18,8 @@ const navs = [
     path: '/agenda/',
   },
   {
-    title: 'Travel',
+    title: 'Travel - Barcelona',
+    bostonTitle: 'Travel - Boston',
     path: '/travel/',
   },
   {
@@ -49,6 +50,14 @@ const Header = ({ location }) => {
     return path;
   };
 
+  const resolveTitle = (title, bostonTitle) => {
+    if (!bostonTitle) {
+      return title;
+    }
+
+    return (activeEvent === 'boston') ? bostonTitle : title;
+  };
+
   return (
     <>
       <header className="bg-black relative z-10 inset-x-0 top-0">
@@ -70,7 +79,7 @@ const Header = ({ location }) => {
                   }
                 )}
               >
-                {nav.title}
+                {resolveTitle(nav.title, nav.bostonTitle)}
               </Link>
             ))}
             <Button

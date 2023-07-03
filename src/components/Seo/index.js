@@ -3,26 +3,33 @@ import React from "react";
 import PropTypes from "../../utils/PropTypes";
 import { Helmet } from "react-helmet";
 
+import { useLayoutState } from '../../layout/Context';
+
+const sharingImages = {
+  'barcelona': '/images/share-image-barcelona.jpg',
+  'boston': '/images/share-image-boston.jpg',
+};
+
 function Seo({ description, lang, meta, title, image }) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-            siteUrl
-            image
-          }
+  const { site } = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+          description
+          author
+          siteUrl
+          image
         }
       }
-    `
-  )
+    }
+  `);
+
+  const { activeEvent } = useLayoutState();
 
   const metaDescription = description || site.siteMetadata.description;
   const defaultTitle = site.siteMetadata?.title;
-  const defaultImage = image || site.siteMetadata?.image;
+  const defaultImage = image || sharingImages[activeEvent] || site.siteMetadata?.image;
   const siteUrl = site.siteMetadata?.siteUrl;
 
   return (
