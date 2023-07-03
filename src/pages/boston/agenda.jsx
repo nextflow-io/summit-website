@@ -23,6 +23,13 @@ const AgendaPage = () => {
           )
         }
       }
+      redPattern: file(relativePath: {eq: "visuals/speakers-red-pattern.png"}) {
+        childImageSharp {
+          gatsbyImageData(
+            placeholder: NONE
+          )
+        }
+      }
     }
   `);
 
@@ -133,8 +140,12 @@ const AgendaPage = () => {
       </div>
       <div className="container-lg text-white">
         <div className="row">
-          <div className="col-full lg:col-6 bg-red-300">
-
+          <div className="col-full lg:col-5">
+            <Image
+              image={getImage(data.redPattern)}
+              alt="Nextflow SUMMIT speakers"
+              className="h-full w-full"
+            />
           </div>
           <div className="col-full lg:col-6 py-16">
             <div className="px-4 lg:px-12">
