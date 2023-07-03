@@ -14,7 +14,7 @@ const TalksInstructionsPage = () => {
         <div className="container-md">
           <div className="inline-flex items-center hover:text-green-300 mb-4">
             <AngleLeftIcon className="h-6 w-6 inline-block mr-1" />
-            <Link to="/call-for-abstracts/" className="typo-intro" noBorder>
+            <Link to="/boston/call-for-abstracts/" className="typo-intro" noBorder>
               Back
             </Link>
           </div>
@@ -69,7 +69,7 @@ const TalksInstructionsPage = () => {
               </List.Item>
             </List>
             <div className="mt-8">
-              <Link to="https://seqera.typeform.com/summit-22-talks" className="typo-body text-green-300" noBorder>
+              <Link to="https://form.typeform.com/to/hVPzQTbf" className="typo-body text-green-300" noBorder>
                 Apply now
               </Link>
             </div>

@@ -88,7 +88,7 @@ const CallForAbstractsPage = () => {
                 </List.Item>
               </List>
               <div className="typo-body mt-8">
-                <Link to="https://seqera.typeform.com/summit-22-talks" className="text-green-300" noBorder>
+                <Link to="https://form.typeform.com/to/hVPzQTbf" className="text-green-300" noBorder>
                   Apply now
                 </Link>
                 <span className="mx-2">|</span>
@@ -125,7 +125,7 @@ const CallForAbstractsPage = () => {
                 </List.Item>
               </List>
               <div className="typo-body mt-8">
-                <Link to="https://seqera.typeform.com/summit-22-talks" className="text-green-300" noBorder>
+                <Link to="https://form.typeform.com/to/hVPzQTbf" className="text-green-300" noBorder>
                   Apply now
                 </Link>
                 <span className="mx-2">|</span>

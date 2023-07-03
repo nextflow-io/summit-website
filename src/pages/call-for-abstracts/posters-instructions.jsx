@@ -109,7 +109,7 @@ const PostersInstructionsPage = () => {
               Further details on how to upload you poster and optional video will be sent to prior to the event.
             </p>
             <div className="mt-8">
-              <Link to="https://seqera.typeform.com/summit-22-talks" className="typo-body text-green-300" noBorder>
+              <Link to="https://form.typeform.com/to/hVPzQTbf" className="typo-body text-green-300" noBorder>
                 Apply now
               </Link>
             </div>
