@@ -92,7 +92,7 @@ const CallForAbstractsPage = () => {
                   Apply now
                 </Link>
                 <span className="mx-2">|</span>
-                <Link to="/boston/call-for-abstracts/posters-instructions/" className="text-green-300" noBorder>
+                <Link to="/boston/call-for-abstracts/talks-instructions/" className="text-green-300" noBorder>
                   View instructions
                 </Link>
               </div>
