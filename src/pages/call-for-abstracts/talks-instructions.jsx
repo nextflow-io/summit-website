@@ -69,7 +69,7 @@ const TalksInstructionsPage = () => {
               </List.Item>
             </List>
             <div className="mt-8">
-              <Link to="https://form.typeform.com/to/hVPzQTbf" className="typo-body text-green-300" noBorder>
+              <Link to="https://seqera.typeform.com/summit2023" className="typo-body text-green-300" noBorder>
                 Apply now
               </Link>
             </div>
