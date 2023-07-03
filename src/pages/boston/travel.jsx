@@ -100,7 +100,7 @@ const TravelPage = () => {
           </div>
         </div>
       </div>
-      <Marquee className="typo-body bg-green-300 text-black" to="/call-for-abstracts/" type="reset">
+      <Marquee className="typo-body bg-green-300 text-black" to="/boson/call-for-abstracts/" type="reset">
         Call for abstracts now open
       </Marquee>
       <div className="container-md text-white py-16">
