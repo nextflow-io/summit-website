@@ -5,24 +5,25 @@ import React from 'react';
 
 import {
   Button,
+  Link,
   List,
 } from 'website-components';
 
-import Card from '../components/Card';
-import HeroDots from '../components/HeroDots';
-import Seo from '../components/Seo';
+import Card from '../../../components/Card';
+import HeroDots from '../../../components/HeroDots';
+import Seo from '../../../components/Seo';
 
 const CallForAbstractsPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      talksImage: file(relativePath: {eq: "photos/talks.jpg"}) {
+      talksImage: file(relativePath: {eq: "photos/talks-boston.jpg"}) {
         childImageSharp {
           gatsbyImageData(
             placeholder: NONE
           )
         }
       }
-      postersImage: file(relativePath: {eq: "photos/posters.jpg"}) {
+      postersImage: file(relativePath: {eq: "photos/posters-boston.jpg"}) {
         childImageSharp {
           gatsbyImageData(
             placeholder: NONE
@@ -37,7 +38,7 @@ const CallForAbstractsPage = () => {
       <Seo
         title="Call for abstracts"
       />
-      <HeroDots className="text-center">
+      <HeroDots className="text-center" variant="red">
         <div className="container-lg relative">
           <div className="max-w-3xl mx-auto">
             <h1 className="typo-display1">
@@ -68,41 +69,33 @@ const CallForAbstractsPage = () => {
                 Talks
               </h2>
               <h3 className="typo-intro mt-8">
-                Themes
-              </h3>
-              <List type="bullet" iconClassName="text-white" className="mt-4">
-                <List.Item className="typo-body">
-                  Nextflow - central tool, language, and plugins
-                </List.Item>
-                <List.Item className="typo-body">
-                  Community - pipelines, applications, and use cases
-                </List.Item>
-                <List.Item className="typo-body">
-                  Ecosystem - infrastructure and environments
-                </List.Item>
-                <List.Item className="typo-body">
-                  Software - containers and tool packaging
-                </List.Item>
-              </List>
-              <h3 className="typo-intro mt-8">
                 Where
               </h3>
-              <List type="bullet" iconClassName="text-white" className="mt-4">
+              <List type="bullet" iconClassName="text-white" className="mt-4" shrink>
                 <List.Item className="typo-body">
-                  In person and recorded for live streaming and sharing online after the event
+                  In person at the Nextflow SUMMIT
                 </List.Item>
               </List>
               <h3 className="typo-intro mt-8">
                 Formats
               </h3>
-              <List type="bullet" iconClassName="text-white" className="mt-4">
+              <List type="bullet" iconClassName="text-white" className="mt-4" shrink>
                 <List.Item className="typo-body">
-                  Long-form - 30 min, including time for Q&A
+                  Long-form (30 min)
                 </List.Item>
                 <List.Item className="typo-body">
-                  Lightning - 15 min, including time for Q&A
+                  Lightning (15 min)
                 </List.Item>
               </List>
+              <div className="typo-body mt-8">
+                <Link to="https://seqera.typeform.com/summit-22-talks" className="text-green-300" noBorder>
+                  Apply now
+                </Link>
+                <span className="mx-2">|</span>
+                <Link to="/boston/call-for-abstracts/posters-instructions/" className="text-green-300" noBorder>
+                  View instructions
+                </Link>
+              </div>
             </Card>
           </div>
           <div className="col-full lg:col-6">
@@ -116,44 +109,30 @@ const CallForAbstractsPage = () => {
                 Posters
               </h2>
               <h3 className="typo-intro mt-8">
-                Themes
-              </h3>
-              <List type="bullet" iconClassName="text-white" className="mt-4">
-                <List.Item className="typo-body">
-                  Nextflow - central tool, language, and plugins
-                </List.Item>
-                <List.Item className="typo-body">
-                  Community - pipelines, applications, and use cases
-                </List.Item>
-                <List.Item className="typo-body">
-                  Ecosystem - infrastructure and environments
-                </List.Item>
-                <List.Item className="typo-body">
-                  Software - containers and tool packaging
-                </List.Item>
-              </List>
-              <h3 className="typo-intro mt-8">
                 Where
               </h3>
               <List type="bullet" iconClassName="text-white" className="mt-4">
                 <List.Item className="typo-body">
                   Poster session at the Nextflow SUMMIT
                 </List.Item>
-                <List.Item className="typo-body">
-                  Nextflow SUMMIT website during and after the event
-                </List.Item>
               </List>
               <h3 className="typo-intro mt-8">
-                Formats
+                Requirements
               </h3>
               <List type="bullet" iconClassName="text-white" className="mt-4">
                 <List.Item className="typo-body">
-                  A printed A0 portrait formatted (max 841 x 1188 mm) poster
-                </List.Item>
-                <List.Item className="typo-body">
-                  A high-quality A0 portrait formatted PDF file
+                  An A0 portrait printed poster
                 </List.Item>
               </List>
+              <div className="typo-body mt-8">
+                <Link to="https://seqera.typeform.com/summit-22-talks" className="text-green-300" noBorder>
+                  Apply now
+                </Link>
+                <span className="mx-2">|</span>
+                <Link to="/boston/call-for-abstracts/posters-instructions/" className="text-green-300" noBorder>
+                  View instructions
+                </Link>
+              </div>
             </Card>
           </div>
         </div>

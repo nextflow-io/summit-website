@@ -5,6 +5,7 @@ import React from 'react';
 
 import {
   Button,
+  Link,
   List,
 } from 'website-components';
 
@@ -37,7 +38,7 @@ const CallForAbstractsPage = () => {
       <Seo
         title="Call for abstracts"
       />
-      <HeroDots className="text-center" variant="red">
+      <HeroDots className="text-center">
         <div className="container-lg relative">
           <div className="max-w-3xl mx-auto">
             <h1 className="typo-display1">
@@ -70,15 +71,18 @@ const CallForAbstractsPage = () => {
               <h3 className="typo-intro mt-8">
                 Where
               </h3>
-              <List type="bullet" iconClassName="text-white" className="mt-4">
+              <List type="bullet" iconClassName="text-white" className="mt-4" shrink>
                 <List.Item className="typo-body">
                   In person at the Nextflow SUMMIT
+                </List.Item>
+                <List.Item className="typo-body">
+                  Streamed live and available to watch online after the event
                 </List.Item>
               </List>
               <h3 className="typo-intro mt-8">
                 Formats
               </h3>
-              <List type="bullet" iconClassName="text-white" className="mt-4">
+              <List type="bullet" iconClassName="text-white" className="mt-4" shrink>
                 <List.Item className="typo-body">
                   Long-form (30 min)
                 </List.Item>
@@ -86,6 +90,15 @@ const CallForAbstractsPage = () => {
                   Lightning (15 min)
                 </List.Item>
               </List>
+              <div className="typo-body mt-4">
+                <Link to="https://seqera.typeform.com/summit-22-talks" className="text-green-300" noBorder>
+                  Apply now
+                </Link>
+                <span className="mx-2">|</span>
+                <Link to="/call-for-abstracts/talks-instructions/" className="text-green-300" noBorder>
+                  View instructions
+                </Link>
+              </div>
             </Card>
           </div>
           <div className="col-full lg:col-6">
@@ -101,19 +114,34 @@ const CallForAbstractsPage = () => {
               <h3 className="typo-intro mt-8">
                 Where
               </h3>
-              <List type="bullet" iconClassName="text-white" className="mt-4">
+              <List type="bullet" iconClassName="text-white" className="mt-4" shrink>
                 <List.Item className="typo-body">
                   Poster session at the Nextflow SUMMIT
                 </List.Item>
+                <List.Item className="typo-body">
+                  Nextflow SUMMIT website during and after the event
+                </List.Item>
               </List>
               <h3 className="typo-intro mt-8">
-                Requirements
+                Formats
               </h3>
-              <List type="bullet" iconClassName="text-white" className="mt-4">
+              <List type="bullet" iconClassName="text-white" className="mt-4" shrink>
                 <List.Item className="typo-body">
                   An A0 portrait printed poster
                 </List.Item>
+                <List.Item className="typo-body">
+                  PDF file for the website
+                </List.Item>
               </List>
+              <div className="typo-body mt-4">
+                <Link to="https://seqera.typeform.com/summit-22-talks" className="text-green-300" noBorder>
+                  Apply now
+                </Link>
+                <span className="mx-2">|</span>
+                <Link to="/call-for-abstracts/posters-instructions/" className="text-green-300" noBorder>
+                  View instructions
+                </Link>
+              </div>
             </Card>
           </div>
         </div>
