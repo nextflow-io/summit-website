@@ -64,9 +64,6 @@ const TalksInstructionsPage = () => {
               <List.Item className="typo-body">
                 In person at the Nextflow SUMMIT
               </List.Item>
-              <List.Item className="typo-body">
-                Streamed live and available to watch online after the event
-              </List.Item>
             </List>
             <div className="mt-8">
               <Link to="https://seqera.typeform.com/summit2023" className="typo-body text-green-300" noBorder>
