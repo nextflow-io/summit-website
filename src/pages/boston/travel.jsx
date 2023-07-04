@@ -50,6 +50,7 @@ const TravelPage = () => {
       }
       accommodations: allAccommodation(
         filter: {location: {eq: "Boston"}}
+        sort: {title: ASC}
       ) {
         nodes {
           id
