@@ -4,7 +4,7 @@ const path = require('path');
 module.exports = {
   siteMetadata: {
     title: `Nextflow SUMMIT 2023`,
-    description: `Nextflow SUMMIT 2023 website`,
+    description: `Join us at the Nextflow SUMMIT 2023 for the latest developments and innovations from the Nextflow world.`,
     author: `@nextflowio`,
     siteUrl: siteUrl,
     image: `/images/share-image-barcelona.jpg`,
