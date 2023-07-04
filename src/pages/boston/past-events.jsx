@@ -138,7 +138,7 @@ const PastEventsPage = () => {
                   nf-hack17
                 </h3>
                 <p className="typo-body mt-4">
-                  Sep 14-20, 2019
+                  Sep 14-15, 2017
                   <span className="mx-2">|</span>
                   <Link to="https://github.com/nextflow-io/nf-hack17/blob/master/schedule.md">
                     Visit website
