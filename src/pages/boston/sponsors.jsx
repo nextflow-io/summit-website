@@ -30,7 +30,7 @@ const SponsorsPage = () => {
   return (
     <>
       <Seo
-        title="Travel to Barcelona"
+        title="Sponsors"
       />
       <div className="py-20 bg-gray-900 text-white">
         <div className="container-lg">
