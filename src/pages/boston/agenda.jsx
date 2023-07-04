@@ -36,7 +36,7 @@ const AgendaPage = () => {
   return (
     <>
       <Seo
-        title="Nextflow Summit 2023 Agenda"
+        title="Nextflow SUMMIT 2023 Agenda"
       />
       <div className="py-20 bg-gray-900 text-white">
         <div className="container-lg">

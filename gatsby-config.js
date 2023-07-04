@@ -3,8 +3,8 @@ const path = require('path');
 
 module.exports = {
   siteMetadata: {
-    title: `Nextflow Summit 2023`,
-    description: `Nextflow Summit 2023 website`,
+    title: `Nextflow SUMMIT 2023`,
+    description: `Nextflow SUMMIT 2023 website`,
     author: `@nextflowio`,
     siteUrl: siteUrl,
     image: `/images/share-image-barcelona.jpg`,
@@ -69,7 +69,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Nextflow Summit 2023`,
+        name: `Nextflow SUMMIT 2023`,
         short_name: `summit`,
         start_url: `/`,
         background_color: `#27ae60`,
