@@ -102,7 +102,7 @@ const IndexPage = () => {
         <Reveal>
           <Image
             image={getImage(data.summitImage)}
-            alt="Nextflow Summit 2023"
+            alt="Nextflow SUMMIT 2023"
           />
         </Reveal>
       </RevealOnScroll>

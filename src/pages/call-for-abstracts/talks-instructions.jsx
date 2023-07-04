@@ -8,7 +8,7 @@ const TalksInstructionsPage = () => {
   return (
     <>
       <Seo
-        title="Nextflow Summit 2023 Talks Instructions"
+        title="Nextflow SUMMIT 2023 Talks Instructions"
       />
       <div className="py-16 bg-gray-900 text-white">
         <div className="container-md">

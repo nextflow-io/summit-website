@@ -8,7 +8,7 @@ const PostersInstructionsPage = () => {
   return (
     <>
       <Seo
-        title="Nextflow Summit 2023 Posters Instructions"
+        title="Nextflow SUMMIT 2023 Posters Instructions"
       />
       <div className="py-16 bg-gray-900 text-white">
         <div className="container-md">
@@ -89,10 +89,10 @@ const PostersInstructionsPage = () => {
                 In-person
                 <List iconClassName="text-white" type="bullet" shrink>
                   <List.Item className="typo-body">
-                    Poster session at the Nextflow Summit
+                    Poster session at the Nextflow SUMMIT
                   </List.Item>
                   <List.Item className="typo-body">
-                    Nextflow Summit website during and after the event
+                    Nextflow SUMMIT website during and after the event
                   </List.Item>
                 </List>
               </List.Item>
@@ -100,7 +100,7 @@ const PostersInstructionsPage = () => {
                 Virtual
                 <List iconClassName="text-white" type="bullet" shrink>
                   <List.Item className="typo-body">
-                    Nextflow Summit website during and after the event
+                    Nextflow SUMMIT website during and after the event
                   </List.Item>
                 </List>
               </List.Item>

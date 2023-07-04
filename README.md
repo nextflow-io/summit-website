@@ -1,4 +1,4 @@
-# Nextflow Summit Website
+# Nextflow SUMMIT Website
 
 ## https://summit.nextflow.io
 
