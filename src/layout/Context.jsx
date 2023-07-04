@@ -12,6 +12,14 @@ import PropTypes from '../utils/PropTypes';
 const LayoutStateContext = createContext();
 export const LayoutDispatchContext = createContext();
 
+const getActiveEventFromPath = (path) => {
+  if (path.includes('/boston/')) {
+    return 'boston';
+  }
+
+  return 'barcelona';
+};
+
 function layoutReducer(state, action) {
   switch (action.type) {
     case 'setActiveEvent': {
@@ -81,7 +89,7 @@ const useScrollTo = (targetRef, scrollOffset = -100) => {
 
 const LayoutProvider = ({ location, children }) => {
   const [state, dispatch] = useReducer(layoutReducer, {
-    activeEvent: null,
+    activeEvent: getActiveEventFromPath(location.pathname),
     menuOpen: false,
     isSmallScreen: false,
     isMediumScreen: false,
@@ -95,11 +103,7 @@ const LayoutProvider = ({ location, children }) => {
   }, [isSmallScreen, isMediumScreen]);
 
   useEffect(() => {
-    if (location.pathname.includes('/boston/')) {
-      dispatch({ type: 'setActiveEvent', payload: { activeEvent: 'boston' } });
-    } else {
-      dispatch({ type: 'setActiveEvent', payload: { activeEvent: 'barcelona' } });
-    }
+    dispatch({ type: 'setActiveEvent', payload: { activeEvent: getActiveEventFromPath(location.pathname) } });
   }, [location.pathname])
 
   return (
