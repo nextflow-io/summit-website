@@ -37,9 +37,6 @@ const RegisterPage = () => {
     script.setAttribute("data-inline-ref", "website_widget");
     const ttWidget = document.getElementsByClassName("tt-widget");
     ttWidget[0].appendChild(script);
-    return () => {
-      ttWidget[0].removeChild(script);
-    };
   }, []);
 
   return (
