@@ -45,7 +45,7 @@ const RegisterPage = () => {
               </p>
             </div>
             <div className="mt-4">
-              <Button to="/boston/register/" variant="primary" size="md">
+              <Button to="/boston/purchase/" variant="primary" size="md">
                 Register
               </Button>
             </div>

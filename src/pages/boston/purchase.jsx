@@ -1,8 +1,8 @@
 import { useStaticQuery, graphql } from "gatsby";
 
 import React, { useEffect } from "react";
-import HeroDots from "../components/HeroDots";
-import Seo from "../components/Seo";
+import HeroDots from "../../components/HeroDots";
+import Seo from "../../components/Seo";
 
 import { Button } from "website-components";
 
@@ -27,7 +27,7 @@ const RegisterPage = () => {
     script.async = true;
     script.setAttribute(
       "data-url",
-      "https://www.tickettailor.com/checkout/new-session/id/2803612/chk/29b5/?ref=website_widget&show_search_filter=true&show_date_filter=true&show_sort=true"
+      "https://www.tickettailor.com/checkout/new-session/id/2803609/chk/13a7/?ref=website_widget&show_search_filter=true&show_date_filter=true&show_sort=true"
     );
     script.setAttribute("data-type", "inline");
     script.setAttribute("data-inline-minimal", "true");
@@ -63,7 +63,7 @@ const RegisterPage = () => {
               <Button
                 variant="primary"
                 size="md"
-                to="https://www.tickettailor.com/checkout/new-session/id/2803612/chk/29b5/?ref=website_widget&show_search_filter=true&show_date_filter=true&show_sort=true"
+                to="https://www.tickettailor.com/checkout/new-session/id/2803609/chk/13a7/?ref=website_widget&show_search_filter=true&show_date_filter=true&show_sort=true"
                 arrow
               >
                 Click here to buy tickets
