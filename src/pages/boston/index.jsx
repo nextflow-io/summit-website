@@ -66,7 +66,7 @@ const IndexPage = () => {
                 In person only
               </p>
               <p className="typo-intro uppercase">
-                Boston, November 29-30, 2023
+                Boston, November 28-30, 2023
               </p>
               <div className="max-w-[320px] mt-4">
                 <Button to="/boston/register/" variant="primary" size="md" arrow>
