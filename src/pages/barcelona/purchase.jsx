@@ -1,8 +1,8 @@
 import { useStaticQuery, graphql } from "gatsby";
 
 import React, { useEffect } from "react";
-import HeroDots from "../components/HeroDots";
-import Seo from "../components/Seo";
+import HeroDots from "../../components/HeroDots";
+import Seo from "../../components/Seo";
 
 import { Button } from "website-components";
 

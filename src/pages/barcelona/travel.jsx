@@ -9,13 +9,13 @@ import {
   Marquee,
 } from 'website-components';
 
-import AccommodationCard from '../components/AccommodationCard';
-import Card from '../components/Card';
-import LaptopIcon from '../components/icons/LaptopIcon';
-import MountainIcon from '../components/icons/MountainIcon';
-import LocationMap from '../components/LocationMap';
-import RegisterCTA from '../components/RegisterCTA';
-import Seo from '../components/Seo';
+import AccommodationCard from '../../components/AccommodationCard';
+import Card from '../../components/Card';
+import LaptopIcon from '../../components/icons/LaptopIcon';
+import MountainIcon from '../../components/icons/MountainIcon';
+import LocationMap from '../../components/LocationMap';
+import RegisterCTA from '../../components/RegisterCTA';
+import Seo from '../../components/Seo';
 
 const TravelPage = () => {
   const data = useStaticQuery(graphql`

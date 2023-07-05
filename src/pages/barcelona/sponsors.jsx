@@ -6,13 +6,13 @@ import {
   Button,
 } from 'website-components';
 
-import Seo from '../components/Seo';
+import Seo from '../../components/Seo';
 
-import LogoAWS from '../images/logos/aws.svg';
-import LogoMicrosoft from '../images/logos/microsoft.svg';
-import LogoPixelgen from '../images/logos/pixelgen.svg';
-import LogoSeqera from '../images/logos/seqera.svg';
-import LogoZS from '../images/logos/ZS.svg';
+import LogoAWS from '../../images/logos/aws.svg';
+import LogoMicrosoft from '../../images/logos/microsoft.svg';
+import LogoPixelgen from '../../images/logos/pixelgen.svg';
+import LogoSeqera from '../../images/logos/seqera.svg';
+import LogoZS from '../../images/logos/ZS.svg';
 
 const SponsorsPage = () => {
   const data = useStaticQuery(graphql`

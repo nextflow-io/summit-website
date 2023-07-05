@@ -3,20 +3,12 @@ import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
 import React from 'react';
 
 import {
-  Button,
-  Reveal,
-  RevealOnScroll,
+  Link,
 } from 'website-components';
 
-import CountDown from '../components/CountDown';
-import EventCTA from '../components/EventCTA';
 import HeroAnimation from '../components/HeroAnimation';
 import NextflowLogo from '../components/NextflowLogo';
-import RegisterCTA from '../components/RegisterCTA';
 import Seo from '../components/Seo';
-
-import LaptopIcon from '../components/icons/LaptopIcon';
-import MountainIcon from '../components/icons/MountainIcon';
 
 import LogoAWS from '../images/logos/aws.svg';
 import LogoMicrosoft from '../images/logos/microsoft.svg';
@@ -68,10 +60,6 @@ const IndexPage = () => {
                 summit
               </h1>
               <p className="typo-blockquote font-medium text-blue-600 max-w-xl">
-                <i className="italic">
-                  Barcelona
-                </i>
-                {' | '}
                 <i>
                   2023
                 </i>
@@ -86,171 +74,79 @@ const IndexPage = () => {
               <p className="typo-intro uppercase">
                 Barcelona, October 16-20, 2023
               </p>
-              <div className="max-w-[320px] mt-4">
-                <Button to="/register/" variant="primary" size="md" arrow>
-                  Register
-                </Button>
-              </div>
+              <p className="typo-intro uppercase">
+                Boston, November 28-30, 2023
+              </p>
             </div>
-          </div>
-          <div className="flex md:absolute bottom-10 right-4 mt-16">
-            <CountDown />
           </div>
         </div>
       </div>
-      <RevealOnScroll className="container-xl py-8">
-        <Reveal>
-          <Image
-            image={getImage(data.summitImage)}
-            alt="Nextflow SUMMIT 2023"
-          />
-        </Reveal>
-      </RevealOnScroll>
-      <div className="container-md text-white py-16">
-        <div className="text-center">
-          <h2 className="typo-h6 uppercase">
-            Key information
-          </h2>
+      <div className="container-md py-20">
+      <div className="row">
+                <div className="col-full lg:col-6">
+                  <Link to="/barcelona/" className="block bg-black text-white border border-gray-800 rounded-md shadow-xl relative overflow-hidden">
+                    <Image
+                      image={getImage(data.bluePattern)}
+                      alt="blue dots visual"
+                      className="h-48"
+                      imgClassName="rounded-t-md"
+                    />
+                    <div className="px-4 py-6 lg:p-8">
+                      <div>
+                        <NextflowLogo className="h-10 text-white mx-auto" />
+                      </div>
+                      <h3 className="text-center mt-4">
+                        <span className="typo-h4 text-white mr-4">
+                          SUMMIT
+                        </span>
+                        <span className="typo-blockquote text-blue-600 italic">
+                          Barcelona
+                        </span>
+                      </h3>
+                      <p className="typo-intro text-center uppercase mt-8">
+                        In person
+                        <span className="mx-2">
+                          |
+                        </span>
+                        Virtual
+                      </p>
+                      <p className="typo-intro text-center">
+                        Barcelona, October 16-20, 2023
+                      </p>
+                    </div>
+                  </Link>
+                </div>
+                <div className="col-full lg:col-6 mt-8 lg:mt-0">
+                  <Link to="/boston/" className="block bg-black text-white border border-gray-800 rounded-md shadow-xl relative overflow-hidden" noBorder>
+                    <Image
+                      image={getImage(data.redPattern)}
+                      alt="red dots visual"
+                      className="h-48"
+                      imgClassName="rounded-t-md"
+                    />
+                    <div className="px-4 py-6 lg:p-8">
+                      <div>
+                        <NextflowLogo className="h-10 text-white mx-auto" />
+                      </div>
+                      <h3 className="text-center mt-4">
+                        <span className="typo-h4 text-white mr-4">
+                          SUMMIT
+                        </span>
+                        <span className="typo-blockquote text-red-300 italic">
+                          Boston
+                        </span>
+                      </h3>
+                      <p className="typo-intro text-center uppercase mt-8">
+                        In person
+                      </p>
+                      <p className="typo-intro text-center">
+                        Boston, November 28-30, 2023
+                      </p>
+                    </div>
+                  </Link>
+                </div>
         </div>
-        <RevealOnScroll className="row">
-          <Reveal className="col-full lg:col-6 mt-4">
-            <div className="bg-black border border-gray-800 px-4 py-6 lg:p-8 rounded-md shadow-xl relative">
-              <div className="text-green-300">
-                <LaptopIcon />
-              </div>
-              <h3 className="typo-h4 mt-4">
-                Hackathon | Oct 16-18
-              </h3>
-              <p className="typo-body mt-4">
-                Join our hackathon to develop nf-core together. It will be held in Barcelona and on Gather (virtually)
-                prior to the Nextflow SUMMIT.
-              </p>
-            </div>
-          </Reveal>
-          <Reveal className="col-full lg:col-6 mt-8 md:mt-4">
-            <div className="bg-black border border-gray-800 px-4 py-6 lg:p-8 rounded-md shadow-xl relative">
-              <div className="text-green-300">
-                <MountainIcon />
-              </div>
-              <h3 className="typo-h4 mt-4">
-                Summit | Oct 18-20
-              </h3>
-              <p className="typo-body mt-4">
-                A showcase of the latest developments and innovations from the Nextflow world held in Barcelona and
-                streamed online.
-              </p>
-            </div>
-          </Reveal>
-          <Reveal className="col-full mt-8">
-            <div className="bg-black border border-gray-800 px-4 py-6 lg:p-8 rounded-md shadow-xl relative">
-              <div className="text-center">
-                <h3 className="typo-h4">
-                  Key dates
-                </h3>
-              </div>
-              <div className="mt-4">
-                <div className="row">
-                  <div className="col-6">
-                    <div className="h-full border-b border-gray-600 py-2">
-                      <p className="typo-body">
-                        July 3
-                      </p>
-                    </div>
-                  </div>
-                  <div className="col-6">
-                    <div className="h-full border-b border-gray-600 py-2">
-                      <p className="typo-body">
-                        Registration for the Nextflow SUMMIT opens
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="col-6">
-                    <div className="h-full border-b border-gray-600 py-2">
-                      <p className="typo-body">
-                        July 31
-                      </p>
-                    </div>
-                  </div>
-                  <div className="col-6">
-                    <div className="h-full border-b border-gray-600 py-2">
-                      <p className="typo-body">
-                        Call for talk abstracts closes
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="col-6">
-                    <div className="h-full border-b border-gray-600 py-2">
-                      <p className="typo-body">
-                        August 14
-                      </p>
-                    </div>
-                  </div>
-                  <div className="col-6">
-                    <div className="h-full border-b border-gray-600 py-2">
-                      <p className="typo-body">
-                        Accepted presenters are notified
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="col-6">
-                    <div className="h-full border-b border-gray-600 py-2">
-                      <p className="typo-body">
-                        September 16
-                      </p>
-                    </div>
-                  </div>
-                  <div className="col-6">
-                    <div className="h-full border-b border-gray-600 py-2">
-                      <p className="typo-body">
-                        Registration for the Nextflow SUMMIT closes
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="col-6">
-                    <div className="h-full border-b border-gray-600 py-2">
-                      <p className="typo-body">
-                        October 16-18
-                      </p>
-                    </div>
-                  </div>
-                  <div className="col-6">
-                    <div className="h-full border-b border-gray-600 py-2">
-                      <p className="typo-body">
-                        nf-core Hackathon
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="col-6">
-                    <div className="h-full border-b border-gray-600 py-2">
-                      <p className="typo-body">
-                        October 18-20
-                      </p>
-                    </div>
-                  </div>
-                  <div className="col-6">
-                    <div className="h-full border-b border-gray-600 py-2">
-                      <p className="typo-body">
-                        Nextflow SUMMIT
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Reveal>
-        </RevealOnScroll>
       </div>
-      <RegisterCTA />
       <div className="text-white py-8">
         <div className="text-center">
           <h2 className="typo-h6 uppercase">
@@ -287,7 +183,6 @@ const IndexPage = () => {
           </div>
         </div>
       </div>
-      <EventCTA />
     </>
   );
 };

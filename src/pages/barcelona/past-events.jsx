@@ -6,11 +6,11 @@ import {
   Marquee
 } from 'website-components';
 
-import Card from '../components/Card';
-import RegisterCTA from '../components/RegisterCTA';
-import Seo from '../components/Seo';
-import Tabs from '../components/Tabs';
-import YoutubeIframe from '../components/YoutubeIframe';
+import Card from '../../components/Card';
+import RegisterCTA from '../../components/RegisterCTA';
+import Seo from '../../components/Seo';
+import Tabs from '../../components/Tabs';
+import YoutubeIframe from '../../components/YoutubeIframe';
 
 const PastEventsPage = () => {
   const [ year, setYear ] = useState('2022');

@@ -2,13 +2,13 @@ import React from 'react';
 
 import { AngleLeftIcon, Link, List } from 'website-components';
 
-import Seo from '../../components/Seo';
+import Seo from '../../../components/Seo';
 
-const TalksInstructionsPage = () => {
+const PostersInstructionsPage = () => {
   return (
     <>
       <Seo
-        title="Nextflow SUMMIT 2023 Talks Instructions"
+        title="Nextflow SUMMIT 2023 Posters Instructions"
       />
       <div className="py-16 bg-gray-900 text-white">
         <div className="container-md">
@@ -27,17 +27,17 @@ const TalksInstructionsPage = () => {
           </p>
           <div className="bg-black border border-gray-800 rounded-md p-8 mt-10">
             <h2 className="typo-h3">
-              Talks
+              Posters
             </h2>
             <h3 className="typo-intro mt-8">
               Formats
             </h3>
             <List type="bullet" iconClassName="text-white" className="mt-4" shrink>
               <List.Item className="typo-body">
-                Long-form - 30 min total, including time for Q&A
+                In-person
               </List.Item>
               <List.Item className="typo-body">
-                Lightning - 15 min total, including time for Q&A
+                Virtual
               </List.Item>
             </List>
             <h3 className="typo-intro mt-8">
@@ -58,16 +58,56 @@ const TalksInstructionsPage = () => {
               </List.Item>
             </List>
             <h3 className="typo-intro mt-8">
+              Requirements
+            </h3>
+            <List type="bullet" iconClassName="text-white" className="mt-4" shrink>
+              <List.Item className="typo-body">
+                In-person
+                <List iconClassName="text-white" type="bullet" shrink>
+                  <List.Item className="typo-body">
+                    A printed A0 portrait formatted (max 841 x 1188 mm) poster
+                  </List.Item>
+                  <List.Item className="typo-body">
+                    A high-quality A0 portrait formatted PDF file
+                  </List.Item>
+                </List>
+              </List.Item>
+              <List.Item className="typo-body">
+                Virtual
+                <List iconClassName="text-white" type="bullet" shrink>
+                  <List.Item className="typo-body">
+                    A high-quality A0 portrait formatted PDF file
+                  </List.Item>
+                </List>
+              </List.Item>
+            </List>
+            <h3 className="typo-intro mt-8">
               Where
             </h3>
             <List type="bullet" iconClassName="text-white" className="mt-4" shrink>
               <List.Item className="typo-body">
-                In person at the Nextflow SUMMIT
+                In-person
+                <List iconClassName="text-white" type="bullet" shrink>
+                  <List.Item className="typo-body">
+                    Poster session at the Nextflow SUMMIT
+                  </List.Item>
+                  <List.Item className="typo-body">
+                    Nextflow SUMMIT website during and after the event
+                  </List.Item>
+                </List>
               </List.Item>
               <List.Item className="typo-body">
-                Streamed live and available to watch online after the event
+                Virtual
+                <List iconClassName="text-white" type="bullet" shrink>
+                  <List.Item className="typo-body">
+                    Nextflow SUMMIT website during and after the event
+                  </List.Item>
+                </List>
               </List.Item>
             </List>
+            <p className="typo-body mt-4">
+              Further details on how to upload your poster will be sent to prior to the event.
+            </p>
             <div className="mt-8">
               <Link to="https://seqera.typeform.com/summit2023" className="typo-body text-green-300" noBorder>
                 Apply now
@@ -80,4 +120,4 @@ const TalksInstructionsPage = () => {
   );
 };
 
-export default TalksInstructionsPage;
+export default PostersInstructionsPage;

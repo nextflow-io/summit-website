@@ -7,10 +7,10 @@ import {
   Marquee,
 } from 'website-components';
 
-import Card from '../components/Card';
-import LaptopIcon from '../components/icons/LaptopIcon';
-import MountainIcon from '../components/icons/MountainIcon';
-import Seo from '../components/Seo';
+import Card from '../../components/Card';
+import LaptopIcon from '../../components/icons/LaptopIcon';
+import MountainIcon from '../../components/icons/MountainIcon';
+import Seo from '../../components/Seo';
 
 const AgendaPage = () => {
   const data = useStaticQuery(graphql`

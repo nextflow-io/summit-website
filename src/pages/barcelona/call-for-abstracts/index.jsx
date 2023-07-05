@@ -9,9 +9,9 @@ import {
   List,
 } from 'website-components';
 
-import Card from '../../components/Card';
-import HeroDots from '../../components/HeroDots';
-import Seo from '../../components/Seo';
+import Card from '../../../components/Card';
+import HeroDots from '../../../components/HeroDots';
+import Seo from '../../../components/Seo';
 
 const CallForAbstractsPage = () => {
   const data = useStaticQuery(graphql`
