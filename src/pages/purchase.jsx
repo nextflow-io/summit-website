@@ -27,7 +27,7 @@ const RegisterPage = () => {
     script.async = true;
     script.setAttribute(
       "data-url",
-      "https://www.tickettailor.com/checkout/new-session/id/2567462/chk/5bff/?ref=website_widget&show_search_filter=true&show_date_filter=true&show_sort=true"
+      "https://tickets.nextflow.io/checkout/new-session/id/2567462/chk/5bff/?ref=website_widget&show_search_filter=true&show_date_filter=true&show_sort=true"
     );
     script.setAttribute("data-type", "inline");
     script.setAttribute("data-inline-minimal", "true");
@@ -60,7 +60,7 @@ const RegisterPage = () => {
               <Button
                 variant="primary"
                 size="md"
-                to="https://www.tickettailor.com/checkout/new-session/id/2567462/chk/5bff/?ref=website_widget&show_search_filter=true&show_date_filter=true&show_sort=true"
+                to="https://tickets.nextflow.io/checkout/new-session/id/2567462/chk/5bff/?ref=website_widget&show_search_filter=true&show_date_filter=true&show_sort=true"
                 arrow
               >
                 Click here to buy tickets
