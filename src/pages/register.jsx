@@ -35,13 +35,13 @@ const RegisterPage = () => {
   return (
     <>
       <Seo
-        title="Call for abstracts"
+        title="Register"
       />
       <HeroDots className="text-center">
         <div className="container-lg">
           <div className="max-w-3xl mx-auto">
             <h1 className="typo-display1">
-              Join the Nextflow SUMMIT and <span style={{ "white-space": "nowrap" }}>nf-core</span> Hackathon
+              Join the Nextflow SUMMIT and <span style={{ whiteSpace: "nowrap" }}>nf-core</span> Hackathon
             </h1>
             <div className="max-w-xl mx-auto mt-4">
               <p className="typo-body">

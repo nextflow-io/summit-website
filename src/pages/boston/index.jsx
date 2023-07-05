@@ -40,7 +40,7 @@ const IndexPage = () => {
   return (
     <>
       <Seo
-        title="Nextflow Summit 2023"
+        title="Nextflow SUMMIT 2023"
       />
       <div className="relative bg-black text-white">
         <div className="absolute inset-0 overflow-hidden">
@@ -84,7 +84,7 @@ const IndexPage = () => {
         <Reveal>
           <Image
             image={getImage(data.summitImage)}
-            alt="Nextflow Summit 2023"
+            alt="Nextflow SUMMIT 2023"
           />
         </Reveal>
       </RevealOnScroll>
