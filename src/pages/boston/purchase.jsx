@@ -41,7 +41,7 @@ const RegisterPage = () => {
 
   return (
     <>
-      <Seo title="Call for abstracts" />
+      <Seo title="Purchase ticket: Boston" />
       <HeroDots className="text-center" variant="red">
         <div className="container-lg">
           <div className="max-w-3xl mx-auto">
