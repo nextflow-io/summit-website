@@ -52,7 +52,7 @@ const RegisterPage = () => {
               </p>
             </div>
             <div className="mt-4">
-              <Button to="/register/" variant="primary" size="md">
+              <Button to="https://buytickets.at/seqeralabs/955701" variant="primary" size="md">
                 Register
               </Button>
             </div>
