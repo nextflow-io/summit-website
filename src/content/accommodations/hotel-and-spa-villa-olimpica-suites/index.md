@@ -8,6 +8,6 @@ breakfast: false
 adultOne: 149.00€ / night
 adultsTwo: 168.00€ / night
 tax: 3,80€ night / room
-promotionCode: NEXTFLOW 2023
+promotionCode: NEXTFLOW23
 location: Barcelona
 ---

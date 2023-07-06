@@ -49,7 +49,7 @@ const TravelPage = () => {
         }
       }
       promotedAccommodations: allAccommodation(
-        filter: {location: {eq: "Barcelona"}, promotionCode: {eq: "NEXTFLOW 2023"}}
+        filter: {location: {eq: "Barcelona"}, promotionCode: {eq: "NEXTFLOW23"}}
       ) {
         nodes {
           id
@@ -73,7 +73,7 @@ const TravelPage = () => {
         }
       }
       otherAccommodations: allAccommodation(
-        filter: {location: {eq: "Barcelona"}, promotionCode: {ne: "NEXTFLOW 2023"}}
+        filter: {location: {eq: "Barcelona"}, promotionCode: {ne: "NEXTFLOW23"}}
       ) {
         nodes {
           id
