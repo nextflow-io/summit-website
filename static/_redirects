@@ -1,3 +1,6 @@
+# 2023 - pre-registration sign up
+/summit-2023-preregistration/    /register/    301
+
 # 2022 - archive site proxy
 /2022/*       https://nextflow-summit-2022.netlify.app/2022/:splat    200!
 
