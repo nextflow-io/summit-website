@@ -60,7 +60,7 @@ const Header = ({ location }) => {
 
   return (
     <>
-      <header className="bg-black relative z-10 inset-x-0 top-0">
+      <header className="bg-black fixed z-10 inset-x-0 top-0 fixed">
         <div className="container-lg flex flex-wrap items-center justify-between w-full h-16 md:h-24">
           <Link to={resolvePath('/')} noBorder className="block uppercase">
             <img src={Logo} className="h-8 lg:h-10" alt="" />
