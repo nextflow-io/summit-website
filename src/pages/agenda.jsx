@@ -1,32 +1,27 @@
-import { useStaticQuery, graphql } from 'gatsby';
-import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
-import React from 'react';
+import { useStaticQuery, graphql } from "gatsby";
+import { GatsbyImage as Image, getImage } from "gatsby-plugin-image";
+import React from "react";
 
-import {
-  Button,
-  Marquee,
-} from 'website-components';
+import { Button, Marquee } from "website-components";
 
-import Card from '../components/Card';
-import LaptopIcon from '../components/icons/LaptopIcon';
-import MountainIcon from '../components/icons/MountainIcon';
-import Seo from '../components/Seo';
+import Card from "../components/Card";
+import LaptopIcon from "../components/icons/LaptopIcon";
+import MountainIcon from "../components/icons/MountainIcon";
+import Seo from "../components/Seo";
 
 const AgendaPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      heroImage: file(relativePath: {eq: "photos/agenda-barcelona.jpg"}) {
+      heroImage: file(relativePath: { eq: "photos/agenda-barcelona.jpg" }) {
         childImageSharp {
-          gatsbyImageData(
-            placeholder: NONE
-          )
+          gatsbyImageData(placeholder: NONE)
         }
       }
-      bluePattern: file(relativePath: {eq: "visuals/speakers-blue-pattern.png"}) {
+      bluePattern: file(
+        relativePath: { eq: "visuals/speakers-blue-pattern.png" }
+      ) {
         childImageSharp {
-          gatsbyImageData(
-            placeholder: NONE
-          )
+          gatsbyImageData(placeholder: NONE)
         }
       }
     }
@@ -34,9 +29,7 @@ const AgendaPage = () => {
 
   return (
     <>
-      <Seo
-        title="Nextflow SUMMIT 2023 Agenda"
-      />
+      <Seo title="Nextflow SUMMIT 2023 Agenda" />
       <div className="py-20 bg-gray-900 text-white">
         <div className="container-lg">
           <div className="row lg:flex-nowrap">
@@ -46,9 +39,22 @@ const AgendaPage = () => {
                 <br />
                 in Barcelona or virtually
               </h1>
+              <h3 className="typo-display3 mb-4 text-green-300">
+                Exploring frontiers together through data science and
+                computational biology
+              </h3>
               <p className="typo-body max-w-3xl mb-4">
-                This premier event brings together leading experts, innovators, and researchers to showcase the latest
-                breakthroughs in workflow management.
+                Join us for a week of Nextflow goodness, where passionate
+                Nextflow users and industry experts will share first-hand
+                success stories from the community. The program includes
+                inspiring keynotes, talks, poster sessions, and social events.
+              </p>
+              <p className="typo-body mb-4">
+                The event will be streamed, and presentations will be made
+                available after the event.
+              </p>
+              <p className="typo-body mb-4">
+                Watch this space for regular agenda updates.
               </p>
               <div className="mt-4">
                 <Button to="/register/" variant="primary" size="md" arrow>
@@ -67,14 +73,16 @@ const AgendaPage = () => {
           </div>
         </div>
       </div>
-      <Marquee className="typo-body bg-green-300 text-black" to="/call-for-abstracts/" type="reset">
+      <Marquee
+        className="typo-body bg-green-300 text-black"
+        to="/call-for-abstracts/"
+        type="reset"
+      >
         Call for abstracts now open
       </Marquee>
       <div className="container-md text-white py-16">
         <div className="text-center">
-          <h2 className="typo-h6 uppercase">
-            Program
-          </h2>
+          <h2 className="typo-h6 uppercase">Program</h2>
         </div>
         <div className="row">
           <div className="col-full lg:col-6 mt-4">
@@ -82,14 +90,13 @@ const AgendaPage = () => {
               <div className="text-green-300">
                 <LaptopIcon />
               </div>
-              <h3 className="typo-h4 mt-4">
-                Hackathon | Oct 16-18
-              </h3>
+              <h3 className="typo-h4 mt-4">Hackathon | Oct 16-18</h3>
               <p className="typo-intro text-green-300 mt-8">
                 2.5 days · 100 people · hackathon
               </p>
               <p className="typo-body mt-2">
-                The program will be available once the call for abstracts has closed.
+                The program will be available once the call for abstracts has
+                closed.
               </p>
               <div className="mt-4">
                 <span className="typo-body bg-gray-800 rounded-sm py-2 px-4">
@@ -108,14 +115,13 @@ const AgendaPage = () => {
               <div className="text-green-300">
                 <MountainIcon />
               </div>
-              <h3 className="typo-h4 mt-4">
-                Summit | Oct 18-20
-              </h3>
+              <h3 className="typo-h4 mt-4">Summit | Oct 18-20</h3>
               <p className="typo-intro text-green-300 mt-8">
                 2.5 days · 200 people · talks, posters, and more
               </p>
               <p className="typo-body mt-2">
-                The program will be available once the call for abstracts has closed.
+                The program will be available once the call for abstracts has
+                closed.
               </p>
               <div className="mt-4">
                 <span className="typo-body bg-gray-800 rounded-sm py-2 px-4">
@@ -134,8 +140,9 @@ const AgendaPage = () => {
       <div className="bg-green-300 text-black">
         <div className="container-sm py-16 text-center">
           <h2 className="typo-display2">
-            Immerse yourself in a vibrant atmosphere of knowledge exchange, networking, and collaboration, as we shape
-            the path to revolutionary discoveries in the life sciences and more.
+            Immerse yourself in a vibrant atmosphere of knowledge exchange,
+            networking, and collaboration, as we shape the path to revolutionary
+            discoveries in the life sciences and more.
           </h2>
         </div>
       </div>
@@ -150,14 +157,17 @@ const AgendaPage = () => {
           </div>
           <div className="col-full lg:col-6 py-16">
             <div className="px-4 lg:px-12">
-              <h2 className="typo-display1">
-                20+ Speakers
-              </h2>
+              <h2 className="typo-display1">20+ Speakers</h2>
               <p className="typo-body mt-2">
-                Stay tuned for exciting announcements of our distinguished speakers, and meantime check out talks given last year.
+                Stay tuned for exciting announcements of our distinguished
+                speakers, and meantime check out talks given last year.
               </p>
               <div className="mt-8">
-                <Button to="https://www.youtube.com/playlist?list=PLPZ8WHdZGxmUdAJlHowo7zL2pN3x97d32" variant="secondary" size="md">
+                <Button
+                  to="https://www.youtube.com/playlist?list=PLPZ8WHdZGxmUdAJlHowo7zL2pN3x97d32"
+                  variant="secondary"
+                  size="md"
+                >
                   Watch talks from 2022
                 </Button>
               </div>
