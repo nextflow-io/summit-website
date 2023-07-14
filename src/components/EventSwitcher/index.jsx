@@ -25,8 +25,8 @@ const EventSwitcher = ({ className }) => {
       >
         Barcelona
       </Link>
-      <span className="italic mr-4 ml-3">
-        or
+      <span className="mr-4 ml-3">
+        |
       </span>
       <Link
         to="/boston/"
