@@ -55,12 +55,6 @@ const HackathonOct16 = () => {
           }
         }
       }
-      tags: allEvent(filter: { date: { eq: "Oct 16, 2023" } }) {
-        group(field: { tags: SELECT }) {
-          tag: fieldValue
-          totalCount
-        }
-      }
     }
   `);
   return <AgendaPage showEvents eventData={data} />;
