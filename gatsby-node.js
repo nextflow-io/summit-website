@@ -17,7 +17,6 @@ exports.createSchemaCustomization = ({ actions }) => {
         name: String!
         position: String!
         email: String
-        image: File @fileByRelativePath
         content: Mdx
         tags: [String]
         meta: MetaFields
@@ -294,7 +293,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const eventTemplate = path.resolve("src/templates/event.jsx");
   const talkTemplate = path.resolve("src/templates/talk.jsx");
-  const speakerTemplate = path.resolve("src/templates/speaker.jsx");
+  // const speakerTemplate = path.resolve("src/templates/speaker.jsx");
   const posterTemplate = path.resolve("src/templates/poster.jsx");
 
   const result = await graphql(`
@@ -329,17 +328,17 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return;
   }
 
-  const speakers = result.data.speakers.nodes;
+  // const speakers = result.data.speakers.nodes;
 
-  speakers.forEach((speaker) => {
-    createPage({
-      path: speaker.slug,
-      component: speakerTemplate,
-      context: {
-        slug: speaker.slug,
-      },
-    });
-  });
+  // speakers.forEach((speaker) => {
+  //   createPage({
+  //     path: speaker.slug,
+  //     component: speakerTemplate,
+  //     context: {
+  //       slug: speaker.slug,
+  //     },
+  //   });
+  // });
 
   const events = result.data.events.nodes;
 
@@ -369,17 +368,17 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     }
   });
 
-  const posters = result.data.posters.nodes;
+  // const posters = result.data.posters.nodes;
 
-  posters.forEach((poster) => {
-    createPage({
-      path: `/posters/${poster.slug}/`,
-      component: posterTemplate,
-      context: {
-        slug: poster.slug,
-      },
-    });
-  });
+  // posters.forEach((poster) => {
+  //   createPage({
+  //     path: `/posters/${poster.slug}/`,
+  //     component: posterTemplate,
+  //     context: {
+  //       slug: poster.slug,
+  //     },
+  //   });
+  // });
 };
 
 exports.onCreateWebpackConfig = ({ actions, loaders }) => {

@@ -33,18 +33,22 @@ const EventView = ({ eventData }) => {
       setExpandedEvent(event.id);
     }
   };
+
+  let loc = {};
+  if (typeof window !== "undefined") loc = window.location;
+
   return (
     <div className="container-lg">
       <div className="row">
         <div className="col-full lg:col-9 lg:ml-1/12">
           <div>
-            <Tabs location={location} anchor="#events">
+            <Tabs location={loc} anchor="#events">
               <Tabs.Item to="/agenda/hackathon/">Hackathon</Tabs.Item>
               <Tabs.Item to="/agenda/summit/">Summit</Tabs.Item>
             </Tabs>
           </div>
           <div className="mt-1">
-            <Tabs location={location} anchor="#events">
+            <Tabs location={loc} anchor="#events">
               <Tabs.Item to="/agenda/hackathon/">Mon, Oct 16</Tabs.Item>
               <Tabs.Item to="/agenda/hackathon/oct-17/">Tue, Oct 17</Tabs.Item>
               <Tabs.Item to="/agenda/hackathon/oct-18/">Wed, Oct 18</Tabs.Item>

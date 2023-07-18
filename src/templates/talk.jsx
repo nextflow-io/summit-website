@@ -37,8 +37,8 @@ const TalkPage = ({ data }) => {
                 {talk.speakers.length === 1 && (
                   <div className="flex items-center">
                     <Image
-                      image={getImage(talk.speakers[0].image)}
-                      alt={talk.speakers[0].name}
+                      image={getImage(talk.speakers[0]?.image)}
+                      alt={talk.speakers[0]?.name}
                       imgClassName="rounded-full"
                       className="mr-4 h-8 w-8"
                     />
@@ -50,19 +50,19 @@ const TalkPage = ({ data }) => {
                 {talk.speakers.length === 2 && (
                   <div className="flex items-center">
                     <Image
-                      image={getImage(talk.speakers[0].image)}
-                      alt={talk.speakers[0].name}
+                      image={getImage(talk.speakers[0]?.image)}
+                      alt={talk.speakers[0]?.name}
                       imgClassName="rounded-full"
                       className="h-8 w-8"
                     />
                     <Image
-                      image={getImage(talk.speakers[1].image)}
-                      alt={talk.speakers[1].name}
+                      image={getImage(talk.speakers[1]?.image)}
+                      alt={talk.speakers[1]?.name}
                       imgClassName="rounded-full"
                       className="-ml-2 mr-4 h-8 w-8"
                     />
                     <span className="typo-intro text-green-600">
-                      {`${talk.speakers[0].name} & ${talk.speakers[1].name}`}
+                      {`${talk.speakers[0]?.name} & ${talk.speakers[1]?.name}`}
                     </span>
                   </div>
                 )}
@@ -140,7 +140,7 @@ const TalkPage = ({ data }) => {
               </Button>
             </>
           )}
-          {talk.speakers.map((speaker, i) => (
+          {talk.speakers?.map((speaker, i) => (
             <SpeakerCard
               speaker={speaker}
               className="mt-8 first:mt-0"

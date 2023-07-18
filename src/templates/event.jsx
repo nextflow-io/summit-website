@@ -37,8 +37,8 @@ const EventPage = ({ data }) => {
                 {event.speakers.length === 1 && (
                   <div className="flex items-center">
                     <Image
-                      image={getImage(event.speakers[0].image)}
-                      alt={event.speakers[0].name}
+                      image={getImage(event.speakers[0]?.image)}
+                      alt={event.speakers[0]?.name}
                       imgClassName="rounded-full"
                       className="mr-4 h-8 w-8"
                     />
@@ -50,8 +50,8 @@ const EventPage = ({ data }) => {
                 {event.speakers.length === 2 && (
                   <div className="flex items-center">
                     <Image
-                      image={getImage(event.speakers[0].image)}
-                      alt={event.speakers[0].name}
+                      image={getImage(event.speakers[0]?.image)}
+                      alt={event.speakers[0]?.name}
                       imgClassName="rounded-full"
                       className="h-8 w-8"
                     />
@@ -62,7 +62,7 @@ const EventPage = ({ data }) => {
                       className="-ml-2 mr-4 h-8 w-8"
                     />
                     <span className="typo-intro text-green-600">
-                      {`${event.speakers[0].name} & ${event.speakers[1].name}`}
+                      {`${event.speakers[0]?.name} & ${event.speakers[1]?.name}`}
                     </span>
                   </div>
                 )}
@@ -140,7 +140,7 @@ const EventPage = ({ data }) => {
               </Button>
             </>
           )}
-          {event.speakers.map((speaker, i) => (
+          {event.speakers?.map((speaker, i) => (
             <SpeakerCard
               speaker={speaker}
               className="mt-8 first:mt-0"

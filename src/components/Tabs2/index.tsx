@@ -33,9 +33,9 @@ const Item = ({ children, to, inactive }) => {
         "typo-small block border border-green-600 mx-px first:ml-0 last:mr-0 first:rounded-l-sm last:rounded-r-sm px-4 py-1",
         {
           "bg-black text-green-600 hover:bg-gray-800":
-            !location.pathname.includes(to) || inactive,
+            !location.pathname?.includes(to) || inactive,
           "bg-green-600 text-white":
-            location.pathname.includes(to) && !inactive,
+            location.pathname?.includes(to) && !inactive,
         }
       )}
     >

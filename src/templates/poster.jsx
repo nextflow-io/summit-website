@@ -18,7 +18,7 @@ import SpeakerCard from "../components/SpeakerCard";
 
 const PosterPage = ({ data }) => {
   const { poster, posterImage } = data;
-
+  const image = poster.speakers?.[0]?.image;
   return (
     <>
       <Seo title={poster.title} />
@@ -36,33 +36,37 @@ const PosterPage = ({ data }) => {
                 {poster.speakers.length === 1 && (
                   <div className="flex items-center">
                     <Image
-                      image={getImage(poster.speakers[0].image)}
-                      alt={poster.speakers[0].name}
+                      image={getImage(poster.speakers[0]?.image)}
+                      alt={poster.speakers[0]?.name}
                       imgClassName="rounded-full"
                       className="mr-4 h-8 w-8"
                     />
                     <span className="typo-intro text-green-600">
-                      {poster.speakers[0].name}
+                      {poster.speakers[0]?.name}
                     </span>
                   </div>
                 )}
                 {poster.speakers.length === 2 && (
                   <div className="flex items-center">
-                    <Image
-                      image={getImage(poster.speakers[0].image)}
-                      alt={poster.speakers[0].name}
-                      imgClassName="rounded-full"
-                      className="h-8 w-8"
-                    />
-                    <Image
-                      image={getImage(poster.speakers[1].image)}
-                      alt={poster.speakers[1].name}
-                      imgClassName="rounded-full"
-                      className="-ml-2 mr-4 h-8 w-8"
-                    />
-                    <span className="typo-intro text-green-600">
-                      {`${poster.speakers[0].name} & ${poster.speakers[1].name}`}
-                    </span>
+                    {!!image && (
+                      <>
+                        <Image
+                          image={getImage(poster.speakers[0]?.image)}
+                          alt={poster.speakers[0]?.name}
+                          imgClassName="rounded-full"
+                          className="h-8 w-8"
+                        />
+                        <Image
+                          image={getImage(poster.speakers[1]?.image)}
+                          alt={poster.speakers[1]?.name}
+                          imgClassName="rounded-full"
+                          className="-ml-2 mr-4 h-8 w-8"
+                        />
+                        <span className="typo-intro text-green-600">
+                          {`${poster.speakers[0]?.name} & ${poster.speakers[1]?.name}`}
+                        </span>
+                      </>
+                    )}
                   </div>
                 )}
                 {poster.speakers.length > 2 && (
@@ -179,7 +183,7 @@ const PosterPage = ({ data }) => {
                               resetClassName="mb-0"
                             >
                               <Image
-                                image={getImage(poster.speakers[0].image)}
+                                image={getImage(poster.speakers[0]?.image)}
                                 alt={poster.speakers[0].name}
                                 imgClassName="rounded-full"
                                 className="mr-4 h-8 w-8"
@@ -193,10 +197,10 @@ const PosterPage = ({ data }) => {
                             </Link>
                           </div>
                         )}
-                        {poster.speakers.length === 2 && (
+                        {!!image && poster.speakers.length === 2 && (
                           <div className="flex items-center mt-4">
                             <Image
-                              image={getImage(poster.speakers[0].image)}
+                              image={getImage(poster.speakers[0]?.image)}
                               alt={poster.speakers[0].name}
                               imgClassName="rounded-full"
                               className="h-8 w-8"
@@ -240,7 +244,7 @@ const PosterPage = ({ data }) => {
             </div>
           </div>
           <div className="mt-8">
-            {poster.speakers.map((speaker, i) => (
+            {poster.speakers?.map((speaker, i) => (
               <SpeakerCard
                 speaker={speaker}
                 className="mt-8 first:mt-0"

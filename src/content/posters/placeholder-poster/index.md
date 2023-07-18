@@ -6,7 +6,6 @@ image: ../../../images/visuals/placeholder-poster.png
 poster: /assets/placeholder-poster.pdf
 poster_id: 9
 speakers:
-  - Ali Hakimzadeh
 tags:
   - Software
 ---
