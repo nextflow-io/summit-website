@@ -35,32 +35,19 @@ const AgendaPage = () => {
           <div className="row lg:flex-nowrap">
             <div className="col-full lg:col-6">
               <h1 className="typo-display1 mb-4">
-                Join us
-                <br />
-                in Barcelona or virtually
-              </h1>
-              <h3 className="typo-display3 mb-4 text-green-300">
                 Exploring frontiers together through data science and
                 computational biology
-              </h3>
+              </h1>
               <p className="typo-body max-w-3xl mb-4">
                 Join us for a week of Nextflow goodness, where passionate
                 Nextflow users and industry experts will share first-hand
-                success stories from the community. The program includes
-                inspiring keynotes, talks, poster sessions, and social events.
+                success stories from the community.
               </p>
-              <p className="typo-body mb-4">
-                The event will be streamed, and presentations will be made
-                available after the event.
+              <p className="typo-body max-w-3xl mb-4">
+                The program includes inspiring keynotes, talks, poster sessions,
+                and social events. Summit will be streamed, and presentations
+                will be made available after the event.
               </p>
-              <p className="typo-body mb-4">
-                Watch this space for regular agenda updates.
-              </p>
-              <div className="mt-4">
-                <Button to="/register/" variant="primary" size="md" arrow>
-                  Register
-                </Button>
-              </div>
             </div>
             <div className="col-full lg:col-5 lg:ml-1/12">
               <Image
