@@ -100,32 +100,32 @@ const EventCard = ({
             {event.speakers.length === 1 && (
               <div className="flex items-center">
                 <Image
-                  image={getImage(event.speakers[0].image)}
-                  alt={event.speakers[0].name}
+                  image={getImage(event.speakers[0]?.image)}
+                  alt={event.speakers[0]?.name}
                   imgClassName="rounded-full"
                   className="mr-4 h-8 w-8"
                 />
                 <span className="typo-intro text-green-600">
-                  {event.speakers[0].name}
+                  {event.speakers[0]?.name}
                 </span>
               </div>
             )}
             {event.speakers.length === 2 && (
               <div className="flex items-center">
                 <Image
-                  image={getImage(event.speakers[0].image)}
+                  image={getImage(event.speakers[0]?.image)}
                   alt={event.speakers[0].name}
                   imgClassName="rounded-full"
                   className="h-8 w-8"
                 />
                 <Image
-                  image={getImage(event.speakers[1].image)}
+                  image={getImage(event.speakers[1]?.image)}
                   alt={event.speakers[1].name}
                   imgClassName="rounded-full"
                   className="-ml-2 mr-4 h-8 w-8"
                 />
                 <span className="typo-intro text-green-600">
-                  {`${event.speakers[0].name} & ${event.speakers[1].name}`}
+                  {`${event.speakers[0]?.name} & ${event.speakers[1]?.name}`}
                 </span>
               </div>
             )}
