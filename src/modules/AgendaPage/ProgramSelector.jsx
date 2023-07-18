@@ -5,9 +5,7 @@ import LaptopIcon from "../../components/icons/LaptopIcon";
 import MountainIcon from "../../components/icons/MountainIcon";
 import { Button } from "website-components";
 
-const ProgramSelector = ({ setView }) => {
-  const viewHackathon = () => setView("hackathon");
-  const viewSummit = () => setView("summit");
+const ProgramSelector = () => {
   return (
     <>
       <div className="text-center">
@@ -28,7 +26,11 @@ const ProgramSelector = ({ setView }) => {
               closed.
             </p>
             <div className="mt-4">
-              <Button onClick={viewHackathon} variant="secondary" size="md">
+              <Button
+                to="/agenda/hackathon#events"
+                variant="secondary"
+                size="md"
+              >
                 View program
               </Button>
             </div>
@@ -48,7 +50,7 @@ const ProgramSelector = ({ setView }) => {
               closed.
             </p>
             <div className="mt-4">
-              <Button onClick={viewSummit} variant="secondary" size="md">
+              <Button to="/agenda/summit#events" variant="secondary" size="md">
                 View program
               </Button>
             </div>

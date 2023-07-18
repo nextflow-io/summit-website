@@ -1,13 +1,14 @@
+import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { GatsbyImage as Image, getImage } from "gatsby-plugin-image";
-import React, { useState } from "react";
-
-import { Hackathon, ProgramSelector, Summit } from "../modules/agenda";
 import { Button } from "website-components";
 
-import Seo from "../components/Seo";
+import Hackathon from "./Hackathon";
+import Summit from "./Summit";
+import ProgramSelector from "./ProgramSelector";
+import Seo from "../../components/Seo";
 
-const AgendaPage = () => {
+const AgendaPage = ({ view, date }) => {
   const data = useStaticQuery(graphql`
     query {
       heroImage: file(relativePath: { eq: "photos/agenda-barcelona.jpg" }) {
@@ -24,7 +25,6 @@ const AgendaPage = () => {
       }
     }
   `);
-  const [view, setView] = useState(null);
   const View =
     view === "hackathon"
       ? Hackathon
@@ -64,8 +64,8 @@ const AgendaPage = () => {
           </div>
         </div>
       </div>
-      <div className="container-md text-white py-16">
-        <View setView={setView} />
+      <div className="container-md text-white py-16" id="events">
+        <View date={date} />
       </div>
       <div className="bg-green-300 text-black">
         <div className="container-sm py-16 text-center">
