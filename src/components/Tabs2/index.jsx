@@ -2,8 +2,6 @@ import classnames from "classnames";
 import React, { createContext, useContext } from "react";
 import { Link } from "website-components";
 
-import PropTypes from "../../utils/PropTypes";
-
 const TabsContext = createContext();
 
 const Tabs = ({ children, location, anchor }) => {
