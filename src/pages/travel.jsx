@@ -1,65 +1,54 @@
-import { useStaticQuery, graphql } from 'gatsby';
-import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
-import React from 'react';
+import { useStaticQuery, graphql } from "gatsby";
+import { GatsbyImage as Image, getImage } from "gatsby-plugin-image";
+import React from "react";
 
-import {
-  Button,
-  Link,
-  LocationIcon,
-  Marquee,
-} from 'website-components';
+import { Button, Link, LocationIcon, Marquee } from "website-components";
 
-import AccommodationCard from '../components/AccommodationCard';
-import Card from '../components/Card';
-import LaptopIcon from '../components/icons/LaptopIcon';
-import MountainIcon from '../components/icons/MountainIcon';
-import LocationMap from '../components/LocationMap';
-import RegisterCTA from '../components/RegisterCTA';
-import Seo from '../components/Seo';
+import AccommodationCard from "../components/AccommodationCard";
+import Card from "../components/Card";
+import LaptopIcon from "../components/icons/LaptopIcon";
+import MountainIcon from "../components/icons/MountainIcon";
+import LocationMap from "../components/LocationMap";
+import RegisterCTA from "../components/RegisterCTA";
+import Seo from "../components/Seo";
 
 const TravelPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      heroImage: file(relativePath: {eq: "photos/barcelona.jpg"}) {
+      heroImage: file(relativePath: { eq: "photos/barcelona.jpg" }) {
         childImageSharp {
-          gatsbyImageData(
-            placeholder: NONE
-          )
+          gatsbyImageData(placeholder: NONE)
         }
       }
-      hackathonMapImage: file(relativePath: {eq: "maps/barcelona-hackathon.jpg"}) {
+      hackathonMapImage: file(
+        relativePath: { eq: "maps/barcelona-hackathon.jpg" }
+      ) {
         childImageSharp {
-          gatsbyImageData(
-            placeholder: NONE
-          )
+          gatsbyImageData(placeholder: NONE)
         }
       }
-      summitMapImage: file(relativePath: {eq: "maps/barcelona-summit.jpg"}) {
+      summitMapImage: file(relativePath: { eq: "maps/barcelona-summit.jpg" }) {
         childImageSharp {
-          gatsbyImageData(
-            placeholder: NONE
-          )
+          gatsbyImageData(placeholder: NONE)
         }
       }
-      redPattern: file(relativePath: {eq: "visuals/red-pattern-md.jpg"}) {
+      redPattern: file(relativePath: { eq: "visuals/red-pattern-md.jpg" }) {
         childImageSharp {
-          gatsbyImageData(
-            placeholder: NONE
-          )
+          gatsbyImageData(placeholder: NONE)
         }
       }
       promotedAccommodations: allAccommodation(
-        filter: {location: {eq: "Barcelona"}, promotionCode: {eq: "NEXTFLOW23"}}
+        filter: {
+          location: { eq: "Barcelona" }
+          promotionCode: { eq: "NEXTFLOW23" }
+        }
       ) {
         nodes {
           id
           title
           image {
             childImageSharp {
-              gatsbyImageData(
-                placeholder: NONE
-                width: 850
-              )
+              gatsbyImageData(placeholder: NONE, width: 850)
             }
           }
           stars
@@ -73,16 +62,17 @@ const TravelPage = () => {
         }
       }
       otherAccommodations: allAccommodation(
-        filter: {location: {eq: "Barcelona"}, promotionCode: {ne: "NEXTFLOW23"}}
+        filter: {
+          location: { eq: "Barcelona" }
+          promotionCode: { ne: "NEXTFLOW23" }
+        }
       ) {
         nodes {
           id
           title
           image {
             childImageSharp {
-              gatsbyImageData(
-                placeholder: NONE
-              )
+              gatsbyImageData(placeholder: NONE)
             }
           }
           stars
@@ -96,20 +86,18 @@ const TravelPage = () => {
 
   return (
     <>
-      <Seo
-        title="Travel to Barcelona"
-      />
+      <Seo title="Travel to Barcelona" />
       <div className="py-20 bg-gray-900 text-white">
         <div className="container-lg">
           <div className="row lg:flex-nowrap">
             <div className="col-full lg:col-6">
-              <h1 className="typo-display1 mb-4">
-                Barcelona
-              </h1>
+              <h1 className="typo-display1 mb-4">Barcelona</h1>
               <p className="typo-body max-w-3xl mb-4">
-                Barcelona offers a unique blend of rich artistic and architectural heritage, serving as a vibrant hub
-                for art and technology. Visiting allows you to explore the birthplace of Nextflow, gaining insights
-                into its groundbreaking origins and development.
+                Barcelona offers a unique blend of rich artistic and
+                architectural heritage, serving as a vibrant hub for art and
+                technology. Visiting allows you to explore the birthplace of
+                Nextflow, gaining insights into its groundbreaking origins and
+                development.
               </p>
             </div>
             <div className="col-full lg:col-5 lg:ml-1/12">
@@ -123,14 +111,16 @@ const TravelPage = () => {
           </div>
         </div>
       </div>
-      <Marquee className="typo-body bg-green-300 text-black" to="/call-for-abstracts/" type="reset">
+      <Marquee
+        className="typo-body bg-green-300 text-black"
+        to="/call-for-abstracts/"
+        type="reset"
+      >
         Call for abstracts now open
       </Marquee>
       <div className="container-md text-white py-16">
         <div className="text-center">
-          <h2 className="typo-h6 uppercase">
-            Location
-          </h2>
+          <h2 className="typo-h6 uppercase">Location</h2>
         </div>
         <div className="row">
           <div className="col-full lg:col-6 mt-4">
@@ -138,9 +128,7 @@ const TravelPage = () => {
               <div className="text-green-300">
                 <LaptopIcon />
               </div>
-              <h3 className="typo-h4 mt-4">
-                Hackathon | Oct 16-20
-              </h3>
+              <h3 className="typo-h4 mt-4">Hackathon | Oct 16-20</h3>
               <div className="mt-4">
                 <LocationMap
                   coordinates={{
@@ -166,9 +154,7 @@ const TravelPage = () => {
               <div className="text-green-300">
                 <MountainIcon />
               </div>
-              <h3 className="typo-h4 mt-4">
-                Summit | Oct 18-20
-              </h3>
+              <h3 className="typo-h4 mt-4">Summit | Oct 18-20</h3>
               <div className="mt-4">
                 <LocationMap
                   coordinates={{
@@ -183,7 +169,8 @@ const TravelPage = () => {
                 </div>
                 <p className="typo-body">
                   <Link to="https://goo.gl/maps/DMDJhRJmbof6Lx6E9">
-                    Torre Glories, Avinguda Diagonal, 211, 08018 Barcelona, Spain
+                    Torre Glories, Avinguda Diagonal, 211, 08018 Barcelona,
+                    Spain
                   </Link>
                 </p>
               </div>
@@ -193,25 +180,21 @@ const TravelPage = () => {
       </div>
       <RegisterCTA />
       <div className="container-lg text-white py-16">
-        <h2 className="typo-h2">
-          Accommodation
-        </h2>
+        <h2 className="typo-h2">Accommodation</h2>
         <p className="typo-body mt-4">
           Hotels with promotion code: NEXTFLOW23 for dates: 16-20 October 2023
         </p>
         <div className="row">
-          {data.promotedAccommodations.nodes.map((acc) => (
-            <div className="col-full lg:col-4 mt-4">
+          {data.promotedAccommodations.nodes.map((acc, i) => (
+            <div className="col-full lg:col-4 mt-4" key={i}>
               <AccommodationCard acc={acc} />
             </div>
           ))}
         </div>
-        <p className="typo-body mt-4">
-          Nearby hotels without promotion code
-        </p>
+        <p className="typo-body mt-4">Nearby hotels without promotion code</p>
         <div className="row">
-          {data.otherAccommodations.nodes.map((acc) => (
-            <div className="col-full lg:col-4 mt-4">
+          {data.otherAccommodations.nodes.map((acc, i) => (
+            <div className="col-full lg:col-4 mt-4" key={i}>
               <AccommodationCard acc={acc} />
             </div>
           ))}
@@ -229,15 +212,20 @@ const TravelPage = () => {
               />
             </div>
             <div className="w-full md:w-2/3 py-8 px-8">
-              <h2 className="typo-h3">
-                Nextflow SUMMIT: Boston
-              </h2>
+              <h2 className="typo-h3">Nextflow SUMMIT: Boston</h2>
               <p className="typo-body mt-4">
-                In 2023, our event is also coming to the US for the first time. Connect with local users and meet the
-                Nextflow / nf-core teams for an unforgettable face-to-face experience!
+                In 2023, our event is also coming to the US for the first time.
+                Connect with local users and meet the Nextflow / nf-core teams
+                for an unforgettable face-to-face experience!
               </p>
               <div className="mt-16">
-                <Button to="/boston/" variant="secondary" theme="alternative" size="md" arrow>
+                <Button
+                  to="/boston/"
+                  variant="secondary"
+                  theme="alternative"
+                  size="md"
+                  arrow
+                >
                   Learn more
                 </Button>
               </div>

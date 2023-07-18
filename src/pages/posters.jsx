@@ -11,7 +11,7 @@ import PosterCard from "../components/PosterCard";
 const PostersPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      posters: allPoster(sort: { fields: poster_id }) {
+      posters: allPoster(sort: { poster_id: ASC }) {
         nodes {
           slug
           title
@@ -34,7 +34,7 @@ const PostersPage = () => {
         }
       }
       tags: allPoster {
-        group(field: tags) {
+        group(field: { tags: SELECT }) {
           tag: fieldValue
           totalCount
         }
@@ -57,7 +57,6 @@ const PostersPage = () => {
   };
 
   const posters = data.posters.nodes;
-  const tags = data.tags.group;
 
   return (
     <>

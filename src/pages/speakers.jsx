@@ -47,8 +47,12 @@ const SpeakersPage = () => {
         <div className="container-lg">
           <div className="row mt-4">
             <div className="col-full lg:col-9">
-              {data.speakers.nodes.map((speaker) => (
-                <SpeakerCard speaker={speaker} className="mt-4 first:mt-0" />
+              {data.speakers.nodes.map((speaker, i) => (
+                <SpeakerCard
+                  speaker={speaker}
+                  className="mt-4 first:mt-0"
+                  key={i}
+                />
               ))}
               <div className="bg-black text-white border border-gray-800 rounded-md overflow-hidden mt-4">
                 <div className="flex flex-col md:flex-row">

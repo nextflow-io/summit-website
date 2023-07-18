@@ -1,19 +1,19 @@
-import { graphql } from 'gatsby';
-import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
-import React from 'react';
+import { graphql } from "gatsby";
+import { GatsbyImage as Image, getImage } from "gatsby-plugin-image";
+import { MDXRenderer } from "gatsby-plugin-mdx";
+import React from "react";
 
-import CustomMDXProvider from '../components/CustomMDXProvider';
-import EventCard from '../components/EventCard';
-import Seo from '../components/Seo';
+import CustomMDXProvider from "../components/CustomMDXProvider";
+import EventCard from "../components/EventCard";
+import Seo from "../components/Seo";
 
 import {
   AngleLeftIcon,
   GitHubIcon,
   Link,
   LinkedInIcon,
-  TwitterIcon
-} from 'website-components';
+  TwitterIcon,
+} from "website-components";
 
 const SpeakerPage = ({ data }) => {
   const { speaker } = data;
@@ -42,32 +42,44 @@ const SpeakerPage = ({ data }) => {
             />
           </div>
           <div className="w-full md:w-2/3 mt-6 md:mt-0 md:px-6 inline-flex flex-col">
-            <h1 className="typo-h2 text-green-600 mb-4">
-              {speaker.name}
-            </h1>
-            <p className="typo-h5 mb-4">
-              {speaker.position}
-            </p>
+            <h1 className="typo-h2 text-green-600 mb-4">{speaker.name}</h1>
+            <p className="typo-h5 mb-4">{speaker.position}</p>
             {speaker.email && (
               <div className="mb-4">
-                <Link to={`mailto:${speaker.email}`} className="typo-body" noBorder>
+                <Link
+                  to={`mailto:${speaker.email}`}
+                  className="typo-body"
+                  noBorder
+                >
                   {speaker.email}
                 </Link>
               </div>
             )}
             <div className="flex mb-4">
               {speaker.github && (
-                <Link to={speaker.github} noBorder className="text-white hover:text-green-600 mr-4">
+                <Link
+                  to={speaker.github}
+                  noBorder
+                  className="text-white hover:text-green-600 mr-4"
+                >
                   <GitHubIcon />
                 </Link>
               )}
               {speaker.twitter && (
-                <Link to={speaker.twitter} noBorder className="text-white hover:text-green-600 mr-4">
+                <Link
+                  to={speaker.twitter}
+                  noBorder
+                  className="text-white hover:text-green-600 mr-4"
+                >
                   <TwitterIcon />
                 </Link>
               )}
               {speaker.linkedin && (
-                <Link to={speaker.linkedin} noBorder className="text-white hover:text-green-600">
+                <Link
+                  to={speaker.linkedin}
+                  noBorder
+                  className="text-white hover:text-green-600"
+                >
                   <LinkedInIcon />
                 </Link>
               )}
@@ -76,30 +88,25 @@ const SpeakerPage = ({ data }) => {
         </div>
         <div className="mt-5 md:mt-10">
           <CustomMDXProvider>
-            <MDXRenderer>
-              {speaker.content.body}
-            </MDXRenderer>
+            <MDXRenderer>{speaker.content.body}</MDXRenderer>
           </CustomMDXProvider>
         </div>
         <div className="mt-5 md:mt-10">
-          {data.events.nodes.map((event) => (
-            <div className="mt-8 first:mt-0">
-              <EventCard
-                event={event}
-                disableTimeline
-              />
+          {data.events.nodes.map((event, i) => (
+            <div className="mt-8 first:mt-0" key={i}>
+              <EventCard event={event} disableTimeline />
             </div>
           ))}
         </div>
       </div>
     </>
-  )
+  );
 };
 
 export default SpeakerPage;
 
 export const pageQuery = graphql`
-  query($slug: String!) {
+  query ($slug: String!) {
     speaker: people(slug: { eq: $slug }) {
       slug
       name
@@ -111,9 +118,7 @@ export const pageQuery = graphql`
       twitter
       image {
         childImageSharp {
-          gatsbyImageData(
-            placeholder: NONE
-          )
+          gatsbyImageData(placeholder: NONE)
         }
       }
       content {
@@ -128,8 +133,11 @@ export const pageQuery = graphql`
       }
     }
     events: allEvent(
-      filter: {speakers: {elemMatch: {slug: {eq: $slug }}}, isChild: {eq: true}}
-      sort: {fields: datetime}
+      filter: {
+        speakers: { elemMatch: { slug: { eq: $slug } } }
+        isChild: { eq: true }
+      }
+      sort: { datetime: ASC }
     ) {
       nodes {
         slug
@@ -149,11 +157,7 @@ export const pageQuery = graphql`
           name
           image {
             childImageSharp {
-              gatsbyImageData(
-                height: 32
-                placeholder: NONE
-                width: 32
-              )
+              gatsbyImageData(height: 32, placeholder: NONE, width: 32)
             }
           }
         }
