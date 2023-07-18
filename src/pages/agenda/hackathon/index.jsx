@@ -1,6 +1,7 @@
 import React from "react";
-import AgendaPage from "../../../modules/AgendaPage";
 import { useStaticQuery, graphql } from "gatsby";
+
+import AgendaPage from "../../../modules/AgendaPage";
 
 const HackathonOct16 = () => {
   const data = useStaticQuery(graphql`
@@ -57,7 +58,6 @@ const HackathonOct16 = () => {
       }
     }
   `);
-  console.log(">>", data);
   return <AgendaPage showEvents eventData={data?.events?.nodes} />;
 };
 
