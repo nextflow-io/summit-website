@@ -1,12 +1,10 @@
 import { useStaticQuery, graphql } from "gatsby";
 import { GatsbyImage as Image, getImage } from "gatsby-plugin-image";
-import React from "react";
+import React, { useState } from "react";
 
-import { Button, Marquee } from "website-components";
+import { Hackathon, ProgramSelector, Summit } from "../modules/agenda";
+import { Button } from "website-components";
 
-import Card from "../components/Card";
-import LaptopIcon from "../components/icons/LaptopIcon";
-import MountainIcon from "../components/icons/MountainIcon";
 import Seo from "../components/Seo";
 
 const AgendaPage = () => {
@@ -26,7 +24,13 @@ const AgendaPage = () => {
       }
     }
   `);
-
+  const [view, setView] = useState(null);
+  const View =
+    view === "hackathon"
+      ? Hackathon
+      : view === "summit"
+      ? Summit
+      : ProgramSelector;
   return (
     <>
       <Seo title="Nextflow SUMMIT 2023 Agenda" />
@@ -60,69 +64,8 @@ const AgendaPage = () => {
           </div>
         </div>
       </div>
-      <Marquee
-        className="typo-body bg-green-300 text-black"
-        to="/call-for-abstracts/"
-        type="reset"
-      >
-        Call for abstracts now open
-      </Marquee>
       <div className="container-md text-white py-16">
-        <div className="text-center">
-          <h2 className="typo-h6 uppercase">Program</h2>
-        </div>
-        <div className="row">
-          <div className="col-full lg:col-6 mt-4">
-            <Card>
-              <div className="text-green-300">
-                <LaptopIcon />
-              </div>
-              <h3 className="typo-h4 mt-4">Hackathon | Oct 16-18</h3>
-              <p className="typo-intro text-green-300 mt-8">
-                2.5 days · 100 people · hackathon
-              </p>
-              <p className="typo-body mt-2">
-                The program will be available once the call for abstracts has
-                closed.
-              </p>
-              <div className="mt-4">
-                <span className="typo-body bg-gray-800 rounded-sm py-2 px-4">
-                  Program coming soon
-                </span>
-                {/*
-                <Button to="/register/" variant="secondary" size="md">
-                  View program
-                </Button>
-                 */}
-              </div>
-            </Card>
-          </div>
-          <div className="col-full lg:col-6 mt-8 md:mt-4">
-            <Card>
-              <div className="text-green-300">
-                <MountainIcon />
-              </div>
-              <h3 className="typo-h4 mt-4">Summit | Oct 18-20</h3>
-              <p className="typo-intro text-green-300 mt-8">
-                2.5 days · 200 people · talks, posters, and more
-              </p>
-              <p className="typo-body mt-2">
-                The program will be available once the call for abstracts has
-                closed.
-              </p>
-              <div className="mt-4">
-                <span className="typo-body bg-gray-800 rounded-sm py-2 px-4">
-                  Program coming soon
-                </span>
-                {/*
-                <Button to="/register/" variant="secondary" size="md">
-                  View program
-                </Button>
-                 */}
-              </div>
-            </Card>
-          </div>
-        </div>
+        <View setView={setView} />
       </div>
       <div className="bg-green-300 text-black">
         <div className="container-sm py-16 text-center">
