@@ -3,12 +3,11 @@ import { useStaticQuery, graphql } from "gatsby";
 import { GatsbyImage as Image, getImage } from "gatsby-plugin-image";
 import { Button } from "website-components";
 
-import Hackathon from "./Hackathon";
-import Summit from "./Summit";
+import EventView from "./EventView";
 import ProgramSelector from "./ProgramSelector";
 import Seo from "../../components/Seo";
 
-const AgendaPage = ({ view, date }) => {
+const AgendaPage = ({ showEvents, eventData }) => {
   const data = useStaticQuery(graphql`
     query {
       heroImage: file(relativePath: { eq: "photos/agenda-barcelona.jpg" }) {
@@ -25,12 +24,6 @@ const AgendaPage = ({ view, date }) => {
       }
     }
   `);
-  const View =
-    view === "hackathon"
-      ? Hackathon
-      : view === "summit"
-      ? Summit
-      : ProgramSelector;
   return (
     <>
       <Seo title="Nextflow SUMMIT 2023 Agenda" />
@@ -65,7 +58,7 @@ const AgendaPage = ({ view, date }) => {
         </div>
       </div>
       <div className="container-md text-white py-16" id="events">
-        <View date={date} />
+        {showEvents ? <EventView eventData={eventData} /> : <ProgramSelector />}
       </div>
       <div className="bg-green-300 text-black">
         <div className="container-sm py-16 text-center">
