@@ -152,6 +152,11 @@ const Header = ({ location }) => {
             </Button>
           </div>
           <div className="flex-1 py-16 overflow-y-auto text-center">
+            <div className="mt-4 first:mt-0">
+              <Link to={agendaPath} onClick={closeMenu} noBorder>
+                Agenda
+              </Link>
+            </div>
             {navs.map((nav) => (
               <div className="mt-4 first:mt-0" key={nav.path}>
                 <Link key={nav.path} to={resolvePath(nav.path)} onClick={closeMenu} noBorder>
