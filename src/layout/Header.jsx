@@ -1,22 +1,13 @@
+import React from 'react';
 import classnames from 'classnames';
 import { navigate } from 'gatsby';
-import React from 'react';
-import {
-    Button,
-    CloseIcon,
-    Link,
-    MenuIcon,
-} from 'website-components';
+import { Button, CloseIcon, Link, MenuIcon } from 'website-components';
 
 import Logo from '../images/logo.svg';
-
 import { useLayoutState, useLayoutActions } from './Context';
+import * as styles from './styles.module.css';
 
 const navs = [
-  {
-    title: 'Agenda',
-    path: '/agenda/',
-  },
   {
     title: 'Travel - Barcelona',
     bostonTitle: 'Travel - Boston',
@@ -55,7 +46,7 @@ const Header = ({ location }) => {
       return title;
     }
 
-    return (activeEvent === 'boston') ? bostonTitle : title;
+    return activeEvent === 'boston' ? bostonTitle : title;
   };
 
   return (
@@ -66,6 +57,35 @@ const Header = ({ location }) => {
             <img src={Logo} className="h-8 lg:h-10" alt="" />
           </Link>
           <div className="lg:flex items-center hidden">
+            <div className={styles.dropdown}>
+              <Link
+                to="/agenda/"
+                noBorder
+                className={classnames(
+                  'bg-black bg-opacity-10 font-body py-1 px-4 rounded-sm mr-px font-normal tracking-wide',
+                  {
+                    'text-white': !location.pathname.includes('/agenda/'),
+                    'text-green-300': location.pathname.includes('/agenda/'),
+                  }
+                )}
+              >
+                Agenda
+              </Link>
+              <div className={styles.dropdownContent}>
+                <Link
+                  to="/agenda/hackathon/#events"
+                  className={classnames({ [styles.active]: location.pathname.includes('/agenda/hackathon') })}
+                >
+                  Hackathon
+                </Link>
+                <Link
+                  to="/agenda/summit/#events"
+                  className={classnames({ [styles.active]: location.pathname.includes('/agenda/summit') })}
+                >
+                  SUMMIT
+                </Link>
+              </div>
+            </div>
             {navs.map((nav) => (
               <Link
                 key={nav.path}
@@ -103,7 +123,9 @@ const Header = ({ location }) => {
           </div>
           <div className="lg:hidden">
             <Button
-              onClick={() => { toggleMenu(); }}
+              onClick={() => {
+                toggleMenu();
+              }}
               noShadow
               className="text-white"
             >
@@ -112,47 +134,34 @@ const Header = ({ location }) => {
           </div>
         </div>
       </header>
-      <div className={classnames(
-        'bg-black text-white fixed inset-0 z-20 px-4 transition-all',
-        {
+      <div
+        className={classnames('bg-black text-white fixed inset-0 z-20 px-4 transition-all', {
           'invisible opacity-0': !menuOpen,
           'opacity-100 visible': menuOpen,
-        },
-      )}
+        })}
       >
         <div className="flex flex-col h-full">
           <div className="h-16 flex justify-between items-center">
-            <Link
-              to={resolvePath('/')}
-              onClick={closeMenu}
-              noBorder
-              className="block uppercase"
-            >
+            <Link to={resolvePath('/')} onClick={closeMenu} noBorder className="block uppercase">
               <img src={Logo} className="h-8 lg:h-10" alt="Nextflow SUMMIT 2023 logo" />
             </Link>
-            <Button
-              onClick={toggleMenu}
-              noShadow
-            >
+            <Button onClick={toggleMenu} noShadow>
               <CloseIcon />
             </Button>
           </div>
           <div className="flex-1 py-16 overflow-y-auto text-center">
             {navs.map((nav) => (
               <div className="mt-4 first:mt-0" key={nav.path}>
-                <Link
-                  key={nav.path}
-                  to={resolvePath(nav.path)}
-                  onClick={closeMenu}
-                  noBorder
-                >
+                <Link key={nav.path} to={resolvePath(nav.path)} onClick={closeMenu} noBorder>
                   {nav.title}
                 </Link>
               </div>
             ))}
             <div className="mt-4">
               <Button
-                onClick={() => { handleNav('/call-for-abstracts/') }}
+                onClick={() => {
+                  handleNav('/call-for-abstracts/');
+                }}
                 variant="secondary"
                 size="sm"
                 className="hover:opacity-80 ml-2"
@@ -163,7 +172,9 @@ const Header = ({ location }) => {
             </div>
             <div className="mt-4">
               <Button
-                onClick={() => { handleNav('/register/') }}
+                onClick={() => {
+                  handleNav('/register/');
+                }}
                 variant="accent"
                 size="sm"
                 className="hover:opacity-80 ml-2"
