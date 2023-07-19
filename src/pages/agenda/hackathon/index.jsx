@@ -55,7 +55,7 @@ const HackathonOct16 = () => {
       }
     }
   `);
-  return <AgendaPage showEvents showAllDays eventData={data?.events?.nodes} />;
+  return <AgendaPage showEvents showAllDays eventData={data?.events?.nodes} eventType="hackathon" />;
 };
 
 export default HackathonOct16;

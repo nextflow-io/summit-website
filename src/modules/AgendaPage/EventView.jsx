@@ -3,9 +3,7 @@ import React from 'react';
 import Tabs from '../../components/Tabs2';
 import EventList from './EventList';
 
-const EventView = ({ eventData, showAllDays }) => {
-  console.log('>>', eventData);
-
+const EventView = ({ eventData, showAllDays, eventType }) => {
   let loc = {};
   if (typeof window !== 'undefined') loc = window.location;
 
@@ -34,17 +32,28 @@ const EventView = ({ eventData, showAllDays }) => {
       <div className="row">
         <div className="col-full lg:col-9 lg:ml-1/12">
           <div>
-            <Tabs location={loc} anchor="#events">
+            <Tabs location={loc} anchor="#events" partialMatch>
               <Tabs.Item to="/agenda/hackathon/">Hackathon</Tabs.Item>
               <Tabs.Item to="/agenda/summit/">Summit</Tabs.Item>
             </Tabs>
           </div>
           <div className="mt-1">
             <Tabs location={loc} anchor="#events">
-              <Tabs.Item to="/agenda/hackathon/">All</Tabs.Item>
-              <Tabs.Item to="/agenda/hackathon/oct-16/">Mon, Oct 16</Tabs.Item>
-              <Tabs.Item to="/agenda/hackathon/oct-17/">Tue, Oct 17</Tabs.Item>
-              <Tabs.Item to="/agenda/hackathon/oct-18/">Wed, Oct 18</Tabs.Item>
+              {eventType === 'hackathon' ? (
+                <>
+                  <Tabs.Item to="/agenda/hackathon/">All</Tabs.Item>
+                  <Tabs.Item to="/agenda/hackathon/oct-16/">Mon, Oct 16</Tabs.Item>
+                  <Tabs.Item to="/agenda/hackathon/oct-17/">Tue, Oct 17</Tabs.Item>
+                  <Tabs.Item to="/agenda/hackathon/oct-18/">Wed, Oct 18</Tabs.Item>
+                </>
+              ) : (
+                <>
+                  <Tabs.Item to="/agenda/summit/">All</Tabs.Item>
+                  <Tabs.Item to="/agenda/summit/oct-18/">Mon, Oct 18</Tabs.Item>
+                  <Tabs.Item to="/agenda/summit/oct-19/">Tue, Oct 19</Tabs.Item>
+                  <Tabs.Item to="/agenda/summit/oct-20/">Wed, Oct 20</Tabs.Item>
+                </>
+              )}
             </Tabs>
           </div>
         </div>

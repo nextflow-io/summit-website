@@ -7,7 +7,7 @@ import EventView from './EventView';
 import ProgramSelector from './ProgramSelector';
 import Seo from '../../components/Seo';
 
-const AgendaPage = ({ showEvents, eventData, showAllDays }) => {
+const AgendaPage = ({ showEvents, eventData, showAllDays, eventType }) => {
   const data = useStaticQuery(graphql`
     query {
       heroImage: file(relativePath: { eq: "photos/agenda-barcelona.jpg" }) {
@@ -25,7 +25,7 @@ const AgendaPage = ({ showEvents, eventData, showAllDays }) => {
   return (
     <>
       <Seo title="Nextflow SUMMIT 2023 Agenda" />
-      <div className="py-20 bg-gray-900 text-white">
+      <div className="pt-20 bg-gray-900 text-white">
         <div className="container-lg">
           <div className="row lg:flex-nowrap">
             <div className="col-full lg:col-6">
@@ -52,8 +52,12 @@ const AgendaPage = ({ showEvents, eventData, showAllDays }) => {
           </div>
         </div>
       </div>
-      <div className="container-md text-white py-16" id="events">
-        {showEvents ? <EventView eventData={eventData} showAllDays={showAllDays} /> : <ProgramSelector />}
+      <div className="container-md text-white pt-36 pb-16" id="events">
+        {showEvents ? (
+          <EventView eventData={eventData} showAllDays={showAllDays} eventType={eventType} />
+        ) : (
+          <ProgramSelector />
+        )}
       </div>
       <div className="bg-green-300 text-black">
         <div className="container-sm py-16 text-center">
