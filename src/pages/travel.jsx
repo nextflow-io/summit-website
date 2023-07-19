@@ -11,6 +11,7 @@ import MountainIcon from '../components/icons/MountainIcon';
 import LocationMap from '../components/LocationMap';
 import RegisterCTA from '../components/RegisterCTA';
 import Seo from '../components/Seo';
+import LocalInformation from '../modules/LocalInformation';
 
 const TravelPage = () => {
   const data = useStaticQuery(graphql`
@@ -165,7 +166,7 @@ const TravelPage = () => {
       </div>
       <RegisterCTA />
       <div className="container-lg text-white py-16">
-        <h2 className="typo-h2">Accommodation</h2>
+        <h2 className="typo-h3">Accommodation</h2>
         <p className="typo-body mt-4">Hotels with promotion code: NEXTFLOW23 for dates: 16-20 October 2023</p>
         <div className="row">
           {data.promotedAccommodations.nodes.map((acc, i) => (
@@ -182,6 +183,10 @@ const TravelPage = () => {
             </div>
           ))}
         </div>
+      </div>
+      <div className="container-lg text-white py-16">
+        <h2 className="typo-h3">Local information</h2>
+        <LocalInformation />
       </div>
       <div className="container-lg py-16">
         <Card paddingClassName="p-0">
