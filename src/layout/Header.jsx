@@ -160,7 +160,7 @@ const Header = ({ location }) => {
             {navs.map((nav) => (
               <div className="mt-4 first:mt-0" key={nav.path}>
                 <Link key={nav.path} to={resolvePath(nav.path)} onClick={closeMenu} noBorder>
-                  {nav.title}
+                  {resolveTitle(nav.title, nav.bostonTitle)}
                 </Link>
               </div>
             ))}
