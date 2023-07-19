@@ -54,9 +54,15 @@ const AgendaPage = ({ showEvents, eventData, showAllDays, eventType }) => {
       </div>
       <div className="container-md text-white pt-36 pb-16" id="events">
         {showEvents ? (
-          <EventView eventData={eventData} showAllDays={showAllDays} eventType={eventType} />
+          <>
+            <h2 className="typo-h5 uppercase text-center mb-4">Agenda</h2>
+            <EventView eventData={eventData} showAllDays={showAllDays} eventType={eventType} />
+          </>
         ) : (
-          <ProgramSelector />
+          <>
+            <h2 className="typo-h5 uppercase text-center mb-4">Program</h2>
+            <ProgramSelector />
+          </>
         )}
       </div>
       <div className="bg-green-300 text-black">

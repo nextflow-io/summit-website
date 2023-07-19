@@ -60,7 +60,14 @@ const EventView = ({ eventData, showAllDays, eventType }) => {
       </div>
       {allEventData.map((data, i) => (
         <div key={i} className="pb-10">
-          {!!data.title && <h3 className="typo-h4 mt-10">{data.title}</h3>}
+          {!!data.title && (
+            <div className="row">
+              <div className="hidden lg:block col-1" />
+              <div className="col-full lg:col-9">
+                <h3 className="typo-h5 mt-10 text-green-300">{data.title}</h3>
+              </div>
+            </div>
+          )}
           <EventList eventData={data.items} />
         </div>
       ))}

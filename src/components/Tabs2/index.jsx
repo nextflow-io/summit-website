@@ -28,10 +28,10 @@ const Item = ({ children, to, inactive }) => {
       to={url}
       noBorder
       className={classnames(
-        'typo-small block border border-green-600 mx-px first:ml-0 last:mr-0 first:rounded-l-sm last:rounded-r-sm px-4 py-1',
+        'typo-small block border border-green-300 mx-px first:ml-0 last:mr-0 first:rounded-l-sm last:rounded-r-sm px-4 py-1',
         {
-          'bg-black text-green-600 hover:bg-gray-800': !isCurrentPage || inactive,
-          'bg-green-600 text-white': isCurrentPage && !inactive,
+          'bg-black text-green-300 hover:bg-gray-800': !isCurrentPage || inactive,
+          'bg-green-300 text-white': isCurrentPage && !inactive,
         }
       )}
     >

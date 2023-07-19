@@ -34,7 +34,7 @@ const EventList = ({ eventData }) => {
   };
   return (
     <div className="row">
-      <div className="hidden lg:block col-1">
+      <div className="hidden lg:block col-1 pb-10">
         <div className="h-full w-px border-l border-white border-dashed mx-auto mt-4" />
         <span className="block typo-body text-center">end</span>
       </div>

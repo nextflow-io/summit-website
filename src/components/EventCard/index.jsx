@@ -21,7 +21,9 @@ const EventCard = ({ event, hidden, expanded, isExpandable, onExpand, isChild, d
       {!disableTimeline && (
         <>
           {!isChild && (
-            <span className="typo-body bg-gray-900 absolute left-0 -top-px -translate-x-24">{event.time}</span>
+            <span className="typo-body bg-gray-900 absolute left-0 -top-px -translate-x-24 hidden lg:inline">
+              {event.time}
+            </span>
           )}
           {isChild && (
             <>
@@ -34,7 +36,7 @@ const EventCard = ({ event, hidden, expanded, isExpandable, onExpand, isChild, d
         </>
       )}
       <div className="flex items-center justify-between mb-4">
-        <p className="typo-intro text-green-600">{event.timeframe}</p>
+        <p className="typo-intro text-green-300">{event.timeframe}</p>
         {event.tags && (
           <div className="hidden lg:flex">
             {event.tags.map((tag, i) => (
@@ -58,7 +60,7 @@ const EventCard = ({ event, hidden, expanded, isExpandable, onExpand, isChild, d
       {!isExpandable && (
         <h3 className="typo-h4 mb-4">
           {event.hasPage && (
-            <Link to={`/program/${event.slug}/`} noBorder className="hover:text-green-600">
+            <Link to={`/program/${event.slug}/`} noBorder className="hover:text-green-300">
               {event.title}
             </Link>
           )}
@@ -77,7 +79,7 @@ const EventCard = ({ event, hidden, expanded, isExpandable, onExpand, isChild, d
                   imgClassName="rounded-full"
                   className="mr-4 h-8 w-8"
                 />
-                <span className="typo-intro text-green-600">{event.speakers[0]?.name}</span>
+                <span className="typo-intro text-green-300">{event.speakers[0]?.name}</span>
               </div>
             )}
             {event.speakers.length === 2 && (
@@ -94,19 +96,21 @@ const EventCard = ({ event, hidden, expanded, isExpandable, onExpand, isChild, d
                   imgClassName="rounded-full"
                   className="-ml-2 mr-4 h-8 w-8"
                 />
-                <span className="typo-intro text-green-600">
+                <span className="typo-intro text-green-300">
                   {`${event.speakers[0]?.name} & ${event.speakers[1]?.name}`}
                 </span>
               </div>
             )}
             {event.speakers.length > 2 && (
-              <div className="flex items-center">
-                <div className="h-8 w-8 bg-indigo-600 rounded-full" />
-                <div className="h-8 w-8 bg-green-600 rounded-full -ml-2 mr-4" />
-                <span className="typo-intro text-green-600">Several Speakers</span>
-              </div>
+              <>
+                <div className="flex items-center">
+                  <div className="h-8 w-8 bg-indigo-600 rounded-full" />
+                  <div className="h-8 w-8 bg-green-300 rounded-full -ml-2 mr-4" />
+                  <span className="typo-intro text-green-300">Several Speakers</span>
+                </div>
+                <span className="hidden lg:block mx-2">|</span>
+              </>
             )}
-            <span className="hidden lg:block mx-2">|</span>
           </>
         )}
         <p className="typo-body">{`${event.date}, ${event.time} CET`}</p>

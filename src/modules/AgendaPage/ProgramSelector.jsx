@@ -8,9 +8,6 @@ import { Button } from 'website-components';
 const ProgramSelector = () => {
   return (
     <>
-      <div className="text-center">
-        <h2 className="typo-h6 uppercase">Program</h2>
-      </div>
       <div className="row">
         <div className="col-full lg:col-6 mt-4">
           <Card>
