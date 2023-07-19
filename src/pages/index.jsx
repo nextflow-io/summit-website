@@ -23,6 +23,7 @@ import LogoMicrosoft from '../images/logos/microsoft.svg';
 import LogoPixelgen from '../images/logos/pixelgen.svg';
 import LogoSeqera from '../images/logos/seqera.svg';
 import LogoZS from '../images/logos/ZS.svg';
+import ContactUs from '../components/ContactUs';
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -121,10 +122,13 @@ const IndexPage = () => {
               <h3 className="typo-h4 mt-4">
                 Hackathon | Oct 16-18
               </h3>
-              <p className="typo-body mt-4">
+              <p className="typo-body my-4">
                 Join our hackathon to develop nf-core together. It will be held in Barcelona and on Gather (virtually)
                 prior to the Nextflow SUMMIT.
               </p>
+							<Button to="/agenda/hackathon#events" variant="secondary" size="md">
+                View program
+              </Button>
             </div>
           </Reveal>
           <Reveal className="col-full lg:col-6 mt-8 md:mt-4">
@@ -135,10 +139,13 @@ const IndexPage = () => {
               <h3 className="typo-h4 mt-4">
                 Summit | Oct 18-20
               </h3>
-              <p className="typo-body mt-4">
+              <p className="typo-body my-4">
                 A showcase of the latest developments and innovations from the Nextflow world held in Barcelona and
                 streamed online.
               </p>
+							<Button to="/agenda/summit#events" variant="secondary" size="md">
+                View program
+              </Button>
             </div>
           </Reveal>
           <Reveal className="col-full mt-8">
@@ -288,6 +295,7 @@ const IndexPage = () => {
         </div>
       </div>
       <EventCTA />
+			<ContactUs />
     </>
   );
 };

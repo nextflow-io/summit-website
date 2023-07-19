@@ -1,0 +1,10 @@
+.container {
+  background: #181818;
+}
+.container a {
+  border: none;
+  font-weight: 200;
+}
+.container a:hover {
+  color: #10c09d;
+}

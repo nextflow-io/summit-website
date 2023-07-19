@@ -13,6 +13,7 @@ import LogoMicrosoft from '../images/logos/microsoft.svg';
 import LogoPixelgen from '../images/logos/pixelgen.svg';
 import LogoSeqera from '../images/logos/seqera.svg';
 import LogoZS from '../images/logos/ZS.svg';
+import ContactUs from '../components/ContactUs';
 
 const SponsorsPage = () => {
   const data = useStaticQuery(graphql`
@@ -99,6 +100,7 @@ const SponsorsPage = () => {
           </div>
         </div>
       </div>
+			<ContactUs />
     </>
   );
 };

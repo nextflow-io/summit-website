@@ -1,5 +1,5 @@
 const siteUrl = `https://summit.nextflow.io/`;
-const path = require('path');
+const path = require("path");
 
 module.exports = {
   siteMetadata: {
@@ -7,7 +7,7 @@ module.exports = {
     description: `Join us at the Nextflow SUMMIT 2023 for the latest developments and innovations from the Nextflow world.`,
     author: `@nextflowio`,
     siteUrl: siteUrl,
-    image: `/images/share-image-barcelona.jpg`,
+    image: `/images/share-image.jpg`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -16,6 +16,21 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+        ignore: [`**/.*`], // ignore files starting with a dot
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `assets`,
+        path: `${__dirname}/static/assets`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `people`,
+        path: `${__dirname}/src/content/people`,
       },
     },
     {
@@ -25,10 +40,31 @@ module.exports = {
         path: `${__dirname}/src/content/accommodations`,
       },
     },
-    'gatsby-plugin-image',
-    'gatsby-transformer-yaml',
     {
-      resolve: 'gatsby-plugin-sharp',
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `events`,
+        path: `${__dirname}/src/content/events`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `talks`,
+        path: `${__dirname}/src/content/talks`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posters`,
+        path: `${__dirname}/src/content/posters`,
+      },
+    },
+    "gatsby-plugin-image",
+    "gatsby-transformer-yaml",
+    {
+      resolve: "gatsby-plugin-sharp",
       options: {
         defaults: {
           formats: [`auto`, `webp`],
@@ -36,23 +72,24 @@ module.exports = {
           quality: 100,
           breakpoints: [750, 1080, 1366, 1920],
           backgroundColor: `transparent`,
-        }
-      }
-    },
-    'gatsby-transformer-sharp',
-    {
-        resolve: `gatsby-plugin-layout`,
-        options: {
-            component: require.resolve(`./src/layout/Layout.jsx`),
         },
+      },
+    },
+    "gatsby-transformer-sharp",
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/layout/Layout.jsx`),
+      },
     },
     {
-      resolve: 'gatsby-plugin-mdx',
+      resolve: "gatsby-plugin-mdx",
       options: {
-        extensions: ['.mdx', '.md'],
+        extensions: [".mdx", ".md"],
         gatsbyRemarkPlugins: [
+          "gatsby-remark-relative-images-v2",
           {
-            resolve: 'gatsby-remark-images',
+            resolve: "gatsby-remark-images",
             options: {
               maxWidth: 907,
               quality: 100,
@@ -60,9 +97,9 @@ module.exports = {
               ignoreFileExtensions: [],
             },
           },
-          'gatsby-remark-copy-linked-files',
-          'gatsby-remark-smartypants',
-          'gatsby-remark-external-links',
+          "gatsby-remark-copy-linked-files",
+          "gatsby-remark-smartypants",
+          "gatsby-remark-external-links",
         ],
       },
     },
@@ -81,14 +118,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingIds: [
-          "G-92P10F5GQ1"
-        ]
-      }
+        trackingIds: ["G-92P10F5GQ1"],
+      },
     },
-    'gatsby-plugin-postcss',
+    "gatsby-plugin-postcss",
     {
-      resolve: 'gatsby-plugin-sitemap',
+      resolve: "gatsby-plugin-sitemap",
       options: {
         query: `
           {
@@ -100,26 +135,24 @@ module.exports = {
           }
         `,
         resolveSiteUrl: () => siteUrl,
-        resolvePages: ({
-          allSitePage: { nodes: allPages },
-        }) => {
-          return allPages.map(page => {
-            return { ...page }
-          })
+        resolvePages: ({ allSitePage: { nodes: allPages } }) => {
+          return allPages.map((page) => {
+            return { ...page };
+          });
         },
         serialize: ({ path }) => {
           return {
             url: path,
-          }
+          };
         },
       },
     },
     {
-      resolve: 'gatsby-plugin-canonical-urls',
+      resolve: "gatsby-plugin-canonical-urls",
       options: {
         siteUrl: siteUrl,
         stripQueryString: true,
       },
     },
   ],
-}
+};

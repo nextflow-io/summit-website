@@ -12,6 +12,7 @@ import Card from '../../components/Card';
 import LaptopIcon from '../../components/icons/LaptopIcon';
 import MountainIcon from '../../components/icons/MountainIcon';
 import Seo from '../../components/Seo';
+import ContactUs from '../../components/ContactUs';
 
 const AgendaPage = () => {
   const data = useStaticQuery(graphql`
@@ -167,6 +168,7 @@ const AgendaPage = () => {
           </div>
         </div>
       </div>
+			<ContactUs />
     </>
   );
 };
