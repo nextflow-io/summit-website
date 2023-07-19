@@ -1,8 +1,8 @@
-import classnames from "classnames";
-import { GatsbyImage as Image, getImage } from "gatsby-plugin-image";
-import React from "react";
+import classnames from 'classnames';
+import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
+import React from 'react';
 
-import { Button, Link, SlackIcon } from "website-components";
+import { Button, Link, SlackIcon } from 'website-components';
 
 const PosterCard = ({ poster }) => {
   const image = poster.speakers?.[0]?.image;
@@ -20,19 +20,14 @@ const PosterCard = ({ poster }) => {
         </Link>
         <div className="px-4 py-6 bg-black rounded-b-sm w-full group-hover:bg-gray-800">
           <h4 className="typo-h5">
-            <span className="bg-gray-800 typo-small rounded-full px-4 py-1 ml-2 float-right">
-              #{poster.poster_id}
-            </span>
+            <span className="bg-gray-800 typo-small rounded-full px-4 py-1 ml-2 float-right">#{poster.poster_id}</span>
             <Link to={`/posters/${poster.slug}/`} noBorder>
               {poster.title}
             </Link>
           </h4>
           <div className="inline-flex mt-2">
             {poster.tags.map((tag, i) => (
-              <span
-                className="bg-gray-800 typo-small rounded-full px-4 py-1 uppercase mr-2"
-                key={i}
-              >
+              <span className="bg-gray-800 typo-small rounded-full px-4 py-1 uppercase mr-2" key={i}>
                 {tag}
               </span>
             ))}
@@ -47,9 +42,7 @@ const PosterCard = ({ poster }) => {
                     imgClassName="rounded-full"
                     className="mr-4 h-8 w-8"
                   />
-                  <span className="typo-intro text-green-600">
-                    {poster.speakers[0].name}
-                  </span>
+                  <span className="typo-intro text-green-600">{poster.speakers[0].name}</span>
                 </div>
               )}
               {poster.speakers.length === 2 && (
@@ -79,9 +72,7 @@ const PosterCard = ({ poster }) => {
                 <div className="flex items-center mt-4">
                   <div className="h-8 w-8 bg-indigo-600 rounded-full" />
                   <div className="h-8 w-8 bg-green-600 rounded-full -ml-2 mr-4" />
-                  <span className="typo-intro text-green-600">
-                    Several Speakers
-                  </span>
+                  <span className="typo-intro text-green-600">Several Speakers</span>
                 </div>
               )}
             </>

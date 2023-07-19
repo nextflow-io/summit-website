@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import EventCard from "../../components/EventCard";
-import Tabs from "../../components/Tabs2";
+import EventCard from '../../components/EventCard';
+import Tabs from '../../components/Tabs2';
 
 const EventView = ({ eventData }) => {
-  const [activeTag, setActiveTag] = useState("");
-  const [expandedEvent, setExpandedEvent] = useState("");
+  const [activeTag, setActiveTag] = useState('');
+  const [expandedEvent, setExpandedEvent] = useState('');
   const isFiltered = (event) => {
-    if (activeTag === "") {
+    if (activeTag === '') {
       return false;
     }
 
@@ -28,14 +28,14 @@ const EventView = ({ eventData }) => {
 
   const expand = (event) => {
     if (event.id === expandedEvent) {
-      setExpandedEvent("");
+      setExpandedEvent('');
     } else {
       setExpandedEvent(event.id);
     }
   };
 
   let loc = {};
-  if (typeof window !== "undefined") loc = window.location;
+  if (typeof window !== 'undefined') loc = window.location;
 
   return (
     <div className="container-lg">
@@ -78,12 +78,7 @@ const EventView = ({ eventData }) => {
                   {event.events && (
                     <div>
                       {event.events.map((childEvent, i) => (
-                        <EventCard
-                          key={i}
-                          event={childEvent}
-                          hidden={isFiltered(childEvent)}
-                          isChild
-                        />
+                        <EventCard key={i} event={childEvent} hidden={isFiltered(childEvent)} isChild />
                       ))}
                     </div>
                   )}

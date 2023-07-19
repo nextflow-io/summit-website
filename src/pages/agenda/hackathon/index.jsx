@@ -1,15 +1,12 @@
-import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
+import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
 
-import AgendaPage from "../../../modules/AgendaPage";
+import AgendaPage from '../../../modules/AgendaPage';
 
 const HackathonOct16 = () => {
   const data = useStaticQuery(graphql`
     query {
-      events: allEvent(
-        filter: { date: { eq: "Oct 16, 2023" }, isChild: { ne: true } }
-        sort: { datetime: ASC }
-      ) {
+      events: allEvent(filter: { date: { eq: "Oct 16, 2023" }, isChild: { ne: true } }, sort: { datetime: ASC }) {
         nodes {
           slug
           id

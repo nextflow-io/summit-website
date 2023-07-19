@@ -1,2 +1,2 @@
-import AgendaPage from "../../modules/AgendaPage";
+import AgendaPage from '../../modules/AgendaPage';
 export default AgendaPage;

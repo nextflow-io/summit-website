@@ -1,20 +1,14 @@
-import { graphql } from "gatsby";
-import { GatsbyImage as Image, getImage } from "gatsby-plugin-image";
-import { MDXRenderer } from "gatsby-plugin-mdx";
-import React from "react";
+import { graphql } from 'gatsby';
+import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
+import React from 'react';
 
-import {
-  AngleLeftIcon,
-  DownloadIcon,
-  Link,
-  Button,
-  SlackIcon,
-} from "website-components";
+import { AngleLeftIcon, DownloadIcon, Link, Button, SlackIcon } from 'website-components';
 
-import GatherIcon from "../components/icons/GatherIcon";
-import CustomMDXProvider from "../components/CustomMDXProvider";
-import Seo from "../components/Seo";
-import SpeakerCard from "../components/SpeakerCard";
+import GatherIcon from '../components/icons/GatherIcon';
+import CustomMDXProvider from '../components/CustomMDXProvider';
+import Seo from '../components/Seo';
+import SpeakerCard from '../components/SpeakerCard';
 
 const PosterPage = ({ data }) => {
   const { poster, posterImage } = data;
@@ -41,9 +35,7 @@ const PosterPage = ({ data }) => {
                       imgClassName="rounded-full"
                       className="mr-4 h-8 w-8"
                     />
-                    <span className="typo-intro text-green-600">
-                      {poster.speakers[0]?.name}
-                    </span>
+                    <span className="typo-intro text-green-600">{poster.speakers[0]?.name}</span>
                   </div>
                 )}
                 {poster.speakers.length === 2 && (
@@ -73,18 +65,13 @@ const PosterPage = ({ data }) => {
                   <div className="flex items-center">
                     <div className="h-8 w-8 bg-indigo-600 rounded-full" />
                     <div className="h-8 w-8 bg-green-600 rounded-full -ml-2 mr-4" />
-                    <span className="typo-intro text-green-600">
-                      Several Speakers
-                    </span>
+                    <span className="typo-intro text-green-600">Several Speakers</span>
                   </div>
                 )}
                 <span className="hidden lg:block mx-2">|</span>
                 <div className="inline-flex items-center">
                   <span>
-                    <Link
-                      to="/stream/"
-                      className="inline typo-body text-gray-600"
-                    >
+                    <Link to="/stream/" className="inline typo-body text-gray-600">
                       Gather
                     </Link>
                   </span>
@@ -94,17 +81,12 @@ const PosterPage = ({ data }) => {
             )}
           </div>
           <h1 className="typo-h2 text-green-600 mb-4 mt-8">
-            <span className="bg-gray-800 rounded-full px-4 py-1 ml-2 float-right">
-              #{poster.poster_id}
-            </span>
+            <span className="bg-gray-800 rounded-full px-4 py-1 ml-2 float-right">#{poster.poster_id}</span>
             {poster.title}
           </h1>
           <div className="flex mt-8 md:mt-auto">
             <Button
-              to={
-                "https://nextflow.slack.com/channels/summit-2022-poster-" +
-                poster.poster_id
-              }
+              to={'https://nextflow.slack.com/channels/summit-2022-poster-' + poster.poster_id}
               variant="accent"
               size="sm"
               arrow
@@ -115,10 +97,7 @@ const PosterPage = ({ data }) => {
           </div>
           <div className="flex mt-4">
             {poster.tags.map((tag, i) => (
-              <div
-                className="typo-small rounded-full px-4 py-1 bg-gray-800 uppercase mr-2"
-                key={i}
-              >
+              <div className="typo-small rounded-full px-4 py-1 bg-gray-800 uppercase mr-2" key={i}>
                 {tag}
               </div>
             ))}
@@ -153,12 +132,7 @@ const PosterPage = ({ data }) => {
                   <div>
                     <h4 className="typo-h5">
                       {poster.poster && (
-                        <Link
-                          to={poster.poster.publicURL}
-                          className="hover:text-green-600"
-                          noBorder
-                          target="_blank"
-                        >
+                        <Link to={poster.poster.publicURL} className="hover:text-green-600" noBorder target="_blank">
                           {poster.title}
                         </Link>
                       )}
@@ -166,10 +140,7 @@ const PosterPage = ({ data }) => {
                     </h4>
                     <div className="inline-flex mt-2">
                       {poster.tags.map((tag, i) => (
-                        <span
-                          className="bg-gray-800 typo-small rounded-full px-4 py-1 uppercase mr-2"
-                          key={i}
-                        >
+                        <span className="bg-gray-800 typo-small rounded-full px-4 py-1 uppercase mr-2" key={i}>
                           {tag}
                         </span>
                       ))}
@@ -178,10 +149,7 @@ const PosterPage = ({ data }) => {
                       <>
                         {poster.speakers.length === 1 && (
                           <div className="flex items-center mt-4">
-                            <Link
-                              to={poster.speakers[0].slug}
-                              resetClassName="mb-0"
-                            >
+                            <Link to={poster.speakers[0].slug} resetClassName="mb-0">
                               <Image
                                 image={getImage(poster.speakers[0]?.image)}
                                 alt={poster.speakers[0].name}
@@ -189,10 +157,7 @@ const PosterPage = ({ data }) => {
                                 className="mr-4 h-8 w-8"
                               />
                             </Link>
-                            <Link
-                              to={poster.speakers[0].slug}
-                              className="border-none typo-intro text-green-600"
-                            >
+                            <Link to={poster.speakers[0].slug} className="border-none typo-intro text-green-600">
                               {poster.speakers[0].name}
                             </Link>
                           </div>
@@ -220,21 +185,14 @@ const PosterPage = ({ data }) => {
                           <div className="flex items-center mt-4">
                             <div className="h-8 w-8 bg-indigo-600 rounded-full" />
                             <div className="h-8 w-8 bg-green-600 rounded-full -ml-2 mr-4" />
-                            <span className="typo-intro text-green-600">
-                              Several Speakers
-                            </span>
+                            <span className="typo-intro text-green-600">Several Speakers</span>
                           </div>
                         )}
                       </>
                     )}
                   </div>
                   {poster.poster && (
-                    <Button
-                      to={poster.poster.publicURL}
-                      variant="accent"
-                      size="sm"
-                      target="_blank"
-                    >
+                    <Button to={poster.poster.publicURL} variant="accent" size="sm" target="_blank">
                       <DownloadIcon className="h-6 w-6 mr-2" />
                       Download
                     </Button>
@@ -245,11 +203,7 @@ const PosterPage = ({ data }) => {
           </div>
           <div className="mt-8">
             {poster.speakers?.map((speaker, i) => (
-              <SpeakerCard
-                speaker={speaker}
-                className="mt-8 first:mt-0"
-                key={i}
-              />
+              <SpeakerCard speaker={speaker} className="mt-8 first:mt-0" key={i} />
             ))}
           </div>
         </div>

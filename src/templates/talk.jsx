@@ -1,21 +1,15 @@
-import { graphql } from "gatsby";
-import { GatsbyImage as Image, getImage } from "gatsby-plugin-image";
-import { MDXRenderer } from "gatsby-plugin-mdx";
-import React from "react";
+import { graphql } from 'gatsby';
+import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
+import React from 'react';
 
-import CustomMDXProvider from "../components/CustomMDXProvider";
-import Seo from "../components/Seo";
-import YoutubeIframe from "../components/YoutubeIframe";
-import SpeakerCard from "../components/SpeakerCard";
-import PlaceholderRectangle from "../images/visuals/placeholder-rectangle.svg";
+import CustomMDXProvider from '../components/CustomMDXProvider';
+import Seo from '../components/Seo';
+import YoutubeIframe from '../components/YoutubeIframe';
+import SpeakerCard from '../components/SpeakerCard';
+import PlaceholderRectangle from '../images/visuals/placeholder-rectangle.svg';
 
-import {
-  AngleLeftIcon,
-  Button,
-  Link,
-  LocationIcon,
-  YoutubeRectangleIcon,
-} from "website-components";
+import { AngleLeftIcon, Button, Link, LocationIcon, YoutubeRectangleIcon } from 'website-components';
 
 const TalkPage = ({ data }) => {
   const { talk } = data;
@@ -42,9 +36,7 @@ const TalkPage = ({ data }) => {
                       imgClassName="rounded-full"
                       className="mr-4 h-8 w-8"
                     />
-                    <span className="typo-intro text-green-600">
-                      {talk.speakers[0].name}
-                    </span>
+                    <span className="typo-intro text-green-600">{talk.speakers[0].name}</span>
                   </div>
                 )}
                 {talk.speakers.length === 2 && (
@@ -70,9 +62,7 @@ const TalkPage = ({ data }) => {
                   <div className="flex items-center">
                     <div className="h-8 w-8 bg-indigo-600 rounded-full" />
                     <div className="h-8 w-8 bg-green-600 rounded-full -ml-2 mr-4" />
-                    <span className="typo-intro text-green-600">
-                      Several Speakers
-                    </span>
+                    <span className="typo-intro text-green-600">Several Speakers</span>
                   </div>
                 )}
                 <span className="hidden lg:block mx-2">|</span>
@@ -94,10 +84,7 @@ const TalkPage = ({ data }) => {
               <>
                 <span className="hidden lg:block mx-2">|</span>
                 <span>
-                  <Link
-                    to={talk.youtubeUrl}
-                    className="typo-body text-gray-600"
-                  >
+                  <Link to={talk.youtubeUrl} className="typo-body text-gray-600">
                     {talk.youtube}
                   </Link>
                   <YoutubeRectangleIcon className="inline-block h-6 w-6 ml-2 text-gray-600" />
@@ -108,10 +95,7 @@ const TalkPage = ({ data }) => {
           <h1 className="typo-h2 text-green-600 mb-4 mt-8">{talk.title}</h1>
           <div className="flex mt-8 md:mt-auto">
             {talk.tags.map((tag, i) => (
-              <div
-                className="typo-small rounded-full px-4 py-1 bg-gray-800 uppercase mr-2"
-                key={i}
-              >
+              <div className="typo-small rounded-full px-4 py-1 bg-gray-800 uppercase mr-2" key={i}>
                 {tag}
               </div>
             ))}
@@ -129,23 +113,14 @@ const TalkPage = ({ data }) => {
               >
                 <YoutubeIframe id={talk.youtubeUrl}></YoutubeIframe>
               </div>
-              <Button
-                to={talk.youtubeUrl}
-                variant="secondary"
-                size="sm"
-                className="my-3"
-              >
+              <Button to={talk.youtubeUrl} variant="secondary" size="sm" className="my-3">
                 {talk.youtube}
                 <YoutubeRectangleIcon className="inline-block h-6 w-6 ml-2" />
               </Button>
             </>
           )}
           {talk.speakers?.map((speaker, i) => (
-            <SpeakerCard
-              speaker={speaker}
-              className="mt-8 first:mt-0"
-              key={i}
-            />
+            <SpeakerCard speaker={speaker} className="mt-8 first:mt-0" key={i} />
           ))}
         </div>
       </div>

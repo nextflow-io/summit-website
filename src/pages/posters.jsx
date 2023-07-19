@@ -1,12 +1,12 @@
-import classnames from "classnames";
-import { useStaticQuery, graphql } from "gatsby";
-import React, { useState } from "react";
+import classnames from 'classnames';
+import { useStaticQuery, graphql } from 'gatsby';
+import React, { useState } from 'react';
 
-import { Button } from "website-components";
+import { Button } from 'website-components';
 
-import GatherIcon from "../components/icons/GatherIcon";
-import Seo from "../components/Seo";
-import PosterCard from "../components/PosterCard";
+import GatherIcon from '../components/icons/GatherIcon';
+import Seo from '../components/Seo';
+import PosterCard from '../components/PosterCard';
 
 const PostersPage = () => {
   const data = useStaticQuery(graphql`
@@ -42,10 +42,10 @@ const PostersPage = () => {
     }
   `);
 
-  const [activeTag, setActiveTag] = useState("");
+  const [activeTag, setActiveTag] = useState('');
 
   const isFiltered = (poster) => {
-    if (activeTag === "") {
+    if (activeTag === '') {
       return false;
     }
 
@@ -65,16 +65,9 @@ const PostersPage = () => {
         <div className="container-lg text-center">
           <h1 className="typo-h2 mb-4">Posters</h1>
           <p className="typo-body max-w-xl mb-6 mx-auto">
-            Chat to the author either in person, on Gather, or on Slack during
-            poster sessions and coffee breaks.
+            Chat to the author either in person, on Gather, or on Slack during poster sessions and coffee breaks.
           </p>
-          <Button
-            to="/stream/"
-            variant="accent"
-            size="md"
-            arrow
-            className="mx-3 mb-3"
-          >
+          <Button to="/stream/" variant="accent" size="md" arrow className="mx-3 mb-3">
             <GatherIcon className="inline-block h-6 w-6 mr-3" />
             Join Online
           </Button>
@@ -88,7 +81,7 @@ const PostersPage = () => {
                 {posters.map((poster, i) => (
                   <div
                     key={i}
-                    className={classnames("col-full lg:col-6 mt-4", {
+                    className={classnames('col-full lg:col-6 mt-4', {
                       hidden: isFiltered(poster),
                     })}
                   >
@@ -101,15 +94,12 @@ const PostersPage = () => {
               <div>
                 <button
                   aria-label="All topics"
-                  className={classnames(
-                    "typo-small rounded-full px-4 py-1 uppercase mr-2",
-                    {
-                      "bg-green-600": activeTag === "",
-                      "bg-gray-800": activeTag !== "",
-                    }
-                  )}
+                  className={classnames('typo-small rounded-full px-4 py-1 uppercase mr-2', {
+                    'bg-green-600': activeTag === '',
+                    'bg-gray-800': activeTag !== '',
+                  })}
                   onClick={() => {
-                    setActiveTag("");
+                    setActiveTag('');
                   }}
                 >
                   All topics
@@ -119,13 +109,10 @@ const PostersPage = () => {
                 <div className="mt-2" key={i}>
                   <button
                     aria-label={tag}
-                    className={classnames(
-                      "typo-small rounded-full px-4 py-1 uppercase mr-2",
-                      {
-                        "bg-green-600": activeTag === tag,
-                        "bg-gray-800": activeTag !== tag,
-                      }
-                    )}
+                    className={classnames('typo-small rounded-full px-4 py-1 uppercase mr-2', {
+                      'bg-green-600': activeTag === tag,
+                      'bg-gray-800': activeTag !== tag,
+                    })}
                     onClick={() => {
                       setActiveTag(tag);
                     }}

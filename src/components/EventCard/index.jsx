@@ -1,34 +1,17 @@
-import classnames from "classnames";
-import { GatsbyImage as Image, getImage } from "gatsby-plugin-image";
-import React from "react";
+import classnames from 'classnames';
+import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
+import React from 'react';
 
-import {
-  AngleDownIcon,
-  ArrowRightIcon,
-  Link,
-  LocationIcon,
-  YoutubeRectangleIcon,
-} from "website-components";
+import { AngleDownIcon, ArrowRightIcon, Link, LocationIcon, YoutubeRectangleIcon } from 'website-components';
 
-const EventCard = ({
-  event,
-  hidden,
-  expanded,
-  isExpandable,
-  onExpand,
-  isChild,
-  disableTimeline,
-}) => {
+const EventCard = ({ event, hidden, expanded, isExpandable, onExpand, isChild, disableTimeline }) => {
   return (
     <div
-      className={classnames(
-        "bg-black border border-gray-800 px-4 py-6 lg:p-8 rounded-md shadow-xl mt-4 relative",
-        {
-          hidden: hidden,
-          "cursor-pointer": isExpandable,
-          "ml-10 lg:ml-14": isChild,
-        }
-      )}
+      className={classnames('bg-black border border-gray-800 px-4 py-6 lg:p-8 rounded-md shadow-xl mt-4 relative', {
+        hidden: hidden,
+        'cursor-pointer': isExpandable,
+        'ml-10 lg:ml-14': isChild,
+      })}
       onClick={() => {
         if (isExpandable) {
           onExpand();
@@ -38,9 +21,7 @@ const EventCard = ({
       {!disableTimeline && (
         <>
           {!isChild && (
-            <span className="typo-body bg-gray-900 absolute left-0 -top-px -translate-x-24">
-              {event.time}
-            </span>
+            <span className="typo-body bg-gray-900 absolute left-0 -top-px -translate-x-24">{event.time}</span>
           )}
           {isChild && (
             <>
@@ -57,10 +38,7 @@ const EventCard = ({
         {event.tags && (
           <div className="hidden lg:flex">
             {event.tags.map((tag, i) => (
-              <span
-                className="typo-small rounded-full px-4 py-1 bg-gray-800 uppercase mr-2"
-                key={i}
-              >
+              <span className="typo-small rounded-full px-4 py-1 bg-gray-800 uppercase mr-2" key={i}>
                 {tag}
               </span>
             ))}
@@ -70,8 +48,8 @@ const EventCard = ({
       {isExpandable && (
         <h3 className="typo-h4 mb-4 inline-flex items-center">
           <AngleDownIcon
-            className={classnames("h-6 w-6 mr-2", {
-              "rotate-180": expanded,
+            className={classnames('h-6 w-6 mr-2', {
+              'rotate-180': expanded,
             })}
           />
           {event.title}
@@ -80,20 +58,14 @@ const EventCard = ({
       {!isExpandable && (
         <h3 className="typo-h4 mb-4">
           {event.hasPage && (
-            <Link
-              to={`/program/${event.slug}/`}
-              noBorder
-              className="hover:text-green-600"
-            >
+            <Link to={`/program/${event.slug}/`} noBorder className="hover:text-green-600">
               {event.title}
             </Link>
           )}
           {!event.hasPage && <span>{event.title}</span>}
         </h3>
       )}
-      {event.description && (
-        <p className="typo-body mb-4">{event.description}</p>
-      )}
+      {event.description && <p className="typo-body mb-4">{event.description}</p>}
       <div className="flex flex-wrap flex-col lg:flex-row lg:items-center">
         {event.speakers && (
           <>
@@ -105,9 +77,7 @@ const EventCard = ({
                   imgClassName="rounded-full"
                   className="mr-4 h-8 w-8"
                 />
-                <span className="typo-intro text-green-600">
-                  {event.speakers[0]?.name}
-                </span>
+                <span className="typo-intro text-green-600">{event.speakers[0]?.name}</span>
               </div>
             )}
             {event.speakers.length === 2 && (
@@ -133,9 +103,7 @@ const EventCard = ({
               <div className="flex items-center">
                 <div className="h-8 w-8 bg-indigo-600 rounded-full" />
                 <div className="h-8 w-8 bg-green-600 rounded-full -ml-2 mr-4" />
-                <span className="typo-intro text-green-600">
-                  Several Speakers
-                </span>
+                <span className="typo-intro text-green-600">Several Speakers</span>
               </div>
             )}
             <span className="hidden lg:block mx-2">|</span>
