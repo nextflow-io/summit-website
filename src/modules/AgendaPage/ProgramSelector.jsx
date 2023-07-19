@@ -19,7 +19,6 @@ const ProgramSelector = () => {
             </div>
             <h3 className="typo-h4 mt-4">Hackathon | Oct 16-18</h3>
             <p className="typo-intro text-green-300 mt-8">2.5 days · 100 people · hackathon</p>
-            <p className="typo-body mt-2">The program will be available once the call for abstracts has closed.</p>
             <div className="mt-4">
               <Button to="/agenda/hackathon#events" variant="secondary" size="md">
                 View program
@@ -34,7 +33,6 @@ const ProgramSelector = () => {
             </div>
             <h3 className="typo-h4 mt-4">Summit | Oct 18-20</h3>
             <p className="typo-intro text-green-300 mt-8">2.5 days · 200 people · talks, posters, and more</p>
-            <p className="typo-body mt-2">The program will be available once the call for abstracts has closed.</p>
             <div className="mt-4">
               <Button to="/agenda/summit#events" variant="secondary" size="md">
                 View program
