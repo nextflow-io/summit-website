@@ -44,3 +44,9 @@
 .dropdown:hover .dropdownContent {
   display: block;
 }
+.dropdown.disabled > a::after {
+  content: none;
+}
+.dropdown.disabled:hover .dropdownContent {
+  display: none;
+}

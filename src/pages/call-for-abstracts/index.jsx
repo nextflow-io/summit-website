@@ -12,6 +12,7 @@ import {
 import Card from '../../components/Card';
 import HeroDots from '../../components/HeroDots';
 import Seo from '../../components/Seo';
+import ContactUs from '../../components/ContactUs';
 
 const CallForAbstractsPage = () => {
   const data = useStaticQuery(graphql`
@@ -146,6 +147,7 @@ const CallForAbstractsPage = () => {
           </div>
         </div>
       </div>
+			<ContactUs />
     </>
   );
 };

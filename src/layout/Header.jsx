@@ -49,6 +49,8 @@ const Header = ({ location }) => {
     return activeEvent === 'boston' ? bostonTitle : title;
   };
 
+  const agendaPath = resolvePath('/agenda/');
+
   return (
     <>
       <header className="bg-black fixed z-10 inset-x-0 top-0 fixed">
@@ -57,15 +59,15 @@ const Header = ({ location }) => {
             <img src={Logo} className="h-8 lg:h-10" alt="" />
           </Link>
           <div className="lg:flex items-center hidden">
-            <div className={styles.dropdown}>
+            <div className={classnames(styles.dropdown, { [styles.disabled]: activeEvent === 'boston' })}>
               <Link
-                to="/agenda/"
+                to={agendaPath}
                 noBorder
                 className={classnames(
                   'bg-black bg-opacity-10 font-body py-1 px-4 rounded-sm mr-px font-normal tracking-wide',
                   {
-                    'text-white': !location.pathname.includes('/agenda/'),
-                    'text-green-300': location.pathname.includes('/agenda/'),
+                    'text-white': !location.pathname.includes(agendaPath),
+                    'text-green-300': location.pathname.includes(agendaPath),
                   }
                 )}
               >

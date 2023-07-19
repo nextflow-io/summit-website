@@ -6,6 +6,7 @@ import { Button } from 'website-components';
 import EventView from './EventView';
 import ProgramSelector from './ProgramSelector';
 import Seo from '../../components/Seo';
+import ContactUs from '../../components/ContactUs';
 
 const AgendaPage = ({ showEvents, eventData, showAllDays, eventType }) => {
   const data = useStaticQuery(graphql`
@@ -98,6 +99,7 @@ const AgendaPage = ({ showEvents, eventData, showAllDays, eventType }) => {
           </div>
         </div>
       </div>
+      <ContactUs />
     </>
   );
 };

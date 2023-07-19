@@ -11,6 +11,7 @@ import LocationMap from '../../components/LocationMap';
 import MountainIcon from '../../components/icons/MountainIcon';
 import RegisterCTA from '../../components/RegisterCTA';
 import Seo from '../../components/Seo';
+import ContactUs from '../../components/ContactUs';
 
 const TravelPage = () => {
   const data = useStaticQuery(graphql`
@@ -179,6 +180,7 @@ const TravelPage = () => {
           </div>
         </Card>
       </div>
+      <ContactUs />
     </>
   );
 };

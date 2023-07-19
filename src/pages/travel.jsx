@@ -12,6 +12,7 @@ import LocationMap from '../components/LocationMap';
 import RegisterCTA from '../components/RegisterCTA';
 import Seo from '../components/Seo';
 import LocalInformation from '../modules/LocalInformation';
+import ContactUs from '../components/ContactUs';
 
 const TravelPage = () => {
   const data = useStaticQuery(graphql`
@@ -214,6 +215,7 @@ const TravelPage = () => {
           </div>
         </Card>
       </div>
+      <ContactUs />
     </>
   );
 };
