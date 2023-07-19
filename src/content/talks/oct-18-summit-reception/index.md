@@ -10,7 +10,6 @@ hasPage: false
 speakers:
   -
 tags:
-  -
 youtube:
 youtubeUrl:
 ---
