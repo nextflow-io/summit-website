@@ -42,14 +42,14 @@ const SpeakersPage = () => {
           <div className="row lg:flex-nowrap">
             <div className="col-full lg:col-6">
               <h1 className="typo-h2 mb-4">More than 25 speakers to look forward to</h1>
-              <p className="typo-body max-w-xl mb-6 mx-auto">
+              <p className="typo-body max-w-xl mb-6">
                 The call for speakers and posters will remain open until September 9 or until all places are filled.
               </p>
               <Button to="/call-for-abstracts/posters-instructions/" variant="primary" size="lg">
                 Call for abstracts - posters
               </Button>
             </div>
-            <div className="col-full lg:col-5 lg:ml-1/12">
+            <div className="col-full lg:col-5 lg:ml-1/12 hidden lg:block">
               <Image
                 image={getImage(data.heroImage)}
                 alt="Join us in Barcelona or virtually"
