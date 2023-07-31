@@ -13,7 +13,7 @@ tags:
 meta:
   title: "Phil Ewels"
   description: "Nextflow Summit 2022 Speaker"
-  image: ../../../images/share/speaker-phil-ewels.jpg
+  image: ../../../images/share/barcelona/speaker-phil-ewels.jpg
 ---
 Phil Ewels is Lead Developer Advocate at Seqera Labs, working on strengthening the Nextflow and nf-core communities. He holds a PhD in Molecular Biology from the University of Cambridge, UK.
 
