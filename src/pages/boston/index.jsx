@@ -151,7 +151,7 @@ const IndexPage = () => {
                   <div className="col-6">
                     <div className="h-full border-b border-gray-600 py-2">
                       <p className="typo-body">
-                        July 31
+                        August 11
                       </p>
                     </div>
                   </div>

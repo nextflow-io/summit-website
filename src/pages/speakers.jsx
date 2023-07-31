@@ -43,7 +43,7 @@ const SpeakersPage = () => {
             <div className="col-full lg:col-6">
               <h1 className="typo-h2 mb-4">More than 25 speakers to look forward to</h1>
               <p className="typo-body max-w-xl mb-6">
-                The call for speakers and posters will remain open until September 9 or until all places are filled.
+              The call for speakers and posters has been extended until August 11.
               </p>
               <Button to="/call-for-abstracts/posters-instructions/" variant="primary" size="lg">
                 Call for abstracts - posters
