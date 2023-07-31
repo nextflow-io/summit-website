@@ -45,7 +45,7 @@ const SpeakersPage = () => {
               <p className="typo-body max-w-xl mb-6">
                 The call for speakers and posters will remain open until September 9 or until all places are filled.
               </p>
-              <Button to="/call-for-abstracts/posters-instructions/" variant="primary" size="lg">
+              <Button to="/boston/call-for-abstracts/posters-instructions/" variant="primary" size="lg">
                 Call for abstracts - posters
               </Button>
             </div>
