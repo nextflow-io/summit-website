@@ -1,5 +1,5 @@
-const path = require("path");
-const fs = require("fs");
+const path = require('path');
+const fs = require('fs');
 
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
@@ -100,30 +100,21 @@ exports.createSchemaCustomization = ({ actions }) => {
   createTypes(typeDefs);
 };
 
-exports.onCreateNode = ({
-  node,
-  actions,
-  getNode,
-  createNodeId,
-  createContentDigest,
-}) => {
+exports.onCreateNode = ({ node, actions, getNode, createNodeId, createContentDigest }) => {
   const { createNodeField, createNode } = actions;
 
-  if (node.internal.type === "Mdx") {
+  if (node.internal.type === 'Mdx') {
     const parent = getNode(node.parent);
 
-    if (parent.internal.type === "File") {
+    if (parent.internal.type === 'File') {
       createNodeField({
-        name: "sourceName",
+        name: 'sourceName',
         node,
         value: parent.sourceInstanceName,
       });
     }
 
-    if (
-      parent.internal.type === "File" &&
-      parent.sourceInstanceName === "people"
-    ) {
+    if (parent.internal.type === 'File' && parent.sourceInstanceName === 'people') {
       console.log(node.frontmatter.slug, node.frontmatter.name);
 
       const content = {
@@ -145,17 +136,14 @@ exports.onCreateNode = ({
         parent: node.id,
         children: [],
         internal: {
-          type: "People",
+          type: 'People',
           contentDigest: createContentDigest(content),
         },
         ...content,
       });
     }
 
-    if (
-      parent.internal.type === "File" &&
-      parent.sourceInstanceName === "events"
-    ) {
+    if (parent.internal.type === 'File' && parent.sourceInstanceName === 'events') {
       const content = {
         slug: node.frontmatter.slug,
         title: node.frontmatter.title,
@@ -182,17 +170,14 @@ exports.onCreateNode = ({
         parent: node.id,
         children: [],
         internal: {
-          type: "Event",
+          type: 'Event',
           contentDigest: createContentDigest(content),
         },
         ...content,
       });
     }
 
-    if (
-      parent.internal.type === "File" &&
-      parent.sourceInstanceName === "talks"
-    ) {
+    if (parent.internal.type === 'File' && parent.sourceInstanceName === 'talks') {
       const content = {
         slug: node.frontmatter.slug,
         title: node.frontmatter.title,
@@ -219,17 +204,14 @@ exports.onCreateNode = ({
         parent: node.id,
         children: [],
         internal: {
-          type: "Talk",
+          type: 'Talk',
           contentDigest: createContentDigest(content),
         },
         ...content,
       });
     }
 
-    if (
-      parent.internal.type === "File" &&
-      parent.sourceInstanceName === "accommodations"
-    ) {
+    if (parent.internal.type === 'File' && parent.sourceInstanceName === 'accommodations') {
       const content = {
         title: node.frontmatter.title,
         image: node.frontmatter.image,
@@ -250,17 +232,14 @@ exports.onCreateNode = ({
         parent: node.id,
         children: [],
         internal: {
-          type: "Accommodation",
+          type: 'Accommodation',
           contentDigest: createContentDigest(content),
         },
         ...content,
       });
     }
 
-    if (
-      parent.internal.type === "File" &&
-      parent.sourceInstanceName === "posters"
-    ) {
+    if (parent.internal.type === 'File' && parent.sourceInstanceName === 'posters') {
       const content = {
         slug: node.frontmatter.slug,
         title: node.frontmatter.title,
@@ -279,7 +258,7 @@ exports.onCreateNode = ({
         parent: node.id,
         children: [],
         internal: {
-          type: "Poster",
+          type: 'Poster',
           contentDigest: createContentDigest(content),
         },
         ...content,
@@ -291,10 +270,10 @@ exports.onCreateNode = ({
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
 
-  const eventTemplate = path.resolve("src/templates/event.jsx");
-  const talkTemplate = path.resolve("src/templates/talk.jsx");
-  // const speakerTemplate = path.resolve("src/templates/speaker.jsx");
-  const posterTemplate = path.resolve("src/templates/poster.jsx");
+  const eventTemplate = path.resolve('src/templates/event.jsx');
+  const talkTemplate = path.resolve('src/templates/talk.jsx');
+  const speakerTemplate = path.resolve('src/templates/speaker.jsx');
+  // const posterTemplate = path.resolve('src/templates/poster.jsx');
 
   const result = await graphql(`
     {
@@ -324,21 +303,21 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   `);
 
   if (result.errors) {
-    reporter.panicOnBuild("Build failed while running GraphQL query");
+    reporter.panicOnBuild('Build failed while running GraphQL query');
     return;
   }
 
-  // const speakers = result.data.speakers.nodes;
+  const speakers = result.data.speakers.nodes;
 
-  // speakers.forEach((speaker) => {
-  //   createPage({
-  //     path: speaker.slug,
-  //     component: speakerTemplate,
-  //     context: {
-  //       slug: speaker.slug,
-  //     },
-  //   });
-  // });
+  speakers.forEach((speaker) => {
+    createPage({
+      path: speaker.slug,
+      component: speakerTemplate,
+      context: {
+        slug: speaker.slug,
+      },
+    });
+  });
 
   const events = result.data.events.nodes;
 

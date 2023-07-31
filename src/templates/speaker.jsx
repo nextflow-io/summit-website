@@ -1,13 +1,11 @@
+import React from 'react';
 import { graphql } from 'gatsby';
 import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
-import React from 'react';
+import { AngleLeftIcon, GitHubIcon, Link, LinkedInIcon, TwitterIcon } from 'website-components';
 
 import CustomMDXProvider from '../components/CustomMDXProvider';
 import EventCard from '../components/EventCard';
 import Seo from '../components/Seo';
-
-import { AngleLeftIcon, GitHubIcon, Link, LinkedInIcon, TwitterIcon } from 'website-components';
 
 const SpeakerPage = ({ data }) => {
   const { speaker } = data;
@@ -55,10 +53,8 @@ const SpeakerPage = ({ data }) => {
             </div>
           </div>
         </div>
-        <div className="mt-5 md:mt-10">
-          <CustomMDXProvider>
-            <MDXRenderer>{speaker.content.body}</MDXRenderer>
-          </CustomMDXProvider>
+        <div className="mt-5 md:mt-10" style={{ whiteSpace: 'pre-line' }}>
+          <CustomMDXProvider>{speaker.content.body}</CustomMDXProvider>
         </div>
         <div className="mt-5 md:mt-10">
           {data.events.nodes.map((event, i) => (
