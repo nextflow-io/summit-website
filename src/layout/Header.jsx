@@ -14,6 +14,10 @@ const navs = [
     path: '/travel/',
   },
   {
+    title: 'Speakers',
+    path: '/speakers/',
+  },
+  {
     title: 'Sponsors',
     path: '/sponsors/',
   },
@@ -54,11 +58,11 @@ const Header = ({ location }) => {
   return (
     <>
       <header className="bg-black fixed z-10 inset-x-0 top-0 fixed">
-        <div className="container-lg flex flex-wrap items-center justify-between w-full h-16 md:h-24">
-          <Link to={resolvePath('/')} noBorder className="block uppercase">
-            <img src={Logo} className="h-8 lg:h-10" alt="" />
+        <div className="container-lg flex flex-wap items-center justify-between w-full h-16 md:h-24 whitespace-nowrap">
+          <Link to={resolvePath('/')} noBorder className="block flex-auto">
+            <img src={Logo} className="max-h-10" style={{ marginRight: '100%' }} alt="" />
           </Link>
-          <div className="lg:flex items-center hidden">
+          <div className="hidden lg:flex flex-auto items-center justify-end">
             <div className={classnames(styles.dropdown, { [styles.disabled]: activeEvent === 'boston' })}>
               <Link
                 to={agendaPath}
@@ -104,24 +108,26 @@ const Header = ({ location }) => {
                 {resolveTitle(nav.title, nav.bostonTitle)}
               </Link>
             ))}
-            <Button
-              to={resolvePath('/call-for-abstracts/')}
-              variant="secondary"
-              size="sm"
-              className="hover:opacity-80 ml-4"
-              noShadow
-            >
-              Call for abstracts
-            </Button>
-            <Button
-              to={resolvePath('/register/')}
-              variant="primary"
-              size="sm"
-              className="hover:opacity-80 ml-4"
-              noShadow
-            >
-              Register
-            </Button>
+            <div className="flex flex-none">
+              <Button
+                to={resolvePath('/call-for-abstracts/')}
+                variant="secondary"
+                size="sm"
+                className="hover:opacity-80 ml-4"
+                noShadow
+              >
+                Call for abstracts
+              </Button>
+              <Button
+                to={resolvePath('/register/')}
+                variant="primary"
+                size="sm"
+                className="hover:opacity-80 ml-4"
+                noShadow
+              >
+                Register
+              </Button>
+            </div>
           </div>
           <div className="lg:hidden">
             <Button
