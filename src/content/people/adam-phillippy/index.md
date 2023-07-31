@@ -1,5 +1,5 @@
 ---
-slug: /speakers/adam-phillippy/
+slug: boston/speakers/adam-phillippy/
 name: Adam Phillippy
 position: Senior Investigator and head of the Genome Informatics Section at the U.S. National Human Genome Research Institute
 image: ../../../images/people/adamphillippy.png
