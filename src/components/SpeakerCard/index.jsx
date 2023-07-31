@@ -6,13 +6,13 @@ import { GitHubIcon, Link, LinkedInIcon, TwitterIcon } from 'website-components'
 
 const SpeakerCard = ({ speaker, className }) => {
   return (
-    <div className={classnames('bg-black text-white border border-gray-800 rounded-md overflow-hidden', className)}>
+    <div className={classnames('bg-black text-white border border-gray-700 rounded-md overflow-hidden', className)}>
       <div className="flex flex-col md:flex-row">
         <div className="w-full md:w-1/3">
           <Image image={getImage(speaker.image)} className="w-full" imgClassName="md:rounded-l-md" alt={speaker.name} />
         </div>
         <div className="w-full md:w-2/3 p-6 inline-flex flex-col">
-          <h3 className="typo-h4 text-green-600 mb-4">
+          <h3 className="typo-h4 text-green-300 mb-4">
             <Link to={speaker.slug} noBorder>
               {speaker.name}
             </Link>
