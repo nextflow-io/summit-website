@@ -19,6 +19,7 @@ exports.createSchemaCustomization = ({ actions }) => {
         email: String
         content: Mdx
         tags: [String]
+        attending: String
         meta: MetaFields
       }
     `,
@@ -127,6 +128,7 @@ exports.onCreateNode = ({ node, actions, getNode, createNodeId, createContentDig
         twitter: node.frontmatter.twitter,
         linkedin: node.frontmatter.linkedin,
         tags: node.frontmatter.tags || [],
+        attending: node.frontmatter.attending || [],
         meta: node.frontmatter.meta,
         content: node,
       };

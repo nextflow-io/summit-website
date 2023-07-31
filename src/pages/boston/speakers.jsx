@@ -3,13 +3,13 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
 import { Button } from 'website-components';
 
-import Seo from '../components/Seo';
-import SpeakerCard from '../components/SpeakerCard';
+import Seo from '../../components/Seo';
+import SpeakerCard from '../../components/SpeakerCard';
 
 const SpeakersPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      speakers: allPeople(sort: { name: ASC }, filter: { attending: { in: ["Barcelona", "Both"] } }) {
+      speakers: allPeople(sort: { name: ASC }, filter: { attending: { in: ["Boston", "Both"] } }) {
         nodes {
           slug
           name
