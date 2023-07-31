@@ -1,6 +1,9 @@
 .dropdown {
   position: relative;
 }
+.dropdown > a {
+  white-space: nowrap;
+}
 .dropdown > a::after {
   content: ' ';
   display: inline-block;

@@ -3,13 +3,13 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
 import { Button } from 'website-components';
 
-import Seo from '../components/Seo';
-import SpeakerCard from '../components/SpeakerCard';
+import Seo from '../../components/Seo';
+import SpeakerCard from '../../components/SpeakerCard';
 
 const SpeakersPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      speakers: allPeople(sort: { name: ASC }, filter: { attending: { in: ["Barcelona", "Both"] } }) {
+      speakers: allPeople(sort: { name: ASC }, filter: { attending: { in: ["Boston", "Both"] } }) {
         nodes {
           slug
           name
@@ -43,9 +43,9 @@ const SpeakersPage = () => {
             <div className="col-full lg:col-6">
               <h1 className="typo-h2 mb-4">More than 25 speakers to look forward to</h1>
               <p className="typo-body max-w-xl mb-6">
-              The call for speakers and posters has been extended until August 11.
+                The call for speakers and posters has been extended until August 11.
               </p>
-              <Button to="/call-for-abstracts/" variant="primary" size="lg">
+              <Button to="/boston/call-for-abstracts/" variant="primary" size="lg">
                 Call for abstracts
               </Button>
             </div>

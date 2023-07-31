@@ -11,7 +11,8 @@ tags:
   - Speaker
 meta:
   title: "Paolo di Tommaso"
-  description: "Nextflow Summit 2022 Speaker"
-  image: ../../../images/share/speaker-paolo-di-tommaso.jpg
+  description: "Nextflow Summit 2023 Speaker"
+  image: ../../../images/share/barcelona/speaker-paolo-di-tommaso.jpg
+attending: Both
 ---
 Paolo is the CTO and co-founder of Seqera Labs. He is a computer scientist with a strong interest in high-throughput scientific computing, data-intensive applications, parallel programming, cloud computing and containerisation technologies. He has broad experience as a software engineer and software architect in life science and healthcare applications. He is an open-source advocate and the creator and maintainer of the Nextflow workflow system.
