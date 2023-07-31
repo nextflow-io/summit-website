@@ -45,8 +45,8 @@ const SpeakersPage = () => {
               <p className="typo-body max-w-xl mb-6">
                 The call for speakers and posters has been extended until August 11.
               </p>
-              <Button to="/boston/call-for-abstracts/posters-instructions/" variant="primary" size="lg">
-                Call for abstracts - posters
+              <Button to="/boston/call-for-abstracts/" variant="primary" size="lg">
+                Call for abstracts
               </Button>
             </div>
             <div className="col-full lg:col-5 lg:ml-1/12 hidden lg:block">
