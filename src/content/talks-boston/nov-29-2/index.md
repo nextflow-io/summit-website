@@ -1,10 +1,10 @@
 ---
 slug: nov-29-2
-timeframe: 10:00 - 13:00 PM (180 min)
-title: Hackathon (coffee station)
-datetime: 2023-11-29T10:00:00.000Z
+timeframe: 14:00 - 14:30 PM (30 min)
+title: Welcome
+datetime: 2023-11-29T14:00:00.000Z
 date: Nov 29, 2023
-time: 10:00 AM
+time: 14:00 PM
 isChild: false
 hasPage: false
 speakers:

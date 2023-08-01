@@ -1,10 +1,10 @@
 ---
 slug: nov-30-5
-timeframe: 13:00 - 14:00 PM (60 min)
-title: Lunch
-datetime: 2023-11-30T13:00:00.000Z
+timeframe: 11:30 - 11:45 AM (15 min)
+title: Gold Sponsor Talk
+datetime: 2023-11-30T11:30:00.000Z
 date: Nov 30, 2023
-time: 13:00 PM
+time: 11:30 AM
 isChild: false
 hasPage: false
 speakers:

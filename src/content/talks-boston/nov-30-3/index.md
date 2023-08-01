@@ -1,10 +1,10 @@
 ---
 slug: nov-30-3
-timeframe: 11:00 - 11:30 AM (30 min)
-title: Coffee break
-datetime: 2023-11-30T11:00:00.000Z
+timeframe: 10:30 - 11:00 AM (30 min)
+title: Platinum - AWS
+datetime: 2023-11-30T10:30:00.000Z
 date: Nov 30, 2023
-time: 11:00 AM
+time: 10:30 AM
 isChild: false
 hasPage: false
 speakers:

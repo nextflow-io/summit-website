@@ -1,10 +1,10 @@
 ---
-slug: nov-29-6
-timeframe: 14:00 - 15:30 PM (90 min)
-title: Session 5
-datetime: 2023-11-29T14:00:00.000Z
-date: Nov 29, 2023
-time: 14:00 PM
+slug: nov-30-6
+timeframe: 11:45 - 12:15 PM (30 min)
+title: Short talk
+datetime: 2023-11-30T11:45:00.000Z
+date: Nov 30, 2023
+time: 11:45 PM
 isChild: false
 hasPage: false
 speakers:
