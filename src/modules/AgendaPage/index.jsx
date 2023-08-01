@@ -8,7 +8,7 @@ import ProgramSelector from './ProgramSelector';
 import Seo from '../../components/Seo';
 import ContactUs from '../../components/ContactUs';
 
-const AgendaPage = ({ showEvents, eventData, showAllDays, eventType }) => {
+const AgendaPage = ({ showEvents, eventData, showAllDays, eventType, location }) => {
   const data = useStaticQuery(graphql`
     query {
       heroImage: file(relativePath: { eq: "photos/agenda-barcelona.jpg" }) {
@@ -57,7 +57,7 @@ const AgendaPage = ({ showEvents, eventData, showAllDays, eventType }) => {
         {showEvents ? (
           <>
             <h2 className="typo-h5 uppercase text-center mb-4">Agenda</h2>
-            <EventView eventData={eventData} showAllDays={showAllDays} eventType={eventType} />
+            <EventView location={location} eventData={eventData} showAllDays={showAllDays} eventType={eventType} />
           </>
         ) : (
           <>

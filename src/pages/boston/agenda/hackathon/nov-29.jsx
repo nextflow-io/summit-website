@@ -3,10 +3,13 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 import AgendaPage from '../../../../modules/AgendaPage';
 
-const HackathonOct16 = () => {
+const HackathonOct17 = () => {
   const data = useStaticQuery(graphql`
     query {
-      events: allEvent(filter: { type: { eq: "events-boston" }, isChild: { ne: true } }, sort: { datetime: ASC }) {
+      events: allEvent(
+        filter: { date: { eq: "Nov 29, 2023" }, type: { eq: "events-boston" }, isChild: { ne: true } }
+        sort: { datetime: ASC }
+      ) {
         nodes {
           slug
           id
@@ -55,7 +58,7 @@ const HackathonOct16 = () => {
       }
     }
   `);
-  return <AgendaPage location="boston" showEvents showAllDays eventData={data?.events?.nodes} eventType="hackathon" />;
+  return <AgendaPage location="boston" showEvents eventData={data?.events?.nodes} eventType="hackathon" />;
 };
 
-export default HackathonOct16;
+export default HackathonOct17;

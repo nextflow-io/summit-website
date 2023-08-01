@@ -1,9 +1,10 @@
 import React from 'react';
 
 import Tabs from '../../components/Tabs2';
+import DateTabs from './DateTabs';
 import EventList from './EventList';
 
-const EventView = ({ eventData, showAllDays, eventType }) => {
+const EventView = ({ eventData, showAllDays, eventType, location }) => {
   let loc = {};
   if (typeof window !== 'undefined') loc = window.location;
 
@@ -32,29 +33,20 @@ const EventView = ({ eventData, showAllDays, eventType }) => {
       <div className="row">
         <div className="col-full lg:col-9 lg:ml-1/12">
           <div>
-            <Tabs location={loc} anchor="#events" partialMatch>
-              <Tabs.Item to="/agenda/hackathon/">Hackathon</Tabs.Item>
-              <Tabs.Item to="/agenda/summit/">Summit</Tabs.Item>
-            </Tabs>
+            {location === 'boston' ? (
+              <Tabs location={loc} anchor="#events" partialMatch>
+                <Tabs.Item to="/boston/agenda/hackathon/">Hackathon</Tabs.Item>
+                <Tabs.Item to="/boston/agenda/summit/">Summit</Tabs.Item>
+              </Tabs>
+            ) : (
+              <Tabs location={loc} anchor="#events" partialMatch>
+                <Tabs.Item to="/agenda/hackathon/">Hackathon</Tabs.Item>
+                <Tabs.Item to="/agenda/summit/">Summit</Tabs.Item>
+              </Tabs>
+            )}
           </div>
           <div className="mt-1">
-            <Tabs location={loc} anchor="#events">
-              {eventType === 'hackathon' ? (
-                <>
-                  <Tabs.Item to="/agenda/hackathon/">All</Tabs.Item>
-                  <Tabs.Item to="/agenda/hackathon/oct-16/">Mon, Oct&nbsp;16</Tabs.Item>
-                  <Tabs.Item to="/agenda/hackathon/oct-17/">Tue, Oct&nbsp;17</Tabs.Item>
-                  <Tabs.Item to="/agenda/hackathon/oct-18/">Wed, Oct&nbsp;18</Tabs.Item>
-                </>
-              ) : (
-                <>
-                  <Tabs.Item to="/agenda/summit/">All</Tabs.Item>
-                  <Tabs.Item to="/agenda/summit/oct-18/">Wed, Oct&nbsp;18</Tabs.Item>
-                  <Tabs.Item to="/agenda/summit/oct-19/">Thu, Oct&nbsp;19</Tabs.Item>
-                  <Tabs.Item to="/agenda/summit/oct-20/">Fri, Oct&nbsp;20</Tabs.Item>
-                </>
-              )}
-            </Tabs>
+            <DateTabs location={location} loc={loc} eventType={eventType} />
           </div>
         </div>
       </div>
