@@ -25,6 +25,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     `,
     `
       type Event implements Node {
+				type: String
         slug: String
         title: String
         description: String
@@ -45,28 +46,6 @@ exports.createSchemaCustomization = ({ actions }) => {
         content: Mdx
       }
     `,
-    `
-			type Talk implements Node {
-				slug: String
-				title: String
-				description: String
-				datetime: Date @dateformat
-				date: String
-				time: String
-				timeframe: String
-				speakers: [People] @link(by: "name")
-				talks: [Talk] @link(by: "slug")
-				isChild: Boolean
-				hasPage: Boolean
-				location: String
-				locationUrl: String
-				youtube: String
-				youtubeUrl: String
-				tags: [String]
-				meta: MetaFields
-				content: Mdx
-			}
-		`,
     `
 			type Accommodation implements Node {
 				title: String
@@ -145,8 +124,13 @@ exports.onCreateNode = ({ node, actions, getNode, createNodeId, createContentDig
       });
     }
 
-    if (parent.internal.type === 'File' && parent.sourceInstanceName === 'events') {
+    if (
+      parent.internal.type === 'File' &&
+      ['events', 'talks', 'events-boston', 'talks-boston'].includes(parent.sourceInstanceName)
+    ) {
+      console.log(parent.sourceInstanceName);
       const content = {
+        type: parent.sourceInstanceName,
         slug: node.frontmatter.slug,
         title: node.frontmatter.title,
         description: node.frontmatter.description,
@@ -168,45 +152,11 @@ exports.onCreateNode = ({ node, actions, getNode, createNodeId, createContentDig
       };
 
       createNode({
-        id: createNodeId(`event-post-${node.id}`),
+        id: createNodeId(`event-${node.id}`),
         parent: node.id,
         children: [],
         internal: {
           type: 'Event',
-          contentDigest: createContentDigest(content),
-        },
-        ...content,
-      });
-    }
-
-    if (parent.internal.type === 'File' && parent.sourceInstanceName === 'talks') {
-      const content = {
-        slug: node.frontmatter.slug,
-        title: node.frontmatter.title,
-        description: node.frontmatter.description,
-        datetime: node.frontmatter.datetime,
-        date: node.frontmatter.date,
-        time: node.frontmatter.time,
-        timeframe: node.frontmatter.timeframe,
-        talks: node.frontmatter.talks,
-        isChild: node.frontmatter.isChild,
-        speakers: node.frontmatter.speakers,
-        location: node.frontmatter.location,
-        locationUrl: node.frontmatter.locationUrl,
-        youtube: node.frontmatter.youtube,
-        youtubeUrl: node.frontmatter.youtubeUrl,
-        hasPage: node.frontmatter.hasPage,
-        tags: node.frontmatter.tags,
-        meta: node.frontmatter.meta,
-        content: node,
-      };
-
-      createNode({
-        id: createNodeId(`talk-post-${node.id}`),
-        parent: node.id,
-        children: [],
-        internal: {
-          type: 'Talk',
           contentDigest: createContentDigest(content),
         },
         ...content,
@@ -290,12 +240,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           hasPage
         }
       }
-      talks: allTalk {
-        nodes {
-          slug
-          hasPage
-        }
-      }
       posters: allPoster {
         nodes {
           slug
@@ -321,33 +265,19 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     });
   });
 
-  const events = result.data.events.nodes;
+  // const events = result.data.events.nodes;
 
-  events.forEach((event) => {
-    if (event.hasPage) {
-      createPage({
-        path: `/hackathon/${event.slug}/`,
-        component: eventTemplate,
-        context: {
-          slug: event.slug,
-        },
-      });
-    }
-  });
-
-  const talks = result.data.talks.nodes;
-
-  talks.forEach((talk) => {
-    if (talk.hasPage) {
-      createPage({
-        path: `/summit/${talk.slug}/`,
-        component: talkTemplate,
-        context: {
-          slug: talk.slug,
-        },
-      });
-    }
-  });
+  // events.forEach((event) => {
+  //   if (event.hasPage) {
+  //     createPage({
+  //       path: `/hackathon/${event.slug}/`,
+  //       component: eventTemplate,
+  //       context: {
+  //         slug: event.slug,
+  //       },
+  //     });
+  //   }
+  // });
 
   // const posters = result.data.posters.nodes;
 

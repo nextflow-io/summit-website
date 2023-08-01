@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 const SummitOct18 = () => {
   const data = useStaticQuery(graphql`
     query {
-      talks: allTalk(filter: { isChild: { ne: true } }, sort: { datetime: ASC }) {
+      events: allEvent(filter: { isChild: { ne: true }, type: { eq: "talks" } }, sort: { datetime: ASC }) {
         nodes {
           slug
           id
@@ -20,7 +20,7 @@ const SummitOct18 = () => {
           youtube
           youtubeUrl
           hasPage
-          talks {
+          events {
             slug
             timeframe
             title
@@ -38,7 +38,7 @@ const SummitOct18 = () => {
       }
     }
   `);
-  return <AgendaPage showEvents showAllDays eventData={data?.talks?.nodes} />;
+  return <AgendaPage showEvents showAllDays eventData={data?.events?.nodes} />;
 };
 
 export default SummitOct18;

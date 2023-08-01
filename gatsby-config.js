@@ -1,5 +1,5 @@
 const siteUrl = `https://summit.nextflow.io/`;
-const path = require("path");
+const path = require('path');
 
 module.exports = {
   siteMetadata: {
@@ -50,8 +50,22 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `events-boston`,
+        path: `${__dirname}/src/content/events-boston`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `talks`,
         path: `${__dirname}/src/content/talks`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `talks-boston`,
+        path: `${__dirname}/src/content/talks-boston`,
       },
     },
     {
@@ -61,10 +75,10 @@ module.exports = {
         path: `${__dirname}/src/content/posters`,
       },
     },
-    "gatsby-plugin-image",
-    "gatsby-transformer-yaml",
+    'gatsby-plugin-image',
+    'gatsby-transformer-yaml',
     {
-      resolve: "gatsby-plugin-sharp",
+      resolve: 'gatsby-plugin-sharp',
       options: {
         defaults: {
           formats: [`auto`, `webp`],
@@ -75,7 +89,7 @@ module.exports = {
         },
       },
     },
-    "gatsby-transformer-sharp",
+    'gatsby-transformer-sharp',
     {
       resolve: `gatsby-plugin-layout`,
       options: {
@@ -83,13 +97,13 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-mdx",
+      resolve: 'gatsby-plugin-mdx',
       options: {
-        extensions: [".mdx", ".md"],
+        extensions: ['.mdx', '.md'],
         gatsbyRemarkPlugins: [
-          "gatsby-remark-relative-images-v2",
+          'gatsby-remark-relative-images-v2',
           {
-            resolve: "gatsby-remark-images",
+            resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 907,
               quality: 100,
@@ -97,9 +111,9 @@ module.exports = {
               ignoreFileExtensions: [],
             },
           },
-          "gatsby-remark-copy-linked-files",
-          "gatsby-remark-smartypants",
-          "gatsby-remark-external-links",
+          'gatsby-remark-copy-linked-files',
+          'gatsby-remark-smartypants',
+          'gatsby-remark-external-links',
         ],
       },
     },
@@ -118,12 +132,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingIds: ["G-92P10F5GQ1"],
+        trackingIds: ['G-92P10F5GQ1'],
       },
     },
-    "gatsby-plugin-postcss",
+    'gatsby-plugin-postcss',
     {
-      resolve: "gatsby-plugin-sitemap",
+      resolve: 'gatsby-plugin-sitemap',
       options: {
         query: `
           {
@@ -148,7 +162,7 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-canonical-urls",
+      resolve: 'gatsby-plugin-canonical-urls',
       options: {
         siteUrl: siteUrl,
         stripQueryString: true,

@@ -6,7 +6,10 @@ import AgendaPage from '../../../modules/AgendaPage';
 const SummitOct19 = () => {
   const data = useStaticQuery(graphql`
     query {
-      talks: allTalk(filter: { date: { eq: "Oct 19, 2023" }, isChild: { ne: true } }, sort: { datetime: ASC }) {
+      events: allEvent(
+        filter: { date: { eq: "Oct 19, 2023" }, type: { eq: "talks" }, isChild: { ne: true } }
+        sort: { datetime: ASC }
+      ) {
         nodes {
           slug
           id
@@ -21,7 +24,7 @@ const SummitOct19 = () => {
           youtube
           youtubeUrl
           hasPage
-          talks {
+          events {
             slug
             timeframe
             title
@@ -39,7 +42,7 @@ const SummitOct19 = () => {
       }
     }
   `);
-  return <AgendaPage showEvents eventData={data?.talks?.nodes} />;
+  return <AgendaPage showEvents eventData={data?.events?.nodes} />;
 };
 
 export default SummitOct19;

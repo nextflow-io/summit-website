@@ -6,7 +6,7 @@ import AgendaPage from '../../../modules/AgendaPage';
 const HackathonOct16 = () => {
   const data = useStaticQuery(graphql`
     query {
-      events: allEvent(filter: { isChild: { ne: true } }, sort: { datetime: ASC }) {
+      events: allEvent(filter: { isChild: { ne: true }, type: { eq: "events" } }, sort: { datetime: ASC }) {
         nodes {
           slug
           id

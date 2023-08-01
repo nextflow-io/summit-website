@@ -11,7 +11,7 @@ const EventView = ({ eventData, showAllDays, eventType }) => {
 
   if (showAllDays) {
     // Group by date
-    const groups = eventData.reduce((groups, event) => {
+    const groups = eventData?.reduce((groups, event) => {
       const date = event.date;
       if (!groups[date]) {
         groups[date] = [];
@@ -21,7 +21,7 @@ const EventView = ({ eventData, showAllDays, eventType }) => {
     }, {});
 
     // Map to event data
-    allEventData = Object.entries(groups).map(([title, items]) => ({
+    allEventData = Object.entries(groups || {}).map(([title, items]) => ({
       title,
       items,
     }));
