@@ -1,9 +1,9 @@
 ---
-slug: nov-29-7
+slug: nov-30-7
 timeframe: 15:30 - 16:00 PM (30 min)
 title: Coffee break
-datetime: 2023-11-29T15:30:00.000Z
-date: Nov 29, 2023
+datetime: 2023-11-30T15:30:00.000Z
+date: Nov 30, 2023
 time: 15:30 PM
 isChild: false
 hasPage: false
