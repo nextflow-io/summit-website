@@ -60,7 +60,7 @@ const EventView = ({ eventData, showAllDays, eventType, eventLocation }) => {
               </div>
             </div>
           )}
-          <EventList eventData={data.items} />
+          <EventList eventData={data.items} eventLocation={eventLocation} />
         </div>
       ))}
     </div>
