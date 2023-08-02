@@ -95,8 +95,6 @@ exports.onCreateNode = ({ node, actions, getNode, createNodeId, createContentDig
     }
 
     if (parent.internal.type === 'File' && parent.sourceInstanceName === 'people') {
-      console.log(node.frontmatter.slug, node.frontmatter.name);
-
       const content = {
         slug: node.frontmatter.slug,
         name: node.frontmatter.name,
@@ -128,7 +126,6 @@ exports.onCreateNode = ({ node, actions, getNode, createNodeId, createContentDig
       parent.internal.type === 'File' &&
       ['events', 'talks', 'events-boston', 'talks-boston'].includes(parent.sourceInstanceName)
     ) {
-      console.log(parent.sourceInstanceName);
       const content = {
         type: parent.sourceInstanceName,
         slug: node.frontmatter.slug,
