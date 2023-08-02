@@ -1,10 +1,10 @@
 ---
 slug: nov-30-7
-timeframe: 12:15 - 13:00 PM (45 min)
-title: Key note
-datetime: 2023-11-30T12:15:00.000Z
+timeframe: 15:30 - 16:00 PM (30 min)
+title: Coffee break
+datetime: 2023-11-30T15:30:00.000Z
 date: Nov 30, 2023
-time: 12:15 PM
+time: 15:30 PM
 isChild: false
 hasPage: false
 speakers:

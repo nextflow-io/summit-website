@@ -10,7 +10,6 @@ const DateTabs = ({ eventLocation, eventType, loc }) => {
             <Tabs.Item to="/boston/agenda/hackathon/">All</Tabs.Item>
             <Tabs.Item to="/boston/agenda/hackathon/nov-28/">Tue, Nov&nbsp;28</Tabs.Item>
             <Tabs.Item to="/boston/agenda/hackathon/nov-29/">Wed, Nov&nbsp;29</Tabs.Item>
-            <Tabs.Item to="/boston/agenda/hackathon/nov-30/">Thu, Nov&nbsp;30</Tabs.Item>
           </>
         ) : (
           <>
