@@ -1,10 +1,10 @@
 ---
 slug: nov-28-5
-timeframe: 14:00 - 17:30 AM (150 min)
+timeframe: 2:00 - 5:30 PM (150 min)
 title: Hacking
 datetime: 2023-11-28T14:00:00.000Z
 date: Nov 28, 2023
-time: 14:00 PM
+time: 2:00 PM
 isChild: false
 hasPage: false
 speakers:
