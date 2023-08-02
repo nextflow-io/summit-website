@@ -1,10 +1,10 @@
 ---
 slug: nov-29-7
-timeframe: 17:00 - 19:00 PM (120 min)
+timeframe: 17:30 - 19:00 PM (90 min)
 title: Reception
-datetime: 2023-11-29T17:00:00.000Z
+datetime: 2023-11-29T17:30:00.000Z
 date: Nov 29, 2023
-time: 17:00 PM
+time: 17:30 PM
 isChild: false
 hasPage: false
 speakers:
