@@ -42,7 +42,7 @@ const SummitOct18 = () => {
       }
     }
   `);
-  return <AgendaPage location="boston" showEvents eventData={data?.events?.nodes} />;
+  return <AgendaPage eventLocation="boston" showEvents eventData={data?.events?.nodes} />;
 };
 
 export default SummitOct18;

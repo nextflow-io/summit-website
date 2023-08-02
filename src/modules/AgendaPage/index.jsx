@@ -1,17 +1,23 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
-import { Button } from 'website-components';
+import { Button, Link } from 'website-components';
 
 import EventView from './EventView';
 import ProgramSelector from './ProgramSelector';
 import Seo from '../../components/Seo';
 import ContactUs from '../../components/ContactUs';
+import IntroText from './IntroText';
 
-const AgendaPage = ({ showEvents, eventData, showAllDays, eventType, location }) => {
+const AgendaPage = ({ showEvents, eventData, showAllDays, eventType, eventLocation }) => {
   const data = useStaticQuery(graphql`
     query {
-      heroImage: file(relativePath: { eq: "photos/agenda-barcelona.jpg" }) {
+      heroImgBarcelona: file(relativePath: { eq: "photos/agenda-barcelona.jpg" }) {
+        childImageSharp {
+          gatsbyImageData(placeholder: NONE)
+        }
+      }
+      heroImgBoston: file(relativePath: { eq: "photos/agenda-boston.jpg" }) {
         childImageSharp {
           gatsbyImageData(placeholder: NONE)
         }
@@ -21,8 +27,16 @@ const AgendaPage = ({ showEvents, eventData, showAllDays, eventType, location })
           gatsbyImageData(placeholder: NONE)
         }
       }
+      redPattern: file(relativePath: { eq: "visuals/speakers-red-pattern.png" }) {
+        childImageSharp {
+          gatsbyImageData(placeholder: NONE)
+        }
+      }
     }
   `);
+
+  const imgPath = eventLocation === 'boston' ? data.heroImgBoston : data.heroImgBarcelona;
+
   return (
     <>
       <Seo title="Nextflow SUMMIT 2023 Agenda" />
@@ -30,21 +44,11 @@ const AgendaPage = ({ showEvents, eventData, showAllDays, eventType, location })
         <div className="container-lg">
           <div className="row lg:flex-nowrap">
             <div className="col-full lg:col-6">
-              <h1 className="typo-display1 mb-4">
-                Exploring frontiers together through data science and computational biology
-              </h1>
-              <p className="typo-body max-w-3xl mb-4">
-                Join us for a week of Nextflow goodness, where passionate Nextflow users and industry experts will share
-                first-hand success stories from the community.
-              </p>
-              <p className="typo-body max-w-3xl mb-4">
-                The program includes inspiring keynotes, talks, poster sessions, and social events. Summit will be
-                streamed, and presentations will be made available after the event.
-              </p>
+              <IntroText eventLocation={eventLocation} />
             </div>
             <div className="col-full lg:col-5 lg:ml-1/12">
               <Image
-                image={getImage(data.heroImage)}
+                image={getImage(imgPath)}
                 alt="Join us in Barcelona or virtually"
                 className="rounded-sm shadow-xl"
                 imgClassName="rounded-sm"
@@ -57,12 +61,17 @@ const AgendaPage = ({ showEvents, eventData, showAllDays, eventType, location })
         {showEvents ? (
           <>
             <h2 className="typo-h5 uppercase text-center mb-4">Agenda</h2>
-            <EventView location={location} eventData={eventData} showAllDays={showAllDays} eventType={eventType} />
+            <EventView
+              eventLocation={eventLocation}
+              eventData={eventData}
+              showAllDays={showAllDays}
+              eventType={eventType}
+            />
           </>
         ) : (
           <>
             <h2 className="typo-h5 uppercase text-center mb-4">Program</h2>
-            <ProgramSelector />
+            <ProgramSelector eventLocation={eventLocation} />
           </>
         )}
       </div>
@@ -77,15 +86,33 @@ const AgendaPage = ({ showEvents, eventData, showAllDays, eventType, location })
       <div className="container-lg text-white">
         <div className="row">
           <div className="col-full lg:col-5">
-            <Image image={getImage(data.bluePattern)} alt="Nextflow SUMMIT speakers" className="h-full w-full" />
+            <Image
+              image={getImage(eventLocation === 'boston' ? data.redPattern : data.bluePattern)}
+              alt="Nextflow SUMMIT speakers"
+              className="h-full w-full"
+            />
           </div>
           <div className="col-full lg:col-6 py-16">
             <div className="px-4 lg:px-12">
               <h2 className="typo-display1">20+ Speakers</h2>
-              <p className="typo-body mt-2">
-                Stay tuned for exciting announcements of our distinguished speakers, and meantime check out talks given
-                last year.
-              </p>
+              {eventLocation === 'boston' ? (
+                <>
+                  <p className="typo-body mt-2">
+                    This year we are thrilled to have <strong>Erik Garrison</strong> join us as keynote speaker, author
+                    of the recent <Link to="https://www.nature.com/articles/s41586-023-05896-x">Nature paper</Link>{' '}
+                    <em>“A draft human pangenome reference”</em>.
+                  </p>
+                  <p className="typo-body mt-2">
+                    Stay tuned for more exciting announcements of our distinguished speakers. Until then, you can watch
+                    the talks from last year below:
+                  </p>
+                </>
+              ) : (
+                <p className="typo-body mt-2">
+                  Stay tuned for exciting announcements of our distinguished speakers, and meantime check out talks
+                  given last year.
+                </p>
+              )}
               <div className="mt-8">
                 <Button
                   to="https://www.youtube.com/playlist?list=PLPZ8WHdZGxmUdAJlHowo7zL2pN3x97d32"

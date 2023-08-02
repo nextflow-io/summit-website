@@ -4,7 +4,7 @@ import Tabs from '../../components/Tabs2';
 import DateTabs from './DateTabs';
 import EventList from './EventList';
 
-const EventView = ({ eventData, showAllDays, eventType, location }) => {
+const EventView = ({ eventData, showAllDays, eventType, eventLocation }) => {
   let loc = {};
   if (typeof window !== 'undefined') loc = window.location;
 
@@ -33,7 +33,7 @@ const EventView = ({ eventData, showAllDays, eventType, location }) => {
       <div className="row">
         <div className="col-full lg:col-9 lg:ml-1/12">
           <div>
-            {location === 'boston' ? (
+            {eventLocation === 'boston' ? (
               <Tabs location={loc} anchor="#events" partialMatch>
                 <Tabs.Item to="/boston/agenda/hackathon/">Hackathon</Tabs.Item>
                 <Tabs.Item to="/boston/agenda/summit/">Summit</Tabs.Item>
@@ -46,7 +46,7 @@ const EventView = ({ eventData, showAllDays, eventType, location }) => {
             )}
           </div>
           <div className="mt-1">
-            <DateTabs location={location} loc={loc} eventType={eventType} />
+            <DateTabs eventLocation={eventLocation} loc={loc} eventType={eventType} />
           </div>
         </div>
       </div>

@@ -1,8 +1,8 @@
 import React from 'react';
 import Tabs from '../../components/Tabs2';
 
-const DateTabs = ({ location, eventType, loc }) => {
-  if (location === 'boston') {
+const DateTabs = ({ eventLocation, eventType, loc }) => {
+  if (eventLocation === 'boston') {
     return (
       <Tabs location={loc} anchor="#events">
         {eventType === 'hackathon' ? (

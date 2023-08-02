@@ -55,7 +55,9 @@ const HackathonOct16 = () => {
       }
     }
   `);
-  return <AgendaPage location="boston" showEvents showAllDays eventData={data?.events?.nodes} eventType="hackathon" />;
+  return (
+    <AgendaPage eventLocation="boston" showEvents showAllDays eventData={data?.events?.nodes} eventType="hackathon" />
+  );
 };
 
 export default HackathonOct16;
