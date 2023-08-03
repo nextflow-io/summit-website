@@ -1,5 +1,4 @@
 const path = require('path');
-const fs = require('fs');
 
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
@@ -12,6 +11,15 @@ exports.createSchemaCustomization = ({ actions }) => {
         image: File @fileByRelativePath
       }
     `,
+    `	
+			type Blog implements Node {
+				slug: String!
+				title: String!
+				datetime: Date @dateformat
+				meta: MetaFields
+				content: Mdx
+			}
+		`,
     `
       type People implements Node {
         name: String!
@@ -91,6 +99,27 @@ exports.onCreateNode = ({ node, actions, getNode, createNodeId, createContentDig
         name: 'sourceName',
         node,
         value: parent.sourceInstanceName,
+      });
+    }
+
+    if (parent.internal.type === 'File' && parent.sourceInstanceName === 'blogs') {
+      const content = {
+        slug: node.frontmatter.slug,
+        title: node.frontmatter.title,
+        datetime: node.frontmatter.datetime,
+        meta: node.frontmatter.meta,
+        content: node,
+      };
+
+      createNode({
+        id: createNodeId(`blog-${node.id}`),
+        parent: node.id,
+        children: [],
+        internal: {
+          type: 'Blog',
+          contentDigest: createContentDigest(content),
+        },
+        ...content,
       });
     }
 
@@ -219,13 +248,19 @@ exports.onCreateNode = ({ node, actions, getNode, createNodeId, createContentDig
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
 
-  const eventTemplate = path.resolve('src/templates/event.jsx');
-  const talkTemplate = path.resolve('src/templates/talk.jsx');
+  const blogTemplate = path.resolve('src/templates/blog.jsx');
+  // const eventTemplate = path.resolve('src/templates/event.jsx');
+  // const talkTemplate = path.resolve('src/templates/talk.jsx');
   const speakerTemplate = path.resolve('src/templates/speaker.jsx');
   // const posterTemplate = path.resolve('src/templates/poster.jsx');
 
   const result = await graphql(`
     {
+      blogs: allBlog {
+        nodes {
+          slug
+        }
+      }
       speakers: allPeople {
         nodes {
           slug
@@ -249,6 +284,18 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     reporter.panicOnBuild('Build failed while running GraphQL query');
     return;
   }
+
+  const blogs = result.data.blogs.nodes;
+
+  blogs.forEach((blog) => {
+    createPage({
+      path: `/blog/${blog.slug}/`,
+      component: blogTemplate,
+      context: {
+        slug: blog.slug,
+      },
+    });
+  });
 
   const speakers = result.data.speakers.nodes;
 

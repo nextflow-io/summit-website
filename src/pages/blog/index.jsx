@@ -1,9 +1,9 @@
-import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
+import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import { GatsbyImage as Image, getImage } from "gatsby-plugin-image";
 
-import Seo from '../../components/Seo';
-import ContactUs from '../../components/ContactUs';
+import Seo from "../../components/Seo";
+import ContactUs from "../../components/ContactUs";
 
 const Blog = () => {
   const data = useStaticQuery(graphql`
@@ -13,8 +13,29 @@ const Blog = () => {
           gatsbyImageData(placeholder: NONE)
         }
       }
+      blogs: allBlog {
+        nodes {
+          slug
+          title
+          datetime
+          meta {
+            title
+            description
+            image {
+              publicURL
+            }
+          }
+          content {
+            body
+          }
+        }
+      }
     }
   `);
+
+  const blogs = data.blogs.nodes;
+  console.log(">>", data);
+
   return (
     <>
       <Seo title="Nextflow SUMMIT 2023 Blog" />
@@ -24,8 +45,9 @@ const Blog = () => {
             <div className="col-full lg:col-6">
               <h1 className="typo-display1 mb-4">The SUMMIT Blog</h1>
               <p className="typo-body max-w-3xl mb-4">
-                From exclusive behind-the-scenes coverage to must-know information, the SUMMIT blog is your ultimate
-                guide to making the most of the summit in Barcelona and Boston.
+                From exclusive behind-the-scenes coverage to must-know
+                information, the SUMMIT blog is your ultimate guide to making
+                the most of the summit in Barcelona and Boston.
               </p>
             </div>
             <div className="col-full lg:col-5 lg:ml-1/12">
@@ -39,7 +61,11 @@ const Blog = () => {
           </div>
         </div>
       </div>
-      Blog content
+      {blogs.map((blog, i) => (
+        <div key={i} className="pb-10">
+          <h3 className="typo-h5 mt-10 text-green-300">{blog.title}</h3>
+        </div>
+      ))}
       <ContactUs />
     </>
   );
