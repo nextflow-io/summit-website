@@ -117,6 +117,7 @@ exports.onCreateNode = ({ node, actions, getNode, createNodeId, createContentDig
         children: [],
         internal: {
           type: 'Blog',
+          contentFilePath: node.internal.contentFilePath,
           contentDigest: createContentDigest(content),
         },
         ...content,
@@ -259,6 +260,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       blogs: allBlog {
         nodes {
           slug
+          internal {
+            contentFilePath
+          }
         }
       }
       speakers: allPeople {
@@ -290,7 +294,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   blogs.forEach((blog) => {
     createPage({
       path: `/blog/${blog.slug}/`,
-      component: blogTemplate,
+      component: `${blogTemplate}?__contentFilePath=${blog.internal.contentFilePath}`,
       context: {
         slug: blog.slug,
       },

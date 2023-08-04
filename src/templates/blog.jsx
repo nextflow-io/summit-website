@@ -1,12 +1,12 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import CustomMDXProvider from '../components/CustomMDXProvider';
+import MDXProvider from '../components/CustomMDXProvider';
 import Seo from '../components/Seo';
 
 import { AngleLeftIcon, Link } from 'website-components';
 
-const BlogPage = ({ data }) => {
+const BlogPage = ({ data, children }) => {
   const { blog } = data;
 
   return (
@@ -25,7 +25,7 @@ const BlogPage = ({ data }) => {
           </div>
           <h1 className="typo-h2 text-green-600 mb-4 mt-8">{blog.title}</h1>
           <div className="mt-8">
-            <CustomMDXProvider>{blog.content.body}</CustomMDXProvider>
+            <MDXProvider>{children}</MDXProvider>
           </div>
         </div>
       </div>
@@ -36,7 +36,7 @@ const BlogPage = ({ data }) => {
 export default BlogPage;
 
 export const pageQuery = graphql`
-  query ($slug: String!) {
+  query BlogPage($slug: String!) {
     blog: blog(slug: { eq: $slug }) {
       slug
       title
@@ -47,9 +47,6 @@ export const pageQuery = graphql`
         image {
           publicURL
         }
-      }
-      content {
-        body
       }
     }
   }
