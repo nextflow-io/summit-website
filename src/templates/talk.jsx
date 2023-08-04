@@ -132,7 +132,7 @@ export default TalkPage;
 
 export const pageQuery = graphql`
   query ($slug: String!) {
-    talk: talk(slug: { eq: $slug }) {
+    event: event(slug: { eq: $slug }) {
       id
       timeframe
       title

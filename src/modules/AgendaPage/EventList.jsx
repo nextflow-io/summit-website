@@ -2,7 +2,7 @@ import React, { Fragment, useState } from 'react';
 
 import EventCard from '../../components/EventCard';
 
-const EventList = ({ eventData }) => {
+const EventList = ({ eventData, eventLocation }) => {
   const [activeTag, setActiveTag] = useState('');
   const [expandedEvent, setExpandedEvent] = useState('');
   const isFiltered = (event) => {
@@ -42,6 +42,7 @@ const EventList = ({ eventData }) => {
         {eventData.map((event, i) => (
           <Fragment key={i}>
             <EventCard
+              eventLocation={eventLocation}
               event={event}
               hidden={isFiltered(event)}
               expanded={isExpanded(event)}

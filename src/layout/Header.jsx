@@ -63,7 +63,7 @@ const Header = ({ location }) => {
             <img src={Logo} className="max-h-10" style={{ marginRight: '100%' }} alt="" />
           </Link>
           <div className="hidden lg:flex flex-auto items-center justify-end">
-            <div className={classnames(styles.dropdown, { [styles.disabled]: activeEvent === 'boston' })}>
+            <div className={classnames(styles.dropdown)}>
               <Link
                 to={agendaPath}
                 noBorder
@@ -79,13 +79,13 @@ const Header = ({ location }) => {
               </Link>
               <div className={styles.dropdownContent}>
                 <Link
-                  to="/agenda/hackathon/#events"
+                  to={`${agendaPath}hackathon/#events`}
                   className={classnames({ [styles.active]: location.pathname.includes('/agenda/hackathon') })}
                 >
                   Hackathon
                 </Link>
                 <Link
-                  to="/agenda/summit/#events"
+                  to={`${agendaPath}summit/#events`}
                   className={classnames({ [styles.active]: location.pathname.includes('/agenda/summit') })}
                 >
                   SUMMIT

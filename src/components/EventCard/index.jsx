@@ -4,7 +4,7 @@ import React from 'react';
 
 import { AngleDownIcon, ArrowRightIcon, Link, LocationIcon, YoutubeRectangleIcon } from 'website-components';
 
-const EventCard = ({ event, hidden, expanded, isExpandable, onExpand, isChild, disableTimeline }) => {
+const EventCard = ({ event, hidden, expanded, isExpandable, onExpand, isChild, disableTimeline, eventLocation }) => {
   return (
     <div
       className={classnames('bg-black border border-gray-800 px-4 py-6 lg:p-8 rounded-md shadow-xl mt-4 relative', {
@@ -113,7 +113,7 @@ const EventCard = ({ event, hidden, expanded, isExpandable, onExpand, isChild, d
             )}
           </>
         )}
-        <p className="typo-body">{`${event.date}, ${event.time} CET`}</p>
+        <p className="typo-body">{`${event.date}, ${event.time} ${eventLocation === 'boston' ? 'EST' : 'CET'}`}</p>
         {event.location && (
           <>
             <span className="hidden lg:block mx-2">|</span>
