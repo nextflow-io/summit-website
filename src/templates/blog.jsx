@@ -6,6 +6,14 @@ import Seo from '../components/Seo';
 
 import { AngleLeftIcon, Link } from 'website-components';
 
+function dateToYMD(date) {
+  var strArray = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  var d = date.getDate();
+  var m = strArray[date.getMonth()];
+  var y = date.getFullYear();
+  return '' + d + ' ' + m + ' ' + y;
+}
+
 const BlogPage = ({ data, children }) => {
   const { blog } = data;
 
@@ -21,9 +29,9 @@ const BlogPage = ({ data, children }) => {
         </div>
         <div className="mt-5 md:mt-10">
           <div className="flex flex-wrap flex-col lg:flex-row lg:items-center">
-            <p className="typo-body">{`${blog.datetime}`}</p>
+            <div className="typo-body">{`${blog.author} | ${dateToYMD(new Date(blog.datetime))}`}</div>
           </div>
-          <h1 className="typo-h2 text-green-600 mb-4 mt-8">{blog.title}</h1>
+          <h1 className="typo-h3 text-green-400 mb-4 mt-8">{blog.title}</h1>
           <div className="mt-8">
             <MDXProvider>{children}</MDXProvider>
           </div>
@@ -40,6 +48,7 @@ export const pageQuery = graphql`
     blog: blog(slug: { eq: $slug }) {
       slug
       title
+      author
       datetime
       meta {
         title

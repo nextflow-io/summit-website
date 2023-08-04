@@ -15,6 +15,7 @@ exports.createSchemaCustomization = ({ actions }) => {
 			type Blog implements Node {
 				slug: String!
 				title: String!
+				author: String!
 				datetime: Date @dateformat
 				meta: MetaFields
 				content: Mdx
@@ -106,6 +107,7 @@ exports.onCreateNode = ({ node, actions, getNode, createNodeId, createContentDig
       const content = {
         slug: node.frontmatter.slug,
         title: node.frontmatter.title,
+        author: node.frontmatter.author,
         datetime: node.frontmatter.datetime,
         meta: node.frontmatter.meta,
         content: node,
