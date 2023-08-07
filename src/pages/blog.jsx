@@ -1,9 +1,10 @@
-import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
-import { GatsbyImage as Image, getImage } from "gatsby-plugin-image";
+import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
 
-import Seo from "../../components/Seo";
-import ContactUs from "../../components/ContactUs";
+import Seo from '../components/Seo';
+import ContactUs from '../components/ContactUs';
+import BlogPost from '../components/BlogPost';
 
 const Blog = () => {
   const data = useStaticQuery(graphql`
@@ -18,6 +19,7 @@ const Blog = () => {
           slug
           title
           datetime
+          author
           meta {
             title
             description
@@ -34,7 +36,6 @@ const Blog = () => {
   `);
 
   const blogs = data.blogs.nodes;
-  console.log(">>", data);
 
   return (
     <>
@@ -45,9 +46,8 @@ const Blog = () => {
             <div className="col-full lg:col-6">
               <h1 className="typo-display1 mb-4">The SUMMIT Blog</h1>
               <p className="typo-body max-w-3xl mb-4">
-                From exclusive behind-the-scenes coverage to must-know
-                information, the SUMMIT blog is your ultimate guide to making
-                the most of the summit in Barcelona and Boston.
+                From exclusive behind-the-scenes coverage to must-know information, the SUMMIT blog is your ultimate
+                guide to making the most of the summit in Barcelona and Boston.
               </p>
             </div>
             <div className="col-full lg:col-5 lg:ml-1/12">
@@ -59,13 +59,18 @@ const Blog = () => {
               />
             </div>
           </div>
+          <div className="py-12">
+            <h2 className="typo-h5 uppercase text-center mb-4">Blogs</h2>
+            <div className="flex">
+              <div className="w-full lg:w-9/12">
+                {blogs.map((blog, i) => (
+                  <BlogPost key={i} blog={blog} />
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      {blogs.map((blog, i) => (
-        <div key={i} className="pb-10">
-          <h3 className="typo-h5 mt-10 text-green-300">{blog.title}</h3>
-        </div>
-      ))}
       <ContactUs />
     </>
   );

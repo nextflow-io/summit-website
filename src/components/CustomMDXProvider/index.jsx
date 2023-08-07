@@ -48,7 +48,7 @@ Heading2.propTypes = basicPropTypes;
 Heading2.defaultProps = basicDefaultProps;
 
 const Heading3 = ({ children }) => (
-  <h3 id={toAnchor(children)} className="typo-h4">
+  <h3 id={toAnchor(children)} className="typo-h5">
     <a href={`#${toAnchor(children)}`}>{children}</a>
   </h3>
 );
@@ -56,7 +56,7 @@ Heading3.propTypes = basicPropTypes;
 Heading3.defaultProps = basicDefaultProps;
 
 const Heading4 = ({ children }) => (
-  <h4 id={toAnchor(children)} className="typo-h4">
+  <h4 id={toAnchor(children)} className="typo-h5">
     <a href={`#${toAnchor(children)}`}>{children}</a>
   </h4>
 );
@@ -116,7 +116,7 @@ CustomTable.propTypes = basicPropTypes;
 CustomTable.defaultProps = basicPropTypes;
 
 const InlineLink = ({ href, children }) => (
-  <Link to={href} className="text-indigo-600">
+  <Link to={href} resetClassName="text-green-300 underline">
     {children}
   </Link>
 );

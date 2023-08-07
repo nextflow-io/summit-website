@@ -19,6 +19,10 @@ During the Hackathon, we will defeat complex challenges, push the boundaries of 
 ### Empowering learning experiences
 The Nextflow Summit is your one-stop shop for all things related to workflow management and data orchestration, brought to life with real life scenarios. From first hand success stories, to inspiring keynotes, panel discussions - we’ve got it all! Whether you’re a Nextflow newbie looking to dive into the basics or a seasoned pro aiming to take your skills to the next level, we’ve got you covered. Immerse yourself in cutting-edge technologies, emerging trends and insights that will charge your projects and propel your career forward. 
 
+### You can present your work
+Nextflow Summit is the ideal opportunity to present all the work you are doing. Talks can be about anything Nextflow related - your new analysis type; how you’re using community workflows to meet your needs; that cool trick you figured out to get the best performance on your favorite cloud; whatever. But be quick! The call for abstracts closes in a few days!
+
+### Go for it!
 The Nextflow Summit is not just about serious discussions: it’s about building lasting connections and creating memorable experiences. You’ll collaborate, code and cook up something delicious together! After jam-packed sessions, we’ll gather for a lively social dinner. It’s a chance to unwind and celebrate the incredible community that makes working with Nextflow so vibrant and inspiring!
 
-Register now to be part of the experience: [link to the registration page]
+[Register now](/register/) to be part of the experience.
