@@ -22,9 +22,7 @@ const BlogPage = ({ data, children }) => {
         <div className="mt-5 md:mt-10">
           <div className="flex flex-wrap flex-col lg:flex-row lg:items-center">
             <div className="typo-body">
-              <span className="text-green-300 font-extrabold mr-2">{blog.author}</span>
-              {' | '}
-              <span className="ml-2">{prettyDate(blog.datetime)}</span>
+              <span className="text-gray-200">{prettyDate(blog.datetime)}</span>
             </div>
           </div>
           <h1 className="typo-h3 text-green-300 mb-4 mt-8">{blog.title}</h1>

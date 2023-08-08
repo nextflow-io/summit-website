@@ -14,9 +14,7 @@ const BlogPost = ({ blog }) => {
       <h3 className="typo-h4 text-white mb-8">{blog.title}</h3>
       {blog.meta.description}
       <div className="pt-8">
-        <span className="text-green-300 font-extrabold">{blog.author}</span>
-        {' | '}
-        <span className="">{prettyDate(blog.datetime)}</span>
+        <span className="text-green-300">{prettyDate(blog.datetime)}</span>
       </div>
     </Link>
   );
