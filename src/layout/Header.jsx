@@ -22,6 +22,10 @@ const navs = [
     path: '/sponsors/',
   },
   {
+    title: 'Blog',
+    path: '/blog/',
+  },
+  {
     title: 'Past events',
     path: '/past-events/',
   },
