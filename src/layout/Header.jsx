@@ -42,6 +42,8 @@ const Header = ({ location }) => {
   };
 
   const resolvePath = (path) => {
+    if (path === '/blog/') return path;
+
     if (activeEvent === 'boston') {
       return `/boston${path}`;
     }
