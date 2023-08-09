@@ -1,5 +1,5 @@
 ---
-slug: /speakers/erik-garrison/
+slug: /erik-garrison/
 name: Erik Garrison
 position: Assistant Professor at the University of Tennessee Health Science Center
 image: ../../../images/people/erikgarrison.png

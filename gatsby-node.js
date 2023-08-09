@@ -270,6 +270,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       speakers: allPeople {
         nodes {
           slug
+          attending
         }
       }
       events: allEvent {
@@ -306,12 +307,24 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const speakers = result.data.speakers.nodes;
 
   speakers.forEach((speaker) => {
-    createPage({
-      path: speaker.slug,
-      component: speakerTemplate,
-      context: {
-        slug: speaker.slug,
-      },
+    let paths = ['/speakers'];
+
+    switch (speaker.attending) {
+      case 'Boston':
+        paths = ['/boston/speakers'];
+        break;
+      case 'Both':
+        paths = ['/boston/speakers', '/speakers'];
+    }
+
+    paths.forEach((path) => {
+      createPage({
+        path: `${path}${speaker.slug}`,
+        component: speakerTemplate,
+        context: {
+          slug: speaker.slug,
+        },
+      });
     });
   });
 

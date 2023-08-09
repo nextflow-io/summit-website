@@ -66,7 +66,7 @@ const SpeakersPage = () => {
           <div className="row mt-4">
             <div className="col-full lg:col-9">
               {data.speakers.nodes.map((speaker, i) => (
-                <SpeakerCard speaker={speaker} className="mt-10 first:mt-0" key={i} />
+                <SpeakerCard speaker={speaker} className="mt-10 first:mt-0" key={i} location="Boston" />
               ))}
               <div className="bg-black text-white border border-gray-700 rounded-md mt-10 p-6">
                 <h3 className="typo-h4 text-green-300 mb-4">More coming soon</h3>
