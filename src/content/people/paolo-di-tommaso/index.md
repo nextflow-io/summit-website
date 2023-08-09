@@ -1,5 +1,5 @@
 ---
-slug: /speakers/paolo-di-tommaso/
+slug: /paolo-di-tommaso/
 name: Paolo di Tommaso
 position: CTO & CO-FOUNDER at Seqera Labs
 image: ../../../images/people/paoloditommaso.png

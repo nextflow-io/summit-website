@@ -1,5 +1,5 @@
 ---
-slug: /speakers/phil-ewels/
+slug: /phil-ewels/
 name: Phil Ewels
 email: phil@seqera.io
 position: Lead Developer Advocate at Seqera Labs

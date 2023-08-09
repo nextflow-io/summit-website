@@ -7,16 +7,16 @@ import CustomMDXProvider from '../components/CustomMDXProvider';
 import EventCard from '../components/EventCard';
 import Seo from '../components/Seo';
 
-const SpeakerPage = ({ data }) => {
+const SpeakerPage = ({ data, path }) => {
   const { speaker } = data;
-
+  const backURL = path.includes('boston') ? '/boston/speakers/' : '/speakers/';
   return (
     <>
       <Seo title={speaker.meta.title} description={speaker.meta.description} image={speaker.meta.image.publicURL} />
       <div className="text-white container-sm py-10 md:py-20">
         <div className="inline-flex items-center hover:text-green-300 mb-4">
           <AngleLeftIcon className="h-6 w-6 inline-block mr-1" />
-          <Link to="/speakers/" noBorder>
+          <Link to={backURL} noBorder>
             Back
           </Link>
         </div>

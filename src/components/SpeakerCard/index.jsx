@@ -4,7 +4,9 @@ import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
 
 import { GitHubIcon, Link, LinkedInIcon, TwitterIcon } from 'website-components';
 
-const SpeakerCard = ({ speaker, className }) => {
+const SpeakerCard = ({ speaker, className, location }) => {
+  let speakerURL = `/speakers${speaker.slug}`;
+  if (location === 'Boston') speakerURL = `/boston/speakers${speaker.slug}`;
   return (
     <div className={classnames('bg-black text-white border border-gray-700 rounded-md overflow-hidden', className)}>
       <div className="flex flex-col md:flex-row">
@@ -13,7 +15,7 @@ const SpeakerCard = ({ speaker, className }) => {
         </div>
         <div className="w-full md:w-2/3 p-6 inline-flex flex-col">
           <h3 className="typo-h4 text-green-300 mb-4">
-            <Link to={speaker.slug} noBorder>
+            <Link to={speakerURL} noBorder>
               {speaker.name}
             </Link>
           </h3>
