@@ -2,11 +2,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
 import React from 'react';
 
-import {
-  Button,
-  Reveal,
-  RevealOnScroll,
-} from 'website-components';
+import { Button, Reveal, RevealOnScroll, Link } from 'website-components';
 
 import CountDown from '../components/CountDown';
 import EventCTA from '../components/EventCTA';
@@ -29,25 +25,19 @@ import ContactUs from '../components/ContactUs';
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      summitImage: file(relativePath: {eq: "photos/summit-barcelona.jpg"}) {
+      summitImage: file(relativePath: { eq: "photos/summit-barcelona.jpg" }) {
         childImageSharp {
-          gatsbyImageData(
-            placeholder: NONE
-          )
+          gatsbyImageData(placeholder: NONE)
         }
       }
-      bluePattern: file(relativePath: {eq: "visuals/blue-pattern.jpg"}) {
+      bluePattern: file(relativePath: { eq: "visuals/blue-pattern.jpg" }) {
         childImageSharp {
-          gatsbyImageData(
-            placeholder: NONE
-          )
+          gatsbyImageData(placeholder: NONE)
         }
       }
-      redPattern: file(relativePath: {eq: "visuals/red-pattern.jpg"}) {
+      redPattern: file(relativePath: { eq: "visuals/red-pattern.jpg" }) {
         childImageSharp {
-          gatsbyImageData(
-            placeholder: NONE
-          )
+          gatsbyImageData(placeholder: NONE)
         }
       }
     }
@@ -55,9 +45,7 @@ const IndexPage = () => {
 
   return (
     <>
-      <Seo
-        title="Nextflow SUMMIT 2023"
-      />
+      <Seo title="Nextflow SUMMIT 2023" />
       <div className="relative bg-black text-white">
         <div className="absolute inset-0 overflow-hidden">
           <HeroAnimation className="animate-flow" />
@@ -66,28 +54,18 @@ const IndexPage = () => {
           <div className="row items-center">
             <div className="col-full lg:col-6">
               <NextflowLogo className="h-12" />
-              <h1 className="typo-h1 uppercase">
-                summit
-              </h1>
+              <h1 className="typo-h1 uppercase">summit</h1>
               <p className="typo-blockquote font-medium text-blue-600 max-w-xl">
-                <i className="italic">
-                  Barcelona
-                </i>
+                <i className="italic">Barcelona</i>
                 {' | '}
-                <i>
-                  2023
-                </i>
+                <i>2023</i>
               </p>
               <p className="typo-intro uppercase mt-16">
                 In person
-                <span className="mx-2">
-                  |
-                </span>
+                <span className="mx-2">|</span>
                 Virtual
               </p>
-              <p className="typo-intro uppercase">
-                Barcelona, October 16-20, 2023
-              </p>
+              <p className="typo-intro uppercase">Barcelona, October 16-20, 2023</p>
               <div className="max-w-[320px] mt-4">
                 <Button to="/register/" variant="primary" size="md" arrow>
                   Register
@@ -102,17 +80,12 @@ const IndexPage = () => {
       </div>
       <RevealOnScroll className="container-xl py-8">
         <Reveal>
-          <Image
-            image={getImage(data.summitImage)}
-            alt="Nextflow SUMMIT 2023"
-          />
+          <Image image={getImage(data.summitImage)} alt="Nextflow SUMMIT 2023" />
         </Reveal>
       </RevealOnScroll>
       <div className="container-md text-white py-16">
         <div className="text-center">
-          <h2 className="typo-h6 uppercase">
-            Key information
-          </h2>
+          <h2 className="typo-h6 uppercase">Key information</h2>
         </div>
         <RevealOnScroll className="row">
           <Reveal className="col-full lg:col-6 mt-4">
@@ -120,14 +93,12 @@ const IndexPage = () => {
               <div className="text-green-300">
                 <LaptopIcon />
               </div>
-              <h3 className="typo-h4 mt-4">
-                Hackathon | Oct 16-18
-              </h3>
+              <h3 className="typo-h4 mt-4">Hackathon | Oct 16-18</h3>
               <p className="typo-body my-4">
                 Join our hackathon to develop nf-core together. It will be held in Barcelona and on Gather (virtually)
                 prior to the Nextflow SUMMIT.
               </p>
-							<Button to="/agenda/hackathon#events" variant="secondary" size="md">
+              <Button to="/agenda/hackathon#events" variant="secondary" size="md">
                 View program
               </Button>
             </div>
@@ -137,14 +108,12 @@ const IndexPage = () => {
               <div className="text-green-300">
                 <MountainIcon />
               </div>
-              <h3 className="typo-h4 mt-4">
-                Summit | Oct 18-20
-              </h3>
+              <h3 className="typo-h4 mt-4">Summit | Oct 18-20</h3>
               <p className="typo-body my-4">
                 A showcase of the latest developments and innovations from the Nextflow world held in Barcelona and
                 streamed online.
               </p>
-							<Button to="/agenda/summit#events" variant="secondary" size="md">
+              <Button to="/agenda/summit#events" variant="secondary" size="md">
                 View program
               </Button>
             </div>
@@ -152,104 +121,84 @@ const IndexPage = () => {
           <Reveal className="col-full mt-8">
             <div className="bg-black border border-gray-800 px-4 py-6 lg:p-8 rounded-md shadow-xl relative">
               <div className="text-center">
-                <h3 className="typo-h4">
-                  Key dates
-                </h3>
+                <h3 className="typo-h4">Key dates</h3>
               </div>
               <div className="mt-4">
                 <div className="row">
                   <div className="col-6">
                     <div className="h-full border-b border-gray-600 py-2">
-                      <p className="typo-body">
-                        July 3
-                      </p>
+                      <p className="typo-body">July 3</p>
                     </div>
                   </div>
                   <div className="col-6">
                     <div className="h-full border-b border-gray-600 py-2">
-                      <p className="typo-body">
-                        Registration for the Nextflow SUMMIT opens
-                      </p>
+                      <p className="typo-body">Registration for the Nextflow SUMMIT opens</p>
                     </div>
                   </div>
                 </div>
                 <div className="row">
                   <div className="col-6">
                     <div className="h-full border-b border-gray-600 py-2">
-                      <p className="typo-body">
-                        August 11
-                      </p>
+                      <p className="typo-body">August 11</p>
                     </div>
                   </div>
                   <div className="col-6">
                     <div className="h-full border-b border-gray-600 py-2">
-                      <p className="typo-body">
-                        Call for talk abstracts closes
-                      </p>
+                      <p className="typo-body">Call for talk abstracts closes</p>
                     </div>
                   </div>
                 </div>
                 <div className="row">
                   <div className="col-6">
                     <div className="h-full border-b border-gray-600 py-2">
-                      <p className="typo-body">
-                        August 14
-                      </p>
+                      <p className="typo-body">August 14</p>
                     </div>
                   </div>
                   <div className="col-6">
                     <div className="h-full border-b border-gray-600 py-2">
-                      <p className="typo-body">
-                        Accepted presenters are notified
-                      </p>
+                      <p className="typo-body">Accepted presenters are notified</p>
                     </div>
                   </div>
                 </div>
                 <div className="row">
                   <div className="col-6">
                     <div className="h-full border-b border-gray-600 py-2">
-                      <p className="typo-body">
-                        September 16
-                      </p>
+                      <p className="typo-body">September 16</p>
                     </div>
                   </div>
                   <div className="col-6">
                     <div className="h-full border-b border-gray-600 py-2">
-                      <p className="typo-body">
-                        Registration for the Nextflow SUMMIT closes
-                      </p>
+                      <p className="typo-body">Registration for the Nextflow SUMMIT closes</p>
                     </div>
                   </div>
                 </div>
                 <div className="row">
                   <div className="col-6">
                     <div className="h-full border-b border-gray-600 py-2">
-                      <p className="typo-body">
-                        October 16-18
-                      </p>
+                      <p className="typo-body">October 16-18</p>
+                      <Link resetClassName="text-green-300" to="https://goo.gl/maps/7JNdvsYapPsaasog7">
+                        Hotel SB, Barcelona
+                      </Link>
                     </div>
                   </div>
                   <div className="col-6">
-                    <div className="h-full border-b border-gray-600 py-2">
-                      <p className="typo-body">
-                        nf-core Hackathon
-                      </p>
+                    <div className="h-full border-b border-gray-600 py-2 flex items-center">
+                      <p className="typo-body">nf-core Hackathon</p>
                     </div>
                   </div>
                 </div>
                 <div className="row">
                   <div className="col-6">
                     <div className="h-full border-b border-gray-600 py-2">
-                      <p className="typo-body">
-                        October 18-20
-                      </p>
+                      <p className="typo-body">October 18-20</p>
+                      <Link resetClassName="text-green-300" to="https://goo.gl/maps/DMDJhRJmbof6Lx6E9">
+                        Torre Glories, Barcelona
+                      </Link>
                     </div>
                   </div>
                   <div className="col-6">
-                    <div className="h-full border-b border-gray-600 py-2">
-                      <p className="typo-body">
-                        Nextflow SUMMIT
-                      </p>
+                    <div className="h-full border-b border-gray-600 py-2 flex items-center">
+                      <p className="typo-body">Nextflow SUMMIT</p>
                     </div>
                   </div>
                 </div>
@@ -261,9 +210,7 @@ const IndexPage = () => {
       <RegisterCTA />
       <div className="text-white py-8">
         <div className="text-center">
-          <h2 className="typo-h6 uppercase">
-            Sponsored by
-          </h2>
+          <h2 className="typo-h6 uppercase">Sponsored by</h2>
         </div>
         <div className="container-xl mt-2">
           <div className="flex flex-wrap">
@@ -301,7 +248,7 @@ const IndexPage = () => {
         </div>
       </div>
       <EventCTA />
-			<ContactUs />
+      <ContactUs />
     </>
   );
 };
