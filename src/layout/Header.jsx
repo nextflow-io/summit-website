@@ -29,6 +29,10 @@ const navs = [
     title: 'Past events',
     path: '/past-events/',
   },
+  {
+    title: 'Call for abstracts',
+    path: '/call-for-abstracts/',
+  },
 ];
 
 const Header = ({ location }) => {
@@ -115,15 +119,6 @@ const Header = ({ location }) => {
               </Link>
             ))}
             <div className="flex flex-none">
-              <Button
-                to={resolvePath('/call-for-abstracts/')}
-                variant="secondary"
-                size="sm"
-                className="hover:opacity-80 ml-4"
-                noShadow
-              >
-                Call for abstracts
-              </Button>
               <Button
                 to={resolvePath('/register/')}
                 variant="primary"

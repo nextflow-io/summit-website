@@ -43,16 +43,12 @@ const CallForAbstractsPage = () => {
         <div className="container-lg relative">
           <div className="max-w-3xl mx-auto">
             <h1 className="typo-display1">
-              Call for abstracts open
+              Call for abstracts is now closed
             </h1>
             <p className="typo-body mt-4">
-              Act fast as abstracts will be reviewed and presenters will be notified on an ongoing basis. Final
-              abstracts will be accepted and presenters will be notified by early August.
+            The final abstracts will be accepted and presenters notified in mid August.
             </p>
             <div className="mt-4">
-              <Button to="https://seqera.typeform.com/summit2023" variant="primary" size="md">
-                Apply now
-              </Button>
             </div>
           </div>
         </div>
@@ -89,10 +85,6 @@ const CallForAbstractsPage = () => {
                 </List.Item>
               </List>
               <div className="typo-body mt-8">
-                <Link to="https://seqera.typeform.com/summit2023" className="text-green-300" noBorder>
-                  Apply now
-                </Link>
-                <span className="mx-2">|</span>
                 <Link to="/boston/call-for-abstracts/talks-instructions/" className="text-green-300" noBorder>
                   View instructions
                 </Link>
@@ -126,10 +118,6 @@ const CallForAbstractsPage = () => {
                 </List.Item>
               </List>
               <div className="typo-body mt-8">
-                <Link to="https://seqera.typeform.com/summit2023" className="text-green-300" noBorder>
-                  Apply now
-                </Link>
-                <span className="mx-2">|</span>
                 <Link to="/boston/call-for-abstracts/posters-instructions/" className="text-green-300" noBorder>
                   View instructions
                 </Link>

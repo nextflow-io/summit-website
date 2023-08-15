@@ -43,11 +43,8 @@ const SpeakersPage = () => {
             <div className="col-full lg:col-6">
               <h1 className="typo-h2 mb-4">More than 25 speakers to look forward to</h1>
               <p className="typo-body max-w-xl mb-6">
-              The call for speakers and posters has been extended until August 11.
+              The final abstracts will be accepted and presenters notified in mid August.
               </p>
-              <Button to="/call-for-abstracts/" variant="primary" size="lg">
-                Call for abstracts
-              </Button>
             </div>
             <div className="col-full lg:col-5 lg:ml-1/12 hidden lg:block">
               <Image
