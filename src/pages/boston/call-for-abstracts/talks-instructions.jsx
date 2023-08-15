@@ -22,8 +22,7 @@ const TalksInstructionsPage = () => {
             Instructions
           </h1>
           <p className="typo-body mt-4">
-          The call for abstracts has been extended until August 11, 2023. Abstracts will be read and presenters notified on a
-            rolling basis, so apply soon. The final abstracts will be accepted and presenters notified mid August.
+          The final abstracts will be accepted and presenters notified in mid August.
           </p>
           <div className="bg-black border border-gray-800 rounded-md p-8 mt-10">
             <h2 className="typo-h3">
@@ -66,9 +65,6 @@ const TalksInstructionsPage = () => {
               </List.Item>
             </List>
             <div className="mt-8">
-              <Link to="https://seqera.typeform.com/summit2023" className="typo-body text-green-300" noBorder>
-                Apply now
-              </Link>
             </div>
           </div>
         </div>
