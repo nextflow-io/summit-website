@@ -48,39 +48,6 @@ const IndexPage = () => {
       <Seo
         title="Nextflow SUMMIT 2023"
       />
-      <div className="relative bg-black text-white">
-        <div className="absolute inset-0 overflow-hidden">
-          <HeroAnimation className="animate-flow" />
-        </div>
-        <div className="container-lg py-20 relative">
-          <div className="row items-center">
-            <div className="col-full lg:col-6">
-              <NextflowLogo className="h-12" />
-              <h1 className="typo-h1 uppercase">
-                summit
-              </h1>
-              <p className="typo-blockquote font-medium text-blue-600 max-w-xl">
-                <i>
-                  2023
-                </i>
-              </p>
-              <p className="typo-intro uppercase mt-16">
-                In person
-                <span className="mx-2">
-                  |
-                </span>
-                Virtual
-              </p>
-              <p className="typo-intro uppercase">
-                Barcelona, October 16-20, 2023
-              </p>
-              <p className="typo-intro uppercase">
-                Boston, November 28-30, 2023
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
       <div className="container-md py-20">
       <div className="row">
                 <div className="col-full lg:col-6">
