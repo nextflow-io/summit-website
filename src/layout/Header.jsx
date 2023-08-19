@@ -26,12 +26,12 @@ const navs = [
     path: '/blog/',
   },
   {
-    title: 'Past events',
-    path: '/past-events/',
+    title: null,
+    path: null,
   },
   {
-    title: 'Call for abstracts',
-    path: '/call-for-abstracts/',
+    title: 'Past events',
+    path: '/past-events/',
   },
 ];
 
@@ -56,10 +56,7 @@ const Header = ({ location }) => {
   };
 
   const resolveTitle = (title, bostonTitle) => {
-    if (!bostonTitle) {
-      return title;
-    }
-
+    if (!bostonTitle) return title;
     return activeEvent === 'boston' ? bostonTitle : title;
   };
 
@@ -166,15 +163,21 @@ const Header = ({ location }) => {
             </div>
             {navs.map((nav) => (
               <div className="mt-4 first:mt-0" key={nav.path}>
-                <Link key={nav.path} to={resolvePath(nav.path)} onClick={closeMenu} noBorder>
-                  {resolveTitle(nav.title, nav.bostonTitle)}
-                </Link>
+                {nav.title ? (
+                  <Link to={resolvePath(nav.path)} onClick={closeMenu} noBorder>
+                    {resolveTitle(nav.title, nav.bostonTitle)}
+                  </Link>
+                ) : (
+                  <Link to={activeEvent === 'boston' ? '/' : '/boston/'} onClick={closeMenu} noBorder>
+                    {activeEvent === 'boston' ? 'Barcelona Event' : 'Boston Event'}
+                  </Link>
+                )}
               </div>
             ))}
             <div className="mt-4">
               <Button
                 onClick={() => {
-                  handleNav('/call-for-abstracts/');
+                  handleNav(resolvePath('/call-for-abstracts/'));
                 }}
                 variant="secondary"
                 size="sm"
@@ -187,7 +190,7 @@ const Header = ({ location }) => {
             <div className="mt-4">
               <Button
                 onClick={() => {
-                  handleNav('/register/');
+                  handleNav(resolvePath('/register/'));
                 }}
                 variant="accent"
                 size="sm"
