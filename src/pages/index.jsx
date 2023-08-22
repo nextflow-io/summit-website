@@ -52,7 +52,7 @@ const IndexPage = () => {
       <div className="container-xl py-20 text-white text-center">
         <h1 class="typo-h3 mb-8">Choose your Nextflow SUMMIT!</h1>
         <p class="typo-body mb-6">
-          There will be two Nextflow SUMMIT events in 2022.
+          There will be two Nextflow SUMMIT events in 2023.
           Join us in Barcelona or Boston!
         </p>
         <div className="row mt-12">
