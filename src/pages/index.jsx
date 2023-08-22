@@ -3,6 +3,7 @@ import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
 import React from 'react';
 
 import {
+  Button,
   Link,
 } from 'website-components';
 
@@ -82,9 +83,18 @@ const IndexPage = () => {
                   </span>
                   Virtual
                 </p>
-                <p className="typo-intro">
+                <p className="typo-intro mb-4">
                   Barcelona, October 16-20, 2023
                 </p>
+                <Button
+                  to='/barcelona/'
+                  variant="primary"
+                  size="sm"
+                  className="hover:opacity-80 ml-4"
+                  noShadow
+                >
+                  Find out more
+                </Button>
               </div>
             </Link>
           </div>
@@ -111,9 +121,18 @@ const IndexPage = () => {
                 <p className="typo-intro text-center uppercase mt-8">
                   In person
                 </p>
-                <p className="typo-intro text-center">
+                <p className="typo-intro text-center mb-4">
                   Boston, November 28-30, 2023
                 </p>
+                <Button
+                  to='/boston/'
+                  variant="primary"
+                  size="sm"
+                  className="hover:opacity-80 ml-4"
+                  noShadow
+                >
+                  Find out more
+                </Button>
               </div>
             </Link>
           </div>

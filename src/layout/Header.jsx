@@ -47,7 +47,7 @@ const Header = ({ location }) => {
       return `/boston${path}`;
     }
 
-    return path;
+    return `/barcelona${path}`;
   };
 
   const resolveTitle = (title, bostonTitle) => {
