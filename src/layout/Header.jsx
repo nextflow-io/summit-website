@@ -65,42 +65,44 @@ const Header = ({ location }) => {
           <Link to={resolvePath('/')} noBorder className="block uppercase">
             <img src={Logo} className="h-8 lg:h-10" alt="" />
           </Link>
-          <div className="lg:flex items-center hidden">
-            {navs.map((nav) => (
-              <Link
-                key={nav.path}
-                to={resolvePath(nav.path)}
-                noBorder
-                className={classnames(
-                  'bg-black bg-opacity-10 font-body py-1 px-4 rounded-sm mr-px font-normal tracking-wide',
-                  {
-                    'text-white': !location.pathname.includes(nav.path),
-                    'text-green-300': location.pathname.includes(nav.path),
-                  }
-                )}
+          {location && (
+            <div className="lg:flex items-center hidden">
+              {navs.map((nav) => (
+                <Link
+                  key={nav.path}
+                  to={resolvePath(nav.path)}
+                  noBorder
+                  className={classnames(
+                    'bg-black bg-opacity-10 font-body py-1 px-4 rounded-sm mr-px font-normal tracking-wide',
+                    {
+                      'text-white': !location.pathname.includes(nav.path),
+                      'text-green-300': location.pathname.includes(nav.path),
+                    }
+                  )}
+                >
+                  {resolveTitle(nav.title, nav.bostonTitle)}
+                </Link>
+              ))}
+              <Button
+                to={resolvePath('/call-for-abstracts/')}
+                variant="secondary"
+                size="sm"
+                className="hover:opacity-80 ml-4"
+                noShadow
               >
-                {resolveTitle(nav.title, nav.bostonTitle)}
-              </Link>
-            ))}
-            <Button
-              to={resolvePath('/call-for-abstracts/')}
-              variant="secondary"
-              size="sm"
-              className="hover:opacity-80 ml-4"
-              noShadow
-            >
-              Call for abstracts
-            </Button>
-            <Button
-              to={resolvePath('/register/')}
-              variant="primary"
-              size="sm"
-              className="hover:opacity-80 ml-4"
-              noShadow
-            >
-              Register
-            </Button>
-          </div>
+                Call for abstracts
+              </Button>
+              <Button
+                to={resolvePath('/register/')}
+                variant="primary"
+                size="sm"
+                className="hover:opacity-80 ml-4"
+                noShadow
+              >
+                Register
+              </Button>
+            </div>
+          )}
           <div className="lg:hidden">
             <Button
               onClick={() => { toggleMenu(); }}

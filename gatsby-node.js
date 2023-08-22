@@ -81,7 +81,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 };
 
 exports.onCreatePage = async ({ page, actions }) => {
-  // keep
+  const { createPage } = actions
+
+  if (page.path == "/") {
+    page.context.layout = "Plain"
+    createPage(page)
+  }
 };
 
 exports.onCreateWebpackConfig = ({ actions, loaders }) => {

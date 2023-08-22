@@ -18,11 +18,16 @@ const Layout = ({ children, location, pageContext }) => {
   return (
     <LayoutProvider location={location}>
       {pageContext.layout !== 'Plain' && (
+        <>
           <Header location={location} />
+          <div className="fixed top-20 right-0 md:top-32 z-10">
+            <EventSwitcher />
+          </div>
+        </>
       )}
-      <div className="fixed top-20 right-0 md:top-32 z-10">
-        <EventSwitcher />
-      </div>
+      {pageContext.layout == 'Plain' && (
+        <Header location={false} />
+      )}
       <main className="min-h-[calc(100vh_-_7rem_-_1px)] md:min-h-[calc(100vh_-_9rem_-_1px)]">
         {children}
       </main>
