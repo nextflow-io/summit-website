@@ -48,70 +48,75 @@ const IndexPage = () => {
       <Seo
         title="Nextflow SUMMIT 2023"
       />
-      <div className="container-md py-20">
-      <div className="row">
-                <div className="col-full lg:col-6">
-                  <Link to="/barcelona/" className="block bg-black text-white border border-gray-800 rounded-md shadow-xl relative overflow-hidden">
-                    <Image
-                      image={getImage(data.bluePattern)}
-                      alt="blue dots visual"
-                      className="h-48"
-                      imgClassName="rounded-t-md"
-                    />
-                    <div className="px-4 py-6 lg:p-8">
-                      <div>
-                        <NextflowLogo className="h-10 text-white mx-auto" />
-                      </div>
-                      <h3 className="text-center mt-4">
-                        <span className="typo-h4 text-white mr-4">
-                          SUMMIT
-                        </span>
-                        <span className="typo-blockquote text-blue-600 italic">
-                          Barcelona
-                        </span>
-                      </h3>
-                      <p className="typo-intro text-center uppercase mt-8">
-                        In person
-                        <span className="mx-2">
-                          |
-                        </span>
-                        Virtual
-                      </p>
-                      <p className="typo-intro text-center">
-                        Barcelona, October 16-20, 2023
-                      </p>
-                    </div>
-                  </Link>
+      <div className="container-xl py-20 text-white text-center">
+        <h1 class="typo-h3 mb-8">Choose your Nextflow SUMMIT!</h1>
+        <p class="typo-body mb-6">
+          There will be two Nextflow SUMMIT events in 2022.
+          Join us in Barcelona or Boston!
+        </p>
+        <div className="row mt-12">
+          <div className="col-full md:col-6">
+            <Link to="/barcelona/" className="block bg-black border border-gray-800 rounded-md shadow-xl relative overflow-hidden">
+              <Image
+                image={getImage(data.bluePattern)}
+                alt="blue dots visual"
+                className="h-48"
+                imgClassName="rounded-t-md"
+              />
+              <div className="px-4 py-6 lg:p-8">
+                <div>
+                  <NextflowLogo className="h-10 mx-auto" />
                 </div>
-                <div className="col-full lg:col-6 mt-8 lg:mt-0">
-                  <Link to="/boston/" className="block bg-black text-white border border-gray-800 rounded-md shadow-xl relative overflow-hidden" noBorder>
-                    <Image
-                      image={getImage(data.redPattern)}
-                      alt="red dots visual"
-                      className="h-48"
-                      imgClassName="rounded-t-md"
-                    />
-                    <div className="px-4 py-6 lg:p-8">
-                      <div>
-                        <NextflowLogo className="h-10 text-white mx-auto" />
-                      </div>
-                      <h3 className="text-center mt-4">
-                        <span className="typo-h4 text-white mr-4">
-                          SUMMIT
-                        </span>
-                        <span className="typo-blockquote text-red-300 italic">
-                          Boston
-                        </span>
-                      </h3>
-                      <p className="typo-intro text-center uppercase mt-8">
-                        In person
-                      </p>
-                      <p className="typo-intro text-center">
-                        Boston, November 28-30, 2023
-                      </p>
-                    </div>
-                  </Link>
+                <h3 className="mt-4">
+                  <span className="typo-h4 mr-4">
+                    SUMMIT
+                  </span>
+                  <span className="typo-blockquote text-blue-600 italic">
+                    Barcelona
+                  </span>
+                </h3>
+                <p className="typo-intro uppercase mt-8">
+                  In person
+                  <span className="mx-2">
+                    |
+                  </span>
+                  Virtual
+                </p>
+                <p className="typo-intro">
+                  Barcelona, October 16-20, 2023
+                </p>
+              </div>
+            </Link>
+          </div>
+          <div className="col-full md:col-6 mt-8 lg:mt-0">
+            <Link to="/boston/" className="block bg-black text-white border border-gray-800 rounded-md shadow-xl relative overflow-hidden" noBorder>
+              <Image
+                image={getImage(data.redPattern)}
+                alt="red dots visual"
+                className="h-48"
+                imgClassName="rounded-t-md"
+              />
+              <div className="px-4 py-6 lg:p-8">
+                <div>
+                  <NextflowLogo className="h-10 text-white mx-auto" />
                 </div>
+                <h3 className="text-center mt-4">
+                  <span className="typo-h4 text-white mr-4">
+                    SUMMIT
+                  </span>
+                  <span className="typo-blockquote text-red-300 italic">
+                    Boston
+                  </span>
+                </h3>
+                <p className="typo-intro text-center uppercase mt-8">
+                  In person
+                </p>
+                <p className="typo-intro text-center">
+                  Boston, November 28-30, 2023
+                </p>
+              </div>
+            </Link>
+          </div>
         </div>
       </div>
       <div className="text-white py-8">
