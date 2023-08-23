@@ -5,7 +5,7 @@ import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
 import { GitHubIcon, Link, LinkedInIcon, TwitterIcon } from 'website-components';
 
 const SpeakerCard = ({ speaker, className, location }) => {
-  let speakerURL = `/speakers${speaker.slug}`;
+  let speakerURL = `/barcelona/speakers${speaker.slug}`;
   if (location === 'Boston') speakerURL = `/boston/speakers${speaker.slug}`;
   return (
     <div className={classnames('bg-black text-white border border-gray-700 rounded-md overflow-hidden', className)}>

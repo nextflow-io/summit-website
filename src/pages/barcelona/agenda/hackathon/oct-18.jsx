@@ -1,13 +1,13 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import AgendaPage from '../../../modules/AgendaPage';
+import AgendaPage from '../../../../modules/AgendaPage';
 
-const SummitOct19 = () => {
+const HackathonOct18 = () => {
   const data = useStaticQuery(graphql`
     query {
       events: allEvent(
-        filter: { date: { eq: "Oct 19, 2023" }, type: { eq: "talks" }, isChild: { ne: true } }
+        filter: { date: { eq: "Oct 18, 2023" }, isChild: { ne: true }, type: { eq: "events" } }
         sort: { datetime: ASC }
       ) {
         nodes {
@@ -24,6 +24,14 @@ const SummitOct19 = () => {
           youtube
           youtubeUrl
           hasPage
+          speakers {
+            name
+            image {
+              childImageSharp {
+                gatsbyImageData(height: 32, placeholder: NONE, width: 32)
+              }
+            }
+          }
           events {
             slug
             timeframe
@@ -37,12 +45,20 @@ const SummitOct19 = () => {
             youtube
             youtubeUrl
             hasPage
+            speakers {
+              name
+              image {
+                childImageSharp {
+                  gatsbyImageData(height: 32, placeholder: NONE, width: 32)
+                }
+              }
+            }
           }
         }
       }
     }
   `);
-  return <AgendaPage showEvents eventData={data?.events?.nodes} />;
+  return <AgendaPage showEvents eventData={data?.events?.nodes} eventType="hackathon" />;
 };
 
-export default SummitOct19;
+export default HackathonOct18;

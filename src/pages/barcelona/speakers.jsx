@@ -3,8 +3,8 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
 import { Button } from 'website-components';
 
-import Seo from '../components/Seo';
-import SpeakerCard from '../components/SpeakerCard';
+import Seo from '../../components/Seo';
+import SpeakerCard from '../../components/SpeakerCard';
 
 const SpeakersPage = () => {
   const data = useStaticQuery(graphql`
@@ -43,7 +43,7 @@ const SpeakersPage = () => {
             <div className="col-full lg:col-6">
               <h1 className="typo-h2 mb-4">More than 25 speakers to look forward to</h1>
               <p className="typo-body max-w-xl mb-6">
-              The final abstracts will be accepted and presenters notified in mid August.
+                The final abstracts will be accepted and presenters notified in mid August.
               </p>
             </div>
             <div className="col-full lg:col-5 lg:ml-1/12 hidden lg:block">

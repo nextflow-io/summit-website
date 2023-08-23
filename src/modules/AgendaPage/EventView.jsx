@@ -40,8 +40,8 @@ const EventView = ({ eventData, showAllDays, eventType, eventLocation }) => {
               </Tabs>
             ) : (
               <Tabs location={loc} anchor="#events" partialMatch>
-                <Tabs.Item to="/agenda/hackathon/">Hackathon</Tabs.Item>
-                <Tabs.Item to="/agenda/summit/">Summit</Tabs.Item>
+                <Tabs.Item to="/barcelona/agenda/hackathon/">Hackathon</Tabs.Item>
+                <Tabs.Item to="/barcelona/agenda/summit/">Summit</Tabs.Item>
               </Tabs>
             )}
           </div>

@@ -4,15 +4,15 @@ import React from 'react';
 
 import { Button, Link, LocationIcon, Marquee } from 'website-components';
 
-import AccommodationCard from '../components/AccommodationCard';
-import Card from '../components/Card';
-import LaptopIcon from '../components/icons/LaptopIcon';
-import MountainIcon from '../components/icons/MountainIcon';
-import LocationMap from '../components/LocationMap';
-import RegisterCTA from '../components/RegisterCTA';
-import Seo from '../components/Seo';
-import LocalInformation from '../modules/LocalInformation';
-import ContactUs from '../components/ContactUs';
+import AccommodationCard from '../../components/AccommodationCard';
+import Card from '../../components/Card';
+import LaptopIcon from '../../components/icons/LaptopIcon';
+import MountainIcon from '../../components/icons/MountainIcon';
+import LocationMap from '../../components/LocationMap';
+import RegisterCTA from '../../components/RegisterCTA';
+import Seo from '../../components/Seo';
+import LocalInformation from '../../modules/LocalInformation';
+import ContactUs from '../../components/ContactUs';
 
 const TravelPage = () => {
   const data = useStaticQuery(graphql`
@@ -103,9 +103,6 @@ const TravelPage = () => {
           </div>
         </div>
       </div>
-      <Marquee className="typo-body bg-green-300 text-black" to="/call-for-abstracts/" type="reset">
-        Call for abstracts now open
-      </Marquee>
       <div className="container-md text-white py-16">
         <div className="text-center">
           <h2 className="typo-h6 uppercase">Location</h2>

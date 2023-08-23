@@ -25,17 +25,17 @@ const DateTabs = ({ eventLocation, eventType, loc }) => {
     <Tabs location={loc} anchor="#events">
       {eventType === 'hackathon' ? (
         <>
-          <Tabs.Item to="/agenda/hackathon/">All</Tabs.Item>
-          <Tabs.Item to="/agenda/hackathon/oct-16/">Mon, Oct&nbsp;16</Tabs.Item>
-          <Tabs.Item to="/agenda/hackathon/oct-17/">Tue, Oct&nbsp;17</Tabs.Item>
-          <Tabs.Item to="/agenda/hackathon/oct-18/">Wed, Oct&nbsp;18</Tabs.Item>
+          <Tabs.Item to="/barcelona/agenda/hackathon/">All</Tabs.Item>
+          <Tabs.Item to="/barcelona/agenda/hackathon/oct-16/">Mon, Oct&nbsp;16</Tabs.Item>
+          <Tabs.Item to="/barcelona/agenda/hackathon/oct-17/">Tue, Oct&nbsp;17</Tabs.Item>
+          <Tabs.Item to="/barcelona/agenda/hackathon/oct-18/">Wed, Oct&nbsp;18</Tabs.Item>
         </>
       ) : (
         <>
-          <Tabs.Item to="/agenda/summit/">All</Tabs.Item>
-          <Tabs.Item to="/agenda/summit/oct-18/">Wed, Oct&nbsp;18</Tabs.Item>
-          <Tabs.Item to="/agenda/summit/oct-19/">Thu, Oct&nbsp;19</Tabs.Item>
-          <Tabs.Item to="/agenda/summit/oct-20/">Fri, Oct&nbsp;20</Tabs.Item>
+          <Tabs.Item to="/barcelona/agenda/summit/">All</Tabs.Item>
+          <Tabs.Item to="/barcelona/agenda/summit/oct-18/">Wed, Oct&nbsp;18</Tabs.Item>
+          <Tabs.Item to="/barcelona/agenda/summit/oct-19/">Thu, Oct&nbsp;19</Tabs.Item>
+          <Tabs.Item to="/barcelona/agenda/summit/oct-20/">Fri, Oct&nbsp;20</Tabs.Item>
         </>
       )}
     </Tabs>

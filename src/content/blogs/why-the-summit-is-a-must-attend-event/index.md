@@ -25,4 +25,4 @@ Nextflow Summit is the ideal opportunity to present all the work you are doing. 
 ### Go for it!
 The Nextflow Summit is not just about serious discussions: it’s about building lasting connections and creating memorable experiences. You’ll collaborate, code and cook up something delicious together! After jam-packed sessions, we’ll gather for a lively social dinner. It’s a chance to unwind and celebrate the incredible community that makes working with Nextflow so vibrant and inspiring!
 
-[Register now](/register/) to be part of the experience.
+[Register now](/barcelona/register/) to be part of the experience.

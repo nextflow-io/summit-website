@@ -307,14 +307,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const speakers = result.data.speakers.nodes;
 
   speakers.forEach((speaker) => {
-    let paths = ['/speakers'];
+    let paths = ['/barcelona/speakers'];
 
     switch (speaker.attending) {
       case 'Boston':
         paths = ['/boston/speakers'];
         break;
       case 'Both':
-        paths = ['/boston/speakers', '/speakers'];
+        paths = ['/boston/speakers', '/barcelona/speakers'];
     }
 
     paths.forEach((path) => {
@@ -353,6 +353,15 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   //     },
   //   });
   // });
+};
+
+exports.onCreatePage = async ({ page, actions }) => {
+  const { createPage } = actions;
+
+  if (page.path == '/') {
+    page.context.layout = 'Plain';
+    createPage(page);
+  }
 };
 
 exports.onCreateWebpackConfig = ({ actions, loaders }) => {

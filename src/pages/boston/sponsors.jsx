@@ -51,12 +51,7 @@ const SponsorsPage = () => {
           </div>
         </div>
       </div>
-      <div className="text-white py-8">
-        <div className="text-center">
-          <h2 className="typo-h6 uppercase">Sponsored by</h2>
-        </div>
-        <SponsoredBy />
-      </div>
+      <SponsoredBy />
       <ContactUs />
     </>
   );

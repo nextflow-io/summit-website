@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 
 import { Button, Link, Marquee } from 'website-components';
 
-import Card from '../components/Card';
-import RegisterCTA from '../components/RegisterCTA';
-import Seo from '../components/Seo';
-import Tabs from '../components/Tabs';
-import YoutubeIframe from '../components/YoutubeIframe';
-import ContactUs from '../components/ContactUs';
+import Card from '../../components/Card';
+import RegisterCTA from '../../components/RegisterCTA';
+import Seo from '../../components/Seo';
+import Tabs from '../../components/Tabs';
+import YoutubeIframe from '../../components/YoutubeIframe';
+import ContactUs from '../../components/ContactUs';
 
 const PastEventsPage = () => {
   const [year, setYear] = useState('2022');
@@ -37,9 +37,6 @@ const PastEventsPage = () => {
           </div>
         </div>
       </div>
-      <Marquee className="typo-body bg-green-300 text-black" to="/call-for-abstracts/" type="reset">
-        Call for abstracts now open
-      </Marquee>
       <div className="container-md py-16">
         <Tabs current={year} setCurrent={setYear}>
           <Tabs.Item index="2022">2022</Tabs.Item>
