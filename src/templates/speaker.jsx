@@ -9,7 +9,7 @@ import Seo from '../components/Seo';
 
 const SpeakerPage = ({ data, path }) => {
   const { speaker } = data;
-  const backURL = path.includes('boston') ? '/boston/speakers/' : '/speakers/';
+  const backURL = path.includes('boston') ? '/boston/speakers/' : '/barcelona/speakers/';
   return (
     <>
       <Seo title={speaker.meta.title} description={speaker.meta.description} image={speaker.meta.image.publicURL} />

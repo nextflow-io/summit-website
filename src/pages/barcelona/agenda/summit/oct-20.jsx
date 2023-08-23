@@ -1,7 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import AgendaPage from '../../../modules/AgendaPage';
+import AgendaPage from '../../../../modules/AgendaPage';
 
 const SummitOct20 = () => {
   const data = useStaticQuery(graphql`

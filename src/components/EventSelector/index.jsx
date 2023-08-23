@@ -1,11 +1,10 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
+import { getImage } from 'gatsby-plugin-image';
 
-import NextflowLogo from '../NextflowLogo';
 import EventCard from './EventCard';
 
-const EventSelector = ({ selectBcn }) => {
+const EventSelector = () => {
   const data = useStaticQuery(graphql`
     query {
       summitImage: file(relativePath: { eq: "photos/summit-barcelona.jpg" }) {
@@ -36,7 +35,7 @@ const EventSelector = ({ selectBcn }) => {
           <EventCard
             img={getImage(data.bluePattern)}
             location="Barcelona"
-            onClick={selectBcn}
+            to="/barcelona/"
             date="Barcelona, October 16-20, 2023"
             color="text-blue-600"
           >

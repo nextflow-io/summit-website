@@ -1,5 +1,5 @@
 import React from 'react';
-import AgendaPage from '../../../modules/AgendaPage';
+import AgendaPage from '../../../../modules/AgendaPage';
 import { useStaticQuery, graphql } from 'gatsby';
 
 const SummitOct18 = () => {

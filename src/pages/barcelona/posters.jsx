@@ -4,10 +4,10 @@ import React, { useState } from 'react';
 
 import { Button } from 'website-components';
 
-import GatherIcon from '../components/icons/GatherIcon';
-import Seo from '../components/Seo';
-import PosterCard from '../components/PosterCard';
-import ContactUs from '../components/ContactUs';
+import GatherIcon from '../../components/icons/GatherIcon';
+import Seo from '../../components/Seo';
+import PosterCard from '../../components/PosterCard';
+import ContactUs from '../../components/ContactUs';
 
 const PostersPage = () => {
   const data = useStaticQuery(graphql`
@@ -126,7 +126,7 @@ const PostersPage = () => {
           </div>
         </div>
       </div>
-			<ContactUs />
+      <ContactUs />
     </>
   );
 };

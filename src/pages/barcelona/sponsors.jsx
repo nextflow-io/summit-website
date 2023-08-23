@@ -4,10 +4,10 @@ import React from 'react';
 
 import { Button } from 'website-components';
 
-import Seo from '../components/Seo';
+import Seo from '../../components/Seo';
 
-import ContactUs from '../components/ContactUs';
-import SponsoredBy from '../components/SponsoredBy';
+import ContactUs from '../../components/ContactUs';
+import SponsoredBy from '../../components/SponsoredBy';
 
 const SponsorsPage = () => {
   const data = useStaticQuery(graphql`

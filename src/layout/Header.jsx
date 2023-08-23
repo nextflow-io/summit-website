@@ -35,7 +35,7 @@ const navs = [
   },
 ];
 
-const Header = ({ location }) => {
+const Header = ({ location, hideNav }) => {
   const { activeEvent, menuOpen } = useLayoutState();
 
   const { toggleMenu, closeMenu } = useLayoutActions();
@@ -47,12 +47,8 @@ const Header = ({ location }) => {
 
   const resolvePath = (path) => {
     if (path === '/blog/') return path;
-
-    if (activeEvent === 'boston') {
-      return `/boston${path}`;
-    }
-
-    return path;
+    if (activeEvent === 'boston') return `/boston${path}`;
+    return `/barcelona${path}`;
   };
 
   const resolveTitle = (title, bostonTitle) => {
@@ -62,6 +58,10 @@ const Header = ({ location }) => {
 
   const agendaPath = resolvePath('/agenda/');
 
+  function isPage(path) {
+    return location.pathname.includes(path);
+  }
+
   return (
     <>
       <header className="bg-black fixed z-10 inset-x-0 top-0 fixed">
@@ -69,77 +69,81 @@ const Header = ({ location }) => {
           <Link to={resolvePath('/')} noBorder className="block flex-auto">
             <img src={Logo} className="max-h-10" style={{ marginRight: '100%' }} alt="" />
           </Link>
-          <div className="hidden lg:flex flex-auto items-center justify-end">
-            <div className={classnames(styles.dropdown)}>
-              <Link
-                to={agendaPath}
-                noBorder
-                className={classnames(
-                  'bg-black bg-opacity-10 font-body py-1 px-4 rounded-sm mr-px font-normal tracking-wide',
-                  {
-                    'text-white': !location.pathname.includes(agendaPath),
-                    'text-green-300': location.pathname.includes(agendaPath),
-                  }
+          {!hideNav && (
+            <>
+              <div className="hidden lg:flex flex-auto items-center justify-end">
+                <div className={classnames(styles.dropdown)}>
+                  <Link
+                    to={agendaPath}
+                    noBorder
+                    className={classnames(
+                      'bg-black bg-opacity-10 font-body py-1 px-4 rounded-sm mr-px font-normal tracking-wide',
+                      {
+                        'text-white': !isPage(agendaPath),
+                        'text-green-300': isPage(agendaPath),
+                      }
+                    )}
+                  >
+                    Agenda
+                  </Link>
+                  <div className={styles.dropdownContent}>
+                    <Link
+                      to={`${agendaPath}hackathon/#events`}
+                      className={classnames({ [styles.active]: isPage('/agenda/hackathon') })}
+                    >
+                      Hackathon
+                    </Link>
+                    <Link
+                      to={`${agendaPath}summit/#events`}
+                      className={classnames({ [styles.active]: isPage('/agenda/summit') })}
+                    >
+                      SUMMIT
+                    </Link>
+                  </div>
+                </div>
+                {navs.map((nav) =>
+                  !nav.path ? null : (
+                    <Link
+                      key={nav.path}
+                      to={resolvePath(nav.path)}
+                      noBorder
+                      className={classnames(
+                        'bg-black bg-opacity-10 font-body py-1 px-4 rounded-sm mr-px font-normal tracking-wide',
+                        {
+                          'text-white': !isPage(nav.path),
+                          'text-green-300': isPage(nav.path),
+                        }
+                      )}
+                    >
+                      {resolveTitle(nav.title, nav.bostonTitle)}
+                    </Link>
+                  )
                 )}
-              >
-                Agenda
-              </Link>
-              <div className={styles.dropdownContent}>
-                <Link
-                  to={`${agendaPath}hackathon/#events`}
-                  className={classnames({ [styles.active]: location.pathname.includes('/agenda/hackathon') })}
-                >
-                  Hackathon
-                </Link>
-                <Link
-                  to={`${agendaPath}summit/#events`}
-                  className={classnames({ [styles.active]: location.pathname.includes('/agenda/summit') })}
-                >
-                  SUMMIT
-                </Link>
+                <div className="flex flex-none">
+                  <Button
+                    to={resolvePath('/register/')}
+                    variant="primary"
+                    size="sm"
+                    className="hover:opacity-80 ml-4"
+                    noShadow
+                  >
+                    Register
+                  </Button>
+                </div>
               </div>
-            </div>
-            {navs.map((nav) =>
-              !nav.path ? null : (
-                <Link
-                  key={nav.path}
-                  to={resolvePath(nav.path)}
-                  noBorder
-                  className={classnames(
-                    'bg-black bg-opacity-10 font-body py-1 px-4 rounded-sm mr-px font-normal tracking-wide',
-                    {
-                      'text-white': !location.pathname.includes(nav.path),
-                      'text-green-300': location.pathname.includes(nav.path),
-                    }
-                  )}
+              <div className="lg:hidden">
+                <Button
+                  onClick={() => {
+                    toggleMenu();
+                  }}
+                  noShadow
+                  className="text-white"
                 >
-                  {resolveTitle(nav.title, nav.bostonTitle)}
-                </Link>
-              )
-            )}
-            <div className="flex flex-none">
-              <Button
-                to={resolvePath('/register/')}
-                variant="primary"
-                size="sm"
-                className="hover:opacity-80 ml-4"
-                noShadow
-              >
-                Register
-              </Button>
-            </div>
-          </div>
-          <div className="lg:hidden">
-            <Button
-              onClick={() => {
-                toggleMenu();
-              }}
-              noShadow
-              className="text-white"
-            >
-              <MenuIcon />
-            </Button>
-          </div>
+                  <MenuIcon />
+                </Button>
+              </div>
+            </>
+          )}
         </div>
       </header>
       <div

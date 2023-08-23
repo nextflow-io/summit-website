@@ -1,13 +1,13 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import AgendaPage from '../../../modules/AgendaPage';
+import AgendaPage from '../../../../modules/AgendaPage';
 
-const HackathonOct18 = () => {
+const HackathonOct16 = () => {
   const data = useStaticQuery(graphql`
     query {
       events: allEvent(
-        filter: { date: { eq: "Oct 18, 2023" }, isChild: { ne: true }, type: { eq: "events" } }
+        filter: { date: { eq: "Oct 16, 2023" }, isChild: { ne: true }, type: { eq: "events" } }
         sort: { datetime: ASC }
       ) {
         nodes {
@@ -61,4 +61,4 @@ const HackathonOct18 = () => {
   return <AgendaPage showEvents eventData={data?.events?.nodes} eventType="hackathon" />;
 };
 
-export default HackathonOct18;
+export default HackathonOct16;

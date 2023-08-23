@@ -17,12 +17,16 @@ const defaultProps = {
 const Layout = ({ children, location, pageContext }) => {
   return (
     <LayoutProvider location={location}>
-      {pageContext.layout !== 'Plain' && (
+      {pageContext.layout !== 'Plain' ? (
+        <>
           <Header location={location} />
+          <div className="fixed top-20 right-0 md:top-32 z-10">
+            <EventSwitcher />
+          </div>
+        </>
+      ) : (
+        <Header hideNav />
       )}
-      <div className="fixed top-20 right-0 md:top-32 z-10">
-        <EventSwitcher />
-      </div>
       <main className="min-h-[calc(100vh_-_7rem_-_1px)] md:min-h-[calc(100vh_-_9rem_-_1px)] pt-[64px] md:pt-[96px]">
         {children}
       </main>

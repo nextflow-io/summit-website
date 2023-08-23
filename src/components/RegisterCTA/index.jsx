@@ -19,7 +19,7 @@ const RegisterCTA = () => {
           </h2>
           <div className="mt-5">
             <Button
-              to={activeEvent === 'boston' ? '/boston/register/' : '/register/'}
+              to={activeEvent === 'boston' ? '/boston/register/' : '/barcelona/register/'}
               variant="primary"
               size="md"
               arrow

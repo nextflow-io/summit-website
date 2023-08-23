@@ -7,7 +7,7 @@ import { Button } from 'website-components';
 
 const ProgramSelector = ({ eventLocation }) => {
   let eventData = {
-    agendaPath: 'agenda',
+    agendaPath: 'barcelona/agenda',
     hackathon: {
       date: 'Oct 16-18',
       description: '2.5 days · 100 people · hackathon',

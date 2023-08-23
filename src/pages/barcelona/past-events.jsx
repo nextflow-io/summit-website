@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 
 import { Button, Link, Marquee } from 'website-components';
 
-import Card from '../components/Card';
-import RegisterCTA from '../components/RegisterCTA';
-import Seo from '../components/Seo';
-import Tabs from '../components/Tabs';
-import YoutubeIframe from '../components/YoutubeIframe';
-import ContactUs from '../components/ContactUs';
+import Card from '../../components/Card';
+import RegisterCTA from '../../components/RegisterCTA';
+import Seo from '../../components/Seo';
+import Tabs from '../../components/Tabs';
+import YoutubeIframe from '../../components/YoutubeIframe';
+import ContactUs from '../../components/ContactUs';
 
 const PastEventsPage = () => {
   const [year, setYear] = useState('2022');

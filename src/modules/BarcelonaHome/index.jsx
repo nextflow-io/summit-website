@@ -56,7 +56,7 @@ const IndexPage = () => {
               </p>
               <p className="typo-intro uppercase">Barcelona, October 16-20, 2023</p>
               <div className="max-w-[320px] mt-4">
-                <Button to="/register/" variant="primary" size="md" arrow>
+                <Button to="/barcelona/register/" variant="primary" size="md" arrow>
                   Register
                 </Button>
               </div>
@@ -87,7 +87,7 @@ const IndexPage = () => {
                 Join our hackathon to develop nf-core together. It will be held in Barcelona and on Gather (virtually)
                 prior to the Nextflow SUMMIT.
               </p>
-              <Button to="/agenda/hackathon#events" variant="secondary" size="md">
+              <Button to="/barcelona/agenda/hackathon#events" variant="secondary" size="md">
                 View program
               </Button>
             </div>
@@ -102,7 +102,7 @@ const IndexPage = () => {
                 A showcase of the latest developments and innovations from the Nextflow world held in Barcelona and
                 streamed online.
               </p>
-              <Button to="/agenda/summit#events" variant="secondary" size="md">
+              <Button to="/barcelona/agenda/summit#events" variant="secondary" size="md">
                 View program
               </Button>
             </div>
