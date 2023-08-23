@@ -14,7 +14,7 @@ const Blog = () => {
           gatsbyImageData(placeholder: NONE)
         }
       }
-      blogs: allBlog {
+      blogs: allBlog(sort: { datetime: DESC }, limit: 1000) {
         nodes {
           slug
           title
@@ -60,13 +60,11 @@ const Blog = () => {
             </div>
           </div>
           <div className="py-12">
-            <h2 className="typo-h5 uppercase text-center mb-4">Blogs</h2>
-            <div className="flex">
-              <div className="w-full lg:w-9/12">
-                {blogs.map((blog, i) => (
-                  <BlogPost key={i} blog={blog} />
-                ))}
-              </div>
+            <h2 className="typo-h5 uppercase text-center mb-4">Blog posts</h2>
+            <div className="mx-auto lg:w-9/12">
+              {blogs.map((blog, i) => (
+                <BlogPost key={i} blog={blog} />
+              ))}
             </div>
           </div>
         </div>
