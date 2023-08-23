@@ -9,7 +9,7 @@ const BlogPost = ({ blog }) => {
   return (
     <Link
       to={`/blog/${blog.slug}`}
-      resetClassName={classNames(styles.container, 'block bg-black border border-gray-700 rounded-lg p-8')}
+      resetClassName={classNames(styles.container, 'block bg-black border border-gray-700 rounded-lg p-8 mt-8')}
     >
       <h3 className="typo-h4 text-white mb-8">{blog.title}</h3>
       {blog.meta.description}
