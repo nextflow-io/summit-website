@@ -9,7 +9,7 @@ import EventSelector from '../components/EventSelector';
 const IndexPage = () => {
   return (
     <>
-      <Seo title="Nextflow SUMMIT 2023" />
+      <Seo title="Nextflow SUMMIT 2023" image="/images/share-image.jpg" />
       <EventSelector />
       <SponsoredBy />
       <ContactUs />
