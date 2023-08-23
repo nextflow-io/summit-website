@@ -4,8 +4,8 @@ title: The Ultimate Guide to Attending Nextflow Summit!
 datetime: 2023-08-23T10:00:00.000Z
 author: Anna Pedrals
 meta:
-  title: 'Why the Summit is a Must-Attend Event'
-  description: 'Mark your calendars, this year’s Nextflow Summit is here! Still unsure about why this event is a “must-attend”? Here are a few reasons to help convince you.'
+  title: 'The Ultimate Guide to Attending Nextflow Summit!'
+  description: 'We’ll embark on an adventure to help you attend the Nextflow Summit while still staying on top of your work duties!'
   image: ../../../images/share/2023_summit_register_interest.jpg
 ---
 Picture this: You’ve stumbled upon the Nextflow Summit, which promises to be essential for your career, but oh no! 🙀 Your constant nemesis, the wet lab’s ever increasing queue of sequencing run data, has you tied down with a mountain of work. Fear not! In this ultimate guide, we’ll embark on an adventure to help you attend the Nextflow Summit while still staying on top of your work duties! 😎
