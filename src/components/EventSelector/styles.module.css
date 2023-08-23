@@ -1,0 +1,13 @@
+.card {
+  transition: all 0.3s ease;
+}
+.card .btn {
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+.card:hover {
+  transform: scale(1.01);
+}
+.card:hover .btn {
+  opacity: 1;
+}
