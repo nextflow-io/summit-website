@@ -1,4 +1,10 @@
-import React, { createContext, useCallback, useContext, useEffect, useReducer } from 'react';
+import React, {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useReducer,
+} from 'react';
 
 import useMediaQuery from '../hooks/useMediaQuery';
 import PropTypes from '../utils/PropTypes';
@@ -17,10 +23,7 @@ const getActiveEventFromPath = (path) => {
 function layoutReducer(state, action) {
   switch (action.type) {
     case 'setActiveEvent': {
-      return { ...state, activeEvent: action.payload.activeEvent };
-    }
-    case 'selectBarcelona': {
-      return { ...state, barcelonaSelected: true };
+      return { ...state, activeEvent: action.payload.activeEvent }
     }
     case 'openMenu': {
       return { ...state, menuOpen: true };
@@ -66,7 +69,6 @@ const useLayoutActions = () => {
     closeMenu: () => dispatch({ type: 'closeMenu' }),
     openMenu: () => dispatch({ type: 'openMenu' }),
     toggleMenu: () => dispatch({ type: 'toggleMenu' }),
-    selectBarcelona: () => dispatch({ type: 'selectBarcelona' }),
   };
 };
 
@@ -88,7 +90,6 @@ const useScrollTo = (targetRef, scrollOffset = -100) => {
 const LayoutProvider = ({ location, children }) => {
   const [state, dispatch] = useReducer(layoutReducer, {
     activeEvent: getActiveEventFromPath(location.pathname),
-    barcelonaSelected: false,
     menuOpen: false,
     isSmallScreen: false,
     isMediumScreen: false,
@@ -103,13 +104,13 @@ const LayoutProvider = ({ location, children }) => {
 
   useEffect(() => {
     dispatch({ type: 'setActiveEvent', payload: { activeEvent: getActiveEventFromPath(location.pathname) } });
-  }, [location.pathname]);
-
-  const locationWasSelected = state.barcelonaSelected || state.activeEvent === 'boston';
+  }, [location.pathname])
 
   return (
     <LayoutDispatchContext.Provider value={dispatch}>
-      <LayoutStateContext.Provider value={{ ...state, locationWasSelected }}>{children}</LayoutStateContext.Provider>
+      <LayoutStateContext.Provider value={state}>
+        {children}
+      </LayoutStateContext.Provider>
     </LayoutDispatchContext.Provider>
   );
 };
@@ -132,4 +133,10 @@ const LayoutConsumer = ({ children }) => {
 
 LayoutConsumer.propTypes = { children: PropTypes.func.isRequired };
 
-export { LayoutConsumer, LayoutProvider, useLayoutActions, useLayoutState, useScrollTo };
+export {
+  LayoutConsumer,
+  LayoutProvider,
+  useLayoutActions,
+  useLayoutState,
+  useScrollTo,
+};

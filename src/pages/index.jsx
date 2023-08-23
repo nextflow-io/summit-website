@@ -7,19 +7,16 @@ import ContactUs from '../components/ContactUs';
 import SponsoredBy from '../components/SponsoredBy';
 import EventSelector from '../components/EventSelector';
 import BarcelonaHome from '../modules/BarcelonaHome';
-import { useLayoutState } from '../layout/Context';
-import { useLayoutActions } from '../layout/Context';
 
 const IndexPage = () => {
-  const { barcelonaSelected } = useLayoutState();
-  const { selectBarcelona } = useLayoutActions();
+  const [showBcn, setShowBcn] = React.useState(false);
 
   return (
     <>
       <Seo title="Nextflow SUMMIT 2023" />
-      {!barcelonaSelected ? (
+      {!showBcn ? (
         <>
-          <EventSelector selectBcn={selectBarcelona} />
+          <EventSelector selectBcn={() => setShowBcn(true)} />
           <SponsoredBy />
         </>
       ) : (

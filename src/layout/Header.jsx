@@ -36,7 +36,7 @@ const navs = [
 ];
 
 const Header = ({ location }) => {
-  const { activeEvent, menuOpen, locationWasSelected } = useLayoutState();
+  const { activeEvent, menuOpen } = useLayoutState();
 
   const { toggleMenu, closeMenu } = useLayoutActions();
 
@@ -69,81 +69,77 @@ const Header = ({ location }) => {
           <Link to={resolvePath('/')} noBorder className="block flex-auto">
             <img src={Logo} className="max-h-10" style={{ marginRight: '100%' }} alt="" />
           </Link>
-          {locationWasSelected && (
-            <>
-              <div className="hidden lg:flex flex-auto items-center justify-end">
-                <div className={classnames(styles.dropdown)}>
-                  <Link
-                    to={agendaPath}
-                    noBorder
-                    className={classnames(
-                      'bg-black bg-opacity-10 font-body py-1 px-4 rounded-sm mr-px font-normal tracking-wide',
-                      {
-                        'text-white': !location.pathname.includes(agendaPath),
-                        'text-green-300': location.pathname.includes(agendaPath),
-                      }
-                    )}
-                  >
-                    Agenda
-                  </Link>
-                  <div className={styles.dropdownContent}>
-                    <Link
-                      to={`${agendaPath}hackathon/#events`}
-                      className={classnames({ [styles.active]: location.pathname.includes('/agenda/hackathon') })}
-                    >
-                      Hackathon
-                    </Link>
-                    <Link
-                      to={`${agendaPath}summit/#events`}
-                      className={classnames({ [styles.active]: location.pathname.includes('/agenda/summit') })}
-                    >
-                      SUMMIT
-                    </Link>
-                  </div>
-                </div>
-                {navs.map((nav) =>
-                  !nav.path ? null : (
-                    <Link
-                      key={nav.path}
-                      to={resolvePath(nav.path)}
-                      noBorder
-                      className={classnames(
-                        'bg-black bg-opacity-10 font-body py-1 px-4 rounded-sm mr-px font-normal tracking-wide',
-                        {
-                          'text-white': !location.pathname.includes(nav.path),
-                          'text-green-300': location.pathname.includes(nav.path),
-                        }
-                      )}
-                    >
-                      {resolveTitle(nav.title, nav.bostonTitle)}
-                    </Link>
-                  )
+          <div className="hidden lg:flex flex-auto items-center justify-end">
+            <div className={classnames(styles.dropdown)}>
+              <Link
+                to={agendaPath}
+                noBorder
+                className={classnames(
+                  'bg-black bg-opacity-10 font-body py-1 px-4 rounded-sm mr-px font-normal tracking-wide',
+                  {
+                    'text-white': !location.pathname.includes(agendaPath),
+                    'text-green-300': location.pathname.includes(agendaPath),
+                  }
                 )}
-                <div className="flex flex-none">
-                  <Button
-                    to={resolvePath('/register/')}
-                    variant="primary"
-                    size="sm"
-                    className="hover:opacity-80 ml-4"
-                    noShadow
-                  >
-                    Register
-                  </Button>
-                </div>
-              </div>
-              <div className="lg:hidden">
-                <Button
-                  onClick={() => {
-                    toggleMenu();
-                  }}
-                  noShadow
-                  className="text-white"
+              >
+                Agenda
+              </Link>
+              <div className={styles.dropdownContent}>
+                <Link
+                  to={`${agendaPath}hackathon/#events`}
+                  className={classnames({ [styles.active]: location.pathname.includes('/agenda/hackathon') })}
                 >
-                  <MenuIcon />
-                </Button>
+                  Hackathon
+                </Link>
+                <Link
+                  to={`${agendaPath}summit/#events`}
+                  className={classnames({ [styles.active]: location.pathname.includes('/agenda/summit') })}
+                >
+                  SUMMIT
+                </Link>
               </div>
-            </>
-          )}
+            </div>
+            {navs.map((nav) =>
+              !nav.path ? null : (
+                <Link
+                  key={nav.path}
+                  to={resolvePath(nav.path)}
+                  noBorder
+                  className={classnames(
+                    'bg-black bg-opacity-10 font-body py-1 px-4 rounded-sm mr-px font-normal tracking-wide',
+                    {
+                      'text-white': !location.pathname.includes(nav.path),
+                      'text-green-300': location.pathname.includes(nav.path),
+                    }
+                  )}
+                >
+                  {resolveTitle(nav.title, nav.bostonTitle)}
+                </Link>
+              )
+            )}
+            <div className="flex flex-none">
+              <Button
+                to={resolvePath('/register/')}
+                variant="primary"
+                size="sm"
+                className="hover:opacity-80 ml-4"
+                noShadow
+              >
+                Register
+              </Button>
+            </div>
+          </div>
+          <div className="lg:hidden">
+            <Button
+              onClick={() => {
+                toggleMenu();
+              }}
+              noShadow
+              className="text-white"
+            >
+              <MenuIcon />
+            </Button>
+          </div>
         </div>
       </header>
       <div
