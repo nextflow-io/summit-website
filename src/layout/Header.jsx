@@ -26,8 +26,9 @@ const navs = [
     path: '/blog/',
   },
   {
-    title: null,
-    path: null,
+    title: 'Call for abstracts',
+    path: '/call-for-abstracts/',
+    className: 'hidden lg:block',
   },
   {
     title: 'Past events',
@@ -109,6 +110,7 @@ const Header = ({ location, hideNav }) => {
                       noBorder
                       className={classnames(
                         'bg-black bg-opacity-10 font-body py-1 px-4 rounded-sm mr-px font-normal tracking-wide',
+                        nav.className,
                         {
                           'text-white': !isPage(nav.path),
                           'text-green-300': isPage(nav.path),
@@ -168,7 +170,7 @@ const Header = ({ location, hideNav }) => {
               </Link>
             </div>
             {navs.map((nav) => (
-              <div className="mt-4 first:mt-0" key={nav.path}>
+              <div className={classnames('mt-4 first:mt-0', nav.className)} key={nav.path}>
                 {nav.title ? (
                   <Link to={resolvePath(nav.path)} onClick={closeMenu} noBorder>
                     {resolveTitle(nav.title, nav.bostonTitle)}

@@ -37,9 +37,6 @@ const PastEventsPage = () => {
           </div>
         </div>
       </div>
-      <Marquee className="typo-body bg-green-300 text-black" to="/call-for-abstracts/" type="reset">
-        Call for abstracts now open
-      </Marquee>
       <div className="container-md py-16">
         <Tabs current={year} setCurrent={setYear}>
           <Tabs.Item index="2022">2022</Tabs.Item>

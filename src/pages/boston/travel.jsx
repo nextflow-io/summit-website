@@ -79,9 +79,6 @@ const TravelPage = () => {
           </div>
         </div>
       </div>
-      <Marquee className="typo-body bg-green-300 text-black" to="/boston/call-for-abstracts/" type="reset">
-        Call for abstracts now open
-      </Marquee>
       <div className="container-md text-white py-16">
         <div className="text-center">
           <h2 className="typo-h6 uppercase">Location</h2>
