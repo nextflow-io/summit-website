@@ -1,26 +1,11 @@
-import { useStaticQuery, graphql } from 'gatsby';
-
 import React, { useEffect } from 'react';
+
 import HeroDots from '../../components/HeroDots';
 import Seo from '../../components/Seo';
 
 import { Button } from 'website-components';
 
 const RegisterPage = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      membersImage: file(relativePath: { eq: "photos/members.jpg" }) {
-        childImageSharp {
-          gatsbyImageData(placeholder: NONE)
-        }
-      }
-      virtualImage: file(relativePath: { eq: "photos/virtual.jpg" }) {
-        childImageSharp {
-          gatsbyImageData(placeholder: NONE)
-        }
-      }
-    }
-  `);
   useEffect(() => {
     const script = document.createElement('script');
     script.src = 'https://cdn.tickettailor.com/js/widgets/min/widget.js';
@@ -68,6 +53,11 @@ const RegisterPage = () => {
             </p>
           </div>
         </div>
+        <p className="text-center">
+          <a href="/refund-policy/" target="_blank" className="text-green-300">
+            Refund policy
+          </a>
+        </p>
       </div>
     </>
   );
