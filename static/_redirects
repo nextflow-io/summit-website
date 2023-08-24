@@ -1,11 +1,11 @@
 # /barcelona/ namespace addition
 /agenda/*    /barcelona/agenda/:splat    301
 /speakers/*    /barcelona/speakers/:splat    301
-/sponsors/    /barcelona/sponsors/    301
-/travel/    /barcelona/travel/    301
-/call-for-abstracts/    /barcelona/call-for-abstracts/    301
-/past-events/    /barcelona/past-events/    301
-/register/    /barcelona/register/    301
+/sponsors/*    /barcelona/sponsors/:splat    301
+/travel/*    /barcelona/travel/:splat    301
+/call-for-abstracts/*    /barcelona/call-for-abstracts/:splat    301
+/past-events/*    /barcelona/past-events/:splat    301
+/register/*    /barcelona/register/:splat    301
 
 # 2023 - pre-registration sign up
 /summit-2023-preregistration/    /barcelona/register/    301
