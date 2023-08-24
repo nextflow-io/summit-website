@@ -11,7 +11,7 @@ exports.createSchemaCustomization = ({ actions }) => {
         image: File @fileByRelativePath
       }
     `,
-    `	
+    `
 			type Blog implements Node {
 				slug: String!
 				title: String!
@@ -29,6 +29,7 @@ exports.createSchemaCustomization = ({ actions }) => {
         content: Mdx
         tags: [String]
         attending: String
+        is_keynote: Boolean
         meta: MetaFields
       }
     `,
@@ -138,6 +139,7 @@ exports.onCreateNode = ({ node, actions, getNode, createNodeId, createContentDig
         linkedin: node.frontmatter.linkedin,
         tags: node.frontmatter.tags || [],
         attending: node.frontmatter.attending || [],
+        is_keynote: node.frontmatter.is_keynote || false,
         meta: node.frontmatter.meta,
         content: node,
       };
@@ -271,6 +273,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         nodes {
           slug
           attending
+          is_keynote
         }
       }
       events: allEvent {

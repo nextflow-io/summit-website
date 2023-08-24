@@ -9,7 +9,7 @@ import SpeakerCard from '../../components/SpeakerCard';
 const SpeakersPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      speakers: allPeople(sort: { name: ASC }, filter: { attending: { in: ["Boston", "Both"] } }) {
+      speakers: allPeople(sort: [{ is_keynote: DESC }, { name: ASC }], filter: { attending: { in: ["Boston", "Both"] } }) {
         nodes {
           slug
           name
@@ -19,6 +19,7 @@ const SpeakersPage = () => {
           linkedin
           twitter
           attending
+          is_keynote
           image {
             childImageSharp {
               gatsbyImageData(placeholder: NONE)
