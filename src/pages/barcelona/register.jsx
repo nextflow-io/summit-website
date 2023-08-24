@@ -40,7 +40,7 @@ const RegisterPage = () => {
               <p className="typo-body">Registration closes September 9, or when sold out.</p>
             </div>
             <div className="mt-4">
-              <Button to="/purchase/" variant="primary" size="md">
+              <Button to="/barcelona/purchase/" variant="primary" size="md">
                 Register
               </Button>
             </div>

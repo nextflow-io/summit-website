@@ -57,7 +57,7 @@ const CallForAbstractsPage = () => {
                 <List.Item className="typo-body">Lightning (15 min)</List.Item>
               </List>
               <div className="typo-body mt-4">
-                <Link to="/call-for-abstracts/talks-instructions/" className="text-green-300" noBorder>
+                <Link to="/barcelona/call-for-abstracts/talks-instructions/" className="text-green-300" noBorder>
                   View instructions
                 </Link>
               </div>
@@ -78,7 +78,7 @@ const CallForAbstractsPage = () => {
                 <List.Item className="typo-body">PDF file for the website</List.Item>
               </List>
               <div className="typo-body mt-4">
-                <Link to="/call-for-abstracts/posters-instructions/" className="text-green-300" noBorder>
+                <Link to="/barcelona/call-for-abstracts/posters-instructions/" className="text-green-300" noBorder>
                   View instructions
                 </Link>
               </div>
