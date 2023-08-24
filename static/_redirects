@@ -6,6 +6,7 @@
 /call-for-abstracts/*    /barcelona/call-for-abstracts/:splat    301
 /past-events/*    /barcelona/past-events/:splat    301
 /register/*    /barcelona/register/:splat    301
+/purchase/*    /barcelona/purchase/:splat    301
 
 # 2023 - pre-registration sign up
 /summit-2023-preregistration/    /barcelona/register/    301
