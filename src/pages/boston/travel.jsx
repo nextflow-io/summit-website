@@ -169,7 +169,7 @@ const TravelPage = () => {
                 birth place of Nextflow.
               </p>
               <div className="mt-16">
-                <Button to="/" variant="primary" theme="alternative" size="md" arrow>
+                <Button to="/barcelona/" variant="primary" theme="alternative" size="md" arrow>
                   Learn more
                 </Button>
               </div>

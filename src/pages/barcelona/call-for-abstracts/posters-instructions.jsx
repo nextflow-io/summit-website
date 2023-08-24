@@ -12,7 +12,7 @@ const PostersInstructionsPage = () => {
         <div className="container-md">
           <div className="inline-flex items-center hover:text-green-300 mb-4">
             <AngleLeftIcon className="h-6 w-6 inline-block mr-1" />
-            <Link to="/call-for-abstracts/" className="typo-intro" noBorder>
+            <Link to="/barcelona/call-for-abstracts/" className="typo-intro" noBorder>
               Back
             </Link>
           </div>
