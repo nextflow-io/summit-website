@@ -12,7 +12,7 @@ tags:
 meta:
   title: "Louis Le Nézet"
   description: "Nextflow Summit 2023 Presenter"
-  image: ../../../images/share/barcelona/presenter-louis-le-nezet.jpg
+  image: ../../../images/share/barcelona/presenter-louis-lenezet.jpg
 attending: Barcelona
 ---
 
