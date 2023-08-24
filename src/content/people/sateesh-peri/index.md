@@ -7,6 +7,7 @@ github: https://github.com/sateeshperi
 linkedin: https://www.linkedin.com/in/sateesh-peri-b0130476/
 tags:
   - Ecosystem
+  - Speaker
 meta:
   title: "Sateesh Peri"
   description: "Nextflow Summit 2023 Presenter"
