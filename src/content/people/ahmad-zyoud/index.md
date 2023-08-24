@@ -1,5 +1,5 @@
 ---
-slug: ahmad-zyoud/
+slug: /ahmad-zyoud/
 name: Ahmad Zyoud
 position: Bioinformatician at EMBL-EBI
 image: ../../../images/people/ahmadzyoud.png
