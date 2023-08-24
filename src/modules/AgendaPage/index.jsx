@@ -1,7 +1,18 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
-import { Button, Link } from 'website-components';
+import { Accordion, Button, Link } from 'website-components';
+
+const AccordionItem = ({ children }) => (
+  <Accordion.Item
+    className="border border-gray-800"
+    inactiveClassName=""
+    iconClassName="fill-green-300"
+    activeIconClassName="fill-green-300"
+  >
+    {children}
+  </Accordion.Item>
+);
 
 import EventView from './EventView';
 import ProgramSelector from './ProgramSelector';
@@ -58,9 +69,22 @@ const AgendaPage = ({ showEvents, eventData, showAllDays, eventType, eventLocati
         </div>
       </div>
       <div className="container-md text-white pt-36 pb-16" id="events">
+
         {showEvents ? (
           <>
             <h2 className="typo-h5 uppercase text-center mb-4">Agenda</h2>
+            <div className="my-12">
+              <AccordionItem>
+                <Accordion.Summary>
+                  <p className="typo-intro">Calendar overview</p>
+                </Accordion.Summary>
+                <Accordion.Detail>
+                  <iframe src="https://embed.styledcalendar.com/#Qss4ZvPVKjMoFYIc82hS" title="Styled Calendar" className="styled-calendar-container w-full border-0 h-[600px]" data-cy="calendar-embed-iframe"></iframe>
+                  <script async type="module" src="https://embed.styledcalendar.com/assets/parent-window.js"></script>
+                </Accordion.Detail>
+              </AccordionItem>
+            </div>
+
             <EventView
               eventLocation={eventLocation}
               eventData={eventData}
