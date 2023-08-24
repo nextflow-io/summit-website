@@ -1,6 +1,6 @@
-import { useStaticQuery, graphql } from 'gatsby';
-
 import React, { useEffect } from 'react';
+import { useStaticQuery, graphql, Link } from 'gatsby';
+
 import HeroDots from '../../components/HeroDots';
 import Seo from '../../components/Seo';
 
@@ -68,6 +68,11 @@ const RegisterPage = () => {
             </p>
           </div>
         </div>
+        <p className="text-center">
+          <Link to="/refund-policy/" className="text-green-300">
+            Refund policy
+          </Link>
+        </p>
       </div>
     </>
   );
