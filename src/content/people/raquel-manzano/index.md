@@ -1,7 +1,7 @@
 ---
 slug: /raquel-manzano/
 name: Raquel Manzano
-position: Bioinformatician/PhD student at University of Cambridge
+position: Bioinformatician/PhD student at the University of Cambridge
 image: ../../../images/people/raquelmanzano.png
 github: https://github.com/RaqManzano
 twitter: https://twitter.com/appletreewoman

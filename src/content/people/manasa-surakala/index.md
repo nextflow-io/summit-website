@@ -1,7 +1,7 @@
 ---
 slug: /manasa-surakala/
 name: Manasa Surakala
-position: Omics Product Analysis Lead at R&D IT, AstraZeneca UK Ltd., Cambridge, United Kingdom
+position: Omics Product Analysis Lead at AstraZeneca UK Ltd
 image: ../../../images/people/manasasurakala.png
 linkedin: https://www.linkedin.com/in/manasasurakala
 tags:

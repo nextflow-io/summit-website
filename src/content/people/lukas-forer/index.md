@@ -1,7 +1,7 @@
 ---
 slug: /lukas-forer/
 name: Lukas Forer
-position: Senior Scientist at Medical University of Innsbruck
+position: Senior Scientist at the Medical University of Innsbruck
 image: ../../../images/people/lukasforer.png
 github: https://github.com/lukfor
 twitter: https://twitter.com/lukfor

@@ -1,7 +1,7 @@
 ---
 slug: /guoying-qi/
 name: Guoying Qi
-position: DevOps Software Engineer at Wellcome Sanger Institute
+position: DevOps Software Engineer at the Wellcome Sanger Institute
 image: ../../../images/people/guoyingqi.png
 github: https://github.com/gq1
 tags:

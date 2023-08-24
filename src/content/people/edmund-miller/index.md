@@ -1,7 +1,7 @@
 ---
 slug: /edmund-miller/
 name: Edmund Miller
-position: PhD Candidate at University of Texas at Dallas
+position: PhD Candidate at the University of Texas at Dallas
 image: ../../../images/people/edmundmiller.png
 github: https://github.com/Emiller88/
 twitter: https://twitter.com/E_Miller88

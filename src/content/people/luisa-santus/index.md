@@ -1,7 +1,7 @@
 ---
 slug: /luisa-santus/
 name: Luisa Santus
-position: PhD Student at Centre for Genomic Regulation
+position: PhD Student at the Centre for Genomic Regulation
 image: ../../../images/people/luisasantus.png
 github: https://github.com/luisas
 twitter: https://twitter.com/SantusLuisa

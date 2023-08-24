@@ -1,7 +1,7 @@
 ---
 slug: /luca-cozzuto/
 name: Luca Cozzuto
-position: NGS data analysis coordinator at Centre For Genomic Regulation
+position: NGS data analysis coordinator at the Centre For Genomic Regulation
 image: ../../../images/people/lucacozzuto.png
 github: https://github.com/lucacozzuto
 twitter: https://twitter.com/lucacozzuto

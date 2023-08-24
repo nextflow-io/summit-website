@@ -1,7 +1,7 @@
 ---
 slug: /vladimir-mikryukov/
 name: Vladimir Mikryukov
-position: Researcher at Institute of Ecology and Earth Sciences, University of Tartu
+position: Researcher at the University of Tartu
 image: ../../../images/people/vladimirmikryukov.png
 github: https://github.com/vmikk
 twitter: https://mobile.twitter.com/vmikkkk

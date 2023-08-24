@@ -1,7 +1,7 @@
 ---
 slug: /joon-klaps/
 name: Joon Klaps
-position: PhD Student at Rega institute, KU Leuven
+position: PhD candidate at Rega Institute
 image: ../../../images/people/joonklaps.png
 github: https://github.com/Joon-Klaps
 twitter: https://twitter.com/JoonKlaps

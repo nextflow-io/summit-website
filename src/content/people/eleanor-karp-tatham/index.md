@@ -1,7 +1,7 @@
 ---
 slug: /eleanor-karp-tatham/
 name: Eleanor Karp-Tatham
-position: Postdoctoral researcher at Wellcome Centre for Human Genetics
+position: Postdoctoral researcher at the Wellcome Centre for Human Genetics
 image: ../../../images/people/eleanorkarptatham.png
 tags:
   - Community

@@ -1,7 +1,7 @@
 ---
 slug: /marie-lataretu/
 name: Marie Lataretu
-position: Bioinformatician at Rober Koch Institute, Berlin, Germany
+position: Bioinformatician at the Rober Koch Institute
 image: ../../../images/people/marielataretu.png
 github: https://github.com/MarieLataretu
 twitter: https://twitter.com/milch_eis
