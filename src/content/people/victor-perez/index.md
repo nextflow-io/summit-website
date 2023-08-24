@@ -1,7 +1,7 @@
 ---
 slug: /victor-perez/
 name: Victor Perez
-position: Postdoctoral researcher at Institute for Computational Biomedicine (Heidelberg University Hospital))
+position: Postdoctoral researcher at Heidelberg University Hospital
 image: ../../../images/people/victorperez.png
 github: https://github.com/SchapiroLabor
 tags:

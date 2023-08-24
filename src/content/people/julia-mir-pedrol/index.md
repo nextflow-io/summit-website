@@ -1,7 +1,7 @@
 ---
 slug: /julia-mir-pedrol/
 name: Júlia Mir Pedrol
-position: Bioinformatician at Quantitative Biology Center - Tübingen Universität
+position: Bioinformatician at Quantitative Biology Center - University of Tübingen
 image: ../../../images/people/juliamirpedrol.png
 github: https://github.com/mirpedrol
 twitter: https://twitter.com/juliamirpedrol
