@@ -6,6 +6,7 @@ image: ../../../images/people/guoyingqi.png
 github: https://github.com/gq1
 tags:
   - Ecosystem
+  - Speaker
 meta:
   title: "Guoying Qi"
   description: "Nextflow Summit 2023 Presenter"

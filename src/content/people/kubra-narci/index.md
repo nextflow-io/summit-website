@@ -8,6 +8,7 @@ twitter: https://twitter.com/kubranarci
 linkedin: https://www.linkedin.com/in/kubranarci/
 tags:
   - Community
+  - Poster
 meta:
   title: "Kubra Narci"
   description: "Nextflow Summit 2023 Presenter"
