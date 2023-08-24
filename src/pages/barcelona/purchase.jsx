@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { useStaticQuery, graphql, Link } from 'gatsby';
 
 import HeroDots from '../../components/HeroDots';
 import Seo from '../../components/Seo';
@@ -7,20 +6,6 @@ import Seo from '../../components/Seo';
 import { Button } from 'website-components';
 
 const RegisterPage = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      membersImage: file(relativePath: { eq: "photos/members.jpg" }) {
-        childImageSharp {
-          gatsbyImageData(placeholder: NONE)
-        }
-      }
-      virtualImage: file(relativePath: { eq: "photos/virtual.jpg" }) {
-        childImageSharp {
-          gatsbyImageData(placeholder: NONE)
-        }
-      }
-    }
-  `);
   useEffect(() => {
     const script = document.createElement('script');
     script.src = 'https://cdn.tickettailor.com/js/widgets/min/widget.js';
@@ -69,9 +54,9 @@ const RegisterPage = () => {
           </div>
         </div>
         <p className="text-center">
-          <Link to="/refund-policy/" className="text-green-300">
+          <a href="/refund-policy/" target="_blank" className="text-green-300">
             Refund policy
-          </Link>
+          </a>
         </p>
       </div>
     </>

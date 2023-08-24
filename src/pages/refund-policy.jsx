@@ -55,8 +55,8 @@ const RefundPolicy = () => {
         </p>
         <p className="typo-body mt-4">
           Please direct any questions or concerns regarding the refund policy to our customer support team at{' '}
-          <Link to="mailto:help.summit@nextflow.io">mailto:help.summit@nextflow.io</Link>. We are here to assist you and
-          ensure your experience at the Nextflow Summit is as smooth as possible.
+          <Link to="mailto:help.summit@nextflow.io">help.summit@nextflow.io</Link>. We are here to assist you and ensure
+          your experience at the Nextflow Summit is as smooth as possible.
         </p>
       </div>
     </>
