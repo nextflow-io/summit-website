@@ -12,7 +12,7 @@ tags:
 meta:
   title: "Stephen Rudd"
   description: "Nextflow Summit 2023 Presenter"
-  image: ../../../images/share/barcelona/presenter-stephen-rudd.jpg
+  image: ../../../images/share/boston/presenter-stephen-rudd.jpg
 attending: Boston
 ---
 
