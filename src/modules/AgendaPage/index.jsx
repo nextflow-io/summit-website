@@ -73,18 +73,6 @@ const AgendaPage = ({ showEvents, eventData, showAllDays, eventType, eventLocati
         {showEvents ? (
           <>
             <h2 className="typo-h5 uppercase text-center mb-4">Agenda</h2>
-            <div className="my-12">
-              <AccordionItem>
-                <Accordion.Summary>
-                  <p className="typo-intro">Calendar overview</p>
-                </Accordion.Summary>
-                <Accordion.Detail>
-                  <iframe src="https://embed.styledcalendar.com/#Qss4ZvPVKjMoFYIc82hS" title="Styled Calendar" className="styled-calendar-container w-full border-0 h-[600px]" data-cy="calendar-embed-iframe"></iframe>
-                  <script async type="module" src="https://embed.styledcalendar.com/assets/parent-window.js"></script>
-                </Accordion.Detail>
-              </AccordionItem>
-            </div>
-
             <EventView
               eventLocation={eventLocation}
               eventData={eventData}
