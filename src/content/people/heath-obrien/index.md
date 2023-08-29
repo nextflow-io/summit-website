@@ -2,7 +2,7 @@
 slug: /heath-obrien/
 name: Heath OBrien
 position: Bioinformatics Lead at Sano Genetics
-image: ../../../heathobrien.png
+image: ../../../images/people/heathobrien.png
 github: https://github.com/hobrien
 twitter: https://twitter.com/heath_obrien
 linkedin: https://www.linkedin.com/in/genome-informatics/

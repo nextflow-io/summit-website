@@ -2,7 +2,7 @@
 slug: /michael-wilson/
 name: Michael Wilson
 position: Data Scientist at biomodal
-image: ../../../michaelwilson.png
+image: ../../../images/people/michaelwilson.png
 github: https://github.com/michaelJwilson
 linkedin: https://linkedin.com/in/michael-j-wilson-62a224b7
 tags:

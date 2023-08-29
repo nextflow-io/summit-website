@@ -2,7 +2,7 @@
 slug: /arthur-gymer/
 name: Arthur Gymer
 position: Bio Engineer at Genomics England
-image: ../../../arthurgymer.png
+image: ../../../images/people/arthurgymer.png
 github: https://github.com/awgymer
 tags:
   - Community

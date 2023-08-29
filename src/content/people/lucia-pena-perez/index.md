@@ -2,7 +2,7 @@
 slug: /speakers/lucia-pena-perez/
 name: Lucía Peña-Pérez
 position: Bioinformatician at Karolinska University Hospital and Scilifelab
-image: ../../../luciapenaperez.png
+image: ../../../images/people/luciapenaperez.png
 github: https://github.com/Lucpen
 linkedin: https://www.linkedin.com/in/luciapenyaperez/
 tags:
