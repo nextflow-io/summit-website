@@ -84,7 +84,7 @@ const RegisterPage = () => {
           </div>
         </div>
         <div className="calendar-container">
-          <iframe src="https://embed.styledcalendar.com/#A5RyQEwveb0zYn69ncqd" title="Styled Calendar" className="styled-calendar-container w-full border-0 h-[600px]" data-cy="calendar-embed-iframe"></iframe>
+          <iframe src="https://embed.styledcalendar.com/#A5RyQEwveb0zYn69ncqd" title="Boston SUMMIT 2023 Calendar" className="styled-calendar-container w-full border-0 h-[600px]" data-cy="calendar-embed-iframe"></iframe>
         </div>
       </div>
     </>
