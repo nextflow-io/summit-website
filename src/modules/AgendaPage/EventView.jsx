@@ -32,21 +32,47 @@ const EventView = ({ eventData, showAllDays, eventType, eventLocation }) => {
     <div className="container-lg">
       <div className="row">
         <div className="col-full lg:col-9 lg:ml-1/12">
-          <div>
-            {eventLocation === 'boston' ? (
-              <Tabs location={loc} anchor="#events" partialMatch>
-                <Tabs.Item to="/boston/agenda/hackathon/">Hackathon</Tabs.Item>
-                <Tabs.Item to="/boston/agenda/summit/">Summit</Tabs.Item>
-              </Tabs>
-            ) : (
-              <Tabs location={loc} anchor="#events" partialMatch>
-                <Tabs.Item to="/barcelona/agenda/hackathon/">Hackathon</Tabs.Item>
-                <Tabs.Item to="/barcelona/agenda/summit/">Summit</Tabs.Item>
-              </Tabs>
-            )}
+          <div class="row">
+            <div class="col-6">
+              {eventLocation === 'boston' ? (
+                <Tabs location={loc} anchor="#events" partialMatch>
+                  <Tabs.Item to="/boston/agenda/hackathon/">Hackathon</Tabs.Item>
+                  <Tabs.Item to="/boston/agenda/summit/">Summit</Tabs.Item>
+                </Tabs>
+              ) : (
+                <Tabs location={loc} anchor="#events" partialMatch>
+                  <Tabs.Item to="/barcelona/agenda/hackathon/">Hackathon</Tabs.Item>
+                  <Tabs.Item to="/barcelona/agenda/summit/">Summit</Tabs.Item>
+                </Tabs>
+                )}
+            </div>
+            <div class="col-6 text-right">
+              {eventLocation === 'boston' ? (
+                <Tabs location={loc} anchor="#events" partialMatch>
+                  <Tabs.Item to="/boston/agenda/calendar">Calendar view</Tabs.Item>
+                </Tabs>
+              ) : (
+                <Tabs location={loc} anchor="#events" partialMatch>
+                  <Tabs.Item to="/barcelona/agenda/calendar">Calendar view</Tabs.Item>
+                </Tabs>
+              )}
+            </div>
           </div>
-          <div className="mt-1">
-            <DateTabs eventLocation={eventLocation} loc={loc} eventType={eventType} />
+          <div className="row mt-1">
+            <div class="col-6">
+              <DateTabs eventLocation={eventLocation} loc={loc} eventType={eventType} />
+            </div>
+            <div class="col-6 text-right">
+              {eventLocation === 'boston' ? (
+                <Tabs location={loc} anchor="#events" partialMatch>
+                  <Tabs.Item to="/boston/agenda/calendar">Subscribe to Summit calendar</Tabs.Item>
+                </Tabs>
+              ) : (
+                <Tabs location={loc} anchor="#events" partialMatch>
+                  <Tabs.Item to="/barcelona/agenda/calendar">Subscribe to Summit calendar</Tabs.Item>
+                </Tabs>
+              )}
+            </div>
           </div>
         </div>
       </div>
