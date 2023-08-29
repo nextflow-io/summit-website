@@ -106,6 +106,12 @@ const Header = ({ location, hideNav }) => {
                     >
                       SUMMIT
                     </Link>
+                    <Link
+                      to={`${agendaPath}calendar/`}
+                      className={classnames({ [styles.active]: isPage('/agenda/calendar/') })}
+                    >
+                      Calendar
+                    </Link>
                   </div>
                 </div>
                 {navs.map((nav) =>
