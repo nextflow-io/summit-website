@@ -1,0 +1,31 @@
+---
+slug: oct-18-evan-floden
+timeframe: 5:15 - 5:45 PM (30 min)
+title: "Title to be confirmed"
+datetime: 2022-10-18T15:17:15.000Z
+date: Oct 18, 2022
+time: 5:15 PM
+isChild: true
+hasPage: true
+speakers:
+  - Evan Floden
+tags:
+  - Community
+youtube: 
+youtubeUrl: 
+---
+<div className="mb-4">
+  <small className="typo-small">
+    Evan Floden
+  </small>
+</div>
+
+<hr className="border-t border-gray-50 mb-4 opacity-20" />
+
+Description to be confirmed
+
+<div>
+  <Button to="https://seqera.io/" variant="secondary" size="md" arrow>
+    View project
+  </Button>
+</div>
