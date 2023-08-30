@@ -5,7 +5,7 @@ title: "Pixelgen Technologies ❤︎ Nextflow"
 datetime: 2022-10-18T15:15:45.000Z
 date: Oct 18, 2022
 time: 5:00 PM
-isChild: true
+isChild: false
 hasPage: true
 speakers:
   - Johan Dahlberg

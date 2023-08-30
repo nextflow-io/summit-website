@@ -5,7 +5,7 @@ title: "nf-validation: a Nextflow plugin to validate pipeline parameters and inp
 datetime: 2022-10-18T15:15:30.000Z
 date: Oct 18, 2022
 time: 3:30 PM
-isChild: true
+isChild: false
 hasPage: true
 speakers:
   - Júlia Mir Pedrol

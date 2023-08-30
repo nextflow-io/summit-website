@@ -5,7 +5,7 @@ title: nf-core Community Updates
 datetime: 2022-10-18T15:16:00.000Z
 date: Oct 18, 2022
 time: 4:00 PM
-isChild: true
+isChild: false
 hasPage: true
 speakers:
   - Phil Ewels
