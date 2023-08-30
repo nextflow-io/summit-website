@@ -96,7 +96,7 @@ const PostersPage = () => {
                 <button
                   aria-label="All topics"
                   className={classnames('typo-small rounded-full px-4 py-1 uppercase mr-2', {
-                    'bg-green-600': activeTag === '',
+                    'bg-green-300': activeTag === '',
                     'bg-gray-800': activeTag !== '',
                   })}
                   onClick={() => {
@@ -111,7 +111,7 @@ const PostersPage = () => {
                   <button
                     aria-label={tag}
                     className={classnames('typo-small rounded-full px-4 py-1 uppercase mr-2', {
-                      'bg-green-600': activeTag === tag,
+                      'bg-green-300': activeTag === tag,
                       'bg-gray-800': activeTag !== tag,
                     })}
                     onClick={() => {
