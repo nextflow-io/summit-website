@@ -1,26 +1,24 @@
+import React from 'react';
 import { graphql } from 'gatsby';
 import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
-import React from 'react';
-
-import CustomMDXProvider from '../components/CustomMDXProvider';
-import Seo from '../components/Seo';
-import YoutubeIframe from '../components/YoutubeIframe';
-import SpeakerCard from '../components/SpeakerCard';
-import PlaceholderRectangle from '../images/visuals/placeholder-rectangle.svg';
-
 import { AngleLeftIcon, Button, Link, LocationIcon, YoutubeRectangleIcon } from 'website-components';
 
-const TalkPage = ({ data }) => {
-  const { talk } = data;
+import PlaceholderRectangle from '../images/visuals/placeholder-rectangle.svg';
+import MDXProvider from '../components/CustomMDXProvider';
+import YoutubeIframe from '../components/YoutubeIframe';
+import SpeakerCard from '../components/SpeakerCard';
+import Seo from '../components/Seo';
+
+const TalkPage = ({ data, children }) => {
+  const { event: talk } = data;
 
   return (
     <>
       <Seo title={talk.title} description={talk.description} />
       <div className="text-white container-sm py-10 md:py-20">
-        <div className="inline-flex items-center hover:text-green-600 mb-4">
+        <div className="inline-flex items-center hover:text-green-300 mb-4">
           <AngleLeftIcon className="h-6 w-6 inline-block mr-1" />
-          <Link to="/program/" noBorder>
+          <Link to={talk.path} noBorder>
             Back
           </Link>
         </div>
@@ -36,7 +34,7 @@ const TalkPage = ({ data }) => {
                       imgClassName="rounded-full"
                       className="mr-4 h-8 w-8"
                     />
-                    <span className="typo-intro text-green-600">{talk.speakers[0].name}</span>
+                    <span className="typo-intro text-green-300">{talk.speakers[0]?.name}</span>
                   </div>
                 )}
                 {talk.speakers.length === 2 && (
@@ -53,7 +51,7 @@ const TalkPage = ({ data }) => {
                       imgClassName="rounded-full"
                       className="-ml-2 mr-4 h-8 w-8"
                     />
-                    <span className="typo-intro text-green-600">
+                    <span className="typo-intro text-green-300">
                       {`${talk.speakers[0]?.name} & ${talk.speakers[1]?.name}`}
                     </span>
                   </div>
@@ -61,8 +59,8 @@ const TalkPage = ({ data }) => {
                 {talk.speakers.length > 2 && (
                   <div className="flex items-center">
                     <div className="h-8 w-8 bg-indigo-600 rounded-full" />
-                    <div className="h-8 w-8 bg-green-600 rounded-full -ml-2 mr-4" />
-                    <span className="typo-intro text-green-600">Several Speakers</span>
+                    <div className="h-8 w-8 bg-green-300 rounded-full -ml-2 mr-4" />
+                    <span className="typo-intro text-green-300">Several Speakers</span>
                   </div>
                 )}
                 <span className="hidden lg:block mx-2">|</span>
@@ -92,18 +90,16 @@ const TalkPage = ({ data }) => {
               </>
             )}
           </div>
-          <h1 className="typo-h2 text-green-600 mb-4 mt-8">{talk.title}</h1>
+          <h1 className="typo-h2 text-green-300 mb-4 mt-8">{talk.title}</h1>
           <div className="flex mt-8 md:mt-auto">
-            {talk.tags.map((tag, i) => (
+            {talk.tags?.map((tag, i) => (
               <div className="typo-small rounded-full px-4 py-1 bg-gray-800 uppercase mr-2" key={i}>
                 {tag}
               </div>
             ))}
           </div>
           <div className="mt-8">
-            <CustomMDXProvider>
-              <MDXRenderer>{talk.content.body}</MDXRenderer>
-            </CustomMDXProvider>
+            <MDXProvider>{children}</MDXProvider>
           </div>
           {talk.youtube && (
             <>
@@ -132,7 +128,7 @@ export default TalkPage;
 
 export const pageQuery = graphql`
   query ($slug: String!) {
-    event: event(slug: { eq: $slug }) {
+    event: event(fullPath: { eq: $slug }) {
       id
       timeframe
       title
@@ -145,6 +141,8 @@ export const pageQuery = graphql`
       youtube
       youtubeUrl
       hasPage
+      path
+      fullPath
       content {
         body
       }

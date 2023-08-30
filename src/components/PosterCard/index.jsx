@@ -42,7 +42,7 @@ const PosterCard = ({ poster }) => {
                     imgClassName="rounded-full"
                     className="mr-4 h-8 w-8"
                   />
-                  <span className="typo-intro text-green-600">{poster.speakers[0].name}</span>
+                  <span className="typo-intro text-green-300">{poster.speakers[0].name}</span>
                 </div>
               )}
               {poster.speakers.length === 2 && (
@@ -63,7 +63,7 @@ const PosterCard = ({ poster }) => {
                       />
                     </>
                   )}
-                  <span className="typo-intro text-green-600">
+                  <span className="typo-intro text-green-300">
                     {`${poster.speakers[0].name} & ${poster.speakers[1].name}`}
                   </span>
                 </div>
@@ -71,8 +71,8 @@ const PosterCard = ({ poster }) => {
               {poster.speakers.length > 2 && (
                 <div className="flex items-center mt-4">
                   <div className="h-8 w-8 bg-indigo-600 rounded-full" />
-                  <div className="h-8 w-8 bg-green-600 rounded-full -ml-2 mr-4" />
-                  <span className="typo-intro text-green-600">Several Speakers</span>
+                  <div className="h-8 w-8 bg-green-300 rounded-full -ml-2 mr-4" />
+                  <span className="typo-intro text-green-300">Several Speakers</span>
                 </div>
               )}
             </>
