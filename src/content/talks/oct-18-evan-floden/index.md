@@ -5,7 +5,7 @@ title: "Title to be confirmed"
 datetime: 2022-10-18T15:17:15.000Z
 date: Oct 18, 2022
 time: 5:15 PM
-isChild: true
+isChild: false
 hasPage: true
 speakers:
   - Evan Floden
