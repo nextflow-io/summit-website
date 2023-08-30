@@ -17,7 +17,7 @@ const PosterPage = ({ data }) => {
     <>
       <Seo title={poster.title} />
       <div className="text-white container-sm py-10 md:py-20">
-        <div className="inline-flex items-center hover:text-green-600 mb-4">
+        <div className="inline-flex items-center hover:text-green-300 mb-4">
           <AngleLeftIcon className="h-6 w-6 inline-block mr-1" />
           <Link to="/posters/" noBorder>
             Back
@@ -35,7 +35,7 @@ const PosterPage = ({ data }) => {
                       imgClassName="rounded-full"
                       className="mr-4 h-8 w-8"
                     />
-                    <span className="typo-intro text-green-600">{poster.speakers[0]?.name}</span>
+                    <span className="typo-intro text-green-300">{poster.speakers[0]?.name}</span>
                   </div>
                 )}
                 {poster.speakers.length === 2 && (
@@ -54,7 +54,7 @@ const PosterPage = ({ data }) => {
                           imgClassName="rounded-full"
                           className="-ml-2 mr-4 h-8 w-8"
                         />
-                        <span className="typo-intro text-green-600">
+                        <span className="typo-intro text-green-300">
                           {`${poster.speakers[0]?.name} & ${poster.speakers[1]?.name}`}
                         </span>
                       </>
@@ -64,8 +64,8 @@ const PosterPage = ({ data }) => {
                 {poster.speakers.length > 2 && (
                   <div className="flex items-center">
                     <div className="h-8 w-8 bg-indigo-600 rounded-full" />
-                    <div className="h-8 w-8 bg-green-600 rounded-full -ml-2 mr-4" />
-                    <span className="typo-intro text-green-600">Several Speakers</span>
+                    <div className="h-8 w-8 bg-green-300 rounded-full -ml-2 mr-4" />
+                    <span className="typo-intro text-green-300">Several Speakers</span>
                   </div>
                 )}
                 <span className="hidden lg:block mx-2">|</span>
@@ -80,7 +80,7 @@ const PosterPage = ({ data }) => {
               </>
             )}
           </div>
-          <h1 className="typo-h2 text-green-600 mb-4 mt-8">
+          <h1 className="typo-h2 text-green-300 mb-4 mt-8">
             <span className="bg-gray-800 rounded-full px-4 py-1 ml-2 float-right">#{poster.poster_id}</span>
             {poster.title}
           </h1>
@@ -132,7 +132,7 @@ const PosterPage = ({ data }) => {
                   <div>
                     <h4 className="typo-h5">
                       {poster.poster && (
-                        <Link to={poster.poster.publicURL} className="hover:text-green-600" noBorder target="_blank">
+                        <Link to={poster.poster.publicURL} className="hover:text-green-300" noBorder target="_blank">
                           {poster.title}
                         </Link>
                       )}
@@ -157,7 +157,7 @@ const PosterPage = ({ data }) => {
                                 className="mr-4 h-8 w-8"
                               />
                             </Link>
-                            <Link to={poster.speakers[0].slug} className="border-none typo-intro text-green-600">
+                            <Link to={poster.speakers[0].slug} className="border-none typo-intro text-green-300">
                               {poster.speakers[0].name}
                             </Link>
                           </div>
@@ -176,7 +176,7 @@ const PosterPage = ({ data }) => {
                               imgClassName="rounded-full"
                               className="-ml-2 mr-4 h-8 w-8"
                             />
-                            <span className="typo-intro text-green-600">
+                            <span className="typo-intro text-green-300">
                               {`${poster.speakers[0].name} & ${poster.speakers[1].name}`}
                             </span>
                           </div>
@@ -184,8 +184,8 @@ const PosterPage = ({ data }) => {
                         {poster.speakers.length > 2 && (
                           <div className="flex items-center mt-4">
                             <div className="h-8 w-8 bg-indigo-600 rounded-full" />
-                            <div className="h-8 w-8 bg-green-600 rounded-full -ml-2 mr-4" />
-                            <span className="typo-intro text-green-600">Several Speakers</span>
+                            <div className="h-8 w-8 bg-green-300 rounded-full -ml-2 mr-4" />
+                            <span className="typo-intro text-green-300">Several Speakers</span>
                           </div>
                         )}
                       </>

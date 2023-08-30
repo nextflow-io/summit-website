@@ -24,6 +24,7 @@ const SummitOct18 = () => {
           youtubeUrl
           hasPage
           path
+          fullPath
           events {
             slug
             timeframe
@@ -38,6 +39,7 @@ const SummitOct18 = () => {
             youtubeUrl
             hasPage
             path
+            fullPath
           }
         }
       }

@@ -37,6 +37,8 @@ exports.createSchemaCustomization = ({ actions }) => {
       type Event implements Node {
 				type: String
         slug: String
+        path: String
+        fullPath: String
         title: String
         description: String
         datetime: Date @dateformat
@@ -97,7 +99,7 @@ function createEventPath(filePath) {
   let prefix = 'summit';
   if (filePath.includes('boston')) location = 'boston';
   if (filePath.includes('events')) prefix = 'hackathon';
-  return `/${location}/agenda/${prefix}/${slug}/`;
+  return `/${location}/agenda/${prefix}/`;
 }
 
 exports.onCreateNode = ({ node, actions, getNode, createNodeId, createContentDigest }) => {
@@ -171,9 +173,14 @@ exports.onCreateNode = ({ node, actions, getNode, createNodeId, createContentDig
       ['events', 'talks', 'events-boston', 'talks-boston'].includes(parent.sourceInstanceName)
     ) {
       const hasPage = node.frontmatter.hasPage;
+      const slug = node.frontmatter.slug;
+      const filePath = node.internal.contentFilePath;
+      const eventPath = createEventPath(filePath);
+      const fullEventPath = `${eventPath}${slug}/`;
+
       const content = {
         type: parent.sourceInstanceName,
-        slug: node.frontmatter.slug,
+        slug,
         title: node.frontmatter.title,
         description: node.frontmatter.description,
         datetime: node.frontmatter.datetime,
@@ -188,7 +195,8 @@ exports.onCreateNode = ({ node, actions, getNode, createNodeId, createContentDig
         youtube: node.frontmatter.youtube,
         youtubeUrl: node.frontmatter.youtubeUrl,
         hasPage,
-        path: hasPage ? createEventPath(node.internal.contentFilePath) : null,
+        path: hasPage ? eventPath : null,
+        fullPath: hasPage ? fullEventPath : null,
         tags: node.frontmatter.tags,
         meta: node.frontmatter.meta,
         content: node,
@@ -200,7 +208,7 @@ exports.onCreateNode = ({ node, actions, getNode, createNodeId, createContentDig
         children: [],
         internal: {
           type: 'Event',
-          contentFilePath: node.internal.contentFilePath,
+          contentFilePath: filePath,
           contentDigest: createContentDigest(content),
         },
         ...content,
@@ -291,7 +299,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         nodes {
           slug
           hasPage
-          path
+          fullPath
           internal {
             contentFilePath
           }
@@ -313,10 +321,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const eventPages = result.data.events.nodes.filter((event) => event.hasPage);
   eventPages.forEach((event) => {
     createPage({
-      path: event.path,
+      path: event.fullPath,
       component: `${talkTemplate}?__contentFilePath=${event.internal.contentFilePath}`,
       context: {
-        slug: event.path,
+        slug: event.fullPath,
       },
     });
   });

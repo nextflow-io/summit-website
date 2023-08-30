@@ -22,6 +22,7 @@ const HackathonOct16 = () => {
           youtubeUrl
           hasPage
           path
+          fullPath
           speakers {
             name
             image {
@@ -44,6 +45,7 @@ const HackathonOct16 = () => {
             youtubeUrl
             hasPage
             path
+            fullPath
             speakers {
               name
               image {

@@ -24,17 +24,17 @@ const SpeakerCard = ({ speaker, className, location }) => {
           <p className="typo-h5 mb-4">{speaker.position}</p>
           <div className="flex mb-4">
             {speaker.github && (
-              <Link to={speaker.github} noBorder className="text-white hover:text-green-600 mr-4">
+              <Link to={speaker.github} noBorder className="text-white hover:text-green-300 mr-4">
                 <GitHubIcon />
               </Link>
             )}
             {speaker.twitter && (
-              <Link to={speaker.twitter} noBorder className="text-white hover:text-green-600 mr-4">
+              <Link to={speaker.twitter} noBorder className="text-white hover:text-green-300 mr-4">
                 <TwitterIcon />
               </Link>
             )}
             {speaker.linkedin && (
-              <Link to={speaker.linkedin} noBorder className="text-white hover:text-green-600">
+              <Link to={speaker.linkedin} noBorder className="text-white hover:text-green-300">
                 <LinkedInIcon />
               </Link>
             )}
