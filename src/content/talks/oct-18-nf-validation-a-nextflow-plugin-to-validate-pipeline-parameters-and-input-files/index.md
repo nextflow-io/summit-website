@@ -1,10 +1,10 @@
 ---
 slug: oct-18-nf-validation-a-nextflow-plugin-to-validate-pipeline-parameters-and-input-files
-timeframe: 3:45 - 4:00 PM (15 min)
+timeframe: 3:30 - 3:45 PM (15 min)
 title: "nf-validation: a Nextflow plugin to validate pipeline parameters and input files"
-datetime: 2022-10-18T15:15:45.000Z
+datetime: 2022-10-18T15:15:30.000Z
 date: Oct 18, 2022
-time: 3:45 PM
+time: 3:30 PM
 isChild: true
 hasPage: true
 speakers:
