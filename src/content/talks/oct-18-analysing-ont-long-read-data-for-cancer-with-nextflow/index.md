@@ -1,10 +1,10 @@
 ---
 slug: oct-18-analysing-ont-long-read-data-for-cancer-with-nextflow
-timeframe: 4:00 - 4:15 PM (15 min)
+timeframe: 3:45 - 4:00 PM (15 min)
 title: Analysing ONT Long Read data for cancer with Nextflow
-datetime: 2022-10-18T15:16:00.000Z
+datetime: 2022-10-18T15:15:45.000Z
 date: Oct 18, 2022
-time: 4:00 PM
+time: 3:45 PM
 isChild: true
 hasPage: true
 speakers:
