@@ -5,6 +5,7 @@ import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
 import { GitHubIcon, Link, LinkedInIcon, TwitterIcon } from 'website-components';
 
 const SpeakerCard = ({ speaker, className, location }) => {
+  if (!speaker) return null;
   let speakerURL = `/barcelona/speakers${speaker.slug}`;
   if (location === 'Boston') speakerURL = `/boston/speakers${speaker.slug}`;
   if (speaker.is_keynote) className = classnames(className, 'border-green-300');
@@ -40,7 +41,13 @@ const SpeakerCard = ({ speaker, className, location }) => {
           </div>
           <div className="flex mt-8 md:mt-auto">
             {speaker.tags.map((tag, i) => (
-              <div className={"typo-small rounded-full px-4 py-1 bg-gray-800 uppercase mr-2 "+(tag=="Keynote" ? 'border border-green-300' : '')} key={i}>
+              <div
+                className={
+                  'typo-small rounded-full px-4 py-1 bg-gray-800 uppercase mr-2 ' +
+                  (tag == 'Keynote' ? 'border border-green-300' : '')
+                }
+                key={i}
+              >
                 {tag}
               </div>
             ))}

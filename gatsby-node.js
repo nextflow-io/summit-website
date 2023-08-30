@@ -90,6 +90,16 @@ exports.createSchemaCustomization = ({ actions }) => {
   createTypes(typeDefs);
 };
 
+function createEventPath(filePath) {
+  const pathParts = filePath.split('/');
+  const slug = pathParts[pathParts.length - 2];
+  let location = 'barcelona';
+  let prefix = 'summit';
+  if (filePath.includes('boston')) location = 'boston';
+  if (filePath.includes('events')) prefix = 'hackathon';
+  return `/${location}/agenda/${prefix}/${slug}/`;
+}
+
 exports.onCreateNode = ({ node, actions, getNode, createNodeId, createContentDigest }) => {
   const { createNodeField, createNode } = actions;
 
@@ -160,6 +170,7 @@ exports.onCreateNode = ({ node, actions, getNode, createNodeId, createContentDig
       parent.internal.type === 'File' &&
       ['events', 'talks', 'events-boston', 'talks-boston'].includes(parent.sourceInstanceName)
     ) {
+      const hasPage = node.frontmatter.hasPage;
       const content = {
         type: parent.sourceInstanceName,
         slug: node.frontmatter.slug,
@@ -176,7 +187,8 @@ exports.onCreateNode = ({ node, actions, getNode, createNodeId, createContentDig
         locationUrl: node.frontmatter.locationUrl,
         youtube: node.frontmatter.youtube,
         youtubeUrl: node.frontmatter.youtubeUrl,
-        hasPage: node.frontmatter.hasPage,
+        hasPage,
+        path: hasPage ? createEventPath(node.internal.contentFilePath) : null,
         tags: node.frontmatter.tags,
         meta: node.frontmatter.meta,
         content: node,
@@ -188,6 +200,7 @@ exports.onCreateNode = ({ node, actions, getNode, createNodeId, createContentDig
         children: [],
         internal: {
           type: 'Event',
+          contentFilePath: node.internal.contentFilePath,
           contentDigest: createContentDigest(content),
         },
         ...content,
@@ -254,10 +267,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
 
   const blogTemplate = path.resolve('src/templates/blog.jsx');
-  // const eventTemplate = path.resolve('src/templates/event.jsx');
-  // const talkTemplate = path.resolve('src/templates/talk.jsx');
+  const talkTemplate = path.resolve('src/templates/talk.jsx');
   const speakerTemplate = path.resolve('src/templates/speaker.jsx');
-  // const posterTemplate = path.resolve('src/templates/poster.jsx');
 
   const result = await graphql(`
     {
@@ -280,6 +291,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         nodes {
           slug
           hasPage
+          path
+          internal {
+            contentFilePath
+          }
         }
       }
       posters: allPoster {
@@ -295,8 +310,18 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return;
   }
 
-  const blogs = result.data.blogs.nodes;
+  const eventPages = result.data.events.nodes.filter((event) => event.hasPage);
+  eventPages.forEach((event) => {
+    createPage({
+      path: event.path,
+      component: `${talkTemplate}?__contentFilePath=${event.internal.contentFilePath}`,
+      context: {
+        slug: event.path,
+      },
+    });
+  });
 
+  const blogs = result.data.blogs.nodes;
   blogs.forEach((blog) => {
     createPage({
       path: `/blog/${blog.slug}/`,
@@ -330,32 +355,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       });
     });
   });
-
-  // const events = result.data.events.nodes;
-
-  // events.forEach((event) => {
-  //   if (event.hasPage) {
-  //     createPage({
-  //       path: `/hackathon/${event.slug}/`,
-  //       component: eventTemplate,
-  //       context: {
-  //         slug: event.slug,
-  //       },
-  //     });
-  //   }
-  // });
-
-  // const posters = result.data.posters.nodes;
-
-  // posters.forEach((poster) => {
-  //   createPage({
-  //     path: `/posters/${poster.slug}/`,
-  //     component: posterTemplate,
-  //     context: {
-  //       slug: poster.slug,
-  //     },
-  //   });
-  // });
 };
 
 exports.onCreatePage = async ({ page, actions }) => {
