@@ -2,7 +2,7 @@
 slug: oct-18-nf-core-community-updates
 timeframe: 4:00 - 4:30 PM (30 min)
 title: nf-core Community Updates
-datetime: 2022-10-18T15:16:00.000Z
+datetime: 2022-10-18T16:00:00.000Z
 date: Oct 18, 2022
 time: 4:00 PM
 isChild: false

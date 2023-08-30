@@ -2,7 +2,7 @@
 slug: oct-18-analysing-ont-long-read-data-for-cancer-with-nextflow
 timeframe: 3:45 - 4:00 PM (15 min)
 title: Analysing ONT Long Read data for cancer with Nextflow
-datetime: 2022-10-18T15:15:45.000Z
+datetime: 2022-10-18T15:45:00.000Z
 date: Oct 18, 2022
 time: 3:45 PM
 isChild: false
@@ -28,7 +28,10 @@ The Genomics England Cancer 2.0 programme aims to investigate the clinical utili
 
 The project currently comprises two pipelines; a per-flowcell basecalling and QC pipeline, and a per-patient tumour-normal variant-calling pipeline. Input for the QC pipeline can be either pre or post basecalling, with both FAST5 and POD5 raw formats supported as well as basecalled FASTQ or BAM formats. Basecalling is performed using Guppy or Dorado and requires GPU support. As part of the basecalling process DNA methylation information is also endcoded into the BAMs. All alignment is performed using minimap2 with access to iGenomes references enabled through nf-core. QC steps performed include measuring coverage and alignment quality as well as making HLA typing calls and a simplistic sex determination. 
 
-Tumour-normal analysis is performed using the aligned BAMs output from the QC pipeline. Structural variants are called using nanomonsv and small variant calling is implemented with ClairS. Finally, we perform a proprietary tiering of called variants. 
+Tumour-normal analysis is performed using the aligned BAMs output from the QC pipeline. Structural variants are called using nanomonsv and small variant calling is implemented with ClairS. Finally, we perform a proprietary tiering of called variants.
+
+Our pipelines are built using the nf-core framework including use of the pipeline template and module repository. Additional proprietary steps and software are distributed via an internally hosted repository which follows the structure of nf-core modules. 
+Pipelines are run on a HPC via NF Tower, which allows both engineers and other staff to easily monitor progress and troubleshoot issues without requiring access to the cluster or expertise in nextflow. Orchestration of the pipelines and related tasks such as data ingestion, sample tracking and logging, are handled by custom logic using various cloud solutions including Amazon ECS, Lambda functions, Step Functions, RDS and API Gateway. Where possible, managed or serverless technologies are favoured to reduce maintenance overhead and improve scalability and availability. This will be key as we scale up to support more GLH locations and move towards delivery of a clinical service. 
 
 <div>
   <Button to="https://www.genomicsengland.co.uk/" variant="secondary" size="md" arrow>

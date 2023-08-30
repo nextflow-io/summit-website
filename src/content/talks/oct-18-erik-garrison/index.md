@@ -2,7 +2,7 @@
 slug: oct-18-erik-garrison
 timeframe: 5:45 - 6:30 PM (45 min)
 title: "Title to be confirmed"
-datetime: 2022-10-18T15:17:45.000Z
+datetime: 2022-10-18T17:45:00.000Z
 date: Oct 18, 2022
 time: 5:45 PM
 isChild: false

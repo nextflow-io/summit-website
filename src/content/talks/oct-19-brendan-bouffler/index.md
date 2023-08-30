@@ -1,14 +1,14 @@
 ---
-slug: oct-18-evan-floden
-timeframe: 5:15 - 5:45 PM (30 min)
+slug: oct-19-
+timeframe: 10:00 - 10:30 AM (30 min)
 title: "Title to be confirmed"
-datetime: 2022-10-18T17:15:00.000Z
-date: Oct 18, 2022
-time: 5:15 PM
+datetime: 2022-10-19T10:00:00.000Z
+date: Oct 19, 2022
+time: 10:00 AM
 isChild: false
 hasPage: true
 speakers:
-  - Evan Floden
+  - Brendan Bouffler
 tags:
   - Community
 youtube: 
@@ -16,16 +16,16 @@ youtubeUrl:
 ---
 <div className="mb-4">
   <small className="typo-small">
-    Evan Floden
+Brendan Bouffler
   </small>
 </div>
 
 <hr className="border-t border-gray-50 mb-4 opacity-20" />
 
-Description to be confirmed
+Abstract to be confirmed.
 
 <div>
-  <Button to="https://seqera.io/" variant="secondary" size="md" arrow>
+  <Button to="https://aws.amazon.com/" variant="secondary" size="md" arrow>
     View project
   </Button>
 </div>
