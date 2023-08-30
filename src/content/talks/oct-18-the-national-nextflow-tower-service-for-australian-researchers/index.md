@@ -2,8 +2,8 @@
 slug: oct-18-the-national-nextflow-tower-service-for-australian-researchers
 timeframe: 3:15 - 3:30 PM (15 min)
 title: The National Nextflow Tower Service for Australian researchers
-datetime: 2022-10-18T15:15:00.000Z
-date: Oct 18, 2022
+datetime: 2023-10-18T15:15:00.000Z
+date: Oct 18, 2023
 time: 3:15 PM
 isChild: true
 hasPage: true

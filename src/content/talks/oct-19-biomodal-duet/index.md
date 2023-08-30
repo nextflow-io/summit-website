@@ -2,8 +2,8 @@
 slug: oct-19-biomodal-duet
 timeframe: 10:45 - 11:00 AM (15 min)
 title: "Computational methods for allele-specific methylation with biomodal Duet"
-datetime: 2022-10-19T10:45:00.000Z
-date: Oct 19, 2022
+datetime: 2023-10-19T10:45:00.000Z
+date: Oct 19, 2023
 time: 10:45 PM
 isChild: false
 hasPage: true

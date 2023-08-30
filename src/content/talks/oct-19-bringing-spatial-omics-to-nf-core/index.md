@@ -2,8 +2,8 @@
 slug: oct-19-
 timeframe: 12:45 - 1:00 PM (15 min)
 title: "Bringing spatial omics to nf-core"
-datetime: 2022-10-19T12:45:00.000Z
-date: Oct 19, 2022
+datetime: 2023-10-19T12:45:00.000Z
+date: Oct 19, 2023
 time: 12:45 PM
 isChild: false
 hasPage: true
