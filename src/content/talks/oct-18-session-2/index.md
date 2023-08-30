@@ -8,7 +8,11 @@ time: 5:00 PM
 isChild: false
 hasPage: false
 speakers:
-  -
+
+events:
+  - oct-18-pixelgen-technologies-heart-nextflow
+  - oct-18-evan-floden
+  - oct-18-erik-garrison
 tags:
 youtube:
 youtubeUrl:
