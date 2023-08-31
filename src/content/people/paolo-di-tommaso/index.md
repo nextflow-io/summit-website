@@ -1,6 +1,6 @@
 ---
 slug: /paolo-di-tommaso/
-name: Paolo di Tommaso
+name: Paolo Di Tommaso
 position: CTO & co-founder of Seqera Labs
 image: ../../../images/people/paoloditommaso.png
 github: https://github.com/pditommaso
