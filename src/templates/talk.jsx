@@ -12,7 +12,7 @@ import SpeakerPics from '../components/EventCard/SpeakerPics';
 const TalkPage = ({ data, children }) => {
   const { event: talk } = data;
   let shareImg = undefined;
-  const firstSpeaker = talk.speakers[0];
+  const firstSpeaker = talk.speakers?.[0];
   const firstSpeakerImg = firstSpeaker?.meta?.image?.publicURL;
   if (firstSpeakerImg) shareImg = firstSpeakerImg;
   return (
