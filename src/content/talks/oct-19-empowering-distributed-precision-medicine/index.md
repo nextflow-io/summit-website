@@ -1,6 +1,6 @@
 ---
 slug: oct-19-empowering-distributed-precision-medicine
-timeframe: : - : PM (15 min)
+timeframe: 5:30 - 5:45 PM (15 min)
 title: "Empowering Distributed Precision Medicine: Scalable Genomic Analysis in Clinical Trial Recruitment"
 datetime: 2023-10-19T17:30:00.000Z
 date: Oct 19, 2023
