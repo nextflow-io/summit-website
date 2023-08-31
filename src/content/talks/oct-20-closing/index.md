@@ -1,7 +1,7 @@
 ---
 slug: oct-20-closing
 timeframe: 1:00 - 1:30 PM (30 min)
-title: "nf-core/raredisease: A workflow to analyse data from patients with rare diseases"
+title: "Closing Remarks"
 datetime: 2023-10-20T13:00:00.000Z
 date: Oct 20, 2023
 time: 1:00 PM
