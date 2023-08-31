@@ -1,5 +1,5 @@
 ---
-slug: oct-19-
+slug: oct-19-cluster-scalable-pangenome
 timeframe: 3:30 - 3:45 PM (15 min)
 title: "Cluster scalable pangenome graph construction with nf-core/pangenome"
 datetime: 2023-10-19T15:15:30.000Z
@@ -17,7 +17,7 @@ youtubeUrl:
 
 <div className="mb-4">
   <small className="typo-small">
-Simon Heumos, Andrea Guarracino, Jana Hoffmann, Michael Heuer, Lukas Heumos, Philipp Ehmele, Gisela Gabernet, Friederike Hanssen, Susanne Jodoin, Erik Garrison, Sven Nahnsen
+    Simon Heumos, Andrea Guarracino, Jana Hoffmann, Michael Heuer, Lukas Heumos, Philipp Ehmele, Gisela Gabernet, Friederike Hanssen, Susanne Jodoin, Erik Garrison, Sven Nahnsen
   </small>
 </div>
 
@@ -25,4 +25,9 @@ Pangenome graphs can represent variation between multiple genomes. The PanGenome
 
 Here we present nf-core/pangenome, a cluster scalable implementation of PGGB. nf-core/pangenome can distribute genome alignments across multiple nodes of a cluster scaling to up to thousands of input sequences. We show its automated sequence partitioning feature by building a Lodderomyces elongisporus pangenome graph, aiming to assign each chromosome into one graph component. A detailed MultiQC report summarizes graph statistics and shows diagnostic graph visualizations in 1 and 2 dimensions. nf-core/pangenome is written with Nextflow’s DSL2 and incorporates nf-core modules, ensuring modularity while adhering to nf-core community standards.
 
-https://github.com/nf-core/pangenome
+
+<div>
+  <Button to="https://github.com/nf-core/pangenome" variant="secondary" size="md" arrow>
+    View project
+  </Button>
+</div>

@@ -10,7 +10,7 @@ tags:
   - Nextflow
   - Speaker
 meta:
-  title: "Paolo di Tommaso"
+  title: "Paolo Di Tommaso"
   description: "Nextflow Summit 2023 Speaker"
   image: ../../../images/share/barcelona/speaker-paolo-di-tommaso.jpg
 attending: Both

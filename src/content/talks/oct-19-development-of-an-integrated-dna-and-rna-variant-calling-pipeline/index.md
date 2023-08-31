@@ -1,7 +1,7 @@
 ---
 slug: oct-19-development-of-an-integrated-dna-and-rna-variant-calling-pipeline
 timeframe: 10:30 - 10:45 AM (15 min)
-title: "Development of an Integrated DNA and RNA Variant Calling Pipeline"
+title: "Development of an integrated DNA and RNA variant calling pipeline"
 datetime: 2023-10-19T10:30:00.000Z
 date: Oct 19, 2023
 time: 10:30 AM

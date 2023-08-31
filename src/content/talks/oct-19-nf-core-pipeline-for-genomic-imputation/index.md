@@ -1,7 +1,7 @@
 ---
 slug: oct-19-nf-core-pipeline-for-genomic-imputation
 timeframe: 5:45 - 6:00 PM (15 min)
-title: "nf-Core pipeline for Genomic Imputation: From Phasing to Imputation to Validation"
+title: "nf-Core pipeline for genomic imputation: From phasing to imputation to validation"
 datetime: 2023-10-19T17:45:00.000Z
 date: Oct 19, 2023
 time: 5:45 PM
