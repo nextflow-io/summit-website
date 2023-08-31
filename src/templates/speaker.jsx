@@ -99,10 +99,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    events: allEvent(
-      filter: { speakers: { elemMatch: { slug: { eq: $slug } } }, isChild: { eq: true } }
-      sort: { datetime: ASC }
-    ) {
+    events: allEvent(filter: { speakers: { elemMatch: { slug: { eq: $slug } } } }, sort: { datetime: ASC }) {
       nodes {
         slug
         id
