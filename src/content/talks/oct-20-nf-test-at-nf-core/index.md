@@ -1,10 +1,10 @@
 ---
-slug: oct-19-nf-test-at-nf-core
-timeframe: 5:15 - 5:30 PM (15 min)
+slug: oct-20-nf-test-at-nf-core
+timeframe: 12:15 - 12:30 PM (15 min)
 title: "nf-test at nf-core: Empowering Scalable and Streamlined Testing"
-datetime: 2023-10-19T17:15:00.000Z
-date: Oct 19, 2023
-time: 5:15 PM
+datetime: 2023-10-20T12:15:00.000Z
+date: Oct 20, 2023
+time: 12:15 PM
 isChild: false
 hasPage: true
 speakers:
