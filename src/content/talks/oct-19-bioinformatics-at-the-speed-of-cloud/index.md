@@ -1,7 +1,7 @@
 ---
 slug: oct-19-bioinformatics-at-the-speed-of-cloud
 timeframe: 12:15 - 12:30 PM (15 min)
-title: "Computational methods for allele-specific methylation with biomodal Duet"
+title: "Bioinformatics at the Speed of Cloud: Revolutionizing Genomics with Nextflow and MMCloud"
 datetime: 2023-10-19T12:15:00.000Z
 date: Oct 19, 2023
 time: 12:15 PM
