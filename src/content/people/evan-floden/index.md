@@ -2,7 +2,7 @@
 slug: /evan-floden/
 name: Evan Floden
 email: evan@seqera.io
-position: CEO & CO-FOUNDER at Seqera Labs
+position: CEO & co-founder of Seqera Labs
 image: ../../../images/people/evanfloden.png
 github: https://github.com/evanfloden
 twitter: https://twitter.com/EvanFloden
