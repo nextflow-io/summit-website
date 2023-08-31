@@ -17,6 +17,7 @@ youtubeUrl:
 <div className="mb-4">
   <small className="typo-small">
     Maxime Garcia
+  </small>
 </div>
 
 <hr className="border-t border-gray-50 mb-4 opacity-20" />
