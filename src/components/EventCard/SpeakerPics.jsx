@@ -29,9 +29,9 @@ const SpeakerPics = ({ speakers }) => {
   return (
     <>
       <div className="flex items-center">
-        <Img speaker={speakers[0]} className="bg-indigo-200 z-30" />
-        {speakers.length > 1 && <Img speaker={speakers[1]} className="-ml-4 bg-indigo-300 z-20" />}
-        {speakers.length > 2 && <Img speaker={undefined} className="bg-indigo-400 -ml-4" />}
+        <Img speaker={speakers[0]} className="bg-green-400 z-30" />
+        {speakers.length > 1 && <Img speaker={speakers[1]} className="-ml-4 bg-indigo-400 z-20" />}
+        {speakers.length > 2 && <Img speaker={undefined} className="bg-rose-400 -ml-4" />}
         <span className="typo-intro text-green-300 ml-3">{getName(speakers)}</span>
       </div>
       <span className="hidden lg:block mx-2">|</span>

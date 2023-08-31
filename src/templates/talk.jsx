@@ -8,6 +8,7 @@ import MDXProvider from '../components/CustomMDXProvider';
 import YoutubeIframe from '../components/YoutubeIframe';
 import SpeakerCard from '../components/SpeakerCard';
 import Seo from '../components/Seo';
+import SpeakerPics from '../components/EventCard/SpeakerPics';
 
 const TalkPage = ({ data, children }) => {
   const { event: talk } = data;
@@ -24,48 +25,7 @@ const TalkPage = ({ data, children }) => {
         </div>
         <div className="mt-5 md:mt-10">
           <div className="flex flex-wrap flex-col lg:flex-row lg:items-center">
-            {talk.speakers && (
-              <>
-                {talk.speakers.length === 1 && (
-                  <div className="flex items-center">
-                    <Image
-                      image={getImage(talk.speakers[0]?.image)}
-                      alt={talk.speakers[0]?.name}
-                      imgClassName="rounded-full"
-                      className="mr-4 h-8 w-8"
-                    />
-                    <span className="typo-intro text-green-300">{talk.speakers[0]?.name}</span>
-                  </div>
-                )}
-                {talk.speakers.length === 2 && (
-                  <div className="flex items-center">
-                    <Image
-                      image={getImage(talk.speakers[0]?.image)}
-                      alt={talk.speakers[0]?.name}
-                      imgClassName="rounded-full"
-                      className="h-8 w-8"
-                    />
-                    <Image
-                      image={getImage(talk.speakers[1]?.image)}
-                      alt={talk.speakers[1]?.name}
-                      imgClassName="rounded-full"
-                      className="-ml-2 mr-4 h-8 w-8"
-                    />
-                    <span className="typo-intro text-green-300">
-                      {`${talk.speakers[0]?.name} & ${talk.speakers[1]?.name}`}
-                    </span>
-                  </div>
-                )}
-                {talk.speakers.length > 2 && (
-                  <div className="flex items-center">
-                    <div className="h-8 w-8 bg-indigo-600 rounded-full" />
-                    <div className="h-8 w-8 bg-green-300 rounded-full -ml-2 mr-4" />
-                    <span className="typo-intro text-green-300">Several Speakers</span>
-                  </div>
-                )}
-                <span className="hidden lg:block mx-2">|</span>
-              </>
-            )}
+            <SpeakerPics speakers={talk.speakers} />
             <p className="typo-body">{`${talk.date}, ${talk.time} CET`}</p>
             {talk.location && (
               <>
