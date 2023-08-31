@@ -8,7 +8,7 @@ time: 10:00 AM
 isChild: false
 hasPage: true
 speaker:
-  -
+  - TBC
 tags:
   - Community
 youtube: 
