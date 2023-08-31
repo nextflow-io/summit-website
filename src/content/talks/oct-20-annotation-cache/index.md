@@ -1,7 +1,7 @@
 ---
 slug: oct-20-annotation-cache
 timeframe: 10:45 - 11:00 AM (15 min)
-title: "Annotation cache: using nf-core/modules and Nextflow Tower to build an AWS open data resource"
+title: "Annotation cache: Using nf-core/modules and Nextflow Tower to build an AWS open data resource"
 datetime: 2023-10-20T10:45:00.000Z
 date: Oct 20, 2023
 time: 10:45 PM
