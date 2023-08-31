@@ -8,7 +8,7 @@ time: 10:00 AM
 isChild: false
 hasPage: true
 speakers:
-  - 
+  - Harshil Patel
 tags:
   - Ecosystem
 youtube: 
