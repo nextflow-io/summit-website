@@ -7,6 +7,8 @@ date: Oct 19, 2023
 time: 5:00 PM
 isChild: false
 hasPage: true
+speakers:
+  - 
 tags:
   - Community
 youtube: 

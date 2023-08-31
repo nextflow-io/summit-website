@@ -7,6 +7,8 @@ date: Oct 20, 2023
 time: 10:00 AM
 isChild: false
 hasPage: true
+speakers:
+  - 
 tags:
   - Ecosystem
 youtube: 
