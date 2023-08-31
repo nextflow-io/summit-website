@@ -10,7 +10,8 @@ import Seo from '../components/Seo';
 const SpeakerPage = ({ data, path }) => {
   const { speaker } = data;
   let backProps = { to: path.includes('boston') ? '/boston/speakers/' : '/barcelona/speakers/' };
-  if (window.location.search.includes('goBack')) backProps = { onClick: () => window.history.back() };
+  if (typeof window !== 'undefined' && window.location.search.includes('goBack'))
+    backProps = { onClick: () => window.history.back() };
   return (
     <>
       <Seo title={speaker.meta.title} description={speaker.meta.description} image={speaker.meta.image.publicURL} />
