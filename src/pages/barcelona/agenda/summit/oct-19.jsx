@@ -26,6 +26,14 @@ const SummitOct19 = () => {
           hasPage
           path
           fullPath
+          speakers {
+            name
+            image {
+              childImageSharp {
+                gatsbyImageData(height: 32, placeholder: NONE, width: 32)
+              }
+            }
+          }
           events {
             slug
             timeframe

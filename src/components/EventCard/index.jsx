@@ -1,8 +1,8 @@
 import classnames from 'classnames';
-import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
 import React from 'react';
 
 import { AngleDownIcon, ArrowRightIcon, Link, LocationIcon, YoutubeRectangleIcon } from 'website-components';
+import SpeakerPics from './SpeakerPics';
 
 const EventCard = ({ event, hidden, expanded, isExpandable, onExpand, isChild, disableTimeline, eventLocation }) => {
   return (
@@ -69,50 +69,7 @@ const EventCard = ({ event, hidden, expanded, isExpandable, onExpand, isChild, d
       )}
       {event.description && <p className="typo-body mb-4">{event.description}</p>}
       <div className="flex flex-wrap flex-col lg:flex-row lg:items-center">
-        {event.speakers && (
-          <>
-            {event.speakers.length === 1 && (
-              <div className="flex items-center">
-                <Image
-                  image={getImage(event.speakers[0]?.image)}
-                  alt={event.speakers[0]?.name}
-                  imgClassName="rounded-full"
-                  className="mr-4 h-8 w-8"
-                />
-                <span className="typo-intro text-green-300">{event.speakers[0]?.name}</span>
-              </div>
-            )}
-            {event.speakers.length === 2 && (
-              <div className="flex items-center">
-                <Image
-                  image={getImage(event.speakers[0]?.image)}
-                  alt={event.speakers[0].name}
-                  imgClassName="rounded-full"
-                  className="h-8 w-8"
-                />
-                <Image
-                  image={getImage(event.speakers[1]?.image)}
-                  alt={event.speakers[1].name}
-                  imgClassName="rounded-full"
-                  className="-ml-2 mr-4 h-8 w-8"
-                />
-                <span className="typo-intro text-green-300">
-                  {`${event.speakers[0]?.name} & ${event.speakers[1]?.name}`}
-                </span>
-              </div>
-            )}
-            {event.speakers.length > 2 && (
-              <>
-                <div className="flex items-center">
-                  <div className="h-8 w-8 bg-indigo-600 rounded-full" />
-                  <div className="h-8 w-8 bg-green-300 rounded-full -ml-2 mr-4" />
-                  <span className="typo-intro text-green-300">Several Speakers</span>
-                </div>
-                <span className="hidden lg:block mx-2">|</span>
-              </>
-            )}
-          </>
-        )}
+        <SpeakerPics speakers={event.speakers} />
         <p className="typo-body">{`${event.date}, ${event.time} ${eventLocation === 'boston' ? 'EST' : 'CET'}`}</p>
         {event.location && (
           <>
