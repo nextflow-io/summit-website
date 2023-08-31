@@ -76,7 +76,7 @@ const TalkPage = ({ data, children }) => {
             </>
           )}
           {talk.speakers?.map((speaker, i) => (
-            <SpeakerCard speaker={speaker} className="mt-8 first:mt-0" key={i} />
+            <SpeakerCard speaker={speaker} className="mt-8 first:mt-0" key={i} fromEvent />
           ))}
         </div>
       </div>
