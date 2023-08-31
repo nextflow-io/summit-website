@@ -7,7 +7,7 @@ date: Oct 20, 2023
 time: 10:00 AM
 isChild: false
 hasPage: true
-speaker:
+speakers:
   - TBC
 tags:
   - Community
