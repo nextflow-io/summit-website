@@ -11,7 +11,6 @@ speakers:
   - Brendan Bouffler
 tags:
   - Community
-  - Sponsor
 youtube: 
 youtubeUrl: 
 ---
