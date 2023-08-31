@@ -5,7 +5,7 @@ title: The National Nextflow Tower Service for Australian researchers
 datetime: 2023-10-18T15:15:00.000Z
 date: Oct 18, 2023
 time: 3:15 PM
-isChild: true
+isChild: false
 hasPage: true
 speakers:
   - Steven Manos

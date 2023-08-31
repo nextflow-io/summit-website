@@ -2,8 +2,8 @@
 slug: oct-19-real-time-sequencing-analysis-with-nextflow
 timeframe: 4:45 - 5:00 PM (15 min)
 title: "Real-time Sequencing Analysis with Nextflow"
-datetime: 2022-10-19T16:45:00.000Z
-date: Oct 19, 2022
+datetime: 2023-10-19T16:45:00.000Z
+date: Oct 19, 2023
 time: 4:45 PM
 isChild: false
 hasPage: true
