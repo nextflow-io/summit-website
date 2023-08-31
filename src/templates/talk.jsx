@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
 import { AngleLeftIcon, Button, Link, LocationIcon, YoutubeRectangleIcon } from 'website-components';
 
 import PlaceholderRectangle from '../images/visuals/placeholder-rectangle.svg';
@@ -12,10 +11,13 @@ import SpeakerPics from '../components/EventCard/SpeakerPics';
 
 const TalkPage = ({ data, children }) => {
   const { event: talk } = data;
-
+  let shareImg = undefined;
+  const firstSpeaker = talk.speakers[0];
+  const firstSpeakerImg = firstSpeaker?.meta?.image?.publicURL;
+  if (firstSpeakerImg) shareImg = firstSpeakerImg;
   return (
     <>
-      <Seo title={talk.title} description={talk.description} />
+      <Seo title={talk.title} description={talk.description} image={shareImg} />
       <div className="text-white container-sm py-10 md:py-20">
         <div className="inline-flex items-center hover:text-green-300 mb-4">
           <AngleLeftIcon className="h-6 w-6 inline-block mr-1" />
@@ -117,6 +119,11 @@ export const pageQuery = graphql`
         image {
           childImageSharp {
             gatsbyImageData(placeholder: NONE)
+          }
+        }
+        meta {
+          image {
+            publicURL
           }
         }
       }
