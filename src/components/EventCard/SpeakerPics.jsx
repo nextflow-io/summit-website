@@ -14,7 +14,7 @@ const Img = ({ speaker, className }) =>
   );
 
 const SpeakerPics = ({ speakers }) => {
-  if (!speakers.length) return null;
+  if (!speakers?.length) return null;
   if (!speakers[0] && speakers.length === 1) return null;
   function getName(speakers) {
     switch (speakers.length) {
