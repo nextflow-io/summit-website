@@ -12,11 +12,16 @@
 }
 @media (min-width: 1170px) {
   .container > div {
-    min-width: 160px;
+    min-width: 200px;
   }
 }
-@media (min-width: 1300px) and (max-width: 1600px) {
+@media (min-width: 1400px) and (max-width: 1600px) {
   .container > div {
     min-width: 350px;
+  }
+}
+@media (min-width: 1601px) {
+  .container > div {
+    min-width: 160px;
   }
 }
