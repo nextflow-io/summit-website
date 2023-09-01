@@ -1,16 +1,21 @@
-import classnames from 'classnames';
 import React from 'react';
+import classnames from 'classnames';
 
 import { AngleDownIcon, ArrowRightIcon, Link, LocationIcon, YoutubeRectangleIcon } from 'website-components';
 import SpeakerPics from './SpeakerPics';
 
+import * as styles from './styles.module.css';
+
 const EventCard = ({ event, hidden, expanded, isExpandable, onExpand, isChild, disableTimeline, eventLocation }) => {
   return (
     <div
-      className={classnames('bg-black border border-gray-800 px-4 py-6 lg:p-8 rounded-md shadow-xl mt-4 relative', {
+      className={classnames('bg-black border px-4 py-6 lg:p-8 rounded-md shadow-xl mt-4 relative', {
         hidden: hidden,
         'cursor-pointer': isExpandable,
         'ml-10 lg:ml-14': isChild,
+        'border-gray-800': !event.is_sponsor && !event.is_keynote,
+        'border-green-300': event.is_keynote,
+        'border-gray-600': event.is_sponsor,
       })}
       onClick={() => {
         if (isExpandable) {
@@ -40,7 +45,14 @@ const EventCard = ({ event, hidden, expanded, isExpandable, onExpand, isChild, d
         {event.tags && (
           <div className="hidden lg:flex">
             {event.tags.map((tag, i) => (
-              <span className="typo-small rounded-full px-4 py-1 bg-gray-800 uppercase mr-2" key={i}>
+              <span
+                className={classnames(styles.tag, 'border typo-small bg-gray-800 mr-2', {
+                  'border-transparent': !['Keynote', 'Sponsor'].includes(tag),
+                  'border-green-300': tag === 'Keynote',
+                  'border-gray-600': tag === 'Sponsor',
+                })}
+                key={i}
+              >
                 {tag}
               </span>
             ))}

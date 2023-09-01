@@ -39,6 +39,8 @@ exports.createSchemaCustomization = ({ actions }) => {
         slug: String
         path: String
         fullPath: String
+				is_keynote: Boolean
+				is_sponsor: Boolean
         title: String
         description: String
         datetime: Date @dateformat
@@ -197,6 +199,8 @@ exports.onCreateNode = ({ node, actions, getNode, createNodeId, createContentDig
         hasPage,
         path: hasPage ? eventPath : null,
         fullPath: hasPage ? fullEventPath : null,
+        is_keynote: node.frontmatter.is_keynote || false,
+        is_sponsor: node.frontmatter.is_sponsor || false,
         tags: node.frontmatter.tags,
         meta: node.frontmatter.meta,
         content: node,
