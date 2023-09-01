@@ -12,7 +12,7 @@
 }
 @media (min-width: 1170px) {
   .container > div {
-    min-width: 160px;
+    min-width: 250px;
   }
 }
 @media (min-width: 1300px) and (max-width: 1600px) {

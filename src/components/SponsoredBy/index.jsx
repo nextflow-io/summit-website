@@ -8,6 +8,7 @@ import LogoTileDB from '../../images/logos/tiledb.svg';
 import LogoZS from '../../images/logos/ZS.svg';
 import LogoNanopore from '../../images/logos/nanopore.svg';
 import LogoMemverge from '../../images/logos/memverge.svg';
+import LogoElement from '../../images/logos/element-biosciences.svg';
 import Sponsor from './Sponsor';
 
 import * as styles from './styles.module.css';
@@ -37,6 +38,9 @@ const SponsoredBy = () => (
       </Sponsor>
       <Sponsor>
         <img src={LogoMemverge} className="h-10" alt="Memverge" />
+      </Sponsor>
+      <Sponsor>
+        <img src={LogoElement} className="h-10" alt="Element" />
       </Sponsor>
       <Sponsor>
         <img src={LogoSeqera} className="h-10" alt="Seqera" />
