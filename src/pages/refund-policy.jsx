@@ -16,7 +16,7 @@ const RefundPolicy = () => {
         <h2 className="typo-h5 mt-8">Refund Eligibility:</h2>
         <p className="typo-body">
           We will only process refund requests for canceled registrations received on or before September 9, 2023 for
-          registrations received for the Nextflow Hackathon and Summit in Barcelona, and October 30, 2023 for the
+          registrations received for the Nextflow Hackathon and Summit in Barcelona, and October 27, 2023 for the
           registrations received for the Nextflow Hackathon and Summit in Boston. Any requests received after this date
           will not be eligible for a refund.
         </p>
