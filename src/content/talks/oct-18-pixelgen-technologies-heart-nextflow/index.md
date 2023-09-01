@@ -11,6 +11,7 @@ speakers:
   - Johan Dahlberg
 tags:
   - Community
+  - Sponsor
 youtube: 
 youtubeUrl: 
 ---

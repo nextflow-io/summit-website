@@ -11,6 +11,7 @@ speakers:
   - Chris Wright
 tags:
   - Software
+  - Sponsor
 youtube: 
 youtubeUrl: 
 ---

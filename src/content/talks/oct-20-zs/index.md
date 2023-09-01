@@ -11,6 +11,7 @@ speakers:
   - TBC
 tags:
   - Ecosystem
+  - Sponsor
 youtube: 
 youtubeUrl: 
 ---

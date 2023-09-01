@@ -9,6 +9,7 @@ isChild: false
 hasPage: true
 tags:
   - Ecosystem
+  - Sponsor
 youtube: 
 youtubeUrl: 
 ---
