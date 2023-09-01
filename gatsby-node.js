@@ -12,15 +12,15 @@ exports.createSchemaCustomization = ({ actions }) => {
       }
     `,
     `
-			type Blog implements Node {
-				slug: String!
-				title: String!
-				author: String!
-				datetime: Date @dateformat
-				meta: MetaFields
-				content: Mdx
-			}
-		`,
+      type Blog implements Node {
+        slug: String!
+        title: String!
+        author: String!
+        datetime: Date @dateformat
+        meta: MetaFields
+        content: Mdx
+      }
+    `,
     `
       type People implements Node {
         name: String!
@@ -35,10 +35,12 @@ exports.createSchemaCustomization = ({ actions }) => {
     `,
     `
       type Event implements Node {
-				type: String
+        type: String
         slug: String
         path: String
         fullPath: String
+        is_keynote: Boolean
+        is_sponsor: Boolean
         title: String
         description: String
         datetime: Date @dateformat
@@ -59,20 +61,20 @@ exports.createSchemaCustomization = ({ actions }) => {
       }
     `,
     `
-			type Accommodation implements Node {
-				title: String
-				image: File @fileByRelativePath
-				stars: Int
-				url: String
-				walkingTime: String
-				breakfast: Boolean
-				adultOne: String
-				adultsTwo: String
-				tax: String
-				promotionCode: String
-				location: String
-				content: Mdx
-			}
+      type Accommodation implements Node {
+        title: String
+        image: File @fileByRelativePath
+        stars: Int
+        url: String
+        walkingTime: String
+        breakfast: Boolean
+        adultOne: String
+        adultsTwo: String
+        tax: String
+        promotionCode: String
+        location: String
+        content: Mdx
+      }
     `,
     `
       type Poster implements Node {
@@ -197,6 +199,8 @@ exports.onCreateNode = ({ node, actions, getNode, createNodeId, createContentDig
         hasPage,
         path: hasPage ? eventPath : null,
         fullPath: hasPage ? fullEventPath : null,
+        is_keynote: node.frontmatter.is_keynote || false,
+        is_sponsor: node.frontmatter.is_sponsor || false,
         tags: node.frontmatter.tags,
         meta: node.frontmatter.meta,
         content: node,

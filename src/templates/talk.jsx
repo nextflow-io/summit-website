@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
 import { AngleLeftIcon, Button, Link, LocationIcon, YoutubeRectangleIcon } from 'website-components';
 
 import PlaceholderRectangle from '../images/visuals/placeholder-rectangle.svg';
@@ -8,13 +7,17 @@ import MDXProvider from '../components/CustomMDXProvider';
 import YoutubeIframe from '../components/YoutubeIframe';
 import SpeakerCard from '../components/SpeakerCard';
 import Seo from '../components/Seo';
+import SpeakerPics from '../components/EventCard/SpeakerPics';
 
 const TalkPage = ({ data, children }) => {
   const { event: talk } = data;
-
+  let shareImg = undefined;
+  const firstSpeaker = talk.speakers?.[0];
+  const firstSpeakerImg = firstSpeaker?.meta?.image?.publicURL;
+  if (firstSpeakerImg) shareImg = firstSpeakerImg;
   return (
     <>
-      <Seo title={talk.title} description={talk.description} />
+      <Seo title={talk.title} description={talk.description} image={shareImg} />
       <div className="text-white container-sm py-10 md:py-20">
         <div className="inline-flex items-center hover:text-green-300 mb-4">
           <AngleLeftIcon className="h-6 w-6 inline-block mr-1" />
@@ -24,48 +27,7 @@ const TalkPage = ({ data, children }) => {
         </div>
         <div className="mt-5 md:mt-10">
           <div className="flex flex-wrap flex-col lg:flex-row lg:items-center">
-            {talk.speakers && (
-              <>
-                {talk.speakers.length === 1 && (
-                  <div className="flex items-center">
-                    <Image
-                      image={getImage(talk.speakers[0]?.image)}
-                      alt={talk.speakers[0]?.name}
-                      imgClassName="rounded-full"
-                      className="mr-4 h-8 w-8"
-                    />
-                    <span className="typo-intro text-green-300">{talk.speakers[0]?.name}</span>
-                  </div>
-                )}
-                {talk.speakers.length === 2 && (
-                  <div className="flex items-center">
-                    <Image
-                      image={getImage(talk.speakers[0]?.image)}
-                      alt={talk.speakers[0]?.name}
-                      imgClassName="rounded-full"
-                      className="h-8 w-8"
-                    />
-                    <Image
-                      image={getImage(talk.speakers[1]?.image)}
-                      alt={talk.speakers[1]?.name}
-                      imgClassName="rounded-full"
-                      className="-ml-2 mr-4 h-8 w-8"
-                    />
-                    <span className="typo-intro text-green-300">
-                      {`${talk.speakers[0]?.name} & ${talk.speakers[1]?.name}`}
-                    </span>
-                  </div>
-                )}
-                {talk.speakers.length > 2 && (
-                  <div className="flex items-center">
-                    <div className="h-8 w-8 bg-indigo-600 rounded-full" />
-                    <div className="h-8 w-8 bg-green-300 rounded-full -ml-2 mr-4" />
-                    <span className="typo-intro text-green-300">Several Speakers</span>
-                  </div>
-                )}
-                <span className="hidden lg:block mx-2">|</span>
-              </>
-            )}
+            <SpeakerPics speakers={talk.speakers} />
             <p className="typo-body">{`${talk.date}, ${talk.time} CET`}</p>
             {talk.location && (
               <>
@@ -116,7 +78,7 @@ const TalkPage = ({ data, children }) => {
             </>
           )}
           {talk.speakers?.map((speaker, i) => (
-            <SpeakerCard speaker={speaker} className="mt-8 first:mt-0" key={i} />
+            <SpeakerCard speaker={speaker} className="mt-8 first:mt-0" key={i} fromEvent />
           ))}
         </div>
       </div>
@@ -157,6 +119,11 @@ export const pageQuery = graphql`
         image {
           childImageSharp {
             gatsbyImageData(placeholder: NONE)
+          }
+        }
+        meta {
+          image {
+            publicURL
           }
         }
       }

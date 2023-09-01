@@ -26,6 +26,8 @@ const HackathonOct16 = () => {
           hasPage
           path
           fullPath
+          is_keynote
+          is_sponsor
           speakers {
             name
             image {
@@ -49,6 +51,8 @@ const HackathonOct16 = () => {
             hasPage
             path
             fullPath
+            is_keynote
+            is_sponsor
             speakers {
               name
               image {

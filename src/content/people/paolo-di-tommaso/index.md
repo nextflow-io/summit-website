@@ -1,6 +1,6 @@
 ---
 slug: /paolo-di-tommaso/
-name: Paolo di Tommaso
+name: Paolo Di Tommaso
 position: CTO & co-founder of Seqera Labs
 image: ../../../images/people/paoloditommaso.png
 github: https://github.com/pditommaso
@@ -10,7 +10,7 @@ tags:
   - Nextflow
   - Speaker
 meta:
-  title: "Paolo di Tommaso"
+  title: "Paolo Di Tommaso"
   description: "Nextflow Summit 2023 Speaker"
   image: ../../../images/share/barcelona/speaker-paolo-di-tommaso.jpg
 attending: Both

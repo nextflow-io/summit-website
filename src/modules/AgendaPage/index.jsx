@@ -3,17 +3,6 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
 import { Accordion, Button, Link } from 'website-components';
 
-const AccordionItem = ({ children }) => (
-  <Accordion.Item
-    className="border border-gray-800"
-    inactiveClassName=""
-    iconClassName="fill-green-300"
-    activeIconClassName="fill-green-300"
-  >
-    {children}
-  </Accordion.Item>
-);
-
 import EventView from './EventView';
 import ProgramSelector from './ProgramSelector';
 import Seo from '../../components/Seo';

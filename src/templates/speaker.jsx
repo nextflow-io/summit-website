@@ -9,14 +9,16 @@ import Seo from '../components/Seo';
 
 const SpeakerPage = ({ data, path }) => {
   const { speaker } = data;
-  const backURL = path.includes('boston') ? '/boston/speakers/' : '/barcelona/speakers/';
+  let backProps = { to: path.includes('boston') ? '/boston/speakers/' : '/barcelona/speakers/' };
+  if (typeof window !== 'undefined' && window.location.search.includes('goBack'))
+    backProps = { onClick: () => window.history.back() };
   return (
     <>
       <Seo title={speaker.meta.title} description={speaker.meta.description} image={speaker.meta.image.publicURL} />
       <div className="text-white container-sm py-10 md:py-20">
         <div className="inline-flex items-center hover:text-green-300 mb-4">
           <AngleLeftIcon className="h-6 w-6 inline-block mr-1" />
-          <Link to={backURL} noBorder>
+          <Link {...backProps} noBorder>
             Back
           </Link>
         </div>
@@ -97,10 +99,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    events: allEvent(
-      filter: { speakers: { elemMatch: { slug: { eq: $slug } } }, isChild: { eq: true } }
-      sort: { datetime: ASC }
-    ) {
+    events: allEvent(filter: { speakers: { elemMatch: { slug: { eq: $slug } } } }, sort: { datetime: ASC }) {
       nodes {
         slug
         id
@@ -115,6 +114,8 @@ export const pageQuery = graphql`
         youtube
         youtubeUrl
         hasPage
+        path
+        fullPath
         speakers {
           name
           image {

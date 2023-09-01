@@ -71,7 +71,7 @@ const Header = ({ location, hideNav }) => {
 
   return (
     <>
-      <header className="bg-black fixed z-10 inset-x-0 top-0 fixed">
+      <header className="bg-black fixed z-40 inset-x-0 top-0 fixed">
         <div className="container-lg flex flex-wap items-center justify-between w-full h-16 md:h-24 whitespace-nowrap">
           <Link to={resolveRootPath()} noBorder className="block flex-auto">
             <img src={Logo} className="max-h-10" style={{ marginRight: '100%' }} alt="" />

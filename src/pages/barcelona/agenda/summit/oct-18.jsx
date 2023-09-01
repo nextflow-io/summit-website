@@ -25,6 +25,16 @@ const SummitOct18 = () => {
           hasPage
           path
           fullPath
+          is_keynote
+          is_sponsor
+          speakers {
+            name
+            image {
+              childImageSharp {
+                gatsbyImageData(height: 32, placeholder: NONE, width: 32)
+              }
+            }
+          }
           events {
             slug
             timeframe
@@ -40,6 +50,8 @@ const SummitOct18 = () => {
             hasPage
             path
             fullPath
+            is_keynote
+            is_sponsor
           }
         }
       }

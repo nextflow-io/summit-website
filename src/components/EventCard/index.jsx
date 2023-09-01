@@ -1,16 +1,21 @@
-import classnames from 'classnames';
-import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
 import React from 'react';
+import classnames from 'classnames';
 
 import { AngleDownIcon, ArrowRightIcon, Link, LocationIcon, YoutubeRectangleIcon } from 'website-components';
+import SpeakerPics from './SpeakerPics';
+
+import * as styles from './styles.module.css';
 
 const EventCard = ({ event, hidden, expanded, isExpandable, onExpand, isChild, disableTimeline, eventLocation }) => {
   return (
     <div
-      className={classnames('bg-black border border-gray-800 px-4 py-6 lg:p-8 rounded-md shadow-xl mt-4 relative', {
+      className={classnames('bg-black border px-4 py-6 lg:p-8 rounded-md shadow-xl mt-4 relative', {
         hidden: hidden,
         'cursor-pointer': isExpandable,
         'ml-10 lg:ml-14': isChild,
+        'border-gray-800': !event.is_sponsor && !event.is_keynote,
+        'border-green-300': event.is_keynote,
+        'border-gray-600': event.is_sponsor,
       })}
       onClick={() => {
         if (isExpandable) {
@@ -40,7 +45,14 @@ const EventCard = ({ event, hidden, expanded, isExpandable, onExpand, isChild, d
         {event.tags && (
           <div className="hidden lg:flex">
             {event.tags.map((tag, i) => (
-              <span className="typo-small rounded-full px-4 py-1 bg-gray-800 uppercase mr-2" key={i}>
+              <span
+                className={classnames(styles.tag, 'border typo-small bg-gray-800 mr-2', {
+                  'border-transparent': !['Keynote', 'Sponsor'].includes(tag),
+                  'border-green-300': tag === 'Keynote',
+                  'border-gray-600': tag === 'Sponsor',
+                })}
+                key={i}
+              >
                 {tag}
               </span>
             ))}
@@ -69,50 +81,7 @@ const EventCard = ({ event, hidden, expanded, isExpandable, onExpand, isChild, d
       )}
       {event.description && <p className="typo-body mb-4">{event.description}</p>}
       <div className="flex flex-wrap flex-col lg:flex-row lg:items-center">
-        {event.speakers && (
-          <>
-            {event.speakers.length === 1 && (
-              <div className="flex items-center">
-                <Image
-                  image={getImage(event.speakers[0]?.image)}
-                  alt={event.speakers[0]?.name}
-                  imgClassName="rounded-full"
-                  className="mr-4 h-8 w-8"
-                />
-                <span className="typo-intro text-green-300">{event.speakers[0]?.name}</span>
-              </div>
-            )}
-            {event.speakers.length === 2 && (
-              <div className="flex items-center">
-                <Image
-                  image={getImage(event.speakers[0]?.image)}
-                  alt={event.speakers[0].name}
-                  imgClassName="rounded-full"
-                  className="h-8 w-8"
-                />
-                <Image
-                  image={getImage(event.speakers[1]?.image)}
-                  alt={event.speakers[1].name}
-                  imgClassName="rounded-full"
-                  className="-ml-2 mr-4 h-8 w-8"
-                />
-                <span className="typo-intro text-green-300">
-                  {`${event.speakers[0]?.name} & ${event.speakers[1]?.name}`}
-                </span>
-              </div>
-            )}
-            {event.speakers.length > 2 && (
-              <>
-                <div className="flex items-center">
-                  <div className="h-8 w-8 bg-indigo-600 rounded-full" />
-                  <div className="h-8 w-8 bg-green-300 rounded-full -ml-2 mr-4" />
-                  <span className="typo-intro text-green-300">Several Speakers</span>
-                </div>
-                <span className="hidden lg:block mx-2">|</span>
-              </>
-            )}
-          </>
-        )}
+        <SpeakerPics speakers={event.speakers} />
         <p className="typo-body">{`${event.date}, ${event.time} ${eventLocation === 'boston' ? 'EST' : 'CET'}`}</p>
         {event.location && (
           <>
