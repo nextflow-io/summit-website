@@ -1,4 +1,3 @@
-
 ---
 slug: oct-19-nf-core-sarek
 timeframe: 5:00 - 5:15 PM (15 min)
