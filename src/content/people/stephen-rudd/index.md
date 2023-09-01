@@ -14,6 +14,7 @@ meta:
   description: "Nextflow Summit 2023 Presenter"
   image: ../../../images/share/boston/presenter-stephen-rudd.jpg
 attending: Boston
+is_sponsor: true
 ---
 
 Stephen works in the Product Management team and is responsible for the bioinformatics roadmap. He has many years of experience working in academia and different industries. While preferring computational biology, he has a murky laboratory background and has worked in both market development and sales. Stephen brings the voice of the customer to the internal development teams.

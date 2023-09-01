@@ -13,6 +13,7 @@ meta:
   description: "Nextflow Summit 2023 Presenter"
   image: ../../../images/share/barcelona/presenter-chris-wright.jpg
 attending: Barcelona
+is_sponsor: true
 ---
 
 Chris has worked at Oxford Nanopore for over 10 years. He started as a data analyst helping laboratory scientists develop the core technologies with MinION and PromethION flowcells. Chris was one of the primary authors the first publicly released basecaller: nanonet, as well as earlier HMM-based methods. He is also the lead developer of medaka. More recently Chris oversees the Customer Workflows group, responsible for creating bioinformatics resources for customers of Oxford Nanopore.

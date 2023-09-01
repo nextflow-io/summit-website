@@ -14,6 +14,7 @@ meta:
   description: "Nextflow Summit 2023 Presenter"
   image: ../../../images/share/barcelona/presenter-johan-dahlberg.jpg
 attending: Barcelona
+is_sponsor: true
 ---
 
 Johan Dahlberg is a software engineer and data scientist working at Pixelgen Technologies, where he builds software, systems, and analyzes data. He holds a PhD in molecular medicine from Uppsala University, Sweden. Most of his career has been spent on building software for large scale genomics and proteomics experiments.

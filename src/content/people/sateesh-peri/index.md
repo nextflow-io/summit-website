@@ -13,6 +13,7 @@ meta:
   description: "Nextflow Summit 2023 Presenter"
   image: ../../../images/share/barcelona/presenter-sateesh-peri.jpg
 attending: Barcelona
+is_sponsor: true
 ---
 
 With over 5 years of work experience in bioinformatics, cloud computing, and scientific software development, Sateesh is passionate about bridging the gap between research and industry. As a Developer Advocate at MemVerge, he leverages his technical skills and domain expertise in Nextflow to engage with the developer community, promoting the adoption of Nextflow and MemVerge's Memory Machine™ software.
