@@ -12,4 +12,5 @@ tags:
   - Sponsor
 youtube: 
 youtubeUrl: 
+is_sponsor: true
 ---

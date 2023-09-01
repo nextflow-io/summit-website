@@ -14,6 +14,7 @@ tags:
   - Keynote
 youtube: 
 youtubeUrl: 
+is_keynote: true
 ---
 <div className="mb-4">
   <small className="typo-small">
