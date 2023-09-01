@@ -114,6 +114,8 @@ export const pageQuery = graphql`
         youtube
         youtubeUrl
         hasPage
+        path
+        fullPath
         speakers {
           name
           image {
