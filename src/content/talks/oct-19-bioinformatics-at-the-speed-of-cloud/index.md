@@ -11,6 +11,7 @@ speakers:
   - Sateesh Peri
 tags:
   - Ecosystem
+  - Sponsor
 youtube: 
 youtubeUrl: 
 ---
