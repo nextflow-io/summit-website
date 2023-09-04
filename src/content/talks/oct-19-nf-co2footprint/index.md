@@ -30,7 +30,7 @@ We developed nf-co2footprint, a Nextflow plugin designed to estimate the CO2 foo
 nf-co2footprint offers a user-friendly report, analogous to the original Nextflow pipeline execution report, that visualizes the energy consumption and carbon emissions of each pipeline process and increases awareness of the environmental impact.
 
 <div>
-  <Button to="https://uni-tuebingen.de/en/research/research-infrastructure/quantitative-biology-center-qbic/" variant="secondary" size="md" arrow>
+  <Button to="https://github.com/qbic-pipelines/nf-co2footprint" variant="secondary" size="md" arrow>
     View project
   </Button>
 </div>
