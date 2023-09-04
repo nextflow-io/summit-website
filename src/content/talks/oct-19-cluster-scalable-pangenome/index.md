@@ -1,10 +1,10 @@
 ---
 slug: oct-19-cluster-scalable-pangenome
-timeframe: 3:30 - 3:45 PM (15 min)
+timeframe: 3:15 - 3:30 PM (15 min)
 title: "Cluster scalable pangenome graph construction with nf-core/pangenome"
-datetime: 2023-10-19T15:15:30.000Z
+datetime: 2023-10-19T15:15:00.000Z
 date: Oct 19, 2023
-time: 3:30 PM
+time: 3:15 PM
 isChild: false
 hasPage: true
 speakers:
