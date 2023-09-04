@@ -1,10 +1,10 @@
 ---
 slug: oct-18-pixelgen-technologies-heart-nextflow
-timeframe: 5:00 - 5:15 PM (15 min)
+timeframe: 4:15 - 4:30 PM (15 min)
 title: "Pixelgen Technologies ❤︎ Nextflow"
-datetime: 2023-10-18T17:00:00.000Z
+datetime: 2023-10-18T16:15:00.000Z
 date: Oct 18, 2023
-time: 5:00 PM
+time: 4:15 PM
 isChild: false
 hasPage: true
 speakers:
