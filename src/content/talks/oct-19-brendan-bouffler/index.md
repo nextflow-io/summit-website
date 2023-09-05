@@ -1,5 +1,5 @@
 ---
-slug: oct-19-
+slug: oct-19-brendan-bouffler
 timeframe: 10:00 - 10:30 AM (30 min)
 title: "Platinum sponsor talk: AWS"
 datetime: 2023-10-19T10:00:00.000Z
