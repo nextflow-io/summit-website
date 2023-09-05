@@ -11,7 +11,7 @@ tags:
 meta:
   title: "Brendan Bouffler"
   description: "Nextflow Summit 2023 Presenter"
-  image: ../../../images/share/boston/presenter-brendan-bouffler.jpg
+  image: ../../../images/share/barcelona/presenter-brendan-bouffler.jpg
 attending: Both
 is_sponsor: true
 ---
