@@ -1,10 +1,10 @@
 ---
 slug: oct-19-nf-co2footprint
-timeframe: 12:30 - 12:45 PM (15 min)
+timeframe: 12:45 - 1:00 PM (15 min)
 title: "nf-co2footprint: a Nextflow plugin to estimate the CO2 footprint of pipeline runs"
-datetime: 2023-10-19T12:30:00.000Z
+datetime: 2023-10-19T12:45:00.000Z
 date: Oct 19, 2023
-time: 12:30 PM
+time: 12:45 PM
 isChild: false
 hasPage: true
 speakers:

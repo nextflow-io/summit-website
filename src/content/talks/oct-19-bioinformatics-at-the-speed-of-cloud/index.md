@@ -1,10 +1,10 @@
 ---
 slug: oct-19-bioinformatics-at-the-speed-of-cloud
-timeframe: 12:15 - 12:30 PM (15 min)
+timeframe: 1:15 - 1:30 PM (15 min)
 title: "Bioinformatics at the speed of cloud: Revolutionizing genomics with Nextflow and MMCloud"
-datetime: 2023-10-19T12:15:00.000Z
+datetime: 2023-10-19T13:15:00.000Z
 date: Oct 19, 2023
-time: 12:15 PM
+time: 1:15 PM
 isChild: false
 hasPage: true
 speakers:
