@@ -2,7 +2,7 @@
 slug: /ricardo-humberto-ramirez-gonzalez/
 name: Ricardo Humberto Ramirez Gonzalez
 position: Senior Bioinformatics Engineer at Genomics England
-image: ../../../ricardohumbertoramirezgonzalez.png
+image: ../../../images/people/ricardohumbertoramirezgonzalez.png
 github: https://github.com/homonecloco
 twitter: https://twitter.com/homonecloco
 linkedin: https://www.linkedin.com/in/ricardo-h-ramirez-g-35a3b816/
