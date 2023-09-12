@@ -8,6 +8,7 @@ twitter: https://twitter.com/lukbut
 linkedin: https://www.linkedin.com/in/lukebuttigieg/
 tags:
   - Community
+  - Speaker
 meta:
   title: "Luke Paul Buttigieg"
   description: "Nextflow Summit 2023 Presenter"

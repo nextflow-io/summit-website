@@ -8,6 +8,7 @@ twitter: https://twitter.com/homonecloco
 linkedin: https://www.linkedin.com/in/ricardo-h-ramirez-g-35a3b816/
 tags:
   - Software
+  - Speaker
 meta:
   title: "Ricardo Humberto Ramirez Gonzalez"
   description: "Nextflow Summit 2023 Presenter"

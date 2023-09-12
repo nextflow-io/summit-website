@@ -6,6 +6,7 @@ image: ../../../images/people/blazejszczerba.png
 linkedin: https://www.linkedin.com/in/b%C5%82a%C5%BCej-szczerba-26b600b/
 tags:
   - Ecosystem
+  - Speaker
 meta:
   title: "Błażej Szczerba"
   description: "Nextflow Summit 2023 Presenter"

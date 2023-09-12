@@ -6,6 +6,7 @@ image: ../../../images/people/edwinclark.png
 linkedin: https://www.linkedin.com/in/edwinclark/
 tags:
   - Ecosystem
+  - Speaker
 meta:
   title: "Edwin Clark"
   description: "Nextflow Summit 2023 Presenter"
