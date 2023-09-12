@@ -2,7 +2,7 @@
 slug: /luke-paul-buttigieg/
 name: Luke Paul Buttigieg
 position: Senior Bioinformatics Engineer at Genomics England Ltd.
-image: ../../../images/people/luke-paul-buttigieg.png
+image: ../../../images/people/lukepaulbuttigieg.png
 github: https://github.com/lukbut
 twitter: https://twitter.com/lukbut
 linkedin: https://www.linkedin.com/in/lukebuttigieg/
