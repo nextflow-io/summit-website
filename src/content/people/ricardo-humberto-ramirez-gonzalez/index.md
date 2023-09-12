@@ -1,5 +1,5 @@
 ---
-slug: /speakers/ricardo-humberto-ramirez-gonzalez/
+slug: /ricardo-humberto-ramirez-gonzalez/
 name: Ricardo Humberto Ramirez Gonzalez
 position: Senior Bioinformatics Engineer at Genomics England
 image: ../../../ricardohumbertoramirezgonzalez.png
