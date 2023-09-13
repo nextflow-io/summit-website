@@ -9,6 +9,7 @@ import LogoZS from '../../images/logos/ZS.svg';
 import LogoNanopore from '../../images/logos/nanopore.svg';
 import LogoMemverge from '../../images/logos/memverge.svg';
 import LogoElement from '../../images/logos/element-biosciences.svg';
+import LogoQuilt from '../../images/logos/quilt.svg';
 import Sponsor from './Sponsor';
 
 import * as styles from './styles.module.css';
@@ -41,6 +42,9 @@ const SponsoredBy = () => (
       </Sponsor>
       <Sponsor>
         <img src={LogoElement} className="h-10" alt="Element" />
+      </Sponsor>
+      <Sponsor>
+        <img src={LogoQuilt} className="h-10" alt="Quilt" />
       </Sponsor>
       <Sponsor>
         <img src={LogoSeqera} className="h-10" alt="Seqera" />

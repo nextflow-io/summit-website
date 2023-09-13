@@ -152,7 +152,7 @@ const IndexPage = () => {
                 <div className="row">
                   <div className="col-6">
                     <div className="h-full border-b border-gray-600 py-2">
-                      <p className="typo-body">September 16</p>
+                      <p className="typo-body">September 18</p>
                     </div>
                   </div>
                   <div className="col-6">
