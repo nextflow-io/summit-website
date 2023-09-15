@@ -8,7 +8,6 @@ time: 6:00 PM
 isChild: false
 hasPage: true
 speakers:
-  - Edwin Clark
   - Luke Paul Buttigieg
   - Błażej Szczerba
   - Ricardo Humberto Ramirez Gonzalez
@@ -20,7 +19,7 @@ youtubeUrl:
 
 <div className="mb-4">
   <small className="typo-small">
-Edwin	Clark, Luke-Paul Buttigieg, Blazej Szczerba, Ricardo Humberto Ramirez Gonzalez
+Luke-Paul Buttigieg, Blazej Szczerba, Ricardo Humberto Ramirez Gonzalez, and Edwin	Clark
   </small>
 </div>
 
