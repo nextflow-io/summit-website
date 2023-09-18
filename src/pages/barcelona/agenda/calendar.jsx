@@ -53,8 +53,8 @@ const RegisterPage = () => {
               Subscribe to Hackathon calendar:
               <span className="ml-4">
                 <Tabs location="-" >
-                  <Tabs.Item to="https://calendar.google.com/calendar/u/1?cid=Y184NDUxMjEyYjhhOWVhM2UyMzU0ZGIwYTU1Y2MyMTFkZDcxZTQyNTNjYjRkYTExMTRjMzIyZGIwNGVmZTJkOGUxQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20">Google Calendar</Tabs.Item>
-                  <Tabs.Item to="https://calendar.google.com/calendar/ical/c_8451212b8a9ea3e2354db0a55cc211dd71e4253cb4da1114c322db04efe2d8e1%40group.calendar.google.com/public/basic.ics">iCal</Tabs.Item>
+                  <Tabs.Item to="https://calendar.google.com/calendar/u/1?cid=Y18yZTFiZmZjMWNhMzgwMzE5ZDc4ZjJhMmY2OTI0NmVmMjk3Yzg5NTYyMjljMWNlODY1M2UxOWNiMTAxYmNjODBjQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20">Google Calendar</Tabs.Item>
+                  <Tabs.Item to="https://calendar.google.com/calendar/ical/c_2e1bffc1ca380319d78f2a2f69246ef297c8956229c1ce8653e19cb101bcc80c%40group.calendar.google.com/public/basic.ics">iCal</Tabs.Item>
                 </Tabs>
               </span>
             </p>
@@ -64,8 +64,8 @@ const RegisterPage = () => {
               Subscribe to Summit calendar:
               <span className="ml-4">
                 <Tabs location="-" >
-                  <Tabs.Item to="https://calendar.google.com/calendar/u/1?cid=Y18yZTFiZmZjMWNhMzgwMzE5ZDc4ZjJhMmY2OTI0NmVmMjk3Yzg5NTYyMjljMWNlODY1M2UxOWNiMTAxYmNjODBjQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20">Google Calendar</Tabs.Item>
-                  <Tabs.Item to="https://calendar.google.com/calendar/ical/c_2e1bffc1ca380319d78f2a2f69246ef297c8956229c1ce8653e19cb101bcc80c%40group.calendar.google.com/public/basic.ics">iCal</Tabs.Item>
+                  <Tabs.Item to="https://calendar.google.com/calendar/u/1?cid=Y184NDUxMjEyYjhhOWVhM2UyMzU0ZGIwYTU1Y2MyMTFkZDcxZTQyNTNjYjRkYTExMTRjMzIyZGIwNGVmZTJkOGUxQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20">Google Calendar</Tabs.Item>
+                  <Tabs.Item to="https://calendar.google.com/calendar/ical/c_8451212b8a9ea3e2354db0a55cc211dd71e4253cb4da1114c322db04efe2d8e1%40group.calendar.google.com/public/basic.ics">iCal</Tabs.Item>
                 </Tabs>
               </span>
             </p>
