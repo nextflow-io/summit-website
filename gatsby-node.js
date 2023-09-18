@@ -95,8 +95,6 @@ exports.createSchemaCustomization = ({ actions }) => {
 };
 
 function createEventPath(filePath) {
-  const pathParts = filePath.split('/');
-  const slug = pathParts[pathParts.length - 2];
   let location = 'barcelona';
   let prefix = 'summit';
   if (filePath.includes('boston')) location = 'boston';
@@ -248,6 +246,8 @@ exports.onCreateNode = ({ node, actions, getNode, createNodeId, createContentDig
     }
 
     if (parent.internal.type === 'File' && parent.sourceInstanceName === 'posters') {
+      const filePath = node.internal.contentFilePath;
+
       const content = {
         slug: node.frontmatter.slug,
         title: node.frontmatter.title,
@@ -267,6 +267,7 @@ exports.onCreateNode = ({ node, actions, getNode, createNodeId, createContentDig
         children: [],
         internal: {
           type: 'Poster',
+          contentFilePath: filePath,
           contentDigest: createContentDigest(content),
         },
         ...content,
@@ -281,6 +282,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const blogTemplate = path.resolve('src/templates/blog.jsx');
   const talkTemplate = path.resolve('src/templates/talk.jsx');
   const speakerTemplate = path.resolve('src/templates/speaker.jsx');
+  const posterTemplate = path.resolve('src/templates/poster.jsx');
 
   const result = await graphql(`
     {
@@ -312,6 +314,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       posters: allPoster {
         nodes {
           slug
+          internal {
+            contentFilePath
+          }
         }
       }
     }
@@ -340,6 +345,17 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       component: `${blogTemplate}?__contentFilePath=${blog.internal.contentFilePath}`,
       context: {
         slug: blog.slug,
+      },
+    });
+  });
+
+  const posters = result.data.posters.nodes;
+  posters.forEach((poster) => {
+    createPage({
+      path: `/barcelona/posters/${poster.slug}/`,
+      component: `${posterTemplate}?__contentFilePath=${poster.internal.contentFilePath}`,
+      context: {
+        slug: poster.slug,
       },
     });
   });

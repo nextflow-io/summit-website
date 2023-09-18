@@ -1,15 +1,14 @@
-import classnames from 'classnames';
-import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
 import React from 'react';
-
-import { Button, Link, SlackIcon } from 'website-components';
+import { Link } from 'website-components';
+import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
 
 const PosterCard = ({ poster }) => {
   const image = poster.speakers?.[0]?.image;
+  const path = `/barcelona/posters/${poster.slug}/`;
   return (
     <div className="bg-black border border-gray-800 rounded-sm shadow-xl h-full group">
       <div className="flex flex-col h-full w-full">
-        <Link to={`/posters/${poster.slug}/`} noBorder>
+        <Link to={path} noBorder>
           <Image
             image={getImage(poster.image)}
             className="rounded-t-sm max-h-[220px]"
@@ -21,7 +20,7 @@ const PosterCard = ({ poster }) => {
         <div className="px-4 py-6 bg-black rounded-b-sm w-full group-hover:bg-gray-800">
           <h4 className="typo-h5">
             <span className="bg-gray-800 typo-small rounded-full px-4 py-1 ml-2 float-right">#{poster.poster_id}</span>
-            <Link to={`/posters/${poster.slug}/`} noBorder>
+            <Link to={path} noBorder>
               {poster.title}
             </Link>
           </h4>
