@@ -1,16 +1,14 @@
+import React from 'react';
 import { graphql } from 'gatsby';
 import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
-import React from 'react';
-
 import { AngleLeftIcon, DownloadIcon, Link, Button, SlackIcon } from 'website-components';
 
-import GatherIcon from '../components/icons/GatherIcon';
-import CustomMDXProvider from '../components/CustomMDXProvider';
 import Seo from '../components/Seo';
 import SpeakerCard from '../components/SpeakerCard';
+import GatherIcon from '../components/icons/GatherIcon';
+import CustomMDXProvider from '../components/CustomMDXProvider';
 
-const PosterPage = ({ data }) => {
+const PosterPage = ({ data, children }) => {
   const { poster, posterImage } = data;
   const image = poster.speakers?.[0]?.image;
   return (
@@ -19,7 +17,7 @@ const PosterPage = ({ data }) => {
       <div className="text-white container-sm py-10 md:py-20">
         <div className="inline-flex items-center hover:text-green-300 mb-4">
           <AngleLeftIcon className="h-6 w-6 inline-block mr-1" />
-          <Link to="/posters/" noBorder>
+          <Link to="/barcelona/posters/" noBorder>
             Back
           </Link>
         </div>
@@ -86,7 +84,7 @@ const PosterPage = ({ data }) => {
           </h1>
           <div className="flex mt-8 md:mt-auto">
             <Button
-              to={'https://nextflow.slack.com/channels/summit-2022-poster-' + poster.poster_id}
+              to={'https://nextflow.slack.com/channels/summit-2023-poster-' + poster.poster_id}
               variant="accent"
               size="sm"
               arrow
@@ -103,9 +101,7 @@ const PosterPage = ({ data }) => {
             ))}
           </div>
           <div className="mt-8">
-            <CustomMDXProvider>
-              <MDXRenderer>{poster.content.body}</MDXRenderer>
-            </CustomMDXProvider>
+            <CustomMDXProvider>{children}</CustomMDXProvider>
           </div>
           <div className="mt-8">
             <div className="bg-black border border-gray-800 rounded-sm shadow-xl h-full">
