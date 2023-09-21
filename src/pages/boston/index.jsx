@@ -136,12 +136,27 @@ const IndexPage = () => {
                 <div className="row">
                   <div className="col-6">
                     <div className="h-full border-b border-gray-600 py-2">
+                      <p className="typo-body">September 18</p>
+                    </div>
+                  </div>
+                  <div className="col-6">
+                    <div className="h-full border-b border-gray-600 py-2">
+                      <p className="typo-body">Tickets are sold out. Register for the waiting list.</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-6">
+                    <div className="h-full border-b border-gray-600 py-2">
                       <p className="typo-body">October 27</p>
                     </div>
                   </div>
                   <div className="col-6">
                     <div className="h-full border-b border-gray-600 py-2">
-                      <p className="typo-body">Registration for the Nextflow SUMMIT closes</p>
+                      <p className="typo-body">
+                        Registrations for the waiting list close, and available tickets are announced if available.
+                        Cancellation period closes.
+                      </p>
                     </div>
                   </div>
                 </div>

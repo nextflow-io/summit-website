@@ -36,8 +36,7 @@ const RegisterPage = () => {
               Join the Nextflow SUMMIT and <span style={{ whiteSpace: 'nowrap' }}>nf-core</span> Hackathon
             </h1>
             <div className="max-w-xl mx-auto mt-4">
-              <p className="typo-body">Places are limited, so register now to reserve your spot.</p>
-              <p className="typo-body">Registration closes September 9, or when sold out.</p>
+              <p className="typo-body">Register free for virtual attendance. In-person places are sold out.</p>
             </div>
             <div className="mt-4">
               <Button to="/barcelona/purchase/" variant="primary" size="md">
