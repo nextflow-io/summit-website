@@ -9,7 +9,7 @@ speakers:
   - Vladimir Mikryukov
 tags:
   - Software
-  - Group 2
+  - Poster Group 2
 ---
 
 <div className="mb-8">

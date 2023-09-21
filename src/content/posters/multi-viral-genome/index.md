@@ -9,7 +9,7 @@ speakers:
   - Marie Lataretu
 tags:
   - Community
-  - Group 1
+  - Poster Group 1
 ---
 
 <div className="mb-8">

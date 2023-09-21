@@ -72,7 +72,7 @@ const PostersPage = () => {
         <div className="container-lg text-center">
           <h1 className="typo-h2 mb-4">Posters</h1>
           <p className="typo-body max-w-xl mx-auto">
-            Chat to the author either in person, on Gather, or on Slack during poster sessions and coffee breaks.
+            Chat to the author either in person or on Slack during poster sessions and coffee breaks.
           </p>
           {/* <Button to="/stream/" variant="accent" size="md" arrow className="mx-3 mb-3">
             <GatherIcon className="inline-block h-6 w-6 mr-3" />

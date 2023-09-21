@@ -9,7 +9,7 @@ speakers:
   - Luke Paul Buttigieg
 tags:
   - Community
-  - Group 2
+  - Poster Group 2
 ---
 
 <div className="mb-8">

@@ -9,7 +9,7 @@ speakers:
   - Błażej Szczerba
 tags:
   - Ecosystem
-  - Group 2
+  - Poster Group 2
 ---
 
 <div className="mb-8">

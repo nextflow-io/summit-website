@@ -9,7 +9,7 @@ speakers:
   - "Roger Olivella"
 tags:
   - Software
-  - Group 1
+  - Poster Group 1
 ---
 
 <div className="mb-8">
