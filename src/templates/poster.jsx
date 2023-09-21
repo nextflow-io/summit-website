@@ -66,7 +66,7 @@ const PosterPage = ({ data, children }) => {
                     <span className="typo-intro text-green-300">Several Speakers</span>
                   </div>
                 )}
-                <span className="hidden lg:block mx-2">|</span>
+                {/* <span className="hidden lg:block mx-2">|</span>
                 <div className="inline-flex items-center">
                   <span>
                     <Link to="/stream/" className="inline typo-body text-gray-600">
@@ -74,7 +74,7 @@ const PosterPage = ({ data, children }) => {
                     </Link>
                   </span>
                   <GatherIcon className="inline-block h-6 w-6 ml-2 opacity-50" />
-                </div>
+                </div> */}
               </>
             )}
           </div>
@@ -82,7 +82,7 @@ const PosterPage = ({ data, children }) => {
             <span className="bg-gray-800 rounded-full px-4 py-1 ml-2 float-right">#{poster.poster_id}</span>
             {poster.title}
           </h1>
-          <div className="flex mt-8 md:mt-auto">
+          {/* <div className="flex mt-8 md:mt-auto">
             <Button
               to={'https://nextflow.slack.com/channels/summit-2023-poster-' + poster.poster_id}
               variant="accent"
@@ -92,7 +92,7 @@ const PosterPage = ({ data, children }) => {
               <SlackIcon className="h-4 w-4 inline-block mr-2" />
               Ask a question on Slack
             </Button>
-          </div>
+          </div> */}
           <div className="flex mt-4">
             {poster.tags.map((tag, i) => (
               <div className="typo-small rounded-full px-4 py-1 bg-gray-800 uppercase mr-2" key={i}>
@@ -243,7 +243,7 @@ export const pageQuery = graphql`
         body
       }
     }
-    posterImage: file(relativePath: { eq: "visuals/poster-coming-soon.jpg" }) {
+    posterImage: file(relativePath: { eq: "posters/placeholder.png" }) {
       childImageSharp {
         gatsbyImageData(placeholder: NONE)
       }

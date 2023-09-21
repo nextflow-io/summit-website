@@ -1,0 +1,7 @@
+.card {
+  background: #000;
+  transition: all 0.3s ease;
+}
+.card * {
+  transition: all 0.3s ease;
+}

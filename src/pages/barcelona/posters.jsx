@@ -34,6 +34,11 @@ const PostersPage = () => {
           }
         }
       }
+      placeholder: file(relativePath: { eq: "posters/placeholder-2.png" }) {
+        childImageSharp {
+          gatsbyImageData(placeholder: NONE)
+        }
+      }
       tags: allPoster {
         group(field: { tags: SELECT }) {
           tag: fieldValue
@@ -58,23 +63,24 @@ const PostersPage = () => {
   };
 
   const posters = data.posters.nodes;
+  const { placeholder } = data;
 
   return (
     <>
       <Seo title="Nextflow Summit 2023 Posters" />
-      <div className="py-32 bg-gray-900 text-white">
+      <div className="pt-32 pb-16 md:py-32 bg-gray-900 text-white">
         <div className="container-lg text-center">
           <h1 className="typo-h2 mb-4">Posters</h1>
-          <p className="typo-body max-w-xl mb-6 mx-auto">
-            Chat to the author either in person, on Gather, or on Slack during poster sessions and coffee breaks.
+          <p className="typo-body max-w-xl mx-auto">
+            Chat to the author either in person or on Slack during poster sessions and coffee breaks.
           </p>
-          <Button to="/stream/" variant="accent" size="md" arrow className="mx-3 mb-3">
+          {/* <Button to="/stream/" variant="accent" size="md" arrow className="mx-3 mb-3">
             <GatherIcon className="inline-block h-6 w-6 mr-3" />
             Join Online
-          </Button>
+          </Button> */}
         </div>
       </div>
-      <div className="py-20 bg-gray-900 text-white">
+      <div className="pb-20 bg-gray-900 text-white">
         <div className="container-lg">
           <div className="row mt-4">
             <div className="col-full lg:col-10">
@@ -86,7 +92,7 @@ const PostersPage = () => {
                       hidden: isFiltered(poster),
                     })}
                   >
-                    <PosterCard poster={poster} />
+                    <PosterCard poster={poster} placeholder={placeholder} />
                   </div>
                 ))}
               </div>
