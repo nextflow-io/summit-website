@@ -7,7 +7,7 @@ import Logo from '../images/logo.svg';
 import { useLayoutState, useLayoutActions } from './Context';
 import * as styles from './styles.module.css';
 
-const navs = [
+const navItems = [
   {
     title: 'Travel - Barcelona',
     bostonTitle: 'Travel - Boston',
@@ -22,6 +22,11 @@ const navs = [
     path: '/sponsors/',
   },
   {
+    title: 'Posters',
+    path: '/posters/',
+    barcelonaOnly: true,
+  },
+  {
     title: 'Blog',
     path: '/blog/',
   },
@@ -33,6 +38,7 @@ const navs = [
   {
     title: 'Past events',
     path: '/past-events/',
+    canHide: true,
   },
 ];
 
@@ -68,6 +74,11 @@ const Header = ({ location, hideNav }) => {
   function isPage(path) {
     return location.pathname.includes(path);
   }
+
+  const navs = navItems.filter((nav) => {
+    if (nav.barcelonaOnly && activeEvent === 'boston') return false;
+    return true;
+  });
 
   return (
     <>
@@ -114,25 +125,24 @@ const Header = ({ location, hideNav }) => {
                     </Link>
                   </div>
                 </div>
-                {navs.map((nav) =>
-                  !nav.path ? null : (
-                    <Link
-                      key={nav.path}
-                      to={resolvePath(nav.path)}
-                      noBorder
-                      className={classnames(
-                        'bg-black bg-opacity-10 font-body py-1 px-4 rounded-sm mr-px font-normal tracking-wide',
-                        nav.className,
-                        {
-                          'text-white': !isPage(nav.path),
-                          'text-green-300': isPage(nav.path),
-                        }
-                      )}
-                    >
-                      {resolveTitle(nav.title, nav.bostonTitle)}
-                    </Link>
-                  )
-                )}
+                {navs.map((nav) => (
+                  <Link
+                    key={nav.path}
+                    to={resolvePath(nav.path)}
+                    noBorder
+                    className={classnames(
+                      'bg-black bg-opacity-10 font-body py-1 px-4 rounded-sm mr-px font-normal tracking-wide',
+                      nav.className,
+                      {
+                        'text-white': !isPage(nav.path),
+                        'text-green-300': isPage(nav.path),
+                        'hidden xl:block': nav.canHide,
+                      }
+                    )}
+                  >
+                    {resolveTitle(nav.title, nav.bostonTitle)}
+                  </Link>
+                ))}
                 <div className="flex flex-none">
                   <Button
                     to={resolvePath('/register/')}
