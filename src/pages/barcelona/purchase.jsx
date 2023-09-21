@@ -32,8 +32,7 @@ const RegisterPage = () => {
           <div className="max-w-3xl mx-auto">
             <h1 className="typo-display1">Register your ticket now</h1>
             <div className="max-w-xl mx-auto mt-4">
-              <p className="typo-body">Places are limited, so register now to reserve your spot.</p>
-              <p className="typo-body">Registration closes September 18, or when sold out.</p>
+              <p className="typo-body">Register free for virtual attendance. In-person places are sold out.</p>
             </div>
           </div>
         </div>
