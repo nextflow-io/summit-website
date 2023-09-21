@@ -68,7 +68,7 @@ const PostersPage = () => {
   return (
     <>
       <Seo title="Nextflow Summit 2023 Posters" />
-      <div className="py-32 bg-gray-900 text-white">
+      <div className="pt-32 pb-16 md:py-32 bg-gray-900 text-white">
         <div className="container-lg text-center">
           <h1 className="typo-h2 mb-4">Posters</h1>
           <p className="typo-body max-w-xl mx-auto">
@@ -80,7 +80,7 @@ const PostersPage = () => {
           </Button> */}
         </div>
       </div>
-      <div className="py-20 bg-gray-900 text-white">
+      <div className="pb-20 bg-gray-900 text-white">
         <div className="container-lg">
           <div className="row mt-4">
             <div className="col-full lg:col-10">
