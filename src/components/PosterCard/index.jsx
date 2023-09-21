@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'website-components';
 import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
 
-const PosterCard = ({ poster }) => {
+const PosterCard = ({ poster, placeholder }) => {
   const image = poster.speakers?.[0]?.image;
   const path = `/barcelona/posters/${poster.slug}/`;
   return (
@@ -10,7 +10,7 @@ const PosterCard = ({ poster }) => {
       <div className="flex flex-col h-full w-full">
         <Link to={path} noBorder>
           <Image
-            image={getImage(poster.image)}
+            image={getImage(poster.image || placeholder)}
             className="rounded-t-sm max-h-[220px]"
             imageClassName="rounded-t-sm"
             objectPosition="50% 0%"
