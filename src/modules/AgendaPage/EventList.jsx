@@ -33,12 +33,12 @@ const EventList = ({ eventData, eventLocation }) => {
     }
   };
   return (
-    <div className="row">
-      <div className="hidden lg:block col-1 pb-10">
+    <div className="flex">
+      <div className="hidden lg:block pb-10 lg:w-1/12">
         <div className="h-full w-px border-l border-white border-dashed mx-auto mt-4" />
         <span className="block typo-body text-center">end</span>
       </div>
-      <div className="col-full lg:col-9">
+      <div className="w-full lg:w-11/12">
         {eventData.map((event, i) => (
           <Fragment key={i}>
             <EventCard
@@ -65,7 +65,6 @@ const EventList = ({ eventData, eventLocation }) => {
           </Fragment>
         ))}
       </div>
-      <div className="hidden lg:block lg:col-2 mt-4"></div>
     </div>
   );
 };

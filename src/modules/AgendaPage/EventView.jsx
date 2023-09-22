@@ -3,8 +3,9 @@ import React from 'react';
 import Tabs from '../../components/Tabs2';
 import DateTabs from './DateTabs';
 import EventList from './EventList';
+import Calendar from './Calendar';
 
-const EventView = ({ eventData, showAllDays, eventType, eventLocation }) => {
+const EventView = ({ eventData, showAllDays, eventType, eventLocation, showCalendar }) => {
   let loc = {};
   if (typeof window !== 'undefined') loc = window.location;
 
@@ -28,67 +29,56 @@ const EventView = ({ eventData, showAllDays, eventType, eventLocation }) => {
     }));
   }
 
+  const resolvePath = (path) => {
+    if (eventLocation === 'boston') return `/boston${path}`;
+    return `/barcelona${path}`;
+  };
+
   return (
     <div className="container-lg">
-      <div className="row">
-        <div className="col-full lg:col-9 lg:ml-1/12">
-          <div class="row">
-            <div class="col-6">
-              {eventLocation === 'boston' ? (
-                <Tabs location={loc} anchor="#events" partialMatch>
-                  <Tabs.Item to="/boston/agenda/hackathon/">Hackathon</Tabs.Item>
-                  <Tabs.Item to="/boston/agenda/summit/">Summit</Tabs.Item>
-                </Tabs>
-              ) : (
-                <Tabs location={loc} anchor="#events" partialMatch>
-                  <Tabs.Item to="/barcelona/agenda/hackathon/">Hackathon</Tabs.Item>
-                  <Tabs.Item to="/barcelona/agenda/summit/">Summit</Tabs.Item>
-                </Tabs>
-                )}
-            </div>
-            <div class="col-6 text-right">
-              {eventLocation === 'boston' ? (
-                <Tabs location={loc} anchor="#events" partialMatch>
-                  <Tabs.Item to="/boston/agenda/calendar">Calendar view</Tabs.Item>
-                </Tabs>
-              ) : (
-                <Tabs location={loc} anchor="#events" partialMatch>
-                  <Tabs.Item to="/barcelona/agenda/calendar">Calendar view</Tabs.Item>
-                </Tabs>
-              )}
-            </div>
+      <div className="flex flex-wrap">
+        <div className="w-full lg:ml-1/12 flex flex-wrap">
+          <div className="w-full md:w-1/2">
+            <Tabs location={loc} anchor="#events" partialMatch>
+              <Tabs.Item to={resolvePath('/agenda/hackathon/')}>Hackathon</Tabs.Item>
+              <Tabs.Item to={resolvePath('/agenda/summit/')}>Summit</Tabs.Item>
+            </Tabs>
           </div>
-          <div className="row mt-1">
-            <div class="col-6">
-              <DateTabs eventLocation={eventLocation} loc={loc} eventType={eventType} />
-            </div>
-            <div class="col-6 text-right">
-              {eventLocation === 'boston' ? (
-                <Tabs location={loc} anchor="#events" partialMatch>
-                  <Tabs.Item to="/boston/agenda/calendar">Subscribe to Summit calendar</Tabs.Item>
-                </Tabs>
-              ) : (
-                <Tabs location={loc} anchor="#events" partialMatch>
-                  <Tabs.Item to="/barcelona/agenda/calendar">Subscribe to Summit calendar</Tabs.Item>
-                </Tabs>
-              )}
-            </div>
+          <div className="w-full md:w-1/2 md:text-right">
+            <Tabs location={loc} anchor="#events" partialMatch>
+              <Tabs.Item to={resolvePath('/agenda/summit/')}>List view</Tabs.Item>
+              <Tabs.Item to={resolvePath('/agenda/calendar/')}>Calendar view</Tabs.Item>
+            </Tabs>
+          </div>
+          <div className="w-full mt-1 md:w-1/2">
+            <DateTabs eventLocation={eventLocation} loc={loc} eventType={eventType} />
+          </div>
+          <div className="w-full md:w-1/2 mt-1 md:text-right">
+            <Tabs location={loc} anchor="#events" partialMatch>
+              <Tabs.Item to={resolvePath('/agenda/calendar/')}>Subscribe to Summit calendar</Tabs.Item>
+            </Tabs>
           </div>
         </div>
       </div>
-      {allEventData.map((data, i) => (
-        <div key={i} className="pb-10">
-          {!!data.title && (
-            <div className="row">
-              <div className="hidden lg:block col-1" />
-              <div className="col-full lg:col-9">
-                <h3 className="typo-h5 mt-10 text-green-300">{data.title}</h3>
-              </div>
+      {showCalendar ? (
+        <Calendar />
+      ) : (
+        <>
+          {allEventData.map((data, i) => (
+            <div key={i} className="pb-10">
+              {!!data.title && (
+                <div className="flex">
+                  <div className="hidden lg:block w-1/12" />
+                  <div className="w-full lg:w-11/12">
+                    <h3 className="typo-h5 mt-10 text-green-300">{data.title}</h3>
+                  </div>
+                </div>
+              )}
+              <EventList eventData={data.items} eventLocation={eventLocation} />
             </div>
-          )}
-          <EventList eventData={data.items} eventLocation={eventLocation} />
-        </div>
-      ))}
+          ))}
+        </>
+      )}
     </div>
   );
 };
