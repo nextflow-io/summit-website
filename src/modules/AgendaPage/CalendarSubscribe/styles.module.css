@@ -1,0 +1,18 @@
+.container {
+  height: 30px;
+}
+@media (min-width: 768px) {
+  .container {
+    height: 72px;
+  }
+}
+.link {
+  color: #10c09d;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0 10px;
+}
+.link:not(:first-child) {
+  border-left: 1px solid #4b4b4b;
+}
