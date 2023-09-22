@@ -55,7 +55,9 @@ const EventView = ({ eventData, showAllDays, eventType, eventLocation, showCalen
         </div>
         <div className="w-full md:w-1/2 md:text-right mb-10 md:mb-0">
           <Tabs location={loc} anchor="#events" partialMatch>
-            <Tabs.Item to={resolvePath('/agenda/hackathon/')}>List view</Tabs.Item>
+            <Tabs.Item to={resolvePath('/agenda/hackathon/')} altPath="/agenda/summit/">
+              List view
+            </Tabs.Item>
             <Tabs.Item to={resolvePath('/agenda/calendar/')}>Calendar view</Tabs.Item>
           </Tabs>
         </div>

@@ -12,10 +12,15 @@ const Tabs = ({ children, location, anchor, partialMatch }) => {
   );
 };
 
-const Item = ({ children, to, inactive }) => {
+const Item = ({ children, to, inactive, altPath }) => {
   const { location, anchor, partialMatch } = useContext(TabsContext);
+
   let isCurrentPage = location.pathname === to;
   if (partialMatch) isCurrentPage = location.pathname?.includes(to);
+
+  if (altPath && !isCurrentPage) {
+    isCurrentPage = location.pathname?.includes(altPath);
+  }
 
   let url = to;
 

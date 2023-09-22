@@ -29,7 +29,7 @@ const CalendarSubscribe = ({ eventLocation }) => {
   return (
     <div className={classNames('flex items-end', styles.container)}>
       <div className="w-full">
-        Import calendar:
+        Subscribe to calendar:
         {!view && (
           <>
             <a className={styles.link} onClick={() => setView('hackathon')}>
