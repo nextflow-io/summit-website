@@ -4,6 +4,7 @@ import Tabs from '../../components/Tabs2';
 import DateTabs from './DateTabs';
 import EventList from './EventList';
 import Calendar from './Calendar';
+import CalendarSubscribe from './CalendarSubscribe';
 
 const EventView = ({ eventData, showAllDays, eventType, eventLocation, showCalendar }) => {
   let loc = {};
@@ -36,32 +37,31 @@ const EventView = ({ eventData, showAllDays, eventType, eventLocation, showCalen
 
   return (
     <div className="container-lg">
-      <div className="flex flex-wrap">
-        <div className="w-full lg:ml-1/12 flex flex-wrap">
-          <div className="w-full md:w-1/2">
-            <Tabs location={loc} anchor="#events" partialMatch>
-              <Tabs.Item to={resolvePath('/agenda/hackathon/')}>Hackathon</Tabs.Item>
-              <Tabs.Item to={resolvePath('/agenda/summit/')}>Summit</Tabs.Item>
-            </Tabs>
-          </div>
-          <div className="w-full md:w-1/2 md:text-right">
-            <Tabs location={loc} anchor="#events" partialMatch>
-              <Tabs.Item to={resolvePath('/agenda/summit/')}>List view</Tabs.Item>
-              <Tabs.Item to={resolvePath('/agenda/calendar/')}>Calendar view</Tabs.Item>
-            </Tabs>
-          </div>
-          <div className="w-full mt-1 md:w-1/2">
-            <DateTabs eventLocation={eventLocation} loc={loc} eventType={eventType} />
-          </div>
-          <div className="w-full md:w-1/2 mt-1 md:text-right">
-            <Tabs location={loc} anchor="#events" partialMatch>
-              <Tabs.Item to={resolvePath('/agenda/calendar/')}>Subscribe to Summit calendar</Tabs.Item>
-            </Tabs>
-          </div>
+      <div className="flex flex-wrap mb-8 items-end">
+        <div className="w-full md:w-1/2 flex items-end">
+          {showCalendar ? (
+            <CalendarSubscribe eventLocation={eventLocation} />
+          ) : (
+            <div>
+              <div className="mb-1">
+                <Tabs location={loc} anchor="#events" partialMatch>
+                  <Tabs.Item to={resolvePath('/agenda/hackathon/')}>Hackathon</Tabs.Item>
+                  <Tabs.Item to={resolvePath('/agenda/summit/')}>Summit</Tabs.Item>
+                </Tabs>
+              </div>
+              <DateTabs eventLocation={eventLocation} loc={loc} eventType={eventType} />
+            </div>
+          )}
+        </div>
+        <div className="w-full md:w-1/2 md:text-right">
+          <Tabs location={loc} anchor="#events" partialMatch>
+            <Tabs.Item to={resolvePath('/agenda/hackathon/')}>List view</Tabs.Item>
+            <Tabs.Item to={resolvePath('/agenda/calendar/')}>Calendar view</Tabs.Item>
+          </Tabs>
         </div>
       </div>
       {showCalendar ? (
-        <Calendar />
+        <Calendar eventLocation={eventLocation} />
       ) : (
         <>
           {allEventData.map((data, i) => (

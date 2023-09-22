@@ -60,7 +60,7 @@ const AgendaPage = ({ showEvents, eventData, showAllDays, eventType, eventLocati
       <div className="container-md text-white pt-36 pb-16" id="events">
         {showEvents ? (
           <>
-            <h2 className="typo-h5 uppercase text-center mb-4">Agenda</h2>
+            <h2 className="typo-h4 uppercase text-center mb-4">Agenda</h2>
             <EventView
               showCalendar={showCalendar}
               eventLocation={eventLocation}
