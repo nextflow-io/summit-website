@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import classNames from 'classnames';
 
 import * as styles from './styles.module.css';
 
@@ -26,7 +27,7 @@ const CalendarSubscribe = ({ eventLocation }) => {
   }
 
   return (
-    <div style={{ height: 72 }} className="flex items-end">
+    <div className={classNames('flex items-end', styles.container)}>
       <div className="w-full">
         Import calendar:
         {!view && (

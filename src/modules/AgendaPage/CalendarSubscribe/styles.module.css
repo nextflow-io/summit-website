@@ -1,3 +1,11 @@
+.container {
+  height: 30px;
+}
+@media (min-width: 768px) {
+  .container {
+    height: 72px;
+  }
+}
 .link {
   color: #10c09d;
   text-decoration: none;

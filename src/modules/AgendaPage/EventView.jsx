@@ -37,7 +37,7 @@ const EventView = ({ eventData, showAllDays, eventType, eventLocation, showCalen
 
   return (
     <div className="container-lg">
-      <div className="flex flex-wrap mb-8 items-end">
+      <div className="flex flex-wrap-reverse mb-8 items-end md:flex-nowrap">
         <div className="w-full md:w-1/2 flex items-end">
           {showCalendar ? (
             <CalendarSubscribe eventLocation={eventLocation} />
@@ -53,7 +53,7 @@ const EventView = ({ eventData, showAllDays, eventType, eventLocation, showCalen
             </div>
           )}
         </div>
-        <div className="w-full md:w-1/2 md:text-right">
+        <div className="w-full md:w-1/2 md:text-right mb-10 md:mb-0">
           <Tabs location={loc} anchor="#events" partialMatch>
             <Tabs.Item to={resolvePath('/agenda/hackathon/')}>List view</Tabs.Item>
             <Tabs.Item to={resolvePath('/agenda/calendar/')}>Calendar view</Tabs.Item>
