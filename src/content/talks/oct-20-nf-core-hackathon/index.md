@@ -22,7 +22,9 @@ youtubeUrl:
 
 <hr className="border-t border-gray-50 mb-4 opacity-20" />
 
-Join Phil as he recaps of the nf-core hackathon held prior to the Nextflow Summit.
+The nf-core hackathon takes place in the days leading up to the Nextflow Summit. Community members new and old come together to work on community projects. Teams include Pipelines, Modules & Subworkflows, Infrastructure and – for the first time – Nextflow development. This year’s hackathon is the largest event that we have run, with nearly 100 participants joining in-person at the Hotel SB Glow in Barcelona, as well many more online.
+
+In this talk, Phil will recap some of the highlights and achievements – expect nerdy stats, group selfies, new nf-core memes and perhaps even some special awards!
 
 <div>
   <Button to="https://nf-co.re/events/2023/hackathon-october-2023/" variant="secondary" size="md" arrow>
