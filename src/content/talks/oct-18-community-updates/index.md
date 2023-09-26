@@ -1,5 +1,5 @@
 ---
-slug: oct-18-nf-core-community-updates
+slug: oct-18-community-updates
 timeframe: 3:45 - 4:15 PM (30 min)
 title: Community updates
 datetime: 2023-10-18T15:45:00.000Z
@@ -22,10 +22,4 @@ youtubeUrl:
 
 <hr className="border-t border-gray-50 mb-4 opacity-20" />
 
-Updates from the Nextflow and nf-core community, including new pipelines, new features, and new outreach.
-
-<div>
-  <Button to="https://nf-co.re/" variant="secondary" size="md" arrow>
-    View project
-  </Button>
-</div>
+The Nextflow and nf-core communities continue to thrive and are growing at a phenomenal rate. As we approach the milestone of ten thousand users on our Slack organisations, Phil will review some of the major projects and initiatives to have taken place over the past 12 months.
