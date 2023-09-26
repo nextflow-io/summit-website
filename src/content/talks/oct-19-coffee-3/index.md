@@ -1,6 +1,6 @@
 ---
 slug: oct-19-coffee-3
-timeframe: 4:00 - 5:45 PM (45 min)
+timeframe: 4:00 - 4:45 PM (45 min)
 title: Coffee break and poster session 2
 datetime: 2023-10-19T16:00:00.000Z
 date: Oct 19, 2023
