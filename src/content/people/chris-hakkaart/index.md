@@ -14,7 +14,7 @@ meta:
   title: "Chris Hakkaart"
   description: "Nextflow Summit 2022 Speaker"
   image: ../../../images/share/barcelona/presenter-chris-hakkaart.jpg
-attending: Both
+attending: Barcelona
 ---
 Chris Hakkaart is a Developer Advocate at Seqera Labs, working on strengthening the Nextflow and nf-core communities. He holds a PhD in Genetics from the University of Otago, New Zealand.
 
