@@ -11,7 +11,6 @@ speakers:
   - Phil Ewels
 tags:
   - Ecosystem
-  - Sponsor
 youtube: 
 youtubeUrl: 
 ---
