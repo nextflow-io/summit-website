@@ -18,14 +18,12 @@ is_sponsor: true
 ---
 <div className="mb-4">
   <small className="typo-small">
-    Felipe Almeida
+    Felipe Almeida & Anne Bresciani
   </small>
 </div>
 
 <hr className="border-t border-gray-50 mb-4 opacity-20" />
 
-<div>
-  <Button to="https://www.zs.com/solutions/life-sciences-randd-and-medical/zs-discovery" variant="secondary" size="md" arrow>
-    View project
-  </Button>
-</div>
+ZS Discovery is a practice area within ZS Associates that works closely with Pharma and Biotech to advance their early R&D capabilities. In our talk, we describe how our partnership with Seqera Labs helps us do this by leveraging Nextflow to create end-to-end data solutions to solve complex biological problems. 
+
+We will present an example of collaborative research, where we contributed to the nf-core Single-Cell RNA-seq pipeline in addition to customizing it to our client’s needs. As part of this effort, we developed client-specific modules and infrastructure connections, while contributing to bug fixes and enhancements to the nf-core public repository.

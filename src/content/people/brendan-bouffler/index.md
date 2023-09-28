@@ -12,7 +12,7 @@ meta:
   title: "Brendan Bouffler"
   description: "Nextflow Summit 2023 Presenter"
   image: ../../../images/share/barcelona/presenter-brendan-bouffler.jpg
-attending: Both
+attending: Barcelona
 is_sponsor: true
 ---
 Brendan Bouffler has 25 years of experience in the global tech industry creating large-scale systems for HPC environments. He’s been responsible for designing and building thousands of systems for researchers and engineers, in every continent. Many of these efforts fed the top500 list, including some that made the top 5.
