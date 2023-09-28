@@ -1,8 +1,8 @@
 ---
-slug: nov-30-
+slug: nov-30-nanopore
 timeframe: 11:30 - 11:45 PM (15 min)
 title: "Nextflow and nanopores; democratising the analysis of long-read DNA sequences"
-datetime: 2023-11-29T11:30:00.000Z
+datetime: 2023-11-30T11:30:00.000Z
 date: Nov 30, 2023
 time: 11:30 PM
 isChild: false

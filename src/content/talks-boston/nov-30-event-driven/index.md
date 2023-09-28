@@ -1,8 +1,8 @@
 ---
 slug: nov-30-event-driven
 timeframe: 2:45 - 3:00 PM (15 min)
-title: ""
-datetime: 2023-11-29T14:45:00.000Z
+title: "An event-driven solution to integrate pipeline executions within complex informatics infrastructures"
+datetime: 2023-11-30T14:45:00.000Z
 date: Nov 30, 2023
 time: 2:45 PM
 isChild: false

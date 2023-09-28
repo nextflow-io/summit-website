@@ -2,7 +2,7 @@
 slug: nov-30-clinical-trials
 timeframe: 11:45 AM - 12:00 PM (15 min)
 title: "Using the nf-core/Sarek and nf-core/MethylSeq pipelines to analyse large clinical trial datasets"
-datetime: 2023-11-29T11:45:00.000Z
+datetime: 2023-11-30T11:45:00.000Z
 date: Nov 30, 2023
 time: 11:45 PM
 isChild: false

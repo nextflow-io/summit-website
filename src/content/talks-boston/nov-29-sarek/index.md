@@ -1,8 +1,8 @@
 ---
 slug: nov-29-sarek
-timeframe: 2:00 - 2:00 PM (15 min)
+timeframe: 3:00 - 3:15 PM (15 min)
 title: "nf-core/sarek - evolution of a community pipeline started in 2016"
-datetime: 2023-11-29T14:00:00.000Z
+datetime: 2023-11-29T15:00:00.000Z
 date: Nov 29, 2023
 time: 2:00 PM
 isChild: false

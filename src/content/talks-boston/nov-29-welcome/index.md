@@ -1,8 +1,8 @@
 ---
 slug: nov-29-welcome
 timeframe: 2:00 - 2:15 PM (15 min)
-title: Registrations
-datetime: 2023-11-29T12:00:00.000Z
+title: "Summit welcome"
+datetime: 2023-11-29T14:00:00.000Z
 date: Nov 29, 2023
 time: 2:00 PM
 isChild: false

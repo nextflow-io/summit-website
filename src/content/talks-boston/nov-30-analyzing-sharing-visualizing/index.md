@@ -1,8 +1,8 @@
 ---
 slug: nov-30-analyzing-sharing-visualizing
-timeframe: 11:00 - 11:30 PM (30 min)
+timeframe: 11:00 - 11:30 AM (30 min)
 title: "Analyzing, Sharing, and Visualizing Scientific Data with the Cirro Data Platform"
-datetime: 2023-11-29T11:00:00.000Z
+datetime: 2023-11-30T11:00:00.000Z
 date: Nov 30, 2023
 time: 2:00 PM
 isChild: false

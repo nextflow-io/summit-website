@@ -1,6 +1,6 @@
 ---
 slug: nov-29-community
-timeframe: 4:15 - 4:30 PM (30 min)
+timeframe: 4:15 - 4:45 PM (30 min)
 title: "Community updates"
 datetime: 2023-11-29T16:15:00.000Z
 date: Nov 29, 2023

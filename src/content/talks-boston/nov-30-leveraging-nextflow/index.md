@@ -2,7 +2,7 @@
 slug: nov-30-leveraging-nextflow
 timeframe: 3:00 - 3:30 PM (30 min)
 title: "Moving from pandemic response to preparedness: Leveraging Nextflow to build VIRUS-MVP framework"
-datetime: 2023-11-29T15:00:00.000Z
+datetime: 2023-11-30T15:00:00.000Z
 date: Nov 30, 2023
 time: 3:00 PM
 isChild: false

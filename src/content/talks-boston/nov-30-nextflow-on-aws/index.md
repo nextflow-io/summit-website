@@ -2,7 +2,7 @@
 slug: nov-30-nextflow-on-aws
 timeframe: 10:15 - 10:30 AM (15 min)
 title: "Nextflow on AWS: choices and considerations"
-datetime: 2023-11-29T10:15:00.000Z
+datetime: 2023-11-30T10:15:00.000Z
 date: Nov 30, 2023
 time: 10:15 AM
 isChild: false

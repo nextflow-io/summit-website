@@ -2,7 +2,7 @@
 slug: nov-30-converged-computing
 timeframe: 2:00 - 2:45 PM (45 min)
 title: "Enabling converged computing"
-datetime: 2023-11-29T14:00:00.000Z
+datetime: 2023-11-30T14:00:00.000Z
 date: Nov 30, 2023
 time: 2:00 PM
 isChild: false

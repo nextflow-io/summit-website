@@ -2,7 +2,7 @@
 slug: nov-30-neoantigen
 timeframe: 10:00 - 10:15 AM (15 min)
 title: "Enabling Reproducible and Flexible Neoantigen Prediction with Nextflow"
-datetime: 2023-11-29T10:00:00.000Z
+datetime: 2023-11-30T10:00:00.000Z
 date: Nov 30, 2023
 time: 10:00 AM
 isChild: false
