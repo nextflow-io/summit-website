@@ -1,10 +1,10 @@
 ---
 slug: nov-30-aws
 timeframe: 9:30 - 10:00 AM (30 min)
-title: "Title to be confirmed"
-datetime: 2023-11-30T14:00:00.000Z
+title: "AWS: Title to be confirmed"
+datetime: 2023-11-30T9:30:00.000Z
 date: Nov 30, 2023
-time: 10:00 AM
+time: 9:30 AM
 isChild: false
 hasPage: true
 tags:
