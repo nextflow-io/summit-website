@@ -1,7 +1,7 @@
 ---
 slug: nov-29-database-uses
 timeframe: 2:15 - 2:45 PM (30 min)
-title: "Nextflow and database uses: Powering data engineering, exploring DuckDB, and beyond"
+title: "Nextflow and database uses: powering data engineering, exploring DuckDB, and beyond"
 datetime: 2023-11-29T14:15:00.000Z
 date: Nov 29, 2023
 time: 2:15 PM

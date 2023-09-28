@@ -1,7 +1,7 @@
 ---
 slug: nov-30-nf-quilt
 timeframe: 4:45 - 5:00 PM (15 min)
-title: "Announcing Java-Native nf-quilt: Versioned and Verified Data Inputs and Outputs for Nextflow"
+title: "Announcing Java-Native nf-quilt: versioned and verified data inputs and outputs for Nextflow"
 datetime: 2023-11-30T16:45:00.000Z
 date: Nov 30, 2023
 time: 4:45 PM
@@ -13,6 +13,7 @@ tags:
   - Ecosystem
 youtube:
 youtubeUrl:
+
 ---
 <div className="mb-4">
   <small className="typo-small">

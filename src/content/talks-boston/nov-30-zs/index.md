@@ -1,7 +1,7 @@
 ---
 slug: nov-30-zs
 timeframe: 4:00 - 4:15 PM (15 min)
-title: "Driving Discovery: Contributing to the nf-core project through client collaboration"
+title: "Driving discovery: contributing to the nf-core project through client collaboration"
 datetime: 2023-11-30T16:00:00.000Z
 date: Nov 30, 2023
 time: 4:00 PM
