@@ -9,6 +9,7 @@ isChild: false
 hasPage: true
 speakers:
   - Felipe Almeida
+  - Juliet Frederiksen
 tags:
   - Community
   - Sponsor
