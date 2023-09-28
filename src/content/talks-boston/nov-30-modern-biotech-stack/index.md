@@ -22,6 +22,8 @@ youtubeUrl:
 
 <hr className="border-t border-gray-50 mb-4 opacity-20" />
 
+Seqera makes complex data analysis accessible at any scale. Beginning with the deep knowledge of high-throughput analysis and automation gained from building Nextflow, we released the Seqera Platform to make data-intensive research scalable, flexible, and collaborative. The Seqera Platform consolidates fragmented data and diverse computing resources into a unified control plane, enabling teams to rapidly develop, test, and deploy together while maintaining deep insight into resource usage and leveraging tools for intelligently scaling. Seqera is modern software engineering – for science.
+
 <div>
   <Button to="https://seqera.io/" variant="secondary" size="md" arrow>
     View project
