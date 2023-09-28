@@ -1,7 +1,7 @@
 ---
 slug: oct-19-proteinfold
 timeframe: 11:15 - 11:30 AM (15 min)
-title: "nf-core/proteinfold: A standardized workflow framework for protein structure prediction tools"
+title: "nf-core/proteinfold: a standardized workflow framework for protein structure prediction tools"
 datetime: 2023-10-19T11:15:00.000Z
 date: Oct 19, 2023
 time: 11:15 PM

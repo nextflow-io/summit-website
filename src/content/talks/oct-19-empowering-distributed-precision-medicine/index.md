@@ -1,7 +1,7 @@
 ---
 slug: oct-19-empowering-distributed-precision-medicine
 timeframe: 5:30 - 5:45 PM (15 min)
-title: "Empowering distributed precision medicine: Scalable genomic analysis in clinical trial recruitment"
+title: "Empowering distributed precision medicine: scalable genomic analysis in clinical trial recruitment"
 datetime: 2023-10-19T17:30:00.000Z
 date: Oct 19, 2023
 time: 5:30 PM
