@@ -11,8 +11,9 @@ speakers:
   - Adam Phillippy
 tags:
   - Community
-youtube:
-youtubeUrl:
+youtube: 
+youtubeUrl: 
+is_keynote: true
 ---
 <div className="mb-4">
   <small className="typo-small">

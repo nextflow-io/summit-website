@@ -13,6 +13,7 @@ tags:
   - Ecosystem
 youtube:
 youtubeUrl:
+is_sponsor: true
 ---
 <div className="mb-4">
   <small className="typo-small">

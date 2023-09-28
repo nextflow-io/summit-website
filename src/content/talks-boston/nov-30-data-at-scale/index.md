@@ -1,17 +1,16 @@
 ---
-slug: nov-30-aws
-timeframe: 9:30 - 10:00 AM (30 min)
-title: "AWS: Title to be confirmed"
-datetime: 2023-11-30T9:30:00.000Z
+slug: nov-30-data-at-scale
+timeframe: 12:00 - 12:15 PM (15 min)
+title: "Community speaker: To be confirmed"
+datetime: 2023-11-30T12:00:00.000Z
 date: Nov 30, 2023
-time: 9:30 AM
+time: 12:00 AM
 isChild: false
 hasPage: true
 tags:
   - Community
 youtube:
 youtubeUrl:
-is_sponsor: true
 ---
 <div className="mb-4">
   <small className="typo-small">
