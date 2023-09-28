@@ -1,7 +1,7 @@
 ---
 slug: oct-19-nf-test-simple-but-powerful
 timeframe: 5:15 - 5:30 PM (15 min)
-title: "nf-test: A simple but powerful testing framework for Nextflow pipelines"
+title: "nf-test: a simple but powerful testing framework for Nextflow pipelines"
 datetime: 2023-10-19T17:15:00.000Z
 date: Oct 19, 2023
 time: 5:15 PM

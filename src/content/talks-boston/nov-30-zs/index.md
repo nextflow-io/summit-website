@@ -1,15 +1,14 @@
 ---
-slug: oct-20-zs
-timeframe: 10:00 - 10:30 PM (30 min)
+slug: nov-30-zs
+timeframe: 4:00 - 4:15 PM (15 min)
 title: "Driving discovery: contributing to the nf-core project through client collaboration"
-datetime: 2023-10-20T10:00:00.000Z
-date: Oct 20, 2023
-time: 10:00 AM
+datetime: 2023-11-30T16:00:00.000Z
+date: Nov 30, 2023
+time: 4:00 PM
 isChild: false
 hasPage: true
 speakers:
-  - Felipe Almeida
-  - Juliet Frederiksen
+  - Anne Bresciani
 tags:
   - Community
   - Sponsor
@@ -19,7 +18,7 @@ is_sponsor: true
 ---
 <div className="mb-4">
   <small className="typo-small">
-    Felipe Almeida & Anne Bresciani
+    Anne Bresciani & Felipe Almeida
   </small>
 </div>
 
