@@ -22,6 +22,6 @@ Join us for this refreshing morning venture. Lace up your sneakers, soak in the 
 
 <div>
   <Button to="https://maps.app.goo.gl/SmFQuYC53ffFDFDp6" variant="secondary" size="md" arrow>
-    View meeting location
+    Location (Google Maps)
   </Button>
 </div>
