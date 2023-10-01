@@ -20,6 +20,8 @@ A professional instructor will guide us through a series of warm-ups and stretch
 
 Join us for this refreshing morning venture. Lace up your sneakers, soak in the ambiance, and let’s start the day on the right foot! 🌟 👟
 
-Meeting location: <https://maps.app.goo.gl/SmFQuYC53ffFDFDp6>
-
-<iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1426.8068629697586!2d2.2042778!3d41.391916699999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDHCsDIzJzMwLjkiTiAywrAxMicxNS40IkU!5e1!3m2!1sen!2sse!4v1696192015581!5m2!1sen!2sse" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<div>
+  <Button to="https://maps.app.goo.gl/SmFQuYC53ffFDFDp6" variant="secondary" size="md" arrow>
+    View meeting location
+  </Button>
+</div>
