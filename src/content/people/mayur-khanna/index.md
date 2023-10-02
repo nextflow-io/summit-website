@@ -1,7 +1,7 @@
 ---
 slug: /mayur-khanna/
 name: Mayur Khanna
-position: Pfizer employee
+position: Data Engineer at Pfizer
 image: ../../../images/people/mayurkhanna.png
 linkedin: https://www.linkedin.com/in/mayur-khanna-7563aa112
 tags:

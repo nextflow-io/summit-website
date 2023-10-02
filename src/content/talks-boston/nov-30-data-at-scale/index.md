@@ -7,7 +7,7 @@ date: Nov 30, 2023
 time: 12:00 AM
 isChild: false
 hasPage: true
-speaker:
+speakers:
   - Mayur Khanna
 tags:
   - Community
