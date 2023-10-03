@@ -11,6 +11,7 @@ speakers:
   - Stephen Rudd
 tags:
   - Community
+  - Sponsor
 youtube:
 youtubeUrl:
 is_sponsor: true
