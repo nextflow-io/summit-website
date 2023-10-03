@@ -11,6 +11,7 @@ speakers:
   - Adam Phillippy
 tags:
   - Community
+  - Keynote
 youtube: 
 youtubeUrl: 
 is_keynote: true

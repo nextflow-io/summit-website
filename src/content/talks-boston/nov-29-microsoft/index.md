@@ -11,6 +11,7 @@ speakers:
   - Venkat Malladi
 tags:
   - Ecosystem
+  - Sponsor
 youtube:
 youtubeUrl:
 is_sponsor: true

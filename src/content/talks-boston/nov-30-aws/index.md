@@ -10,7 +10,8 @@ hasPage: true
 speakers:
   - Ankit Malhotra
 tags:
-  - Community
+  - Ecosystem
+  - Sponsor
 youtube:
 youtubeUrl:
 is_sponsor: true

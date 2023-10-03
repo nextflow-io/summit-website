@@ -11,6 +11,7 @@ speakers:
   - Rosi Bajari
 tags:
   - Community
+  - Sponsor
 youtube:
 youtubeUrl:
 is_sponsor: true
