@@ -4,7 +4,7 @@ timeframe: 11:15 - 11:30 AM (15 min)
 title: "Enabling AZ bioinformatics with Nextflow/Nextflow Tower"
 datetime: 2023-10-20T11:15:00.000Z
 date: Oct 20, 2023
-time: 11:15 PM
+time: 11:15 AM
 isChild: false
 hasPage: true
 speakers:

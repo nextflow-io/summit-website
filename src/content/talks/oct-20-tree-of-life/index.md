@@ -4,7 +4,7 @@ timeframe: 10:30 - 10:45 AM (15 min)
 title: "Automated production engine to decode the Tree of Life"
 datetime: 2023-10-20T10:30:00.000Z
 date: Oct 20, 2023
-time: 10:30 PM
+time: 10:30 AM
 isChild: false
 hasPage: true
 speakers:

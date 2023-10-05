@@ -1,10 +1,10 @@
 ---
-slug: oct-19-community-building
-timeframe: 3:45 - 4:00 PM (15 min)
+slug: oct-20-community-building
+timeframe: 10:45 - 11:00 AM (15 min)
 title: "Building a community: experiences from one year as a developer advocate"
-datetime: 2023-10-19T15:45:00.000Z
-date: Oct 19, 2023
-time: 3:45 PM
+datetime: 2023-10-20T10:45:00.000Z
+date: Oct 20, 2023
+time: 10:45 AM
 isChild: false
 hasPage: true
 speakers:
