@@ -4,7 +4,7 @@ timeframe: 10:45 - 11:00 AM (15 min)
 title: "Computational methods for allele-specific methylation with biomodal Duet"
 datetime: 2023-10-19T10:45:00.000Z
 date: Oct 19, 2023
-time: 10:45 PM
+time: 10:45 AM
 isChild: false
 hasPage: true
 speakers:
