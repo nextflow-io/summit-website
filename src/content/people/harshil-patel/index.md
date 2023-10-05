@@ -17,3 +17,5 @@ attending: Both
 ---
 
 Harshil Patel is the Head of Scientific Development at Seqera Labs.
+
+He will present a talk titled "Automation on the Seqera Platform".

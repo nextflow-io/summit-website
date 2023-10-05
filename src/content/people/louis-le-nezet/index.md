@@ -1,7 +1,7 @@
 ---
 slug: /louis-le-nezet/
 name: Louis Le Nézet
-position: PhD at Institute of Genetics and Development of Rennes, University of Rennes
+position: PhD Candidate at the Institute of Genetics and Development of Rennes, University of Rennes
 image: ../../../images/people/louislenezet.png
 github: https://github.com/LouisLeNezet
 twitter: https://twitter.com/LouisLeNezet
