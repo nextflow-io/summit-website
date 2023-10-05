@@ -4,7 +4,7 @@ timeframe: 11:00 - 11:15 PM (15 min)
 title: "nf-core/raredisease: a workflow to analyse data from patients with rare diseases"
 datetime: 2023-10-20T11:00:00.000Z
 date: Oct 20, 2023
-time: 11:00 PM
+time: 11:00 AM
 isChild: false
 hasPage: true
 speakers:
