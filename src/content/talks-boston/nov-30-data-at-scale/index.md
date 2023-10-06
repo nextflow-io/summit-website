@@ -4,7 +4,7 @@ timeframe: 12:00 - 12:15 PM (15 min)
 title: "Leveraging Nextflow in a distributed cloud infrastructure to analyze genetic data at scale"
 datetime: 2023-11-30T12:00:00.000Z
 date: Nov 30, 2023
-time: 12:00 AM
+time: 12:00 PM
 isChild: false
 hasPage: true
 speakers:
