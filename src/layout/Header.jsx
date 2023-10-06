@@ -224,12 +224,12 @@ const Header = ({ location, hideNav }) => {
                 onClick={() => {
                   handleNav(resolvePath('/register/'));
                 }}
-                variant="accent"
+                variant="primary"
                 size="sm"
                 className="hover:opacity-80 ml-2"
                 noShadow
               >
-                {isBoston ? 'Register' : 'Stream'}
+                {isBoston ? 'Register' : 'Join Online'}
               </Button>
             </div>
           </div>

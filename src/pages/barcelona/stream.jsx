@@ -8,8 +8,6 @@ import GatherIcon from '../../components/icons/GatherIcon';
 import Seo from '../../components/Seo';
 import YoutubeIframe from '../../components/YoutubeIframe';
 
-import PlaceholderRectangle from '../../images/visuals/placeholder-rectangle.svg';
-
 const RegisterPage = () => {
   const data = useStaticQuery(graphql`
     query {
