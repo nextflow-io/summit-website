@@ -153,7 +153,7 @@ const Header = ({ location, hideNav }) => {
                     className="hover:opacity-80 ml-4"
                     noShadow
                   >
-                    {isBoston ? 'Register' : 'Stream'}
+                    {isBoston ? 'Register' : 'Join Online'}
                   </Button>
                 </div>
               </div>

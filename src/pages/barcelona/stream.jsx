@@ -35,10 +35,9 @@ const RegisterPage = () => {
           <p className="typo-body mb-6 mx-auto">
             If you missed the registration, you can still watch the talks live on YouTube.
           </p>
-          {/*
           <Button
-            to="https://app.gather.town/app/X08wvNfA0ndXyDDE/Nextflow%20summit"
-            variant="accent"
+            to="https://app.gather.town/app/br78S294XBCL487A/nf-core-hackathon"
+            variant="primary"
             size="md"
             arrow
             className="mx-3 mb-3"
@@ -46,9 +45,8 @@ const RegisterPage = () => {
             <GatherIcon className="inline-block h-6 w-6 mr-3" />
             Join Gather
           </Button>
-          */}
           <Button
-            to="https://youtube.com/playlist?list=PLPZ8WHdZGxmUdAJlHowo7zL2pN3x97d32"
+            to="https://youtube.com/playlist?list=PLPZ8WHdZGxmUotnP-tWRVNtuNWpN7xbpL"
             variant="primary"
             size="md"
             arrow
@@ -85,13 +83,14 @@ const RegisterPage = () => {
                     </List.Item>
                     <List.Item className="typo-body">Enter the space and enjoy the Nextflow Summit!</List.Item>
                   </List>
+                  {/*
                   <span className="typo-body bg-gray-800 rounded-sm py-2 px-4">
                     <GatherIcon className="inline-block h-5 w-5 mr-2" />
                     Closed
                   </span>
-                  {/*
+                  */}
                   <Button
-                    to="https://app.gather.town/app/X08wvNfA0ndXyDDE/Nextflow%20summit"
+                    to="https://app.gather.town/app/br78S294XBCL487A/nf-core-hackathon"
                     variant="secondary"
                     size="sm"
                     arrow
@@ -100,17 +99,12 @@ const RegisterPage = () => {
                     <GatherIcon className="inline-block h-6 w-6 mr-2" />
                     Join Gather
                   </Button>
-                  */}
                 </div>
                 <div className="col-full lg:col-6 lg:ml-1/12">
-                  <div className="relative">
-                    <div
-                      className="absolute inset-0 bg-center bg-cover bg-no-repeat rounded-sm"
-                      style={{ backgroundImage: `url(${PlaceholderRectangle})` }}
-                    />
+                  <div className="relative border border-green-300 rounded-sm overflow-hidden p-1 bg-black">
                     <Image
                       image={getImage(data.gatherHeroImage)}
-                      className="w-full relative lg:top-6 lg:left-6"
+                      className="w-full"
                       imgClassName="rounded-sm"
                       alt="Gather"
                     />
@@ -132,7 +126,7 @@ const RegisterPage = () => {
                   watch the live-streams of talks directly on YouTube:
                 </p>
                 <Button
-                  to="https://youtube.com/playlist?list=PLPZ8WHdZGxmUdAJlHowo7zL2pN3x97d32"
+                  to="https://youtube.com/playlist?list=PLPZ8WHdZGxmUotnP-tWRVNtuNWpN7xbpL"
                   variant="secondary"
                   size="sm"
                   arrow
@@ -144,8 +138,8 @@ const RegisterPage = () => {
               </p>
             </div>
             <div className="col-full lg:col-6 order-2 lg:order-1">
-              <div className="relative border border-green-300 rounded-md overflow-hidden">
-                <YoutubeIframe listId="PLPZ8WHdZGxmUdAJlHowo7zL2pN3x97d32"></YoutubeIframe>
+              <div className="relative border border-green-300 rounded-sm overflow-hidden p-1 bg-black">
+                <YoutubeIframe listId="PLPZ8WHdZGxmUotnP-tWRVNtuNWpN7xbpL"></YoutubeIframe>
               </div>
             </div>
           </div>
