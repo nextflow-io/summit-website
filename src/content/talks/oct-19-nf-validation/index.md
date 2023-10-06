@@ -1,6 +1,6 @@
 ---
 slug: oct-19-nf-validation
-timeframe: 10:30 - 10:45 PM (15 min)
+timeframe: 10:30 - 10:45 AM (15 min)
 title: "nf-validation: a Nextflow plugin to validate pipeline parameters and input files"
 datetime: 2023-10-19T10:30:00.000Z
 date: Oct 19, 2023

@@ -1,6 +1,6 @@
 ---
 slug: oct-20-gwas
-timeframe: 12:30 - 12:45 AM (15 min)
+timeframe: 12:30 - 12:45 PM (15 min)
 title: "Performing large and reproducible GWAS analysis on biobank-scale data"
 datetime: 2023-10-20T12:30:00.000Z
 date: Oct 20, 2023

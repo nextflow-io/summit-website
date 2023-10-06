@@ -1,6 +1,6 @@
 ---
 slug: oct-19-machine-learning-for-material-science
-timeframe: 11:00 - 11:15 PM (15 min)
+timeframe: 11:00 - 11:15 AM (15 min)
 title: "How to use data pipelines in Machine Learning for Material Science"
 datetime: 2023-10-19T11:00:00.000Z
 date: Oct 19, 2023

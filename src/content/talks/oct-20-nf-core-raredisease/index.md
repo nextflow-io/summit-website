@@ -1,6 +1,6 @@
 ---
 slug: oct-20-nf-core-raredisease
-timeframe: 11:00 - 11:15 PM (15 min)
+timeframe: 11:00 - 11:15 AM (15 min)
 title: "nf-core/raredisease: a workflow to analyse data from patients with rare diseases"
 datetime: 2023-10-20T11:00:00.000Z
 date: Oct 20, 2023
