@@ -44,6 +44,7 @@ const navItems = [
 
 const Header = ({ location, hideNav }) => {
   const { activeEvent, menuOpen } = useLayoutState();
+  const isBoston = activeEvent === 'boston';
 
   const { toggleMenu, closeMenu } = useLayoutActions();
 
@@ -54,7 +55,8 @@ const Header = ({ location, hideNav }) => {
 
   const resolvePath = (path) => {
     if (path === '/blog/') return path;
-    if (activeEvent === 'boston') return `/boston${path}`;
+    if (isBoston) return `/boston${path}`;
+    if (path === '/register/') return `/barcelona/stream/`;
     return `/barcelona${path}`;
   };
 
@@ -151,7 +153,7 @@ const Header = ({ location, hideNav }) => {
                     className="hover:opacity-80 ml-4"
                     noShadow
                   >
-                    Register
+                    {isBoston ? 'Register' : 'Stream'}
                   </Button>
                 </div>
               </div>
@@ -227,7 +229,7 @@ const Header = ({ location, hideNav }) => {
                 className="hover:opacity-80 ml-2"
                 noShadow
               >
-                Register
+                {isBoston ? 'Register' : 'Stream'}
               </Button>
             </div>
           </div>

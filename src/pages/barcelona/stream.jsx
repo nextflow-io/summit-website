@@ -144,15 +144,8 @@ const RegisterPage = () => {
               </p>
             </div>
             <div className="col-full lg:col-6 order-2 lg:order-1">
-              <div className="relative">
-                <div
-                  className="absolute inset-0 bg-center bg-cover bg-no-repeat rounded-sm"
-                  style={{ backgroundImage: `url(${PlaceholderRectangle})` }}
-                />
-                <YoutubeIframe
-                  listId="PLPZ8WHdZGxmUdAJlHowo7zL2pN3x97d32"
-                  className="relative lg:top-6 lg:-left-6"
-                ></YoutubeIframe>
+              <div className="relative border border-green-300 rounded-md overflow-hidden">
+                <YoutubeIframe listId="PLPZ8WHdZGxmUdAJlHowo7zL2pN3x97d32"></YoutubeIframe>
               </div>
             </div>
           </div>

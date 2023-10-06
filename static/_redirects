@@ -1,3 +1,6 @@
+# register to stream
+/barcelona/register/   /barcelona/stream/		301
+
 # /barcelona/ namespace addition
 /agenda/*    /barcelona/agenda/:splat    301
 /speakers/*    /barcelona/speakers/:splat    301
