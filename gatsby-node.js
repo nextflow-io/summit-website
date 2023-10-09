@@ -89,6 +89,17 @@ exports.createSchemaCustomization = ({ actions }) => {
         content: Mdx
       }
     `,
+    `
+			type Sponsor implements Node {
+				it: String
+				name: String
+				image: File @fileByRelativePath
+				location: String
+				event: String
+				rank: Int
+				content: Mdx
+			}
+		`,
   ];
 
   createTypes(typeDefs);
@@ -273,6 +284,32 @@ exports.onCreateNode = ({ node, actions, getNode, createNodeId, createContentDig
         ...content,
       });
     }
+
+    if (parent.internal.type === 'File' && parent.sourceInstanceName === 'sponsors') {
+      const filePath = node.internal.contentFilePath;
+
+      const content = {
+        id: node.frontmatter.id,
+        name: node.frontmatter.name,
+        image: node.frontmatter.image,
+        location: node.frontmatter.location,
+        event: node.frontmatter.event,
+        rank: node.frontmatter.rank,
+        content: node,
+      };
+
+      createNode({
+        id: createNodeId(`sponsor-${node.id}`),
+        parent: node.id,
+        children: [],
+        internal: {
+          type: 'Sponsor',
+          contentFilePath: filePath,
+          contentDigest: createContentDigest(content),
+        },
+        ...content,
+      });
+    }
   }
 };
 
@@ -283,6 +320,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const talkTemplate = path.resolve('src/templates/talk.jsx');
   const speakerTemplate = path.resolve('src/templates/speaker.jsx');
   const posterTemplate = path.resolve('src/templates/poster.jsx');
+  const sponsorTemplate = path.resolve('src/templates/sponsor.jsx');
 
   const result = await graphql(`
     {
@@ -314,6 +352,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       posters: allPoster {
         nodes {
           slug
+          internal {
+            contentFilePath
+          }
+        }
+      }
+      sponsors: allSponsor {
+        nodes {
+          id
           internal {
             contentFilePath
           }
@@ -380,6 +426,30 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         context: {
           slug: speaker.slug,
         },
+      });
+    });
+
+    const sponsors = result.data.sponsors.nodes;
+
+    sponsors.forEach((sponsor) => {
+      let paths = ['/barcelona/sponsors'];
+
+      switch (sponsor.location) {
+        case 'Boston':
+          paths = ['/boston/sponsors'];
+          break;
+        case 'Both':
+          paths = ['/boston/sponsors', '/barcelona/sponsors'];
+      }
+
+      paths.forEach((path) => {
+        createPage({
+          path: `${path}/${sponsor.id}/`,
+          component: `${sponsorTemplate}?__contentFilePath=${sponsor.internal.contentFilePath}`,
+          context: {
+            id: sponsor.id,
+          },
+        });
       });
     });
   });

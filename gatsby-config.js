@@ -71,6 +71,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `sponsors`,
+        path: `${__dirname}/src/content/sponsors`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `talks-boston`,
         path: `${__dirname}/src/content/talks-boston`,
       },
