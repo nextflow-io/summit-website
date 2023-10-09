@@ -1,0 +1,20 @@
+.rank {
+  display: block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  line-height: 1;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: bold;
+  background: white;
+  color: #111;
+  &.Platinum {
+    background: #e5e4e2;
+  }
+  &.Gold {
+    background: #ffd700;
+  }
+  &.Bronze {
+    background: #ff7f00;
+  }
+}

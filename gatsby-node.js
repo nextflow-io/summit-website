@@ -97,6 +97,7 @@ exports.createSchemaCustomization = ({ actions }) => {
 				location: String
 				event: String
 				rank: Int
+				url: String
 				content: Mdx
 			}
 		`,
@@ -295,6 +296,7 @@ exports.onCreateNode = ({ node, actions, getNode, createNodeId, createContentDig
         location: node.frontmatter.location,
         event: node.frontmatter.event,
         rank: node.frontmatter.rank,
+        url: node.frontmatter.url,
         content: node,
       };
 
