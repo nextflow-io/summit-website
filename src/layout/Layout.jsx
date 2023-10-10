@@ -27,9 +27,7 @@ const Layout = ({ children, location, pageContext }) => {
       ) : (
         <Header hideNav />
       )}
-      <main className="min-h-[calc(100vh_-_7rem_-_1px)] md:min-h-[calc(100vh_-_9rem_-_1px)] pt-[64px] md:pt-[96px]">
-        {children}
-      </main>
+      <main className="min-h-[calc(100vh_-_64px)] pt-[64px] md:pt-[96px]">{children}</main>
       <CookieBanner />
       <Footer />
     </LayoutProvider>
