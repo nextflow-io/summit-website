@@ -66,15 +66,6 @@ const PosterPage = ({ data, children }) => {
                     <span className="typo-intro text-green-300">Several Speakers</span>
                   </div>
                 )}
-                {/* <span className="hidden lg:block mx-2">|</span>
-                <div className="inline-flex items-center">
-                  <span>
-                    <Link to="/stream/" className="inline typo-body text-gray-600">
-                      Gather
-                    </Link>
-                  </span>
-                  <GatherIcon className="inline-block h-6 w-6 ml-2 opacity-50" />
-                </div> */}
               </>
             )}
           </div>
@@ -82,23 +73,21 @@ const PosterPage = ({ data, children }) => {
             <span className="bg-gray-800 rounded-full px-4 py-1 ml-2 float-right">#{poster.poster_id}</span>
             {poster.title}
           </h1>
-          {/* <div className="flex mt-8 md:mt-auto">
-            <Button
-              to={'https://nextflow.slack.com/channels/summit-2023-poster-' + poster.poster_id}
-              variant="accent"
-              size="sm"
-              arrow
-            >
-              <SlackIcon className="h-4 w-4 inline-block mr-2" />
-              Ask a question on Slack
-            </Button>
-          </div> */}
           <div className="flex mt-4">
             {poster.tags.map((tag, i) => (
               <div className="typo-small rounded-full px-4 py-1 bg-gray-800 uppercase mr-2" key={i}>
                 {tag}
               </div>
             ))}
+            <Button
+              to={'https://nextflow.slack.com/channels/summit-2023-posters'}
+              variant="secondary"
+              size="sm"
+              arrow
+            >
+              <SlackIcon className="h-4 w-4 inline-block mr-2" />
+              Ask a question on Slack
+            </Button>
           </div>
           <div className="mt-8">
             <CustomMDXProvider>{children}</CustomMDXProvider>

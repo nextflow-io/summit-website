@@ -9,7 +9,8 @@ import Seo from '../components/Seo';
 
 const SpeakerPage = ({ data, path }) => {
   const { speaker } = data;
-  let backProps = { to: path.includes('boston') ? '/boston/speakers/' : '/barcelona/speakers/' };
+  const speakerLocation = path.includes('boston') ? 'boston' : 'barcelona';
+  let backProps = { to: `/${speakerLocation}/speakers/` };
   if (typeof window !== 'undefined' && window.location.search.includes('goBack'))
     backProps = { onClick: () => window.history.back() };
   return (
@@ -59,11 +60,14 @@ const SpeakerPage = ({ data, path }) => {
           <CustomMDXProvider>{speaker.content.body}</CustomMDXProvider>
         </div>
         <div className="mt-5 md:mt-10">
-          {data.events.nodes.map((event, i) => (
-            <div className="mt-8 first:mt-0" key={i}>
-              <EventCard event={event} disableTimeline />
-            </div>
-          ))}
+          {data.events.nodes.map((event, i) => {
+            if (!event.path?.includes(speakerLocation)) return null;
+            return (
+              <div className="mt-8 first:mt-0" key={i}>
+                <EventCard event={event} disableTimeline />
+              </div>
+            );
+          })}
         </div>
       </div>
     </>
