@@ -8,13 +8,12 @@
   font-weight: bold;
   background: white;
   color: #111;
-  &.Platinum {
-    background: #e5e4e2;
-  }
-  &.Gold {
-    background: #ffd700;
-  }
+  background: rgb(13 192 157);
+  border: 1px solid rgb(13 192 157);
+  &.Gold,
   &.Bronze {
-    background: #ff7f00;
+    background: transparent;
+    color: white;
+    font-weight: 400;
   }
 }
