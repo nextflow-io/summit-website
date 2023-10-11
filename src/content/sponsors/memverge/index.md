@@ -2,7 +2,7 @@
 id: memverge
 name: MemVerge
 image: ../../../images/logos/memverge.svg
-location: Barcelona
+location: Both
 event: Summit
 rank: 3
 url: https://memverge.com/

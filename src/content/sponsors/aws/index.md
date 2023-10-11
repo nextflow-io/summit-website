@@ -2,7 +2,7 @@
 id: aws
 name: AWS
 image: ../../../images/logos/aws.svg
-location: Barcelona
+location: Both
 event: Both
 rank: 2
 url: https://aws.amazon.com/

@@ -2,7 +2,7 @@
 id: zs
 name: ZS Discovery
 image: ../../../images/logos/ZS.svg
-location: Barcelona
+location: Both
 event: Summit
 rank: 2
 url: https://www.zs.com/solutions/life-sciences-randd-and-medical/zs-discovery

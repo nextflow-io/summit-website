@@ -2,7 +2,7 @@
 id: nanopore
 name: Oxford Nanopore
 image: ../../../images/logos/nanopore.svg
-location: Barcelona
+location: Both
 event: Summit
 rank: 3
 url: https://nanoporetech.com/

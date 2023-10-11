@@ -362,6 +362,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       sponsors: allSponsor {
         nodes {
           id
+          location
           internal {
             contentFilePath
           }
