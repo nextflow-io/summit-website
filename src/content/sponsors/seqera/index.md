@@ -2,7 +2,7 @@
 id: seqera
 name: Seqera
 image: ../../../images/logos/seqera.svg
-location: Barcelona
+location: Both
 event: Both
 rank: 1
 url: https://seqera.io/

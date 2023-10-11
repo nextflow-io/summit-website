@@ -25,16 +25,11 @@ const SponsorsPage = () => {
           }
         }
       }
-      heroImage: file(relativePath: { eq: "photos/audience.jpg" }) {
-        childImageSharp {
-          gatsbyImageData(placeholder: NONE)
-        }
-      }
     }
   `);
   return (
     <>
-      <Seo title="Sponsors" />
+      <Seo title="Sponsors" description="Sponsors of Nextflow SUMMIT 2023 (Barcelona)" />
       <div className="py-20 bg-gray-900 text-white">
         <div className="container-sm">
           <h1 className="typo-display1 text-green-300 text-center mb-8">Sponsors of the Summit</h1>

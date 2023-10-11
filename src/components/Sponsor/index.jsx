@@ -16,9 +16,9 @@ const Sponsor = ({ sponsor }) => {
     <Link
       key={sponsor.id}
       to={`/barcelona/sponsors/${sponsor.id}/`}
-      className="block p-8 rounded-md border border-gray-600 hover:border-gray-500 hover:bg-gray-950 transition-all mb-8"
+      className="block p-4 sm:p-12 rounded-md sm:border border-gray-600 hover:border-gray-500 hover:bg-gray-950 transition-all mb-8"
     >
-      <div className="flex justify-between items-start flex-wrap">
+      <div className="flex justify-between items-start flex-col sm:flex-row">
         <h2 className="flex-auto">
           <img
             src={sponsor.image.publicURL}

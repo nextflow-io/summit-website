@@ -2,7 +2,7 @@
 id: quilt
 name: Quilt
 image: ../../../images/logos/quilt.svg
-location: Barcelona
+location: Both
 event: Summit
 rank: 4
 url: https://quiltdata.com/
