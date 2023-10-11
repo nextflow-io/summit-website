@@ -34,7 +34,7 @@ const SponsorsPage = () => {
         <div className="container-sm">
           <h1 className="typo-display1 text-green-300 text-center mb-8">Sponsors of the Summit</h1>
           {data.sponsors.nodes.map((sponsor) => (
-            <Sponsor sponsor={sponsor} key={sponsor.id} />
+            <Sponsor sponsor={sponsor} key={sponsor.id} location="boston" />
           ))}
         </div>
       </div>
