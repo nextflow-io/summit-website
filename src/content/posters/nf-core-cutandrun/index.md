@@ -3,7 +3,7 @@ slug: nf-core-cutandrun
 title: "nf-core/cutandrun: A Nextflow pipeline for analysis of CUT&Run, CUT&TAG and TIP-Seq datasets"
 url: https://github.com/nf-core/cutandrun
 image: ../../../images/visuals/1_8_chris.png
-poster: /assets/1_8_chris.pdf
+poster: ../../../images/posters/1_8_chris.pdf
 poster_id: 8
 speakers:
   - "Chris Cheshire"
