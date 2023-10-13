@@ -3,7 +3,7 @@ slug: multi-viral-genome
 title: "A multi-viral genome reconstruction pipeline for the integrated molecular surveillance at the RKI"
 url: https://summit.nextflow.io/
 image: ../../../images/visuals/1_9_marie.png
-poster: /assets/1_9_marie.pdf
+poster: ../../../images/posters/1_9_marie.pdf
 poster_id: 9
 speakers:
   - Marie Lataretu

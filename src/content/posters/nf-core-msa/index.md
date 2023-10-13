@@ -3,7 +3,7 @@ slug: nf-core-msa
 title: "nf-core/msa: A pipeline to run and systematically evaluate Multiple Sequence Alignment methods."
 url: https://github.com/luisas/nf-core-msa
 image: ../../../images/visuals/2_14_luisa.png
-poster: /assets/2_14_luisa.pdf
+poster: ../../../images/posters/2_14_luisa.pdf
 poster_id: 14
 speakers:
   - Luisa Santus

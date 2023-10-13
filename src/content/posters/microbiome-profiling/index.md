@@ -2,8 +2,8 @@
 slug: microbiome-profiling
 title: "Microbiome profiling"
 url: https://summit.nextflow.io/
-image: ../../../images/visuals/placeholder-poster.png
-poster: /assets/placeholder-poster.pdf
+image: ../../../images/visuals/1_5_luca.png
+poster: ../../../images/posters/1_5_luca.pdf
 poster_id: 5
 speakers:
   - Luca Cozzuto

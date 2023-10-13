@@ -3,7 +3,7 @@ slug: drag-and-drop
 title: "The ENA SARS-CoV-2 Drag and Drop Uploader"
 url: https://github.com/ahmadazd/drag_and_drop_submission_workflow
 image: ../../../images/visuals/3_19_zahra.png
-poster: /assets/3_19_zahra.pdf
+poster: ../../../images/posters/3_19_zahra.pdf
 poster_id: 19
 speakers:
   - "Zahra Waheed"
