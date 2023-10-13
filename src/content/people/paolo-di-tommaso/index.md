@@ -1,7 +1,7 @@
 ---
 slug: /paolo-di-tommaso/
 name: Paolo Di Tommaso
-position: CTO & co-founder of Seqera Labs
+position: CTO & co-founder of Seqera
 image: ../../../images/people/paoloditommaso.png
 github: https://github.com/pditommaso
 twitter: https://twitter.com/PaoloDiTommaso
@@ -15,4 +15,4 @@ meta:
   image: ../../../images/share/barcelona/speaker-paolo-di-tommaso.jpg
 attending: Both
 ---
-Paolo is the CTO and co-founder of Seqera Labs. He is a computer scientist with a strong interest in high-throughput scientific computing, data-intensive applications, parallel programming, cloud computing and containerisation technologies. He has broad experience as a software engineer and software architect in life science and healthcare applications. He is an open-source advocate and the creator and maintainer of the Nextflow workflow system.
+Paolo is the CTO and co-founder of Seqera. He is a computer scientist with a strong interest in high-throughput scientific computing, data-intensive applications, parallel programming, cloud computing and containerisation technologies. He has broad experience as a software engineer and software architect in life science and healthcare applications. He is an open-source advocate and the creator and maintainer of the Nextflow workflow system.
