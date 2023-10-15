@@ -2,8 +2,8 @@
 slug: nf-core-molkart
 title: "nf-core/molkart: An end-to-end pipeline for the analysis of Molecular Cartography™ data"
 url: https://github.com/nf-core/molkart
-image: ../../../images/visuals/placeholder-poster.png
-poster: /assets/placeholder-poster.pdf
+image: ../../../images/visuals/2_18_kresimir.png
+poster: ../../../images/posters/2_18_kresimir.pdf
 poster_id: 18
 speakers:
   - Kresimir Bestak
