@@ -1,12 +1,12 @@
 ---
 slug: /helen-curley/
-name: Helen	Curley
+name: "Helen Curley"
 position: Bioinformatician at Birmingham Women's and Children's NHS Foundation Trust
 image: ../../../images/people/helencurley.png
 linkedin: https://www.linkedin.com/in/helen-curley-a5516a59/
 tags:
   - Community
-  - Speaker
+  - Poster
 meta:
   title: "Helen	Curley"
   description: "Nextflow Summit 2023 Presenter"
