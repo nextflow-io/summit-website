@@ -7,9 +7,11 @@ import NextflowLogo from './nextflow-logo.svg';
 import Info from './Info';
 
 import * as styles from './styles.module.css';
+import TitleScreen from './TitleScreen';
 
 const FoyerPage = () => {
   const [secondsRemaining, setSecondsRemaining] = useState(undefined);
+  const [title, setTitle] = useState(undefined);
 
   useEffect(() => {
     function handleInterval() {
@@ -23,7 +25,11 @@ const FoyerPage = () => {
     return () => clearInterval(interval);
   }, []);
 
-  if (typeof secondsRemaining === 'undefined') return <SetTime setSecondsRemaining={setSecondsRemaining} />;
+  const timeWasSet = typeof secondsRemaining !== 'undefined';
+  const hasTitle = typeof title !== 'undefined';
+
+  if (!hasTitle && !timeWasSet) return <SetTime setSecondsRemaining={setSecondsRemaining} setTitle={setTitle} />;
+  if (!timeWasSet) return <TitleScreen setTitle={setTitle} title={title} />;
 
   let minutes = Math.floor(secondsRemaining / 60);
   let seconds = secondsRemaining - minutes * 60;
