@@ -2,8 +2,8 @@
 slug: migrating-complex-to-nextflow
 title: "Migrating a complex to Nextflow with a containerised replica of the production environment"
 url: https://summit.nextflow.io/
-image: ../../../images/visuals/2_11_blazej.png
-poster: ../../../images/posters/2_11_blazej.pdf
+image: ../../../images/visuals/placeholder-poster.png
+poster: /assets/placeholder-poster.pdf
 poster_id: 12
 speakers:
   - "Ricardo Humberto Ramirez Gonzalez"
