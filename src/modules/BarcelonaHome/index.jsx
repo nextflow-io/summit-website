@@ -62,9 +62,9 @@ const IndexPage = () => {
               </div>
             </div>
           </div>
-          <div className="flex md:absolute bottom-10 right-4 mt-16">
+          {/* <div className="flex md:absolute bottom-10 right-4 mt-16">
             <CountDown />
-          </div>
+          </div> */}
         </div>
       </div>
       <RevealOnScroll className="container-xl py-8">
