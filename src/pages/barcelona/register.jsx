@@ -1,4 +1,4 @@
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
 
 import React from 'react';
@@ -36,11 +36,18 @@ const RegisterPage = () => {
               Join the Nextflow SUMMIT and <span style={{ whiteSpace: 'nowrap' }}>nf-core</span> Hackathon
             </h1>
             <div className="max-w-xl mx-auto mt-4">
-              <p className="typo-body">Register free for virtual attendance. In-person places are sold out.</p>
+              {/* <p className="typo-body">Register free for virtual attendance. In-person places are sold out.</p> */}
+              <p className="typo-body">
+                Registration is now closed.{' '}
+                <Link to="/barcelona/streaming" className="text-green-300">
+                  Check instructions
+                </Link>{' '}
+                on how to live-stream the event online.
+              </p>
             </div>
             <div className="mt-4">
-              <Button to="/barcelona/purchase/" variant="primary" size="md">
-                Register
+              <Button to="/barcelona/streaming/" variant="primary" size="md">
+                Go to stream
               </Button>
             </div>
           </div>
