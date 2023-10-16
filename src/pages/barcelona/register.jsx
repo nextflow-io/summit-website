@@ -39,14 +39,14 @@ const RegisterPage = () => {
               {/* <p className="typo-body">Register free for virtual attendance. In-person places are sold out.</p> */}
               <p className="typo-body">
                 Registration is now closed.{' '}
-                <Link to="/barcelona/streaming" className="text-green-300">
+                <Link to="/barcelona/stream/" className="text-green-300">
                   Check instructions
                 </Link>{' '}
                 on how to live-stream the event online.
               </p>
             </div>
             <div className="mt-4">
-              <Button to="/barcelona/streaming/" variant="primary" size="md">
+              <Button to="/barcelona/stream/" variant="primary" size="md">
                 Go to stream
               </Button>
             </div>

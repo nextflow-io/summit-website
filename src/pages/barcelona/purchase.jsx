@@ -36,7 +36,7 @@ const RegisterPage = () => {
               {/* <p className="typo-body">Register free for virtual attendance. In-person places are sold out.</p> */}
               <p className="typo-body">
                 Registration is now closed.
-                <Link to="/barcelona/streaming" className="text-green-300">
+                <Link to="/barcelona/stream/" className="text-green-300">
                   Check instructions
                 </Link>{' '}
                 on how to live-stream the event online.
