@@ -55,6 +55,7 @@ const Header = ({ location, hideNav }) => {
   const resolvePath = (path) => {
     if (path === '/blog/') return path;
     if (activeEvent === 'boston') return `/boston${path}`;
+    if (path === '/register/') return '/barcelona/stream/';
     return `/barcelona${path}`;
   };
 
@@ -151,7 +152,7 @@ const Header = ({ location, hideNav }) => {
                     className="hover:opacity-80 ml-4"
                     noShadow
                   >
-                    Register
+                    {activeEvent === 'boston' ? 'Register' : 'Streaming'}
                   </Button>
                 </div>
               </div>
