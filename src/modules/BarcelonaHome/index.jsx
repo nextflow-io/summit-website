@@ -1,4 +1,5 @@
 import { useStaticQuery, graphql } from 'gatsby';
+import { YoutubeRectangleIcon } from 'website-components';
 import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
 import React from 'react';
 
@@ -56,15 +57,16 @@ const IndexPage = () => {
               </p>
               <p className="typo-intro uppercase">Barcelona, October 16-20, 2023</p>
               <div className="max-w-[320px] mt-4">
-                <Button to="/barcelona/register/" variant="primary" size="md" arrow>
-                  Register
+                <Button to="/barcelona/stream/" variant="primary" size="md" arrow>
+                  <YoutubeRectangleIcon className="inline-block h-6 w-6 mr-3" />
+                  Watch live
                 </Button>
               </div>
             </div>
           </div>
-          <div className="flex md:absolute bottom-10 right-4 mt-16">
+          {/* <div className="flex md:absolute bottom-10 right-4 mt-16">
             <CountDown />
-          </div>
+          </div> */}
         </div>
       </div>
       <RevealOnScroll className="container-xl py-8">
