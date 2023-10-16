@@ -16,3 +16,10 @@
     opacity: 1;
   }
 }
+.info {
+  transition: all 0.5s;
+}
+.fadeout {
+  transform: translateY(-50px);
+  opacity: 0;
+}
