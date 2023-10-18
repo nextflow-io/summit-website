@@ -13,6 +13,7 @@ tags:
 youtube:
 youtubeUrl:
 ---
+Enjoy delicious food while getting to know each other. Ready to party? 🍻 🎉
 
 The Summit dinner will be held at Shôko, a Restaurant and Lounge Club.
 
