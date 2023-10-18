@@ -16,7 +16,7 @@ const DidYouKnow = () => {
         setCurrentItem((i) => (i + 1) % count);
         setFadeOut(false);
       }, 500);
-    }, 4000);
+    }, 10000);
     return () => clearInterval(interval);
   }, []);
   return (
