@@ -26,6 +26,9 @@ const didYouKnow = [
   'Seqera has a quarterly email newsletter with community news and updates',
   'Tower Pro is free for academics',
   'Over 100k pipelines have been launched on Tower',
+  'Regular community talks and online events in the last 12 months have resulted in over 3,000 YouTube subscribers',
+  'Regular community talks and online events in the last 12 months have resulted in over 170k YouTube views',
+  'Training recordings from the past 12 months on YouTube have resulted already in over 20k views',
 ];
 
 export default didYouKnow;
