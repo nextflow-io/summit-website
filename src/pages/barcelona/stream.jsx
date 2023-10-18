@@ -28,9 +28,13 @@ const RegisterPage = () => {
       >
         <div className="container-lg text-center">
           <h1 className="typo-h2 mb-4">Join the Nextflow Summit 2023 online</h1>
-          <p className="typo-body mb-6">
+          <p className="typo-body mb-4">
             If you missed the registration, you can still watch the talks live on YouTube.
           </p>
+          <div className="py-2 px-4 rounded-sm inline-block bg-yellow-600 typo-body mb-8 text-white font-bold">
+            We apologize for the connectivity issues, we are trying to fix this as soon as possible.
+          </div>
+          <br />
           <Button
             to="https://nextflow.slack.com/channels/summit-2023"
             variant="primary"
@@ -61,12 +65,11 @@ const RegisterPage = () => {
               <div className="row flex-wrap lg:flex-nowrap">
                 <div className="col-full lg:col-6 mt-4 lg:mt-0">
                   <p className="typo-body mb-4">
-                    If you missed the online registration deadline, you can still
-                    watch the live-streams of talks directly on YouTube.
+                    If you missed the online registration deadline, you can still watch the live-streams of talks
+                    directly on YouTube.
                   </p>
                   <p className="typo-body mb-4">
-                    There will be one live-stream per day.
-                    The videos will be available on YouTube after the event.
+                    There will be one live-stream per day. The videos will be available on YouTube after the event.
                   </p>
                   <Button
                     to="https://youtube.com/playlist?list=PLPZ8WHdZGxmUotnP-tWRVNtuNWpN7xbpL"
@@ -95,8 +98,8 @@ const RegisterPage = () => {
             <div className="col-full lg:col-6 order-1 lg:order-2 mt-4 lg:mt-0">
               <h2 className="typo-h2 mb-4">Ask questions on Slack</h2>
               <p className="typo-body mt-6 mb-4">
-                Questions to speakers and discussion about talks will on the Nextflow Slack, in
-                the <code>#summit-2023</code>&nbsp; channel.
+                Questions to speakers and discussion about talks will on the Nextflow Slack, in the{' '}
+                <code>#summit-2023</code>&nbsp; channel.
               </p>
               <Button
                 to="https://www.nextflow.io/slack-invite.html"
