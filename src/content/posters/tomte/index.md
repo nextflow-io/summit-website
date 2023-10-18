@@ -2,8 +2,8 @@
 slug: tomte
 title: "Tomte a pipeline for RNA-seq analysis in rare disease diagnostics"
 url: https://github.com/genomic-medicine-sweden/tomte
-image: ../../../images/visuals/placeholder-poster.png
-poster: /assets/placeholder-poster.pdf
+image: ../../../images/visuals/1_7_lucia.png
+poster: ../../../images/posters/1_7_lucia.pdf
 poster_id: 7
 speakers:
   - "Lucía Peña-Pérez"

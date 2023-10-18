@@ -2,8 +2,8 @@
 slug: mango
 title: "MangoRNASeqPipeline"
 url: https://github.com/sejyoti/MangoRNASeqPipeline
-image: ../../../images/visuals/placeholder-poster.png
-poster: /assets/placeholder-poster.pdf
+image: ../../../images/visuals/3_20_sejyoti.png
+poster: ../../../images/posters/3_20_sejyoti.pdf
 poster_id: 20
 speakers:
   - "Sejyoti Chakraborty"

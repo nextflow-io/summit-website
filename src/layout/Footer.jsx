@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  Link,
-  SlackIcon,
-  TwitterIcon,
-  YoutubeRectangleIcon
-} from 'website-components';
+import { Link, SlackIcon, TwitterIcon, YoutubeRectangleIcon } from 'website-components';
 
 const Footer = () => {
   return (
@@ -14,12 +9,16 @@ const Footer = () => {
           <div className="flex justify-between items-center h-16">
             <div>
               <Link to="https://seqera.io/" noBorder className="typo-small">
-                &copy; 2022-2023 Seqera Labs
+                &copy; 2022-2023 Seqera
               </Link>
             </div>
             <div className="flex items-center md:justify-end">
               <div className="mr-4">
-                <Link to="https://twitter.com/hashtag/NextflowSummit?src=hashtag_click" className="hover:text-green-300" noBorder>
+                <Link
+                  to="https://twitter.com/hashtag/NextflowSummit?src=hashtag_click"
+                  className="hover:text-green-300"
+                  noBorder
+                >
                   <TwitterIcon className="w-6 h-6" />
                 </Link>
               </div>

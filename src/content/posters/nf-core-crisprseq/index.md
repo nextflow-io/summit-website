@@ -2,8 +2,8 @@
 slug: nf-core-crisprseq
 title: "CRISPR gene editing analysis with nf-core/crisprseq: A pipeline for targeted and screening experiments"
 url: https://github.com/nf-core/crisprseq
-image: ../../../images/visuals/placeholder-poster.png
-poster: /assets/placeholder-poster.pdf
+image: ../../../images/visuals/2_15_julia.png
+poster: ../../../images/posters/2_15_julia.pdf
 poster_id: 15
 speakers:
   - "Júlia Mir Pedrol"
