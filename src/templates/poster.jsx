@@ -10,6 +10,7 @@ import CustomMDXProvider from '../components/CustomMDXProvider';
 
 const PosterPage = ({ data, children }) => {
   const { poster, posterImage } = data;
+  console.log('>>', poster);
   const image = poster.speakers?.[0]?.image;
   return (
     <>
@@ -79,12 +80,7 @@ const PosterPage = ({ data, children }) => {
                 {tag}
               </div>
             ))}
-            <Button
-              to={'https://nextflow.slack.com/channels/summit-2023-posters'}
-              variant="secondary"
-              size="sm"
-              arrow
-            >
+            <Button to={'https://nextflow.slack.com/channels/summit-2023-posters'} variant="secondary" size="sm" arrow>
               <SlackIcon className="h-4 w-4 inline-block mr-2" />
               Ask a question on Slack
             </Button>
@@ -177,8 +173,8 @@ const PosterPage = ({ data, children }) => {
                     )}
                   </div>
                   {poster.poster && (
-                    <Button to={poster.poster.publicURL} variant="accent" size="sm" target="_blank">
-                      <DownloadIcon className="h-6 w-6 mr-2" />
+                    <Button to={poster.poster.publicURL} variant="primary" size="sm" target="_blank">
+                      <DownloadIcon className="h-6 w-6 mr-2 bg-green-300" />
                       Download
                     </Button>
                   )}

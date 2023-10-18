@@ -2,8 +2,8 @@
 slug: genomic-england
 title: "Bertha to Nextflow migration"
 url: https://www.genomicsengland.co.uk
-image: ../../../images/visuals/placeholder-poster.png
-poster: /assets/placeholder-poster.pdf
+image: ../../../images/visuals/2_11_blazej.png
+poster: ../../../images/posters/2_11_blazej.pdf
 poster_id: 11
 speakers:
   - Błażej Szczerba
