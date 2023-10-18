@@ -24,7 +24,7 @@ const didYouKnow = [
   'Our benchmarks show that Fusion is 2x faster and 3x cheaper than default S3',
   'There are free monthly online group demos of Seqera Platform',
   'Seqera has a quarterly email newsletter with community news and updates',
-  'Tower Pro is free for academics',
+  'Seqera Platform Pro is free for academics',
   'Over 100k pipelines have been launched on Tower',
   'Regular community talks and online events in the last 12 months have resulted in over 3,000 YouTube subscribers',
   'Regular community talks and online events in the last 12 months have resulted in over 170k YouTube views',
