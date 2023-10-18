@@ -28,13 +28,9 @@ const RegisterPage = () => {
       >
         <div className="container-lg text-center">
           <h1 className="typo-h2 mb-4">Join the Nextflow Summit 2023 online</h1>
-          <p className="typo-body mb-4">
+          <p className="typo-body mb-6">
             If you missed the registration, you can still watch the talks live on YouTube.
           </p>
-          <div className="py-2 px-4 rounded-sm inline-block bg-yellow-600 typo-body mb-8 text-white font-bold">
-            We apologize for the connectivity issues, we are trying to fix this as soon as possible.
-          </div>
-          <br />
           <Button
             to="https://nextflow.slack.com/channels/summit-2023"
             variant="primary"
