@@ -13,7 +13,7 @@ const didYouKnow = [
   'Beatriz Martin San Juan was the second person to ever commit in the Nextflow repository (2013)',
   'Cedric Champeau was the third person to ever commit in the Nextflow repository (2014)',
   'Rob Syme committed to the repository in 2014. Who would guess he would join Seqera in 2022?',
-  'The Nextflow Slack workspace has 2.923 members',
+  'The Nextflow Slack workspace has 2923 members',
   'The nf-core GitHub organization has over 800 members with over 2200 contributors over the years!',
   'There are more than 100 repositories in the nf-core GitHub organization',
   'There are over 39000 commits in the repositories within the nf-core GitHub organization',
