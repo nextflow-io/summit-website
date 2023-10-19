@@ -13,7 +13,7 @@ tags:
   - Community
   - Sponsor
 youtube: 
-youtubeUrl: https://www.youtube.com/playlist?list=PLPZ8WHdZGxmUotnP-tWRVNtuNWpN7xbpL
+youtubeUrl: https://youtu.be/0lnR1rx__xY?si=hglW9ZDzjXMvBN2A
 is_sponsor: true
 ---
 <div className="mb-4">
