@@ -40,12 +40,12 @@ const TalkPage = ({ data, children }) => {
                 </div>
               </>
             )}
-            {talk.youtube && (
+            {talk.youtubeUrl && (
               <>
                 <span className="hidden lg:block mx-2">|</span>
                 <span>
                   <Link to={talk.youtubeUrl} className="typo-body text-gray-600">
-                    {talk.youtube}
+                    Watch on YouTube
                   </Link>
                   <YoutubeRectangleIcon className="inline-block h-6 w-6 ml-2 text-gray-600" />
                 </span>
@@ -63,7 +63,7 @@ const TalkPage = ({ data, children }) => {
           <div className="mt-8">
             <MDXProvider>{children}</MDXProvider>
           </div>
-          {talk.youtube && (
+          {talk.youtubeUrl && (
             <>
               <div
                 className="bg-center bg-cover bg-no-repeat rounded-sm p-1 mt-6 mb-3 mx-1"
@@ -72,7 +72,7 @@ const TalkPage = ({ data, children }) => {
                 <YoutubeIframe id={talk.youtubeUrl}></YoutubeIframe>
               </div>
               <Button to={talk.youtubeUrl} variant="secondary" size="sm" className="my-3">
-                {talk.youtube}
+                Watch on YouTube
                 <YoutubeRectangleIcon className="inline-block h-6 w-6 ml-2" />
               </Button>
             </>

@@ -13,7 +13,7 @@ tags:
   - Community
   - Keynote
 youtube: 
-youtubeUrl: 
+youtubeUrl: https://www.youtube.com/playlist?list=PLPZ8WHdZGxmUotnP-tWRVNtuNWpN7xbpL
 is_keynote: true
 ---
 <div className="mb-4">
