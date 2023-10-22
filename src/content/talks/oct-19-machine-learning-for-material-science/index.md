@@ -11,8 +11,8 @@ speakers:
   - Jakob Zeitler
 tags:
   - Community
-youtube: 
-youtubeUrl: 
+youtube:
+youtubeUrl: https://www.youtube.com/watch?v=kFDNRWXa_Mg
 ---
 
 <div className="mb-4">

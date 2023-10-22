@@ -11,8 +11,8 @@ speakers:
   - Michael Wilson
 tags:
   - Community
-youtube: 
-youtubeUrl: 
+youtube:
+youtubeUrl: https://www.youtube.com/watch?v=xtw9ndV_9fs
 ---
 <div className="mb-4">
   <small className="typo-small">

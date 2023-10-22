@@ -11,8 +11,8 @@ speakers:
   - Victor Perez
 tags:
   - Community
-youtube: 
-youtubeUrl: 
+youtube:
+youtubeUrl: https://www.youtube.com/watch?v=Ab0uLipK16g
 ---
 <div className="mb-4">
   <small className="typo-small">

@@ -11,8 +11,8 @@ speakers:
   - Jose Espinosa-Carrasco
 tags:
   - Community
-youtube: 
-youtubeUrl: 
+youtube:
+youtubeUrl: https://www.youtube.com/watch?v=LlVkxUoS5CY
 ---
 <div className="mb-4">
   <small className="typo-small">

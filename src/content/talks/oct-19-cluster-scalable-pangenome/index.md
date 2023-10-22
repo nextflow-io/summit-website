@@ -11,8 +11,8 @@ speakers:
   - Simon Heumos
 tags:
   - Community
-youtube: 
-youtubeUrl: 
+youtube:
+youtubeUrl: https://www.youtube.com/watch?v=6PKZCgp6C2w
 ---
 
 <div className="mb-4">
