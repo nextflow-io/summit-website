@@ -12,8 +12,8 @@ speakers:
 tags:
   - Ecosystem
   - Sponsor
-youtube: 
-youtubeUrl: 
+youtube:
+youtubeUrl: https://www.youtube.com/watch?v=RFtt9PLaS-o
 is_sponsor: true
 ---
 <div className="mb-4">

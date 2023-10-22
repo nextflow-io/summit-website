@@ -12,9 +12,9 @@ speakers:
 tags:
   - Community
   - Sponsor
-youtube: 
-youtubeUrl:
-is_sponsor: true 
+youtube:
+youtubeUrl: https://www.youtube.com/watch?v=eD3_ZO13T6Y
+is_sponsor: true
 ---
 <div className="mb-4">
   <small className="typo-small">

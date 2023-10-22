@@ -11,8 +11,8 @@ speakers:
   - Sabrina Krakau
 tags:
   - Community
-youtube: 
-youtubeUrl: 
+youtube:
+youtubeUrl: https://www.youtube.com/watch?v=V1bcWpu-4HA
 ---
 
 <div className="mb-4">
