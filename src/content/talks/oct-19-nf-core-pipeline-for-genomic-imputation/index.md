@@ -11,8 +11,8 @@ speakers:
   - Louis Le Nézet
 tags:
   - Community
-youtube: 
-youtubeUrl: 
+youtube:
+youtubeUrl: https://www.youtube.com/watch?v=GHb2Wt9VCOg
 ---
 
 <div className="mb-4">
@@ -24,9 +24,9 @@ youtubeUrl:
 <hr className="border-t border-gray-50 mb-4 opacity-20" />
 
 "The widespread utilization of low-pass sequencing data necessitates the development of a dedicated nf-core imputation pipeline for accurate haplotype phasing and missing data imputation.
-Specifically, accurate haplotype phasing processes are essential, especially when species-specific phased panels are unavailable, such as for dogs and cats. Phasing serves as a crucial initial step of providing a reliable panel of reference haplotypes 
+Specifically, accurate haplotype phasing processes are essential, especially when species-specific phased panels are unavailable, such as for dogs and cats. Phasing serves as a crucial initial step of providing a reliable panel of reference haplotypes
 that will afford the imputation of missing genotypes for the studied samples.
-Furthermore, rigorous tool validation and thorough exploration of parameter impacts are crucial for 
+Furthermore, rigorous tool validation and thorough exploration of parameter impacts are crucial for
 assessing and enhancing the reliability of imputed genotypes.
 
 To address these challenges, we present a nf-core-compliant pipeline specifically designed for phasing, imputation, and validation. Our pipeline enables users to leverage cutting-edge phasing and imputation tools for their genomic analyses. It will also help them to exploit the full potential of their genetic data by filling in missing information, harmonizing datasets, and improving the resolution of genetic analyses. By adhering to nf-core guidelines, this pipeline ensures users of a high standard of analysis, up-to-date tools, versioning, control testing and support from a vibrant community; appealing to users working in the world of FAIR analysis.

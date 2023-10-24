@@ -11,8 +11,8 @@ speakers:
   - Ramprasad Neethiraj
 tags:
   - Community
-youtube: 
-youtubeUrl: 
+youtube:
+youtubeUrl: https://www.youtube.com/watch?v=DUN6v7IOJ0k
 ---
 <div className="mb-4">
   <small className="typo-small">

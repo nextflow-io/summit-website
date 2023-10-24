@@ -11,8 +11,8 @@ speakers:
   - Edmund Miller
 tags:
   - Community
-youtube: 
-youtubeUrl: 
+youtube:
+youtubeUrl: https://www.youtube.com/watch?v=XuoIH5mYsZE
 ---
 <div className="mb-4">
   <small className="typo-small">
