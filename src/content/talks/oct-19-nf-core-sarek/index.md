@@ -11,8 +11,8 @@ speakers:
   - Friederike Hanssen
 tags:
   - Community
-youtube: 
-youtubeUrl: 
+youtube:
+youtubeUrl: https://www.youtube.com/watch?v=pfxEJJs63y8
 ---
 <div className="mb-4">
   <small className="typo-small">

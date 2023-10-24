@@ -11,8 +11,8 @@ speakers:
   - Manasa Surakala
 tags:
   - Ecosystem
-youtube: 
-youtubeUrl: 
+youtube:
+youtubeUrl: https://www.youtube.com/watch?v=XJ007a2fzvM
 ---
 <div className="mb-4">
   <small className="typo-small">

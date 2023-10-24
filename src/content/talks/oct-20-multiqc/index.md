@@ -11,8 +11,8 @@ speakers:
   - Phil Ewels
 tags:
   - Ecosystem
-youtube: 
-youtubeUrl: 
+youtube:
+youtubeUrl: https://www.youtube.com/watch?v=6IRh4q3MYkY
 ---
 <div className="mb-4">
   <small className="typo-small">

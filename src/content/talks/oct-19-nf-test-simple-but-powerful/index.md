@@ -11,8 +11,8 @@ speakers:
   - Lukas Forer
 tags:
   - Tooling
-youtube: 
-youtubeUrl: 
+youtube:
+youtubeUrl: https://www.youtube.com/watch?v=1ysRNIs8M_s
 ---
 <div className="mb-4">
   <small className="typo-small">
