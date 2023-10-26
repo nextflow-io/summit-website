@@ -12,8 +12,8 @@ speakers:
 tags:
   - Community
   - Keynote
-youtube: 
-youtubeUrl: https://youtu.be/Ox5MWNArj4o?si=f6YdxybBImKHjO7o
+youtube:
+youtubeUrl: https://www.youtube.com/watch?v=sTayntcsKok
 is_keynote: true
 ---
 <div className="mb-4">
