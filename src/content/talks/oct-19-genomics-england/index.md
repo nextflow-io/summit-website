@@ -14,7 +14,7 @@ speakers:
 tags:
   - Community
 youtube:
-youtubeUrl: https://www.youtube.com/watch?v=Pgapp2hgWmc
+youtubeUrl: https://www.youtube.com/watch?v=bk6M8R_pyks
 ---
 
 <div className="mb-4">
