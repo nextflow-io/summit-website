@@ -15,4 +15,4 @@ attending: Boston
 
 Eleanor is a postdoctoral researcher in the Knight Group at the Wellcome Centre for Human Genetics focusing on COVID-19 vaccine immune genetics.
 
-She will be presenting a talk titled "Using the nf-core/Sarek and nf-core/MethylSeq pipelines to analyse large clinical trial datasets".
+She will be presenting a talk titled "Using the nf-core/sarek and nf-core/methylseq pipelines to analyse large clinical trial datasets".
