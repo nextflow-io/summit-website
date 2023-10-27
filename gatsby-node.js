@@ -465,6 +465,11 @@ exports.onCreatePage = async ({ page, actions }) => {
     page.context.layout = 'Plain';
     createPage(page);
   }
+
+  if (page.path === '/foyer/') {
+    page.context.layout = 'foyer';
+    createPage(page);
+  }
 };
 
 exports.onCreateWebpackConfig = ({ actions, loaders }) => {

@@ -11,8 +11,8 @@ speakers:
   - Guoying Qi
 tags:
   - Ecosystem
-youtube: 
-youtubeUrl: 
+youtube:
+youtubeUrl: https://www.youtube.com/watch?v=Ggk59FOwvMo
 ---
 <div className="mb-4">
   <small className="typo-small">

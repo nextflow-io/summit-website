@@ -11,8 +11,8 @@ speakers:
   - Marcel Ribeiro-Dantas
 tags:
   - Community
-youtube: 
-youtubeUrl: 
+youtube:
+youtubeUrl: https://www.youtube.com/watch?v=Lj_2x6GX2O8
 ---
 
 <div className="mb-4">

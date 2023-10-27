@@ -11,8 +11,8 @@ speakers:
   - Júlia Mir Pedrol
 tags:
   - Community
-youtube: 
-youtubeUrl: 
+youtube:
+youtubeUrl: https://www.youtube.com/watch?v=r9WiyqjzHGk
 ---
 <div className="mb-4">
   <small className="typo-small">
@@ -22,7 +22,7 @@ youtubeUrl:
 
 <hr className="border-t border-gray-50 mb-4 opacity-20" />
 
-nf-validation is a Nextflow plugin to empower developers with ensuring data integrity and consistency before pipeline execution with only a few lines of code, mitigating potential errors and complications downstream. 
+nf-validation is a Nextflow plugin to empower developers with ensuring data integrity and consistency before pipeline execution with only a few lines of code, mitigating potential errors and complications downstream.
 
 Nextflow offers the use of parameters that allow configuration adjustments during runtime. However, validating these parameters often demands a substantial amount of code from developers. nf-validation addresses this challenge by using a JSON schema. Developers can create schema files using automated CLI tooling and a graphical web interface, available through nf-core tooling. This JSON schema not only simplifies the management of input parameters but also facilitates the generation of documentation and help text.
 

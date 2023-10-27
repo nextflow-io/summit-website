@@ -12,7 +12,7 @@ speakers:
 tags:
   - Ecosystem
 youtube: 
-youtubeUrl: 
+youtubeUrl: https://youtu.be/zQyXez2Colo?si=AM37TZmijvU9FMUR
 ---
 <div className="mb-4">
   <small className="typo-small">
@@ -24,7 +24,7 @@ youtubeUrl:
 
 In 2022 the [Australian Biocommons](https://www.biocommons.org.au/) conducted a national survey of research communities on bioinformatics workflows. The responses indicated Nextflow was the most popular language for developing and reusing workflows. Subsequent consultations revealed a need for a shared platform to launch, manage, and monitor Nextflow pipelines across on-premises, as well as both national and commercial HPC and cloud infrastructures.
 
-In response, the BioCommons started a project in partnership with Seqera Labs to build a national Tower service for the Australian bioinformatics research community. The ambition is to provide a suite of three services: (1) personal workflow spaces; (2) organisational collaborative spaces; and (3) a national bioinformatics analysis service. Each service has distinct use cases and support models and are designed to align with needs of the various communities and organisations the BioCommons supports.
+In response, the BioCommons started a project in partnership with Seqera to build a national Tower service for the Australian bioinformatics research community. The ambition is to provide a suite of three services: (1) personal workflow spaces; (2) organisational collaborative spaces; and (3) a national bioinformatics analysis service. Each service has distinct use cases and support models and are designed to align with needs of the various communities and organisations the BioCommons supports.
 
 To date, 40 early adopters from 19 different research groups and organisations have been onboarded from the Walter and Eliza Hall Institute of Medical Research, Australian Genome Research Facility, Telethon Kids Institute, University of Melbourne Centre for Cancer Research and Children’s Cancer Institute. 
 

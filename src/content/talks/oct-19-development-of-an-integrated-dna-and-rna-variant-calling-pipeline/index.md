@@ -11,8 +11,8 @@ speakers:
   - Raquel Manzano
 tags:
   - Community
-youtube: 
-youtubeUrl: 
+youtube:
+youtubeUrl: https://www.youtube.com/watch?v=PzGOvqSI5n0
 ---
 
 <div className="mb-4">

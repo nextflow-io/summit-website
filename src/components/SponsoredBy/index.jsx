@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 
 import LogoAWS from '../../images/logos/aws.svg';
 import LogoMicrosoft from '../../images/logos/microsoft.svg';
@@ -14,10 +15,10 @@ import Sponsor from './Sponsor';
 
 import * as styles from './styles.module.css';
 
-const SponsoredBy = () => (
-  <div className="text-white py-8 px-4 sm:px-6">
-    <h2 className="typo-h6 mb-2 uppercase text-center">Sponsored by</h2>
-    <div className={styles.container}>
+const SponsoredBy = ({ alt }) => (
+  <div className={classNames('text-white', { 'px-4 py-8 sm:px-6': !alt })}>
+    {!alt && <h2 className="typo-h6 mb-2 uppercase text-center">Sponsored by</h2>}
+    <div className={classNames(styles.container, { [styles.alt]: alt })}>
       <Sponsor>
         <img src={LogoAWS} className="h-12" alt="AWS" />
       </Sponsor>

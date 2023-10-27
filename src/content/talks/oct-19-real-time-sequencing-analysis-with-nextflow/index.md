@@ -12,8 +12,8 @@ speakers:
 tags:
   - Software
   - Sponsor
-youtube: 
-youtubeUrl: 
+youtube:
+youtubeUrl: https://www.youtube.com/watch?v=0zYwVU7xfwg
 is_sponsor: true
 ---
 <div className="mb-4">

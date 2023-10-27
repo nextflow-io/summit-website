@@ -11,8 +11,8 @@ speakers:
   - Maxime Garcia
 tags:
   - Ecosystem
-youtube: 
-youtubeUrl: 
+youtube:
+youtubeUrl: https://www.youtube.com/watch?v=mjENTXKJiRk
 ---
 <div className="mb-4">
   <small className="typo-small">

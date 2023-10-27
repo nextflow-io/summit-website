@@ -8,15 +8,19 @@ time: 7:30 PM
 isChild: false
 hasPage: true
 speakers:
-  -
+  - Evan Floden
 tags:
+  - Community
 youtube:
-youtubeUrl:
+youtubeUrl: https://youtu.be/AMfuog_oKew
 ---
 
-Join us for a very special evening, with a unique reception at a secret venue!
+Reception hosted by Seqera and Alinghi Red Bull Racing
 
-Details to be announced in the Summit welcome talk, stay tuned!
+Seqera and Alinghi Red Bull Racing invite you to a special reception commemorating their new partnership in preparation for the 2024 America's Cup.
 
-* Oct 18, 2023, 7:30PM - 10:30PM CET
-* Moll d’Espanya, Barcelona, Spain
+The new collaboration will see Seqera provide world class software engineering tools to empower Alinghi Red Bull Racing through the 2023-24 race season, to solve more complex data challenges, optimizing every aspect of the team’s performance for the upcoming competition.
+
+Mingle with fellow Summit attendees over a casual evening featuring beverages and hors d'oeuvres at the Alinghi Red Bull Racing Base, located at the Barcelona waterfront.
+
+Location: [Alinghi Red Bull Racing Base](https://maps.app.goo.gl/mK5QUKYFTr9SLLRVA), Moll d'Espanya, 6, 08039 Barcelona

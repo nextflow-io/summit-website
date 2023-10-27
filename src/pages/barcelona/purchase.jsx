@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'gatsby';
 
 import HeroDots from '../../components/HeroDots';
 import Seo from '../../components/Seo';
@@ -30,9 +31,16 @@ const RegisterPage = () => {
       <HeroDots className="text-center">
         <div className="container-lg">
           <div className="max-w-3xl mx-auto">
-            <h1 className="typo-display1">Register your ticket now</h1>
+            <h1 className="typo-display1">Registration closed</h1>
             <div className="max-w-xl mx-auto mt-4">
-              <p className="typo-body">Register free for virtual attendance. In-person places are sold out.</p>
+              {/* <p className="typo-body">Register free for virtual attendance. In-person places are sold out.</p> */}
+              <p className="typo-body">
+                Registration is now closed.
+                <Link to="/barcelona/stream/" className="text-green-300">
+                  Check instructions
+                </Link>{' '}
+                on how to live-stream the event online.
+              </p>
             </div>
           </div>
         </div>

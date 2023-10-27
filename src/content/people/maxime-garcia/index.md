@@ -1,7 +1,7 @@
 ---
 slug: /maxime-garcia/
 name: Maxime Garcia
-position: Bioinformatician at Seqera Labs
+position: Bioinformatician at Seqera
 image: ../../../images/people/maximegarcia.png
 github: https://github.io/maxulysse
 twitter: https://twitter.com/gau

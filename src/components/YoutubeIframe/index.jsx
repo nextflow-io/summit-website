@@ -7,6 +7,7 @@ const YoutubeIframe = ({ id, listId, className }) => {
 
   if (id) {
     id = id.replace('https://youtu.be/', '');
+    id = id.replace('https://www.youtube.com/watch?v=', '');
   }
   let videoSource = `https://www.youtube.com/embed/${id}`;
 

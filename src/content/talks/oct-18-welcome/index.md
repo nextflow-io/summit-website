@@ -9,9 +9,8 @@ isChild: false
 hasPage: true
 speakers:
   - Evan Floden
-
 tags:
-  - Community 
+  - Community
 youtube:
-youtubeUrl:
+youtubeUrl: https://www.youtube.com/watch?v=XuyHZDVXDy4
 ---

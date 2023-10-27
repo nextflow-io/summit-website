@@ -1,7 +1,7 @@
 ---
 slug: /harshil-patel/
 name: Harshil Patel
-position: Head of Scientific Development at Seqera Labs
+position: Head of Scientific Development at Seqera
 image: ../../../images/people/harshilpatel.png
 github: https://github.com/drpatelh
 twitter: https://twitter.com/aka_hpatel
@@ -16,6 +16,6 @@ meta:
 attending: Both
 ---
 
-Harshil Patel is the Head of Scientific Development at Seqera Labs.
+Harshil Patel is the Head of Scientific Development at Seqera.
 
 He will present a talk titled "Automation on the Seqera Platform".

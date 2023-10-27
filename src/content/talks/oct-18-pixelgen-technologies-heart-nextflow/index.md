@@ -12,8 +12,8 @@ speakers:
 tags:
   - Community
   - Sponsor
-youtube: 
-youtubeUrl: 
+youtube:
+youtubeUrl: https://www.youtube.com/watch?v=fMXZVNhP0XQ
 is_sponsor: true
 ---
 <div className="mb-4">

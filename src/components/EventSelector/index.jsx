@@ -7,11 +7,6 @@ import EventCard from './EventCard';
 const EventSelector = () => {
   const data = useStaticQuery(graphql`
     query {
-      summitImage: file(relativePath: { eq: "photos/summit-barcelona.jpg" }) {
-        childImageSharp {
-          gatsbyImageData(placeholder: NONE)
-        }
-      }
       bluePattern: file(relativePath: { eq: "visuals/blue-pattern.jpg" }) {
         childImageSharp {
           gatsbyImageData(placeholder: NONE)
