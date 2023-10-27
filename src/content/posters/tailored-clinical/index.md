@@ -2,8 +2,8 @@
 slug: tailored-clinical
 title: "nf-core for tailored clinical research data analysis – challenges and use cases"
 url: https://summit.nextflow.io/
-image: ../../../images/visuals/placeholder-poster.png
-poster: /assets/placeholder-poster.pdf
+image: ../../../images/visuals/1_6_anne.png
+poster: ../../../images/posters/1_6_anne.pdf
 poster_id: 6
 speakers:
   - Anne Bertolini

@@ -2,8 +2,8 @@
 slug: common-proteomics
 title: "A Common Proteomics Nextflow Pipeline for Diverse Quality Control Processes: QCloud and QSample"
 url: https://summit.nextflow.io/
-image: ../../../images/visuals/placeholder-poster.png
-poster: /assets/placeholder-poster.pdf
+image: ../../../images/visuals/1_2_roger.png
+poster: ../../../images/posters/1_2_roger.pdf
 poster_id: 2
 speakers:
   - "Roger Olivella"

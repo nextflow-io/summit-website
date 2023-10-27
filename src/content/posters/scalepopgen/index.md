@@ -2,8 +2,8 @@
 slug: scalepopgen
 title: "Scalepopgen: bioinformatics workflow resources for population genomics"
 url: https://github.com/BioInf2305/scalepopgen_v3
-image: ../../../images/visuals/placeholder-poster.png
-poster: /assets/placeholder-poster.pdf
+image: ../../../images/visuals/2_17_maulik.png
+poster: ../../../images/posters/2_17_maulik.pdf
 poster_id: 17
 speakers:
   - Maulik Upadhyay
