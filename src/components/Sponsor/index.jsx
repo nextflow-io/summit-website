@@ -23,12 +23,12 @@ const Sponsor = ({ sponsor, location }) => {
           <img
             src={sponsor.image.publicURL}
             title={sponsor.name}
-            className="max-w-[250px] max-h-[80px] min-w-[100px] mr-4 mb-4"
+            className="max-w-[250px] max-h-[55px] min-w-[100px] mr-4 mb-4"
           />
         </h2>
         <div className={classNames(styles.rank, styles[rank])}>{rank} sponsor</div>
       </div>
-      <div className="typo-body mt-4 sm:mt-0">{sponsor.content.body}</div>
+      <div className="typo-body mt-4">{sponsor.content.body}</div>
     </Link>
   );
 };

@@ -2,7 +2,7 @@
 id: pixelgen
 name: Pixelgen
 image: ../../../images/logos/pixelgen.svg
-location: Both
+location: Barcelona
 event: Summit
 rank: 3
 url: https://pixelgen.com

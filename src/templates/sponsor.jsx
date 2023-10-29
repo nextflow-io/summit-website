@@ -40,7 +40,7 @@ const SponsorPage = ({ data, path, children }) => {
           <div className="mt-5 md:mt-10 typo-body whitespace-pre-line">
             <CustomMDXProvider>{children}</CustomMDXProvider>
           </div>
-          <Button variant="primary" to={sponsor.url} className="mt-4" size="md" arrow>
+          <Button variant="primary" to={sponsor.url} className="mt-8" size="md" arrow>
             Find out more
           </Button>
         </div>
