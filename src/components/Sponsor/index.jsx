@@ -9,7 +9,8 @@ const Sponsor = ({ sponsor, location }) => {
     1: 'Diamond',
     2: 'Platinum',
     3: 'Gold',
-    4: 'Bronze',
+    4: 'Silver',
+    5: 'Bronze',
   };
   const rank = ranks[sponsor.rank];
   return (
