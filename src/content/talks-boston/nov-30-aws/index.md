@@ -1,7 +1,7 @@
 ---
 slug: nov-30-aws
 timeframe: 9:30 - 10:00 AM (30 min)
-title: "Accelerating biomedical research with NextFlow on AWS"
+title: "Accelerating biomedical research with Nextflow on AWS"
 datetime: 2023-11-30T9:30:00.000Z
 date: Nov 30, 2023
 time: 9:30 AM
