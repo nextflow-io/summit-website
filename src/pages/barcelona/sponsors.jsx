@@ -34,7 +34,12 @@ const SponsorsPage = () => {
   const zs = sponsors.findIndex(({ id }) => id === 'zs');
   sponsors[memverge].rank = 3;
   sponsors[zs].rank = 2;
-  const orderedSponsors = sponsors.sort((a, b) => a.rank - b.rank);
+  const orderedSponsors = sponsors
+    .sort((a, b) => a.rank - b.rank)
+    .map((sponsor) => {
+      if (sponsor.rank === 4) sponsor.rank = 5;
+      return sponsor;
+    });
 
   return (
     <>

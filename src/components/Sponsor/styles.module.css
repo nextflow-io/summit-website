@@ -11,6 +11,7 @@
   background: rgb(13 192 157);
   border: 1px solid rgb(13 192 157);
   &.Gold,
+  &.Silver,
   &.Bronze {
     background: transparent;
     color: white;
