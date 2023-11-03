@@ -2,8 +2,8 @@
 slug: sh-matchmaker
 title: "SH-Matcher: towards identification and communication of taxa through species hypotheses"
 url: https://omi.ut.ee/en
-image: ../../../images/visuals/placeholder-poster.png
-poster: /assets/placeholder-poster.pdf
+image: ../../../images/visuals/2_16_vlad.png
+poster: ../../../images/posters/2_16_vlad.pdf
 poster_id: 16
 speakers:
   - Vladimir Mikryukov
