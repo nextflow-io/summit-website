@@ -189,6 +189,8 @@ exports.onCreateNode = ({ node, actions, getNode, createNodeId, createContentDig
       const filePath = node.internal.contentFilePath;
       const eventPath = createEventPath(filePath);
       const fullEventPath = `${eventPath}${slug}/`;
+      let location = 'barcelona';
+      if (filePath.includes('boston')) location = 'boston';
 
       const content = {
         type: parent.sourceInstanceName,
@@ -202,7 +204,7 @@ exports.onCreateNode = ({ node, actions, getNode, createNodeId, createContentDig
         events: node.frontmatter.events,
         isChild: node.frontmatter.isChild,
         speakers: node.frontmatter.speakers,
-        location: node.frontmatter.location,
+        location,
         locationUrl: node.frontmatter.locationUrl,
         youtube: node.frontmatter.youtube,
         youtubeUrl: node.frontmatter.youtubeUrl,
@@ -346,6 +348,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           slug
           hasPage
           fullPath
+          location
           internal {
             contentFilePath
           }
@@ -382,6 +385,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       path: event.fullPath,
       component: `${talkTemplate}?__contentFilePath=${event.internal.contentFilePath}`,
       context: {
+        location: event.location,
         slug: event.fullPath,
       },
     });
