@@ -1,14 +1,14 @@
 ---
 slug: nov-30-hackathon
 timeframe: 5:00 - 5:15 PM (15 min)
-title: "Geraldine Van der Auwera"
+title: "Highlights from the nf-core hackathon"
 datetime: 2023-11-30T17:00:00.000Z
 date: Nov 30, 2023
 time: 5:00 PM
 isChild: false
 hasPage: true
 speakers:
-  - Phil Ewels
+  - Geraldine Van der Auwera
 tags:
   - Community
 youtube: 
@@ -16,7 +16,7 @@ youtubeUrl:
 ---
 <div className="mb-4">
   <small className="typo-small">
-    Phil Ewels
+    Geraldine Van der Auwera
   </small>
 </div>
 
