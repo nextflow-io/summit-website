@@ -3,17 +3,21 @@ slug: /geraldine-van-der-auwera/
 name: Geraldine Van der Auwera
 position: Lead Developer Advocate at Seqera
 image: ../../../images/people/geraldinevanderauwera.png
-github: https://github.com/katgorski
+linkedin: https://www.linkedin.com/in/geraldine-van-der-auwera-5a5811/
+twitter: https://twitter.com/VdaGeraldine
+github: https://github.com/vdauwera
 tags:
   - Community
   - Speaker
 meta:
-  title: "Kathryn Gorski"
+  title: "Geraldine Van der Auwera"
   description: "Nextflow Summit 2023 Presenter"
-  image: ../../../images/share/boston/presenter-kathryn-gorski.jpg
+  image: ../../../images/share/boston/presenter-geraldine-vanderauwera.jpg
 attending: Boston
 ---
 
-Kathryn Gorski develops and executes Nextflow pipelines as a bioinformatics analyst with the Englander Institute of Precision Medicine at Weill Cornell. She studied molecular biology with the goals of being a bench scientist at Stony Brook University and Hampshire College until she opted to shift into the computational realm. She completed her Masters in Bioinformatics at NJIT, where she integrated her biology experience with deeper studies in computer science, statistics and machine learning; and wrote a thesis on the transcriptomics of schizophrenia. As a regular user of Nextflow, Kathryn is interested in the automation and optimization of Nextflow pipelines and has been working to incorporate additional tools to enhance and improve her everyday workflow.
+Geraldine recently joined Seqera as Lead Developer Advocate, with the mission of engaging and nurturing the Nextflow community.
 
-Kathryn will be presenting a talk titled "An event-driven solution to integrate pipeline executions within complex informatics infrastructures".
+She previously spent 10+ years at the Broad Institute managing outreach and communications for the Broad’s genomic analysis and pipelining software, including GATK, and coauthored the book “Genomics in the Cloud” (O’Reilly, 2020). 
+
+She holds a PhD in bacterial genetics from the Université catholique de Louvain, in her home country of Belgium.
