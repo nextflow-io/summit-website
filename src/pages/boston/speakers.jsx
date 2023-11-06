@@ -9,7 +9,10 @@ import SpeakerCard from '../../components/SpeakerCard';
 const SpeakersPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      speakers: allPeople(sort: [{ is_keynote: DESC }, { name: ASC }], filter: { attending: { in: ["Boston", "Both"] } }) {
+      speakers: allPeople(
+        sort: [{ is_keynote: DESC }, { name: ASC }]
+        filter: { attending: { in: ["Boston", "Both"] } }
+      ) {
         nodes {
           slug
           name
@@ -44,7 +47,8 @@ const SpeakersPage = () => {
             <div className="col-full lg:col-6">
               <h1 className="typo-h2 mb-4">More than 25 speakers to look forward to</h1>
               <p className="typo-body max-w-xl mb-6">
-                The call for abstracts is now closed. The final abstracts will be accepted and presenters notified in mid August.
+                The call for abstracts is now closed. The final abstracts will be accepted and presenters notified in
+                mid August.
               </p>
             </div>
             <div className="col-full lg:col-5 lg:ml-1/12 hidden lg:block">
@@ -64,7 +68,7 @@ const SpeakersPage = () => {
           <div className="row mt-4">
             <div className="col-full lg:col-9">
               {data.speakers.nodes.map((speaker, i) => (
-                <SpeakerCard speaker={speaker} className="mt-10 first:mt-0" key={i} location="Boston" />
+                <SpeakerCard speaker={speaker} className="mt-10 first:mt-0" key={i} location="boston" />
               ))}
               <div className="bg-black text-white border border-gray-700 rounded-md mt-10 p-6">
                 <h3 className="typo-h4 text-green-300 mb-4">More coming soon</h3>

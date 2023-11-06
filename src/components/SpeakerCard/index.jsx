@@ -7,7 +7,7 @@ import { GitHubIcon, Link, LinkedInIcon, TwitterIcon } from 'website-components'
 const SpeakerCard = ({ speaker, className, location, fromEvent }) => {
   if (!speaker) return null;
   let speakerURL = `/barcelona/speakers${speaker.slug}`;
-  if (location === 'Boston') speakerURL = `/boston/speakers${speaker.slug}`;
+  if (location === 'boston') speakerURL = `/boston/speakers${speaker.slug}`;
   if (fromEvent) speakerURL += '?goBack=1';
   if (speaker.is_keynote) className = classnames(className, 'border-green-300');
   return (

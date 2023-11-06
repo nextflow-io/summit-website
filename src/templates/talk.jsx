@@ -9,7 +9,7 @@ import SpeakerCard from '../components/SpeakerCard';
 import Seo from '../components/Seo';
 import SpeakerPics from '../components/EventCard/SpeakerPics';
 
-const TalkPage = ({ data, children }) => {
+const TalkPage = ({ data, children, pageContext }) => {
   const { event: talk } = data;
   let shareImg = undefined;
   const firstSpeaker = talk.speakers?.[0];
@@ -78,7 +78,13 @@ const TalkPage = ({ data, children }) => {
             </>
           )}
           {talk.speakers?.map((speaker, i) => (
-            <SpeakerCard speaker={speaker} className="mt-8 first:mt-0" key={i} fromEvent />
+            <SpeakerCard
+              speaker={speaker}
+              className="mt-8 first:mt-0"
+              key={i}
+              fromEvent
+              location={pageContext.location}
+            />
           ))}
         </div>
       </div>
