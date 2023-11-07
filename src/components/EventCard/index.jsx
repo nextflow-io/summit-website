@@ -87,10 +87,14 @@ const EventCard = ({ event, hidden, expanded, isExpandable, onExpand, isChild, d
           <>
             <span className="hidden lg:block mx-2">|</span>
             <div>
-              <Link to={event.locationUrl} className="typo-body">
-                {event.location}
-              </Link>
-              <LocationIcon className="inline-block h-6 w-6 ml-2" />
+              {event.locationUrl ? (
+                <Link to={event.locationUrl} className="typo-body">
+                  {event.location.charAt(0).toUpperCase() + event.location.slice(1)}
+                </Link>
+              ) : (
+                <span className="typo-body">{event.location.charAt(0).toUpperCase() + event.location.slice(1)}</span>
+              )}
+              <LocationIcon className="inline-block h-5 w-5 ml-1 -mt-1" />
             </div>
           </>
         )}
