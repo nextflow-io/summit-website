@@ -32,8 +32,7 @@ const RegisterPage = () => {
             <h1 className="typo-display1">Register your ticket now</h1>
             <div className="max-w-xl mx-auto mt-4">
               <p className="typo-body">
-                Register for the waitlist by submitting your email in the box below and be notified when tickets become
-                available. In-person places are sold out.
+                {`Due to high demand, we've managed to secure additional seats. Now is your last chance to grab the last available tickets. Registration ends on Friday, November 17, or until sold out.`}
               </p>
             </div>
           </div>
