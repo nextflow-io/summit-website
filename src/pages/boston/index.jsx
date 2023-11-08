@@ -163,6 +163,20 @@ const IndexPage = () => {
                 <div className="row">
                   <div className="col-6">
                     <div className="h-full border-b border-gray-600 py-2">
+                      <p className="typo-body">November 17</p>
+                    </div>
+                  </div>
+                  <div className="col-6">
+                    <div className="h-full border-b border-gray-600 py-2">
+                      <p className="typo-body">
+                        Registration period for the last available tickets closes (if not already sold out).
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-6">
+                    <div className="h-full border-b border-gray-600 py-2">
                       <p className="typo-body">November 28-29</p>
                       <Link resetClassName="text-green-300" to="https://goo.gl/maps/GuHdtLUGEEL8ztRQ9">
                         Boston Park Plaza
