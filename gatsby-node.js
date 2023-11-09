@@ -191,6 +191,7 @@ exports.onCreateNode = ({ node, actions, getNode, createNodeId, createContentDig
       const fullEventPath = `${eventPath}${slug}/`;
       let location = 'barcelona';
       if (filePath.includes('boston')) location = 'boston';
+      if (node.frontmatter.location) location = node.frontmatter.location;
 
       const content = {
         type: parent.sourceInstanceName,
