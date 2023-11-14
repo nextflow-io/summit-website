@@ -246,17 +246,15 @@ const GalleryPage = () => {
           <h1 className="typo-h2 mb-4">
             Nextflow Summit 2023 Barcelona - Photos
           </h1>
-          <p className="typo-body max-w-md mb-4 mx-auto">
+          <p className="typo-body max-w-lg mb-4 mx-auto">
             See photos from the nf-core hackathon and Nextflow Summit.
           </p>
-          <p className="typo-body max-w-md mb-4 mx-auto">
-            <Button to="https://photos.app.goo.gl/MSCAr4KYGr28nMcP6" variant="primary" size="md" arrow>
-              See all 160 nf-core hackathon photos
+          <p className="typo-body mb-4 mx-auto">
+            <Button to="https://photos.app.goo.gl/MSCAr4KYGr28nMcP6" variant="primary" size="md" arrow className="mr-2">
+              See all hackathon photos
             </Button>
-          </p>
-          <p className="typo-body max-w-md mb-4 mx-auto">
             <Button to="https://photos.app.goo.gl/a7zjAn3aqqEfUGNK8" variant="primary" size="md" arrow>
-              See all 312 Nextflow Summit photos
+              See all Summit photos
             </Button>
           </p>
         </div>
