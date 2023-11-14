@@ -31,9 +31,15 @@ const navItems = [
     path: '/blog/',
   },
   {
+    title: 'Gallery',
+    path: '/gallery/',
+    barcelonaOnly: true,
+  },
+  {
     title: 'Call for abstracts',
     path: '/call-for-abstracts/',
     className: 'hidden lg:block',
+    bostonOnly: true,
   },
   {
     title: 'Past events',
@@ -78,6 +84,7 @@ const Header = ({ location, hideNav }) => {
 
   const navs = navItems.filter((nav) => {
     if (nav.barcelonaOnly && activeEvent === 'boston') return false;
+    if (nav.bostonOnly && activeEvent === 'barcelona') return false;
     return true;
   });
 
