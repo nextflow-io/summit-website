@@ -250,10 +250,10 @@ const GalleryPage = () => {
             See photos from the nf-core hackathon and Nextflow Summit.
           </p>
           <p className="typo-body mb-4 mx-auto">
-            <Button to="https://photos.app.goo.gl/MSCAr4KYGr28nMcP6" variant="primary" size="md" arrow className="mr-2">
+            <Button to="https://photos.app.goo.gl/MSCAr4KYGr28nMcP6" variant="primary" size="md" arrow className="mr-2 mb-2">
               See all hackathon photos
             </Button>
-            <Button to="https://photos.app.goo.gl/a7zjAn3aqqEfUGNK8" variant="primary" size="md" arrow>
+            <Button to="https://photos.app.goo.gl/a7zjAn3aqqEfUGNK8" variant="primary" size="md" arrow className="mb-2">
               See all Summit photos
             </Button>
           </p>
@@ -265,7 +265,7 @@ const GalleryPage = () => {
             nf-core Hackathon
           </h2>
           <div className="row">
-            <div className="col-6 sm:col-4 lg:col-3 mt-8">
+            <div className="col-full sm:col-4 lg:col-3 mt-8">
               <Image
                 image={getImage(data.nfCoreHackathonImage1)}
                 className="w-full h-[200px]"
@@ -273,7 +273,7 @@ const GalleryPage = () => {
                 alt="nf-core Hackathon"
               />
             </div>
-            <div className="col-6 sm:col-4 lg:col-4 mt-8">
+            <div className="col-full sm:col-4 lg:col-4 mt-8">
               <Image
                 image={getImage(data.nfCoreHackathonImage2)}
                 className="w-full h-[200px]"
@@ -281,7 +281,7 @@ const GalleryPage = () => {
                 alt="nf-core Hackathon"
               />
             </div>
-            <div className="col-6 sm:col-4 lg:col-5 mt-8">
+            <div className="col-full sm:col-4 lg:col-5 mt-8">
               <Image
                 image={getImage(data.nfCoreHackathonImage3)}
                 className="w-full h-[200px]"
@@ -289,7 +289,7 @@ const GalleryPage = () => {
                 alt="nf-core Hackathon"
               />
             </div>
-            <div className="col-6 sm:col-4 lg:col-4 mt-8">
+            <div className="col-full sm:col-4 lg:col-4 mt-8">
               <Image
                 image={getImage(data.nfCoreHackathonImage4)}
                 className="w-full h-[200px]"
@@ -297,7 +297,7 @@ const GalleryPage = () => {
                 alt="nf-core Hackathon"
               />
             </div>
-            <div className="col-6 sm:col-4 lg:col-4 mt-8">
+            <div className="col-full sm:col-4 lg:col-4 mt-8">
               <Image
                 image={getImage(data.nfCoreHackathonImage5)}
                 className="w-full h-[200px]"
@@ -305,7 +305,7 @@ const GalleryPage = () => {
                 alt="nf-core Hackathon"
               />
             </div>
-            <div className="col-6 sm:col-4 lg:col-4 mt-8">
+            <div className="col-full sm:col-4 lg:col-4 mt-8">
               <Image
                 image={getImage(data.nfCoreHackathonImage6)}
                 className="w-full h-[200px]"
@@ -313,7 +313,7 @@ const GalleryPage = () => {
                 alt="nf-core Hackathon"
               />
             </div>
-            <div className="col-6 sm:col-4 lg:col-3 mt-8">
+            <div className="col-full sm:col-4 lg:col-3 mt-8">
               <Image
                 image={getImage(data.nfCoreHackathonImage7)}
                 className="w-full h-[200px]"
@@ -321,7 +321,7 @@ const GalleryPage = () => {
                 alt="nf-core Hackathon"
               />
             </div>
-            <div className="col-6 sm:col-6 md:col-4 lg:col-5 mt-8">
+            <div className="col-full sm:col-6 md:col-4 lg:col-5 mt-8">
               <Image
                 image={getImage(data.nfCoreHackathonImage8)}
                 className="w-full h-[200px]"
@@ -329,7 +329,7 @@ const GalleryPage = () => {
                 alt="nf-core Hackathon"
               />
             </div>
-            <div className="col-6 sm:col-6 lg:col-4 mt-8">
+            <div className="col-full sm:col-6 lg:col-4 mt-8">
               <Image
                 image={getImage(data.nfCoreHackathonImage10)}
                 className="w-full h-[200px]"
@@ -345,7 +345,7 @@ const GalleryPage = () => {
                 alt="nf-core Hackathon"
               />
             </div>
-            <div className="col-6 sm:col-6 lg:col-4 mt-8">
+            <div className="col-full sm:col-6 lg:col-4 mt-8">
               <Image
                 image={getImage(data.nfCoreHackathonImage11)}
                 className="w-full h-[200px]"
@@ -375,7 +375,7 @@ const GalleryPage = () => {
             Nextflow Summit
           </h2>
           <div className="row">
-            <div className="col-full lg:col-3 mt-8">
+            <div className="col-full sm:col-6 lg:col-3 mt-8">
               <Image
                 image={getImage(data.summitImage1)}
                 className="w-full h-[200px]"
@@ -383,7 +383,7 @@ const GalleryPage = () => {
                 alt="Nextflow Summit"
               />
             </div>
-            <div className="col-full lg:col-3 mt-8">
+            <div className="col-full sm:col-6 lg:col-3 mt-8">
               <Image
                 image={getImage(data.summitImage2)}
                 className="w-full h-[200px]"
@@ -391,7 +391,7 @@ const GalleryPage = () => {
                 alt="Nextflow Summit"
               />
             </div>
-            <div className="col-full lg:col-3 mt-8">
+            <div className="col-full sm:col-6 lg:col-3 mt-8">
               <Image
                 image={getImage(data.summitImage3)}
                 className="w-full h-[200px]"
@@ -399,7 +399,7 @@ const GalleryPage = () => {
                 alt="Nextflow Summit"
               />
             </div>
-            <div className="col-full lg:col-3 mt-8">
+            <div className="col-full sm:col-6 lg:col-3 mt-8">
               <Image
                 image={getImage(data.summitImage4)}
                 className="w-full h-[200px]"
@@ -407,7 +407,7 @@ const GalleryPage = () => {
                 alt="Nextflow Summit"
               />
             </div>
-            <div className="col-full lg:col-5 mt-8">
+            <div className="col-full sm:col-6 lg:col-5 mt-8">
               <Image
                 image={getImage(data.summitImage5)}
                 className="w-full h-[200px]"
@@ -415,7 +415,7 @@ const GalleryPage = () => {
                 alt="Nextflow Summit"
               />
             </div>
-            <div className="col-full lg:col-3 mt-8">
+            <div className="col-full sm:col-6 lg:col-3 mt-8">
               <Image
                 image={getImage(data.summitImage6)}
                 className="w-full h-[200px]"
@@ -423,7 +423,7 @@ const GalleryPage = () => {
                 alt="Nextflow Summit"
               />
             </div>
-            <div className="col-full lg:col-4 mt-8">
+            <div className="col-full sm:col-6 lg:col-4 mt-8">
               <Image
                 image={getImage(data.summitImage7)}
                 className="w-full h-[200px]"
@@ -431,7 +431,7 @@ const GalleryPage = () => {
                 alt="Nextflow Summit"
               />
             </div>
-            <div className="col-full lg:col-4 mt-8">
+            <div className="col-full sm:col-6 lg:col-4 mt-8">
               <Image
                 image={getImage(data.summitImage8)}
                 className="w-full h-[200px]"
@@ -439,7 +439,7 @@ const GalleryPage = () => {
                 alt="Nextflow Summit"
               />
             </div>
-            <div className="col-full lg:col-3 mt-8">
+            <div className="col-full sm:col-6 lg:col-3 mt-8">
               <Image
                 image={getImage(data.summitImage9)}
                 className="w-full h-[200px]"
@@ -447,7 +447,7 @@ const GalleryPage = () => {
                 alt="Nextflow Summit"
               />
             </div>
-            <div className="col-full lg:col-2 mt-8">
+            <div className="col-full sm:col-6 lg:col-2 mt-8">
               <Image
                 image={getImage(data.summitImage10)}
                 className="w-full h-[200px]"
@@ -455,7 +455,7 @@ const GalleryPage = () => {
                 alt="Nextflow Summit"
               />
             </div>
-            <div className="col-full lg:col-3 mt-8">
+            <div className="col-full sm:col-6 lg:col-3 mt-8">
               <Image
                 image={getImage(data.summitImage11)}
                 className="w-full h-[200px]"
@@ -463,7 +463,7 @@ const GalleryPage = () => {
                 alt="Nextflow Summit"
               />
             </div>
-            <div className="col-full lg:col-4 mt-8">
+            <div className="col-full sm:col-6 lg:col-4 mt-8">
               <Image
                 image={getImage(data.summitImage12)}
                 className="w-full h-[200px]"
@@ -471,7 +471,7 @@ const GalleryPage = () => {
                 alt="Nextflow Summit"
               />
             </div>
-            <div className="col-full lg:col-4 mt-8">
+            <div className="col-full sm:col-6 lg:col-4 mt-8">
               <Image
                 image={getImage(data.summitImage13)}
                 className="w-full h-[200px]"
@@ -479,7 +479,7 @@ const GalleryPage = () => {
                 alt="Nextflow Summit"
               />
             </div>
-            <div className="col-full lg:col-4 mt-8">
+            <div className="col-full sm:col-6 lg:col-4 mt-8">
               <Image
                 image={getImage(data.summitImage14)}
                 className="w-full h-[200px]"
@@ -487,7 +487,7 @@ const GalleryPage = () => {
                 alt="Nextflow Summit"
               />
             </div>
-            <div className="col-full lg:col-3 mt-8">
+            <div className="col-full sm:col-6 lg:col-3 mt-8">
               <Image
                 image={getImage(data.summitImage15)}
                 className="w-full h-[200px]"
@@ -495,7 +495,7 @@ const GalleryPage = () => {
                 alt="Nextflow Summit"
               />
             </div>
-            <div className="col-full lg:col-4 mt-8">
+            <div className="col-full sm:col-6 lg:col-4 mt-8">
               <Image
                 image={getImage(data.summitImage16)}
                 className="w-full h-[200px]"
@@ -503,7 +503,7 @@ const GalleryPage = () => {
                 alt="Nextflow Summit"
               />
             </div>
-            <div className="col-full lg:col-5 mt-8">
+            <div className="col-full sm:col-6 lg:col-5 mt-8">
               <Image
                 image={getImage(data.summitImage17)}
                 className="w-full h-[200px]"
@@ -511,7 +511,7 @@ const GalleryPage = () => {
                 alt="Nextflow Summit"
               />
             </div>
-            <div className="col-full lg:col-5 mt-8">
+            <div className="col-full sm:col-6 lg:col-5 mt-8">
               <Image
                 image={getImage(data.summitImage18)}
                 className="w-full h-[200px]"
@@ -519,7 +519,7 @@ const GalleryPage = () => {
                 alt="Nextflow Summit"
               />
             </div>
-            <div className="col-full lg:col-3 mt-8">
+            <div className="col-full sm:col-6 lg:col-3 mt-8">
               <Image
                 image={getImage(data.summitImage19)}
                 className="w-full h-[200px]"
@@ -527,7 +527,7 @@ const GalleryPage = () => {
                 alt="Nextflow Summit"
               />
             </div>
-            <div className="col-full lg:col-4 mt-8">
+            <div className="col-full sm:col-6 lg:col-4 mt-8">
               <Image
                 image={getImage(data.summitImage20)}
                 className="w-full h-[200px]"
