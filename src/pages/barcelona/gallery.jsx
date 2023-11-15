@@ -5,6 +5,7 @@ import React from 'react';
 import { Button } from 'website-components';
 
 import Seo from '../../components/Seo';
+import YoutubeIframe from '../../components/YoutubeIframe';
 
 const GalleryPage = () => {
   const data = useStaticQuery(graphql`
@@ -257,6 +258,31 @@ const GalleryPage = () => {
               See all Summit photos
             </Button>
           </p>
+        </div>
+      </div>
+      <div className="py-20 bg-gray-900 text-white">
+        <div className="container-lg">
+          <h2 className="typo-h2">
+            Videos
+          </h2>
+          <div className="row">
+            <div className="col-full lg:col-6 mt-8">
+              <h4 className="typo-h4 mb-8">
+                Hackathon and Summit recap
+              </h4>
+              <div className="relative border border-green-300 rounded-sm overflow-hidden p-1 bg-black">
+                <YoutubeIframe id="https://www.youtube.com/watch?v=JvjoZ9dPjq8"></YoutubeIframe>
+              </div>
+            </div>
+            <div className="col-full lg:col-6 mt-8">
+              <h4 className="typo-h4 mb-8">
+              Alinghi Red Bull - Seqera Partnership
+              </h4>
+              <div className="relative border border-green-300 rounded-sm overflow-hidden p-1 bg-black">
+                <YoutubeIframe id="https://www.youtube.com/watch?v=AprJlStlBPY"></YoutubeIframe>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div className="py-20 bg-gray-900 text-white">
