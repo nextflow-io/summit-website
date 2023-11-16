@@ -279,7 +279,7 @@ const GalleryPage = () => {
               Alinghi Red Bull - Seqera Partnership
               </h4>
               <div className="relative border border-green-300 rounded-sm overflow-hidden p-1 bg-black">
-                <YoutubeIframe id="https://www.youtube.com/watch?v=AprJlStlBPY"></YoutubeIframe>
+                <YoutubeIframe id="https://www.youtube.com/watch?v=m7pvt4nApao"></YoutubeIframe>
               </div>
             </div>
           </div>
