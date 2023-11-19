@@ -115,7 +115,7 @@ const RegisterPage = () => {
                 className="mb-5"
               >
                 <SlackIcon className="inline-block h-6 w-6 mr-3" />
-                View &nbsp;<code>#summit-2023</code>&nbsp; channel
+                View &nbsp;<code>#summit-2023-barcelona</code><span className="hidden sm-block">&nbsp; channel</span>
               </Button>
             </div>
             <div className="col-full lg:col-6 order-2 lg:order-1">
@@ -124,7 +124,7 @@ const RegisterPage = () => {
                   image={getImage(data.slackHeroImage)}
                   className="w-full opacity-75"
                   imgClassName="rounded-sm"
-                  alt="Gather"
+                  alt="Slack"
                 />
               </div>
             </div>
