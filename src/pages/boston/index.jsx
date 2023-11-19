@@ -2,7 +2,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
 import React from 'react';
 
-import { Button, Reveal, RevealOnScroll, Link } from 'website-components';
+import { Button, Reveal, RevealOnScroll, Link, YoutubeRectangleIcon } from 'website-components';
 
 import CountDown from '../../components/CountDown';
 import EventCTA from '../../components/EventCTA';
@@ -48,8 +48,9 @@ const IndexPage = () => {
               <p className="typo-intro uppercase mt-16">In person only</p>
               <p className="typo-intro uppercase">Boston, November 28-30, 2023</p>
               <div className="max-w-[320px] mt-4">
-                <Button to="/boston/register/" variant="primary" size="md" arrow>
-                  Register
+                <Button to="/boston/stream/" variant="primary" size="md" arrow>
+                  <YoutubeRectangleIcon className="inline-block h-6 w-6 mr-3" />
+                  Watch live
                 </Button>
               </div>
             </div>

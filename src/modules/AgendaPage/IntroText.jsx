@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'website-components';
+import { Button, YoutubeRectangleIcon } from 'website-components';
 
 const IntroText = ({ eventLocation }) => {
   if (eventLocation === 'boston') {
@@ -11,8 +11,9 @@ const IntroText = ({ eventLocation }) => {
           breakthroughs in workflow management.
         </p>
         <div className="mt-4">
-          <Button to="/boston/register/" variant="primary" size="md" arrow>
-            Register
+          <Button to="/boston/stream/" variant="primary" size="md" arrow>
+            <YoutubeRectangleIcon className="inline-block h-6 w-6 mr-3" />
+            Watch live
           </Button>
         </div>
       </>
