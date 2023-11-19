@@ -6,6 +6,7 @@ import { Button, SlackIcon, YoutubeRectangleIcon } from 'website-components';
 
 import Seo from '../../components/Seo';
 import YoutubeIframe from '../../components/YoutubeIframe';
+import CountDown from '../../components/CountDown';
 
 const StreamPage = () => {
   const data = useStaticQuery(graphql`
@@ -32,7 +33,7 @@ const StreamPage = () => {
             If you missed the registration, you can still watch the talks live on YouTube.
           </p>
           <Button
-            to="https://nextflow.slack.com/channels/summit-2023"
+            to="https://nextflow.slack.com/channels/summit-2023-boston"
             variant="primary"
             size="md"
             arrow
@@ -95,7 +96,7 @@ const StreamPage = () => {
               <h2 className="typo-h2 mb-4">Ask questions on Slack</h2>
               <p className="typo-body mt-6 mb-4">
                 Questions to speakers and discussion about talks will on the Nextflow Slack, in the{' '}
-                <code>#summit-2023</code>&nbsp; channel.
+                <code>#summit-2023-boston</code>&nbsp; channel.
               </p>
               <Button
                 to="https://www.nextflow.io/slack-invite.html"
@@ -108,14 +109,14 @@ const StreamPage = () => {
                 Join Slack
               </Button>
               <Button
-                to="https://nextflow.slack.com/channels/summit-2023"
+                to="https://nextflow.slack.com/channels/summit-2023-boston"
                 variant="secondary"
                 size="sm"
                 arrow
                 className="mb-5"
               >
                 <SlackIcon className="inline-block h-6 w-6 mr-3" />
-                View &nbsp;<code>#summit-2023</code>&nbsp; channel
+                View &nbsp;<code>#summit-2023-boston</code>&nbsp; channel
               </Button>
             </div>
             <div className="col-full lg:col-6 order-2 lg:order-1">

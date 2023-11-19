@@ -21,7 +21,7 @@ const monthsLeft = (toDate) => {
   return Math.floor(days / 30);
 };
 
-const timeLeft = (toDate) => {
+const getTimeLeft = (toDate) => {
   return {
     hours: hoursLeft(toDate) % 24,
     days: daysLeft(toDate) % 30,
@@ -32,37 +32,27 @@ const timeLeft = (toDate) => {
 const Counter = () => {
   const { activeEvent } = useLayoutState();
 
-  const startDate = (activeEvent === 'boston') ? new Date(BOSTON_START_DATE) : new Date(BARCELONA_START_DATE);
+  const startDate = activeEvent === 'boston' ? new Date(BOSTON_START_DATE) : new Date(BARCELONA_START_DATE);
+
+  const timeLeft = getTimeLeft(startDate);
+
+  if (timeLeft.months === 0 && timeLeft.days === 0 && timeLeft.hours === 0) return null;
 
   return (
     <div>
-      <p className="typo-intro">
-        Starts in:
-      </p>
+      <p className="typo-intro">Starts in:</p>
       <div className="bg-gray-900 flex rounded-md shadow-xl">
         <div className="p-4 text-center">
-          <span className="typo-h4 block">
-            {timeLeft(startDate).months}
-          </span>
-          <span className="typo-intro block">
-            months
-          </span>
+          <span className="typo-h4 block">{timeLeft.months}</span>
+          <span className="typo-intro block">months</span>
         </div>
         <div className="p-4 text-center">
-          <span className="typo-h4 block">
-            {timeLeft(startDate).days}
-          </span>
-          <span className="typo-intro block">
-            days
-          </span>
+          <span className="typo-h4 block">{timeLeft.days}</span>
+          <span className="typo-intro block">days</span>
         </div>
         <div className="p-4 text-center">
-          <span className="typo-h4 block">
-            {timeLeft(startDate).hours}
-          </span>
-          <span className="typo-intro block">
-            hours
-          </span>
+          <span className="typo-h4 block">{timeLeft.hours}</span>
+          <span className="typo-intro block">hours</span>
         </div>
       </div>
     </div>

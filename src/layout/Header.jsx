@@ -61,7 +61,6 @@ const Header = ({ location, hideNav }) => {
   const resolvePath = (path) => {
     if (path === '/blog/') return path;
     if (activeEvent === 'boston') return `/boston${path}`;
-    if (path === '/register/') return '/barcelona/stream/';
     return `/barcelona${path}`;
   };
 
@@ -153,13 +152,13 @@ const Header = ({ location, hideNav }) => {
                 ))}
                 <div className="flex flex-none">
                   <Button
-                    to={resolvePath('/register/')}
+                    to={resolvePath('/stream/')}
                     variant="primary"
                     size="sm"
                     className="hover:opacity-80 ml-4"
                     noShadow
                   >
-                    {activeEvent === 'boston' ? 'Register' : 'Streaming'}
+                    Watch live
                   </Button>
                 </div>
               </div>
@@ -228,14 +227,14 @@ const Header = ({ location, hideNav }) => {
             <div className="mt-4">
               <Button
                 onClick={() => {
-                  handleNav(resolvePath('/register/'));
+                  handleNav(resolvePath('/stream/'));
                 }}
                 variant="accent"
                 size="sm"
                 className="hover:opacity-80 ml-2"
                 noShadow
               >
-                Register
+                Watch live
               </Button>
             </div>
           </div>
