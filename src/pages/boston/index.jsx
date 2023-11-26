@@ -45,7 +45,6 @@ const IndexPage = () => {
                 {' | '}
                 <i>2023</i>
               </p>
-              <p className="typo-intro uppercase mt-16">In person only</p>
               <p className="typo-intro uppercase">Boston, November 28-30, 2023</p>
               <div className="max-w-[320px] mt-4">
                 <Button to="/boston/stream/" variant="primary" size="md" arrow>
