@@ -18,4 +18,4 @@ attending: Both
 
 Maxime has PhD in #Bioinformatics from #Marseille 🇫🇷. He is now based in #Stockholm 🇸🇪, working remotely for #Seqera labs in #Barcelona 🇪🇸. He develops nf-core pipelines, mainly Sarek, and is a member of the nf-core core team.
 
-Maxime will present a talk titled "Annotation cache: using nf-core/modules and Seqera Platform to build an AWS open data resource".
+Maxime will present a talk titled "Annotation cache: using nf-core/modules and Seqera Platform to build an AWS open data resource" in Barcelona and a talk titled "nf-core/sarek - evolution of a community pipeline started in 2016" in Boston.
