@@ -13,7 +13,7 @@ meta:
   title: "Maxime Garcia"
   description: "Nextflow Summit 2023 Presenter"
   image: ../../../images/share/barcelona/presenter-maxime-garcia.jpg
-attending: Barcelona
+attending: Both
 ---
 
 Maxime has PhD in #Bioinformatics from #Marseille 🇫🇷. He is now based in #Stockholm 🇸🇪, working remotely for #Seqera labs in #Barcelona 🇪🇸. He develops nf-core pipelines, mainly Sarek, and is a member of the nf-core core team.
