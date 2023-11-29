@@ -37,6 +37,7 @@ const Counter = () => {
   const timeLeft = getTimeLeft(startDate);
 
   if (timeLeft.months === 0 && timeLeft.days === 0 && timeLeft.hours === 0) return null;
+  return null;
 
   return (
     <div>
