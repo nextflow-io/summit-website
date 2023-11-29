@@ -12,7 +12,7 @@ tags:
 meta:
   title: "Maxime Garcia"
   description: "Nextflow Summit 2023 Presenter"
-  image: ../../../images/share/barcelona/presenter-maxime-garcia.jpg
+  image: ../../../images/share/boston/presenter-maxime-garcia.jpg
 attending: Both
 ---
 

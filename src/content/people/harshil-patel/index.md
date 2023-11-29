@@ -12,7 +12,7 @@ tags:
 meta:
   title: "Harshil Patel"
   description: "Nextflow Summit 2023 Presenter"
-  image: ../../../images/share/barcelona/presenter-harshil-patel.jpg
+  image: ../../../images/share/boston/presenter-harshil-patel.jpg
 attending: Both
 ---
 
