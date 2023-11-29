@@ -10,7 +10,7 @@ const IntroText = ({ eventLocation }) => {
           This premier event brings together leading experts, innovators, and researchers to showcase the latest
           breakthroughs in workflow management.
         </p>
-        <div className="mt-4">
+        <div className="mt-4 mb-6">
           <Button to="/boston/stream/" variant="primary" size="md" arrow>
             <YoutubeRectangleIcon className="inline-block h-6 w-6 mr-3" />
             Watch live
