@@ -6,10 +6,10 @@ datetime: 2023-11-29T14:00:00.000Z
 date: Nov 29, 2023
 time: 2:00 PM
 isChild: false
-hasPage: false
+hasPage: true
 speakers:
   - Evan Floden
 tags:
 youtube:
-youtubeUrl:
+youtubeUrl: https://www.youtube.com/watch?v=1OUe49WClf0
 ---

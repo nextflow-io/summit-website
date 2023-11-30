@@ -13,7 +13,7 @@ tags:
   - Ecosystem
   - Sponsor
 youtube:
-youtubeUrl:
+youtubeUrl: https://www.youtube.com/watch?v=FhYM2Qu6xfM
 is_sponsor: true
 ---
 <div className="mb-4">
@@ -24,11 +24,11 @@ is_sponsor: true
 
 <hr className="border-t border-gray-50 mb-4 opacity-20" />
 
-Bioinformatic pipelines are compute-intensive. We recognize that various computing environments may be necessary to meet and scale various analysis needs. Additionally, we understand navigating and executing workloads across these diverse environments can be challenging. Microsoft has contributed to Task Execution Schema (TES), a standard developed by the Global Alliance for Genomics and Health (GA4GH) with the goal of unifying task execution across diverse computing environments.  
+Bioinformatic pipelines are compute-intensive. We recognize that various computing environments may be necessary to meet and scale various analysis needs. Additionally, we understand navigating and executing workloads across these diverse environments can be challenging. Microsoft has contributed to Task Execution Schema (TES), a standard developed by the Global Alliance for Genomics and Health (GA4GH) with the goal of unifying task execution across diverse computing environments.
 
-Microsoft Genomics has developed a TES backend for orchestrating tasks using Microsoft Azure Batch within a workflow. Our TES sets up all required Microsoft Azure resources for workflow execution, compute resources for task execution, and storage accounts for data management. This facilitates the reproducibility of genomic analysis at scale by providing portability between various computational resources and workflows, thereby contributing to the collaborative potential of the global scientific community. 
+Microsoft Genomics has developed a TES backend for orchestrating tasks using Microsoft Azure Batch within a workflow. Our TES sets up all required Microsoft Azure resources for workflow execution, compute resources for task execution, and storage accounts for data management. This facilitates the reproducibility of genomic analysis at scale by providing portability between various computational resources and workflows, thereby contributing to the collaborative potential of the global scientific community.
 
-This talk will walk you through how to set up TES and Nextflow to run genomics analysis pipelines in the cloud.  We will discuss how we optimize the compute configuration to be cost and time-efficient. You will also learn how other partners have been integrating Nextflow into their Azure ecosystem that supports secure, optimized, and scalable research on an extensible platform.   
+This talk will walk you through how to set up TES and Nextflow to run genomics analysis pipelines in the cloud.  We will discuss how we optimize the compute configuration to be cost and time-efficient. You will also learn how other partners have been integrating Nextflow into their Azure ecosystem that supports secure, optimized, and scalable research on an extensible platform.
 
 By the end of the talk, you will have the resources you need to build a secure and scalable genomics workflow environment within Microsoft Azure. Additionally, we will talk about the future use of TES API and Nextflow integration.
 

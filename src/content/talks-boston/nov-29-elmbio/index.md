@@ -13,7 +13,7 @@ tags:
   - Community
   - Sponsor
 youtube:
-youtubeUrl:
+youtubeUrl: https://www.youtube.com/watch?v=33bmm6cPhPk
 is_sponsor: true
 ---
 <div className="mb-4">
