@@ -13,7 +13,7 @@ tags:
   - Ecosystem
   - Sponsor
 youtube:
-youtubeUrl:
+youtubeUrl: https://www.youtube.com/watch?v=TiEw-CbqlDY
 is_sponsor: true
 ---
 <div className="mb-4">

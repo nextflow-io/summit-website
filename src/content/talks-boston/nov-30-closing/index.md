@@ -11,8 +11,8 @@ speakers:
   - Evan Floden
 tags:
   - Community
-youtube: 
-youtubeUrl: 
+youtube:
+youtubeUrl: https://www.youtube.com/watch?v=ks8tVs2vz0A
 ---
 <div className="mb-4">
   <small className="typo-small">
