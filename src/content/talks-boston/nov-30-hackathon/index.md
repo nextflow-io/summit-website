@@ -11,8 +11,8 @@ speakers:
   - Geraldine Van der Auwera
 tags:
   - Community
-youtube: 
-youtubeUrl: 
+youtube:
+youtubeUrl: https://www.youtube.com/watch?v=D69T4srYBqg
 ---
 <div className="mb-4">
   <small className="typo-small">
@@ -22,7 +22,7 @@ youtubeUrl:
 
 <hr className="border-t border-gray-50 mb-4 opacity-20" />
 
-The nf-core hackathon takes place in the days leading up to the Nextflow Summit. Community members new and old come together to work on community projects. Teams include Pipelines, Modules & Subworkflows, Infrastructure, and Nextflow development. 
+The nf-core hackathon takes place in the days leading up to the Nextflow Summit. Community members new and old come together to work on community projects. Teams include Pipelines, Modules & Subworkflows, Infrastructure, and Nextflow development.
 
 In this talk, Geraldine will recap some of the highlights and achievements – expect stats, group selfies, new nf-core memes, and perhaps even some special prizes!
 
