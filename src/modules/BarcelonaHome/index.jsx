@@ -12,6 +12,7 @@ import RegisterCTA from '../../components/RegisterCTA';
 
 import LaptopIcon from '../../components/icons/LaptopIcon';
 import MountainIcon from '../../components/icons/MountainIcon';
+import PreregisterBanner from '../../components/PreregisterBanner';
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -36,6 +37,7 @@ const IndexPage = () => {
 
   return (
     <>
+      <PreregisterBanner />
       <div className="relative bg-black text-white">
         <div className="absolute inset-0 overflow-hidden">
           <HeroAnimation className="animate-flow" />
