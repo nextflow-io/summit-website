@@ -21,9 +21,7 @@ const Layout = ({ children, location, pageContext }) => {
       {pageContext.layout !== 'Plain' ? (
         <>
           <Header location={location} />
-          <div className="fixed top-20 right-0 md:top-32 z-10">
-            <EventSwitcher />
-          </div>
+          <EventSwitcher loc={location} />
         </>
       ) : (
         <Header hideNav />

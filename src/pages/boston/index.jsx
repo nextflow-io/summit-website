@@ -16,6 +16,7 @@ import MountainIcon from '../../components/icons/MountainIcon';
 
 import ContactUs from '../../components/ContactUs';
 import SponsoredBy from '../../components/SponsoredBy';
+import PreregisterBanner from '../../components/PreregisterBanner';
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -31,6 +32,7 @@ const IndexPage = () => {
   return (
     <>
       <Seo title="Nextflow SUMMIT 2023" />
+      <PreregisterBanner />
       <div className="relative bg-black text-white">
         <div className="absolute inset-0 overflow-hidden">
           <HeroAnimation className="animate-flow" variant="red" />
