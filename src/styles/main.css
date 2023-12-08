@@ -40,7 +40,8 @@
   .hubspot-form .hs-button.primary.large {
     @apply text-base font-body font-medium leading-none antialiased select-none transition-all duration-200 cursor-pointer;
     @apply px-8 py-4 rounded-full w-full;
-    @apply btn-accent hover:opacity-[0.95];
+    @apply hover:opacity-[0.95];
+    @apply bg-green-300 text-black;
   }
 
   .hubspot-form .hs-form-booleancheckbox-display {

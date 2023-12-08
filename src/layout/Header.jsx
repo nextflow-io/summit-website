@@ -66,6 +66,7 @@ const Header = ({ location, hideNav }) => {
 
   const resolveRootPath = () => {
     if (!location) return '/';
+    if (location.pathname === '/subscribe-2024/') return '/';
     if (activeEvent === 'boston') return '/boston/';
     return '/barcelona/';
   };
