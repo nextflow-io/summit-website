@@ -21,7 +21,7 @@ const Layout = ({ children, location, pageContext }) => {
       {pageContext.layout !== 'Plain' ? (
         <>
           <Header location={location} />
-          <EventSwitcher location={location} />
+          <EventSwitcher loc={location} />
         </>
       ) : (
         <Header hideNav />

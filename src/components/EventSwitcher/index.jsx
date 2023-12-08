@@ -7,9 +7,9 @@ import { useLayoutState } from '../../layout/Context';
 
 import GlobeIconSrc from '../../images/icons/globe.svg';
 
-const EventSwitcher = ({ className }) => {
+const EventSwitcher = ({ className, loc }) => {
   const { activeEvent } = useLayoutState();
-  if (location.pathname === '/subscribe-2024/') return null;
+  if (loc?.pathname === '/subscribe-2024/') return null;
 
   return (
     <div className="fixed top-20 right-0 md:top-[153px] lg:top-32 z-10">
