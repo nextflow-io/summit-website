@@ -19,7 +19,7 @@ function getRandomNumber(min, max) {
 const Image = ({ src, index }) => {
   return (
     <div
-      className={`max-w-[600px] basis-[220px] h-[200px] grow m-4 rounded-sm overflow-hidden relative`}
+      className={`max-w-[600px] basis-[220px] h-[250px] grow m-4 rounded-sm overflow-hidden relative`}
       style={{ minWidth: getMinWidth(index) }}
       key={index}
     >
