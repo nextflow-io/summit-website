@@ -33,7 +33,6 @@ const navItems = [
   {
     title: 'Gallery',
     path: '/gallery/',
-    barcelonaOnly: true,
   },
   {
     title: 'Call for abstracts',
