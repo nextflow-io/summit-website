@@ -90,6 +90,15 @@ const Header = ({ location, hideNav }) => {
   return (
     <>
       <header className="bg-black fixed z-40 inset-x-0 top-0 fixed">
+        <div className="w-full h-12 flex items-center text-white bg-white/10 border-b border-white/20">
+          <div className="container-lg hidden lg:block">
+            You are viewing the archived website of the Nextflow Summit 2023, see &nbsp;
+            <Link to="https://summit.nextflow.io">https://summit.nextflow.io</Link>&nbsp; for the latest event.
+          </div>
+          <div className="container-lg lg:hidden">
+            Archived site. See the &nbsp;<Link to="https://summit.nextflow.io">latest event</Link>.
+          </div>
+        </div>
         <div className="container-lg flex flex-wap items-center justify-between w-full h-16 md:h-24 whitespace-nowrap">
           <Link to={resolveRootPath()} noBorder className="block flex-auto">
             <img src={Logo} className="h-[83px] w-[166px]" style={{ marginRight: '100%' }} alt="" />

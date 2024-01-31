@@ -1,4 +1,5 @@
-const siteUrl = `https://summit.nextflow.io/`;
+const siteUrl = `https://summit.nextflow.io/2023/`;
+const pathPrefix = `/2022`;
 const path = require('path');
 
 module.exports = {
@@ -9,6 +10,7 @@ module.exports = {
     siteUrl: siteUrl,
     image: `/images/share-image.jpg`,
   },
+  pathPrefix: pathPrefix,
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
