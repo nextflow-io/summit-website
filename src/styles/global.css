@@ -1,0 +1,7 @@
+html,
+body {
+  background-color: var(--color-brand) !important;
+}
+body {
+  min-height: 100vh;
+}
