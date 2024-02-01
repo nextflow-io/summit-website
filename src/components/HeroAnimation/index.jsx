@@ -9,14 +9,14 @@ const HeroAnimation = ({ variant }) => {
         style={{
           backgroundPosition: 'center center',
           backgroundSize: '96px 96px',
-          backgroundImage: `url(${(variant === 'red') ? CircleRedVisualSrc : CircleVisualSrc})`
+          backgroundImage: `url(${variant === 'red' ? CircleRedVisualSrc : CircleVisualSrc})`,
         }}
-        className="absolute h-full w-[calc(100%_+_96px)] animate-flow"
+        className="absolute h-full w-[calc(100%_+_144px)] animate-flow"
       />
       <div
         className="absolute inset-0"
         style={{
-          background: "radial-gradient(calc(96px * 2.5) at calc(50% + 96px * 3), transparent 70%, rgba(0,0,0,0.75))",
+          background: 'radial-gradient(calc(96px * 2.5) at calc(50% + 96px * 3), transparent 70%, rgba(0,0,0,0.75))',
         }}
       />
     </div>

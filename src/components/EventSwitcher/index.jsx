@@ -12,7 +12,7 @@ const EventSwitcher = ({ className, loc }) => {
   if (loc?.pathname === '/subscribe-2024/') return null;
 
   return (
-    <div className="fixed top-20 right-0 md:top-[153px] lg:top-32 z-10">
+    <div className="fixed top-[130px] right-0 md:top-[160px] z-10">
       <div
         className={classnames(
           'typo-display3 inline-flex items-center bg-gradient-to-r from-blue-600 to-red-300 text-black px-4 py-3 rounded-l-full',
