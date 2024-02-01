@@ -5,6 +5,9 @@ import { sanityIntegration } from "@sanity/astro";
 import { defineConfig } from "astro/config";
 
 export default defineConfig({
+  // Dirs to match Gatsby
+  publicDir: "static",
+  outDir: "public",
   integrations: [
     react(),
     tailwind(),
