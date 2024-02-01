@@ -10,7 +10,7 @@ module.exports = {
     image: `/images/share-image.jpg`,
   },
   pathPrefix: prefix,
-  assetPrefix: prefix,
+  // assetPrefix: prefix,
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
