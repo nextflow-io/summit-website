@@ -1,5 +1,5 @@
 const siteUrl = `https://summit.nextflow.io/2023/`;
-const pathPrefix = `/2022`;
+const pathPrefix = `/2023`;
 const path = require('path');
 
 module.exports = {
