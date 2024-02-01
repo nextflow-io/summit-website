@@ -1,15 +1,24 @@
+# 2023 - archive site proxy
+/2023/*       https://nextflow-summit-2023.netlify.app/2023/:splat    200!
+
+# TODO: redirect blog posts etc to /2023/
+
+#
+# Old redirects 
+#
+
 # 2023 - Harshil talk title change
-/boston/agenda/summit/nov-30-tower-cli/    /boston/agenda/summit/nov-30-automation-seqera-platform/    301
+/boston/agenda/summit/nov-30-tower-cli/    /2023/boston/agenda/summit/nov-30-automation-seqera-platform/    301
 
 # /barcelona/ namespace addition
-/agenda/*    /barcelona/agenda/:splat    301
-/speakers/*    /barcelona/speakers/:splat    301
-/sponsors/*    /barcelona/sponsors/:splat    301
-/travel/*    /barcelona/travel/:splat    301
-/call-for-abstracts/*    /barcelona/call-for-abstracts/:splat    301
-/past-events/*    /barcelona/past-events/:splat    301
-/register/*    /barcelona/register/:splat    301
-/purchase/*    /barcelona/purchase/:splat    301
+/agenda/*    /2023/barcelona/agenda/:splat    301
+/speakers/*    /2023/barcelona/speakers/:splat    301
+/sponsors/*    /2023/barcelona/sponsors/:splat    301
+/travel/*    /2023/barcelona/travel/:splat    301
+/call-for-abstracts/*    /2023/barcelona/call-for-abstracts/:splat    301
+/past-events/*    /2023/barcelona/past-events/:splat    301
+/register/*    /2023/barcelona/register/:splat    301
+/purchase/*    /2023/barcelona/purchase/:splat    301
 
 # 2023 - pre-registration sign up
 /summit-2023-preregistration/    /barcelona/register/    301
