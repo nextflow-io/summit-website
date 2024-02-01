@@ -9,8 +9,8 @@ export default defineConfig({
     react(),
     tailwind(),
     sanityIntegration({
-      projectId: "ir5d5hbg",
-      dataset: "production",
+      projectId: "o2y1bt2g",
+      dataset: "summit",
       useCdn: false,
     }),
   ],
