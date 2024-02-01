@@ -1,0 +1,19 @@
+---
+import Layout from "../../components/Layout.astro";
+import blogs from "../../data/blogs.ts";
+
+export async function getStaticPaths() {
+  return blogs.map((blog) => {
+    return {
+      params: { blog: blog.slug.current },
+      props: { blog },
+    };
+  });
+}
+
+const { blog } = Astro.props;
+---
+
+<Layout title={blog.title}>
+  <h1>{blog.title}</h1>
+</Layout>

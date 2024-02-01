@@ -1,0 +1,16 @@
+---
+import speakers from "../../data/speakers.ts";
+import Layout from "../../components/Layout.astro";
+---
+
+<Layout title="Speakers">
+  <h1>Speakers</h1>
+  {
+    speakers.map((speaker) => (
+      <a href={`/speakers/${speaker.slug}`}>
+        <img src={speaker.profilePicture} />
+        <h2 set:html={`${speaker.firstName} ${speaker.lastName}`} />
+      </a>
+    ))
+  }
+</Layout>

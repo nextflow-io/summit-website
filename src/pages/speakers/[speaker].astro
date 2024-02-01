@@ -1,0 +1,16 @@
+---
+import speakers from "../../data/speakers.ts";
+
+export async function getStaticPaths() {
+  return speakers.map((speaker) => {
+    return {
+      params: { speaker: speaker.slug },
+      props: { speaker },
+    };
+  });
+}
+
+const { speaker } = Astro.props;
+---
+
+<h1>{speaker.fullName}</h1>

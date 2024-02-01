@@ -1,0 +1,16 @@
+---
+// We can hook up sanity.io here
+import Layout from "../../components/Layout.astro";
+import blogs from "../../data/blogs.ts";
+---
+
+<Layout title="Speakers">
+  <h1>Blog</h1>
+  {
+    blogs.map((post) => (
+      <a href={`/blog/${post.slug}`}>
+        <h2 set:html={post.title} />
+      </a>
+    ))
+  }
+</Layout>
