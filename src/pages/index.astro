@@ -1,20 +1,8 @@
 ---
 import Layout from "../layout/Base.astro";
-import speakers from "../data/speakers.js";
+import EventSelector from "../modules/EventSelector/index.astro";
 ---
 
 <Layout title="Home">
-  <h1 class="text-5xl mb-8">Summit 2024</h1>
-  <h2 class="text-xl mb-2">Speakers</h2>
-  <ul>
-    {
-      speakers.map((speaker) => (
-        <li>
-          <a class="block p-2" href={`/speakers/${speaker.slug}`}>
-            {speaker.fullName}
-          </a>
-        </li>
-      ))
-    }
-  </ul>
+  <EventSelector />
 </Layout>

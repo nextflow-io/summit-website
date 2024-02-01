@@ -1,0 +1,17 @@
+---
+import logo from "./logo.svg";
+import Card from "./Card.astro";
+---
+
+<div class="mx-auto max-w-[1008px]">
+  <div class="flex flex-wrap justify-center text-center">
+    <div class="w-full">
+      <img src={logo.src} class="w-full max-w-[474px] mx-auto" />
+    </div>
+    <div class="w-full font-display text-6xl font-semibold">
+      Get ready for SUMMIT events in 2024, in Boston and Barcelona!
+    </div>
+    <Card location="Boston" />
+    <Card location="Barcelona" />
+  </div>
+</div>
