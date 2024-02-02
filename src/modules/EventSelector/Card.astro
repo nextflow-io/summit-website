@@ -1,5 +1,29 @@
 ---
-
+const { location } = Astro.props;
+import title_boston from "./title_boston.svg";
+import title_barcelona from "./title_barcelona.svg";
+import photo_boston from "./boston.png";
+import photo_barcelona from "./barcelona.png";
+const photo = location === "barcelona" ? photo_barcelona : photo_boston;
+const title = location === "barcelona" ? title_barcelona : title_boston;
+const subtitle = location === "barcelona" ? "In person | Online" : "In person";
 ---
 
-<div class="w-full max-w-[384px] min-h-[200px] bg-brand-1000"></div>
+<div
+  class="w-full max-w-[384px] min-h-[200px] bg-brand-1000 mx-4 rounded-xl text-center"
+>
+  <img src={photo.src} class="mb-8" />
+  <img src={title.src} class="inline-block" />
+  <div class="text-lg py-8 font-semibold">
+    <div class="uppercase">{subtitle}</div>
+    <div class="mt-3">
+      {
+        location === "boston" ? (
+          <div>May 14-17, 2024</div>
+        ) : (
+          <div class="text-wave uppercase font-semibold">Coming soon</div>
+        )
+      }
+    </div>
+  </div>
+</div>
