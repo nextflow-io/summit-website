@@ -1,0 +1,21 @@
+.card {
+  position: relative;
+  background: var(--color-brand);
+  & > img {
+    width: 100%;
+    object-fit: cover;
+  }
+  & > div {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    padding: 36px;
+    & h4 {
+      font-size: 28px;
+      font-family: Degular;
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+    align-items: end;
+  }
+}
