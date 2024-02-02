@@ -1,10 +1,10 @@
 .container {
-  padding: 100px 0;
   background-image: url("./images/bg_1b.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   & > div {
+    padding: 100px 0;
     background-image: url("./images/overlay_1e.png");
-    background-size: 90px;
+    background-size: 140px;
   }
 }

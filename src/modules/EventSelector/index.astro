@@ -2,9 +2,13 @@
 import logo from "./logo.svg";
 import Card from "./Card.astro";
 import Section from "../../components/Section/index.astro";
+import CallForAbstracts from "../../components/CallForAbstracts";
 ---
 
 <Section>
+  <div class="py-8">
+    <CallForAbstracts client:load />
+  </div>
   <div class="mx-auto max-w-[1008px]">
     <div class="flex flex-wrap justify-center text-center">
       <div class="w-full">

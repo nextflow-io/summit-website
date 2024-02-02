@@ -1,15 +1,12 @@
 ---
 import Layout from "../layout/Base.astro";
 import EventSelector from "../modules/EventSelector/index.astro";
-import Marquee from "../components/Marquee";
-import call_for_abstracts from "../images/call_for_abstracts.svg";
+import SponsoredBy from "../components/SponsoredBy";
+import NextflowNumbers from "../components/NextflowNumbers";
 ---
 
 <Layout title="Home">
-  <Marquee client:load>
-    <img src={call_for_abstracts.src} />
-    <img src={call_for_abstracts.src} />
-    <img src={call_for_abstracts.src} />
-  </Marquee>
   <EventSelector />
+  <SponsoredBy />
+  <NextflowNumbers client:load className="py-20" />
 </Layout>
