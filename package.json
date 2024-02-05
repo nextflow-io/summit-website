@@ -15,6 +15,7 @@
   "dependencies": {
     "@astrojs/react": "^3.0.9",
     "@astrojs/tailwind": "^5.1.0",
+    "@csstools/postcss-global-data": "^2.1.1",
     "@sanity/astro": "^2.2.0",
     "@sanity/client": "^6.11.2",
     "@splidejs/react-splide": "^0.7.12",
@@ -22,6 +23,7 @@
     "@types/react-dom": "^18.2.18",
     "astro": "^4.2.4",
     "autoprefixer": "^10.4.17",
+    "postcss-custom-media": "^10.0.2",
     "react": "^18.2.0",
     "react-countup": "^6.5.0",
     "react-dom": "^18.2.0",

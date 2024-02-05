@@ -1,18 +1,27 @@
-const defaultTheme = require("tailwindcss/defaultTheme");
+const space = 4;
+
+const getSpace = (increment) => `${increment * space}px`;
 
 const getSpacing = () => {
-  const space = 4;
   const increments = 112;
   const values = [];
   for (let i = 1; i < increments; i++) {
-    values.push({ [i]: `${i * space}px` });
+    values.push({ [i]: getSpace(i) });
   }
   return values.reduce((acc, curr) => ({ ...acc, ...curr }), {});
+};
+
+const screens = {
+  sm: "640px",
+  md: "768px",
+  lg: "1024px",
+  xl: "1280px",
 };
 
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
+    screens,
     fontFamily: {
       display: ["Degular", "Helvetica", "sans-serif"],
       body: ["Inter", "Helvetica", "sans-serif"],
@@ -196,6 +205,15 @@ export default {
         header: 100,
         sidebar: 150,
       },
+      container: {
+        center: true,
+        screens: {
+          sm: "1240px",
+          md: "1240px",
+          lg: "1240px",
+          xl: "1240px",
+        },
+      },
     },
   },
   plugins: [
@@ -216,8 +234,14 @@ export default {
         }, {});
       }
 
+      const customVars = extractColorVars(theme("colors"));
+
+      Object.entries(screens).forEach(([key, value]) => {
+        customVars[`--${key}`] = value;
+      });
+
       addBase({
-        ":root": extractColorVars(theme("colors")),
+        ":root": customVars,
       });
     },
   ],

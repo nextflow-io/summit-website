@@ -7,7 +7,7 @@
     background: transparent;
   }
 }
-@media (min-width: 600px) {
+@media (--sm) {
   .container {
     grid-template-columns: repeat(3, 1fr);
     > div:last-child {
@@ -15,7 +15,7 @@
     }
   }
 }
-@media (min-width: 800px) {
+@media (--md) {
   .container {
     grid-template-columns: repeat(5, 1fr);
     > div:last-child {
