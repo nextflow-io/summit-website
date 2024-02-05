@@ -1,4 +1,5 @@
-.blob {
+.blob,
+.blob2 {
   z-index: 0;
   width: 100%;
   height: 100%;
@@ -13,4 +14,40 @@
   bottom: -50px;
   left: -50px;
   opacity: 0.8;
+  animation: moveBlob 7s linear infinite;
+  transform: translate(0, 0);
+}
+
+.blob2 {
+  min-height: 10em;
+  min-width: 10em;
+  max-height: 20vw;
+  max-width: 20vw;
+  filter: blur(100px);
+  animation: moveBlob2 4s linear infinite;
+  opacity: 0.9;
+}
+
+@keyframes moveBlob {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(150px, -150px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes moveBlob2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(50px, 100px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }
