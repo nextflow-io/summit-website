@@ -50,8 +50,8 @@ const Numbers = ({ className }) => {
   const [ready, setReady] = useState(false);
   return (
     <LazyLoader onView={setReady}>
-      <section className={classNames("px-4", className)}>
-        <div className="container-lg">
+      <section className={classNames(className)}>
+        <div className="container">
           <div className="flex flex-wrap">
             <div className="w-full lg:w-1/3 lg:pr-8">
               <h3 className="text-5xl font-display font-medium text-center lg:text-left mb-12 px-4 lg:px-0 lg:mb-4">

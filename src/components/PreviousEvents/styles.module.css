@@ -15,7 +15,27 @@
       font-family: Degular;
       font-weight: 500;
       margin-bottom: 16px;
+      display: block;
+      max-width: 200px;
     }
     align-items: end;
+  }
+}
+.nav {
+  line-height: 0;
+  & button {
+    background: transparent;
+    background-image: url("./nav-left.svg");
+    background-repeat: no-repeat;
+    line-height: 0;
+    padding: 0;
+    border: none;
+    display: inline-block;
+    height: 33px;
+    width: 32px;
+    &:last-child {
+      background-image: url("./nav-right.svg");
+      margin-left: 10px;
+    }
   }
 }

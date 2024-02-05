@@ -20,13 +20,7 @@ type Props = {
 };
 
 const SponsoredBy = ({ alt, className }: Props) => (
-  <div
-    className={classNames(
-      "text-white",
-      { "px-4 py-8 sm:px-6": !alt },
-      className,
-    )}
-  >
+  <section className={classNames("py-8", className)}>
     {!alt && (
       <h2 className="typo-h6 mb-2 uppercase text-center">Sponsored by</h2>
     )}
@@ -63,7 +57,7 @@ const SponsoredBy = ({ alt, className }: Props) => (
         <img src={LogoSeqera.src} className="h-10" alt="Seqera" />
       </Sponsor>
     </div>
-  </div>
+  </section>
 );
 
 export default SponsoredBy;
