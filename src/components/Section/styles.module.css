@@ -2,7 +2,11 @@
   background-image: url("./images/bg_1b.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  & > div {
+  position: relative;
+  overflow: hidden;
+  & .content {
+    position: relative;
+    z-index: 2;
     padding: 100px 0;
     background-image: url("./images/overlay_1e.png");
     background-size: 140px;

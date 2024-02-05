@@ -1,11 +1,11 @@
 ---
-import bg_1a from "./images/bg_1a.jpg";
-import overlay_1a from "./images/overlay_1a.png";
-import Styles from "./styles.module.css";
+import styles from "./styles.module.css";
+import Blob from "@components/Blob";
 ---
 
-<section class={Styles.container}>
-  <div>
+<section class={styles.container}>
+  <div class={styles.content}>
     <slot />
   </div>
+  <Blob />
 </section>
