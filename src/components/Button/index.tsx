@@ -30,7 +30,7 @@ const Button: React.FC<Props> = ({
   className,
   ...attributes
 }) => {
-  const cn = classNames(styles.button, className, {
+  const cn = classNames("button", styles.button, className, {
     [styles.small]: attributes.small,
     [styles.wide]: attributes.wide,
     [styles.wider]: attributes.wider,

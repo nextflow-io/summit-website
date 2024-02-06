@@ -1,0 +1,15 @@
+.header {
+  & nav {
+    & ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+    }
+  }
+  & a:not(:global(.button)) {
+    display: block;
+    padding: 6px 18px;
+    line-height: 1;
+    font-weight: 300;
+  }
+}
