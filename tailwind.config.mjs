@@ -31,7 +31,7 @@ export default {
       xs: ["12px", "18px"],
       sm: ["14px", "21px"],
       base: ["16px", "24px"],
-      lg: ["18px", "26px"],
+      lg: ["20px", "26px"],
       xl: ["24px", "32px"],
       "2xl": ["28px", "1"],
       "3xl": ["32px", "1"],
@@ -238,6 +238,10 @@ export default {
 
       Object.entries(screens).forEach(([key, value]) => {
         customVars[`--${key}`] = value;
+      });
+
+      Object.keys(theme("fontSize")).forEach((key) => {
+        customVars[`--size-${key}`] = theme("fontSize")[key][0];
       });
 
       addBase({

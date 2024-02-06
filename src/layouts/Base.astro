@@ -1,9 +1,12 @@
 ---
 const { title } = Astro.props;
 import "../styles/main.css";
+import "../styles/typography.css";
+import "../styles/forms.css";
 import "../styles/fonts/degular/main.css";
 import "../styles/fonts/inter/main.css";
 import Header from "./Header/index.astro";
+import Footer from "./Footer";
 ---
 
 <html lang="en">
@@ -18,5 +21,6 @@ import Header from "./Header/index.astro";
     <main>
       <slot />
     </main>
+    <Footer />
   </body>
 </html>

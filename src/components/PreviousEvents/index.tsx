@@ -27,9 +27,7 @@ const PreviousEvents = () => {
   return (
     <div className="pb-32">
       <div className="container">
-        <h3 className="text-5xl font-display font-semibold mt-24 mb-16">
-          See our past events
-        </h3>
+        <h3 className="h0 mt-24 mb-16">See our past events</h3>
         <Swiper
           ref={sliderRef}
           breakpoints={{

@@ -1,0 +1,37 @@
+.h00,
+.h0,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
+  font-family: Degular, sans-serif;
+  font-weight: 600;
+}
+.h00 {
+  font-size: var(--size-6xl);
+}
+.h0 {
+  font-size: var(--size-5xl);
+}
+.h1 {
+  font-size: var(--size-4xl);
+}
+.h2 {
+  font-size: var(--size-3xl);
+}
+.h3 {
+  font-size: var(--size-2xl);
+}
+.h4 {
+  font-size: var(--size-xl);
+}
+.h5 {
+  font-size: var(--size-md);
+}
+.blockquote {
+  font-size: var(--size-lg);
+  line-height: 1.6;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+}

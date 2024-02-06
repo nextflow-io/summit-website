@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import classNames from "classnames";
 
 import styles from "./styles.module.css";
 
@@ -14,11 +15,9 @@ type Props = {
   title?: string;
   formId: string;
   gtmEventId?: string;
-  shadow?: boolean;
   linkedInEventID: number;
   onLoad?: () => void;
-  alt?: boolean;
-  alt2?: boolean;
+  className?: string;
 };
 
 const HubspotEmbedForm: React.FC<Props> = ({
@@ -27,6 +26,7 @@ const HubspotEmbedForm: React.FC<Props> = ({
   gtmEventId,
   linkedInEventID,
   onLoad,
+  className,
 }) => {
   const [loaded, setLoaded] = useState(false);
 
@@ -65,7 +65,7 @@ const HubspotEmbedForm: React.FC<Props> = ({
   }, [loaded]);
 
   return (
-    <div className={styles.form}>
+    <div className={classNames(styles.form, className)}>
       {title && <p className="typo-intro mb-4">{title}</p>}
       <div id={`hsForm-${formId}`}></div>
     </div>

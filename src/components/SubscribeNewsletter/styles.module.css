@@ -1,0 +1,21 @@
+.form {
+  margin: 0 auto;
+  max-width: 500px;
+  & form {
+    display: flex;
+    flex-wrap: wrap;
+    & :global(.hs-richtext.hs-main-font-element) {
+      display: none;
+    }
+    & :global(.hs-form-field),
+    & :global(.hs_submit) {
+      flex: 1 1 auto;
+      padding: 6px;
+      & input {
+        width: 100%;
+      }
+    }
+  }
+  & input {
+  }
+}
