@@ -13,17 +13,20 @@
     overflow: hidden;
     @apply mx-2 md:mx-4;
     width: 70vw;
+    position: relative;
     & img {
-      object-fit: cover;
-      height: 100%;
-      width: 100%;
+      visibility: hidden;
+      pointer-events: none;
+      position: absolute;
+      max-width: none;
+      height: unset;
     }
   }
   @media (--md) {
     margin: 0 -10vw 0 -20vw;
   }
 }
-.container {
+/* .container {
   position: relative;
   height: 800px;
   width: 600px;
@@ -42,4 +45,4 @@
       height: unset;
     }
   }
-}
+} */

@@ -12,7 +12,6 @@ export default class Sketch {
     this.scene = new THREE.Scene();
 
     this.container = element;
-    console.log(this.container);
     this.img = this.container.querySelector("img");
     this.width = this.container.offsetWidth;
     this.height = this.container.offsetHeight;
@@ -64,63 +63,10 @@ export default class Sketch {
     };
 
     this.addObjects();
-    this.resize();
-    this.render();
-    this.setupResize();
-
-    this.mouseEvents();
   }
 
   getValue(val) {
     return parseFloat(this.container.getAttribute("data-" + val));
-  }
-
-  mouseEvents() {
-    window.addEventListener("mousemove", (e) => {
-      this.mouse.x = e.clientX / this.width;
-      this.mouse.y = e.clientY / this.height;
-
-      // console.log(this.mouse.x,this.mouse.y)
-
-      this.mouse.vX = this.mouse.x - this.mouse.prevX;
-      this.mouse.vY = this.mouse.y - this.mouse.prevY;
-
-      this.mouse.prevX = this.mouse.x;
-      this.mouse.prevY = this.mouse.y;
-
-      // console.log(this.mouse.vX,'vx')
-    });
-  }
-
-  setupResize() {
-    window.addEventListener("resize", this.resize.bind(this));
-  }
-
-  resize() {
-    this.width = this.container.offsetWidth;
-    this.height = this.container.offsetHeight;
-    this.renderer.setSize(this.width, this.height);
-    this.camera.aspect = this.width / this.height;
-
-    // image cover
-    this.imageAspect = 1 / 1.5;
-    let a1;
-    let a2;
-    if (this.height / this.width > this.imageAspect) {
-      a1 = (this.width / this.height) * this.imageAspect;
-      a2 = 1;
-    } else {
-      a1 = 1;
-      a2 = this.height / this.width / this.imageAspect;
-    }
-
-    this.material.uniforms.resolution.value.x = this.width;
-    this.material.uniforms.resolution.value.y = this.height;
-    this.material.uniforms.resolution.value.z = a1;
-    this.material.uniforms.resolution.value.w = a2;
-
-    this.camera.updateProjectionMatrix();
-    this.regenerateGrid();
   }
 
   regenerateGrid() {
@@ -245,14 +191,75 @@ export default class Sketch {
     this.renderer.render(this.scene, this.camera);
   }
 
-  dispose() {
+  mouseMove = (e) => {
+    this.mouse.x = e.clientX / this.width;
+    this.mouse.y = e.clientY / this.height;
+
+    // console.log(this.height, this.width);
+
+    this.mouse.vX = this.mouse.x - this.mouse.prevX;
+    this.mouse.vY = this.mouse.y - this.mouse.prevY;
+
+    this.mouse.prevX = this.mouse.x;
+    this.mouse.prevY = this.mouse.y;
+  };
+
+  resize = () => {
+    this.width = this.container.offsetWidth;
+    this.height = this.container.offsetHeight;
+    this.renderer.setSize(this.width, this.height);
+    this.camera.aspect = this.width / this.height;
+
+    // image cover
+    this.imageAspect = 1 / 1.5;
+    let a1;
+    let a2;
+    if (this.height / this.width > this.imageAspect) {
+      a1 = (this.width / this.height) * this.imageAspect;
+      a2 = 1;
+    } else {
+      a1 = 1;
+      a2 = this.height / this.width / this.imageAspect;
+    }
+
+    this.material.uniforms.resolution.value.x = this.width;
+    this.material.uniforms.resolution.value.y = this.height;
+    this.material.uniforms.resolution.value.z = a1;
+    this.material.uniforms.resolution.value.w = a2;
+
+    this.camera.updateProjectionMatrix();
+    this.regenerateGrid();
+  };
+
+  setupMouse = () => {
+    window.addEventListener("mousemove", this.mouseMove);
+  };
+
+  setupResize = () => {
+    this.resize();
+    window.addEventListener("resize", this.resize);
+  };
+
+  removeMouse = () => {
+    window.removeEventListener("mousemove", this.mouseMove);
+  };
+
+  removeResize = () => {
+    window.removeEventListener("resize", this.resize);
+  };
+
+  start = () => {
+    this.isPlaying = true;
+    this.setupResize();
+    this.setupMouse();
+    this.render();
+  };
+
+  stop = () => {
+    console.log(">> stop");
+    this.isPlaying = false;
+    this.removeResize();
+    this.removeMouse();
     gl.dispose();
-  }
-
-  // TODO: add start/stop methods
-  // TODO: add/remove event listeners
+  };
 }
-
-// new Sketch({
-//   dom: document.getElementById("canvasContainer"),
-// });

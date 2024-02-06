@@ -1,0 +1,12 @@
+.container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  & img {
+    visibility: hidden;
+    pointer-events: none;
+    position: absolute;
+    max-width: none;
+    height: unset;
+  }
+}
