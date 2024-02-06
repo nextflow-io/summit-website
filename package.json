@@ -21,6 +21,7 @@
     "@splidejs/react-splide": "^0.7.12",
     "@types/react": "^18.2.51",
     "@types/react-dom": "^18.2.18",
+    "@uidotdev/usehooks": "^2.4.1",
     "astro": "^4.2.4",
     "autoprefixer": "^10.4.17",
     "postcss-custom-media": "^10.0.2",

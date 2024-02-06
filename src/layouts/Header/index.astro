@@ -1,0 +1,47 @@
+---
+import logo from "./logo.svg";
+import styles from "./styles.module.css";
+import NavMobile from "./NavMobile";
+import Button from "@components/Button";
+---
+
+<header
+  class:list={[
+    "h-[104px] container flex items-center justify-between",
+    styles.header,
+  ]}
+>
+  <a class={styles.logo} href="/">
+    <img src={logo.src} />
+  </a>
+  <nav class="hidden lg:block">
+    <ul>
+      <li>
+        <a href="/agenda">Agenda</a>
+      </li>
+      <li>
+        <a href="/travel">Travel</a>
+      </li>
+      <li>
+        <a href="/speakers">Speakers</a>
+      </li>
+      <li>
+        <a href="/sponsors">Sponsors</a>
+      </li>
+      <li>
+        <a href="/past-events">Past events</a>
+      </li>
+    </ul>
+  </nav>
+  <nav class="hidden lg:block">
+    <ul>
+      <li>
+        <a href="/call-for-abstracts">Call for abstracts</a>
+      </li>
+      <li>
+        <Button href="/register" arrow white>Pre-register</Button>
+      </li>
+    </ul>
+  </nav>
+  <NavMobile client:only="react" />
+</header>

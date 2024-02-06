@@ -1,10 +1,11 @@
 ---
 import styles from "./styles.module.css";
 import Blob from "@components/Blob";
+const { className } = Astro.props;
 ---
 
 <section class={styles.container}>
-  <div class={styles.content}>
+  <div class:list={[styles.content, className]}>
     <slot />
   </div>
   <Blob />
