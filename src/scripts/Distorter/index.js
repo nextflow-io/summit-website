@@ -1,4 +1,5 @@
 import * as THREE from "three";
+import { gl } from "./core/WebGL";
 import fragment from "./shader/fragment.glsl";
 import vertex from "./shader/vertex.glsl";
 
@@ -7,10 +8,11 @@ function clamp(number, min, max) {
 }
 
 export default class Sketch {
-  constructor(options) {
+  constructor(element) {
     this.scene = new THREE.Scene();
 
-    this.container = options.dom;
+    this.container = element;
+    console.log(this.container);
     this.img = this.container.querySelector("img");
     this.width = this.container.offsetWidth;
     this.height = this.container.offsetHeight;
@@ -239,8 +241,12 @@ export default class Sketch {
     this.time += 0.05;
     this.updateDataTexture();
     this.material.uniforms.time.value = this.time;
-    requestAnimationFrame(this.render.bind(this));
+    gl.requestAnimationFrame(this.render.bind(this));
     this.renderer.render(this.scene, this.camera);
+  }
+
+  dispose() {
+    gl.dispose();
   }
 
   // TODO: add start/stop methods
