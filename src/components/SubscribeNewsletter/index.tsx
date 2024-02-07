@@ -14,9 +14,9 @@ const SubscribeNewsletter: React.FC<Props> = () => {
       </div>
       <HubspotForm
         className={styles.form}
-        formId="bdbc8164-e187-4707-a2eb-d199d0e4da73"
+        formID="bdbc8164-e187-4707-a2eb-d199d0e4da73"
         linkedInEventID={13682684}
-        gtmEventId="gtm_newsletter"
+        gtmEventID="gtm_newsletter"
       />
     </section>
   );

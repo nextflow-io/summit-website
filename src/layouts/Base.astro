@@ -1,5 +1,5 @@
 ---
-const { title } = Astro.props;
+const { title, redirect, namespace } = Astro.props;
 import "../styles/main.css";
 import "../styles/typography.css";
 import "../styles/forms.css";
@@ -7,17 +7,19 @@ import "../styles/fonts/degular/main.css";
 import "../styles/fonts/inter/main.css";
 import Header from "./Header/index.astro";
 import Footer from "./Footer";
+const siteTitle = "Nextflow SUMMIT 2024";
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title} | Nextflow SUMMIT 2024</title>
+    <title>{title ? `${title} | ${siteTitle}` : siteTitle}</title>
     <link rel="icon" href="/favicon.png" type="image/png" />
+    {redirect && <meta http-equiv="refresh" content={`0;url=${redirect}`} />}
   </head>
   <body>
-    <Header />
+    <Header namespace={namespace} />
     <main>
       <slot />
     </main>

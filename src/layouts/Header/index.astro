@@ -1,8 +1,14 @@
 ---
+const { namespace } = Astro.props;
 import logo from "./logo.svg";
 import styles from "./styles.module.css";
 import NavMobile from "./NavMobile";
 import Button from "@components/Button";
+
+function url(path) {
+  if (!namespace) return path;
+  return `/${namespace}${path}`;
+}
 ---
 
 <header
@@ -17,29 +23,29 @@ import Button from "@components/Button";
   <nav class="hidden lg:block">
     <ul>
       <li>
-        <a href="/agenda">Agenda</a>
+        <a href={url("/agenda")}>Agenda</a>
       </li>
       <li>
-        <a href="/travel">Travel</a>
+        <a href={url("/travel")}>Travel</a>
       </li>
       <li>
-        <a href="/speakers">Speakers</a>
+        <a href={url("/speakers")}>Speakers</a>
       </li>
       <li>
-        <a href="/sponsors">Sponsors</a>
+        <a href={url("/sponsors")}>Sponsors</a>
       </li>
       <li>
-        <a href="/past-events">Past events</a>
+        <a href={url("/past-events")}>Past events</a>
       </li>
     </ul>
   </nav>
   <nav class="hidden lg:block">
     <ul>
       <li>
-        <a href="/call-for-abstracts">Call for abstracts</a>
+        <a href={url("/call-for-abstracts/")}>Call for abstracts</a>
       </li>
       <li>
-        <Button href="/register" arrow white>Pre-register</Button>
+        <Button href={url("/register")} arrow white>Pre-register</Button>
       </li>
     </ul>
   </nav>

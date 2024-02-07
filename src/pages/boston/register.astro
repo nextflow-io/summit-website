@@ -1,0 +1,14 @@
+---
+import HubspotForm from "@components/HubspotForm";
+import Layout from "@layouts/Base.astro";
+---
+
+<Layout title="Travel" namespace="boston">
+  <div class="container">
+    <h2 class="text-xl mb-2">Register</h2>
+    <HubspotForm
+      formID="e2a41df7-342e-4667-88f1-bb57656261a8"
+      client:only="react"
+    />
+  </div>
+</Layout>

@@ -13,17 +13,17 @@ declare global {
 
 type Props = {
   title?: string;
-  formId: string;
-  gtmEventId?: string;
-  linkedInEventID: number;
+  formID: string;
+  gtmEventID?: string;
+  linkedInEventID?: number;
   onLoad?: () => void;
   className?: string;
 };
 
-const HubspotEmbedForm: React.FC<Props> = ({
+const HubspotForm: React.FC<Props> = ({
   title,
-  formId,
-  gtmEventId,
+  formID,
+  gtmEventID,
   linkedInEventID,
   onLoad,
   className,
@@ -53,13 +53,16 @@ const HubspotEmbedForm: React.FC<Props> = ({
     if (!loaded) return;
     if (!window.hbspt) return;
     window.hbspt?.forms.create({
-      target: `#hsForm-${formId}`,
+      target: `#hsForm-${formID}`,
       region: "na1",
       portalId: "6705631",
-      formId,
+      formId: formID,
       onFormSubmitted() {
-        window.lintrk("track", { conversion_id: linkedInEventID });
-        if (gtmEventId) window.dataLayer.push({ event: gtmEventId });
+        if (linkedInEventID && !!window.lintrk)
+          window.lintrk("track", { conversion_id: linkedInEventID });
+
+        if (gtmEventID && !!window.dataLayer)
+          window.dataLayer.push({ event: gtmEventID });
       },
     });
   }, [loaded]);
@@ -67,9 +70,9 @@ const HubspotEmbedForm: React.FC<Props> = ({
   return (
     <div className={classNames(styles.form, className)}>
       {title && <p className="typo-intro mb-4">{title}</p>}
-      <div id={`hsForm-${formId}`}></div>
+      <div id={`hsForm-${formID}`}></div>
     </div>
   );
 };
 
-export default HubspotEmbedForm;
+export default HubspotForm;

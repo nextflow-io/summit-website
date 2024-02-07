@@ -4,7 +4,6 @@ import { sanityIntegration } from "@sanity/astro";
 import { defineConfig } from "astro/config";
 import glsl from "vite-plugin-glsl";
 
-// https://astro.build/config
 export default defineConfig({
   // Dirs to match Gatsby
   publicDir: "static",
@@ -20,5 +19,8 @@ export default defineConfig({
   ],
   vite: {
     plugins: [glsl()],
+  },
+  redirects: {
+    "/": "/boston",
   },
 });

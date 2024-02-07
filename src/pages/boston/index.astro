@@ -1,0 +1,18 @@
+---
+import Layout from "@layouts/Base.astro";
+import EventSelector from "@modules/EventSelector/index.astro";
+import SponsoredBy from "@components/SponsoredBy";
+import NextflowNumbers from "@components/NextflowNumbers";
+import ImageSection from "@components/ImageSection";
+import PreviousEvents from "@components/PreviousEvents";
+import SubscribeNewsletter from "@components/SubscribeNewsletter";
+---
+
+<Layout title="Home" namespace="boston">
+  <EventSelector />
+  <SponsoredBy />
+  <NextflowNumbers client:load className="py-20" />
+  <ImageSection client:load />
+  <PreviousEvents client:visible />
+  <SubscribeNewsletter client:visible />
+</Layout>
