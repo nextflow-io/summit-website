@@ -3,10 +3,12 @@
   height: 100%;
   width: 100%;
   & img {
-    visibility: hidden;
-    pointer-events: none;
-    position: absolute;
-    max-width: none;
-    height: unset;
+    width: unset !important;
+    object-fit: unset !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    position: absolute !important;
+    max-width: none !important;
+    height: unset !important;
   }
 }
