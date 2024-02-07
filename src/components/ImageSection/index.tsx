@@ -9,7 +9,7 @@ const Images = () => {
     <>
       <div className={styles.images}>
         <div>
-          <Distortion img={img1} n />
+          <Distortion img={img1} />
         </div>
         <div>
           <Distortion img={img2} />

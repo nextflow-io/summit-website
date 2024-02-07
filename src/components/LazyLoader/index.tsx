@@ -3,7 +3,7 @@ import VisibilitySensor from "react-visibility-sensor";
 
 type Props = {
   children: React.ReactNode;
-  onView: (isVisible: boolean) => void;
+  onView?: (isVisible: boolean) => void;
 };
 
 const LazyLoader: React.FC<Props> = ({ children, onView }) => {
@@ -12,9 +12,9 @@ const LazyLoader: React.FC<Props> = ({ children, onView }) => {
   return (
     <VisibilitySensor
       onChange={(isVisible) => {
+        if (!onView) return;
         isVisible && onView(true);
       }}
-      delayedCall
     >
       {children}
     </VisibilitySensor>

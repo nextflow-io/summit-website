@@ -11,8 +11,8 @@ import SubscribeNewsletter from "@components/SubscribeNewsletter";
 <Layout title="Home">
   <EventSelector />
   <SponsoredBy />
-  <NextflowNumbers client:visible className="py-20" />
-  <ImageSection client:only="react" />
+  <NextflowNumbers client:load className="py-20" />
+  <ImageSection client:load />
   <PreviousEvents client:visible />
   <SubscribeNewsletter client:visible />
 </Layout>

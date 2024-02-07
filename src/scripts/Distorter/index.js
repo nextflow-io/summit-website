@@ -1,5 +1,4 @@
 import * as THREE from "three";
-import { gl } from "./core/WebGL";
 import fragment from "./shader/fragment.glsl";
 import vertex from "./shader/vertex.glsl";
 
@@ -65,11 +64,11 @@ export default class Sketch {
     this.addObjects();
   }
 
-  getValue(val) {
+  getValue = (val) => {
     return parseFloat(this.container.getAttribute("data-" + val));
-  }
+  };
 
-  regenerateGrid() {
+  regenerateGrid = () => {
     this.size = this.settings.grid;
 
     const width = this.size;
@@ -110,9 +109,9 @@ export default class Sketch {
       this.material.uniforms.uDataTexture.value = this.texture;
       this.material.uniforms.uDataTexture.value.needsUpdate = true;
     }
-  }
+  };
 
-  addObjects() {
+  addObjects = () => {
     this.regenerateGrid();
     let texture = new THREE.Texture(this.img);
     texture.needsUpdate = true;
@@ -143,9 +142,9 @@ export default class Sketch {
 
     this.plane = new THREE.Mesh(this.geometry, this.material);
     this.scene.add(this.plane);
-  }
+  };
 
-  updateDataTexture() {
+  updateDataTexture = () => {
     let data = this.texture.image.data;
     for (let i = 0; i < data.length; i += 3) {
       data[i] *= this.settings.relaxation;
@@ -180,22 +179,22 @@ export default class Sketch {
     this.mouse.vX *= 0.9;
     this.mouse.vY *= 0.9;
     this.texture.needsUpdate = true;
-  }
+  };
 
-  render() {
+  render = () => {
     if (!this.isPlaying) return;
     this.time += 0.05;
     this.updateDataTexture();
     this.material.uniforms.time.value = this.time;
-    gl.requestAnimationFrame(this.render.bind(this));
+    requestAnimationFrame(this.render.bind(this));
     this.renderer.render(this.scene, this.camera);
-  }
+  };
 
   mouseMove = (e) => {
     this.mouse.x = e.clientX / this.width;
     this.mouse.y = e.clientY / this.height;
-
-    // console.log(this.height, this.width);
+    console.log(e.clientX, this.width);
+    console.log(this.mouse.x);
 
     this.mouse.vX = this.mouse.x - this.mouse.prevX;
     this.mouse.vY = this.mouse.y - this.mouse.prevY;
@@ -249,6 +248,7 @@ export default class Sketch {
   };
 
   start = () => {
+    console.log("start");
     this.isPlaying = true;
     this.setupResize();
     this.setupMouse();
@@ -256,10 +256,11 @@ export default class Sketch {
   };
 
   stop = () => {
-    console.log(">> stop");
+    console.log("stop");
     this.isPlaying = false;
     this.removeResize();
     this.removeMouse();
-    gl.dispose();
+    this.renderer.setAnimationLoop(null);
+    this.scene.clear();
   };
 }

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import Distorter from "../../scripts/Distorter";
 
 import styles from "./styles.module.css";
@@ -7,21 +7,25 @@ type Props = {
   img: {
     src: string;
   };
-  n?: boolean;
 };
 
-const Distortion: React.FC<Props> = ({ img, n }) => {
+const Distortion: React.FC<Props> = ({ img }) => {
   const distortion = useRef(null);
   const distortionContainer = useRef(null);
+
   useEffect(() => {
-    if (!distortionContainer.current) return;
-    distortion.current = new Distorter(distortionContainer.current);
-    if (n) distortion.current.start();
-    if (!n) setTimeout(() => distortion.current.start(), 4000);
+    const container = distortionContainer.current;
+    if (!container) return;
+    if (!distortion.current) {
+      const distortionInstance = new Distorter(container);
+      distortion.current = distortionInstance;
+    }
+    distortion.current.start();
     return function cleanup() {
       distortion.current.stop();
     };
-  }, [distortionContainer, n]);
+  }, [distortionContainer]);
+
   return (
     <div className={styles.container} ref={distortionContainer}>
       <img src={img.src} />

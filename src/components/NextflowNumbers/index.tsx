@@ -49,7 +49,7 @@ type Props = {
 const Numbers = ({ className }) => {
   const [ready, setReady] = useState(false);
   return (
-    <LazyLoader onView={setReady}>
+    <LazyLoader onView={() => setReady(true)}>
       <section className={classNames(className)}>
         <div className="container">
           <div className="flex flex-wrap">
