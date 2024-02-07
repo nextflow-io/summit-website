@@ -31,7 +31,7 @@ export default {
       xs: ["12px", "18px"],
       sm: ["14px", "21px"],
       base: ["16px", "24px"],
-      lg: ["20px", "26px"],
+      lg: ["18px", "26px"],
       xl: ["24px", "32px"],
       "2xl": ["28px", "1"],
       "3xl": ["32px", "1"],
@@ -138,6 +138,7 @@ export default {
       borderRadius: {
         sm: "4px",
         md: "8px",
+        lg: "16px",
         full: "9999px",
       },
       margin: {
@@ -242,6 +243,7 @@ export default {
 
       Object.keys(theme("fontSize")).forEach((key) => {
         customVars[`--size-${key}`] = theme("fontSize")[key][0];
+        customVars[`--leading-${key}`] = theme("fontSize")[key][1];
       });
 
       addBase({

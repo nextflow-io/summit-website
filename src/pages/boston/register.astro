@@ -1,14 +1,45 @@
 ---
 import HubspotForm from "@components/HubspotForm";
+import Section from "@components/Section/index.astro";
 import Layout from "@layouts/Base.astro";
+import { Image } from "astro:assets";
+import audience1 from "@images/audience-1.png";
+import CallForAbstracts from "@components/SectionCallForAbstracts";
+import PreviousEvents from "@components/SectionPreviousEvents";
+import Contact from "@components/SectionContact";
 ---
 
 <Layout title="Travel" namespace="boston">
-  <div class="container">
-    <h2 class="text-xl mb-2">Register</h2>
-    <HubspotForm
-      formID="e2a41df7-342e-4667-88f1-bb57656261a8"
-      client:only="react"
-    />
-  </div>
+  <Section>
+    <CallForAbstracts client:visible />
+    <div class="container island mt-10">
+      <h2 class="h000 mb-2">Interested in attending Nextflow Summit 2024?</h2>
+      <div class="blockquote mb-4">
+        <p class="mt-8 mb-4">
+          Sign up for updates to be the first to know when tickets go on sale!
+        </p>
+        <b class="font-bold">Boston | May 14-17</b>
+      </div>
+    </div>
+    <div class="container smaller mt-16">
+      <div class="flex flex-wrap -m-2 sm:-m-4">
+        <div class="w-full sm:w-1/3 md:w-1/2 p-2 sm:p-4">
+          <Image
+            src={audience1}
+            alt="Nextflow SUMMIT Audience"
+            class="object-cover h-[100px] sm:h-full rounded-lg"
+          />
+        </div>
+        <div class="w-full sm:w-2/3 md:w-1/2 p-2 sm:p-4">
+          <HubspotForm
+            className="form-style-1"
+            formID="e2a41df7-342e-4667-88f1-bb57656261a8"
+            client:only="react"
+          />
+        </div>
+      </div>
+    </div>
+  </Section>
+  <PreviousEvents client:visible />
+  <Contact />
 </Layout>

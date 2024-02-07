@@ -5,7 +5,7 @@ type Props = {};
 
 import styles from "./styles.module.css";
 
-const SubscribeNewsletter: React.FC<Props> = () => {
+const SectionSubscribe: React.FC<Props> = () => {
   return (
     <section className="container text-center pb-30">
       <h4 className="h00">Subscribe to our newsletter</h4>
@@ -22,4 +22,4 @@ const SubscribeNewsletter: React.FC<Props> = () => {
   );
 };
 
-export default SubscribeNewsletter;
+export default SectionSubscribe;

@@ -18,3 +18,46 @@ input[type="submit"] {
   color: var(--color-multiqc-300);
   font-size: 0.9em;
 }
+.form-style-1 {
+  background: var(--color-brand-1000);
+  border-radius: 16px;
+  padding: 32px;
+  & input {
+    width: 100%;
+  }
+  & input[type="submit"] {
+    background: #4256e7;
+    border-radius: 999px;
+    font-weight: 600;
+  }
+  & .hs-richtext.hs-main-font-element {
+    font-size: 11px;
+    color: var(--color-brand-500);
+    padding-top: 16px;
+  }
+  & .hs-form-field,
+  & .hs_submit {
+    padding-top: 16px;
+  }
+  & .hs-fieldtype-checkbox {
+    & .hs-field-desc {
+      font-size: 11px;
+      color: var(--color-brand-500);
+    }
+    & ul {
+      display: flex;
+      & li {
+        & label {
+          display: flex;
+          align-items: center;
+          & input {
+            margin-right: 8px;
+          }
+        }
+        &:not(:first-child) {
+          margin-left: 16px;
+        }
+      }
+    }
+  }
+}

@@ -12,7 +12,7 @@ import events from "./events.mjs";
 
 import styles from "./styles.module.css";
 
-const PreviousEvents = () => {
+const SectionPreviousEvents = () => {
   const breakpoints = Object.values(screens).map((bp) => parseInt(bp));
   const sliderRef = useRef(null);
 
@@ -71,4 +71,4 @@ const PreviousEvents = () => {
   );
 };
 
-export default PreviousEvents;
+export default SectionPreviousEvents;

@@ -19,7 +19,7 @@ type Props = {
   className?: string;
 };
 
-const SponsoredBy = ({ alt, className }: Props) => (
+const SectionSponsoredBy = ({ alt, className }: Props) => (
   <section className={classNames("py-8", className)}>
     {!alt && (
       <h2 className="typo-h6 mb-2 uppercase text-center">Sponsored by</h2>
@@ -60,4 +60,4 @@ const SponsoredBy = ({ alt, className }: Props) => (
   </section>
 );
 
-export default SponsoredBy;
+export default SectionSponsoredBy;

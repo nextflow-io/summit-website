@@ -1,3 +1,4 @@
+.h000,
 .h00,
 .h0,
 .h1,
@@ -8,30 +9,48 @@
   font-family: Degular, sans-serif;
   font-weight: 600;
 }
+.h000 {
+  font-size: var(--size-8xl);
+  line-height: var(--leading-8xl);
+  font-weight: 700;
+}
 .h00 {
   font-size: var(--size-6xl);
+  line-height: var(--leading-6xl);
+  font-weight: 700;
 }
 .h0 {
   font-size: var(--size-5xl);
+  line-height: var(--leading-5xl);
 }
 .h1 {
   font-size: var(--size-4xl);
+  line-height: var(--leading-4xl);
 }
 .h2 {
   font-size: var(--size-3xl);
+  line-height: var(--leading-3xl);
 }
 .h3 {
   font-size: var(--size-2xl);
+  line-height: var(--leading-2xl);
 }
 .h4 {
   font-size: var(--size-xl);
+  line-height: var(--leading-xl);
 }
 .h5 {
-  font-size: var(--size-md);
+  font-size: var(--size-lg);
+  line-height: var(--leading-lg);
+  font-weight: 700;
+  letter-spacing: 0.04em;
 }
 .blockquote {
   font-size: var(--size-lg);
-  line-height: 1.6;
+  line-height: var(--leading-lg);
   font-weight: 300;
   letter-spacing: 0.02em;
+}
+b {
+  font-weight: 700;
 }

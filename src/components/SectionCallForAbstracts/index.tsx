@@ -4,7 +4,7 @@ import call_for_abstracts from "./call_for_abstracts.svg";
 
 type Props = {};
 
-const CallForAbstracts: React.FC<Props> = () => {
+const SectionCallForAbstracts: React.FC<Props> = () => {
   return (
     <Marquee>
       <img src={call_for_abstracts.src} />
@@ -14,4 +14,4 @@ const CallForAbstracts: React.FC<Props> = () => {
   );
 };
 
-export default CallForAbstracts;
+export default SectionCallForAbstracts;

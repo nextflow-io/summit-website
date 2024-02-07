@@ -15,4 +15,12 @@ body {
     padding-left: 32px;
     padding-right: 32px;
   }
+  &.island {
+    width: fit-content;
+    max-width: 800px;
+    text-align: center;
+  }
+  &.smaller {
+    max-width: 1000px;
+  }
 }
