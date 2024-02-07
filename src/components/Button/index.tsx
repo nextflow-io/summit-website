@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 
 import Arrow from "./Arrow.tsx";
 import styles from "./styles.module.css";
@@ -31,7 +31,7 @@ const Button: React.FC<Props> = ({
   className,
   ...attributes
 }) => {
-  const cn = classNames("button", styles.button, className, {
+  const cn = clsx("button", styles.button, className, {
     [styles.small]: attributes.small,
     [styles.wide]: attributes.wide,
     [styles.wider]: attributes.wider,

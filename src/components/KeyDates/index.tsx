@@ -1,14 +1,7 @@
 import React from "react";
 import keyDates from "@data/keyDates";
 import tiles from "./tiles.png";
-
-const Box = ({ children }) => {
-  return (
-    <div className="bg-brand-1000 text-white text-left py-8 px-8 rounded-md text-brand h-full font-light flex flex-col min-h-[350px]">
-      <div className="flex-auto text-base">{children}</div>
-    </div>
-  );
-};
+import Box from "@components/Box";
 
 const Row = ({ children, title }) => {
   return (
@@ -21,14 +14,15 @@ const Row = ({ children, title }) => {
 
 type Props = {
   showImg?: boolean;
+  showTitle?: boolean;
 };
 
-const KeyDates: React.FC<Props> = ({ showImg = true }) => {
+const KeyDates: React.FC<Props> = ({ showImg = true, showTitle }) => {
   return (
     <Box>
       <div className="flex">
         <div className="flex-auto md:pr-8">
-          <h5 className="h3 mb-6">Key dates</h5>
+          {showTitle && <h5 className="h3 mb-6">Key dates</h5>}
           {keyDates.map((date) => (
             <Row title={date.date}>{date.title}</Row>
           ))}

@@ -1,28 +1,67 @@
 ---
+import { Image } from "astro:assets";
 import Button from "@components/Button";
 import Section from "@components/Section/index.astro";
 import Layout from "@layouts/Base.astro";
-import CallForAbstracts from "@components/SectionCallForAbstracts";
-import PreviousEvents from "@components/SectionPreviousEvents";
-import Contact from "@components/SectionContact";
+import Marquee from "@components/SectionCallForAbstracts";
+import KeyDates from "@components/KeyDates";
+import talkImg from "@images/photo-talk-1a.png";
+import Box, { SubSection } from "@components/Box";
 ---
 
 <Layout title="Travel" namespace="boston">
-  <Section style2>
-    <CallForAbstracts client:visible />
-    <div class="container island mt-10">
-      <h2 class="h000 mb-2">Interested in attending Nextflow Summit 2024?</h2>
-      <div class="blockquote mb-4">
+  <Section style2 className="pt-20">
+    <Marquee client:visible />
+    <div class="container island mt-20">
+      <h2 class="h000 mb-2">
+        The call for abstracts is open until February 29, 2024
+      </h2>
+      <div class="blockquote mb-8">
         <p class="mt-8 mb-4">
-          Sign up for updates to be the first to know when tickets go on sale!
+          Abstracts will be read and presenters notified on a rolling basis, so
+          apply soon. The final abstracts will be accepted and presenters
+          notified in March.
         </p>
       </div>
-      <Button href="/contact">Apply now</Button>
+      <Button href="/contact" white>Apply now</Button>
     </div>
-    <div class="container smaller mt-16">
-      <h3 class="h5">Key dates</h3>
+    <div class="container mt-16">
+      <h3 class="h5 text-center mb-6">Key Dates</h3>
+      <KeyDates showTitle={false} />
     </div>
   </Section>
-  <PreviousEvents client:visible />
-  <Contact className="py-8" />
+  <section class="container py-20">
+    <div class="flex flex-wrap -m-2 sm:-m-4">
+      <div class="w-full md:w-1/2 p-2 sm:p-4">
+        <Image src={talkImg} alt="Nextflow SUMMIT talk" class="object-fit" />
+      </div>
+      <div class="w-full md:w-1/2 p-2 sm:p-4">
+        <Box className="">
+          <h2 class="h2 mb-4 text-center">Talks</h2>
+          <SubSection>
+            <div class="font-bold mb-2">Where</div>
+            In person at the Nexflow SUMMIT
+          </SubSection>
+          <SubSection className="my-8">
+            <div class="font-bold mb-2">Formats</div>
+            Long-form (30 min) | Lightning (15 min)
+          </SubSection>
+          <SubSection>
+            <div class="font-bold mb-2">Themes</div>
+            <ul>
+              <li><b>Nextflow</b> - central tool, language and plugins</li>
+              <li><b>Community</b> - pipelines, applications and use cases</li>
+              <li><b>Ecosystem</b> - infrastructure and environments</li>
+              <li><b>Software</b> - containers and tool packaging</li>
+            </ul>
+          </SubSection>
+          <div class="text-center">
+            <Button href="/contact" white wide className="mt-12"
+              >Apply now</Button
+            >
+          </div>
+        </Box>
+      </div>
+    </div>
+  </section>
 </Layout>

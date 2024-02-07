@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 
 import styles from "./styles.module.css";
 
@@ -46,9 +46,9 @@ function Marquee({
   }, [speed]);
 
   return (
-    <div className={classNames(styles.container, className)}>
+    <div className={clsx(styles.container, className)}>
       <Slide
-        className={classNames(styles.slide1, { [styles.moving]: isMoving })}
+        className={clsx(styles.slide1, { [styles.moving]: isMoving })}
         style={{
           transform: `translateX(${position}%)`,
           width: width ? `${width}px` : undefined,
@@ -58,7 +58,7 @@ function Marquee({
         {children}
       </Slide>
       <Slide
-        className={classNames(styles.slide2, { [styles.moving]: isMoving })}
+        className={clsx(styles.slide2, { [styles.moving]: isMoving })}
         style={{
           transform: `translateX(${position}%)`,
           width: width ? `${width}px` : undefined,

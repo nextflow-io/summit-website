@@ -1,5 +1,5 @@
 import { useCallback, useRef } from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Button from "../Button";
 import { screens } from "../../../tailwind.config.mjs";
@@ -47,7 +47,7 @@ const SectionPreviousEvents = () => {
         >
           {events.map((event, index) => (
             <SwiperSlide key={index}>
-              <div className={classNames(styles.card)}>
+              <div className={clsx(styles.card)}>
                 <img src={event.img.src} loading="lazy" />
                 <div className="swiper-lazy-preloader"></div>
                 <div>
@@ -62,7 +62,7 @@ const SectionPreviousEvents = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-        <nav className={classNames(styles.nav, "mt-12")}>
+        <nav className={clsx(styles.nav, "mt-12")}>
           <button onClick={handlePrev} />
           <button onClick={handleNext} />
         </nav>

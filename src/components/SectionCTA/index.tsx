@@ -1,5 +1,5 @@
 import React from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 import Button from "@components/Button";
 
 type Props = {};
@@ -10,7 +10,7 @@ const SectionCTA: React.FC<Props> = () => {
   return (
     <section className={styles.section}>
       <div className="container smaller text-center py-30">
-        <div className={classNames("h0 mb-14", styles.text)}>
+        <div className={clsx("h0 mb-14", styles.text)}>
           Step into the future of data-driven science at the Nextflow Summit
           held in Boston, this May
         </div>

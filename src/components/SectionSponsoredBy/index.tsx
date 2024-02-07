@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import clsx from "clsx";
 
 import LogoAWS from "./images/aws.svg";
 import LogoMicrosoft from "./images/microsoft.svg";
@@ -20,11 +20,11 @@ type Props = {
 };
 
 const SectionSponsoredBy = ({ alt, className }: Props) => (
-  <section className={classNames("py-8", className)}>
+  <section className={clsx("py-8", className)}>
     {!alt && (
       <h2 className="typo-h6 mb-2 uppercase text-center">Sponsored by</h2>
     )}
-    <div className={classNames(styles.container, { [styles.alt]: alt })}>
+    <div className={clsx(styles.container, { [styles.alt]: alt })}>
       <Sponsor>
         <img src={LogoAWS.src} className="h-12" alt="AWS" />
       </Sponsor>

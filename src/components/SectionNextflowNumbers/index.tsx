@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 import CountUp from "../CountUp";
 import LazyLoader from "../LazyLoader";
 
@@ -50,7 +50,7 @@ const Numbers = ({ className }) => {
   const [ready, setReady] = useState(false);
   return (
     <LazyLoader onView={() => setReady(true)}>
-      <section className={classNames(className)}>
+      <section className={clsx(className)}>
         <div className="container">
           <div className="flex flex-wrap">
             <div className="w-full lg:w-1/3 lg:pr-8">

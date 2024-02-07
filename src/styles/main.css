@@ -17,7 +17,7 @@ body {
   }
   &.island {
     width: fit-content;
-    max-width: 800px;
+    max-width: 840px;
     text-align: center;
   }
   &.smaller {

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 
 import styles from "./styles.module.css";
 
@@ -68,7 +68,7 @@ const HubspotForm: React.FC<Props> = ({
   }, [loaded]);
 
   return (
-    <div className={classNames(styles.form, className)}>
+    <div className={clsx(styles.form, className)}>
       {title && <p className="typo-intro mb-4">{title}</p>}
       <div id={`hsForm-${formID}`}></div>
     </div>

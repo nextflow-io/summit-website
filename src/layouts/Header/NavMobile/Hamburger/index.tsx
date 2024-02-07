@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 
 import styles from "./styles.module.css";
 
@@ -13,7 +13,7 @@ const Hamburger: React.FC<Props> = () => {
   return (
     <div className={styles.hamburgerWrapper}>
       <button
-        className={classNames(styles.hamburger, { [styles.open]: open })}
+        className={clsx(styles.hamburger, { [styles.open]: open })}
         onClick={handleClick}
       >
         <span />
