@@ -6,7 +6,6 @@
   & .content {
     position: relative;
     z-index: 2;
-    padding: 80px 0;
     background-image: url("./images/overlay_1a.png");
     background-size: 140px;
     &:before {

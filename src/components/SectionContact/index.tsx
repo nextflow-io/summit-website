@@ -1,4 +1,5 @@
 import React from "react";
+import classNames from "classnames";
 import icon from "./icon.svg";
 
 const Box = ({ children, href }) => {
@@ -13,9 +14,13 @@ const Box = ({ children, href }) => {
   );
 };
 
-const SectionContact: React.FC = () => {
+type Props = {
+  className?: string;
+};
+
+const SectionContact: React.FC<Props> = ({ className }) => {
   return (
-    <section className="container smaller py-8">
+    <section className={classNames("container smaller", className)}>
       <h4 className="h5 mb-8 text-center">Contact us</h4>
       <div className="flex -m-2 sm:-m-4 flex flex-wrap">
         <div className="w-full md:w-1/2 p-2 sm:p-4">

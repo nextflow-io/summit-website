@@ -1,6 +1,7 @@
+import { Fragment } from "react";
 import classNames from "classnames";
 
-import arrow from "./arrow.svg";
+import Arrow from "./Arrow.tsx";
 import styles from "./styles.module.css";
 
 type Props = {
@@ -45,7 +46,7 @@ const Button: React.FC<Props> = ({
 
   const content = [children];
   if (attributes.arrow) {
-    content.push(<img key="arrow" src={arrow.src} className={styles.arrow} />);
+    content.push(<Arrow key="arrow" className={styles.arrow} />);
   }
 
   const url = to || href;

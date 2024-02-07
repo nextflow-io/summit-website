@@ -1,0 +1,9 @@
+.section {
+  background-color: var(--color-nextflow);
+  background-image: url("./bg.svg");
+  background-size: cover;
+  color: var(--color-brand);
+}
+.text {
+  font-weight: 700;
+}
