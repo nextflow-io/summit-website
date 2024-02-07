@@ -1,15 +1,26 @@
 ---
 import Layout from "@layouts/Base.astro";
-import EventSelector from "@modules/EventSelector/index.astro";
+import Section from "@components/Section/index.astro";
+import SectionCallForAbstracts from "@components/SectionCallForAbstracts";
 import SponsoredBy from "@components/SectionSponsoredBy";
 import NextflowNumbers from "@components/SectionNextflowNumbers";
 import Images from "@components/SectionImages";
 import PreviousEvents from "@components/SectionPreviousEvents";
 import Subscribe from "@components/SectionSubscribe";
+import title from "@images/title-summit-1a.svg";
+import Button from "@components/Button";
 ---
 
 <Layout title="Home" namespace="boston">
-  <EventSelector />
+  <Section className="min-h-[1261px]" style2>
+    <SectionCallForAbstracts client:load />
+    <div class="container mt-16 text-center">
+      <img src={title.src} class="mx-auto" />
+      <div class="h00 mt-16 mb-4">MAY 14 - 17, 2024</div>
+      <Button href="/boston/register" white>Pre-register</Button>
+      <h3 class="h5">Key information</h3>
+    </div>
+  </Section>
   <SponsoredBy />
   <NextflowNumbers client:load className="py-20" />
   <Images client:load />

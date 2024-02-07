@@ -1,8 +1,28 @@
 ---
+import Button from "@components/Button";
+import Section from "@components/Section/index.astro";
 import Layout from "@layouts/Base.astro";
+import CallForAbstracts from "@components/SectionCallForAbstracts";
+import PreviousEvents from "@components/SectionPreviousEvents";
+import Contact from "@components/SectionContact";
 ---
 
-<Layout title="Stream" namespace="boston">
-  <h2 class="text-xl mb-2">Stream</h2>
-  Stream page
+<Layout title="Travel" namespace="boston">
+  <Section style2>
+    <CallForAbstracts client:visible />
+    <div class="container island mt-10">
+      <h2 class="h000 mb-2">Interested in attending Nextflow Summit 2024?</h2>
+      <div class="blockquote mb-4">
+        <p class="mt-8 mb-4">
+          Sign up for updates to be the first to know when tickets go on sale!
+        </p>
+      </div>
+      <Button href="/contact">Apply now</Button>
+    </div>
+    <div class="container smaller mt-16">
+      <h3 class="h5">Key dates</h3>
+    </div>
+  </Section>
+  <PreviousEvents client:visible />
+  <Contact />
 </Layout>
