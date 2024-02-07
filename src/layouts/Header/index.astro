@@ -17,7 +17,7 @@ function url(path) {
     styles.header,
   ]}
 >
-  <a class={styles.logo} href="/">
+  <a class={styles.logo} href={url("/")}>
     <img src={logo.src} />
   </a>
   <nav class="hidden lg:block">
@@ -42,7 +42,7 @@ function url(path) {
   <nav class="hidden lg:block">
     <ul>
       <li>
-        <a href={url("/call-for-abstracts/")}>Call for abstracts</a>
+        <a href={url("/call-for-abstracts")}>Call for abstracts</a>
       </li>
       <li>
         <Button href={url("/register")} arrow white>Pre-register</Button>

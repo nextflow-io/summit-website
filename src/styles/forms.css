@@ -16,7 +16,7 @@ input[type="submit"] {
 }
 .hs-error-msgs {
   color: var(--color-multiqc-300);
-  font-size: 0.9em;
+  font-size: 0.8em;
 }
 .form-style-1 {
   background: var(--color-brand-1000);
