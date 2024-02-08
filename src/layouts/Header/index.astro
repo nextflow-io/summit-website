@@ -1,9 +1,15 @@
 ---
 const { namespace } = Astro.props;
+const pathname = new URL(Astro.request.url).pathname;
 import logo from "./logo.svg";
 import styles from "./styles.module.css";
 import NavMobile from "./NavMobile";
 import Button from "@components/Button";
+import Link from "./Link";
+
+function isActive(path) {
+  return pathname.includes(path);
+}
 
 function url(path) {
   if (!namespace) return path;
@@ -23,26 +29,37 @@ function url(path) {
   <nav class="hidden lg:block">
     <ul>
       <li>
-        <a href={url("/agenda")}>Agenda</a>
+        <Link href={url("/agenda")} active={isActive("agenda")}>Agenda</Link>
       </li>
       <li>
-        <a href={url("/travel")}>Travel</a>
+        <Link href={url("/travel")} active={isActive("travel")}>Travel</Link>
+      </li>
+      <!-- <li>
+        <Link href={url("/speakers")} active={isActive("speakers")}>
+          Speakers
+        </Link>
       </li>
       <li>
-        <a href={url("/speakers")}>Speakers</a>
-      </li>
+        <Link href={url("/sponsors")} active={isActive("sponsors")}>
+          Sponsors
+        </Link>
+      </li> -->
       <li>
-        <a href={url("/sponsors")}>Sponsors</a>
-      </li>
-      <li>
-        <a href={url("/past-events")}>Past events</a>
+        <Link href={url("/past-events")} active={isActive("past-events")}>
+          Past events
+        </Link>
       </li>
     </ul>
   </nav>
   <nav class="hidden lg:block">
     <ul>
       <li>
-        <a href={url("/call-for-abstracts")}>Call for abstracts</a>
+        <Link
+          href={url("/call-for-abstracts")}
+          active={isActive("call-for-abstracts")}
+        >
+          Call for abstracts
+        </Link>
       </li>
       <li>
         <Button href={url("/register")} arrow white>Pre-register</Button>

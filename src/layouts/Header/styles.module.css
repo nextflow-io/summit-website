@@ -6,10 +6,30 @@
       align-items: center;
     }
   }
-  & a:not(:global(.button)) {
+  & .navItem {
     display: block;
-    padding: 6px 18px;
+    padding: 12px 12px;
+    margin: 0 4px;
     line-height: 1;
     font-weight: 300;
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 10px;
+      right: 10px;
+      height: 2px;
+      background-color: transparent;
+      transform: scaleX(0);
+      transition: transform 0.3s;
+    }
+    &.active,
+    &:hover {
+      &:after {
+        background-color: var(--color-nextflow);
+        transform: scaleX(1);
+      }
+    }
   }
 }

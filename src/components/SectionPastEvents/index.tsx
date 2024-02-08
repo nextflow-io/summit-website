@@ -4,7 +4,7 @@ import Swiper from "@components/Swiper";
 
 import events from "./events.mjs";
 
-const SectionPreviousEvents = () => {
+const SectionPastEvents = () => {
   return (
     <section className="pb-32 container">
       <Swiper title="See our past events">
@@ -27,4 +27,4 @@ const SectionPreviousEvents = () => {
   );
 };
 
-export default SectionPreviousEvents;
+export default SectionPastEvents;

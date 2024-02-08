@@ -1,19 +1,21 @@
 import React from "react";
 import clsx from "clsx";
-import icon from "./icon.svg";
+import Icon from "./Icon";
 import Box from "@components/Box";
+
+import styles from "./styles.module.css";
 
 const SectionBox = ({ children, href }) => {
   return (
     <Box
       href={href}
-      className="flex items-center justify-between"
+      className={clsx("flex items-center justify-between", styles.box)}
       text="text-brand"
       bg="bg-nextflow-100"
       p="py-4 px-7"
     >
       <span>{children}</span>
-      <img src={icon.src} />
+      <Icon />
     </Box>
   );
 };

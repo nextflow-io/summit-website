@@ -5,7 +5,7 @@ import Layout from "@layouts/Base.astro";
 import { Image } from "astro:assets";
 import audience1 from "@images/photo-audience-1.png";
 import CallForAbstracts from "@components/SectionCallForAbstracts";
-import PreviousEvents from "@components/SectionPreviousEvents";
+import PastEvents from "@components/SectionPastEvents";
 import Contact from "@components/SectionContact";
 ---
 
@@ -40,6 +40,6 @@ import Contact from "@components/SectionContact";
       </div>
     </div>
   </GlassArea>
-  <PreviousEvents client:visible />
+  <PastEvents client:visible />
   <Contact className="py-8" />
 </Layout>

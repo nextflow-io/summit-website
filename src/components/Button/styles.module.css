@@ -7,7 +7,7 @@
   color: #fff;
   border-radius: 99px;
   font-weight: 500;
-  transition: all 0.2s;
+  transition: all 0.4s;
   &:hover .arrow {
     margin-left: 16px;
   }
@@ -57,7 +57,7 @@
   background: #fff;
   color: var(--color-brand);
   &:hover {
-    background: var(--color-brand);
+    background: var(--color-nextflow);
     color: #fff;
   }
 }

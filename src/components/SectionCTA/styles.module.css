@@ -3,6 +3,8 @@
   background-image: url("./bg.svg");
   background-size: cover;
   color: var(--color-brand);
+  position: relative;
+  z-index: 2;
 }
 .text {
   font-weight: 700;

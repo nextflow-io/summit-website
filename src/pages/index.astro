@@ -4,7 +4,7 @@ import EventSelector from "@modules/EventSelector/index.astro";
 import SponsoredBy from "@components/SectionSponsoredBy";
 import NextflowNumbers from "@components/SectionNextflowNumbers";
 import Images from "@components/SectionImages/index.astro";
-import PreviousEvents from "@components/SectionPreviousEvents";
+import PastEvents from "@components/SectionPastEvents";
 import Subscribe from "@components/SectionSubscribe";
 ---
 
@@ -13,6 +13,6 @@ import Subscribe from "@components/SectionSubscribe";
   <SponsoredBy />
   <NextflowNumbers client:load className="py-20" />
   <Images client:load />
-  <PreviousEvents client:visible />
+  <PastEvents client:visible />
   <Subscribe client:visible />
 </Layout>

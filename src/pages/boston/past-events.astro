@@ -1,0 +1,27 @@
+---
+import Layout from "@layouts/Base.astro";
+import GlassArea from "@components/GlassArea/index.astro";
+import CallForAbstracts from "@components/SectionCallForAbstracts";
+import SectionCTA from "@components/SectionCTA";
+import SectionContact from "@components/SectionContact";
+import PastEvents from "@components/SectionPastEvents";
+import Button from "@components/Button";
+---
+
+<Layout title="Past Events" namespace="boston">
+  <GlassArea className="pt-20 pb-6" style2>
+    <CallForAbstracts client:load />
+    <section class="container island py-20 text-center">
+      <h1 class="h00 mb-8">Past Events</h1>
+      <div class="blockquote mb-16">
+        Past events have provided insights into Nexflow's origins, development,
+        and its applications in various domains, highting its potential and
+        impact on scientific research, data analysis, and workflow management.
+      </div>
+      <Button href="/boston/register" white>Pre-register</Button>
+    </section>
+    <PastEvents client:visible />
+  </GlassArea>
+  <SectionCTA />
+  <SectionContact className="py-26" />
+</Layout>
