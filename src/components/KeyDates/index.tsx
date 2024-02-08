@@ -17,14 +17,16 @@ type Props = {
   showTitle?: boolean;
 };
 
-const KeyDates: React.FC<Props> = ({ showImg = true, showTitle }) => {
+const KeyDates: React.FC<Props> = ({ showImg, showTitle }) => {
   return (
     <Box>
       <div className="flex">
         <div className="flex-auto md:pr-8">
           {showTitle && <h5 className="h3 mb-6">Key dates</h5>}
-          {keyDates.map((date) => (
-            <Row title={date.date}>{date.title}</Row>
+          {keyDates.map((date, i) => (
+            <Row key={i} title={date.date}>
+              {date.title}
+            </Row>
           ))}
         </div>
         {showImg && (

@@ -44,9 +44,9 @@ const Button: React.FC<Props> = ({
     [styles.secondary]: attributes.secondary,
   });
 
-  const content = [children];
+  let arrow = null;
   if (attributes.arrow) {
-    content.push(<Arrow key="arrow" className={styles.arrow} />);
+    arrow = <Arrow key="arrow" className={styles.arrow} />;
   }
 
   const url = to || href;
@@ -56,13 +56,15 @@ const Button: React.FC<Props> = ({
     if (isOutLink) {
       return (
         <a href={url} className={cn} target="_blank" rel="noreferrer">
-          {content}
+          {children}
+          {arrow}
         </a>
       );
     } else {
       return (
         <a href={url} className={cn}>
-          {content}
+          {children}
+          {arrow}
         </a>
       );
     }
@@ -70,7 +72,8 @@ const Button: React.FC<Props> = ({
 
   return (
     <button type="button" onClick={onClick} className={cn}>
-      {content}
+      {children}
+      {arrow}
     </button>
   );
 };
