@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import styles from "./styles.module.css";
 
 type Props = {
   children: React.ReactNode;
@@ -16,7 +17,14 @@ const Box: React.FC<Props> = ({ children, className, href, ...props }) => {
   if (props.p) p = props.p;
   if (props.text) text = props.text;
   if (props.bg) bg = props.bg;
-  const cn = clsx("rounded-lg h-full font-light", className, p, text, bg);
+  const cn = clsx(
+    "rounded-lg h-full font-light",
+    className,
+    p,
+    text,
+    bg,
+    styles.box,
+  );
   if (href)
     return (
       <a href={href} className={cn}>

@@ -1,0 +1,64 @@
+import { useCallback, useRef } from "react";
+import clsx from "clsx";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { screens } from "../../../tailwind.config.mjs";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+
+import styles from "./styles.module.css";
+
+type Props = {
+  title?: string;
+  children: React.ReactNode[];
+};
+
+const SwiperSection: React.FC<Props> = ({ title, children }) => {
+  const breakpoints = Object.values(screens).map((bp) => parseInt(bp));
+  const sliderRef = useRef(null);
+
+  const handlePrev = useCallback(() => {
+    sliderRef.current?.swiper?.slidePrev();
+  }, [sliderRef.current]);
+
+  const handleNext = useCallback(() => {
+    sliderRef.current?.swiper?.slideNext();
+  }, [sliderRef.current]);
+
+  return (
+    <>
+      {!!title && <h3 className="h0 mt-24 mb-16">See our past events</h3>}
+      <Swiper
+        ref={sliderRef}
+        breakpoints={{
+          [breakpoints[0]]: {
+            slidesPerView: 1,
+            spaceBetween: 0,
+          },
+          [breakpoints[1]]: {
+            slidesPerView: 2,
+            spaceBetween: 32,
+          },
+          [breakpoints[2]]: {
+            slidesPerView: 3,
+            spaceBetween: 32,
+          },
+        }}
+      >
+        {children.map((node, index) => (
+          <SwiperSlide key={index}>
+            <div className={styles.card}>{node}</div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      <nav className={clsx(styles.nav, "mt-12")}>
+        <button onClick={handlePrev} />
+        <button onClick={handleNext} />
+      </nav>
+    </>
+  );
+};
+
+export default SwiperSection;

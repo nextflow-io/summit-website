@@ -1,0 +1,5 @@
+.box {
+  & a {
+    color: var(--color-nextflow);
+  }
+}
