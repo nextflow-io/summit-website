@@ -5,6 +5,7 @@ import CallForAbstracts from "@components/SectionCallForAbstracts";
 import Images from "@components/SectionImages/index.astro";
 import SectionCTA from "@components/SectionCTA";
 import SectionContact from "@components/SectionContact";
+import SectionAccommodation from "@components/SectionAccommodation";
 import MapEmbed from "@components/MapEmbed";
 import Box from "@components/Box";
 ---
@@ -40,6 +41,6 @@ import Box from "@components/Box";
     </div>
   </section>
   <SectionCTA />
-  <section>hotel closeby</section>
+  <SectionAccommodation client:visible />
   <SectionContact className="py-26" />
 </Layout>

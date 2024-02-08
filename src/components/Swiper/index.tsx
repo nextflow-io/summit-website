@@ -29,7 +29,7 @@ const SwiperSection: React.FC<Props> = ({ title, children }) => {
 
   return (
     <>
-      {!!title && <h3 className="h0 mt-24 mb-16">See our past events</h3>}
+      {!!title && <h3 className="h0 mt-24 mb-16">{title}</h3>}
       <Swiper
         ref={sliderRef}
         breakpoints={{

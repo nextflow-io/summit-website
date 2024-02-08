@@ -7,7 +7,7 @@ const Arrow = ({ className }) => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <g clip-path="url(#clip0_205_237)">
+    <g clipPath="url(#clip0_205_237)">
       <path
         d="M4.63286 4.99474L0.307678 0.652086L0.812929 0.146835L5.64336 4.99474L0.812929 9.82518L0.307678 9.31993L4.63286 4.99474Z"
         fill="currentColor"
