@@ -5,10 +5,13 @@
   min-height: 200px;
   max-height: 488px;
   overflow: hidden;
-  display: flex;
   align-items: stretch;
   margin-right: -20vw;
   margin-left: -5vw;
+  display: none;
+  @media (--md) {
+    display: flex;
+  }
   & > div {
     border-radius: 8px;
     overflow: hidden;

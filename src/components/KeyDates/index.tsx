@@ -5,9 +5,11 @@ import Box from "@components/Box";
 
 const Row = ({ children, title }) => {
   return (
-    <div className="flex items-center border-b border-brand-400 py-2 mb-4">
-      <div className="w-1/4 h3">{title}</div>
-      <div className="w-3/4 text-2xl leading-10">{children}</div>
+    <div className="flex flex-wrap items-center border-b border-brand-400 py-2 mb-4">
+      <div className="w-full md:w-1/4 h3">{title}</div>
+      <div className="w-full md:w-3/4 md:text-2xl md:leading-10 py-2 md:py-0">
+        {children}
+      </div>
     </div>
   );
 };

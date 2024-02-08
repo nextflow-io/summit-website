@@ -14,7 +14,7 @@ import SEO from "@components/SEO";
   <SEO title="Call for abstracts" />
   <GlassArea style2 className="pt-20">
     <Marquee client:visible />
-    <div class="container island mt-20">
+    <div class="container island md:mt-20">
       <h2 class="h000 mb-2">
         The call for abstracts is open until February 29, 2024
       </h2>
@@ -35,7 +35,13 @@ import SEO from "@components/SEO";
   <section class="container py-20">
     <div class="flex flex-wrap -m-2 sm:-m-4">
       <div class="w-full md:w-1/2 p-2 sm:p-4">
-        <Image src={talkImg} alt="Nextflow SUMMIT talk" class="object-fit" />
+        <div class="relative w-full h-full rounded-lg overflow-hidden">
+          <Image
+            src={talkImg}
+            alt="Nextflow SUMMIT talk"
+            class="object-cover h-full absolute inset-0"
+          />
+        </div>
       </div>
       <div class="w-full md:w-1/2 p-2 sm:p-4">
         <Box className="">
@@ -46,7 +52,10 @@ import SEO from "@components/SEO";
           </SubSection>
           <SubSection className="my-8">
             <div class="font-bold mb-2">Formats</div>
-            Long-form (30 min) | Lightning (15 min)
+            <ul>
+              <li>Long-form (30 min)</li>
+              <li>Lightning (15 min)</li>
+            </ul>
           </SubSection>
           <SubSection>
             <div class="font-bold mb-2">Themes</div>

@@ -10,18 +10,30 @@
   font-weight: 600;
 }
 .h000 {
-  font-size: var(--size-8xl);
-  line-height: var(--leading-8xl);
-  font-weight: 700;
-}
-.h00 {
-  font-size: var(--size-6xl);
-  line-height: var(--leading-6xl);
-  font-weight: 700;
-}
-.h0 {
   font-size: var(--size-5xl);
   line-height: var(--leading-5xl);
+  font-weight: 700;
+  @media (--sm) {
+    font-size: var(--size-8xl);
+    line-height: var(--leading-8xl);
+  }
+}
+.h00 {
+  font-size: var(--size-4xl);
+  line-height: var(--leading-4xl);
+  font-weight: 700;
+  @media (--sm) {
+    font-size: var(--size-6xl);
+    line-height: var(--leading-6xl);
+  }
+}
+.h0 {
+  font-size: var(--size-4xl);
+  line-height: var(--leading-4xl);
+  @media (--sm) {
+    font-size: var(--size-5xl);
+    line-height: var(--leading-5xl);
+  }
 }
 .h1 {
   font-size: var(--size-4xl);
