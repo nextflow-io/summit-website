@@ -5,11 +5,17 @@ import news from "./icon-news.svg";
 import parentheses from "./icon-parentheses.svg";
 import Box from "@components/Box";
 
-const InfoBox = ({ children, title, icon }) => {
+const InfoBox = ({ children, title, subtitle, icon }) => {
   return (
     <Box className="flex flex-col min-h-[350px]">
       <h5 className="h3 mb-6">{title}</h5>
-      <div className="flex-auto text-base">{children}</div>
+      {subtitle && (
+        <div className="mb-6 text-sm text-brand-300">{subtitle}</div>
+      )}
+      <div className="text-base">{children}</div>
+      <div className="flex-auto pt-6 text-brand-400 font-bold text-sm">
+        Program coming soon
+      </div>
       <div>
         <img src={icon.src} className="w-[44px]" />
       </div>
@@ -27,18 +33,30 @@ const KeyInformation: React.FC<Props> = ({ className }) => {
       <h4 className="h5 mb-8 text-center">Key Information</h4>
       <div className="flex -m-2 sm:-m-4 flex flex-wrap">
         <div className="w-full md:w-1/3 p-2 sm:p-4">
-          <InfoBox title="Training | May 21-22" icon={parentheses}>
+          <InfoBox
+            title="Training | May 21-22"
+            subtitle="2 days · 30 people · training"
+            icon={parentheses}
+          >
             An in-person training to supercharge your pipeline development with
             Nextflow and nf-core.
           </InfoBox>
         </div>
         <div className="w-full md:w-1/3 p-2 sm:p-4">
-          <InfoBox title="Hackathon | May 21-22" icon={computer}>
+          <InfoBox
+            title="Hackathon | May 21-22"
+            subtitle="2 days · 100 people · hackathon"
+            icon={computer}
+          >
             An in-person hackathon to develop nf-core.
           </InfoBox>
         </div>
         <div className="w-full md:w-1/3 p-2 sm:p-4">
-          <InfoBox title="Summit | May 23-24" icon={news}>
+          <InfoBox
+            title="Summit | May 23-24"
+            subtitle="1.5 days · 200 people · talks, networking, and more"
+            icon={news}
+          >
             A showcase of the latest developments and innovations from the
             Nextflow world.
           </InfoBox>

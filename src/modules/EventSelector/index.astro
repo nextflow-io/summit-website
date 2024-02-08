@@ -1,11 +1,11 @@
 ---
 import logo from "./logo.svg";
 import Card from "./Card.astro";
-import Section from "@components/Section/index.astro";
+import GlassArea from "@components/GlassArea/index.astro";
 import SectionCallForAbstracts from "@components/SectionCallForAbstracts";
 ---
 
-<Section className="min-h-[1261px]">
+<GlassArea className="min-h-[1261px]">
   <SectionCallForAbstracts client:load />
   <div class="mx-auto max-w-[1008px] mt-16">
     <div class="flex flex-wrap justify-center text-center">
@@ -19,4 +19,4 @@ import SectionCallForAbstracts from "@components/SectionCallForAbstracts";
       <Card location="barcelona" />
     </div>
   </div>
-</Section>
+</GlassArea>

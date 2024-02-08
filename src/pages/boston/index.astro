@@ -1,9 +1,9 @@
 ---
 import Layout from "@layouts/Base.astro";
-import Section from "@components/Section/index.astro";
+import GlassArea from "@components/GlassArea/index.astro";
 import CallForAbstracts from "@components/SectionCallForAbstracts";
 import NextflowNumbers from "@components/SectionNextflowNumbers";
-import Images from "@components/SectionImages";
+import Images from "@components/SectionImages/index.astro";
 import title from "@images/title-summit-1a.svg";
 import Button from "@components/Button";
 import KeyInformation from "@components/SectionKeyInformation";
@@ -13,7 +13,7 @@ import SectionContact from "@components/SectionContact";
 ---
 
 <Layout title="Home" namespace="boston">
-  <Section className="pt-20 pb-6" style2>
+  <GlassArea className="pt-20 pb-6" style2>
     <CallForAbstracts client:load />
     <div class="mt-16 text-center">
       <img src={title.src} class="mx-auto" />
@@ -21,7 +21,7 @@ import SectionContact from "@components/SectionContact";
       <Button href="/boston/register" white>Pre-register</Button>
     </div>
     <KeyInformation className="pt-16" />
-  </Section>
+  </GlassArea>
   <div class="container relative z-10 mb-20">
     <KeyDates showTitle showImg />
   </div>
