@@ -16,7 +16,7 @@ const Preregister2024 = () => {
               </div>
               <ul className="mb-10 text-xl text-white">
                 <li>
-                  <span className="text-green-300">Boston</span> <span className="opacity-25">|</span> May 14-17
+                  <span className="text-green-300">Boston</span> <span className="opacity-25">|</span> May 21-24
                 </li>
                 <li>
                   <span className="text-green-300">Barcelona</span> <span className="opacity-25">|</span> October 21-25
