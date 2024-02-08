@@ -10,12 +10,13 @@ import Footer from "./Footer";
 const siteTitle = "Nextflow SUMMIT 2024";
 ---
 
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title ? `${title} | ${siteTitle}` : siteTitle}</title>
     <link rel="icon" href="/favicon.png" type="image/png" />
+    <slot name="head" />
     {redirect && <meta http-equiv="refresh" content={`0;url=${redirect}`} />}
   </head>
   <body>

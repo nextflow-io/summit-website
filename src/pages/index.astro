@@ -6,9 +6,11 @@ import NextflowNumbers from "@components/SectionNextflowNumbers";
 import Images from "@components/SectionImages/index.astro";
 import PastEvents from "@components/SectionPastEvents";
 import Subscribe from "@components/SectionSubscribe";
+import SEO from "@components/SEO";
 ---
 
 <Layout redirect="boston">
+  <SEO />
   <EventSelector />
   <SponsoredBy />
   <NextflowNumbers client:load className="py-20" />

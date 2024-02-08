@@ -10,15 +10,17 @@ import KeyInformation from "@components/SectionKeyInformation";
 import KeyDates from "@components/KeyDates";
 import SectionCTA from "@components/SectionCTA";
 import SectionContact from "@components/SectionContact";
+import SEO from "@components/SEO";
 ---
 
 <Layout namespace="boston">
+  <SEO slot="head" />
   <GlassArea className="pt-20 pb-6" style2>
     <CallForAbstracts client:load />
     <div class="mt-16 text-center">
       <img src={title.src} class="mx-auto" />
       <div class="h00 mt-16 mb-4">MAY 21 - 24, 2024</div>
-      <Button href="/boston/register" white>Pre-register</Button>
+      <Button href="/boston/register" white wide>Pre-register</Button>
     </div>
     <KeyInformation className="pt-16" />
   </GlassArea>

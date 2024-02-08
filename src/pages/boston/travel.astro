@@ -8,9 +8,11 @@ import SectionContact from "@components/SectionContact";
 import SectionAccommodation from "@components/SectionAccommodation";
 import MapEmbed from "@components/MapEmbed";
 import Box from "@components/Box";
+import SEO from "@components/SEO";
 ---
 
-<Layout title="Travel" namespace="boston">
+<Layout namespace="boston">
+  <SEO title="Travel" />
   <GlassArea className="pt-20 pb-6" style2>
     <CallForAbstracts client:load />
     <Images alt1 className="mt-20" />

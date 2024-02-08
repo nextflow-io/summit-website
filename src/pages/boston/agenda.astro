@@ -6,9 +6,11 @@ import KeyInformation from "@components/SectionKeyInformation";
 import Images from "@components/SectionImages/index.astro";
 import SectionCTA from "@components/SectionCTA";
 import SectionContact from "@components/SectionContact";
+import SEO from "@components/SEO";
 ---
 
-<Layout title="Agenda" namespace="boston">
+<Layout namespace="boston">
+  <SEO title="Agenda" />
   <GlassArea className="pt-20 pb-6" style2>
     <CallForAbstracts client:load />
     <Images alt1 className="mt-20" />
