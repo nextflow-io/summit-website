@@ -5,6 +5,7 @@ let keyDates = await sanityClient.fetch(
 );
 
 function prettyDate(date: string) {
+  if (!date) return null;
   const options = {
     month: "long",
     day: "numeric",
@@ -13,9 +14,16 @@ function prettyDate(date: string) {
   return new Date(date).toLocaleDateString("en-US", options);
 }
 
+function getDay(date: string) {
+  if (!date) return null;
+  return new Date(date).getDate();
+}
+
 keyDates = keyDates.map((date) => ({
   title: date.title,
   date: prettyDate(date.date),
+  endDate: prettyDate(date.endDate),
+  endDay: getDay(date.endDate),
 }));
 
 export default keyDates;

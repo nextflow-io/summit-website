@@ -12,18 +12,18 @@ import SectionCTA from "@components/SectionCTA";
 import SectionContact from "@components/SectionContact";
 ---
 
-<Layout title="Home" namespace="boston">
+<Layout title="Agenda" namespace="boston">
   <Section className="pt-20 pb-6" style2>
     <CallForAbstracts client:load />
     <div class="mt-16 text-center">
       <img src={title.src} class="mx-auto" />
-      <div class="h00 mt-16 mb-4">MAY 21 - 24, 2024</div>
+      <div class="h00 mt-16 mb-4">MAY 14 - 17, 2024</div>
       <Button href="/boston/register" white>Pre-register</Button>
     </div>
     <KeyInformation className="pt-16" />
   </Section>
   <div class="container relative z-10 mb-20">
-    <KeyDates showTitle showImg />
+    <KeyDates showImg />
   </div>
   <SectionCTA />
   <NextflowNumbers client:load className="py-20" />

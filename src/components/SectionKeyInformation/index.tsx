@@ -27,18 +27,18 @@ const KeyInformation: React.FC<Props> = ({ className }) => {
       <h4 className="h5 mb-8 text-center">Key Information</h4>
       <div className="flex -m-2 sm:-m-4 flex flex-wrap">
         <div className="w-full md:w-1/3 p-2 sm:p-4">
-          <InfoBox title="Training | May 14-15" icon={parentheses}>
+          <InfoBox title="Training | May 21-22" icon={parentheses}>
             An in-person training to supercharge your pipeline development with
             Nextflow and nf-core.
           </InfoBox>
         </div>
         <div className="w-full md:w-1/3 p-2 sm:p-4">
-          <InfoBox title="Hackathon | May 14-15" icon={computer}>
+          <InfoBox title="Hackathon | May 21-22" icon={computer}>
             An in-person hackathon to develop nf-core.
           </InfoBox>
         </div>
         <div className="w-full md:w-1/3 p-2 sm:p-4">
-          <InfoBox title="Summit | May 16-17" icon={news}>
+          <InfoBox title="Summit | May 23-24" icon={news}>
             A showcase of the latest developments and innovations from the
             Nextflow world.
           </InfoBox>
