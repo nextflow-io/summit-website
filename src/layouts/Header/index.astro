@@ -1,70 +1,19 @@
 ---
 const { namespace } = Astro.props;
 const pathname = new URL(Astro.request.url).pathname;
-import logo from "./logo.svg";
 import styles from "./styles.module.css";
 import NavMobile from "./NavMobile";
-import Button from "@components/Button";
-import Link from "./Link";
-
-function isActive(path) {
-  return pathname.includes(path);
-}
-
-function url(path) {
-  if (!namespace) return path;
-  return `/${namespace}${path}`;
-}
+import Menu from "./Menu";
+import Logo from "./Logo";
 ---
 
-<header
-  class:list={[
-    "h-[104px] container flex items-center justify-between",
-    styles.header,
-  ]}
->
-  <a class={styles.logo} href={url("/")}>
-    <img src={logo.src} alt="Nextflow SUMMIT 2024" />
-  </a>
-  <nav class="hidden lg:block">
-    <ul>
-      <li>
-        <Link href={url("/agenda")} active={isActive("agenda")}>Agenda</Link>
-      </li>
-      <li>
-        <Link href={url("/travel")} active={isActive("travel")}>Travel</Link>
-      </li>
-      <!-- <li>
-        <Link href={url("/speakers")} active={isActive("speakers")}>
-          Speakers
-        </Link>
-      </li>
-      <li>
-        <Link href={url("/sponsors")} active={isActive("sponsors")}>
-          Sponsors
-        </Link>
-      </li> -->
-      <li>
-        <Link href={url("/past-events")} active={isActive("past-events")}>
-          Past events
-        </Link>
-      </li>
-    </ul>
-  </nav>
-  <nav class="hidden lg:block">
-    <ul>
-      <li>
-        <Link
-          href={url("/call-for-abstracts")}
-          active={isActive("call-for-abstracts")}
-        >
-          Call for abstracts
-        </Link>
-      </li>
-      <li>
-        <Button href={url("/register")} arrow white>Pre-register</Button>
-      </li>
-    </ul>
-  </nav>
-  <NavMobile client:only="react" />
-</header>
+<>
+  <header class={styles.header}>
+    <div class="container flex items-center justify-between">
+      <Logo namespace={namespace} />
+      <Menu pathname={pathname} namespace={namespace} />
+      <Menu pathname={pathname} namespace={namespace} second />
+    </div>
+  </header>
+  <NavMobile pathname={pathname} namespace={namespace} client:load />
+</>

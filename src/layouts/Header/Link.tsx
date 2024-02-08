@@ -1,7 +1,4 @@
 import React from "react";
-import clsx from "clsx";
-
-import styles from "./styles.module.css";
 
 type Props = {
   children: React.ReactNode;
@@ -10,8 +7,10 @@ type Props = {
 };
 
 const Link: React.FC<Props> = ({ children, href, active }) => {
+  const attr = {};
+  if (active) attr["data-active"] = true;
   return (
-    <a className={clsx(styles.navItem, active && styles.active)} href={href}>
+    <a {...attr} href={href}>
       {children}
     </a>
   );

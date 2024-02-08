@@ -1,34 +1,54 @@
+:global(#body) {
+  padding-top: 104px;
+}
 .header {
+  display: none;
+  @media (--lg) {
+    display: block;
+  }
+  background: var(--color-brand);
+  z-index: 100;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  & > div {
+    height: 104px;
+  }
   & nav {
     & ul {
       list-style: none;
       display: flex;
       align-items: center;
-    }
-  }
-  & .navItem {
-    display: block;
-    padding: 12px 12px;
-    margin: 0 4px;
-    line-height: 1;
-    font-weight: 300;
-    position: relative;
-    &:after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 10px;
-      right: 10px;
-      height: 2px;
-      background-color: transparent;
-      transform: scaleX(0);
-      transition: transform 0.3s;
-    }
-    &.active,
-    &:hover {
-      &:after {
-        background-color: var(--color-nextflow);
-        transform: scaleX(1);
+      & li {
+        & a {
+          display: block;
+          padding: 12px 12px;
+          margin: 0 4px;
+          line-height: 1;
+          font-weight: 400;
+          position: relative;
+          color: var(--color-brand-200);
+          &:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 10px;
+            right: 10px;
+            height: 2px;
+            background-color: transparent;
+            transform: scaleX(0);
+            transition: transform 0.3s;
+          }
+          &[data-active],
+          &:hover {
+            &:after {
+              background-color: var(--color-nextflow);
+              transform: scaleX(1);
+              color: white;
+            }
+          }
+        }
       }
     }
   }

@@ -1,6 +1,64 @@
-.header {
+.navMobile {
+  & > .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 104px;
+    flex: none;
+  }
+  &.open {
+    height: 100vh;
+  }
+  height: 104px;
+  padding: 0 16px;
+  transition: all 0.2s;
+  background: var(--color-brand);
+  z-index: 100;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
+  flex-direction: column;
+  @media (--lg) {
+    display: none;
+  }
+}
+.menuContainer {
+  flex: 1 1 auto;
+  & nav {
+    & ul {
+      list-style: none;
+      & a {
+        display: block;
+        padding: 20px 6px;
+        margin: 0 4px;
+        line-height: 1;
+        font-weight: 400;
+        position: relative;
+        color: var(--color-brand-200) !important;
+        background: transparent !important;
+        font-size: var(--size-xl);
+        &:after {
+          content: "";
+          position: absolute;
+          bottom: 6px;
+          left: 6px;
+          right: 6px;
+          height: 2px;
+          background-color: var(--color-brand-900);
+          transform: scaleX(1);
+          transition: transform 0.3s;
+        }
+        &[data-active],
+        &:hover {
+          &:after {
+            background-color: var(--color-nextflow);
+            transform: scaleX(1);
+            color: white;
+          }
+        }
+      }
+    }
+  }
 }
