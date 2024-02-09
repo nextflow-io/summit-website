@@ -7,9 +7,11 @@ import photo_barcelona from "./barcelona.png";
 const photo = location === "barcelona" ? photo_barcelona : photo_boston;
 const title = location === "barcelona" ? title_barcelona : title_boston;
 const subtitle = location === "barcelona" ? "In person | Online" : "In person";
+const url = location === "barcelona" ? undefined : "/boston";
 ---
 
-<div
+<a
+  href={url}
   class="w-full max-w-[384px] min-h-[200px] bg-brand-1000 mx-4 rounded-xl text-center"
 >
   <img src={photo.src} class="mb-8" />
@@ -26,4 +28,4 @@ const subtitle = location === "barcelona" ? "In person | Online" : "In person";
       }
     </div>
   </div>
-</div>
+</a>
