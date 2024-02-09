@@ -3,6 +3,7 @@ import tailwind from "@astrojs/tailwind";
 import { sanityIntegration } from "@sanity/astro";
 import { defineConfig } from "astro/config";
 import glsl from "vite-plugin-glsl";
+import netlify from "@astrojs/netlify";
 
 export default defineConfig({
   // Dirs to match Gatsby
@@ -20,4 +21,6 @@ export default defineConfig({
   vite: {
     plugins: [glsl()],
   },
+  output: "server",
+  adapter: netlify(),
 });
