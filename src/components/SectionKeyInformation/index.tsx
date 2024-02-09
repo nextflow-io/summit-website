@@ -30,7 +30,6 @@ type Props = {
 const KeyInformation: React.FC<Props> = ({ className }) => {
   return (
     <section className={clsx("container", className)}>
-      <h4 className="h5 mb-8 text-center">Key Information</h4>
       <div className="flex -m-2 sm:-m-4 flex flex-wrap">
         <div className="w-full md:w-1/3 p-2 sm:p-4">
           <InfoBox
