@@ -1,27 +1,27 @@
-import { Fragment } from "react";
 import Button from "@components/Button";
 import Swiper from "@components/Swiper";
-
 import locations from "./locations.mjs";
+
+import styles from "./styles.module.css";
 
 const SectionAccommodation = () => {
   return (
     <section className="pb-32 container">
       <Swiper title="Hotels close to the venue">
         {locations.map((event, index) => (
-          <Fragment key={index}>
+          <a key={index} className={styles.card}>
             <img src={event.img.src} loading="lazy" />
             <div className="swiper-lazy-preloader"></div>
             <div>
               <div>
                 <h4>{event.title}</h4>
-                <div>{event.subtitle}</div>
-                <Button to={event.url} arrow white>
+                <div className="mb-6">{event.subtitle}</div>
+                <Button arrow white>
                   Find out more
                 </Button>
               </div>
             </div>
-          </Fragment>
+          </a>
         ))}
       </Swiper>
     </section>

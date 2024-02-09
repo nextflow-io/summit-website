@@ -1,0 +1,37 @@
+.card {
+  display: block;
+  position: relative;
+  background: var(--color-brand);
+  min-height: 448px;
+  border-radius: 16px;
+  overflow: hidden;
+  & > img {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.2;
+    transition: opacity 0.6s;
+  }
+  & > div {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    padding: 36px;
+    & h4 {
+      font-size: 28px;
+      font-family: Degular;
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      display: block;
+      max-width: 200px;
+    }
+    align-items: end;
+  }
+  &:hover {
+    & > img {
+      opacity: 0.5;
+    }
+  }
+}
