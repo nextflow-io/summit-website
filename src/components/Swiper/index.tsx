@@ -31,6 +31,7 @@ const SwiperSection: React.FC<Props> = ({ title, children }) => {
     <>
       {!!title && <h3 className="h0 mt-24 mb-16">{title}</h3>}
       <Swiper
+        loop
         ref={sliderRef}
         breakpoints={{
           [breakpoints[0]]: {
