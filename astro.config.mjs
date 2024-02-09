@@ -6,9 +6,6 @@ import glsl from "vite-plugin-glsl";
 import netlify from "@astrojs/netlify";
 
 export default defineConfig({
-  // Dirs to match Gatsby
-  publicDir: "static",
-  outDir: "public",
   integrations: [
     react(),
     tailwind(),
