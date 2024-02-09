@@ -1,6 +1,6 @@
 # Redirect 2023 paths
-/barcelona/*    /2023/barcelona/:splat    200!
-/boston/*    /2023/boston/:splat    200!
+/barcelona/*    /2023/barcelona/:splat    301
+/boston/*    /2023/boston/:splat    301
 
 # 2023 - archive site proxy
 /2023/*       https://nextflow-summit-2023.netlify.app/2023/:splat    200!
