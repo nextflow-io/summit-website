@@ -2,7 +2,6 @@ html,
 body {
   background-color: var(--color-brand) !important;
   color: white;
-  overflow-x: hidden;
 }
 body {
   min-height: 100vh;
