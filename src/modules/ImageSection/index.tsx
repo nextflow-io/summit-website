@@ -6,7 +6,12 @@ import img4 from "./images/4.jpg";
 import img5 from "./images/5.jpg";
 import styles from "./styles.module.css";
 
-const SectionImages = ({ alt1, className }) => {
+type Props = {
+  alt1?: boolean;
+  className?: string;
+};
+
+const SectionImageSection: React.FC<Props> = ({ alt1, className }) => {
   let images = [img1, img2];
   if (alt1) {
     images = [img3, img4, img5];
@@ -24,4 +29,4 @@ const SectionImages = ({ alt1, className }) => {
   );
 };
 
-export default SectionImages;
+export default SectionImageSection;

@@ -55,20 +55,27 @@ const Button: React.FC<Props> = ({
 
   const url = to || href;
 
+  const btnContent = (
+    <Fragment>
+      <span>
+        {children}
+        {arrow}
+      </span>
+    </Fragment>
+  );
+
   if (url) {
     const isOutLink = url.startsWith("http");
     if (isOutLink) {
       return (
         <a href={url} className={cn} target="_blank" rel="noreferrer">
-          {children}
-          {arrow}
+          {btnContent}
         </a>
       );
     } else {
       return (
         <a href={url} className={cn}>
-          {children}
-          {arrow}
+          {btnContent}
         </a>
       );
     }
@@ -76,8 +83,7 @@ const Button: React.FC<Props> = ({
 
   return (
     <button type="button" onClick={onClick} className={cn}>
-      {children}
-      {arrow}
+      {btnContent}
     </button>
   );
 };

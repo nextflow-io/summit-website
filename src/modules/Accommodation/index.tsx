@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import Button from "../Button";
+import Button from "@components/Button";
 import Swiper from "@components/Swiper";
 
 import locations from "./locations.mjs";

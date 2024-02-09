@@ -6,7 +6,7 @@ type Props = {};
 
 import styles from "./styles.module.css";
 
-const SectionCTA: React.FC<Props> = () => {
+const CTASection: React.FC<Props> = () => {
   return (
     <section className={styles.section}>
       <div className="container smaller text-center py-30">
@@ -22,4 +22,4 @@ const SectionCTA: React.FC<Props> = () => {
   );
 };
 
-export default SectionCTA;
+export default CTASection;

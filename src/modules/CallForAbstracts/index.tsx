@@ -1,14 +1,17 @@
 import React from "react";
-import Marquee from "../Marquee";
+import Marquee from "@components/Marquee";
 import call_for_abstracts from "./call_for_abstracts.svg";
 
 type Props = {
   className?: string;
 };
 
-const SectionCallForAbstracts: React.FC<Props> = ({ className }) => {
+const CallForAbstracts: React.FC<Props> = ({ className }) => {
   return (
-    <Marquee className={className}>
+    <Marquee
+      className={className}
+      href="https://sessionize.com/nextflow-summit-2024-boston"
+    >
       <img src={call_for_abstracts.src} />
       <img src={call_for_abstracts.src} />
       <img src={call_for_abstracts.src} />
@@ -16,4 +19,4 @@ const SectionCallForAbstracts: React.FC<Props> = ({ className }) => {
   );
 };
 
-export default SectionCallForAbstracts;
+export default CallForAbstracts;

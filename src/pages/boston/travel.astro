@@ -1,11 +1,11 @@
 ---
 import Layout from "@layouts/Base.astro";
 import GlassArea from "@components/GlassArea/index.astro";
-import CallForAbstracts from "@components/SectionCallForAbstracts";
-import Images from "@components/SectionImages";
-import SectionCTA from "@components/SectionCTA";
-import SectionContact from "@components/SectionContact";
-import SectionAccommodation from "@components/SectionAccommodation";
+import CallForAbstracts from "@modules/CallForAbstracts";
+import ImageSection from "@modules/ImageSection";
+import CTASection from "@modules/CTASection";
+import SectionContact from "@modules/Contact";
+import SectionAccommodation from "@modules/Accommodation";
 import MapEmbed from "@components/MapEmbed";
 import Box from "@components/Box";
 import SEO from "@components/SEO";
@@ -15,7 +15,7 @@ import SEO from "@components/SEO";
   <SEO title="Travel" />
   <GlassArea className="pt-20 pb-6" style2>
     <CallForAbstracts client:load />
-    <Images alt1 className="mt-20" />
+    <ImageSection alt1 className="mt-20" />
     <section class="container island py-20 text-center">
       <h1 class="h00 mb-8">Join us in Boston</h1>
       <div class="blockquote">
@@ -42,7 +42,7 @@ import SEO from "@components/SEO";
       </Box>
     </div>
   </section>
-  <SectionCTA />
+  <CTASection />
   <SectionAccommodation client:visible />
   <SectionContact />
 </Layout>

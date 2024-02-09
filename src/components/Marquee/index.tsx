@@ -14,6 +14,7 @@ const Slide = ({ className, style, children }) => {
 type Props = {
   children: React.ReactNode;
   className?: string;
+  href?: string;
   width?: number;
   speed?: number;
 };
@@ -21,6 +22,7 @@ type Props = {
 function Marquee({
   children,
   className,
+  href,
   width,
   speed: defaultSpeed,
 }: Props): JSX.Element {
@@ -45,8 +47,20 @@ function Marquee({
     return () => clearInterval(interval);
   }, [speed]);
 
+  const cn = clsx(styles.container, className);
+
+  const Container = ({ children }) => {
+    if (href)
+      return (
+        <a className={cn} href={href} target="_blank" rel="noreferrer">
+          {children}
+        </a>
+      );
+    return <div className={cn}>{children}</div>;
+  };
+
   return (
-    <div className={clsx(styles.container, className)}>
+    <Container>
       <Slide
         className={clsx(styles.slide1, { [styles.moving]: isMoving })}
         style={{
@@ -67,7 +81,7 @@ function Marquee({
       >
         {children}
       </Slide>
-    </div>
+    </Container>
   );
 }
 

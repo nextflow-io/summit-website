@@ -135,6 +135,6 @@
       rgba(4, 54, 44, 1) 30%,
       rgba(3, 102, 138, 1) 100%
     );
-    box-shadow: 0px 0px 10px 0px rgba(0, 255, 207, 0.4);
+    box-shadow: 0px 0px 30px 0px rgba(0, 255, 207, 0.6);
   }
 }

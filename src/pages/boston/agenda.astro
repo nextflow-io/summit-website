@@ -1,11 +1,11 @@
 ---
 import Layout from "@layouts/Base.astro";
 import GlassArea from "@components/GlassArea/index.astro";
-import CallForAbstracts from "@components/SectionCallForAbstracts";
-import KeyInformation from "@components/SectionKeyInformation";
-import Images from "@components/SectionImages";
-import SectionCTA from "@components/SectionCTA";
-import SectionContact from "@components/SectionContact";
+import CallForAbstracts from "@modules/CallForAbstracts";
+import KeyInformation from "@modules/KeyInformation";
+import ImageSection from "@modules/ImageSection";
+import CTASection from "@modules/CTASection";
+import Contact from "@modules/Contact";
 import SEO from "@components/SEO";
 ---
 
@@ -20,9 +20,9 @@ import SEO from "@components/SEO";
       </div>
     </section>
     <KeyInformation className="pt-6" />
-    <Images alt1 className="mt-20" />
+    <ImageSection alt1 className="mt-20" />
   </GlassArea>
   <CallForAbstracts client:load className="my-20" />
-  <SectionCTA />
-  <SectionContact />
+  <CTASection />
+  <Contact />
 </Layout>

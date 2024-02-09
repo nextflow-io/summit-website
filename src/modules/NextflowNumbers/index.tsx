@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import clsx from "clsx";
-import CountUp from "../CountUp";
-import LazyLoader from "../LazyLoader";
+import CountUp from "@components/CountUp";
+import LazyLoader from "@components/LazyLoader";
 
 type ItemProps = {
   children: string;

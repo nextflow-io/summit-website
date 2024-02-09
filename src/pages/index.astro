@@ -1,11 +1,11 @@
 ---
 import Layout from "@layouts/Base.astro";
 import EventSelector from "@modules/EventSelector/index.astro";
-import SponsoredBy from "@components/SectionSponsoredBy";
-import NextflowNumbers from "@components/SectionNextflowNumbers";
-import Images from "@components/SectionImages";
-import PastEvents from "@components/SectionPastEvents";
-import Subscribe from "@components/SectionSubscribe";
+import SponsoredBy from "@modules/SponsoredBy";
+import NextflowNumbers from "@modules/NextflowNumbers";
+import ImageSection from "@modules/ImageSection";
+import PastEvents from "@modules/PastEvents";
+import Subscribe from "@modules/Subscribe";
 import SEO from "@components/SEO";
 ---
 
@@ -14,7 +14,7 @@ import SEO from "@components/SEO";
   <EventSelector />
   <SponsoredBy />
   <NextflowNumbers client:load className="py-20" />
-  <Images client:load />
+  <ImageSection client:load className="mb-20" />
   <PastEvents client:visible />
   <Subscribe client:visible />
 </Layout>
