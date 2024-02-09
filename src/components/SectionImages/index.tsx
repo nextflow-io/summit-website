@@ -12,13 +12,15 @@ const SectionImages = ({ alt1, className }) => {
     images = [img3, img4, img5];
   }
   return (
-    <div className={clsx(styles.images, alt1 && styles.alt1, className)}>
-      {images.map((img, i) => (
-        <div>
-          <img src={img.src} alt="" />
-        </div>
-      ))}
-    </div>
+    <section className={styles.container}>
+      <div className={clsx(styles.images, alt1 && styles.alt1, className)}>
+        {images.map((img, i) => (
+          <div>
+            <img src={img.src} alt="" />
+          </div>
+        ))}
+      </div>
+    </section>
   );
 };
 
