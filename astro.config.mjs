@@ -21,6 +21,8 @@ export default defineConfig({
   vite: {
     plugins: [glsl()],
   },
-  output: "server",
-  adapter: netlify(),
+  output: "static",
+  adapter: netlify({
+    edgeMiddleware: true,
+  }),
 });
