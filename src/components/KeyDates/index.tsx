@@ -5,9 +5,9 @@ import Box from "@components/Box";
 
 const Row = ({ children, title }) => {
   return (
-    <div className="flex flex-wrap items-center border-b border-brand-400 py-2 mb-4">
-      <div className="w-full md:w-1/4 h3">{title}</div>
-      <div className="w-full md:w-3/4 md:text-2xl md:leading-10 py-2 md:py-0">
+    <div className="flex flex-wrap items-center border-b border-brand-800 py-2 mb-4">
+      <div className="w-full text-xl font-display font-semibold">{title}</div>
+      <div className="w-full md:text-lg md:leading-6 py-2 md:py-0 text-brand-300">
         {children}
       </div>
     </div>

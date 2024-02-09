@@ -7,7 +7,7 @@ import events from "./events.mjs";
 const SectionPastEvents = () => {
   return (
     <section className="pb-32 container">
-      <Swiper title="See our past events">
+      <Swiper>
         {events.map((event, index) => (
           <Fragment key={index}>
             <img src={event.img.src} loading="lazy" />

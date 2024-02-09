@@ -9,10 +9,16 @@
   &.open {
     height: 100vh;
   }
-  height: 104px;
+  height: 106px;
   padding: 0 16px;
   transition: all 0.2s;
   background: var(--color-brand);
+  background: linear-gradient(
+    0deg,
+    rgba(27, 24, 44, 1) 0%,
+    rgba(22, 15, 38, 1) 50%
+  );
+  border-bottom: 2px solid #383343;
   z-index: 100;
   position: fixed;
   left: 0;
@@ -31,7 +37,8 @@
       list-style: none;
       & a {
         display: block;
-        padding: 20px 6px;
+        padding: 20px 6px !important;
+        border: none !important;
         margin: 0 4px;
         line-height: 1;
         font-weight: 400;

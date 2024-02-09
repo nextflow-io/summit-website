@@ -12,8 +12,6 @@ import SEO from "@components/SEO";
 <Layout namespace="boston">
   <SEO title="Agenda" />
   <GlassArea className="pt-20 pb-6" style2>
-    <CallForAbstracts client:load />
-    <Images alt1 className="mt-20" />
     <section class="container island pb-10 md:py-20 text-center">
       <h1 class="h00 mb-8">Join us in Boston</h1>
       <div class="blockquote">
@@ -21,6 +19,8 @@ import SEO from "@components/SEO";
         researchers to showcase the latest breakthroughs in workflow management.
       </div>
     </section>
+    <CallForAbstracts client:load />
+    <Images alt1 className="mt-20" />
   </GlassArea>
   <KeyInformation className="mb-20 relative z-10" />
   <SectionCTA />

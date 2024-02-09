@@ -55,7 +55,7 @@ const Numbers = ({ className }) => {
           <div className="flex flex-wrap">
             <div className="w-full lg:w-1/3 lg:pr-8">
               <h3 className="text-5xl font-display font-medium text-center lg:text-left mb-12 px-4 lg:px-0 lg:mb-4">
-                Nextflow SUMMIT
+                Nextflow Summit
                 <br className="hidden lg:block" /> in numbers
               </h3>
             </div>

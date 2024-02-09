@@ -6,23 +6,9 @@
   & .content {
     position: relative;
     z-index: 2;
-    background-image: url("./images/overlay_1a.png");
+    background-image: url("./images/overlay_2b.png");
     background-size: 134px;
     background-position: center top;
-    &:before {
-      position: absolute;
-      height: 8px;
-      width: 100%;
-      display: block;
-      content: "";
-      bottom: 100%;
-      left: 0;
-      right: 0;
-      background-image: url("./images/overlay_1a3.png");
-      background-size: 130px;
-      background-repeat: repeat-x;
-      background-position: center bottom;
-    }
     &:after {
       position: absolute;
       height: 134px;
@@ -32,7 +18,7 @@
       top: 100%;
       left: 0;
       right: 0;
-      background-image: url("./images/overlay_1a2.png");
+      background-image: url("./images/overlay_2b2.png");
       background-size: 134px;
       background-position: center top;
     }

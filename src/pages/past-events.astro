@@ -9,21 +9,20 @@ import Button from "@components/Button";
 import SEO from "@components/SEO";
 ---
 
-<Layout>
+<Layout namespace="boston">
   <SEO title="Past Events" />
   <GlassArea className="pt-20 pb-6" style2>
-    <CallForAbstracts client:load />
-    <section class="container island md:py-20 text-center">
+    <section class="container island pb-10 md:py-20 text-center">
       <h1 class="h00 mb-8">Past Events</h1>
-      <div class="blockquote mb-16">
+      <div class="blockquote">
         Past events have provided insights into Nexflow's origins, development,
         and its applications in various domains, highting its potential and
         impact on scientific research, data analysis, and workflow management.
       </div>
-      <Button href="/boston/register" white wide>Pre-register</Button>
     </section>
     <PastEvents client:visible />
   </GlassArea>
+  <CallForAbstracts client:load />
   <SectionCTA />
   <SectionContact />
 </Layout>
