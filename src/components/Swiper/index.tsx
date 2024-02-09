@@ -49,9 +49,7 @@ const SwiperSection: React.FC<Props> = ({ title, children }) => {
         }}
       >
         {children.map((node, index) => (
-          <SwiperSlide key={index}>
-            <div className={styles.card}>{node}</div>
-          </SwiperSlide>
+          <SwiperSlide key={index}>{node}</SwiperSlide>
         ))}
       </Swiper>
       <nav className={clsx(styles.nav, "mt-12")}>

@@ -5,14 +5,18 @@ import GlassArea from "@components/GlassArea/index.astro";
 ---
 
 <GlassArea className="py-20">
-  <div class="container">
+  <div class="container smaller">
     <div class="flex flex-wrap justify-center text-center">
       <div class="w-full">
-        <img src={logo.src} class="w-full max-w-[474px] mx-auto" />
+        <img
+          src={logo.src}
+          class="w-full max-w-[474px] mx-auto"
+          alt="Nextflow SUMMIT 2024"
+        />
       </div>
-      <div class="w-full font-display text-6xl font-semibold my-14">
+      <h1 class="w-full h00 my-14">
         Get ready for SUMMIT events in 2024, in Boston and Barcelona!
-      </div>
+      </h1>
       <Card location="boston" />
       <Card location="barcelona" />
     </div>

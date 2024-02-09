@@ -12,9 +12,11 @@ import SEO from "@components/SEO";
 <Layout namespace="boston">
   <SEO />
   <EventSelector />
-  <SponsoredBy />
+  <h2 class="h00 text-center mt-10 mb-16 relative z-10">
+    Previous Nextflow Events
+  </h2>
+  <PastEvents client:visible />
   <NextflowNumbers client:load className="py-20" />
   <ImageSection client:load className="mb-20" />
-  <PastEvents client:visible />
   <Subscribe client:visible />
 </Layout>

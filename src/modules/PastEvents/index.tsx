@@ -4,23 +4,31 @@ import Swiper from "@components/Swiper";
 
 import events from "./events.mjs";
 
+import styles from "./styles.module.css";
+
 const SectionPastEvents = () => {
   return (
-    <section className="pb-32 container">
+    <section className="pb-16 container relative z-10">
       <Swiper>
         {events.map((event, index) => (
-          <Fragment key={index}>
+          <a
+            key={index}
+            className={styles.card}
+            href={event.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img src={event.img.src} loading="lazy" />
             <div className="swiper-lazy-preloader"></div>
             <div>
               <div>
                 <h4>{event.title}</h4>
-                <Button to={event.url} arrow white>
+                <Button arrow white>
                   Visit website
                 </Button>
               </div>
             </div>
-          </Fragment>
+          </a>
         ))}
       </Swiper>
     </section>

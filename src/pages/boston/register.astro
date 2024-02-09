@@ -13,7 +13,6 @@ import SEO from "@components/SEO";
 <Layout namespace="boston">
   <SEO title="Pre-register" />
   <GlassArea style2 className="pt-10">
-    <CallForAbstracts client:visible />
     <div class="container island mt-10">
       <h2 class="h000 mb-2">Interested in attending Nextflow Summit 2024?</h2>
       <div class="blockquote mb-4">
@@ -42,6 +41,7 @@ import SEO from "@components/SEO";
       </div>
     </div>
   </GlassArea>
+  <CallForAbstracts client:visible className="my-20" />
   <PastEvents client:visible />
   <Contact className="py-8" />
 </Layout>

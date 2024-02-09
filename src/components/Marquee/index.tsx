@@ -47,20 +47,13 @@ function Marquee({
     return () => clearInterval(interval);
   }, [speed]);
 
-  const cn = clsx(styles.container, className);
-
-  const Container = ({ children }) => {
-    if (href)
-      return (
-        <a className={cn} href={href} target="_blank" rel="noreferrer">
-          {children}
-        </a>
-      );
-    return <div className={cn}>{children}</div>;
-  };
-
   return (
-    <Container>
+    <a
+      className={clsx(styles.container, className)}
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+    >
       <Slide
         className={clsx(styles.slide1, { [styles.moving]: isMoving })}
         style={{
@@ -81,7 +74,7 @@ function Marquee({
       >
         {children}
       </Slide>
-    </Container>
+    </a>
   );
 }
 
