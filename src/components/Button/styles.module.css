@@ -90,7 +90,7 @@
   color: white;
   border: 1px solid var(--color-nextflow-400);
   transition: all 0.5s;
-  background: rgb(13, 192, 157);
+  /* background: rgb(13, 192, 157);
   background: linear-gradient(
     23deg,
     rgba(13, 192, 157, 1) 30%,
@@ -101,6 +101,12 @@
     23deg,
     rgba(6, 86, 71, 1) 30%,
     rgba(4, 138, 186, 1) 100%
+  );*/
+  background: rgb(22, 15, 38);
+  background: linear-gradient(
+    23deg,
+    rgba(22, 15, 38, 1) 50%,
+    rgba(3, 48, 40, 1) 100%
   );
   &:hover {
     background: rgb(4, 54, 44);
@@ -109,6 +115,26 @@
       rgba(4, 54, 44, 1) 30%,
       rgba(3, 102, 138, 1) 100%
     );
-    box-shadow: 0px 0px 10px 0px rgba(0, 255, 207, 0.2);
+    box-shadow: 0px 0px 10px 0px rgba(0, 255, 207, 0.4);
+  }
+}
+.button.cta2 {
+  color: white;
+  border: 1px solid var(--color-nextflow-400);
+  transition: all 0.5s;
+  background: rgb(13, 192, 157);
+  background: linear-gradient(
+    23deg,
+    rgba(13, 192, 157, 1) 30%,
+    rgba(8, 177, 238, 1) 100%
+  );
+  &:hover {
+    background: rgb(4, 54, 44);
+    background: linear-gradient(
+      23deg,
+      rgba(4, 54, 44, 1) 30%,
+      rgba(3, 102, 138, 1) 100%
+    );
+    box-shadow: 0px 0px 10px 0px rgba(0, 255, 207, 0.4);
   }
 }

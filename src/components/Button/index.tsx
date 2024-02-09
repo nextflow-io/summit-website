@@ -22,6 +22,7 @@ type Props = {
   secondary?: boolean;
   arrow?: boolean;
   cta?: boolean;
+  cta2?: boolean;
 };
 
 const Button: React.FC<Props> = ({
@@ -44,6 +45,7 @@ const Button: React.FC<Props> = ({
     [styles.blue2]: attributes.blue2,
     [styles.secondary]: attributes.secondary,
     [styles.cta]: attributes.cta,
+    [styles.cta2]: attributes.cta2,
   });
 
   let arrow = null;
