@@ -11,6 +11,7 @@ type Props = {
   to?: string;
   className?: string;
   small?: boolean;
+  large?: boolean;
   wide?: boolean;
   wider?: boolean;
   white?: boolean;
@@ -35,6 +36,7 @@ const Button: React.FC<Props> = ({
 }) => {
   const cn = clsx("button", styles.button, className, {
     [styles.small]: attributes.small,
+    [styles.large]: attributes.large,
     [styles.wide]: attributes.wide,
     [styles.wider]: attributes.wider,
     [styles.white]: attributes.white,
@@ -57,7 +59,8 @@ const Button: React.FC<Props> = ({
 
   const btnContent = (
     <Fragment>
-      <span>
+      <span className={styles.hoverBG} />
+      <span className={styles.content}>
         {children}
         {arrow}
       </span>
