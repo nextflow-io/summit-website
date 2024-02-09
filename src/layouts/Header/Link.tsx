@@ -10,7 +10,7 @@ const Link: React.FC<Props> = ({ children, href, active }) => {
   const attr = {};
   if (active) attr["data-active"] = true;
   return (
-    <a {...attr} href={href}>
+    <a {...attr} href={href} className="navItem">
       {children}
     </a>
   );

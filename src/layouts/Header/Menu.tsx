@@ -33,7 +33,7 @@ const Menu: React.FC<Props> = ({ className, pathname, namespace, second }) => {
             </Link>
           </li>
           <li>
-            <Button href={url("/register")} arrow white>
+            <Button href={url("/register")} arrow cta wide>
               Pre-register
             </Button>
           </li>
