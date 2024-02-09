@@ -55,7 +55,7 @@ const Menu: React.FC<Props> = ({ className, pathname, namespace, second }) => {
           </Link>
         </li>
         <li>
-          <Link href={url("/past-events")} active={isActive("past-events")}>
+          <Link href="/past-events" active={isActive("past-events")}>
             Past events
           </Link>
         </li>
