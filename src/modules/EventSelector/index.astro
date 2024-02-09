@@ -2,12 +2,10 @@
 import logo from "./logo.svg";
 import Card from "./Card.astro";
 import GlassArea from "@components/GlassArea/index.astro";
-import SectionCallForAbstracts from "@components/SectionCallForAbstracts";
 ---
 
-<GlassArea className="min-h-[1261px]">
-  <SectionCallForAbstracts client:load />
-  <div class="mx-auto max-w-[1008px] mt-16">
+<GlassArea className="py-20">
+  <div class="container">
     <div class="flex flex-wrap justify-center text-center">
       <div class="w-full">
         <img src={logo.src} class="w-full max-w-[474px] mx-auto" />
