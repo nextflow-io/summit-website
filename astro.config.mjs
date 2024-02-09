@@ -20,7 +20,4 @@ export default defineConfig({
   vite: {
     plugins: [glsl()],
   },
-  redirects: {
-    "/": "/boston",
-  },
 });
