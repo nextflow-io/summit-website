@@ -54,11 +54,6 @@ const Menu: React.FC<Props> = ({ className, pathname, namespace, second }) => {
             Travel
           </Link>
         </li>
-        <li>
-          <Link href="/past-events" active={isActive("past-events")}>
-            Past events
-          </Link>
-        </li>
       </ul>
     </nav>
   );
