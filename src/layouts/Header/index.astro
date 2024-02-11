@@ -5,13 +5,15 @@ import styles from "./styles.module.css";
 import NavMobile from "./NavMobile";
 import Menu from "./Menu";
 import Logo from "./Logo";
+let showNav = true;
+if (typeof Astro.props.showNav !== "undefined") showNav = Astro.props.showNav;
 ---
 
 <header class={styles.header}>
   <div class="container flex items-center justify-between">
     <Logo namespace={namespace} />
-    <Menu pathname={pathname} namespace={namespace} />
-    <Menu pathname={pathname} namespace={namespace} second />
+    {showNav && <Menu pathname={pathname} namespace={namespace} />}
+    <Menu pathname={pathname} namespace="2024/boston" second />
   </div>
 </header>
 <NavMobile pathname={pathname} namespace={namespace} client:load />
