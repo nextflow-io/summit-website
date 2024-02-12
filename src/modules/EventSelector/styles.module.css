@@ -1,14 +1,8 @@
 .card {
   transition: all 0.2s;
   &[href] {
-    & :global(.uppercase) {
-      transition: all 0.6s;
-    }
     &:hover {
       transform: scale(1.02);
-      & :global(.uppercase) {
-        color: fuchsia;
-      }
     }
   }
 }
