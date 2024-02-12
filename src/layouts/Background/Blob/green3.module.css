@@ -8,6 +8,10 @@
   top: 65vh;
   left: 20vw;
   opacity: 0.7;
+  display: none;
+  @media (--md) {
+    display: block;
+  }
 }
 
 @keyframes movement {

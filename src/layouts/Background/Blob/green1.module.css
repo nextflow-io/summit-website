@@ -1,15 +1,25 @@
 .blob {
-  min-height: 20em;
-  min-width: 20em;
-  max-height: 60vw;
-  max-width: 60vw;
-  filter: blur(10em);
+  min-height: 15em;
+  min-width: 15em;
+  max-height: 50vw;
+  max-width: 50vw;
+  filter: blur(8em);
   background-color: var(--color-nextflow);
-  top: 30vh;
-  left: -40vw;
-  opacity: 0.6;
+  top: 40vh;
+  left: -50vw;
+  opacity: 1;
   animation: movement 25s linear infinite;
   transform: translate(0, 0);
+  @media (--md) {
+    top: 30vh;
+    left: -40vw;
+    opacity: 0.6;
+    min-height: 20em;
+    min-width: 20em;
+    max-height: 60vw;
+    max-width: 60vw;
+    filter: blur(10em);
+  }
 }
 
 @keyframes movement {

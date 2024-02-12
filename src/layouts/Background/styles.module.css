@@ -5,16 +5,18 @@
   left: 0;
   right: 0;
   height: 1981px;
-  background-image: url("./images/bg_1a.jpg");
+  background-image: url("./images/bg_1d.jpg");
   background-repeat: no-repeat;
-  background-size: 200vw auto;
-  background-position: center 100px;
+  background-size: auto 140vh;
+  background-position: 10vw top;
   overflow: hidden;
   @media (--md) {
-    background-size: 150vw auto;
+    background-size: 140vh auto;
+    background-position: 50vw 50px;
   }
   @media (--lg) {
-    background-size: 120vw auto;
+    background-size: 100vw auto;
+    background-position: 50vw 100px;
   }
 }
 .overlay {

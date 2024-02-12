@@ -10,6 +10,10 @@
   opacity: 0.3;
   animation: movement 25s linear infinite;
   transform: translate(0, 0);
+  display: none;
+  @media (--md) {
+    display: block;
+  }
 }
 
 @keyframes movement {

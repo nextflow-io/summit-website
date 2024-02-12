@@ -8,9 +8,16 @@ type Props = {
   namespace: string;
   pathname: string;
   second?: boolean;
+  desktop?: boolean;
 };
 
-const Menu: React.FC<Props> = ({ className, pathname, namespace, second }) => {
+const Menu: React.FC<Props> = ({
+  className,
+  pathname,
+  namespace,
+  second,
+  desktop,
+}) => {
   function isActive(path) {
     return pathname.includes(path);
   }
@@ -33,9 +40,15 @@ const Menu: React.FC<Props> = ({ className, pathname, namespace, second }) => {
             </Link>
           </li>
           <li>
-            <Button href={url("/register")} arrow cta wide>
-              Pre-register
-            </Button>
+            {desktop ? (
+              <Button href={url("/register")} arrow cta wide>
+                Pre-register
+              </Button>
+            ) : (
+              <Link href={url("/register")} active={isActive("register")}>
+                Pre-register
+              </Link>
+            )}
           </li>
         </ul>
       </nav>
