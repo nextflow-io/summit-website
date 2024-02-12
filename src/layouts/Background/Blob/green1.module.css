@@ -1,0 +1,28 @@
+.blob {
+  min-height: 20em;
+  min-width: 20em;
+  max-height: 60vw;
+  max-width: 60vw;
+  filter: blur(10em);
+  background-color: var(--color-nextflow);
+  top: 30vh;
+  left: -40vw;
+  opacity: 0.6;
+  animation: movement 25s linear infinite;
+  transform: translate(0, 0);
+}
+
+@keyframes movement {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(150px, 150px) scale(1.4);
+  }
+  70% {
+    transform: translate(120px, 100px) scale(1.4);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}

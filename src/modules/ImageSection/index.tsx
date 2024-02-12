@@ -11,7 +11,7 @@ type Props = {
   className?: string;
 };
 
-const SectionImageSection: React.FC<Props> = ({ alt1, className }) => {
+const ImageSection: React.FC<Props> = ({ alt1, className }) => {
   let images = [img1, img2];
   if (alt1) {
     images = [img3, img4, img5];
@@ -20,7 +20,7 @@ const SectionImageSection: React.FC<Props> = ({ alt1, className }) => {
     <section className={styles.container}>
       <div className={clsx(styles.images, alt1 && styles.alt1, className)}>
         {images.map((img, i) => (
-          <div>
+          <div key={i}>
             <img src={img.src} alt="" />
           </div>
         ))}
@@ -29,4 +29,4 @@ const SectionImageSection: React.FC<Props> = ({ alt1, className }) => {
   );
 };
 
-export default SectionImageSection;
+export default ImageSection;

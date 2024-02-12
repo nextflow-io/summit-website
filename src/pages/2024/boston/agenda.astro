@@ -11,7 +11,7 @@ import SEO from "@components/SEO";
 
 <Layout namespace="2024/boston">
   <SEO slot="head" title="Agenda" img={1} />
-  <GlassArea className="pb-6" style2>
+  <section class="pb-6">
     <section class="container island py-10 md:py-20 text-center">
       <h1 class="h00 mb-8">Join us in Boston</h1>
       <div class="blockquote">
@@ -21,7 +21,7 @@ import SEO from "@components/SEO";
     </section>
     <KeyInformation />
     <ImageSection alt1 className="mt-20" />
-  </GlassArea>
+  </section>
   <CallForAbstracts client:load className="my-20" />
   <CTASection />
   <Contact />

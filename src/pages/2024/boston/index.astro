@@ -15,7 +15,7 @@ import SEO from "@components/SEO";
 
 <Layout namespace="2024/boston">
   <SEO slot="head" img={1} />
-  <GlassArea className="pb-6 pt-10 md:pt-20" style2>
+  <section class="pb-6 pt-10 md:pt-20" style2>
     <CallForAbstracts client:load />
     <div class="mt-16 text-center container">
       <img src={title.src} class="mx-auto max-w-[300px] lg:max-w-none" />
@@ -23,10 +23,10 @@ import SEO from "@components/SEO";
       <Button href="/boston/register" cta2 large>Pre-register</Button>
     </div>
     <KeyInformation className="pt-16" />
-  </GlassArea>
-  <div class="container relative z-10 mb-20">
+  </section>
+  <section class="container relative z-10 mb-20">
     <KeyDates showTitle showImg />
-  </div>
+  </section>
   <CTASection />
   <NextflowNumbers client:load className="py-20" />
   <ImageSection />

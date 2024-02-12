@@ -1,0 +1,41 @@
+.background {
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1981px;
+  background-image: url("./images/bg_1a.jpg");
+  background-repeat: no-repeat;
+  background-size: 200vw auto;
+  background-position: center 100px;
+  overflow: hidden;
+  @media (--md) {
+    background-size: 150vw auto;
+  }
+  @media (--lg) {
+    background-size: 120vw auto;
+  }
+}
+.overlay {
+  width: 100%;
+  height: calc(100% - 402px);
+  position: relative;
+  z-index: 0;
+  background-image: url("./images/overlay_2b.png");
+  background-size: 134px;
+  background-position: center 105px;
+  &:after {
+    position: absolute;
+    height: 134px;
+    width: 100%;
+    display: block;
+    content: "";
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-image: url("./images/overlay_2b2.png");
+    background-size: 134px;
+    background-position: center top;
+  }
+}

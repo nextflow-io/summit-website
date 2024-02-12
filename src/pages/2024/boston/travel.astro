@@ -14,54 +14,49 @@ import SEO from "@components/SEO";
 
 <Layout namespace="2024/boston">
   <SEO slot="head" title="Travel" img={1} />
-  <GlassArea style2>
-    <section class="pt-10 md:py-20">
-      <div class="container island text-center">
-        <h1 class="h00 mb-8">Join us in Boston</h1>
-        <div class="blockquote">
-          Boston offers a captivating fusion of historical significance and
-          innovative spirit, making it a dynamic center for art and technology.
-          Boston's vibrant atmosphere fosters an environment where art and
-          technology coexist, offering a captivating experience for visitors
-          seeking a deep appreciation for both.
+  <section class="pt-10 md:py-20">
+    <div class="container island text-center">
+      <h1 class="h00 mb-8">Join us in Boston</h1>
+      <div class="blockquote">
+        Boston offers a captivating fusion of historical significance and
+        innovative spirit, making it a dynamic center for art and technology.
+        Boston's vibrant atmosphere fosters an environment where art and
+        technology coexist, offering a captivating experience for visitors
+        seeking a deep appreciation for both.
+      </div>
+    </div>
+    <div class="container flex flex-wrap pt-10 md:pt-20">
+      <div class="w-full md:w-1/2 p-2 min-h-[300px] relative">
+        <div class="h-full w-full relative rounded-lg overflow-hidden">
+          <MapEmbed />
         </div>
       </div>
-      <div class="container flex flex-wrap pt-10 md:pt-20">
-        <div class="w-full md:w-1/2 p-2 min-h-[300px] relative">
-          <div class="h-full w-full relative rounded-lg overflow-hidden">
-            <MapEmbed />
-          </div>
-        </div>
-        <div class="w-full md:w-1/2 p-2 min-h-[300px]">
-          <Box>
-            <p class="h1 mb-6">Aloft Boston Seaport District</p>
-            <p class="mb-4">
-              Across from the Boston Convention & Exhibition Center, this
-              trendy, modern hotel is also 2 miles from the New England Aquarium
-              and 3 miles from Boston Logan International Airport.
-            </p>
-            <p class="mb-2">
-              <a
-                target="_blank"
-                href="https://maps.app.goo.gl/S9aZawB98jRa8DEC9"
-              >
-                <Icon name="mdi:map-marker" class="-mt-1" />
-                401-403 D St, Boston
-              </a>
-            </p>
-            <a
-              target="_blank"
-              href="https://www.marriott.com/en-us/hotels/bosal-aloft-boston-seaport-district/overview/"
-            >
-              <Icon name="mdi:external-link" />
-              Website
+      <div class="w-full md:w-1/2 p-2 min-h-[300px]">
+        <Box>
+          <p class="h1 mb-6">Aloft Boston Seaport District</p>
+          <p class="mb-4">
+            Across from the Boston Convention & Exhibition Center, this trendy,
+            modern hotel is also 2 miles from the New England Aquarium and 3
+            miles from Boston Logan International Airport.
+          </p>
+          <p class="mb-2">
+            <a target="_blank" href="https://maps.app.goo.gl/S9aZawB98jRa8DEC9">
+              <Icon name="mdi:map-marker" class="-mt-1" />
+              401-403 D St, Boston
             </a>
-          </Box>
-        </div>
+          </p>
+          <a
+            target="_blank"
+            href="https://www.marriott.com/en-us/hotels/bosal-aloft-boston-seaport-district/overview/"
+          >
+            <Icon name="mdi:external-link" />
+            Website
+          </a>
+        </Box>
       </div>
-    </section>
+    </div>
     <Accommodation client:load />
-  </GlassArea>
+  </section>
   <CallForAbstracts client:load className="mb-20" />
   <CTASection />
   <ImageSection alt1 className="mt-20" />
