@@ -61,3 +61,6 @@ input[type="submit"] {
     }
   }
 }
+.submitted-message.hs-main-font-element {
+  color: var(--color-wave-500);
+}

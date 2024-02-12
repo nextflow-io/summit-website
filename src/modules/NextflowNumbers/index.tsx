@@ -71,7 +71,7 @@ const Numbers = ({ className }) => {
                   Nextflow community open-source contributors
                 </Item>
                 <Item ready={ready} value={100}>
-                  High-quality, curatednf-core pipelines
+                  High-quality, curated nf-core pipelines
                 </Item>
                 <Item ready={ready} value={160000}>
                   Nextflow monthly downloads

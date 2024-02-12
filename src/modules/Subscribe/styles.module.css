@@ -1,12 +1,9 @@
 .form {
   margin: 0 auto;
-  max-width: 500px;
+  max-width: 440px;
   & form {
     display: flex;
     flex-wrap: wrap;
-    & :global(.hs-richtext.hs-main-font-element) {
-      display: none;
-    }
     & :global(.hs-form-field),
     & :global(.hs_submit) {
       flex: 1 1 auto;
@@ -15,7 +12,35 @@
         width: 100%;
       }
     }
+    & :global(.hs_email) {
+      & input {
+        border-radius: 99px;
+        padding-left: 25px;
+      }
+    }
+    & :global(.hs_submit) {
+      & input {
+        border-radius: 99px;
+      }
+    }
+    & :global(.hs_error_rollup),
+    & :global(.hs-error-msgs) {
+      display: none;
+    }
   }
-  & input {
+}
+@media (--sm) {
+  .form {
+    & form {
+      & :global(.hs_email) {
+        & input {
+          border-radius: 99px 0 0 99px;
+          width: 350px;
+        }
+      }
+      & :global(.hs_submit) {
+        margin-left: -50px;
+      }
+    }
   }
 }

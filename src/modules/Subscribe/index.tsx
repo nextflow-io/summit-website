@@ -14,7 +14,7 @@ const SectionSubscribe: React.FC<Props> = () => {
       </div>
       <HubspotForm
         className={styles.form}
-        formID="bdbc8164-e187-4707-a2eb-d199d0e4da73"
+        formID="a3ee7c65-a905-451d-aba6-cf125a3b89b3"
         linkedInEventID={13682684}
         gtmEventID="gtm_newsletter"
       />

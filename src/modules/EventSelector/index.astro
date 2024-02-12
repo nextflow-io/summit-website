@@ -6,8 +6,8 @@ import GlassArea from "@components/GlassArea/index.astro";
 
 <GlassArea className="py-20">
   <div class="container smaller">
-    <div class="flex flex-wrap justify-center text-center">
-      <div class="w-full">
+    <div class="text-center">
+      <div class="w-full px-4">
         <img
           src={logo.src}
           class="w-full max-w-[474px] mx-auto"
@@ -17,8 +17,10 @@ import GlassArea from "@components/GlassArea/index.astro";
       <h1 class="w-full h00 my-14">
         Get ready for SUMMIT events in 2024, in Boston and Barcelona!
       </h1>
-      <Card location="boston" />
-      <Card location="barcelona" />
+      <div class="flex flex-wrap justify-center -mx-4">
+        <Card location="boston" />
+        <Card location="barcelona" />
+      </div>
     </div>
   </div>
 </GlassArea>

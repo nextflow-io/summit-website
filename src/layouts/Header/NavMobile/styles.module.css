@@ -65,6 +65,9 @@
             color: white;
           }
         }
+        & span {
+          padding: 0 !important;
+        }
       }
     }
   }

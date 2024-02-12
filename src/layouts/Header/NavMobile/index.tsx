@@ -10,22 +10,26 @@ import Menu from "../Menu";
 type Props = {
   namespace: string;
   pathname: string;
+  showNav?: boolean;
 };
 
-const NavMobile: React.FC<Props> = ({ pathname, namespace }) => {
+const NavMobile: React.FC<Props> = ({ pathname, namespace, showNav }) => {
   const [isOpen, setIsOpen] = useState(false);
   const isMobile = useMediaQuery({ maxWidth: "lg" });
   if (!isMobile) return null;
   return (
-    <header className={clsx(styles.navMobile, { [styles.open]: isOpen })}>
+    <header
+      id="headerMobile"
+      className={clsx(styles.navMobile, { [styles.open]: isOpen })}
+    >
       <div className={styles.header}>
         <Logo namespace={namespace} />
         <Hamburger setIsOpen={setIsOpen} isOpen={isOpen} />
       </div>
       {isOpen && (
         <div className={styles.menuContainer}>
-          <Menu pathname={pathname} namespace={namespace} />
-          <Menu pathname={pathname} namespace={namespace} second />
+          {showNav && <Menu pathname={pathname} namespace={namespace} />}
+          <Menu pathname={pathname} namespace="2024/boston" second />
         </div>
       )}
     </header>
