@@ -8,10 +8,7 @@ type Props = {
 
 const CallForAbstracts: React.FC<Props> = ({ className }) => {
   return (
-    <Marquee
-      className={className}
-      href="https://sessionize.com/nextflow-summit-2024-boston"
-    >
+    <Marquee className={className} href="/2024/boston/call-for-abstracts/">
       <img src={call_for_abstracts.src} />
       <img src={call_for_abstracts.src} />
       <img src={call_for_abstracts.src} />

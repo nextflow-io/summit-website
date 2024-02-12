@@ -48,12 +48,7 @@ function Marquee({
   }, [speed]);
 
   return (
-    <a
-      className={clsx(styles.container, className)}
-      href={href}
-      target="_blank"
-      rel="noreferrer"
-    >
+    <a className={clsx(styles.container, className)} href={href}>
       <Slide
         className={clsx(styles.slide1, { [styles.moving]: isMoving })}
         style={{

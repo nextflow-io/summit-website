@@ -4,7 +4,9 @@ import { sanityIntegration } from "@sanity/astro";
 import { defineConfig } from "astro/config";
 import glsl from "vite-plugin-glsl";
 import netlify from "@astrojs/netlify";
+import icon from "astro-icon";
 
+// https://astro.build/config
 export default defineConfig({
   integrations: [
     react(),
@@ -14,6 +16,7 @@ export default defineConfig({
       dataset: "summit",
       useCdn: false,
     }),
+    icon(),
   ],
   vite: {
     plugins: [glsl()],

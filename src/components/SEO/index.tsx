@@ -1,16 +1,18 @@
 const siteTitle = "Nextflow SUMMIT 2024";
-import imgDefault from "./share-default.png";
 const descDefault = `Join us at the Nextflow SUMMIT 2024 for the latest developments and innovations from the Nextflow world.`;
+import imgDefault from "./share-default.png";
+import imgBoston from "./share-boston.png";
+const images = [imgDefault, imgBoston];
 
 type Props = {
   description?: string;
   title?: string;
-  img?: string;
+  img?: number;
   author?: string;
 };
 
 const SEO: React.FC<Props> = ({ img, author, ...props }) => {
-  const shareImg = img || imgDefault.src;
+  const shareImg = img ? images[img].src : imgDefault.src;
   const description = props.description || descDefault;
   let title = siteTitle;
   if (props.title) title = `${props.title} | ${siteTitle}`;

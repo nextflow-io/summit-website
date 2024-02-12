@@ -23,6 +23,7 @@
     "@types/react-dom": "^18.2.18",
     "@uidotdev/usehooks": "^2.4.1",
     "astro": "^4.2.4",
+    "astro-icon": "^1.1.0",
     "autoprefixer": "^10.4.17",
     "clsx": "^2.1.0",
     "react": "^18.2.0",
@@ -36,6 +37,7 @@
   },
   "devDependencies": {
     "@csstools/postcss-global-data": "^2.1.1",
+    "@iconify-json/mdi": "^1.1.64",
     "postcss-custom-media": "^10.0.2",
     "prettier": "^3.2.4",
     "prettier-plugin-astro": "^0.13.0",

@@ -1,4 +1,5 @@
 ---
+import { Icon } from "astro-icon/components";
 import Layout from "@layouts/Base.astro";
 import GlassArea from "@components/GlassArea/index.astro";
 import CallForAbstracts from "@modules/CallForAbstracts";
@@ -12,7 +13,7 @@ import SEO from "@components/SEO";
 ---
 
 <Layout namespace="2024/boston">
-  <SEO slot="head" title="Travel" />
+  <SEO slot="head" title="Travel" img={1} />
   <GlassArea style2>
     <section class="pt-10 md:py-20">
       <div class="container island text-center">
@@ -26,16 +27,34 @@ import SEO from "@components/SEO";
         </div>
       </div>
       <div class="container flex flex-wrap pt-10 md:pt-20">
-        <div class="w-full md:w-1/2 p-2 h-[300px]">
-          <div class="relative w-full h-full rounded-lg overflow-hidden">
+        <div class="w-full md:w-1/2 p-2 min-h-[300px] relative">
+          <div class="h-full w-full relative rounded-lg overflow-hidden">
             <MapEmbed />
           </div>
         </div>
-        <div class="w-full md:w-1/2 p-2 h-[300px]">
+        <div class="w-full md:w-1/2 p-2 min-h-[300px]">
           <Box>
             <p class="h1 mb-6">Aloft Boston Seaport District</p>
-            <a target="_blank" href="https://maps.app.goo.gl/S9aZawB98jRa8DEC9">
-              401-403 D St, Boston, MA 02210, United States
+            <p class="mb-4">
+              Across from the Boston Convention & Exhibition Center, this
+              trendy, modern hotel is also 2 miles from the New England Aquarium
+              and 3 miles from Boston Logan International Airport.
+            </p>
+            <p class="mb-2">
+              <a
+                target="_blank"
+                href="https://maps.app.goo.gl/S9aZawB98jRa8DEC9"
+              >
+                <Icon name="mdi:map-marker" class="-mt-1" />
+                401-403 D St, Boston
+              </a>
+            </p>
+            <a
+              target="_blank"
+              href="https://www.marriott.com/en-us/hotels/bosal-aloft-boston-seaport-district/overview/"
+            >
+              <Icon name="mdi:external-link" />
+              Website
             </a>
           </Box>
         </div>

@@ -66,3 +66,6 @@
 b {
   font-weight: 700;
 }
+svg[data-icon] {
+  display: inline-block;
+}

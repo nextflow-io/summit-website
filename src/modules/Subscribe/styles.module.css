@@ -21,6 +21,10 @@
     & :global(.hs_submit) {
       & input {
         border-radius: 99px;
+        transition: all 0.3s;
+        &:hover {
+          background: var(--color-nextflow);
+        }
       }
     }
     & :global(.hs_error_rollup),

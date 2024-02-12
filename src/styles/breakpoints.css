@@ -1,4 +1,5 @@
 /* Matches Tailwind config */
+@custom-media --xs (min-width: 340px);
 @custom-media --sm (min-width: 640px);
 @custom-media --md (min-width: 768px);
 @custom-media --lg (min-width: 1024px);

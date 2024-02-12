@@ -12,8 +12,14 @@ if (typeof Astro.props.showNav !== "undefined") showNav = Astro.props.showNav;
 <header id="header" class={styles.header}>
   <div class="container flex items-center justify-between">
     <Logo namespace={namespace} />
-    {showNav && <Menu pathname={pathname} namespace={namespace} />}
-    <Menu pathname={pathname} namespace="2024/boston" second />
+    {
+      showNav && (
+        <>
+          <Menu pathname={pathname} namespace={namespace} />
+          <Menu pathname={pathname} namespace="2024/boston" second />
+        </>
+      )
+    }
   </div>
 </header>
 <NavMobile
