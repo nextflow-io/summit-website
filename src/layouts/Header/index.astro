@@ -26,5 +26,5 @@ if (typeof Astro.props.showNav !== "undefined") showNav = Astro.props.showNav;
   pathname={pathname}
   namespace={namespace}
   showNav={showNav}
-  client:load
+  client:only="react"
 />
