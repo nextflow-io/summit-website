@@ -1,6 +1,5 @@
 ---
 import Layout from "@layouts/Base.astro";
-import GlassArea from "@components/GlassArea/index.astro";
 import CallForAbstracts from "@modules/CallForAbstracts";
 import NextflowNumbers from "@modules/NextflowNumbers";
 import ImageSection from "@modules/ImageSection";
@@ -15,9 +14,9 @@ import SEO from "@components/SEO";
 
 <Layout namespace="2024/boston">
   <SEO slot="head" img={1} />
-  <section class="pb-6 pt-10 md:pt-20">
-    <CallForAbstracts client:load />
-    <div class="mt-16 text-center container">
+  <section class="pb-6 pt-16 md:pt-20">
+    <CallForAbstracts client:load className="pb-10 md:pb-20" />
+    <div class="text-center container">
       <img src={title.src} class="mx-auto max-w-[300px] lg:max-w-none" />
       <div class="h00 mt-16 mb-8">MAY 21 - 24, 2024</div>
       <Button href="/2024/boston/register" cta2 large>Pre-register</Button>

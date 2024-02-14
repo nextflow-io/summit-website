@@ -1,7 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
 import Layout from "@layouts/Base.astro";
-import GlassArea from "@components/GlassArea/index.astro";
 import CallForAbstracts from "@modules/CallForAbstracts";
 import ImageSection from "@modules/ImageSection";
 import CTASection from "@modules/CTASection";
@@ -14,7 +13,8 @@ import SEO from "@components/SEO";
 
 <Layout namespace="2024/boston">
   <SEO slot="head" title="Travel" img={1} />
-  <section class="pt-10 md:py-20">
+  <section class="pb-6 pt-16 md:py-20">
+    <CallForAbstracts client:load className="pb-10 md:pb-16" />
     <div class="container island text-center">
       <h1 class="h00 mb-8">Join us in Boston</h1>
       <div class="blockquote">
@@ -57,7 +57,6 @@ import SEO from "@components/SEO";
     </div>
     <Accommodation client:load />
   </section>
-  <CallForAbstracts client:load className="mb-20" />
   <CTASection />
   <ImageSection alt1 className="mt-20" />
   <Contact />

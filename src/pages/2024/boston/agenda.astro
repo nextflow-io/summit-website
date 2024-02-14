@@ -1,6 +1,5 @@
 ---
 import Layout from "@layouts/Base.astro";
-import GlassArea from "@components/GlassArea/index.astro";
 import CallForAbstracts from "@modules/CallForAbstracts";
 import KeyInformation from "@modules/KeyInformation";
 import ImageSection from "@modules/ImageSection";
@@ -11,18 +10,18 @@ import SEO from "@components/SEO";
 
 <Layout namespace="2024/boston">
   <SEO slot="head" title="Agenda" img={1} />
-  <section class="pb-6">
-    <section class="container island py-10 md:py-20 text-center">
+  <section class="pb-6 pt-16 md:pt-20">
+    <CallForAbstracts client:load className="pb-10 md:pb-16" />
+    <div class="container island pb-10 md:pb-20 text-center">
       <h1 class="h00 mb-8">Join us in Boston</h1>
       <div class="blockquote">
         This premier event brings together leading experts, innovators, and
         researchers to showcase the latest breakthroughs in workflow management.
       </div>
-    </section>
+    </div>
     <KeyInformation />
     <ImageSection alt1 className="mt-20" />
   </section>
-  <CallForAbstracts client:load className="my-20" />
   <CTASection />
   <Contact />
 </Layout>

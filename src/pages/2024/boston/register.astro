@@ -1,6 +1,5 @@
 ---
 import HubspotForm from "@components/HubspotForm";
-import GlassArea from "@components/GlassArea/index.astro";
 import Layout from "@layouts/Base.astro";
 import { Image } from "astro:assets";
 import audience1 from "@images/photo-audience-1.png";
@@ -12,8 +11,9 @@ import SEO from "@components/SEO";
 
 <Layout namespace="2024/boston">
   <SEO slot="head" title="Pre-register" img={1} />
-  <section>
-    <div class="container island pt-10 md:pt-20">
+  <section class="pb-6 pt-16 md:pt-20">
+    <CallForAbstracts client:load className="pb-10 md:pb-16" />
+    <div class="container island">
       <h2 class="h000 mb-2">Interested in attending Nextflow Summit 2024?</h2>
       <div class="blockquote mb-4">
         <p class="mt-8 mb-4">
@@ -41,7 +41,6 @@ import SEO from "@components/SEO";
       </div>
     </div>
   </section>
-  <CallForAbstracts client:visible className="my-20" />
   <PastEvents client:visible />
   <Contact className="py-8" />
 </Layout>

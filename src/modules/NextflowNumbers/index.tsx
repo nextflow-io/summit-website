@@ -72,7 +72,7 @@ const Numbers: React.FC<Props> = ({ className }) => {
               </h3>
             </div>
             <div className="w-full lg:w-2/3 flex flex-wrap">
-              <div className="md:border-r border-1 border-product-700 w-full md:w-2/6 md:pr-6">
+              <div className="md:border-r border-1 border-brand-900 w-full md:w-2/6 md:pr-6">
                 <div className="h-full w-full flex items-center flex-wrap -m-4">
                   <Item ready={ready} value={64} percent smaller>
                     Pharma & biotech
