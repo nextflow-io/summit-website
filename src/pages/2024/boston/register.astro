@@ -2,7 +2,7 @@
 import HubspotForm from "@components/HubspotForm";
 import Layout from "@layouts/Base.astro";
 import { Image } from "astro:assets";
-import audience1 from "@images/photo-audience-1.png";
+import audience1 from "@images/photo-audience-1a.jpg";
 import CallForAbstracts from "@modules/CallForAbstracts";
 import PastEvents from "@modules/PastEvents";
 import Contact from "@modules/Contact";
@@ -41,6 +41,6 @@ import SEO from "@components/SEO";
       </div>
     </div>
   </section>
-  <PastEvents client:visible />
+  <PastEvents title="Past events" client:visible />
   <Contact className="py-8" />
 </Layout>

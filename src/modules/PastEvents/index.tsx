@@ -6,10 +6,14 @@ import events from "./events.mjs";
 
 import styles from "./styles.module.css";
 
-const SectionPastEvents = () => {
+type Props = {
+  title?: string;
+};
+
+const SectionPastEvents: React.FC<Props> = ({ title }) => {
   return (
     <section className="pb-16 container relative z-10">
-      <Swiper>
+      <Swiper title={title}>
         {events.map((event, index) => (
           <a
             key={index}

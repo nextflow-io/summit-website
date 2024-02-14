@@ -2,8 +2,8 @@
 const { location } = Astro.props;
 import title_boston from "./title_boston.svg";
 import title_barcelona from "./title_barcelona.svg";
-import photo_boston from "./boston.png";
-import photo_barcelona from "./barcelona.png";
+import photo_boston from "./boston.jpg";
+import photo_barcelona from "./barcelona.jpg";
 const photo = location === "barcelona" ? photo_barcelona : photo_boston;
 const title = location === "barcelona" ? title_barcelona : title_boston;
 const subtitle = location === "barcelona" ? "In person | Online" : "In person";
@@ -14,7 +14,7 @@ import styles from "./styles.module.css";
 <a
   href={url}
   class:list={[
-    "w-full sm:w-1/2 max-w-[384px] min-h-[200px] bg-brand-1000 my-2 mx-4 rounded-[16px] text-center flex-auto",
+    "w-full sm:w-1/2 max-w-[384px] min-h-[200px] bg-brand-1000 my-2 mx-4 rounded-[16px] overflow-hidden text-center flex-auto",
     styles.card,
   ]}
 >
