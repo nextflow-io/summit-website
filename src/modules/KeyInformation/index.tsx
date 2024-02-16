@@ -30,8 +30,8 @@ type Props = {
 const KeyInformation: React.FC<Props> = ({ className }) => {
   return (
     <section className={clsx("container", className)}>
-      <div className="flex -m-2 sm:-m-4 flex flex-wrap">
-        <div className="w-full md:w-1/3 p-2 sm:p-4">
+      <div className="flex -m-2 lg:-m-4 flex flex-wrap">
+        <div className="w-full md:w-1/3 p-2 lg:p-4">
           <InfoBox
             title="Training | May 21-22"
             subtitle="2 days · 30 people · training"
@@ -41,7 +41,7 @@ const KeyInformation: React.FC<Props> = ({ className }) => {
             Nextflow and nf-core.
           </InfoBox>
         </div>
-        <div className="w-full md:w-1/3 p-2 sm:p-4">
+        <div className="w-full md:w-1/3 p-2 lg:p-4">
           <InfoBox
             title="Hackathon | May 21-22"
             subtitle="2 days · 100 people · hackathon"
@@ -50,7 +50,7 @@ const KeyInformation: React.FC<Props> = ({ className }) => {
             An in-person hackathon to develop nf-core.
           </InfoBox>
         </div>
-        <div className="w-full md:w-1/3 p-2 sm:p-4">
+        <div className="w-full md:w-1/3 p-2 lg:p-4">
           <InfoBox
             title="Summit | May 23-24"
             subtitle="1.5 days · 200 people · talks, networking, and more"
