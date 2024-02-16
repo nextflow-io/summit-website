@@ -14,7 +14,7 @@ const CTASection: React.FC<Props> = () => {
           Step into the future of data-driven science at the Nextflow Summit
           held in Boston, this May
         </div>
-        <Button href="/2024/boston/register" arrow wide>
+        <Button href="/2024/boston/register" arrow large>
           Pre-register now
         </Button>
       </div>
