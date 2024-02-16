@@ -1,6 +1,7 @@
 import { useCallback, useRef } from "react";
 import clsx from "clsx";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
 import { screens } from "../../../tailwind.config.mjs";
 
 import "swiper/css";
@@ -31,8 +32,13 @@ const SwiperSection: React.FC<Props> = ({ title, children }) => {
     <>
       {!!title && <h3 className="h0 mt-24 mb-8 md:mb-16">{title}</h3>}
       <Swiper
+        className={styles.swiper}
         loop
         ref={sliderRef}
+        modules={[Pagination]}
+        pagination={{
+          clickable: true,
+        }}
         breakpoints={{
           [breakpoints[0]]: {
             slidesPerView: 1,
@@ -52,7 +58,7 @@ const SwiperSection: React.FC<Props> = ({ title, children }) => {
           <SwiperSlide key={index}>{node}</SwiperSlide>
         ))}
       </Swiper>
-      <nav className={clsx(styles.nav, "mt-12")}>
+      <nav className={clsx(styles.nav, "-mt-6")}>
         <button onClick={handlePrev} />
         <button onClick={handleNext} />
       </nav>

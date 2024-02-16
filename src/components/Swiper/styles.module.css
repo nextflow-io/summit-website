@@ -16,3 +16,12 @@
     }
   }
 }
+.swiper {
+  padding-bottom: 50px;
+  & :global(.swiper-pagination) {
+    transform: translateY(10px);
+    & :global(.swiper-pagination-bullet) {
+      background: var(--color-brand-500);
+    }
+  }
+}
