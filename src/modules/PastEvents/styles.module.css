@@ -1,7 +1,7 @@
 .card {
   display: block;
   position: relative;
-  background: var(--color-brand);
+  background: var(--color-brand-1100);
   min-height: 448px;
   border-radius: 16px;
   overflow: hidden;
@@ -10,10 +10,27 @@
     position: absolute;
     height: 100%;
     object-fit: cover;
-    opacity: 0.2;
+    opacity: 0.6;
     transition: opacity 0.6s;
   }
-  & > div {
+  & .overlay,
+  & .overlay2 {
+    background: var(--color-brand);
+    mix-blend-mode: color;
+    position: absolute;
+    inset: 0;
+    opacity: 0.9;
+    transition: all 0.5s;
+    border-radius: 16px;
+  }
+  & .overlay2 {
+    mix-blend-mode: normal;
+    opacity: 0;
+    background: var(--color-nextflow);
+    z-index: 2;
+  }
+  & .content {
+    z-index: 3;
     position: absolute;
     inset: 0;
     display: flex;
@@ -31,7 +48,30 @@
   }
   &:hover {
     & > img {
-      opacity: 0.5;
+      opacity: 0.8;
     }
+    & .button {
+      transform: scale(1.05);
+      background: var(--color-nextflow);
+      color: white;
+    }
+    & .overlay2 {
+      opacity: 0.1;
+    }
+  }
+}
+.button {
+  transition: all 0.4s;
+  padding: 8px 18px;
+  border-radius: 99px;
+  background: white;
+  color: var(--color-brand);
+  display: inline-flex;
+  align-items: center;
+  font-weight: 500;
+  & svg {
+    margin-left: 8px;
+    width: 12px;
+    height: 12px;
   }
 }

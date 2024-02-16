@@ -1,6 +1,5 @@
-import { Fragment } from "react";
-import Button from "@components/Button";
 import Swiper from "@components/Swiper";
+import Arrow from "./Arrow";
 
 import events from "./events.mjs";
 
@@ -23,13 +22,15 @@ const SectionPastEvents: React.FC<Props> = ({ title }) => {
             rel="noopener noreferrer"
           >
             <img src={event.img.src} loading="lazy" />
-            <div className="swiper-lazy-preloader"></div>
-            <div>
+            <div className={styles.overlay} />
+            <div className={styles.overlay2} />
+            <div className={styles.content}>
               <div>
                 <h4>{event.title}</h4>
-                <Button arrow white>
+                <div className={styles.button}>
                   Visit website
-                </Button>
+                  <Arrow />
+                </div>
               </div>
             </div>
           </a>

@@ -87,14 +87,6 @@
     background: var(--color-brand);
   }
 }
-.button.white {
-  background: #fff;
-  color: var(--color-brand);
-  &:hover {
-    background: var(--color-nextflow);
-    color: #fff;
-  }
-}
 .button.brand {
   color: #fff;
   background: var(--color-brand);
@@ -110,6 +102,27 @@
     background: #fff;
     border-color: var(--color-brand);
     color: var(--color-brand);
+  }
+}
+.button.white {
+  background: #fff;
+  border-color: var(--color-brand);
+  margin: -1px 0 0 -1px;
+  & .content {
+    padding: 9px 19px;
+    color: var(--color-brand);
+    &:hover {
+      color: #fff;
+      & svg {
+        color: #fff;
+      }
+    }
+  }
+  & .hoverBG {
+    background: var(--color-nextflow);
+  }
+  &:hover {
+    border-color: var(--color-nextflow-1000);
   }
 }
 .button.white2 {
