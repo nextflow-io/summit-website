@@ -7,6 +7,7 @@ import title from "@images/title-summit-1a.svg";
 import Button from "@components/Button";
 import KeyInformation from "@modules/KeyInformation";
 import KeyDates from "@components/KeyDates";
+import YouTubeVideo from "@components/YouTubeVideo";
 import CTASection from "@modules/CTASection";
 import SectionContact from "@modules/Contact";
 import SEO from "@components/SEO";
@@ -23,8 +24,11 @@ import SEO from "@components/SEO";
     </div>
     <KeyInformation className="pt-16" />
   </section>
-  <section class="container relative z-10 mb-20">
+  <section class="container relative z-10 mb-4 sm:mb-8 lg:mb-20">
     <KeyDates showTitle showImg />
+  </section>
+  <section class="container mb-8 lg:mb-20">
+    <YouTubeVideo id="JvjoZ9dPjq8" />
   </section>
   <CTASection />
   <NextflowNumbers client:load className="py-20" />
