@@ -7,6 +7,7 @@ import "../styles/fonts/degular/main.css";
 import "../styles/fonts/inter/main.css";
 import Header from "./Header/index.astro";
 import Background from "./Background/index.astro";
+import Scripts from "./Scripts.astro";
 import Footer from "./Footer";
 ---
 
@@ -21,6 +22,7 @@ import Footer from "./Footer";
     <link rel="icon" href="/favicon.png" type="image/png" />
     <slot name="head" />
     {redirect && <meta http-equiv="refresh" content={`0;url=${redirect}`} />}
+    <Scripts />
   </head>
   <body>
     <Header namespace={namespace} showNav={showNav} />

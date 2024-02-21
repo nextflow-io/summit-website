@@ -1,0 +1,17 @@
+---
+const isProd = import.meta.env.PROD;
+---
+
+{isProd && (
+  <>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-92P10F5GQ1"></script>
+    <script type="application/javascript">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-92P10F5GQ1");
+    </script>
+</>
+)}
