@@ -52,7 +52,12 @@ const HubspotForm: React.FC<Props> = ({
   useEffect(() => {
     if (!loaded) return;
     if (!window.hbspt) return;
+    let hutk = document.cookie
+      .split("; ")
+      .find((cookie) => cookie.startsWith("hubspotutk="));
+    hutk = hutk?.split("=")[1];
     window.hbspt?.forms.create({
+      hutk: hutk || undefined,
       target: `#hsForm-${formID}`,
       region: "na1",
       portalId: "6705631",
