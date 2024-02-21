@@ -23,6 +23,11 @@ import Footer from "./Footer";
     <slot name="head" />
     {redirect && <meta http-equiv="refresh" content={`0;url=${redirect}`} />}
     <Scripts />
+    <script type="text/javascript">
+      const utm_source = window.location.search.split("utm_source=")[1];
+      if (utm_source)
+        document.cookie = `utm_source=${utm_source}; max-age=${60 * 60 * 24 * 30}`;
+    </script>
   </head>
   <body>
     <Header namespace={namespace} showNav={showNav} />
