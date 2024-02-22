@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import clsx from "clsx";
+import getCookie from "./getCookie";
 
 import styles from "./styles.module.css";
 
@@ -52,16 +53,20 @@ const HubspotForm: React.FC<Props> = ({
   useEffect(() => {
     if (!loaded) return;
     if (!window.hbspt) return;
-    let hutk = document.cookie
-      .split("; ")
-      .find((cookie) => cookie.startsWith("hubspotutk="));
-    hutk = hutk?.split("=")[1];
     window.hbspt?.forms.create({
-      hutk: hutk || undefined,
       target: `#hsForm-${formID}`,
       region: "na1",
       portalId: "6705631",
       formId: formID,
+      onFormReady() {
+        const utm_source = getCookie("utm_source");
+        const utmSourceInput = document.querySelector(
+          'input[name="utm_source"]',
+        );
+        if (utmSourceInput && utm_source) {
+          utmSourceInput.setAttribute("value", utm_source);
+        }
+      },
       onFormSubmitted() {
         if (linkedInEventID && !!window.lintrk)
           window.lintrk("track", { conversion_id: linkedInEventID });
