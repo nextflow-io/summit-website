@@ -9,6 +9,7 @@ import Header from "./Header/index.astro";
 import Background from "./Background/index.astro";
 import Scripts from "./Scripts.astro";
 import Footer from "./Footer";
+import CookieHandler from "./CookieHandler";
 ---
 
 <!doctype html>
@@ -23,13 +24,9 @@ import Footer from "./Footer";
     <slot name="head" />
     {redirect && <meta http-equiv="refresh" content={`0;url=${redirect}`} />}
     <Scripts />
-    <script type="text/javascript">
-      const utm_source = window.location.search.split("utm_source=")[1];
-      if (utm_source)
-        document.cookie = `utm_source=${utm_source}; max-age=${60 * 60 * 24 * 30}`;
-    </script>
   </head>
   <body>
+    <CookieHandler client:load />
     <Header namespace={namespace} showNav={showNav} />
     <Background />
     <main id="body">

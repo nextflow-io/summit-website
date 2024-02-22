@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import clsx from "clsx";
-import getCookie from "./getCookie";
+import { setUTMfields } from "@utils/utm";
 
 import styles from "./styles.module.css";
 
@@ -59,13 +59,7 @@ const HubspotForm: React.FC<Props> = ({
       portalId: "6705631",
       formId: formID,
       onFormReady() {
-        const utm_source = getCookie("utm_source");
-        const utmSourceInput = document.querySelector(
-          'input[name="utm_source"]',
-        );
-        if (utmSourceInput && utm_source) {
-          utmSourceInput.setAttribute("value", utm_source);
-        }
+        setUTMfields();
       },
       onFormSubmitted() {
         if (linkedInEventID && !!window.lintrk)
