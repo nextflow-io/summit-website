@@ -7,12 +7,16 @@ input[type="email"] {
   border-radius: 4px;
 }
 input[type="submit"] {
-  background-color: var(--color-wave);
+  background-color: #4256E7;
   color: white;
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  transition: all 0.3s;
+  &:hover {
+    background-color: var(--color-nextflow);
+  }
 }
 .hs-error-msgs {
   color: var(--color-multiqc-300);
@@ -21,23 +25,21 @@ input[type="submit"] {
 .form-style-1 {
   background: var(--color-brand-1000);
   border-radius: 16px;
-  padding: 32px;
+  padding: 40px;
   & input {
     width: 100%;
   }
   & input[type="submit"] {
-    background: #4256e7;
     border-radius: 999px;
     font-weight: 600;
   }
   & .hs-richtext.hs-main-font-element {
     font-size: 11px;
     color: var(--color-brand-500);
-    padding-top: 16px;
+    padding-bottom: 24px;
   }
-  & .hs-form-field,
-  & .hs_submit {
-    padding-top: 16px;
+  & .hs-form-field {
+    padding-bottom: 24px;
   }
   & .hs-fieldtype-checkbox {
     & .hs-field-desc {
