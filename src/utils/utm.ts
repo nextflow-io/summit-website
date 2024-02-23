@@ -1,56 +1,62 @@
-import { writeCookie, readCookie } from "./cookies";
+import { writeCookie, readCookie } from "./cookies"
 
-function getUTMparams() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const utm_source = urlParams.get("utm_source");
-  const utm_campaign = urlParams.get("utm_campaign");
-  const utm_medium = urlParams.get("utm_medium");
-  const utm_content = urlParams.get("utm_content");
-  const utm_term = urlParams.get("utm_term");
-  return {
-    utm_source,
-    utm_campaign,
-    utm_medium,
-    utm_content,
-    utm_term,
-  };
+const utm_keys = [
+  "utm_source",
+  "utm_campaign",
+  "utm_medium",
+  "utm_content",
+  "utm_term",
+]
+
+type UTMValues = {
+  utm_source?: string;
+  utm_campaign?: string;
+  utm_medium?: string;
+  utm_content?: string;
+  utm_term?: string;
 }
 
-function getUTMcookies() {
-  const utm_source = readCookie("utm_source");
-  const utm_campaign = readCookie("utm_campaign");
-  const utm_medium = readCookie("utm_medium");
-  const utm_content = readCookie("utm_content");
-  const utm_term = readCookie("utm_term");
-  return {
-    utm_source,
-    utm_campaign,
-    utm_medium,
-    utm_content,
-    utm_term,
-  };
+function getUTMparams(): UTMValues {
+  const urlParams = new URLSearchParams(window.location.search)
+  const params = {}
+  for (const key of utm_keys) {
+    let val = urlParams.get(key)
+    if (val) params[key] = val
+  }
+  return params
+}
+
+function getUTMcookies(): UTMValues {
+  const cookies = {}
+  for (const key of utm_keys) {
+    let val = readCookie(key)
+    if (val) cookies[key] = val
+  }
+  return cookies
+}
+
+function getUTM(): UTMValues {
+  const utmParams = getUTMparams()
+  const utmCookies = getUTMcookies()
+  return { ...utmCookies, ...utmParams }
 }
 
 function setUTMcookies() {
-  const utmParams = getUTMparams();
+  const utmParams = getUTMparams()
   for (const [key, value] of Object.entries(utmParams)) {
-    if (!value) continue;
-    writeCookie(key, value, 30);
+    if (!value) continue
+    writeCookie(key, value, 30)
   }
 }
 
 function setUTMfields() {
-  const utmCookies = getUTMcookies();
-  const utmParams = getUTMparams();
-  let utmValues = utmCookies;
-  if (utmParams.utm_source) utmValues = utmParams;
-
+  const utmValues = getUTM()
   for (const [key, value] of Object.entries(utmValues)) {
-    if (!value) continue;
-    let utmField = document.querySelector(`input[name="${key}"]`);
-    if (!utmField) continue;
-    utmField.setAttribute("value", value);
+    if (!value) continue
+    let utmField = document.querySelector(`input[name="${key}"]`)
+    if (!utmField) continue
+    utmField.setAttribute("value", value)
   }
 }
 
-export { setUTMcookies, setUTMfields, getUTMcookies, getUTMparams };
+export { setUTMcookies, setUTMfields, getUTM }
