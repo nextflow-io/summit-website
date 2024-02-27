@@ -15,6 +15,7 @@ const defaultProps = {
 };
 
 const Layout = ({ children, location, pageContext }) => {
+  if (pageContext.layout === 'none') return children;
   if (pageContext.layout === 'foyer') return <LayoutProvider location={location}>{children}</LayoutProvider>;
   return (
     <LayoutProvider location={location}>

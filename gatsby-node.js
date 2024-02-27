@@ -320,7 +320,13 @@ exports.onCreateNode = ({ node, actions, getNode, createNodeId, createContentDig
 };
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
-  const { createPage } = actions;
+  const { createPage, createRedirect } = actions;
+
+  createRedirect({
+    fromPath: `/subscribe-2024/`,
+    toPath: `https://summit.nextflow.io/2024/boston/register/`,
+    statusCode: 200,
+  });
 
   const blogTemplate = path.resolve('src/templates/blog.jsx');
   const talkTemplate = path.resolve('src/templates/talk.jsx');
@@ -466,6 +472,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
 exports.onCreatePage = async ({ page, actions }) => {
   const { createPage } = actions;
+
+  if (page.path == '/subscribe-2024/') {
+    page.context.layout = 'none';
+    createPage(page);
+  }
 
   if (page.path == '/') {
     page.context.layout = 'Plain';
