@@ -10,7 +10,8 @@
       "@modules/*": ["src/modules/*"],
       "@data/*": ["src/data/*"],
       "@utils/*": ["src/utils/*"],
-      "@images/*": ["src/images/*"]
+      "@images/*": ["src/images/*"],
+      "@photos/*": ["src/images/photos/*"]
     }
   }
 }
