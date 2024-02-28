@@ -67,10 +67,14 @@
 .button.secondary {
   background: transparent;
   border-color: var(--color-brand);
-  color: var(--color-brand);
-  &:hover {
+  & .hoverBG {
     background: var(--color-brand);
-    color: #fff;
+  }
+  & .content {
+    color: var(--color-brand);
+    &:hover {
+      color: #fff;
+    }
   }
 }
 .button.blue {
@@ -88,11 +92,15 @@
   }
 }
 .button.brand {
-  color: #fff;
   background: var(--color-brand);
-  &:hover {
+  & .hoverBG {
     background: #fff;
-    color: var(--color-brand);
+  }
+  & .content {
+    color: #fff;
+    &:hover {
+      color: var(--color-brand);
+    }
   }
 }
 .button.brand2 {
@@ -107,30 +115,29 @@
 .button.white {
   background: #fff;
   border-color: var(--color-brand);
-  margin: -1px 0 0 -1px;
   & .content {
-    padding: 9px 19px;
     color: var(--color-brand);
-    &:hover {
-      color: #fff;
-      & svg {
-        color: #fff;
-      }
-    }
   }
   & .hoverBG {
     background: var(--color-nextflow);
   }
   &:hover {
-    border-color: var(--color-nextflow-1000);
+    border-color: var(--color-nextflow);
   }
 }
 .button.white2 {
   border-color: white;
-  color: white;
+  & .content {
+    color: white;
+    &:hover {
+      color: var(--color-brand);
+    }
+  }
+  & .hoverBG {
+    background-color: var(--color-nextflow);
+  }
   &:hover {
-    background-color: white;
-    color: var(--color-brand);
+    border-color: var(--color-nextflow);
   }
 }
 .button.cta {
