@@ -15,7 +15,7 @@ const CTASection: React.FC<Props> = () => {
           held in Boston, this May
         </div>
         <Button href="/2024/boston/register" arrow large>
-          Pre-register now
+          Register now
         </Button>
       </div>
     </section>

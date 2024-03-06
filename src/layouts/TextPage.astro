@@ -1,0 +1,17 @@
+---
+import Layout from "./Base.astro";
+import Document from "../components/Document";
+import SEO from "../components/SEO";
+const {
+  content: { title },
+} = Astro.props;
+---
+
+<Layout>
+  <SEO title={title} />
+  <div class="container smaller">
+    <Document>
+      <slot />
+    </Document>
+  </div>
+</Layout>

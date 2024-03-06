@@ -11,6 +11,7 @@ import Background from "./Background/index.astro";
 import Scripts from "./Scripts.astro";
 import Footer from "./Footer";
 import CookieHandler from "./CookieHandler";
+import CookieNotice from "./CookieNotice";
 ---
 
 <!doctype html>
@@ -34,5 +35,6 @@ import CookieHandler from "./CookieHandler";
       <slot />
     </main>
     <Footer />
+    <CookieNotice client:only="react" />
   </body>
 </html>

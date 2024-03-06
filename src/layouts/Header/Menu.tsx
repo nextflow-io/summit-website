@@ -42,11 +42,11 @@ const Menu: React.FC<Props> = ({
           <li>
             {desktop ? (
               <Button href={url("/register")} arrow cta wide>
-                Pre-register
+                Register
               </Button>
             ) : (
               <Link href={url("/register")} active={isActive("register")}>
-                Pre-register
+                Register
               </Link>
             )}
           </li>

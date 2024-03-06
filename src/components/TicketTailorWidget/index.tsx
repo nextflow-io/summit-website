@@ -18,10 +18,11 @@ function getRefFromCookies(): string {
 }
 
 type Props = {
-  id: number;
+  eventID: number;
+  widgetID: string;
 };
 
-const TicketTailorWidget: React.FC<Props> = ({ id }) => {
+const TicketTailorWidget: React.FC<Props> = ({ eventID, widgetID }) => {
   const ref = React.createRef<HTMLDivElement>();
   const [utmRef, setUtmRef] = useState(undefined);
   const [scriptLoaded, setScriptLoaded] = useState(false);
@@ -37,7 +38,7 @@ const TicketTailorWidget: React.FC<Props> = ({ id }) => {
     script.src = "https://cdn.tickettailor.com/js/widgets/min/widget.js";
     script.setAttribute(
       "data-url",
-      `https://www.tickettailor.com/checkout/new-session/id/${id}/chk/0ebd/?ref=${utmRef}`,
+      `https://www.tickettailor.com/checkout/new-session/id/${eventID}/chk/${widgetID}/?ref=${utmRef}`,
     );
     script.setAttribute("data-type", "inline");
     script.setAttribute("data-inline-minimal", "true");
@@ -55,7 +56,7 @@ const TicketTailorWidget: React.FC<Props> = ({ id }) => {
         <div className="tt-widget-fallback">
           <p>
             <a
-              href={`https://www.tickettailor.com/checkout/new-session/id/${id}/chk/0ebd/?ref=website_widget`}
+              href={`https://www.tickettailor.com/checkout/new-session/id/${eventID}/chk/${widgetID}/?ref=${utmRef}`}
               target="_blank"
               rel="noreferrer"
             >
