@@ -9,7 +9,12 @@ const SectionAccommodation = () => {
     <section className="pb-32 container">
       <Swiper title="Hotels close to the venue">
         {locations.map((event, index) => (
-          <a key={index} className={styles.card}>
+          <a
+            key={index}
+            className={styles.card}
+            href={event.url}
+            target="_blank"
+          >
             <img src={event.img.src} loading="lazy" />
             <div className="swiper-lazy-preloader"></div>
             <div>
