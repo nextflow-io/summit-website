@@ -1,6 +1,6 @@
 const siteTitle = "Nextflow SUMMIT 2024";
 const descDefault = `Join us at the Nextflow SUMMIT 2024 for the latest developments and innovations from the Nextflow world.`;
-import imgDefault from "./share-default.png";
+import imgDefault from "./share-default.jpg";
 import imgBoston from "./share-boston.png";
 const images = [imgDefault, imgBoston];
 
