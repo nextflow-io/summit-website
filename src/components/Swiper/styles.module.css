@@ -1,5 +1,7 @@
 .nav {
   line-height: 0;
+  position: relative;
+  z-index: 2;
   & button {
     background: transparent;
     background-image: url("./nav-left.svg");
@@ -10,9 +12,13 @@
     display: inline-block;
     height: 33px;
     width: 32px;
+    transition: transform 0.2s;
     &:last-child {
       background-image: url("./nav-right.svg");
       margin-left: 10px;
+    }
+    &:hover {
+      transform: scale(1.1);
     }
   }
 }
