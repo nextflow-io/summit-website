@@ -8,11 +8,7 @@ type Props = {
 
 const CallForAbstracts: React.FC<Props> = ({ className }) => {
   return (
-    <Marquee
-      speed={50}
-      className={className}
-      href="/2024/boston/call-for-abstracts/"
-    >
+    <Marquee speed={50} className={className} href="/2024/boston/register/">
       <img className="ml-8" src={registration_now_open.src} />
       <img className="ml-8" src={registration_now_open.src} />
       <img className="ml-8" src={registration_now_open.src} />
