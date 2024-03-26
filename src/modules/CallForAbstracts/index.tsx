@@ -1,6 +1,6 @@
 import React from "react";
 import Marquee from "@components/Marquee";
-import call_for_abstracts from "./call_for_abstracts.svg";
+import registration_now_open from "./registration_now_open.svg";
 
 type Props = {
   className?: string;
@@ -8,10 +8,15 @@ type Props = {
 
 const CallForAbstracts: React.FC<Props> = ({ className }) => {
   return (
-    <Marquee className={className} href="/2024/boston/call-for-abstracts/">
-      <img src={call_for_abstracts.src} />
-      <img src={call_for_abstracts.src} />
-      <img src={call_for_abstracts.src} />
+    <Marquee
+      speed={50}
+      className={className}
+      href="/2024/boston/call-for-abstracts/"
+    >
+      <img className="ml-8" src={registration_now_open.src} />
+      <img className="ml-8" src={registration_now_open.src} />
+      <img className="ml-8" src={registration_now_open.src} />
+      <img className="ml-8" src={registration_now_open.src} />
     </Marquee>
   );
 };
