@@ -4,7 +4,7 @@
   max-height: 15vw;
   max-width: 15vw;
   filter: blur(6em);
-  animation: movement 25s linear infinite;
+  animation: movement 15s linear infinite;
   top: 65vh;
   left: 20vw;
   opacity: 0.7;

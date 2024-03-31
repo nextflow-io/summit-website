@@ -1,0 +1,40 @@
+---
+import Layout from "@layouts/Base.astro";
+import CallForAbstracts from "@modules/CallForAbstracts";
+import KeyInformation from "@modules/KeyInformation";
+import ImageSection from "@modules/ImageSection";
+import CTASection from "@modules/CTASection";
+import Contact from "@modules/Contact";
+import SEO from "@components/SEO";
+import speakers from '@data/speakers'
+
+export function getStaticPaths() {
+  return speakers.map(speaker => ({
+    params: { slug: speaker.slug },
+  }));
+}
+
+const speaker = speakers.find(speaker => speaker.slug === Astro.params.slug);
+
+const { slug } = Astro.params;
+---
+<Layout namespace="2024/boston">
+  <SEO slot="head" title={speaker.fullName} img={1} />
+  <section class="pb-6 pt-16 md:pt-20">
+    <div class="container island pb-10 md:pb-20 bg-nextflow opacity-80 rounded-lg">
+      <div class="flex mb-8">
+        <div>
+          <img src={speaker.profilePicture} alt={speaker.fullName} class="rounded-full w-20 h-20 md:w-40 md:h-40" /> 
+        </div>
+        <div>
+          <h1 class="h00 mb-8">{speaker.fullName}</h1>
+          <div>{speaker.tagLine}</div>
+        </div>
+      </div>
+      <div class="blockquote text-left">
+        {speaker.bio}
+      </div>
+    </div>
+  </section>
+  <Contact />
+</Layout>

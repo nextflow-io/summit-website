@@ -1,0 +1,35 @@
+---
+import Layout from "@layouts/Base.astro";
+import ImageSection from "@modules/ImageSection";
+import CTASection from "@modules/CTASection";
+import Contact from "@modules/Contact";
+import SEO from "@components/SEO";
+import speakers from "@data/speakers";
+---
+<Layout namespace="2024/boston">
+  <SEO slot="head" title="Speakers" img={1} />
+  <section class="pb-6 pt-16 md:pt-20">
+    <div class="container">
+      {speakers.map((speaker) => (
+        <a href={`/2024/boston/speakers/${speaker.slug}`} class="flex flex-col md:flex-row items-center md:items-start mb-12 md:mb-16">
+          <div class="w-full md:w-1/3">
+            <img
+              src={speaker.profilePicture}
+              alt={speaker.fullName}
+              class="rounded-lg w-full"
+            />
+          </div>
+          <div class="w-full md:w-2/3 md:pl-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-2">{speaker.fullName}</h2>
+            <p class="text-lg md:text-xl text-gray-600 mb-4">{speaker.tagLine}</p>
+            <p class="text-lg md:text-xl text-gray-800">{speaker.bio}</p>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <CTASection />
+  <ImageSection alt2 className="mt-20" />
+  <Contact />
+</Layout>
