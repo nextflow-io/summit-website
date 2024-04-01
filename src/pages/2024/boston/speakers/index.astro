@@ -4,25 +4,25 @@ import ImageSection from "@modules/ImageSection";
 import CTASection from "@modules/CTASection";
 import Contact from "@modules/Contact";
 import SEO from "@components/SEO";
+import PersonCard from "@components/PersonCard";
 import speakers from "@data/speakers";
 ---
 <Layout namespace="2024/boston">
   <SEO slot="head" title="Speakers" img={1} />
-  <section class="pb-6 pt-16 md:pt-20">
+  <section class="pb-16 pt-16 md:pt-20">
+    <div class="container island pb-10 md:pb-20 text-center">
+      <h1 class="h00 mb-8">Speakers 2024</h1>
+      <div class="blockquote">
+        This premier event brings together leading experts, innovators, and
+        researchers to showcase the latest breakthroughs in workflow management.
+      </div>
+    </div>
     <div class="container">
-      {speakers.map((speaker) => (
-        <a href={`/2024/boston/speakers/${speaker.slug}`} class="flex flex-col md:flex-row items-center md:items-start mb-12 md:mb-16">
-            <img
-              src={speaker.profilePicture}
-              alt={speaker.fullName}
-              class="rounded-lg max-w-[200px] w-full"
-            />
-          <div class="w-full md:w-2/3 md:pl-8">
-            <h2 class="text-2xl md:text-3xl font-bold mb-2">{speaker.fullName}</h2>
-            <p class="text-lg text-gray-600 mb-4">{speaker.tagLine}</p>
-          </div>
-        </a>
-      ))}
+      <div class="flex flex-wrap -m-4">
+        {speakers.map((speaker) => (
+          <PersonCard person={speaker} className="p-4" />
+        ))}
+      </div>
     </div>
   </section>
 

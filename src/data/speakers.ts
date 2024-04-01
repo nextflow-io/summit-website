@@ -13,7 +13,7 @@ export type Speaker = {
   sessions: number[];
   isTopSpeaker: boolean;
   links: {
-    linkType: "Twitter" | "LinkedIn" | "Company_Website" | "GitHub";
+    linkType: "Twitter" | "LinkedIn" | "Company_Website" | "GitHub" | "Blog";
     url: string;
   }[];
   categories: string[];
