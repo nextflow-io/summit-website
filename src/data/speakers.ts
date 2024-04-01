@@ -10,7 +10,7 @@ export type Speaker = {
   bio: string;
   tagLine: string;
   profilePicture: string;
-  sessions: number[];
+  sessions: Session[];
   isTopSpeaker: boolean;
   links: {
     linkType: "Twitter" | "LinkedIn" | "Company_Website" | "GitHub" | "Blog";

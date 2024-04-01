@@ -36,7 +36,7 @@ const PersonCard: React.FC<Props> = ({ person, className }) => {
             href={`/2024/boston/speakers/${person.slug}`}
             className="flex-auto"
           >
-            <h2 className="text-2xl font-bold mb-2 text-nextflow">
+            <h2 className="text-2xl font-display font-bold mb-2 text-nextflow">
               {person.fullName}
             </h2>
             <span className="block text-base text-gray-600 mb-4">

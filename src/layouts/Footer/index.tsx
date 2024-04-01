@@ -1,16 +1,16 @@
 import React from "react";
 
-import twitter from "./twitter.svg";
-import linkedin from "./linkedin.svg";
-import github from "./github.svg";
+import Github from "@icons/Github";
+import Linkedin from "@icons/Linkedin";
+import Twitter from "@icons/Twitter";
 
 const currentYear = new Date().getFullYear();
 
 const Footer: React.FC = () => {
   return (
     <footer id="footer">
-      <div className="container flex items-center justify-between py-8">
-        <div className="text-xs text-brand-500">{`© ${currentYear} Seqera`}</div>
+      <div className="container flex items-center justify-between py-8 text-white opacity-50">
+        <div className="text-xs">{`© ${currentYear} Seqera`}</div>
         <nav>
           <ul className="flex">
             <li>
@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src={twitter.src} alt="Twitter" />
+                <Twitter />
               </a>
             </li>
             <li className="mx-6">
@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src={github.src} alt="GitHub" />
+                <Github />
               </a>
             </li>
             <li>
@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src={linkedin.src} alt="LinkedIn" />
+                <Linkedin />
               </a>
             </li>
           </ul>

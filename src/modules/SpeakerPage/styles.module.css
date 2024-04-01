@@ -1,0 +1,6 @@
+.page {
+  box-shadow: 0 0 100px var(--color-nextflow);
+  background: white;
+  color: var(--color-brand);
+  padding: 32px;
+}

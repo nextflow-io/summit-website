@@ -14,6 +14,10 @@ footer#footer {
   width: 100vw;
   overflow-x: hidden;
 }
+footer#footer {
+  position: relative;
+  z-index: 10;
+}
 main#body {
   position: relative;
 }
