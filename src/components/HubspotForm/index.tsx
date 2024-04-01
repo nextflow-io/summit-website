@@ -73,7 +73,7 @@ const HubspotForm: React.FC<Props> = ({
 
   return (
     <div className={clsx(styles.form, className)}>
-      {title && <p className="typo-intro mb-4">{title}</p>}
+      {title && <p className="mb-4">{title}</p>}
       <div id={`hsForm-${formID}`}></div>
     </div>
   );

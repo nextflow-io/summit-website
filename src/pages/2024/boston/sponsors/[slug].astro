@@ -1,0 +1,20 @@
+---
+import Layout from "@layouts/Base.astro";
+import Contact from "@modules/Contact";
+import SEO from "@components/SEO";
+import sponsors from '@data/sponsors'
+
+export function getStaticPaths() {
+  return sponsors.map(sponsor => ({
+    params: { slug: sponsor.slug },
+  }));
+}
+
+const sponsor = sponsors.find(sponsor => sponsor.slug === Astro.params.slug);
+
+---
+<Layout namespace="2024/boston">
+  <SEO slot="head" title={sponsor.name} img={1} />
+  <h1>{sponsor.name}</h1>
+  <a href={sponsor.url}>Website</a>
+</Layout>

@@ -38,9 +38,7 @@ const SpeakerPage: React.FC<Props> = ({ speaker }) => {
                 </div>
               </div>
             </div>
-            <div className="typo-intro text-left text-brand-900">
-              {speaker.bio}
-            </div>
+            <div className="text-left text-brand-900">{speaker.bio}</div>
             <h2 className="h2 mt-16 text-left mb-6">Sessions</h2>
             {speaker.sessions.map((session) => (
               <SessionCard key={session.id} session={session} />

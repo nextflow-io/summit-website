@@ -21,9 +21,7 @@ type Props = {
 
 const SectionSponsoredBy = ({ alt, className }: Props) => (
   <section className={clsx("py-8", className)}>
-    {!alt && (
-      <h2 className="typo-h6 mb-2 uppercase text-center">Sponsored by</h2>
-    )}
+    {!alt && <h2 className="mb-2 uppercase text-center">Sponsored by</h2>}
     <div className={clsx(styles.container, { [styles.alt]: alt })}>
       <Sponsor>
         <img src={LogoAWS.src} className="h-12" alt="AWS" />

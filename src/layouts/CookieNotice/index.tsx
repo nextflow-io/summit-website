@@ -47,7 +47,7 @@ const CookieBanner = () => {
             <div className="mr-4 hidden sm:block">
               <CookieSVG className="h-8 w-8" />
             </div>
-            <div className="flex-auto typo-small">
+            <div className="flex-auto">
               This website uses cookies to offer you a better browsing
               experience.&nbsp;
               <br className="hidden md:block" />
