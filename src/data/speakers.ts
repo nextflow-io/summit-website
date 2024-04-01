@@ -34,7 +34,7 @@ const fetchSpeakers = async (): Promise<Speaker[]> => {
       // Fix attributes, add slug
       .map(
         ({ fullName, isTopSpeaker, questionAnswers, links, ...speaker }) => ({
-          slug: fullName.toLowerCase().replace(" ", "-"),
+          slug: fullName.toLowerCase().replace(/ /g, "-"),
           fullName,
           isTopSpeaker,
           links: fixSocialLinks({ questionAnswers, links }),

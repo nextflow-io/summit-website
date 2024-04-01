@@ -30,11 +30,12 @@ import CookieNotice from "./CookieNotice";
   <body>
     <CookieHandler client:load />
     <Header namespace={namespace} showNav={showNav} />
-    <Background />
-    <main id="body">
-      <slot />
-    </main>
-    <Footer />
+    <Background>
+      <main id="body">
+        <slot />
+      </main>
+      <Footer />
+    </Background>
     <CookieNotice client:only="react" />
   </body>
 </html>

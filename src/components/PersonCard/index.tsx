@@ -16,13 +16,13 @@ const PersonCard: React.FC<Props> = ({ person, className }) => {
       <div
         className={clsx(
           "w-full h-full",
-          "flex flex-col md:flex-row items-stretch",
+          "flex flex-col sm:flex-row items-stretch",
           "bg-brand border border-brand-900 rounded-lg p-4",
         )}
       >
         <a
           href={`/2024/boston/speakers/${person.slug}`}
-          className="max-w-[150px] w-full rounded-lg overflow-hidden relative"
+          className="max-w-[150px] w-full rounded-full overflow-hidden relative"
         >
           <img
             src={person.profilePicture}
@@ -31,7 +31,7 @@ const PersonCard: React.FC<Props> = ({ person, className }) => {
           />
           <span className="absolute inset-0 bg-gradient-to-b from-transparent to-black mix-blend-soft-light" />
         </a>
-        <div className="flex flex-col flex-auto md:pl-4">
+        <div className="flex flex-col flex-auto pt-8 sm:pt-0 sm:pl-4">
           <a
             href={`/2024/boston/speakers/${person.slug}`}
             className="flex-auto"

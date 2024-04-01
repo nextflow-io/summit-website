@@ -21,15 +21,15 @@ const SpeakerPage: React.FC<Props> = ({ speaker }) => {
             </a>
           </div>
           <div className={clsx("bg-white rounded-lg", styles.page)}>
-            <div className="flex mb-8">
-              <div>
+            <div className="flex flex-col sm:flex-row items-center mb-8">
+              <div className="w-full sm:w-40">
                 <img
                   src={speaker.profilePicture}
                   alt={speaker.fullName}
-                  className="rounded-full w-20 h-20 md:w-40 md:h-40"
+                  className="rounded-full w-full h-full object-cover max-w-[200px] mx-auto"
                 />
               </div>
-              <div className="flex-auto text-left pl-6">
+              <div className="flex-auto text-center sm:text-left pt-6 sm:pt-0 sm:pl-6">
                 <h1 className="text-5xl font-bold mb-4 font-display">
                   {speaker.fullName}
                 </h1>

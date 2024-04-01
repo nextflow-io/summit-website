@@ -3,12 +3,15 @@ import styles from "./styles.module.css";
 import Blob from "./Blob";
 ---
 
-<div class={styles.background}>
-  <div class:list={styles.overlay}></div>
-  <Blob type="green1" />
-  <Blob type="green2" />
-  <Blob type="green3" />
-  <Blob type="green4" />
-  <Blob type="orange1" />
-  <Blob type="orange2" />
+<div class={styles.backgroundContainer}>
+  <div class={styles.background}>
+    <div class:list={styles.overlay}></div>
+    <Blob type="green1" />
+    <Blob type="green2" />
+    <Blob type="green3" />
+    <Blob type="green4" />
+    <Blob type="orange1" />
+    <Blob type="orange2" />
+  </div>
+  <slot />
 </div>

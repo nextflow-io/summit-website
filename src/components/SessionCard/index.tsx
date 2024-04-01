@@ -15,7 +15,7 @@ const SessionCard: React.FC<Props> = ({ session, className }) => {
         className={clsx(
           "w-full h-full",
           "flex flex-col",
-          "bg-brand border border-brand-900 rounded-lg py-4 px-6 text-left",
+          "bg-brand-1000 border border-brand rounded-lg py-4 px-6 text-left",
         )}
       >
         <a href={`/2024/boston/sessions/${session.id}`} className="flex-auto">
