@@ -10,7 +10,7 @@ export type Speaker = {
   bio: string;
   tagLine: string;
   profilePicture: string;
-  sessions: Session[];
+  sessions: number[];
   isTopSpeaker: boolean;
   links: {
     linkType: "Twitter" | "LinkedIn" | "Company_Website" | "GitHub";
@@ -29,43 +29,54 @@ function fixSocialLinks({ questionAnswers, links }) {
 }
 
 const fetchSpeakers = async (): Promise<Speaker[]> => {
-  return data.speakers
-    .map(
-      ({
-        fullName,
-        isTopSpeaker,
-        questionAnswers,
-        links,
-        sessions: sessionIDs,
-        ...speaker
-      }) => {
-        const slug = fullName.toLowerCase().replace(" ", "-");
-
-        const sessions = sessionIDs.map((id) =>
-          data.sessions.find((session) => `${session.id}` === `${id}`),
-        );
-
-        return {
-          slug,
+  return (
+    data.speakers
+      // Fix attributes, add slug
+      .map(
+        ({ fullName, isTopSpeaker, questionAnswers, links, ...speaker }) => ({
+          slug: fullName.toLowerCase().replace(" ", "-"),
           fullName,
           isTopSpeaker,
           links: fixSocialLinks({ questionAnswers, links }),
-          sessions,
           ...speaker,
+        }),
+      )
+
+      // Associate sessions
+      .map((speaker) => {
+        const sessionIDs = speaker.sessions;
+        let sessions = sessionIDs.map((id) =>
+          data.sessions.find((s) => `${s.id}` === `${id}`),
+        );
+        sessions = sessions.filter((s) => !!s.isConfirmed);
+        return {
+          ...speaker,
+          sessions,
         };
-      },
-    )
-    .sort((a, b) => {
-      if (a.fullName < b.fullName) return -1;
-      if (a.fullName > b.fullName) return 1;
-      return 0;
-    })
-    .sort((a, b) => {
-      if (a.isTopSpeaker && !b.isTopSpeaker) return -1;
-      if (!a.isTopSpeaker && b.isTopSpeaker) return 1;
-      return 0;
-    })
-    .filter((speaker) => !!speaker.profilePicture);
+      })
+
+      // Filter uncomfirmed sessions
+      .filter((speaker) => {
+        return speaker.sessions.length > 0;
+      })
+
+      // Filter out speakers without profile pictures
+      .filter((speaker) => !!speaker.profilePicture)
+
+      // Sort by name
+      .sort((a, b) => {
+        if (a.fullName < b.fullName) return -1;
+        if (a.fullName > b.fullName) return 1;
+        return 0;
+      })
+
+      // Sort by top speaker
+      .sort((a, b) => {
+        if (a.isTopSpeaker && !b.isTopSpeaker) return -1;
+        if (!a.isTopSpeaker && b.isTopSpeaker) return 1;
+        return 0;
+      })
+  );
 };
 
 const speakers = await fetchSpeakers();

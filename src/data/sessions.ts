@@ -26,7 +26,7 @@ export type Session = {
 };
 
 const fetchSessions = async (): Promise<Session[]> => {
-  const d = data.sessions.map((session) => {
+  return data.sessions.map((session) => {
     const { speakers: speakerIDS, ...sessionData } = session;
     const speakers = speakerIDS.map((id) =>
       data.speakers.find((speaker) => speaker.id === id),
@@ -36,8 +36,6 @@ const fetchSessions = async (): Promise<Session[]> => {
       ...sessionData,
     };
   });
-  console.log(d);
-  return d;
 };
 
 const speakers = await fetchSessions();
