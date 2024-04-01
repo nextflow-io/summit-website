@@ -16,8 +16,8 @@ const PersonCard: React.FC<Props> = ({ person, className }) => {
       <div
         className={clsx(
           "w-full h-full",
-          "flex flex-col sm:flex-row items-stretch",
-          "bg-brand border border-brand-900 rounded-lg p-4",
+          "flex flex-col sm:flex-row items-center sm:items-stretch",
+          "bg-brand border border-brand-900 rounded-lg py-8 sm:py-4 px-4",
         )}
       >
         <a
@@ -34,7 +34,7 @@ const PersonCard: React.FC<Props> = ({ person, className }) => {
         <div className="flex flex-col flex-auto pt-8 sm:pt-0 sm:pl-4">
           <a
             href={`/2024/boston/speakers/${person.slug}`}
-            className="flex-auto"
+            className="flex-auto text-center sm:text-left"
           >
             <h2 className="text-2xl font-display font-bold mb-2 text-nextflow">
               {person.fullName}
@@ -43,7 +43,7 @@ const PersonCard: React.FC<Props> = ({ person, className }) => {
               {person.tagLine}
             </span>
           </a>
-          <span className="flex -m-2 justify-end">
+          <span className="flex -m-2 justify-center sm:justify-end">
             {person.links.map((link) => (
               <a
                 href={link.url}
