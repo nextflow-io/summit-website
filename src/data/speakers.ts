@@ -1,3 +1,6 @@
+import data from "./sessionize";
+import type { Session } from "./sessions";
+
 export type Speaker = {
   id: string;
   slug: string;
@@ -7,7 +10,7 @@ export type Speaker = {
   bio: string;
   tagLine: string;
   profilePicture: string;
-  sessions: any[];
+  sessions: Session[];
   isTopSpeaker: boolean;
   links: {
     linkType: "Twitter" | "LinkedIn" | "Company_Website" | "GitHub";
@@ -16,28 +19,42 @@ export type Speaker = {
   categories: string[];
 };
 
-const fetchSpeakers = async (): Promise<Speaker[]> => {
-  const data = await fetch(
-    "https://sessionize.com/api/v2/zaqv23uw/view/Speakers",
-  ).then((res) => res.json());
+function fixSocialLinks({ questionAnswers, links }) {
+  let githubURL;
+  const qIndex = questionAnswers.findIndex((q) => q.question === "GitHub");
+  if (qIndex > -1) githubURL = questionAnswers[qIndex].answer;
+  if (!githubURL) return links;
+  const githubLink = { title: "GitHub", linkType: "GitHub", url: githubURL };
+  return [...links, githubLink];
+}
 
-  return data
-    .map((speaker) => {
-      const { fullName, isTopSpeaker, questionAnswers, links } = speaker;
-      let githubURL;
-      const qIndex = questionAnswers.findIndex((q) => q.question === "GitHub");
-      if (qIndex > -1) githubURL = questionAnswers[qIndex].answer;
-      if (githubURL)
-        links.push({ title: "GitHub", linkType: "GitHub", url: githubURL });
-      const slug = fullName.toLowerCase().replace(" ", "-");
-      return {
-        slug,
+const fetchSpeakers = async (): Promise<Speaker[]> => {
+  return data.speakers
+    .map(
+      ({
         fullName,
         isTopSpeaker,
+        questionAnswers,
         links,
-        ...speaker,
-      };
-    })
+        sessions: sessionIDs,
+        ...speaker
+      }) => {
+        const slug = fullName.toLowerCase().replace(" ", "-");
+
+        const sessions = sessionIDs.map((id) =>
+          data.sessions.find((session) => `${session.id}` === `${id}`),
+        );
+
+        return {
+          slug,
+          fullName,
+          isTopSpeaker,
+          links: fixSocialLinks({ questionAnswers, links }),
+          sessions,
+          ...speaker,
+        };
+      },
+    )
     .sort((a, b) => {
       if (a.fullName < b.fullName) return -1;
       if (a.fullName > b.fullName) return 1;
