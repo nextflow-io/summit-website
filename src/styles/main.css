@@ -1,3 +1,6 @@
+:root {
+  --sl-blue: #4256e7;
+}
 html,
 body {
   background-color: var(--color-brand) !important;
@@ -31,7 +34,6 @@ main#body {
   &.island {
     width: fit-content;
     max-width: 840px;
-    text-align: center;
   }
   &.smaller {
     max-width: 1000px;

@@ -1,0 +1,26 @@
+---
+const { backLink } = Astro.props;
+import clsx from "clsx";
+---
+
+<>
+  {
+    !!backLink && (
+      <div class="text-left mb-6">
+        <a href={backLink.href} class="text-nextflow-400">
+          &larr; {backLink.label}
+        </a>
+      </div>
+    )
+  }
+  <div
+    class={clsx("p-8 rounded-lg")}
+    style={{
+      border: "1px solid rgba(13,192,157,0.4)",
+      boxShadow: "0 0 100px rgba(13,192,157,0.4)",
+      background: "rgba(22,15,28,0.5)",
+    }}
+  >
+    <slot />
+  </div>
+</>

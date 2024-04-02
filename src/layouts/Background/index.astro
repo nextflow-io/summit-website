@@ -1,11 +1,13 @@
 ---
+const { altBG } = Astro.props;
+import clsx from "clsx";
 import styles from "./styles.module.css";
 import Blob from "./Blob";
 ---
 
 <div class={styles.backgroundContainer}>
-  <div class={styles.background}>
-    <div class:list={styles.overlay}></div>
+  <div class={clsx(styles.background, { [styles.alt]: altBG })}>
+    {!altBG && <div class={styles.overlay} />}
     <Blob type="green1" />
     <Blob type="green2" />
     <Blob type="green3" />

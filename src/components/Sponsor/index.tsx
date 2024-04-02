@@ -19,7 +19,7 @@ const Sponsor = ({ sponsor, location }) => {
       <a
         href={`/2024/${location}/sponsors/${sponsor.slug}/`}
         className={clsx(
-          "block p-4 sm:p-12",
+          "block p-8 sm:p-12",
           "rounded-md transition-all bg-brand border border-brand-900 text-left",
         )}
       >

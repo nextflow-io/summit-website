@@ -22,6 +22,9 @@
     background-size: 100vw auto;
     background-position: 50vw 100px;
   }
+  &.alt {
+    background-image: none;
+  }
 }
 .overlay {
   width: 100%;
