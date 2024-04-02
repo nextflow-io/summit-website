@@ -1,33 +1,16 @@
 .container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-column-gap: 6px;
-  grid-row-gap: 6px;
+  display: flex;
+  align-items: center;
+  position: relative;
   > div {
     background: transparent;
   }
 }
-@media (--sm) {
-  .container {
-    grid-template-columns: repeat(3, 1fr);
-    > div:last-child {
-      grid-column: 1 / 4;
-    }
-  }
-}
-@media (--md) {
-  .container {
-    grid-template-columns: repeat(5, 1fr);
-    > div:last-child {
-      grid-column: unset;
-    }
-  }
-}
-
-.container.alt {
-  > div {
-    background: transparent;
-    height: 80px !important;
-    opacity: 0.5;
-  }
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--color-product-1000) !important;
+  opacity: 0.75;
+  z-index: 2;
+  mix-blend-mode: hard-light;
 }

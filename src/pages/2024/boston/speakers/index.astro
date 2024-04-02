@@ -3,10 +3,12 @@ import Layout from "@layouts/Base.astro";
 import ImageSection from "@modules/ImageSection";
 import CTASection from "@modules/CTASection";
 import Contact from "@modules/Contact";
+import SponsoredBy from "@modules/SponsoredBy";
 import SEO from "@components/SEO";
 import PersonCard from "@components/PersonCard";
 import speakers from "@data/speakers";
 ---
+
 <Layout namespace="2024/boston">
   <SEO slot="head" title="Speakers" img={1} />
   <section class="pb-16 pt-16 md:pt-20">
@@ -19,9 +21,11 @@ import speakers from "@data/speakers";
     </div>
     <div class="container">
       <div class="flex flex-wrap -m-4">
-        {speakers.map((speaker) => (
-          <PersonCard person={speaker} className="p-4" />
-        ))}
+        {
+          speakers.map((speaker) => (
+            <PersonCard person={speaker} className="p-4" />
+          ))
+        }
       </div>
     </div>
   </section>
@@ -29,4 +33,5 @@ import speakers from "@data/speakers";
   <CTASection />
   <ImageSection alt2 className="mt-20" />
   <Contact />
+  <SponsoredBy client:load />
 </Layout>

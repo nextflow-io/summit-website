@@ -1,6 +1,6 @@
 ---
 import Layout from "@layouts/Base.astro";
-import CallForAbstracts from "@modules/CallForAbstracts";
+import SponsoredBy from "@modules/SponsoredBy";
 import KeyInformation from "@modules/KeyInformation";
 import ImageSection from "@modules/ImageSection";
 import CTASection from "@modules/CTASection";
@@ -20,9 +20,9 @@ import Calendar from "@components/Calendar";
       </div>
     </div>
   </section>
-  <Calendar />
   <KeyInformation className="pb-8 md:pb-0" />
   <ImageSection className="my-8 lg:my-20" />
   <CTASection />
   <Contact />
+  <SponsoredBy client:load />
 </Layout>
