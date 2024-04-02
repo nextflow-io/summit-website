@@ -77,6 +77,11 @@ const Menu: React.FC<Props> = ({
             Speakers
           </Link>
         </li>
+        <li>
+          <Link href={url("/sponsors")} active={isActive("sponsors")}>
+            Sponsors
+          </Link>
+        </li>
       </ul>
     </nav>
   );
