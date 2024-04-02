@@ -1,5 +1,6 @@
 import React from "react";
 import clsx from "clsx";
+import { prettyDate, prettyTime } from "@utils/prettyDate";
 
 import type { Session } from "@data/sessions";
 
@@ -15,18 +16,24 @@ const SessionCard: React.FC<Props> = ({ session, className }) => {
         className={clsx(
           "w-full h-full",
           "flex flex-col",
-          "bg-brand-1000 border border-brand rounded-lg py-4 px-6 text-left",
+          "bg-nextflow-400 border border-brand rounded-lg py-4 px-6 text-left",
         )}
       >
         <a href={`/2024/boston/sessions/${session.id}`} className="flex-auto">
-          <h2 className="text-lg font-display font-semibold text-nextflow">
-            {session.title}
-          </h2>
           {!!session.startsAt && (
-            <span className="block text-base text-gray-600 mb-4">
-              {session.startsAt}
+            <span className="block text-sm text-brand font-semibold mb-4">
+              {prettyDate(session.startsAt, false)}
+              {!!session.endsAt && (
+                <>
+                  <span className="opacity-50"> @ </span>
+                  {`${prettyTime(session.startsAt)} - ${prettyTime(session.endsAt)}`}
+                </>
+              )}
             </span>
           )}
+          <h2 className="text-lg font-display font-semibold text-brand">
+            {session.title}
+          </h2>
         </a>
       </div>
     </div>
