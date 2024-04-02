@@ -56,7 +56,13 @@ const speaker = speakers.find((speaker) => speaker.slug === Astro.params.slug);
           {speaker.bio}
         </div>
         <h2 class="h2 mt-16 text-left mb-6">Sessions</h2>
-        {speaker.sessions.map((session) => <SessionCard session={session} />)}
+        <div class="flex flex-wrap -m-1">
+          {
+            speaker.sessions.map((session) => (
+              <SessionCard className="p-1" session={session} />
+            ))
+          }
+        </div>
       </ContentBox>
     </div>
   </section>
