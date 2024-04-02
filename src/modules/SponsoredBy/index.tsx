@@ -10,7 +10,7 @@ type Props = {
   className?: string;
 };
 
-const SponsoredBy = ({ className }: Props) => (
+const SponsoredBy: React.FC<Props> = ({ className }) => (
   <section>
     <Marquee speed={50} className={className} href="/2024/boston/sponsors/">
       <div className={clsx(styles.container)}>

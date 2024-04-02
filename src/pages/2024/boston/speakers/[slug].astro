@@ -18,7 +18,7 @@ const speaker = speakers.find((speaker) => speaker.slug === Astro.params.slug);
 <Layout namespace="2024/boston" altBG>
   <SEO slot="head" title={speaker.fullName} img={1} />
   <section class="pb-10 pt-16 md:py-20">
-    <div class="container island text-center">
+    <div class="container smallest text-center">
       <ContentBox
         backLink={{ label: "Back to speakers", href: "/2024/boston/speakers" }}
       >

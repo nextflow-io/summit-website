@@ -1,5 +1,5 @@
 import data from "./sessionize";
-import type { Session } from "./sessions";
+import { addSessionURL, type Session } from "./sessions";
 
 export type Speaker = {
   id: string;
@@ -49,6 +49,7 @@ const fetchSpeakers = async (): Promise<Speaker[]> => {
           data.sessions.find((s) => `${s.id}` === `${id}`),
         );
         sessions = sessions.filter((s) => !!s.isConfirmed);
+        sessions = sessions.map(addSessionURL);
         return {
           ...speaker,
           sessions,

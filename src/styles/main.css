@@ -38,4 +38,7 @@ main#body {
   &.smaller {
     max-width: 1000px;
   }
+  &.smallest {
+    max-width: 824px;
+  }
 }

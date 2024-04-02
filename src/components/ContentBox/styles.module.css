@@ -4,7 +4,7 @@
   padding: 48px 24px;
   @media (--sm) {
     border: 1px solid rgba(13, 192, 157, 0.4);
-    boxshadow: 0 0 100px rgba(13, 192, 157, 0.4);
+    box-shadow: 0 0 100px rgba(13, 192, 157, 0.4);
     margin: 0;
     border-radius: 16px;
     padding: 32px;

@@ -4,6 +4,8 @@ import type { Speaker } from "./speakers";
 export type Session = {
   id: string;
   title: string;
+  slug: string;
+  url: string;
   description: string;
   startsAt: string;
   endsAt: string;
@@ -25,19 +27,29 @@ export type Session = {
   isConfirmed: boolean;
 };
 
+export function addSessionURL(session: Session) {
+  const slug = session.title.toLowerCase().replace(/ /g, "-");
+  const url = `/2024/boston/sessions/${slug}`;
+  return {
+    ...session,
+    slug,
+    url,
+  };
+}
+
 const fetchSessions = async (): Promise<Session[]> => {
   return data.sessions.map((session) => {
-    const { speakers: speakerIDS, ...sessionData } = session;
+    const { speakers: speakerIDS } = session;
     const speakers = speakerIDS.map((id) =>
       data.speakers.find((speaker) => speaker.id === id),
     );
     return {
+      ...addSessionURL(session),
       speakers,
-      ...sessionData,
     };
   });
 };
 
-const speakers = await fetchSessions();
+const sessions = await fetchSessions();
 
-export default speakers;
+export default sessions;

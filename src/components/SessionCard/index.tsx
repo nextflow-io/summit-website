@@ -19,7 +19,7 @@ const SessionCard: React.FC<Props> = ({ session, className }) => {
           "bg-nextflow-400 border border-brand rounded-lg py-4 px-6 text-left",
         )}
       >
-        <a href={`/2024/boston/sessions/${session.id}`} className="flex-auto">
+        <a href={session.url} className="flex-auto">
           {!!session.startsAt && (
             <span className="block text-sm text-brand font-semibold mb-4">
               {prettyDate(session.startsAt, false)}

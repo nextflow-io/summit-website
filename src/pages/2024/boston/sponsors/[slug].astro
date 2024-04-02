@@ -19,7 +19,7 @@ const sponsor = sponsors.find((sponsor) => sponsor.slug === Astro.params.slug);
 <Layout namespace="2024/boston" altBG>
   <SEO slot="head" title={sponsor.name} img={1} />
   <section class="pb-6 pt-16 md:pt-20">
-    <div class="container island pb-10 md:pb-20">
+    <div class="container smallest pb-10 md:pb-20">
       <ContentBox
         backLink={{ href: "/2024/boston/sponsors", label: "Back to sponsors" }}
       >
