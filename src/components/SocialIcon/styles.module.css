@@ -1,0 +1,12 @@
+.icon {
+  display: inline-block;
+  line-height: 1;
+  & svg {
+    transition: color 0.5s;
+  }
+  &:hover {
+    & svg {
+      color: var(--color-nextflow);
+    }
+  }
+}

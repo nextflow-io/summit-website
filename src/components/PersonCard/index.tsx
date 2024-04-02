@@ -1,7 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 
-import SocialIcon from "./SocialIcon";
+import SocialIcon from "@components/SocialIcon";
 
 import type { Speaker } from "@data/speakers";
 
@@ -45,14 +45,12 @@ const PersonCard: React.FC<Props> = ({ person, className }) => {
           </a>
           <span className="flex -m-2 justify-center sm:justify-end">
             {person.links.map((link) => (
-              <a
-                href={link.url}
+              <SocialIcon
                 key={link.url}
+                href={link.url}
+                type={link.linkType}
                 className="p-2 text-product-400"
-                title={link.linkType}
-              >
-                <SocialIcon type={link.linkType} />
-              </a>
+              />
             ))}
           </span>
         </div>
