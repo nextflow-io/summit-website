@@ -1,5 +1,4 @@
 import React from "react";
-import clsx from "clsx";
 
 import sponsors from "@data/sponsors";
 import Marquee from "@components/Marquee";
@@ -13,7 +12,7 @@ type Props = {
 const SponsoredBy: React.FC<Props> = ({ className }) => (
   <section>
     <Marquee speed={50} className={className} href="/2024/boston/sponsors/">
-      <div className={clsx(styles.container)}>
+      <div className={styles.container}>
         <div className={styles.overlay} />
         {sponsors.map((sponsor) => (
           <div className="h-24 lg:h-40 max-ws px-10 flex items-center justify-center">

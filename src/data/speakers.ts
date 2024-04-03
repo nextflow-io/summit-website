@@ -4,6 +4,7 @@ import { addSessionURL, type Session } from "./sessions";
 export type Speaker = {
   id: string;
   slug: string;
+  name?: string;
   firstName: string;
   lastName: string;
   fullName: string;
@@ -28,7 +29,7 @@ function fixSocialLinks({ questionAnswers, links }) {
   return [...links, githubLink];
 }
 
-const fetchSpeakers = async (): Promise<Speaker[]> => {
+const getSpeakers = (): Speaker[] => {
   return (
     data.speakers
       // Fix attributes, add slug
@@ -80,6 +81,6 @@ const fetchSpeakers = async (): Promise<Speaker[]> => {
   );
 };
 
-const speakers = await fetchSpeakers();
+const speakers = getSpeakers();
 
 export default speakers;

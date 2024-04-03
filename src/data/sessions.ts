@@ -1,5 +1,6 @@
 import data from "./sessionize";
 import type { Speaker } from "./speakers";
+import { dateSlug } from "@utils/prettyDate";
 
 export type Session = {
   id: string;
@@ -28,8 +29,21 @@ export type Session = {
 };
 
 export function addSessionURL(session: Session) {
-  const slug = session.title.toLowerCase().replace(/ /g, "-");
-  const url = `/2024/boston/sessions/${slug}`;
+  let slug = session.title
+    .toLowerCase()
+    .trimStart()
+    .trimEnd()
+    .replace(/ /g, "-")
+    .replace(/[^a-zA-Z0-9 -]/g, "");
+
+  const parts = slug.split("-");
+  if (parts.length > 5) {
+    slug = parts.slice(0, 5).join("-");
+  }
+  const date = dateSlug(session.startsAt);
+  slug = `${date}--${slug}`;
+  const url = `/2024/boston/agenda/${slug}`;
+
   return {
     ...session,
     slug,
@@ -37,7 +51,7 @@ export function addSessionURL(session: Session) {
   };
 }
 
-const fetchSessions = async (): Promise<Session[]> => {
+const getSessions = (): Session[] => {
   return data.sessions.map((session) => {
     const { speakers: speakerIDS } = session;
     const speakers = speakerIDS.map((id) =>
@@ -50,6 +64,6 @@ const fetchSessions = async (): Promise<Session[]> => {
   });
 };
 
-const sessions = await fetchSessions();
+const sessions = getSessions();
 
 export default sessions;
