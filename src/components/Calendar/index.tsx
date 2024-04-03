@@ -8,28 +8,30 @@ import SessionCard from "@components/SessionCard";
 
 const Calendar = () => {
   return (
-    <div className="container island pb-10">
-      {schedule.map((item) => (
-        <div className="pb-8">
-          <h3 className="h1 mb-6 text-center">
-            {prettyDate(item.date, false)}
-          </h3>
-          <div className={styles.schedule}>
-            {item.timeSlots.map((slot) => {
-              return (
-                <div className={styles.timeSlot}>
-                  <div className={styles.timelineItem}>
-                    {formatTime(slot.slotStart)}
+    <div className="container pb-10">
+      <div className="flex flex-wrap lg:flex-nowrap justify-center -m-2">
+        {schedule.map((item) => (
+          <div className="p-2">
+            <h3 className="h1 mb-6 text-center">
+              {prettyDate(item.date, false)}
+            </h3>
+            <div className={styles.schedule}>
+              {item.timeSlots.map((slot) => {
+                return (
+                  <div className={styles.timeSlot}>
+                    <div className={styles.timelineItem}>
+                      {formatTime(slot.slotStart)}
+                    </div>
+                    {slot.rooms.map(({ session }) => {
+                      return <SessionCard session={session} />;
+                    })}
                   </div>
-                  {slot.rooms.map(({ session }) => {
-                    return <SessionCard session={session} />;
-                  })}
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };
