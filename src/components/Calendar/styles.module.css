@@ -1,22 +1,27 @@
 .schedule {
   display: flex;
   flex-direction: column;
+  width: auto;
+  margin: 0 auto;
 }
 .timeSlot {
   display: flex;
   flex-direction: row;
   margin-bottom: 10px;
-  & > div:first-child {
-    width: 100px;
-    text-align: center;
-  }
 }
-.item {
-  display: block;
-  background: var(--color-brand);
-  color: white;
-  padding: 10px 16px;
-  flex: 1 1 auto;
-  width: 100%;
-  border-radius: 4px;
+.timelineItem {
+  width: 100px;
+  text-align: center;
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 34px;
+    bottom: 10px;
+    left: 50%;
+    width: 1px;
+    background: var(--color-nextflow);
+    margin: 0 auto;
+  }
 }

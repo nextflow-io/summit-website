@@ -1,27 +1,15 @@
-function prettyDate(d, showYear = true, ignoreZone = false) {
-  if (!d) return null;
-  let date = d;
-  if (ignoreZone) date = d.split("T")?.[0] || d;
-  const timeZone = ignoreZone ? "UTC" : "America/New_York";
-  const options: any = {
-    month: "short",
-    day: "numeric",
-    timeZone,
-  };
+import dayjs from "dayjs";
 
-  if (showYear) options.year = "numeric";
-
-  const dateStr = new Date(date).toLocaleDateString("en-US", options);
-  return dateStr;
+function prettyDate(date, showYear = true) {
+  if (!date) return null;
+  let format = "MMM DD";
+  if (showYear) format = "{YYYY} " + format;
+  return dayjs(date).format(format);
 }
 
 function prettyTime(date) {
-  const timeStr = new Date(date).toLocaleTimeString("en-US", {
-    hour: "2-digit",
-    minute: "2-digit",
-    timeZone: "America/New_York",
-  });
-  return timeStr;
+  const djs = dayjs(date);
+  return djs.format("HH:mm");
 }
 
 function prettyDateAndTime(date) {
@@ -30,14 +18,8 @@ function prettyDateAndTime(date) {
 
 function dateSlug(date) {
   if (!date) return null;
-  const options: any = {
-    month: "short",
-    day: "2-digit",
-    timeZone: "America/New_York",
-  };
-
-  const dateStr = new Date(date).toLocaleDateString("en-US", options);
-  return dateStr.toLowerCase().replace(/ /g, "-");
+  const djs = dayjs(date);
+  return djs.format("MM-DD");
 }
 
 export { prettyDate, prettyTime, prettyDateAndTime, dateSlug };

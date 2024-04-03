@@ -6,7 +6,7 @@ import ImageSection from "@modules/ImageSection";
 import CTASection from "@modules/CTASection";
 import Contact from "@modules/Contact";
 import SEO from "@components/SEO";
-import Calendar from "@components/Calendar";
+import Button from "@components/Button";
 ---
 
 <Layout namespace="2024/boston">
@@ -18,9 +18,9 @@ import Calendar from "@components/Calendar";
         This premier event brings together leading experts, innovators, and
         researchers to showcase the latest breakthroughs in workflow management.
       </div>
-    </div>
-    <div class="container pb-10 md:pb-20">
-      <Calendar />
+      <Button className="mt-8" large cta href="/2024/boston/agenda/schedule"
+        >See the full schedule</Button
+      >
     </div>
   </section>
   <KeyInformation className="pb-8 md:pb-0" />

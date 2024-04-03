@@ -38,13 +38,17 @@ export default data.map((item) => {
     sessions: room.sessions.map(addSessionURL),
   }));
 
-  const timeSlots = item.timeSlots.map((slot) => ({
-    ...slot,
-    rooms: slot.rooms.map((room) => ({
-      ...room,
-      session: room.session ? addSessionURL(room.session) : undefined,
-    })),
-  }));
+  const timeSlots = item.timeSlots
+    .map((slot) => {
+      return {
+        ...slot,
+        rooms: slot.rooms.map((room) => ({
+          ...room,
+          session: room.session ? addSessionURL(room.session) : undefined,
+        })),
+      };
+    })
+    .filter((slot) => slot.rooms[0].session?.isConfirmed);
 
   return {
     ...item,
