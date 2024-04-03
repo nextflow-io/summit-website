@@ -24,4 +24,8 @@
     background: var(--color-nextflow);
     margin: 0 auto;
   }
+  display: none;
+  @media (--sm) {
+    display: block;
+  }
 }

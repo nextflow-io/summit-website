@@ -4,6 +4,8 @@ import { prettyDate, prettyTime } from "@utils/prettyDate";
 
 import type { Session } from "@data/sessions";
 
+import styles from "./styles.module.css";
+
 type Props = {
   session: Session;
   className?: string;
@@ -18,7 +20,7 @@ const SessionCard: React.FC<Props> = ({ session, className, showDate }) => {
           "w-full h-full py-4 px-6",
           "flex flex-col",
           "bg-brand border border-nextflow rounded-lg text-left",
-          "hover:bg-nextflow transition-all duration-200 ease-in-out",
+          styles.card,
         )}
       >
         <a href={session.url} className="flex-auto">

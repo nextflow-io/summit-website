@@ -8,10 +8,12 @@ import SessionCard from "@components/SessionCard";
 
 const Calendar = () => {
   return (
-    <div className="container island pb-10 flex flex-col">
+    <div className="container island pb-10">
       {schedule.map((item) => (
-        <div className="pb-8 flex-none">
-          <h3 className="h1 mb-6">{prettyDate(item.date, false)}</h3>
+        <div className="pb-8">
+          <h3 className="h1 mb-6 text-center">
+            {prettyDate(item.date, false)}
+          </h3>
           <div className={styles.schedule}>
             {item.timeSlots.map((slot) => {
               return (

@@ -1,0 +1,16 @@
+.card {
+  transition: all 0.5s !important;
+  background: linear-gradient(
+    23deg,
+    rgba(22, 15, 38, 1) 50%,
+    rgba(3, 48, 40, 1) 100%
+  );
+  &:hover {
+    background: rgb(4, 54, 44);
+    background: linear-gradient(
+      23deg,
+      rgba(4, 54, 44, 1) 30%,
+      rgba(3, 102, 138, 1) 100%
+    );
+  }
+}
