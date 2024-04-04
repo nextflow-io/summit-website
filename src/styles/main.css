@@ -1,3 +1,6 @@
+:root {
+  --sl-blue: #4256e7;
+}
 html,
 body {
   background-color: var(--color-brand) !important;
@@ -14,6 +17,10 @@ footer#footer {
   width: 100vw;
   overflow-x: hidden;
 }
+footer#footer {
+  position: relative;
+  z-index: 10;
+}
 main#body {
   position: relative;
 }
@@ -27,9 +34,11 @@ main#body {
   &.island {
     width: fit-content;
     max-width: 840px;
-    text-align: center;
   }
   &.smaller {
     max-width: 1000px;
+  }
+  &.smallest {
+    max-width: 824px;
   }
 }

@@ -1,0 +1,21 @@
+---
+import Layout from "@layouts/Base.astro";
+import SponsoredBy from "@modules/SponsoredBy";
+import KeyInformation from "@modules/KeyInformation";
+import ImageSection from "@modules/ImageSection";
+import CTASection from "@modules/CTASection";
+import Contact from "@modules/Contact";
+import SEO from "@components/SEO";
+import Calendar from "@components/Calendar";
+---
+
+<Layout namespace="2024/boston" altBG>
+  <SEO slot="head" title="Schedule" img={1} />
+  <section class="pb-6 pt-16 md:pt-20">
+    <Calendar />
+  </section>
+  <ImageSection className="my-8 lg:my-20" />
+  <CTASection />
+  <Contact />
+  <SponsoredBy client:load />
+</Layout>

@@ -8,7 +8,7 @@
   top: 20vh;
   right: -10vw;
   opacity: 0.3;
-  animation: movement 25s linear infinite;
+  animation: movement 10s linear infinite;
   transform: translate(0, 0);
   display: none;
   @media (--md) {
@@ -24,7 +24,10 @@
     transform: translate(-150px, -250px) scale(0.6);
   }
   70% {
-    transform: translate(-120px, -200px) scale(0.6);
+    transform: translate(-190px, -200px) scale(0.9);
+  }
+  90% {
+    transform: translate(-90px, -20px) scale(0.6);
   }
   100% {
     transform: translate(0, 0) scale(1);

@@ -8,7 +8,7 @@
   background-color: #fa6863;
   top: 80vh;
   right: 50px;
-  animation: movement 20s linear infinite;
+  animation: movement 15s linear infinite;
   transform: translate(0, 0);
 }
 

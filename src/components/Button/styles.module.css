@@ -80,15 +80,17 @@
 .button.blue {
   background: var(--sl-blue);
   &:hover {
-    background: white;
-    color: var(--color-brand);
+    box-shadow: 0px 0px 10px 0px rgba(66, 86, 231, 0.8);
+    border-color: white;
   }
-}
-.button.blue2 {
-  background: var(--sl-blue);
-  &:hover {
+  & .hoverBG {
     background: white;
-    background: var(--color-brand);
+  }
+  & .content {
+    color: white;
+    &:hover {
+      color: var(--color-brand-900);
+    }
   }
 }
 .button.brand {

@@ -1,9 +1,13 @@
+.backgroundContainer {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
 .background {
   z-index: 0;
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  inset: 0;
+  width: 100%;
   height: 1981px;
   background-image: url("./images/bg_1d.jpg");
   background-repeat: no-repeat;
@@ -17,6 +21,9 @@
   @media (--lg) {
     background-size: 100vw auto;
     background-position: 50vw 100px;
+  }
+  &.alt {
+    background-image: none;
   }
 }
 .overlay {

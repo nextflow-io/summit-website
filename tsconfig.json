@@ -11,7 +11,8 @@
       "@data/*": ["src/data/*"],
       "@utils/*": ["src/utils/*"],
       "@images/*": ["src/images/*"],
-      "@photos/*": ["src/images/photos/*"]
+      "@photos/*": ["src/images/photos/*"],
+      "@icons/*": ["src/images/icons/*"]
     }
   }
 }

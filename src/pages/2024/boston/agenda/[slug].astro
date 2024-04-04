@@ -1,0 +1,48 @@
+---
+import Layout from "@layouts/Base.astro";
+import PersonCard from "@components/PersonCard";
+import ContentBox from "@components/ContentBox/index.astro";
+import SEO from "@components/SEO";
+import sessions from "@data/sessions";
+
+export function getStaticPaths() {
+  return sessions.map((session) => ({
+    params: { slug: session.slug },
+  }));
+}
+
+const session = sessions.find((session) => session.slug === Astro.params.slug);
+---
+
+<Layout namespace="2024/boston" altBG>
+  <SEO slot="head" title={session.title} img={1} />
+  <section class="pb-10 pt-16 md:py-20">
+    <div class="container smallest">
+      <ContentBox
+        backLink={{
+          label: "Back to sessions",
+          href: "/2024/boston/agenda/schedule",
+        }}
+      >
+        <div class="flex flex-col sm:flex-row items-center mb-8">
+          <div class="flex-auto text-center sm:text-left pt-6 sm:pt-0">
+            <h1 class="text-4xl md:text-5xl font-bold mb-3 font-display">
+              {session.title}
+            </h1>
+          </div>
+        </div>
+        <div class="text-left text-brand-300 font-light text-sm sm:text-base">
+          {session.description}
+        </div>
+        <h2 class="h2 mt-16 text-left mb-6">Speakers</h2>
+        <div class="flex flex-wrap -m-1">
+          {
+            session.speakers.map((speaker) => (
+              <PersonCard className="p-1" person={speaker} />
+            ))
+          }
+        </div>
+      </ContentBox>
+    </div>
+  </section>
+</Layout>

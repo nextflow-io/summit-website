@@ -2,10 +2,11 @@
 import { Image } from "astro:assets";
 import Layout from "@layouts/Base.astro";
 import ImageSection from "@modules/ImageSection";
+import SponsoredBy from "@modules/SponsoredBy";
 import CTASection from "@modules/CTASection";
 import Contact from "@modules/Contact";
 import img from "@photos/hackers-1a.jpg";
-import Box, { SubSection } from "@components/Box";
+import Box from "@components/Box";
 import SEO from "@components/SEO";
 ---
 
@@ -54,4 +55,5 @@ import SEO from "@components/SEO";
   <CTASection />
   <ImageSection alt2 className="mt-20" />
   <Contact />
+  <SponsoredBy client:load />
 </Layout>

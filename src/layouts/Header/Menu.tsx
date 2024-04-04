@@ -72,6 +72,16 @@ const Menu: React.FC<Props> = ({
             Training
           </Link>
         </li>
+        <li>
+          <Link href={url("/speakers")} active={isActive("speakers")}>
+            Speakers
+          </Link>
+        </li>
+        <li>
+          <Link href={url("/sponsors")} active={isActive("sponsors")}>
+            Sponsors
+          </Link>
+        </li>
       </ul>
     </nav>
   );
