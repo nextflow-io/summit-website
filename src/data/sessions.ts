@@ -17,6 +17,7 @@ export type Session = {
   isKeynote?: boolean;
   isSponsor?: boolean;
   projectURL?: string;
+  coAuthors?: string;
   speakers: Speaker[];
   categoryItems: number[];
   questionAnswers: [
@@ -38,6 +39,12 @@ const questionIDs = {
   isKeynote: 74899,
   isSponsor: 64629,
   projectURL: 67843,
+  coAuthors: 67841,
+};
+
+const categoryIDs = {
+  theme: 67842,
+  type: 64628,
 };
 
 export function addSessionURL(session: Session) {
@@ -79,11 +86,18 @@ function isSponsor(session: Session): boolean {
   });
 }
 
-function projectURL(session: Session): string {
+function getProjectURL(session: Session): string {
   const projectURL = session.questionAnswers.find(
     (q) => q.questionId === questionIDs.projectURL,
   );
   return projectURL ? projectURL.answerValue : "";
+}
+
+function getCoAuthors(session: Session): string {
+  const coAuthors = session.questionAnswers.find(
+    (q) => q.questionId === questionIDs.coAuthors,
+  );
+  return coAuthors?.answerValue || "";
 }
 
 const getSessions = (): Session[] => {
@@ -101,12 +115,13 @@ const getSessions = (): Session[] => {
       // Add URL & slug
       .map(addSessionURL)
 
-      // Add whether is keynote and/or sponsor
+      // Add custom attributes
       .map((session) => ({
         ...session,
         isKeynote: isKeynote(session),
         isSponsor: isSponsor(session),
-        projectURL: projectURL(session),
+        projectURL: getProjectURL(session),
+        coAuthors: getCoAuthors(session),
       }))
 
       // Associate room

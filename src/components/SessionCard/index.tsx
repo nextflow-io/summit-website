@@ -15,13 +15,16 @@ type Props = {
 };
 
 const CardContainer = ({ children, session }) => {
+  const className = clsx(styles.card, {
+    [styles.keynote]: session.isKeynote,
+  });
   if (session.isConfirmed)
     return (
-      <a href={session.url} className={styles.card}>
+      <a href={session.url} className={className}>
         {children}
       </a>
     );
-  return <div className={styles.card}>{children}</div>;
+  return <div className={className}>{children}</div>;
 };
 
 const SessionCard: React.FC<Props> = ({
@@ -37,7 +40,9 @@ const SessionCard: React.FC<Props> = ({
         <span className={styles.bg} />
         <span className={styles.content}>
           {session.isKeynote && (
-            <span className="text-nextflow text-sm">Keynote</span>
+            <span className="text-nextflow text-xs uppercase font-bold mb-2">
+              Keynote
+            </span>
           )}
           {session.isSponsor && (
             <span className="text-nextflow text-sm">Sponsor</span>
@@ -61,7 +66,12 @@ const SessionCard: React.FC<Props> = ({
           )}
           <h2 className={styles.title}>{session.title}</h2>
           {!!session.speakers.length && (
-            <div className="text-sm text-nextflow-400 mt-3 font-light">
+            <div
+              className={clsx(
+                "text-sm text-nextflow-400 mt-3 font-light",
+                styles.speakers,
+              )}
+            >
               {session.speakers.map((speaker) => speaker.fullName).join(", ")}
             </div>
           )}

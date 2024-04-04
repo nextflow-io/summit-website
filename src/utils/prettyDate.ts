@@ -3,7 +3,7 @@ import dayjs from "dayjs";
 function prettyDate(date, showYear = true) {
   if (!date) return null;
   let format = "MMM DD";
-  if (showYear) format = "{YYYY} " + format;
+  if (showYear) format = "YYYY " + format;
   return dayjs(date).format(format);
 }
 
