@@ -9,25 +9,30 @@ import type { Speaker } from "@data/speakers";
 type Props = {
   person: Speaker;
   className?: string;
+  smaller?: boolean;
 };
 
-const PersonCard: React.FC<Props> = ({ className, ...props }) => {
+const PersonCard: React.FC<Props> = ({ className, smaller, ...props }) => {
   const person = speakers.find(
     (speaker) => speaker.fullName === props.person.fullName,
   );
   if (!person) return null;
   return (
-    <div className={clsx("w-full md:w-1/2", className)}>
+    <div className={className}>
       <div
         className={clsx(
           "w-full h-full",
           "flex flex-col sm:flex-row items-center sm:items-stretch",
           "bg-brand border border-brand-900 rounded-lg py-8 sm:py-4 px-4",
+          "hover:border-nextflow transition-all duration-300",
         )}
       >
         <a
           href={`/2024/boston/speakers/${person.slug}`}
-          className="max-w-[150px] w-full rounded-full overflow-hidden relative"
+          className={clsx("w-full rounded-full overflow-hidden relative", {
+            "max-w-[150px]": !smaller,
+            "max-w-[100px]": smaller,
+          })}
         >
           <img
             src={person.profilePicture}

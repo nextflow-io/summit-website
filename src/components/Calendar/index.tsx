@@ -24,12 +24,15 @@ const Calendar = () => {
                   </div>
                   <div className={styles.sessions}>
                     {slot.rooms.map((room, i) => {
+                      const fullSession = sessions.find(
+                        (s) => s.id === room.session.id,
+                      );
                       return (
                         <SessionCard
                           key={i}
-                          session={room.session}
+                          session={fullSession}
                           hideTime
-                          room={showRoomName ? room : null}
+                          showRoomName={showRoomName}
                         />
                       );
                     })}

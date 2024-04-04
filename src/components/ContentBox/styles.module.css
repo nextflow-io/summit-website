@@ -9,4 +9,7 @@
     border-radius: 16px;
     padding: 32px;
   }
+  @media (--md) {
+    padding: 48px;
+  }
 }
