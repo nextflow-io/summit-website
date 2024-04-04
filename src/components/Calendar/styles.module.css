@@ -50,6 +50,7 @@
 .sessions {
   display: flex;
   flex-direction: column;
+  width: 100%;
   & > div:not(:first-child) {
     margin-top: 8px;
   }
