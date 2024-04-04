@@ -13,6 +13,16 @@ type Props = {
   hideTime?: boolean;
 };
 
+const CardContainer = ({ children, session }) => {
+  if (session.isConfirmed)
+    return (
+      <a href={session.url} className={styles.card}>
+        {children}
+      </a>
+    );
+  return <div className={styles.card}>{children}</div>;
+};
+
 const SessionCard: React.FC<Props> = ({
   session,
   className,
@@ -21,15 +31,9 @@ const SessionCard: React.FC<Props> = ({
 }) => {
   return (
     <div className={clsx("w-full md:w-[400px]", className)}>
-      <div
-        className={clsx(
-          "w-full h-full py-4 px-6",
-          "flex flex-col",
-          "bg-brand border border-nextflow rounded-lg text-left",
-          styles.card,
-        )}
-      >
-        <a href={session.url} className="flex-auto">
+      <CardContainer session={session}>
+        <span className={styles.bg} />
+        <span className={styles.content}>
           {!!session.startsAt && (
             <span
               className={clsx(
@@ -53,8 +57,8 @@ const SessionCard: React.FC<Props> = ({
               {session.speakers.map((speaker) => speaker.name).join(", ")}
             </div>
           )}
-        </a>
-      </div>
+        </span>
+      </CardContainer>
     </div>
   );
 };
