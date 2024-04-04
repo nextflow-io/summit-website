@@ -2,8 +2,10 @@ import React from "react";
 import clsx from "clsx";
 import { prettyDate, prettyTime } from "@utils/prettyDate";
 import sessions from "@data/sessions";
+import rooms from "@data/rooms";
 
 import type { Session } from "@data/sessions";
+import type { Room } from "@data/rooms";
 
 import styles from "./styles.module.css";
 
@@ -12,6 +14,7 @@ type Props = {
   className?: string;
   showDate?: boolean;
   hideTime?: boolean;
+  room?: Room;
 };
 
 const CardContainer = ({ children, session }) => {
@@ -31,6 +34,7 @@ const SessionCard: React.FC<Props> = ({
   ...props
 }) => {
   const session = sessions.find((s) => s.id === props.session.id);
+  const room = rooms.find((r) => r.id === props.room?.id);
   return (
     <div className={clsx("w-full md:w-[400px]", className)}>
       <CardContainer session={session}>
@@ -58,10 +62,11 @@ const SessionCard: React.FC<Props> = ({
           )}
           <h2 className={styles.title}>{session.title}</h2>
           {!!session.speakers.length && (
-            <div className="text-sm text-nextflow-200 mt-3 font-light">
+            <div className="text-sm text-nextflow-400 mt-3 font-light">
               {session.speakers.map((speaker) => speaker.fullName).join(", ")}
             </div>
           )}
+          {!!room && <div className={styles.room}>{room.name} room</div>}
         </span>
       </CardContainer>
     </div>

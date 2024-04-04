@@ -47,3 +47,10 @@
     display: block;
   }
 }
+.sessions {
+  display: flex;
+  flex-direction: column;
+  & > div:not(:first-child) {
+    margin-top: 8px;
+  }
+}

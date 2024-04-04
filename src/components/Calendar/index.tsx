@@ -16,14 +16,24 @@ const Calendar = () => {
           <h3 className="h1 mb-6 sm:pl-4">{prettyDate(item.date, false)}</h3>
           <div className={styles.colItems}>
             {item.timeSlots.map((slot) => {
+              const showRoomName = slot.rooms.length > 1;
               return (
                 <div className={styles.timeSlot}>
                   <div className={styles.time}>
                     {formatTime(slot.slotStart)}
                   </div>
-                  {[slot.rooms[0]].map(({ session }, i) => {
-                    return <SessionCard key={i} session={session} hideTime />;
-                  })}
+                  <div className={styles.sessions}>
+                    {slot.rooms.map((room, i) => {
+                      return (
+                        <SessionCard
+                          key={i}
+                          session={room.session}
+                          hideTime
+                          room={showRoomName ? room : null}
+                        />
+                      );
+                    })}
+                  </div>
                 </div>
               );
             })}
