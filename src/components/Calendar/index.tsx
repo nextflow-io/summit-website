@@ -12,7 +12,7 @@ const Calendar = () => {
       <div className="flex flex-wrap lg:flex-nowrap justify-center -m-2">
         {schedule.map((item) => (
           <div className="p-2">
-            <h3 className="h1 mb-6 text-center">
+            <h3 className="h1 mb-6 text-center sm:ml-[100px]">
               {prettyDate(item.date, false)}
             </h3>
             <div className={styles.schedule}>

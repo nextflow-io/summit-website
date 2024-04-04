@@ -30,8 +30,14 @@ const SessionCard: React.FC<Props> = ({
         )}
       >
         <a href={session.url} className="flex-auto">
-          {!!session.startsAt && !hideTime && (
-            <span className="block text-sm text-nextflow font-semibold mb-2">
+          {!!session.startsAt && (
+            <span
+              className={clsx(
+                "block text-sm text-nextflow font-semibold mb-2",
+                styles.time,
+                { [styles.hideTime]: hideTime },
+              )}
+            >
               {showDate && prettyDate(session.startsAt, false)}
               {!!session.endsAt && (
                 <>
