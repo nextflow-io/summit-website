@@ -13,8 +13,8 @@ const InfoBox = ({ children, title, subtitle, icon }) => {
         <div className="mb-6 text-sm text-brand-300">{subtitle}</div>
       )}
       <div className="text-base">{children}</div>
-      <div className="flex-auto pt-6 text-brand-400 font-bold text-sm">
-        Program coming soon
+      <div className="flex-auto pt-6">
+        <a href="/2024/boston/agenda/schedule" className="text-brand-400 font-bold text-sm">View agenda</a>
       </div>
       <div>
         <img src={icon.src} className="w-[44px]" />
