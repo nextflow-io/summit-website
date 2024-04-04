@@ -32,14 +32,6 @@ const Menu: React.FC<Props> = ({
       <nav className={className}>
         <ul>
           <li>
-            <Link
-              href={url("/call-for-abstracts")}
-              active={isActive("call-for-abstracts")}
-            >
-              Call for abstracts
-            </Link>
-          </li>
-          <li>
             {desktop ? (
               <Button href={url("/register")} arrow cta wide>
                 Register
