@@ -39,15 +39,16 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 16px 24px;
+  padding: 0.7em 0.9em;
   z-index: 2;
   height: 100%;
   width: 100%;
 }
 .title {
   font-family: Degular, sans-serif;
-  font-weight: 200;
-  font-size: 1.05em;
+  font-weight: 400;
+  letter-spacing: 0.4px;
+  font-size: 1.1em;
   color: white;
   line-height: 1.3;
 }

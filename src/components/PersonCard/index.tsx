@@ -2,6 +2,7 @@ import React from "react";
 import clsx from "clsx";
 
 import SocialIcon from "@components/SocialIcon";
+import speakers from "@data/speakers";
 
 import type { Speaker } from "@data/speakers";
 
@@ -10,7 +11,10 @@ type Props = {
   className?: string;
 };
 
-const PersonCard: React.FC<Props> = ({ person, className }) => {
+const PersonCard: React.FC<Props> = ({ className, ...props }) => {
+  const person = speakers.find(
+    (speaker) => speaker.fullName === props.person.fullName,
+  );
   return (
     <div className={clsx("w-full md:w-1/2", className)}>
       <div

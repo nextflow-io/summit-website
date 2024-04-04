@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import schedule from "@data/schedule";
+import sessionize from "@data/sessionize";
 
 import styles from "./styles.module.css";
 import { prettyDate } from "@utils/prettyDate";
