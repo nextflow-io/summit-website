@@ -10,9 +10,15 @@ type Props = {
   session: Session;
   className?: string;
   showDate?: boolean;
+  hideTime?: boolean;
 };
 
-const SessionCard: React.FC<Props> = ({ session, className, showDate }) => {
+const SessionCard: React.FC<Props> = ({
+  session,
+  className,
+  showDate,
+  hideTime,
+}) => {
   return (
     <div className={clsx("w-full md:w-[400px]", className)}>
       <div
@@ -24,7 +30,7 @@ const SessionCard: React.FC<Props> = ({ session, className, showDate }) => {
         )}
       >
         <a href={session.url} className="flex-auto">
-          {!!session.startsAt && (
+          {!!session.startsAt && !hideTime && (
             <span className="block text-sm text-nextflow font-semibold mb-2">
               {showDate && prettyDate(session.startsAt, false)}
               {!!session.endsAt && (
@@ -35,11 +41,9 @@ const SessionCard: React.FC<Props> = ({ session, className, showDate }) => {
               )}
             </span>
           )}
-          <h2 className="text-lg font-display font-semibold text-nextflow-200">
-            {session.title}
-          </h2>
+          <h2 className={styles.title}>{session.title}</h2>
           {!!session.speakers.length && (
-            <div className="text-sm text-nextflow-200 mt-2">
+            <div className="text-sm text-nextflow-200 mt-3 font-light">
               {session.speakers.map((speaker) => speaker.name).join(", ")}
             </div>
           )}

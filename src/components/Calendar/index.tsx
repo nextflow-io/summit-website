@@ -19,11 +19,11 @@ const Calendar = () => {
               {item.timeSlots.map((slot) => {
                 return (
                   <div className={styles.timeSlot}>
-                    <div className={styles.timelineItem}>
+                    <div className={styles.time}>
                       {formatTime(slot.slotStart)}
                     </div>
                     {slot.rooms.map(({ session }) => {
-                      return <SessionCard session={session} />;
+                      return <SessionCard session={session} hideTime />;
                     })}
                   </div>
                 );
