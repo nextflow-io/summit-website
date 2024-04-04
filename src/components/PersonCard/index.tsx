@@ -15,6 +15,7 @@ const PersonCard: React.FC<Props> = ({ className, ...props }) => {
   const person = speakers.find(
     (speaker) => speaker.fullName === props.person.fullName,
   );
+  if (!person) return null;
   return (
     <div className={clsx("w-full md:w-1/2", className)}>
       <div

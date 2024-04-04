@@ -13,9 +13,7 @@ const Calendar = () => {
     <div className={clsx(styles.calendar, "-m-4 pb-10 pr-4")}>
       {schedule.map((item) => (
         <div className="p-4">
-          <h3 className="h1 mb-6 text-center sm:ml-[100px]">
-            {prettyDate(item.date, false)}
-          </h3>
+          <h3 className="h1 mb-6 pl-4">{prettyDate(item.date, false)}</h3>
           <div className={styles.schedule}>
             {item.timeSlots.map((slot) => {
               return (

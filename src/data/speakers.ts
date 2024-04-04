@@ -35,7 +35,10 @@ const getSpeakers = (): Speaker[] => {
       // Fix attributes, add slug
       .map(
         ({ fullName, isTopSpeaker, questionAnswers, links, ...speaker }) => ({
-          slug: fullName.toLowerCase().replace(/ /g, "-"),
+          slug: fullName
+            .toLowerCase()
+            .replace(/ /g, "-")
+            .replace(/[^a-zA-Z0-9 -]/g, ""),
           fullName,
           isTopSpeaker,
           links: fixSocialLinks({ questionAnswers, links }),
