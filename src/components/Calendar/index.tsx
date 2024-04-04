@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
+import clsx from "clsx";
 import schedule from "@data/schedule";
-import sessionize from "@data/sessionize";
+import sessions from "@data/sessions";
 
 import styles from "./styles.module.css";
 import { prettyDate } from "@utils/prettyDate";
@@ -9,30 +10,28 @@ import SessionCard from "@components/SessionCard";
 
 const Calendar = () => {
   return (
-    <div className="container pb-10">
-      <div className="flex flex-wrap lg:flex-nowrap justify-center -m-2">
-        {schedule.map((item) => (
-          <div className="p-2">
-            <h3 className="h1 mb-6 text-center sm:ml-[100px]">
-              {prettyDate(item.date, false)}
-            </h3>
-            <div className={styles.schedule}>
-              {item.timeSlots.map((slot) => {
-                return (
-                  <div className={styles.timeSlot}>
-                    <div className={styles.time}>
-                      {formatTime(slot.slotStart)}
-                    </div>
-                    {slot.rooms.map(({ session }) => {
-                      return <SessionCard session={session} hideTime />;
-                    })}
+    <div className={clsx(styles.calendar, "-m-4 pb-10 pr-4")}>
+      {schedule.map((item) => (
+        <div className="p-4">
+          <h3 className="h1 mb-6 text-center sm:ml-[100px]">
+            {prettyDate(item.date, false)}
+          </h3>
+          <div className={styles.schedule}>
+            {item.timeSlots.map((slot) => {
+              return (
+                <div className={styles.timeSlot}>
+                  <div className={styles.time}>
+                    {formatTime(slot.slotStart)}
                   </div>
-                );
-              })}
-            </div>
+                  {[slot.rooms[0]].map(({ session }, i) => {
+                    return <SessionCard key={i} session={session} hideTime />;
+                  })}
+                </div>
+              );
+            })}
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
     </div>
   );
 };

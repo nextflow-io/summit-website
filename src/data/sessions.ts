@@ -12,6 +12,7 @@ export type Session = {
   endsAt: string;
   isServiceSession: boolean;
   isPlenumSession: boolean;
+  isKeynote?: boolean;
   speakers: Speaker[];
   categoryItems: number[];
   questionAnswers: [
@@ -51,6 +52,10 @@ export function addSessionURL(session: Session) {
   };
 }
 
+function isKeynote(session: Session): boolean {
+  return !!session.questionAnswers.find((q) => q.questionId === 74899);
+}
+
 const getSessions = (): Session[] => {
   return data.sessions.map((session) => {
     const { speakers: speakerIDS } = session;
@@ -59,6 +64,7 @@ const getSessions = (): Session[] => {
     );
     return {
       ...addSessionURL(session),
+      isKeynote: isKeynote(session),
       speakers,
     };
   });
