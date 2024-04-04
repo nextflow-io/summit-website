@@ -56,10 +56,10 @@ const speaker = speakers.find((speaker) => speaker.slug === Astro.params.slug);
           {speaker.bio}
         </div>
         <h2 class="h2 mt-16 text-left mb-6">Sessions</h2>
-        <div class="flex flex-wrap -m-1">
+        <div class="flex flex-wrap -m-1 text-left">
           {
             speaker.sessions.map((session) => (
-              <SessionCard className="p-1" session={session} />
+              <SessionCard className="p-1" session={session} hideSpeakers={true} />
             ))
           }
         </div>

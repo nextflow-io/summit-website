@@ -12,6 +12,7 @@ type Props = {
   showDate?: boolean;
   hideTime?: boolean;
   showRoomName?: boolean;
+  hideSpeakers?: boolean;
 };
 
 const CardContainer = ({ children, session }) => {
@@ -33,6 +34,7 @@ const SessionCard: React.FC<Props> = ({
   hideTime,
   session,
   showRoomName,
+  hideSpeakers,
 }) => {
   return (
     <div className={clsx("w-full md:w-[400px]", className)}>
@@ -65,7 +67,7 @@ const SessionCard: React.FC<Props> = ({
             </span>
           )}
           <h2 className={styles.title}>{session.title}</h2>
-          {!!session.speakers.length && (
+          {!!session.speakers.length && !hideSpeakers && (
             <div
               className={clsx(
                 "text-sm text-nextflow-400 mt-3 font-light",
