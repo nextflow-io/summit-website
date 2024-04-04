@@ -10,11 +10,11 @@ import SessionCard from "@components/SessionCard";
 
 const Calendar = () => {
   return (
-    <div className={clsx(styles.calendar, "-m-4 pb-10 pr-4")}>
+    <div className={clsx(styles.calendar, "pb-10")}>
       {schedule.map((item) => (
-        <div className="p-4">
-          <h3 className="h1 mb-6 pl-4">{prettyDate(item.date, false)}</h3>
-          <div className={styles.schedule}>
+        <div className={clsx(styles.col, "p-4")}>
+          <h3 className="h1 mb-6 sm:pl-4">{prettyDate(item.date, false)}</h3>
+          <div className={styles.colItems}>
             {item.timeSlots.map((slot) => {
               return (
                 <div className={styles.timeSlot}>

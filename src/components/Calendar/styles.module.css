@@ -1,8 +1,15 @@
 .calendar {
   overflow-x: auto;
   display: flex;
+  flex-direction: column;
+  @media (--md) {
+    flex-direction: row;
+  }
 }
-.schedule {
+.col {
+  width: 100%;
+}
+.colItems {
   display: flex;
   flex-direction: column;
   width: auto;
