@@ -47,7 +47,7 @@ const KeyInformation: React.FC<Props> = ({ className }) => {
             subtitle="2 days · 100 people · hackathon"
             icon={computer}
           >
-            An in-person hackathon to develop nf-core.
+            An in-person hackathon to develop nf-core. Running in parallel to the training.
           </InfoBox>
         </div>
         <div className="w-full md:w-1/3 p-2 lg:p-4">
