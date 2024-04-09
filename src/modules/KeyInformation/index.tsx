@@ -37,8 +37,8 @@ const KeyInformation: React.FC<Props> = ({ className }) => {
             subtitle="2 days · 30 people · training"
             icon={parentheses}
           >
-            An in-person training to supercharge your pipeline development with
-            Nextflow and nf-core.
+            An in-person foundational training to supercharge your pipeline development with
+            Nextflow and nf-core. Running in parallel to the hackathon.
           </InfoBox>
         </div>
         <div className="w-full md:w-1/3 p-2 lg:p-4">
