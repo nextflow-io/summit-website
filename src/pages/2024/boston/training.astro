@@ -1,7 +1,6 @@
 ---
 import { Image } from "astro:assets";
 import Layout from "@layouts/Base.astro";
-import ImageSection from "@modules/ImageSection";
 import SponsoredBy from "@modules/SponsoredBy";
 import CTASection from "@modules/CTASection";
 import Contact from "@modules/Contact";
@@ -53,7 +52,6 @@ import SEO from "@components/SEO";
     </div>
   </section>
   <CTASection />
-  <ImageSection alt2 className="mt-20" />
   <Contact />
   <SponsoredBy client:load />
 </Layout>
