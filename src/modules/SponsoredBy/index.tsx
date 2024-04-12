@@ -13,7 +13,7 @@ const SponsoredBy: React.FC<Props> = ({ className }) => (
   <section>
     <Marquee speed={50} className={className} href="/2024/boston/sponsors/">
       <div className={styles.container}>
-        <div className={styles.overlay} />
+        {/* <div className={styles.overlay} /> */}
         {sponsors.map((sponsor, i) => (
           <div
             key={i}

@@ -5,6 +5,7 @@ import SocialIcon from "@components/SocialIcon";
 import speakers from "@data/speakers";
 
 import type { Speaker } from "@data/speakers";
+import ProfilePic from "@components/ProfilePic";
 
 type Props = {
   person: Speaker;
@@ -27,20 +28,15 @@ const PersonCard: React.FC<Props> = ({ className, smaller, ...props }) => {
           "hover:border-nextflow transition-all duration-300",
         )}
       >
-        <a
-          href={`/2024/boston/speakers/${person.slug}`}
-          className={clsx("w-full rounded-full overflow-hidden relative", {
+        <ProfilePic
+          alt={person.fullName}
+          src={person.profilePicture}
+          url={`/2024/boston/speakers/${person.slug}`}
+          className={clsx({
             "max-w-[150px]": !smaller,
             "max-w-[100px]": smaller,
           })}
-        >
-          <img
-            src={person.profilePicture}
-            alt={person.fullName}
-            className="object-cover w-full h-full mix-blend-luminosity"
-          />
-          <span className="absolute inset-0 bg-gradient-to-b from-transparent to-black mix-blend-soft-light" />
-        </a>
+        />
         <div className="flex flex-col flex-auto pt-8 sm:pt-0 sm:pl-4">
           <a
             href={`/2024/boston/speakers/${person.slug}`}

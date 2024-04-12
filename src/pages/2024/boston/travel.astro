@@ -2,7 +2,6 @@
 import { Icon } from "astro-icon/components";
 import Layout from "@layouts/Base.astro";
 import CallForAbstracts from "@modules/CallForAbstracts";
-import ImageSection from "@modules/ImageSection";
 import CTASection from "@modules/CTASection";
 import Contact from "@modules/Contact";
 import SponsoredBy from "@modules/SponsoredBy";
@@ -59,7 +58,6 @@ import SEO from "@components/SEO";
     <Accommodation client:load />
   </section>
   <CTASection />
-  <ImageSection alt2 className="mt-20" />
   <Contact />
   <SponsoredBy client:load />
 </Layout>
