@@ -48,6 +48,7 @@ const getSpeakers = (): Speaker[] => {
 
       // Associate sessions
       .map((speaker) => {
+        console.log(">>", speaker.fullName, speaker.sessions.length);
         const sessionIDs = speaker.sessions;
         let sessions = sessionIDs.map((id) =>
           data.sessions.find((s) => `${s.id}` === `${id}`),

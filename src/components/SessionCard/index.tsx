@@ -37,7 +37,7 @@ const SessionCard: React.FC<Props> = ({
   hideSpeakers,
 }) => {
   return (
-    <div className={clsx("w-full md:w-[400px]", className)}>
+    <div className={clsx("w-full", className)}>
       <CardContainer session={session}>
         <span className={styles.bg} />
         <span className={styles.content}>
