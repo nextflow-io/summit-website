@@ -7,7 +7,8 @@
   & a {
     color: var(--color-nextflow);
   }
-  &.alt {
+  &.alt,
+  &.alt2 {
     background: rgba(22, 15, 28, 0.5);
     margin: 0 -16px;
     padding: 48px 24px;
@@ -21,6 +22,9 @@
     @media (--md) {
       padding: 48px;
     }
+  }
+  &.alt2 {
+    border-radius: 0;
   }
 }
 .subsection {

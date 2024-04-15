@@ -1,5 +1,6 @@
 import React from "react";
 import Box from "@components/Box";
+import Button from "@components/Button";
 
 const Row = ({ children, title }) => {
   return (
@@ -31,40 +32,33 @@ const WhyAttend: React.FC<Props> = ({ showImg, showTitle }) => {
         innovations from the Nextflow world. At the Summit, open science takes
         the main stage.
       </div>
-      <div className="flex">
-        <div className="flex-auto md:pr-8">
-          <Row title="The quintessential Nextflow Community event">
-            The Nextflow Summit unites Nextflow enthusiasts, experts, and
-            collaborators for unparalleled networking, building friendships, and
-            collaboration opportunities, including an in-person community
-            hackathon.
-          </Row>
-          <Row title="Push boundaries and innovate with Nextflow">
-            At the Hackathon, you'll join forces to tackle real-world
-            challenges, pushing boundaries and creating innovative pipelines
-            with Nextflow. You'll also be inspired by the latest advancements
-            and best practices shared at the Summit.
-          </Row>
-          <Row title="Learn and collaborate with Nextflow experts">
-            The Nextflow Summit provides a comprehensive experience in workflow
-            management and data orchestration, featuring real-life success
-            stories, inspiring keynotes, and panel discussions, catering to both
-            newcomers seeking foundational training and seasoned users aiming to
-            stay abreast of the latest technologies and trends.
-          </Row>
-          <Row title="Showcase your work to industry leaders">
-            The Nextflow Summit offers a prime platform to showcase your work
-            and receive valuable community feedback on a wide range of
-            Nextflow-related topics, from novel analysis methods to optimizing
-            performance on cloud platforms.
-          </Row>
-        </div>
-        {showImg && (
-          <div className="w-[350px] hidden md:block">
-            <img src={tiles.src} className="h-full object-cover" />
-          </div>
-        )}
-      </div>
+      <Row title="The quintessential Nextflow Community event">
+        The Nextflow Summit unites Nextflow enthusiasts, experts, and
+        collaborators for unparalleled networking, building friendships, and
+        collaboration opportunities, including an in-person community hackathon.
+      </Row>
+      <Row title="Push boundaries and innovate with Nextflow">
+        At the Hackathon, you'll join forces to tackle real-world challenges,
+        pushing boundaries and creating innovative pipelines with Nextflow.
+        You'll also be inspired by the latest advancements and best practices
+        shared at the Summit.
+      </Row>
+      <Row title="Learn and collaborate with Nextflow experts">
+        The Nextflow Summit provides a comprehensive experience in workflow
+        management and data orchestration, featuring real-life success stories,
+        inspiring keynotes, and panel discussions, catering to both newcomers
+        seeking foundational training and seasoned users aiming to stay abreast
+        of the latest technologies and trends.
+      </Row>
+      <Row title="Showcase your work to industry leaders">
+        The Nextflow Summit offers a prime platform to showcase your work and
+        receive valuable community feedback on a wide range of Nextflow-related
+        topics, from novel analysis methods to optimizing performance on cloud
+        platforms.
+      </Row>
+      <Button href="/2024/boston/register" cta2 large className="mt-8">
+        Attend SUMMIT 2024
+      </Button>
     </Box>
   );
 };
