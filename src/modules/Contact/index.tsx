@@ -7,13 +7,7 @@ import styles from "./styles.module.css";
 
 const SectionBox = ({ children, href }) => {
   return (
-    <Box
-      href={href}
-      className={clsx("flex items-center justify-between", styles.box)}
-      text="text-brand"
-      bg="bg-nextflow-100"
-      p="py-4 px-7"
-    >
+    <Box href={href} className={styles.box}>
       <span>{children}</span>
       <Icon />
     </Box>

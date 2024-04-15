@@ -1,0 +1,24 @@
+---
+import Layout from "@layouts/Base.astro";
+import ImageSection from "@modules/ImageSection";
+import CTASection from "@modules/CTASection";
+import Contact from "@modules/Contact";
+import SponsoredBy from "@modules/SponsoredBy";
+import Accommodation from "@modules/Accommodation";
+import SEO from "@components/SEO";
+import WhyAttend from "@modules/WhyAttend";
+---
+
+<Layout namespace="2024/boston">
+  <SEO slot="head" title="Why attend" img={1} />
+  <section class="pb-6 pt-16 md:py-20">
+    <div class="container smaller mt-8">
+      <WhyAttend />
+    </div>
+  </section>
+  <SponsoredBy client:load />
+  <Accommodation client:load />
+  <CTASection />
+  <ImageSection alt2 className="mt-20" />
+  <Contact />
+</Layout>
