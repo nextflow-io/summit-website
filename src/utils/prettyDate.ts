@@ -31,10 +31,15 @@ function prettyDateAndTime(date) {
   return `${prettyDate(date)} | ${prettyTime(date)}`;
 }
 
+function weekday(date) {
+  const djs = dayjs(date);
+  return days[djs.day()];
+}
+
 function dateSlug(date) {
   if (!date) return null;
   const djs = dayjs(date);
   return djs.format("MM-DD");
 }
 
-export { prettyDate, prettyTime, prettyDateAndTime, dateSlug };
+export { prettyDate, prettyTime, prettyDateAndTime, dateSlug, weekday };

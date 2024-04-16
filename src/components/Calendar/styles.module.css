@@ -6,12 +6,18 @@
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 28px;
+    font-size: 20px;
     font-family: Degular, sans-serif;
     color: var(--color-brand-100);
     font-weight: 400;
     opacity: 0.8;
     position: relative;
+    @media (--md) {
+      font-size: 28px;
+    }
+    &.active {
+      font-weight: 600;
+    }
     &.active,
     &:hover {
       &:after {
@@ -31,6 +37,12 @@
       transform: scaleX(0);
       transition: transform 0.3s;
     }
+    & span {
+      display: none;
+      @media (--lg) {
+        display: inline;
+      }
+    }
   }
 }
 .page {
@@ -42,7 +54,7 @@
 .item {
   display: flex;
   flex-direction: row;
-  margin-bottom: 20px;
+  margin-bottom: 8px;
   & .time {
     width: 100px;
     font-size: 21px;
