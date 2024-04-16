@@ -7,7 +7,7 @@ import schedule from "@data/schedule";
 import sessions from "@data/sessions";
 
 import styles from "./styles.module.css";
-import { prettyDate, dateSlug } from "@utils/prettyDate";
+import { prettyDate } from "@utils/prettyDate";
 import { formatTime } from "./utils";
 import SessionCard from "@components/SessionCard";
 
@@ -33,19 +33,15 @@ const Calendar = () => {
   return (
     <>
       <nav className={clsx(styles.nav, "container")}>
-        {schedule.map((item, i) => {
-          const hash = `#${dateSlug(item.date)}`;
-          console.log(">>", hash, activeHash, hash === activeHash);
-          return (
-            <a
-              key={i}
-              className={clsx({ [styles.active]: activeHash === hash })}
-              href={hash}
-            >
-              {prettyDate(item.date, false, true)}
-            </a>
-          );
-        })}
+        {schedule.map((item, i) => (
+          <a
+            key={i}
+            className={clsx({ [styles.active]: activeHash === item.hash })}
+            href={item.hash}
+          >
+            {prettyDate(item.date, false, true)}
+          </a>
+        ))}
       </nav>
       <Swiper
         modules={[HashNavigation]}
@@ -59,7 +55,7 @@ const Calendar = () => {
             <SwiperSlide
               className={styles.page}
               key={`page-${i}`}
-              data-hash={dateSlug(item.date)}
+              data-hash={item.hashID}
             >
               {item.timeSlots.map((slot, key) => {
                 const showRoomName = slot.rooms.length > 1;

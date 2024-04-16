@@ -1,3 +1,4 @@
+import { dateSlug } from "@utils/prettyDate";
 import { addSessionURL, type Session } from "./sessions";
 
 export type Room = {
@@ -50,6 +51,8 @@ export default data.map((item) => {
 
   return {
     ...item,
+    hash: `#${dateSlug(item.date)}`,
+    hashID: dateSlug(item.date),
     rooms,
     timeSlots,
   };
