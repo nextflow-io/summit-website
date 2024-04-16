@@ -11,21 +11,32 @@ import SessionCard from "@components/SessionCard";
 const Calendar = () => {
   const [selectedDate, setSelectedDate] = useState(schedule[0].date);
   const item = schedule.find((item) => item.date === selectedDate);
+  console.log(">>", selectedDate);
   return (
     <>
       <nav className={styles.nav}>
         {schedule.map((item) => (
-          <button>{prettyDate(item.date, false)}</button>
+          <button
+            onClick={() => setSelectedDate(item.date)}
+            className={clsx({ [styles.active]: selectedDate === item.date })}
+          >
+            {prettyDate(item.date, false, true)}
+          </button>
         ))}
       </nav>
       <div className={clsx(styles.col, "p-4")}>
-        <h3 className="h1 mb-6 sm:pl-4">{prettyDate(item.date, false)}</h3>
         <div className={styles.colItems}>
           {item.timeSlots.map((slot) => {
             const showRoomName = slot.rooms.length > 1;
+            const time = formatTime(slot.slotStart);
             return (
               <div className={styles.timeSlot}>
-                <div className={styles.time}>{formatTime(slot.slotStart)}</div>
+                <div className={styles.time}>
+                  <div>
+                    {time.str}
+                    <span>{time.ampm}</span>
+                  </div>
+                </div>
                 <div className={styles.sessions}>
                   {slot.rooms.map((room, i) => {
                     const fullSession = sessions.find(

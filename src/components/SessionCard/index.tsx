@@ -18,6 +18,7 @@ type Props = {
 const CardContainer = ({ children, session }) => {
   const className = clsx(styles.card, {
     [styles.keynote]: session.isKeynote,
+    [styles.confirmed]: session.isConfirmed,
   });
   if (session.isConfirmed)
     return (
@@ -37,7 +38,7 @@ const SessionCard: React.FC<Props> = ({
   hideSpeakers,
 }) => {
   return (
-    <div className={clsx("w-full", className)}>
+    <div className={className}>
       <CardContainer session={session}>
         <span className={styles.bg} />
         <span className={styles.content}>
@@ -52,7 +53,7 @@ const SessionCard: React.FC<Props> = ({
           {!!session.startsAt && (
             <span
               className={clsx(
-                "block text-sm text-nextflow font-semibold mb-2",
+                "block text-nextflow font-semibold mb-2",
                 styles.time,
                 { [styles.hideTime]: hideTime },
               )}
