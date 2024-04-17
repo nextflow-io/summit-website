@@ -17,10 +17,11 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
 const Calendar = () => {
-  const [activeHash, setActiveHash] = useState("");
+  const [activeHash, setActiveHash] = useState(schedule[0].hash);
   useEffect(() => {
     if (typeof window === "undefined") return;
-    setActiveHash(window.location.hash);
+    const locationHash = window.location.hash;
+    if (locationHash) setActiveHash(locationHash);
     function updateCurrentPage() {
       const hash = window.location.hash;
       setActiveHash(hash);
