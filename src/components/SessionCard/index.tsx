@@ -5,6 +5,7 @@ import { prettyDate, prettyTime } from "@utils/prettyDate";
 import type { Session } from "@data/sessions";
 
 import styles from "./styles.module.css";
+import ProfilePic from "@components/ProfilePic";
 
 type Props = {
   session: Session;
@@ -37,19 +38,13 @@ const SessionCard: React.FC<Props> = ({
   showRoomName,
   hideSpeakers,
 }) => {
+  const showSpeakers = !!session.speakers.length && !hideSpeakers;
+  const showFooter = showSpeakers || session.isKeynote || session.isSponsor;
   return (
     <div className={className}>
       <CardContainer session={session}>
         <span className={styles.bg} />
         <span className={styles.content}>
-          {session.isKeynote && (
-            <span className="text-nextflow text-xs uppercase font-bold mb-2">
-              Keynote
-            </span>
-          )}
-          {session.isSponsor && (
-            <span className="text-nextflow text-sm">Sponsor</span>
-          )}
           {!!session.startsAt && (
             <span
               className={clsx(
@@ -68,14 +63,29 @@ const SessionCard: React.FC<Props> = ({
             </span>
           )}
           <h2 className={styles.title}>{session.title}</h2>
-          {!!session.speakers.length && !hideSpeakers && (
-            <div
-              className={clsx(
-                "text-sm text-nextflow-400 mt-3 font-light",
-                styles.speakers,
+          {showFooter && (
+            <div className={styles.footer}>
+              {showSpeakers && (
+                <div className={styles.speakers}>
+                  {session.speakers.map((speaker) => (
+                    <span key={speaker.id} className={styles.speaker}>
+                      <img
+                        src={speaker.profilePicture}
+                        alt={speaker.fullName}
+                      />
+                      {speaker.fullName}
+                    </span>
+                  ))}
+                </div>
               )}
-            >
-              {session.speakers.map((speaker) => speaker.fullName).join(", ")}
+              <div className={styles.tags}>
+                {session.isKeynote && (
+                  <span className={styles.keynote}>Keynote</span>
+                )}
+                {session.isSponsor && (
+                  <span className={styles.sponsor}>Sponsor</span>
+                )}
+              </div>
             </div>
           )}
           {showRoomName && !!session.room && (
