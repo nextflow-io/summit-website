@@ -11,12 +11,12 @@ import WhyAttend from "@modules/WhyAttend";
 
 <Layout namespace="2024/boston">
   <SEO slot="head" title="Why attend" img={1} />
-  <section class="md:py-20">
+  <section class="md:pt-20 md:pb-10">
     <div class="container smaller">
       <WhyAttend />
     </div>
   </section>
-  <SponsoredBy client:load />
+  <SponsoredBy client:load className="mb-10" />
   <CTASection />
   <ImageSection alt2 className="mt-20" />
   <Contact />

@@ -1,7 +1,8 @@
 .box {
   transition: all 0.5s;
-  background: var(--color-nextflow-100);
-  color: var(--color-brand);
+  border: 1px solid var(--color-nextflow);
+  background: var(--color-brand);
+  color: var(--color-brand-100);
   display: flex;
   align-items: center;
   justify-content: space-between;
