@@ -53,9 +53,9 @@
   font-weight: 500;
   color: white;
   line-height: 1.3;
-  font-size: 22px;
+  font-size: 20px;
   @media (--md) {
-    font-size: 28px;
+    font-size: 22px;
   }
 }
 .time {
@@ -72,7 +72,7 @@
   color: var(--color-nextflow-300);
   font-size: 12px;
   @media (--md) {
-    font-size: 21px;
+    font-size: 16px;
   }
 }
 .footer {

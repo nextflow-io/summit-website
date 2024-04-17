@@ -56,7 +56,7 @@ const SessionCard: React.FC<Props> = ({
               {showDate && prettyDate(session.startsAt, false)}
               {!!session.endsAt && (
                 <>
-                  {showDate && <span className="opacity-50"> @ </span>}
+                  {showDate && <span className="opacity-50 -ml-1">, </span>}
                   {`${prettyTime(session.startsAt)} - ${prettyTime(session.endsAt)}`}
                 </>
               )}
