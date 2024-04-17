@@ -11,7 +11,7 @@
   }
   height: 106px;
   padding: 0 16px;
-  transition: all 0.2s;
+  transition: height 0.2s;
   background: var(--color-brand);
   background: linear-gradient(
     0deg,

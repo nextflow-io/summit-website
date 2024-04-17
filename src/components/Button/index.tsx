@@ -24,6 +24,9 @@ type Props = {
   arrow?: boolean;
   cta?: boolean;
   cta2?: boolean;
+  cta3?: boolean;
+  cta4?: boolean;
+  cta5?: boolean;
 };
 
 const Button: React.FC<Props> = ({
@@ -48,6 +51,9 @@ const Button: React.FC<Props> = ({
     [styles.secondary]: attributes.secondary,
     [styles.cta]: attributes.cta,
     [styles.cta2]: attributes.cta2,
+    [styles.cta3]: attributes.cta3,
+    [styles.cta4]: attributes.cta4,
+    [styles.cta5]: attributes.cta5,
   });
 
   let arrow = null;

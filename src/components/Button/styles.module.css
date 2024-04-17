@@ -186,3 +186,67 @@
     box-shadow: 0px 0px 30px 0px rgba(0, 255, 207, 0.8);
   }
 }
+.button.cta3 {
+  color: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--color-multiqc);
+  transition: all 0.5s;
+  background: linear-gradient(
+    23deg,
+    rgba(156, 30, 0, 1) 0%,
+    rgba(65, 21, 10, 1) 100%
+  );
+
+  box-shadow: 0px 0px 10px 0px rgba(61, 149, 253, 0.9);
+  box-shadow: 0px 0px 10px 0px rgba(250, 108, 99, 0.5);
+  & .hoverBG {
+    background: rgb(4, 54, 44);
+    background: linear-gradient(
+      23deg,
+      rgba(4, 54, 44, 1) 30%,
+      rgba(3, 102, 138, 1) 100%
+    );
+  }
+  &:hover {
+    box-shadow: 0px 0px 10px 0px rgba(0, 255, 207, 0.4);
+  }
+}
+.button.cta4 {
+  color: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--color-wave-200);
+  transition: all 0.5s;
+  background: linear-gradient(
+    23deg,
+    rgba(4, 17, 32, 1) 0%,
+    rgba(0, 67, 145, 1) 100%
+  );
+
+  box-shadow: 0px 0px 10px 0px rgba(61, 149, 253, 0.9);
+  & .hoverBG {
+    background: rgb(4, 54, 44);
+    background: linear-gradient(
+      23deg,
+      rgba(4, 54, 44, 1) 30%,
+      rgba(3, 102, 138, 1) 100%
+    );
+  }
+  &:hover {
+    box-shadow: 0px 0px 10px 0px rgba(0, 255, 207, 0.4);
+  }
+}
+.button.cta5 {
+  color: rgba(0, 0, 0, 0.8);
+  color: var(--color-nextflow-1000);
+  border: 1px solid var(--color-wave-200);
+  transition: all 0.5s;
+  background: linear-gradient(
+    23deg,
+    rgba(13, 197, 157, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  box-shadow: 0px 0px 10px 0px rgba(61, 149, 253, 0.9);
+  & .hoverBG {
+  }
+  &:hover {
+    box-shadow: 0px 0px 15px 0px rgba(61, 149, 253, 1);
+  }
+}

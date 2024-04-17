@@ -43,7 +43,7 @@ const isSingularSpeaker = speakerCount === 1;
             {
               !!session.endsAt && (
                 <>
-                  <span class="opacity-50"> @ </span>
+                  <span class="opacity-50 -ml-1">, </span>
                   {`${prettyTime(session.startsAt)} - ${prettyTime(session.endsAt)}`}
                 </>
               )

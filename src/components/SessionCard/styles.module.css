@@ -21,13 +21,13 @@
   &:not([href]) {
     cursor: default;
     background: var(--color-brand);
-    border-color: var(--color-brand-900);
+    border-color: var(--color-brand-800);
   }
 }
 .card > .bg {
   position: absolute;
   inset: 0;
-  transition: all 0.5s !important;
+  transition: opacity 0.5s !important;
   background: linear-gradient(
     23deg,
     rgba(4, 54, 44, 1) 30%,
@@ -39,18 +39,24 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 0.7em 0.9em;
   z-index: 2;
   height: 100%;
   width: 100%;
+  padding: 16px 18px;
+  @media (--md) {
+    padding: 22px 32px;
+  }
 }
 .title {
   font-family: Degular, sans-serif;
-  font-weight: 400;
   letter-spacing: 0.4px;
-  font-size: 1.1em;
+  font-weight: 500;
   color: white;
   line-height: 1.3;
+  font-size: 20px;
+  @media (--md) {
+    font-size: 22px;
+  }
 }
 .time {
   &.hideTime {
@@ -60,8 +66,65 @@
   }
 }
 .room {
-  margin-top: 4px;
+  margin-top: 2px;
   font-family: monospace;
-  font-size: 0.8em;
-  color: var(--color-brand-600);
+  font-weight: 200;
+  color: var(--color-nextflow-300);
+  font-size: 12px;
+  @media (--md) {
+    font-size: 16px;
+  }
+}
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-top: 8px;
+  margin: -8px;
+  & > div {
+    margin: 8px;
+  }
+}
+.speakers {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: -8px;
+  & > span {
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    color: var(--color-nextflow-300);
+    font-size: 18px;
+    & img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      margin-right: 8px;
+      border: 1px solid var(--color-nextflow-200);
+      box-shadow: inset 0 0 0 10px var(--color-nextflow-200);
+    }
+  }
+}
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  & > span {
+    margin: 4px;
+    display: block;
+    padding: 5px 26px 6px 26px;
+    border-radius: 8px;
+    color: var(--color-brand);
+    background: var(--color-nextflow-300);
+    border: 1px solid var(--color-nextflow-300);
+    font-size: 18px;
+    line-height: 1;
+    font-family: "Degular", sans-serif;
+    font-weight: 600;
+    &.sponsor {
+      border-color: var(--color-nextflow);
+      background: var(--color-brand);
+      color: var(--color-nextflow);
+    }
+  }
 }
