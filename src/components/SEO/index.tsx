@@ -8,11 +8,12 @@ type Props = {
   description?: string;
   title?: string;
   img?: number;
+  imgUrl?: string;
   author?: string;
 };
 
-const SEO: React.FC<Props> = ({ img, author, ...props }) => {
-  const shareImg = img ? images[img].src : imgDefault.src;
+const SEO: React.FC<Props> = ({ img, imgUrl, author, ...props }) => {
+  const shareImg = img ? images[img].src : imgUrl ? imgUrl : imgDefault.src;
   const description = props.description || descDefault;
   let title = siteTitle;
   if (props.title) title = `${props.title} | ${siteTitle}`;
