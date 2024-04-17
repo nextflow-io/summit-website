@@ -1,5 +1,12 @@
 .box {
   transition: all 0.5s;
+  border: 1px solid var(--color-nextflow);
+  background: var(--color-brand);
+  color: var(--color-brand-100);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 28px;
   & svg path {
     transition: all 0.5s;
   }
