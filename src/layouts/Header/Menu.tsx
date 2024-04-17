@@ -33,7 +33,7 @@ const Menu: React.FC<Props> = ({
         <ul>
           <li>
             {desktop ? (
-              <Button href={url("/register")} arrow cta5 wide>
+              <Button href={url("/register")} arrow cta wide>
                 Register
               </Button>
             ) : (

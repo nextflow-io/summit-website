@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { HashNavigation, EffectCreative } from "swiper/modules";
+import { HashNavigation, EffectFade } from "swiper/modules";
 import clsx from "clsx";
 import schedule from "@data/schedule";
 import sessions from "@data/sessions";
@@ -12,9 +12,7 @@ import SessionCard from "@components/SessionCard";
 import styles from "./styles.module.css";
 
 import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
+import "swiper/css/effect-fade";
 
 const Calendar = () => {
   const [activeHash, setActiveHash] = useState(schedule[0].hash);
@@ -48,18 +46,8 @@ const Calendar = () => {
       <Swiper
         loop
         autoHeight
-        modules={[HashNavigation, EffectCreative]}
-        effect={"creative"}
-        creativeEffect={{
-          prev: {
-            opacity: 0,
-            translate: ["-100%", 0, 0],
-          },
-          next: {
-            opacity: 0,
-            translate: ["100%", 0, 0],
-          },
-        }}
+        modules={[HashNavigation, EffectFade]}
+        effect={"fade"}
         hashNavigation={{
           watchState: true,
         }}

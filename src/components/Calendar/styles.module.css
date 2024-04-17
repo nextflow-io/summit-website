@@ -50,6 +50,10 @@
   flex-direction: column;
   width: auto;
   margin: 0 auto;
+  transition: all 0.3s !important;
+  &:not(:global(.swiper-slide-fully-visible)) {
+    opacity: 0 !important;
+  }
 }
 .item {
   display: flex;

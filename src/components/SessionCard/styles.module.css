@@ -88,7 +88,10 @@
 .speakers {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  margin: -8px;
   & > span {
+    padding: 8px;
     display: flex;
     align-items: center;
     color: var(--color-nextflow-300);
