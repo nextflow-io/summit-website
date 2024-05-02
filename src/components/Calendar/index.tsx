@@ -16,6 +16,7 @@ import "swiper/css/effect-fade";
 
 const Calendar = () => {
   const [activeHash, setActiveHash] = useState(schedule[0].hash);
+
   useEffect(() => {
     if (typeof window === "undefined") return;
     const locationHash = window.location.hash;
@@ -29,9 +30,30 @@ const Calendar = () => {
       removeEventListener("hashchange", updateCurrentPage);
     };
   }, []);
+
+  const modules = [HashNavigation, EffectFade];
+
   return (
     <>
-      <nav className={clsx(styles.nav, "container")}>
+      <nav className={clsx(styles.nav, "container smaller")}>
+        <a
+          className={clsx({
+            [styles.active]: ["#05-21", "#05-22"].includes(activeHash),
+          })}
+          href="#05-21"
+        >
+          Hackathon + Training
+        </a>
+        <a
+          className={clsx({
+            [styles.active]: ["#05-23", "#05-24"].includes(activeHash),
+          })}
+          href="#05-23"
+        >
+          Summit
+        </a>
+      </nav>
+      <nav className={clsx(styles.subnav, "container smaller")}>
         {schedule.map((item, i) => (
           <a
             key={i}
@@ -46,7 +68,7 @@ const Calendar = () => {
       <Swiper
         loop
         autoHeight
-        modules={[HashNavigation, EffectFade]}
+        modules={modules}
         effect={"fade"}
         hashNavigation={{
           watchState: true,
@@ -56,11 +78,11 @@ const Calendar = () => {
         {schedule.map((item, i) => {
           return (
             <SwiperSlide
-              className={styles.page}
+              className={clsx(styles.page)}
               key={`page-${i}`}
               data-hash={item.hashID}
             >
-              <div className="container">
+              <div className="container smaller">
                 {item.timeSlots.map((slot, key) => {
                   const showRoomName = slot.rooms.length > 1;
                   const time = formatTime(slot.slotStart);
