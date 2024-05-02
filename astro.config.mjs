@@ -22,7 +22,5 @@ export default defineConfig({
     plugins: [glsl()],
   },
   output: "hybrid",
-  adapter: netlify({
-    edgeMiddleware: true,
-  }),
+  adapter: netlify(),
 });
