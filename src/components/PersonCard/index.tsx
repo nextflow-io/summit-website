@@ -11,10 +11,16 @@ type Props = {
   person: Speaker;
   className?: string;
   smaller?: boolean;
+  location?: "boston" | "barcelona";
 };
 
-const PersonCard: React.FC<Props> = ({ className, smaller, ...props }) => {
-  const person = speakers.find(
+const PersonCard: React.FC<Props> = ({
+  className,
+  smaller,
+  location,
+  ...props
+}) => {
+  const person = speakers[location].find(
     (speaker) => speaker.fullName === props.person.fullName,
   );
   if (!person) return null;
@@ -31,7 +37,7 @@ const PersonCard: React.FC<Props> = ({ className, smaller, ...props }) => {
         <ProfilePic
           alt={person.fullName}
           src={person.profilePicture}
-          url={`/2024/boston/speakers/${person.slug}`}
+          url={`/2024/${location}/speakers/${person.slug}`}
           className={clsx({
             "max-w-[150px]": !smaller,
             "max-w-[100px]": smaller,
@@ -39,7 +45,7 @@ const PersonCard: React.FC<Props> = ({ className, smaller, ...props }) => {
         />
         <div className="flex flex-col flex-auto pt-8 sm:pt-0 sm:pl-4">
           <a
-            href={`/2024/boston/speakers/${person.slug}`}
+            href={`/2024/${location}/speakers/${person.slug}`}
             className="flex-auto text-center sm:text-left"
           >
             <h2 className="text-2xl font-display font-bold mb-2 text-nextflow">

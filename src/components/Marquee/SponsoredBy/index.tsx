@@ -7,14 +7,18 @@ import styles from "./styles.module.css";
 
 type Props = {
   className?: string;
+  location?: "boston" | "barcelona";
 };
 
-const SponsoredBy: React.FC<Props> = ({ className }) => (
+const SponsoredBy: React.FC<Props> = ({ className, location = "boston" }) => (
   <section>
-    <Marquee speed={50} className={className} href="/2024/boston/sponsors/">
+    <Marquee
+      speed={50}
+      className={className}
+      href={`/2024/${location}/sponsors/`}
+    >
       <div className={styles.container}>
-        {/* <div className={styles.overlay} /> */}
-        {sponsors.map((sponsor, i) => (
+        {sponsors[location]?.map((sponsor, i) => (
           <div
             key={i}
             className="h-24 lg:h-40 max-ws px-10 flex items-center justify-center"

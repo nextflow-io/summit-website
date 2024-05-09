@@ -14,8 +14,12 @@ import styles from "./styles.module.css";
 import "swiper/css";
 import "swiper/css/effect-fade";
 
-const Calendar = () => {
-  const [activeHash, setActiveHash] = useState(schedule[0].hash);
+type Props = {
+  location?: "boston" | "barcelona";
+};
+
+const Calendar: React.FC<Props> = ({ location = "boston" }) => {
+  const [activeHash, setActiveHash] = useState(schedule[location]?.[0]?.hash);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -54,7 +58,7 @@ const Calendar = () => {
         </a>
       </nav>
       <nav className={clsx(styles.subnav, "container smaller")}>
-        {schedule.map((item, i) => (
+        {schedule[location]?.map((item, i) => (
           <a
             key={i}
             className={clsx({ [styles.active]: activeHash === item.hash })}
@@ -75,7 +79,7 @@ const Calendar = () => {
         }}
         className={clsx(styles.calendar, "p-4")}
       >
-        {schedule.map((item, i) => {
+        {schedule[location]?.map((item, i) => {
           return (
             <SwiperSlide
               className={clsx(styles.page)}
@@ -96,7 +100,7 @@ const Calendar = () => {
                       </div>
                       <div className={styles.sessions}>
                         {slot.rooms.map((room, i) => {
-                          const fullSession = sessions.find(
+                          const fullSession = sessions[location].find(
                             (s) => s.id === room.session.id,
                           );
                           return (

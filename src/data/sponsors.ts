@@ -24,12 +24,26 @@ const rankOrder = {
   bronze: 5,
 };
 
-export default sponsors
-  .map((sponsor) => ({
-    ...sponsor,
-    image: sponsor.image ? builder.image(sponsor.image).url() : null,
-    slug: sponsor.name.toLowerCase().replace(/ /g, "-"),
-  }))
-  .sort((a, b) => {
-    return rankOrder[a.rank] - rankOrder[b.rank];
-  }) as Sponsor[];
+function parseSponsors(sponsors): Sponsor[] {
+  return sponsors
+    .map((sponsor) => ({
+      ...sponsor,
+      image: sponsor.image ? builder.image(sponsor.image).url() : null,
+      slug: sponsor.name.toLowerCase().replace(/ /g, "-"),
+    }))
+    .sort((a, b) => {
+      return rankOrder[a.rank] - rankOrder[b.rank];
+    }) as Sponsor[];
+}
+
+const parsedSponsors = parseSponsors(sponsors);
+
+const boston = parsedSponsors.filter((sponsor) => {
+  return ["boston", "both"].includes(sponsor.location);
+});
+
+const barcelona = parsedSponsors.filter((sponsor) => {
+  return ["barcelona", "both"].includes(sponsor.location);
+});
+
+export default { boston, barcelona };

@@ -6,4 +6,10 @@ export type Room = {
   sort?: number;
 };
 
-export default data.rooms as Room[];
+const boston = data.boston.rooms as Room[];
+const barcelona = data.barcelona.rooms as Room[];
+
+export default {
+  boston,
+  barcelona,
+};

@@ -1,5 +1,6 @@
 import { dateSlug } from "@utils/prettyDate";
 import { addSessionURL, type Session } from "./sessions";
+import { sessionizeGrid } from "./sessionize";
 
 export type Room = {
   id: number;
@@ -25,35 +26,37 @@ export type ScheduleItem = {
 
 export type Schedule = ScheduleItem[];
 
-const fetchSessionizeGrid = async (): Promise<Schedule> => {
-  return await fetch(
-    "https://sessionize.com/api/v2/zaqv23uw/view/GridSmart",
-  ).then((res) => res.json());
-};
+function parseGrid(data) {
+  return data.map((item) => {
+    const rooms = item.rooms.map((room) => ({
+      ...room,
+      sessions: room.sessions.map(addSessionURL),
+    }));
 
-const data = await fetchSessionizeGrid();
+    const timeSlots = item.timeSlots.map((slot) => {
+      return {
+        ...slot,
+        rooms: slot.rooms.map((room) => ({
+          ...room,
+          session: room.session ? addSessionURL(room.session) : undefined,
+        })),
+      };
+    });
 
-export default data.map((item) => {
-  const rooms = item.rooms.map((room) => ({
-    ...room,
-    sessions: room.sessions.map(addSessionURL),
-  }));
-
-  const timeSlots = item.timeSlots.map((slot) => {
     return {
-      ...slot,
-      rooms: slot.rooms.map((room) => ({
-        ...room,
-        session: room.session ? addSessionURL(room.session) : undefined,
-      })),
+      ...item,
+      hash: `#${dateSlug(item.date)}`,
+      hashID: dateSlug(item.date),
+      rooms,
+      timeSlots,
     };
   });
+}
 
-  return {
-    ...item,
-    hash: `#${dateSlug(item.date)}`,
-    hashID: dateSlug(item.date),
-    rooms,
-    timeSlots,
-  };
-});
+const boston = parseGrid(sessionizeGrid.boston);
+const barcelona = parseGrid(sessionizeGrid.barcelona);
+
+export default {
+  boston,
+  barcelona,
+};

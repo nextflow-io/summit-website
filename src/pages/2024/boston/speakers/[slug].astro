@@ -8,12 +8,14 @@ import speakers from "@data/speakers";
 import ProfilePic from "@components/ProfilePic";
 
 export function getStaticPaths() {
-  return speakers.map((speaker) => ({
+  return speakers.boston?.map((speaker) => ({
     params: { slug: speaker.slug },
   }));
 }
 
-const speaker = speakers.find((speaker) => speaker.slug === Astro.params.slug);
+const speaker = speakers.boston?.find(
+  (speaker) => speaker.slug === Astro.params.slug,
+);
 ---
 
 <Layout namespace="2024/boston" altBG>

@@ -21,7 +21,7 @@ import speakers from "@data/speakers";
     <div class="container">
       <div class="flex flex-wrap -m-4">
         {
-          speakers.map((speaker) => (
+          speakers.boston?.map((speaker) => (
             <PersonCard person={speaker} className="w-full md:w-1/2 p-4" />
           ))
         }

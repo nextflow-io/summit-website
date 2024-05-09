@@ -4,9 +4,9 @@ import PersonCard from "@components/PersonCard";
 import ContentBox from "@components/ContentBox/index.astro";
 import Button from "@components/Button";
 import SEO from "@components/SEO";
-import { sessionPages } from "@data/sessions";
-import { prettyDate, prettyTime } from "@utils/prettyDate";
+import { sessionPagesBoston as sessionPages } from "@data/sessions";
 import speakers from "@data/speakers";
+import { prettyDate, prettyTime } from "@utils/prettyDate";
 
 export function getStaticPaths() {
   return sessionPages.map((session) => ({
