@@ -29,7 +29,7 @@ const NavMobile: React.FC<Props> = ({ pathname, namespace, showNav }) => {
       {isOpen && (
         <div className={styles.menuContainer}>
           {showNav && <Menu pathname={pathname} namespace={namespace} />}
-          <Menu pathname={pathname} namespace="2024/boston" second />
+          <Menu pathname={pathname} namespace={namespace} second />
         </div>
       )}
     </header>
