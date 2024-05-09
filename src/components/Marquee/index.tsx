@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import clsx from "clsx";
+import CallForAbstracts from "./CallForAbstracts";
+import RegistrationNowOpen from "./RegistrationNowOpen";
+import SponsoredBy from "./SponsoredBy";
 
 import styles from "./styles.module.css";
 
@@ -72,5 +75,7 @@ function Marquee({
     </a>
   );
 }
+
+export { CallForAbstracts, RegistrationNowOpen, SponsoredBy };
 
 export default Marquee;

@@ -22,15 +22,20 @@ function getTitle(item) {
 type Props = {
   showImg?: boolean;
   showTitle?: boolean;
+  location?: "boston" | "barcelona";
 };
 
-const KeyDates: React.FC<Props> = ({ showImg, showTitle }) => {
+const KeyDates: React.FC<Props> = ({
+  showImg,
+  showTitle,
+  location = "boston",
+}) => {
   return (
     <Box>
       <div className="flex">
         <div className="flex-auto md:pr-8">
           {showTitle && <h5 className="h3 mb-6">Key dates</h5>}
-          {keyDates.map((item, i) => (
+          {keyDates[location]?.map((item, i) => (
             <Row key={i} title={getTitle(item)}>
               {item.title}
             </Row>

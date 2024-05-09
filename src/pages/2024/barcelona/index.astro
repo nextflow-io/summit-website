@@ -14,23 +14,31 @@ import { SponsoredBy } from "@components/Marquee";
 import SEO from "@components/SEO";
 ---
 
-<Layout namespace="2024/boston">
+<Layout namespace="2024/barcelona">
   <SEO slot="head" img={1} />
   <section class="pb-6 pt-16 md:pt-20">
-    <CallForAbstracts client:load className="pb-10 md:pb-20" />
+    <CallForAbstracts
+      client:load
+      className="pb-10 md:pb-20"
+      href="/2024/barcelona/call-for-abstracts"
+    />
     <div class="text-center container">
       <img src={title.src} class="mx-auto max-w-[300px] lg:max-w-none" />
-      <div class="h00 mt-16 mb-8">MAY 21 - 24, 2024</div>
-      <Button href="/2024/boston/register" cta2 large>Register</Button>
+      <div class="h00 mt-16 mb-8">OCT 28 - NOV 1, 2024</div>
+      <Button href="/2024/barcelona/register" cta2 large>Register</Button>
     </div>
-    <KeyInformation className="pt-16" linkPath="/2024/boston/agenda" />
+    <KeyInformation
+      className="pt-16"
+      location="barcelona"
+      linkPath="/2024/barcelona/agenda"
+    />
   </section>
   <section class="container relative z-10 mb-4 sm:mb-8 lg:mb-20">
-    <KeyDates showTitle showImg />
+    <KeyDates showTitle showImg location="barcelona" />
   </section>
-  <section class="container mb-8 lg:mb-20">
+  <!-- <section class="container mb-8 lg:mb-20">
     <YouTubeVideo id="JvjoZ9dPjq8" />
-  </section>
+  </section> -->
   <CTASection />
   <NextflowNumbers client:load className="py-20" />
   <ImageSection alt1 />

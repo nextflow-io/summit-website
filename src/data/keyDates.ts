@@ -1,7 +1,11 @@
 import { sanityClient } from "sanity:client";
 
-let keyDates = await sanityClient.fetch(
+const keyDatesBoston = await sanityClient.fetch(
   `*[_type == "keyDate"] | order(date asc)`,
+);
+
+const keyDatesBarcelona = await sanityClient.fetch(
+  `*[_type == "keyDateBarcelona"] | order(date asc)`,
 );
 
 function prettyDate(date: string) {
@@ -19,11 +23,15 @@ function getDay(date: string) {
   return new Date(date).getDate();
 }
 
-keyDates = keyDates.map((date) => ({
-  title: date.title,
-  date: prettyDate(date.date),
-  endDate: prettyDate(date.endDate),
-  endDay: getDay(date.endDate),
-}));
+const parseDates = (dates) =>
+  dates.map((date) => ({
+    title: date.title,
+    date: prettyDate(date.date),
+    endDate: prettyDate(date.endDate),
+    endDay: getDay(date.endDate),
+  }));
 
-export default keyDates;
+export default {
+  boston: parseDates(keyDatesBoston),
+  barcelona: parseDates(keyDatesBarcelona),
+};
