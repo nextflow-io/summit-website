@@ -100,7 +100,7 @@ const Calendar: React.FC<Props> = ({ location = "boston" }) => {
                       </div>
                       <div className={styles.sessions}>
                         {slot.rooms.map((room, i) => {
-                          const fullSession = sessions[location].find(
+                          const fullSession = sessions[location]?.find(
                             (s) => s.id === room.session.id,
                           );
                           return (

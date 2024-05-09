@@ -7,18 +7,13 @@ import SEO from "@components/SEO";
 import speakers from "@data/speakers";
 import ProfilePic from "@components/ProfilePic";
 
-const { pathname } = Astro.url;
-let location = "boston";
-if (pathname.includes("/barcelona/")) location = "barcelona";
-console.log(">>", pathname);
-
 export function getStaticPaths() {
-  return speakers[location].map((speaker) => ({
+  return speakers.barcelona?.map((speaker) => ({
     params: { slug: speaker.slug },
   }));
 }
 
-const speaker = speakers[location].find(
+const speaker = speakers.barcelona?.find(
   (speaker) => speaker.slug === Astro.params.slug,
 );
 ---

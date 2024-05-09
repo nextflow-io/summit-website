@@ -17,10 +17,10 @@ type Props = {
 const PersonCard: React.FC<Props> = ({
   className,
   smaller,
-  location,
+  location = "boston",
   ...props
 }) => {
-  const person = speakers[location].find(
+  const person = speakers[location]?.find(
     (speaker) => speaker.fullName === props.person.fullName,
   );
   if (!person) return null;

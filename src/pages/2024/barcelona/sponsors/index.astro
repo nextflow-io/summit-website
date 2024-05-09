@@ -17,7 +17,7 @@ import Sponsor from "@components/Sponsor";
       </h1>
       <div class="-m-2">
         {
-          sponsors.map((sponsor) => (
+          sponsors.barcelona?.map((sponsor) => (
             <Sponsor sponsor={sponsor} location="barcelona" />
           ))
         }
@@ -25,7 +25,7 @@ import Sponsor from "@components/Sponsor";
     </div>
   </section>
 
-  <CTASection />
+  <!-- <CTASection /> -->
   <Contact />
   <SponsoredBy client:load />
 </Layout>
