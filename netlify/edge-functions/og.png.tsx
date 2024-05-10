@@ -28,11 +28,20 @@ export default async function handler(request: Request) {
   const speakerSlug = params.get("speaker");
   if (speakerSlug) speaker = speakers.find((s) => s.slug === speakerSlug);
 
-  if (speaker) {
+  if (speaker && !params.get("title")) {
     title = speaker.fullName;
     subtitle = speaker.tagLine;
     img = speaker.profilePicture;
   }
+
+  const meta: any = {};
+  if (speaker && params.get("title")) {
+    meta.speaker = speaker;
+  }
+
+  let titleSize = 64;
+  if (title.length > 50) titleSize = 48;
+  if (title.length > 70) titleSize = 40;
 
   return new ImageResponse(
     (
@@ -67,12 +76,13 @@ export default async function handler(request: Request) {
               display: "flex",
               flexDirection: "column",
               maxWidth: "42rem",
+              width: "100%",
             }}
           >
             <h1
               style={{
                 marginBottom: "1rem",
-                fontSize: "64px",
+                fontSize: `${titleSize}px`,
                 fontWeight: 400,
                 fontFamily: "Degular",
               }}
@@ -102,6 +112,27 @@ export default async function handler(request: Request) {
                 borderRadius: "100%",
               }}
             />
+          )}
+          {!!meta.speaker && (
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                height: "100%",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <img
+                src={meta.speaker.profilePicture}
+                style={{
+                  width: "150px",
+                  height: "150px",
+                  borderRadius: "100%",
+                }}
+              />
+              <h1 style={{ fontFamily: "Degular" }}>{meta.speaker.fullName}</h1>
+            </div>
           )}
         </div>
       </div>
