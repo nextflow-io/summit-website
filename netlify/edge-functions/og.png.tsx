@@ -58,15 +58,15 @@ export default async function handler(request: Request) {
             height: "100%",
             flexDirection: "row",
             alignItems: "center",
-            justifyContent: "space-around",
-            padding: "1rem",
+            justifyContent: "space-between",
+            padding: "5rem",
           }}
         >
           <div
             style={{
               display: "flex",
               flexDirection: "column",
-              maxWidth: "40rem",
+              maxWidth: "42rem",
             }}
           >
             <h1
@@ -85,7 +85,8 @@ export default async function handler(request: Request) {
                   fontWeight: 400,
                   fontStyle: "normal",
                   fontFamily: "Inter",
-                  color: "aqua",
+                  fontSize: "40px",
+                  opacity: 0.8,
                 }}
               >
                 {subtitle}
@@ -96,9 +97,8 @@ export default async function handler(request: Request) {
             <img
               src={img}
               style={{
-                width: "200px",
-                height: "200px",
-                mixBlendMode: "luminosity",
+                width: "350px",
+                height: "350px",
                 borderRadius: "100%",
               }}
             />
