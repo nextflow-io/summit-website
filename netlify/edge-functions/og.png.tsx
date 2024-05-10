@@ -1,27 +1,16 @@
 import React from "https://esm.sh/react@18.2.0";
-import { ImageResponse } from "https://deno.land/x/og_edge@0.0.2/mod.ts";
+import { ImageResponse } from "https://deno.land/x/og_edge/mod.ts";
 import speakers from "https://summit.nextflow.io/2024/boston/speakers.json" assert { type: "json" };
 
-// async function getFont(): Promise<ArrayBuffer> {
-//   const response = await fetch(
-//     new URL(
-//       "http://localhost:8888/fonts/degular/Degular-Bold.woff2",
-//       import.meta.url,
-//     ),
-//   );
-//   return await response.arrayBuffer();
-// }
+const InterFont = fetch(
+  "https://summit.nextflow.io/fonts/Inter-Regular.ttf",
+).then((res) => res.arrayBuffer());
 
-// const fonts = [
-//   {
-//     name: "Degular",
-//     data: await getFont(),
-//     style: "normal",
-//     weight: 700,
-//   },
-// ];
+const DegularFont = fetch(
+  "https://summit.nextflow.io/fonts/Degular-Bold.ttf",
+).then((res) => res.arrayBuffer());
 
-export default function handler(request: Request) {
+export default async function handler(request: Request) {
   const url = new URL(request.url);
   const params = new URLSearchParams(url.search);
 
@@ -84,14 +73,21 @@ export default function handler(request: Request) {
               style={{
                 marginBottom: "1rem",
                 fontSize: "64px",
-                fontWeight: "700",
+                fontWeight: 400,
                 fontFamily: "Degular",
               }}
             >
               {title}
             </h1>
             {!subtitle ? null : (
-              <div style={{ fontWeight: "400", fontFamily: "inter" }}>
+              <div
+                style={{
+                  fontWeight: 400,
+                  fontStyle: "normal",
+                  fontFamily: "Inter",
+                  color: "aqua",
+                }}
+              >
                 {subtitle}
               </div>
             )}
@@ -109,9 +105,17 @@ export default function handler(request: Request) {
           )}
         </div>
       </div>
-      // {
-      //   fonts,
-      // },
     ),
+    {
+      fonts: [
+        { name: "Inter", data: await InterFont, style: "normal", weight: 400 },
+        {
+          name: "Degular",
+          data: await DegularFont,
+          style: "normal",
+          weight: 400,
+        },
+      ],
+    },
   );
 }
