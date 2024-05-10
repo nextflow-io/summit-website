@@ -5,7 +5,8 @@ import ContentBox from "@components/ContentBox/index.astro";
 import Button from "@components/Button";
 import SEO from "@components/SEO";
 import { sessionPages } from "@data/sessions";
-import { prettyDateAndTime, prettyDate, prettyTime } from "@utils/prettyDate";
+import { prettyDate, prettyTime } from "@utils/prettyDate";
+import speakers from "@data/speakers";
 
 export function getStaticPaths() {
   return sessionPages.map((session) => ({
@@ -18,10 +19,23 @@ const session = sessionPages.find(
 );
 const speakerCount = session.speakers.length;
 const isSingularSpeaker = speakerCount === 1;
+const speaker = speakers.find(
+  (speaker) => speaker.fullName === session.speakers[0]?.fullName,
+);
 ---
 
 <Layout namespace="2024/boston" altBG>
-  <SEO slot="head" title={session.title} img={1} />
+  <SEO
+    slot="head"
+    title={session.title}
+    img={1}
+    dynamicImage={{
+      title: session.title,
+      subtitle: `${prettyDate(session.startsAt, false)} @ ${prettyTime(session.startsAt)} - ${prettyTime(session.endsAt)}`,
+      speaker: speaker?.slug,
+      location: "boston",
+    }}
+  />
   <section class="pb-10 pt-16 md:py-20">
     <div class="container smallest">
       <ContentBox
