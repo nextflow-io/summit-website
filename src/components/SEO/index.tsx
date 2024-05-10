@@ -13,7 +13,7 @@ type Props = {
   dynamicImage?: {
     title?: string;
     subtitle?: string;
-    speakerSlug?: string;
+    speaker?: string;
     location?: string;
   };
 };
@@ -28,15 +28,13 @@ const SEO: React.FC<Props> = ({
   let shareImg = img ? images[img].src : imgUrl ? imgUrl : imgDefault.src;
 
   if (dynamicImage) {
-    const url = new URL("https://summit.nextflow.io/og.png");
-    const params = new URLSearchParams({
-      title: dynamicImage.title,
-      subtitle: dynamicImage.subtitle,
-      speaker: dynamicImage.speakerSlug,
-      location: dynamicImage.location,
-    });
-    url.search = params.toString();
-    shareImg = url.toString();
+    const url = "https://summit.nextflow.io/og.png";
+    let queryString = "";
+    for (const key in dynamicImage) {
+      if (queryString) queryString += "&";
+      queryString += key + "=" + encodeURIComponent(dynamicImage[key]);
+    }
+    shareImg = `${url}?${queryString}`;
   }
 
   const description = props.description || descDefault;

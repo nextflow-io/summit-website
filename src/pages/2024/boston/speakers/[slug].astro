@@ -21,7 +21,7 @@ const speaker = speakers.find((speaker) => speaker.slug === Astro.params.slug);
     slot="head"
     title={speaker.fullName}
     dynamicImage={{
-      speakerSlug: speaker.slug,
+      speaker: speaker.slug,
       location: "boston",
     }}
   />
