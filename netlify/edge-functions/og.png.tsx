@@ -1,5 +1,6 @@
 import React from "https://esm.sh/react@18.2.0";
 import { ImageResponse } from "https://deno.land/x/og_edge@0.0.2/mod.ts";
+import speakers from "https://summit.nextflow.io/2024/boston/speakers.json" assert { type: "json" };
 
 export default function handler(request: Request) {
   const url = new URL(request.url);
@@ -8,12 +9,12 @@ export default function handler(request: Request) {
   const defaultTitle =
     "Join us for the latest developments and innovations from the Nextflow world.";
 
+  let img;
+  let speaker;
   let title = params.get("title") || defaultTitle;
   let subtitle = params.get("subtitle") || "";
-  let img;
-
-  let speaker;
-  // if (params.speaker) speaker = speakers.find((s) => s.slug === params.speaker);
+  const speakerSlug = params.get("speaker");
+  if (speakerSlug) speaker = speakers.find((s) => s.slug === speakerSlug);
 
   if (speaker) {
     title = speaker.fullName;
@@ -21,6 +22,7 @@ export default function handler(request: Request) {
     img = speaker.profilePicture;
   }
 
+  console.log(">>", img);
   return new ImageResponse(
     (
       <div
@@ -44,16 +46,19 @@ export default function handler(request: Request) {
             display: "flex",
             width: "100%",
             height: "100%",
-            flexDirection: "column",
-            alignItems: "flex-start",
+            flexDirection: "row",
+            alignItems: "center",
             justifyContent: "space-around",
-            paddingRight: "26rem",
-            paddingLeft: "2rem",
-            paddingTop: "2rem",
-            paddingBottom: "0.5rem",
+            padding: "1rem",
           }}
         >
-          <div style={{ display: "flex", flexDirection: "column" }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              maxWidth: "40rem",
+            }}
+          >
             <h1
               style={{
                 marginBottom: "1rem",
@@ -70,6 +75,17 @@ export default function handler(request: Request) {
               </div>
             )}
           </div>
+          {!!img && (
+            <img
+              src={img}
+              style={{
+                width: "200px",
+                height: "200px",
+                mixBlendMode: "luminosity",
+                borderRadius: "100%",
+              }}
+            />
+          )}
         </div>
       </div>
     ),
