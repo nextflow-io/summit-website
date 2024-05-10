@@ -41,6 +41,7 @@ export default async function handler(request: Request) {
 
   let titleSize = 64;
   if (title.length > 50) titleSize = 48;
+  if (title.length > 70) titleSize = 40;
 
   return new ImageResponse(
     (
