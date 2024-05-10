@@ -2,9 +2,32 @@ import React from "https://esm.sh/react@18.2.0";
 import { ImageResponse } from "https://deno.land/x/og_edge@0.0.2/mod.ts";
 import speakers from "https://summit.nextflow.io/2024/boston/speakers.json" assert { type: "json" };
 
+// async function getFont(): Promise<ArrayBuffer> {
+//   const response = await fetch(
+//     new URL(
+//       "http://localhost:8888/fonts/degular/Degular-Bold.woff2",
+//       import.meta.url,
+//     ),
+//   );
+//   return await response.arrayBuffer();
+// }
+
+// const fonts = [
+//   {
+//     name: "Degular",
+//     data: await getFont(),
+//     style: "normal",
+//     weight: 700,
+//   },
+// ];
+
 export default function handler(request: Request) {
   const url = new URL(request.url);
   const params = new URLSearchParams(url.search);
+
+  let eventLocation = "boston";
+  if (params.get("location") === "barcelona") eventLocation = "barcelona";
+  const bgImg = `https://summit.nextflow.io/share/card-bg_${eventLocation}.png`;
 
   const defaultTitle =
     "Join us for the latest developments and innovations from the Nextflow world.";
@@ -22,7 +45,6 @@ export default function handler(request: Request) {
     img = speaker.profilePicture;
   }
 
-  console.log(">>", img);
   return new ImageResponse(
     (
       <div
@@ -37,8 +59,7 @@ export default function handler(request: Request) {
           fontSize: "32px",
           color: "#F8F9FA",
           backgroundColor: "#212528",
-          backgroundImage:
-            "url(https://summit.nextflow.io/share/card-bg_boston.png)",
+          backgroundImage: `url(${bgImg})`,
         }}
       >
         <div
@@ -64,7 +85,7 @@ export default function handler(request: Request) {
                 marginBottom: "1rem",
                 fontSize: "64px",
                 fontWeight: "700",
-                fontFamily: "mavenpro",
+                fontFamily: "Degular",
               }}
             >
               {title}
@@ -88,6 +109,9 @@ export default function handler(request: Request) {
           )}
         </div>
       </div>
+      // {
+      //   fonts,
+      // },
     ),
   );
 }
