@@ -126,12 +126,14 @@ export default async function handler(request: Request) {
               <img
                 src={meta.speaker.profilePicture}
                 style={{
-                  width: "150px",
-                  height: "150px",
+                  width: "250px",
+                  height: "250px",
                   borderRadius: "100%",
                 }}
               />
-              <h1 style={{ fontFamily: "Degular" }}>{meta.speaker.fullName}</h1>
+              <h1 style={{ fontFamily: "Degular", opacity: 0.8 }}>
+                {meta.speaker.fullName}
+              </h1>
             </div>
           )}
         </div>
