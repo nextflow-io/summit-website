@@ -35,13 +35,9 @@
     "react-dom": "^18.2.0",
     "react-visibility-sensor": "^5.1.1",
     "sanity": "^3.26.0",
-    "satori": "^0.10.13",
-    "satori-html": "^0.3.2",
-    "sharp": "^0.33.3",
     "swiper": "^11.0.5",
     "tailwindcss": "^3.4.1",
-    "three": "^0.136.0",
-    "yoga-wasm-web": "^0.3.3"
+    "three": "^0.136.0"
   },
   "devDependencies": {
     "@csstools/postcss-global-data": "^2.1.1",
