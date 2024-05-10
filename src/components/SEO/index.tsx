@@ -10,10 +10,33 @@ type Props = {
   img?: number;
   imgUrl?: string;
   author?: string;
+  dynamicImage?: {
+    title?: string;
+    subtitle?: string;
+    speaker?: string;
+    location?: string;
+  };
 };
 
-const SEO: React.FC<Props> = ({ img, imgUrl, author, ...props }) => {
-  const shareImg = img ? images[img].src : imgUrl ? imgUrl : imgDefault.src;
+const SEO: React.FC<Props> = ({
+  img,
+  imgUrl,
+  author,
+  dynamicImage,
+  ...props
+}) => {
+  let shareImg = img ? images[img].src : imgUrl ? imgUrl : imgDefault.src;
+
+  if (dynamicImage) {
+    const url = "https://summit.nextflow.io/og.png";
+    let queryString = "";
+    for (const key in dynamicImage) {
+      if (queryString) queryString += "&";
+      queryString += key + "=" + encodeURIComponent(dynamicImage[key]);
+    }
+    shareImg = `${url}?${queryString}`;
+  }
+
   const description = props.description || descDefault;
   let title = siteTitle;
   if (props.title) title = `${props.title} | ${siteTitle}`;

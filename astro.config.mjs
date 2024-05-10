@@ -21,7 +21,7 @@ export default defineConfig({
   vite: {
     plugins: [glsl()],
   },
-  output: "static",
+  output: "hybrid",
   adapter: netlify({
     edgeMiddleware: true,
   }),
