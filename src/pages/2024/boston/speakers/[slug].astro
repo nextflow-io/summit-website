@@ -20,6 +20,7 @@ const speaker = speakers.find((speaker) => speaker.slug === Astro.params.slug);
   <SEO
     slot="head"
     title={speaker.fullName}
+    description={`${speaker.firstName}, ${speaker.tagLine}, will be presenting at Nextflow Boston 2024.`}
     dynamicImage={{
       speaker: speaker.slug,
       location: "boston",
