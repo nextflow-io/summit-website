@@ -28,7 +28,7 @@ const SEO: React.FC<Props> = ({
   let shareImg = img ? images[img].src : imgUrl ? imgUrl : imgDefault.src;
 
   if (dynamicImage) {
-    const url = "/og.png";
+    const url = "https://summit.nextflow.io/og.png";
     let queryString = "";
     for (const key in dynamicImage) {
       if (queryString) queryString += "&";
