@@ -22,9 +22,10 @@ const InfoBox = ({ children, title, subtitle, icon, link }) => {
 
 type Props = {
   className?: string;
+  linkPath?: string;
 };
 
-const KeyInformation: React.FC<Props> = ({ className }) => {
+const KeyInformation: React.FC<Props> = ({ className, linkPath = "" }) => {
   return (
     <section className={clsx("container", className)}>
       <div className="flex -m-2 lg:-m-4 flex flex-wrap">
@@ -33,7 +34,7 @@ const KeyInformation: React.FC<Props> = ({ className }) => {
             title="Training | May 21-22"
             subtitle="2 days · 30 people · training"
             icon={parentheses}
-            link="#05-21"
+            link={`${linkPath}#05-21`}
           >
             An in-person foundational training to supercharge your pipeline
             development with Nextflow and nf-core. Running in parallel to the
@@ -45,7 +46,7 @@ const KeyInformation: React.FC<Props> = ({ className }) => {
             title="Hackathon | May 21-22"
             subtitle="2 days · 100 people · hackathon"
             icon={computer}
-            link="#05-22"
+            link={`${linkPath}#05-22`}
           >
             An in-person hackathon to develop nf-core. Running in parallel to
             the training.
@@ -56,7 +57,7 @@ const KeyInformation: React.FC<Props> = ({ className }) => {
             title="Summit | May 23-24"
             subtitle="1.5 days · 200 people · talks, networking, and more"
             icon={news}
-            link="#05-23"
+            link={`${linkPath}#05-23`}
           >
             A showcase of the latest developments and innovations from the
             Nextflow world.
