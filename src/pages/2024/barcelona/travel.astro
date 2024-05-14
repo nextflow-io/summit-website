@@ -9,6 +9,7 @@ import Accommodation from "@modules/Accommodation";
 import MapEmbed from "@components/MapEmbed";
 import Box from "@components/Box";
 import SEO from "@components/SEO";
+import { Code } from "astro:components";
 ---
 
 <Layout namespace="2024/barcelona">
@@ -27,25 +28,28 @@ import SEO from "@components/SEO";
         booking your hotel as soon as possible. We've secured special rates at
         select hotels. While rooms are available, block bookings are not. Make
         sure to reserve yours while supplies last using the promo code:
-        nextflow24.
+        <code class="bg-nextflow-800 bg-opacity-30 px-1">nextflow24</code>.
       </div>
     </div>
     <div class="container flex flex-wrap pt-10 md:pt-20">
       <div class="w-full md:w-1/2 p-2 min-h-[300px] relative">
         <div class="h-full w-full relative rounded-lg overflow-hidden">
           <MapEmbed
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d91862.987101934!2d2.190933834874357!3d41.34973306179916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2523cd5f815%3A0x2056e4d78ee651b1!2sEurostars%20Grand%20Marina!5e0!3m2!1sen!2ses!4v1715266760210!5m2!1sen!2ses"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29486.87678206097!2d2.157406824584928!3d41.377369138813016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2523cd5f815%3A0xe4451cff2eaf231d!2sWorld%20Trade%20Center%20Barcelona!5e0!3m2!1sen!2sse!4v1715698687163!5m2!1sen!2sse"
           />
         </div>
       </div>
       <div class="w-full md:w-1/2 p-2 min-h-[300px]">
         <Box>
-          <p class="h1 mb-6">Eurostars Grand Marina</p>
+          <p class="h1 mb-6">World Trade Center Barcelona</p>
           <p class="mb-2">
-            <a target="_blank" href="https://maps.app.goo.gl/jYKfMAYawsCTLRk86">
+            <a target="_blank" href="https://maps.app.goo.gl/H3LaS62GgkATQTvVA">
               <Icon name="mdi:map-marker" class="-mt-1" />
-              Moll de Barcelona, S/N, Ciutat Vella, 08039 Barcelona
+              Moll de Barcelona s/n, edifici Est, 1<sup>a</sup> planta. 08039, Barcelona, Spain
             </a>
+          </p>
+          <p class="mb-3 font-thin text-sm">
+            The World Trade Center Barcelona is a premier business complex on the Barcelona waterfront, offering offices, conference facilities, and a hotel, and known for hosting a variety of international business events and trade shows.
           </p>
           <a
             target="_blank"
