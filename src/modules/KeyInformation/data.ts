@@ -32,7 +32,7 @@ export default {
   barcelona: [
     {
       title: "Training | Oct 28 - 30",
-      subtitle: "2 days · 60 people · training",
+      subtitle: "2.5 days · 60 people · training",
       icon: parentheses,
       link: "#10-28",
       description:
@@ -40,7 +40,7 @@ export default {
     },
     {
       title: "Hackathon | Oct 28 - 30",
-      subtitle: "2 days · 100 people · hackathon",
+      subtitle: "2.5 days · 180 people · hackathon",
       icon: computer,
       link: "#10-29",
       description:
@@ -48,7 +48,7 @@ export default {
     },
     {
       title: "Summit | Oct 30 - Nov 1",
-      subtitle: "1.5 days · 200 people · talks, networking, and more",
+      subtitle: "2.5 days · 400 people · talks, networking, and more",
       icon: news,
       link: "#10-30",
       description:
