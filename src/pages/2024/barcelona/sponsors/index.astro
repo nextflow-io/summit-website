@@ -1,0 +1,31 @@
+---
+import Layout from "@layouts/Base.astro";
+import CTASection from "@modules/CTASection";
+import Contact from "@modules/Contact";
+import { SponsoredBy } from "@components/Marquee";
+import SEO from "@components/SEO";
+import sponsors from "@data/sponsors";
+import Sponsor from "@components/Sponsor";
+---
+
+<Layout namespace="2024/barcelona">
+  <SEO slot="head" title="Sponsors" img={1} bcn />
+  <section class="pb-16 pt-16 md:pt-20">
+    <div class="container island pb-10 md:pb-20 text-center">
+      <h1 class="h1 text-white mb-8">
+        <span class="text-nextflow">Sponsors</span> of the Summit
+      </h1>
+      <div class="-m-2">
+        {
+          sponsors.barcelona?.map((sponsor) => (
+            <Sponsor sponsor={sponsor} location="barcelona" />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- <CTASection /> -->
+  <Contact />
+  <SponsoredBy client:load />
+</Layout>

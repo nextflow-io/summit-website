@@ -29,9 +29,11 @@ function fixSocialLinks({ questionAnswers, links }) {
   return [...links, githubLink];
 }
 
-const getSpeakers = (): Speaker[] => {
+const getSpeakers = (
+  location: "boston" | "barcelona" = "boston",
+): Speaker[] => {
   return (
-    data.speakers
+    data[location].speakers
       // Fix attributes, add slug
       .map(
         ({ fullName, isTopSpeaker, questionAnswers, links, ...speaker }) => ({
@@ -50,7 +52,7 @@ const getSpeakers = (): Speaker[] => {
       .map((speaker) => {
         const sessionIDs = speaker.sessions;
         let sessions = sessionIDs.map((id) =>
-          data.sessions.find((s) => `${s.id}` === `${id}`),
+          data[location].sessions.find((s) => `${s.id}` === `${id}`),
         );
         sessions = sessions.filter((s) => !!s.isConfirmed);
         sessions = sessions.map(addSessionURL);
@@ -84,6 +86,7 @@ const getSpeakers = (): Speaker[] => {
   );
 };
 
-const speakers = getSpeakers();
+const boston = getSpeakers("boston");
+const barcelona = getSpeakers("barcelona");
 
-export default speakers;
+export default { boston, barcelona };

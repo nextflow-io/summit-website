@@ -7,4 +7,10 @@ export type Question = {
   sort: number;
 };
 
-export default data.questions as Question[];
+const boston = data.boston.questions as Question[];
+const barcelona = data.barcelona.questions as Question[];
+
+export default {
+  boston,
+  barcelona,
+};

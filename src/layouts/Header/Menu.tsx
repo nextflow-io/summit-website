@@ -1,5 +1,6 @@
 import React from "react";
 
+import menuItems from "./menuItems";
 import Button from "@components/Button";
 import Link from "./Link";
 
@@ -22,26 +23,33 @@ const Menu: React.FC<Props> = ({
     return pathname.includes(path);
   }
 
-  function url(path) {
+  function getURL(path) {
     if (!namespace) return path;
     return `/${namespace}${path}`;
   }
+
+  let location = "boston";
+  if (namespace === "2024/barcelona") location = "barcelona";
+
+  const { main, secondary, cta } = menuItems[location];
 
   if (second)
     return (
       <nav className={className}>
         <ul>
-          <li>
-            {desktop ? (
-              <Button href={url("/register")} arrow cta wide>
-                Register
-              </Button>
-            ) : (
-              <Link href={url("/register")} active={isActive("register")}>
-                Register
-              </Link>
-            )}
-          </li>
+          {secondary.map(({ name, url, cta }) => (
+            <li>
+                {desktop && cta ? (
+                  <Button href={getURL(url)} arrow cta wide>
+                    {name}
+                  </Button>
+                ) : (
+                  <Link href={getURL(url)} active={isActive(url)}>
+                    {name}
+                  </Link>
+                )}
+            </li>
+          ))}
         </ul>
       </nav>
     );
@@ -49,36 +57,13 @@ const Menu: React.FC<Props> = ({
   return (
     <nav className={className}>
       <ul>
-        <li>
-          <Link href={url("/agenda")} active={isActive("agenda")}>
-            Agenda
-          </Link>
-        </li>
-        <li>
-          <Link href={url("/travel")} active={isActive("travel")}>
-            Travel
-          </Link>
-        </li>
-        <li>
-          <Link href={url("/training")} active={isActive("training")}>
-            Training
-          </Link>
-        </li>
-        <li>
-          <Link href={url("/speakers")} active={isActive("speakers")}>
-            Speakers
-          </Link>
-        </li>
-        <li>
-          <Link href={url("/sponsors")} active={isActive("sponsors")}>
-            Sponsors
-          </Link>
-        </li>
-        <li>
-          <Link href={url("/why-attend")} active={isActive("why-attend")}>
-            Why attend
-          </Link>
-        </li>
+        {main.map(({ name, url }) => (
+          <li>
+            <Link href={getURL(url)} active={isActive(url)}>
+              {name}
+            </Link>
+          </li>
+        ))}
       </ul>
     </nav>
   );

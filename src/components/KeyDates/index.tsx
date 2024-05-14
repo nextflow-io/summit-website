@@ -1,4 +1,5 @@
 import React from "react";
+import clsx from "clsx";
 import keyDates from "@data/keyDates";
 import tiles from "./tiles.png";
 import Box from "@components/Box";
@@ -22,23 +23,27 @@ function getTitle(item) {
 type Props = {
   showImg?: boolean;
   showTitle?: boolean;
+  location?: "boston" | "barcelona";
 };
 
-const KeyDates: React.FC<Props> = ({ showImg, showTitle }) => {
+const KeyDates: React.FC<Props> = ({
+  showImg,
+  showTitle,
+  location = "boston",
+}) => {
   return (
     <Box>
-      <div className="flex">
-        <div className="flex-auto md:pr-8">
-          {showTitle && <h5 className="h3 mb-6">Key dates</h5>}
-          {keyDates.map((item, i) => (
-            <Row key={i} title={getTitle(item)}>
-              {item.title}
-            </Row>
-          ))}
-        </div>
+      <div className={clsx("relative", { "md:pr-[370px]": showImg })}>
+        {showTitle && <h5 className="h3 mb-6">Key dates</h5>}
+        {keyDates[location]?.map((item, i) => (
+          <Row key={i} title={getTitle(item)}>
+            {item.title}
+            {item.description && <p className="text-sm opacity-50">{item.description}</p> }
+          </Row>
+        ))}
         {showImg && (
-          <div className="w-[350px] hidden md:block">
-            <img src={tiles.src} className="h-full object-cover" />
+          <div className="w-[350px] hidden md:block absolute top-0 right-0 bottom-0 rounded-lg overflow-hidden">
+            <img src={tiles.src} className="h-full w-full object-cover" />
           </div>
         )}
       </div>

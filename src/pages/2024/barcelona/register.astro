@@ -1,0 +1,38 @@
+---
+import Layout from "@layouts/Base.astro";
+import { Image } from "astro:assets";
+import img from "@photos/audience-2b.jpg";
+import PastEvents from "@modules/PastEvents";
+import Contact from "@modules/Contact";
+import { SponsoredBy } from "@components/Marquee";
+import SEO from "@components/SEO";
+import TicketTailorWidget from "@components/TicketTailorWidget";
+import Box from "@components/Box";
+---
+
+<Layout namespace="2024/barcelona">
+  <SEO slot="head" title="Register" img={1} bcn />
+  <section class="pb-6 pt-16 md:pt-20">
+    <div class="container island text-center">
+      <h2 class="h000 mb-2">
+        <span class="h1">Attend</span><br />Nextflow Summit 2024
+      </h2>
+      <b class="font-bold text-wave text-xl">
+        Barcelona <span class="opacity-40">|</span> Oct 28 - Nov 1
+      </b>
+      <Box className="mt-12 mx-auto max-w-[764px]">
+        <TicketTailorWidget eventID={4145429} widgetID="54e2" client:load />
+      </Box>
+      <div class="mt-8">
+        <Image
+          src={img}
+          alt="Nextflow SUMMIT Audience"
+          class="object-cover h-[100px] sm:h-full rounded-lg"
+        />
+      </div>
+    </div>
+  </section>
+  <PastEvents title="Past events" client:visible />
+  <Contact className="py-8" />
+  <SponsoredBy client:load />
+</Layout>

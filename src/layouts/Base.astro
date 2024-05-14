@@ -1,5 +1,5 @@
 ---
-const { redirect, namespace, showNav, altBG } = Astro.props;
+const { redirect, namespace, showNav, altBG, showHeader } = Astro.props;
 import "../styles/main.css";
 import "../styles/typography.css";
 import "../styles/forms.css";
@@ -29,7 +29,7 @@ import CookieNotice from "./CookieNotice";
   </head>
   <body>
     <CookieHandler client:load />
-    <Header namespace={namespace} showNav={showNav} />
+    {showHeader !== false && <Header namespace={namespace} showNav={showNav} />}
     <Background altBG={altBG}>
       <main id="body">
         <slot />

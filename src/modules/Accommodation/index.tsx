@@ -1,14 +1,22 @@
+import React from "react";
+
 import Button from "@components/Button";
 import Swiper from "@components/Swiper";
 import locations from "./locations.mjs";
 
 import styles from "./styles.module.css";
 
-const SectionAccommodation = () => {
+type Props = {
+  className?: string;
+  location?: "boston" | "barcelona";
+};
+
+const SectionAccommodation: React.FC<Props> = (props = {}) => {
+  const { className, location = "boston" } = props;
   return (
     <section className="pb-32 container">
       <Swiper title="Hotels close to the venue">
-        {locations.map((event, index) => (
+        {locations[location].map((event, index) => (
           <a
             key={index}
             className={styles.card}

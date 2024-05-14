@@ -2,7 +2,7 @@
 import Layout from "@layouts/Base.astro";
 import CTASection from "@modules/CTASection";
 import Contact from "@modules/Contact";
-import SponsoredBy from "@modules/SponsoredBy";
+import { SponsoredBy } from "@components/Marquee";
 import SEO from "@components/SEO";
 import PersonCard from "@components/PersonCard";
 import speakers from "@data/speakers";
@@ -21,7 +21,7 @@ import speakers from "@data/speakers";
     <div class="container">
       <div class="flex flex-wrap -m-4">
         {
-          speakers.map((speaker) => (
+          speakers.boston?.map((speaker) => (
             <PersonCard person={speaker} className="w-full md:w-1/2 p-4" />
           ))
         }

@@ -1,16 +1,16 @@
 ---
 import Layout from "@layouts/Base.astro";
-import CallForAbstracts from "@modules/CallForAbstracts";
+import { CallForAbstracts } from "@components/Marquee";
 import NextflowNumbers from "@modules/NextflowNumbers";
 import ImageSection from "@modules/ImageSection";
-import title from "@images/title-summit-1a.svg";
+import title from "@images/title_boston-1a.svg";
 import Button from "@components/Button";
 import KeyInformation from "@modules/KeyInformation";
 import KeyDates from "@components/KeyDates";
 import YouTubeVideo from "@components/YouTubeVideo";
 import CTASection from "@modules/CTASection";
 import SectionContact from "@modules/Contact";
-import SponsoredBy from "@modules/SponsoredBy";
+import { SponsoredBy } from "@components/Marquee";
 import SEO from "@components/SEO";
 ---
 
@@ -19,7 +19,7 @@ import SEO from "@components/SEO";
   <section class="pb-6 pt-16 md:pt-20">
     <CallForAbstracts client:load className="pb-10 md:pb-20" />
     <div class="text-center container">
-      <img src={title.src} class="mx-auto max-w-[300px] lg:max-w-none" />
+      <img src={title.src} class="mx-auto w-full max-w-[555px] px-10" />
       <div class="h00 mt-16 mb-8">MAY 21 - 24, 2024</div>
       <Button href="/2024/boston/register" cta2 large>Register</Button>
     </div>

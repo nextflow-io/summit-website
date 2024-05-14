@@ -1,13 +1,13 @@
 ---
 const { location } = Astro.props;
-import title_boston from "./title_boston.svg";
-import title_barcelona from "./title_barcelona.svg";
+import title_boston from "@images/title_boston-1a.svg";
+import title_barcelona from "@images/title_barcelona-1a.svg";
 import photo_boston from "./boston.jpg";
 import photo_barcelona from "./barcelona.jpg";
 const photo = location === "barcelona" ? photo_barcelona : photo_boston;
 const title = location === "barcelona" ? title_barcelona : title_boston;
 const subtitle = location === "barcelona" ? "In person | Online" : "In person";
-const url = location === "barcelona" ? undefined : "/2024/boston";
+const url = location === "barcelona" ? "/2024/barcelona" : "/2024/boston";
 import styles from "./styles.module.css";
 ---
 

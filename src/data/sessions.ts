@@ -4,6 +4,8 @@ import type { Speaker } from "./speakers";
 
 import { dateSlug } from "@utils/prettyDate";
 
+type Location = "boston" | "barcelona";
+
 export type Session = {
   id: string;
   title: string;
@@ -36,18 +38,21 @@ export type Session = {
 };
 
 const questionIDs = {
-  isKeynote: 74899,
-  isSponsor: 64629,
-  projectURL: 67843,
-  coAuthors: 67841,
+  boston: {
+    isKeynote: 74899,
+    isSponsor: 64629,
+    projectURL: 67843,
+    coAuthors: 67841,
+  },
+  barcelona: {
+    isKeynote: undefined,
+    isSponsor: undefined,
+    projectURL: undefined,
+    coAuthors: undefined,
+  },
 };
 
-const categoryIDs = {
-  theme: 67842,
-  type: 64628,
-};
-
-export function addSessionURL(session: Session) {
+export function addSessionURL(session: Session, location: Location = "boston") {
   if (session.isServiceSession) return session;
 
   let slug = session.title
@@ -63,7 +68,7 @@ export function addSessionURL(session: Session) {
   }
   const date = dateSlug(session.startsAt);
   slug = `${date}--${slug}`;
-  const url = `/2024/boston/agenda/${slug}`;
+  const url = `/2024/${location}/agenda/${slug}`;
 
   return {
     ...session,
@@ -72,43 +77,46 @@ export function addSessionURL(session: Session) {
   };
 }
 
-function isKeynote(session: Session): boolean {
+function isKeynote(session: Session, location: Location = "boston"): boolean {
   return !!session.questionAnswers.find((q) => {
-    const isKeynote = q.questionId === questionIDs.isKeynote;
+    const isKeynote = q.questionId === questionIDs[location].isKeynote;
     return isKeynote && q.answerValue === "true";
   });
 }
 
-function isSponsor(session: Session): boolean {
+function isSponsor(session: Session, location: Location = "boston"): boolean {
   return !!session.questionAnswers.find((q) => {
-    const isSponsor = q.questionId === questionIDs.isSponsor;
+    const isSponsor = q.questionId === questionIDs[location].isSponsor;
     return isSponsor && q.answerValue === "true";
   });
 }
 
-function getProjectURL(session: Session): string {
+function getProjectURL(
+  session: Session,
+  location: Location = "boston",
+): string {
   const projectURL = session.questionAnswers.find(
-    (q) => q.questionId === questionIDs.projectURL,
+    (q) => q.questionId === questionIDs[location].projectURL,
   );
   return projectURL ? projectURL.answerValue : "";
 }
 
-function getCoAuthors(session: Session): string {
+function getCoAuthors(session: Session, location: Location = "boston"): string {
   const coAuthors = session.questionAnswers.find(
-    (q) => q.questionId === questionIDs.coAuthors,
+    (q) => q.questionId === questionIDs[location].coAuthors,
   );
   return coAuthors?.answerValue || "";
 }
 
-const getSessions = (): Session[] => {
+const getSessions = (location: Location = "boston"): Session[] => {
   return (
-    data.sessions
+    data[location].sessions
 
       // Associate speakers
       .map((session) => ({
         ...session,
         speakers: session.speakers.map((id) =>
-          data.speakers.find((speaker) => speaker.id === id),
+          data[location].speakers.find((speaker) => speaker.id === id),
         ),
       }))
 
@@ -126,7 +134,9 @@ const getSessions = (): Session[] => {
 
       // Associate room
       .map((session) => {
-        const room = data.rooms.find((room) => room.id === session.roomId);
+        const room = data[location].rooms.find(
+          (room) => room.id === session.roomId,
+        );
         return {
           ...session,
           room,
@@ -135,10 +145,20 @@ const getSessions = (): Session[] => {
   );
 };
 
-const sessions = getSessions();
+const boston = getSessions("boston");
+const barcelona = getSessions("barcelona");
 
-export const sessionPages = sessions.filter(
+const sessionPagesBoston = boston.filter(
   (session) => !session.isServiceSession,
 );
 
-export default sessions;
+const sessionPagesBarcelona = barcelona.filter(
+  (session) => !session.isServiceSession,
+);
+
+export default {
+  boston,
+  barcelona,
+};
+
+export { sessionPagesBarcelona, sessionPagesBoston };

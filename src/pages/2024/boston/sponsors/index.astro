@@ -2,7 +2,7 @@
 import Layout from "@layouts/Base.astro";
 import CTASection from "@modules/CTASection";
 import Contact from "@modules/Contact";
-import SponsoredBy from "@modules/SponsoredBy";
+import { SponsoredBy } from "@components/Marquee";
 import SEO from "@components/SEO";
 import sponsors from "@data/sponsors";
 import Sponsor from "@components/Sponsor";
@@ -17,7 +17,7 @@ import Sponsor from "@components/Sponsor";
       </h1>
       <div class="-m-2">
         {
-          sponsors.map((sponsor) => (
+          sponsors.boston?.map((sponsor) => (
             <Sponsor sponsor={sponsor} location="boston" />
           ))
         }

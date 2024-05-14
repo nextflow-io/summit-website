@@ -4,9 +4,9 @@ import PersonCard from "@components/PersonCard";
 import ContentBox from "@components/ContentBox/index.astro";
 import Button from "@components/Button";
 import SEO from "@components/SEO";
-import { sessionPages } from "@data/sessions";
-import { prettyDate, prettyTime } from "@utils/prettyDate";
+import { sessionPagesBoston as sessionPages } from "@data/sessions";
 import speakers from "@data/speakers";
+import { prettyDate, prettyTime } from "@utils/prettyDate";
 
 export function getStaticPaths() {
   return sessionPages.map((session) => ({
@@ -19,7 +19,7 @@ const session = sessionPages.find(
 );
 const speakerCount = session.speakers.length;
 const isSingularSpeaker = speakerCount === 1;
-const speaker = speakers.find(
+const speaker = speakers.boston?.find(
   (speaker) => speaker.fullName === session.speakers[0]?.fullName,
 );
 ---
@@ -28,7 +28,6 @@ const speaker = speakers.find(
   <SEO
     slot="head"
     title={session.title}
-    img={1}
     dynamicImage={{
       title: session.title,
       subtitle: `${prettyDate(session.startsAt, false)} @ ${prettyTime(session.startsAt)} - ${prettyTime(session.endsAt)}`,

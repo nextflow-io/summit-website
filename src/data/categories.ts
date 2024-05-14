@@ -12,4 +12,10 @@ export type Category = {
   items: CategoryValue[];
 };
 
-export default data.categories as Category[];
+const boston = data.boston.categories as Category[];
+const barcelona = data.barcelona.categories as Category[];
+
+export default {
+  boston,
+  barcelona,
+};

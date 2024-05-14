@@ -1,7 +1,7 @@
 ---
 import Layout from "@layouts/Base.astro";
 import EventSelector from "@modules/EventSelector/index.astro";
-import CallForAbstracts from "@modules/CallForAbstracts";
+import { CallForAbstracts } from "@components/Marquee";
 import NextflowNumbers from "@modules/NextflowNumbers";
 import ImageSection from "@modules/ImageSection";
 import PastEvents from "@modules/PastEvents";
@@ -9,9 +9,9 @@ import Subscribe from "@modules/Subscribe";
 import SEO from "@components/SEO";
 ---
 
-<Layout showNav={false}>
+<Layout showHeader={false}>
   <SEO slot="head" />
-  <CallForAbstracts client:load className="mt-20" />
+  <CallForAbstracts client:load className="mt-20 opacity-75" />
   <EventSelector />
   <h2 class="h00 text-center mt-10 mb-16 relative z-10">
     Previous Nextflow Events

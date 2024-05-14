@@ -1,6 +1,7 @@
 import { useState } from "react";
 import CountUp from "@components/CountUp";
 import LazyLoader from "@components/LazyLoader";
+import data from "./data";
 
 type ItemProps = {
   children: string;
@@ -55,10 +56,12 @@ const Item: React.FC<ItemProps> = ({
 
 type Props = {
   className?: string;
+  location?: "boston" | "barcelona";
 };
 
-const Numbers: React.FC<Props> = ({ className }) => {
+const Numbers: React.FC<Props> = (props = {}) => {
   const [ready, setReady] = useState(false);
+  const { className, location = "boston" } = props;
   return (
     <LazyLoader onView={() => setReady(true)}>
       <section className={className}>
@@ -73,27 +76,27 @@ const Numbers: React.FC<Props> = ({ className }) => {
             <div className="w-full lg:w-2/3 flex flex-wrap">
               <div className="md:border-r border-1 border-brand-900 w-full md:w-2/6 md:pr-6">
                 <div className="h-full w-full flex items-start flex-wrap -m-4">
-                  <Item ready={ready} value={64} percent smaller>
-                    Pharma & biotech
+                  <Item ready={ready} value={data[location]['pharma_biotech'].value} percent smaller>
+                    { data[location]['pharma_biotech'].label }
                   </Item>
-                  <Item ready={ready} value={36} percent smaller>
-                    Research & academia
+                  <Item ready={ready} value={data[location]['research_academia'].value} percent smaller>
+                    { data[location]['research_academia'].label }
                   </Item>
                 </div>
               </div>
               <div className="md:w-4/6 md:pl-12 pt-8 md:pt-0">
                 <div className="h-full w-full flex items-start flex-wrap -m-4">
-                  <Item ready={ready} value={145}>
-                    Summit in-person attendees in 2023
+                  <Item ready={ready} value={data[location]['summit_in_person_attendees_prev_year'].value}>
+                    { data[location]['summit_in_person_attendees_prev_year'].label }
                   </Item>
-                  <Item ready={ready} value={200} plus>
-                    Summit in-person attendees expected in 2024
+                  <Item ready={ready} value={data[location]['summit_in_person_attendees_expected'].value} plus>
+                    { data[location]['summit_in_person_attendees_expected'].label }
                   </Item>
-                  <Item ready={ready} value={50}>
-                    Hackathon in-person attendees in 2023
+                  <Item ready={ready} value={data[location]['hackathon_in_person_attendees_prev_year'].value}>
+                    { data[location]['hackathon_in_person_attendees_prev_year'].label }
                   </Item>
-                  <Item ready={ready} value={125} plus>
-                    Hackathon in-person attendees expected in 2024
+                  <Item ready={ready} value={data[location]['hackathon_in_person_attendees_expected'].value} plus>
+                    { data[location]['hackathon_in_person_attendees_expected'].label }
                   </Item>
                 </div>
               </div>

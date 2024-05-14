@@ -16,11 +16,13 @@ const Row = ({ children, title }) => {
 };
 
 type Props = {
-  showImg?: boolean;
-  showTitle?: boolean;
+  cta?: {
+    title: string;
+    url: string;
+  };
 };
 
-const WhyAttend: React.FC<Props> = ({ showImg, showTitle }) => {
+const WhyAttend: React.FC<Props> = ({ cta }) => {
   return (
     <Box alt>
       <h1 className="h0 mb-8">Why attend</h1>
@@ -56,9 +58,11 @@ const WhyAttend: React.FC<Props> = ({ showImg, showTitle }) => {
         topics, from novel analysis methods to optimizing performance on cloud
         platforms.
       </Row>
-      <Button href="/2024/boston/register" cta2 large className="mt-8">
-        Attend SUMMIT 2024
-      </Button>
+      {!!cta && (
+        <Button href={cta.url} cta2 large className="mt-8">
+          {cta.title}
+        </Button>
+      )}
     </Box>
   );
 };
