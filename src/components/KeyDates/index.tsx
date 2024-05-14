@@ -38,6 +38,7 @@ const KeyDates: React.FC<Props> = ({
         {keyDates[location]?.map((item, i) => (
           <Row key={i} title={getTitle(item)}>
             {item.title}
+            {item.description && <p className="text-sm opacity-50">{item.description}</p> }
           </Row>
         ))}
         {showImg && (

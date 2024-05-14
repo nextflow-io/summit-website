@@ -26,6 +26,7 @@ function getDay(date: string) {
 const parseDates = (dates) =>
   dates.map((date) => ({
     title: date.title,
+    description: date.description,
     date: prettyDate(date.date),
     endDate: prettyDate(date.endDate),
     endDay: getDay(date.endDate),
