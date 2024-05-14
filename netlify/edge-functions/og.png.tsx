@@ -1,6 +1,7 @@
 import React from "https://esm.sh/react@18.2.0";
 import { ImageResponse } from "https://deno.land/x/og_edge/mod.ts";
-import speakers from "https://summit.nextflow.io/2024/boston/speakers.json" assert { type: "json" };
+import speakersBoston from "https://summit.nextflow.io/2024/boston/speakers.json" assert { type: "json" };
+import speakersBcn from "https://summit.nextflow.io/2024/boston/speakers.json" assert { type: "json" };
 
 const InterFont = fetch(
   "https://summit.nextflow.io/fonts/Inter-Regular.ttf",
@@ -13,6 +14,10 @@ const DegularFont = fetch(
 export default async function handler(request: Request) {
   const url = new URL(request.url);
   const params = new URLSearchParams(url.search);
+  const speakers = {
+    boston: speakersBoston,
+    barcelona: speakersBcn,
+  };
 
   let eventLocation = "boston";
   if (params.get("location") === "barcelona") eventLocation = "barcelona";
@@ -26,7 +31,8 @@ export default async function handler(request: Request) {
   let title = params.get("title") || defaultTitle;
   let subtitle = params.get("subtitle") || "";
   const speakerSlug = params.get("speaker");
-  if (speakerSlug) speaker = speakers.find((s) => s.slug === speakerSlug);
+  if (speakerSlug)
+    speaker = speakers[eventLocation]?.find((s) => s.slug === speakerSlug);
 
   if (speaker && !params.get("title")) {
     title = speaker.fullName;

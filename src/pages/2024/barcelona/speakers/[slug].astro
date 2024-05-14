@@ -22,7 +22,10 @@ const speaker = speakers.barcelona?.find(
   <SEO
     slot="head"
     title={speaker.fullName}
-    imgUrl={`/share/speakers/${speaker.slug}.png`}
+    dynamicImage={{
+      speaker: speaker.slug,
+      location: "barcelona",
+    }}
   />
   <section class="pb-10 pt-16 md:py-20">
     <div class="container smallest text-center">

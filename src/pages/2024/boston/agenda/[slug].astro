@@ -19,7 +19,7 @@ const session = sessionPages.find(
 );
 const speakerCount = session.speakers.length;
 const isSingularSpeaker = speakerCount === 1;
-const speaker = speakers.find(
+const speaker = speakers.boston?.find(
   (speaker) => speaker.fullName === session.speakers[0]?.fullName,
 );
 ---
@@ -28,7 +28,6 @@ const speaker = speakers.find(
   <SEO
     slot="head"
     title={session.title}
-    img={1}
     dynamicImage={{
       title: session.title,
       subtitle: `${prettyDate(session.startsAt, false)} @ ${prettyTime(session.startsAt)} - ${prettyTime(session.endsAt)}`,
