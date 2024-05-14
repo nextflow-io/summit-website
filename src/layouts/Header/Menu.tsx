@@ -31,16 +31,15 @@ const Menu: React.FC<Props> = ({
   let location = "boston";
   if (namespace === "2024/barcelona") location = "barcelona";
 
-  const { main, secondary } = menuItems[location];
+  const { main, secondary, cta } = menuItems[location];
 
   if (second)
     return (
       <nav className={className}>
         <ul>
-          <li>
-            {secondary.map(({ name, url }) => (
-              <>
-                {desktop ? (
+          {secondary.map(({ name, url, cta }) => (
+            <li>
+                {desktop && cta ? (
                   <Button href={getURL(url)} arrow cta wide>
                     {name}
                   </Button>
@@ -49,9 +48,8 @@ const Menu: React.FC<Props> = ({
                     {name}
                   </Link>
                 )}
-              </>
-            ))}
-          </li>
+            </li>
+          ))}
         </ul>
       </nav>
     );

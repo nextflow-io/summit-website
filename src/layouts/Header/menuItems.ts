@@ -15,6 +15,11 @@ export default {
         name: "Call for Abstracts",
         url: "/call-for-abstracts",
       },
+      {
+        name: "Register",
+        url: "/register",
+        cta: true
+      },
     ],
   },
   boston: {
@@ -48,6 +53,7 @@ export default {
       {
         name: "Register",
         url: "/register",
+        cta: true
       },
     ],
   },
