@@ -66,6 +66,12 @@ export function addSessionURL(session: Session, location: Location = "boston") {
   if (parts.length > 5) {
     slug = parts.slice(0, 5).join("-");
   }
+
+  // TODO: PHIL HOTFIX
+  // location is set as an integer here, maybe a map index or something?
+  // Hotfix to hardcode to "boston" for now
+  location = "boston";
+
   const date = dateSlug(session.startsAt);
   slug = `${date}--${slug}`;
   const url = `/2024/${location}/agenda/${slug}`;
