@@ -1,4 +1,5 @@
 .form {
+  text-align: left;
   & input {
     width: 100%;
     margin-bottom: 1rem;
@@ -16,5 +17,9 @@
   & :global(.hs_nextflow_summit_city) {
     margin-bottom: 2rem;
     margin-top: 2rem;
+  }
+  & :global(.hs-field-desc) {
+    opacity: 0.6;
+    font-size: 13px;
   }
 }
