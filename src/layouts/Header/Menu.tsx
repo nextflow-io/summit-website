@@ -23,7 +23,8 @@ const Menu: React.FC<Props> = ({
     return pathname.includes(path);
   }
 
-  function getURL(path) {
+  function getURL(path, root) {
+    if (root) return path;
     if (!namespace) return path;
     return `/${namespace}${path}`;
   }
@@ -37,17 +38,17 @@ const Menu: React.FC<Props> = ({
     return (
       <nav className={className}>
         <ul>
-          {secondary.map(({ name, url, cta }) => (
+          {secondary.map(({ name, url, cta, root }) => (
             <li>
-                {desktop && cta ? (
-                  <Button href={getURL(url)} arrow cta wide>
-                    {name}
-                  </Button>
-                ) : (
-                  <Link href={getURL(url)} active={isActive(url)}>
-                    {name}
-                  </Link>
-                )}
+              {desktop && cta ? (
+                <Button href={getURL(url, root)} arrow cta wide>
+                  {name}
+                </Button>
+              ) : (
+                <Link href={getURL(url, root)} active={isActive(url)}>
+                  {name}
+                </Link>
+              )}
             </li>
           ))}
         </ul>

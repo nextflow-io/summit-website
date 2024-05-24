@@ -54,6 +54,7 @@ export default {
         name: "Pre-register 2025",
         url: "/preregister-2025",
         cta: true,
+        root: true,
       },
     ],
   },
