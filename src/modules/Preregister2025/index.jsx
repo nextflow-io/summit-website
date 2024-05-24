@@ -8,14 +8,15 @@ const Preregister2025 = () => {
   return (
     <div className="sm:px-10 py-8">
       <div className="text-center w-full sm:px-8">
-        <h3 className="typo-h3 text-white mb-2">
-          Interested in attending Nextflow Summit 2025?
+        <h3 className="h2 text-white mb-2">
+          Interested in attending Nextflow Summit Boston in Spring 2025?
         </h3>
         <div
           className="text-xl mb-6 font-[200]"
           style={{ color: "rgba(255,255,255,0.8)" }}
         >
-          Sign up for updates to be the first to know when tickets go on sale!
+          We'll be back next year! Sign up for updates to be the first to know
+          when tickets go on sale.
         </div>
       </div>
       <div className="w-full">
