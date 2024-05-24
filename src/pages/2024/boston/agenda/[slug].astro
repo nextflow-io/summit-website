@@ -7,6 +7,7 @@ import SEO from "@components/SEO";
 import { sessionPagesBoston as sessionPages } from "@data/sessions";
 import speakers from "@data/speakers";
 import { prettyDate, prettyTime } from "@utils/prettyDate";
+import YouTubeVideo from "@components/YouTubeVideo";
 
 export function getStaticPaths() {
   return sessionPages.map((session) => ({
@@ -66,11 +67,14 @@ const speaker = speakers.boston?.find(
         <h1 class="text-3xl md:text-4xl font-bold mb-8 font-display">
           {session.title}
         </h1>
-        <div
-          class="text-left text-brand-300 font-light text-sm sm:text-base whitespace-pre-line"
-        >
-          {session.description}
-        </div>
+        {
+          !!session.description && (
+            <div class="text-left text-brand-300 font-light text-sm sm:text-base whitespace-pre-line">
+              {session.description}
+            </div>
+          )
+        }
+        {!!session.recordingUrl && <YouTubeVideo url={session.recordingUrl} />}
         {
           !!session.projectURL && (
             <Button cta href={session.projectURL} className="mt-6">
