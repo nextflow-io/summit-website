@@ -74,7 +74,13 @@ const speaker = speakers.boston?.find(
             </div>
           )
         }
-        {!!session.recordingUrl && <YouTubeVideo url={session.recordingUrl} />}
+        {
+          !!session.recordingUrl && (
+            <div class="mt-8 border rounded-2xl border-[rgb(13,192,157)]/40">
+              <YouTubeVideo url={session.recordingUrl} />
+            </div>
+          )
+        }
         {
           !!session.projectURL && (
             <Button cta href={session.projectURL} className="mt-6">
