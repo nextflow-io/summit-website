@@ -1,0 +1,20 @@
+.form {
+  & input {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  & :global(.hs-form-checkbox-display) {
+    display: inline-flex;
+    align-items: center;
+    & input {
+      margin: 0 12px 0 0;
+    }
+  }
+  & :global(.hs_submit) {
+    margin-top: 2rem;
+  }
+  & :global(.hs_nextflow_summit_city) {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+  }
+}

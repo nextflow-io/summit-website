@@ -18,7 +18,7 @@ export default {
       {
         name: "Register",
         url: "/register",
-        cta: true
+        cta: true,
       },
     ],
   },
@@ -51,9 +51,9 @@ export default {
     ],
     secondary: [
       {
-        name: "Register",
-        url: "/register",
-        cta: true
+        name: "Pre-register 2025",
+        url: "/preregister-2025",
+        cta: true,
       },
     ],
   },

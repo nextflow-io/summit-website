@@ -1,0 +1,29 @@
+---
+import Layout from "@layouts/Base.astro";
+import Preregister from "@modules/Preregister2025";
+import PastEvents from "@modules/PastEvents";
+import Box from "@components/Box";
+import SEO from "@components/SEO";
+import Contact from "@modules/Contact";
+import { SponsoredBy } from "@components/Marquee";
+---
+
+<Layout namespace="2024/boston">
+  <SEO slot="head" title="Pre-register 2025" img={1} />
+  <section class="pb-6 pt-16 md:pt-20">
+    <div class="container island text-center">
+      <h2 class="h000 mb-2">
+        <span class="h1 text-nextflow">Attend</span><br />Nextflow Summit 2025
+      </h2>
+      <!-- <b class="font-bold text-fusion-600 text-xl">
+        Boston <span class="opacity-40">|</span> May 21-24
+      </b> -->
+      <Box className="mt-12 mx-auto max-w-[764px]">
+        <Preregister client:load />
+      </Box>
+    </div>
+  </section>
+  <PastEvents title="Past events" client:visible />
+  <Contact className="py-8" />
+  <SponsoredBy client:load />
+</Layout>
