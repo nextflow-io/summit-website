@@ -6,6 +6,7 @@ import type { Session } from "@data/sessions";
 
 import styles from "./styles.module.css";
 import ProfilePic from "@components/ProfilePic";
+import youtubeIcon from "./youtube.svg";
 
 type Props = {
   session: Session;
@@ -19,7 +20,7 @@ type Props = {
 const CardContainer = ({ children, session }) => {
   const className = clsx(styles.card, {
     [styles.keynote]: session.isKeynote,
-    [styles.confirmed]: session.isConfirmed,
+    [styles.confirmed]: session.isConfirmed
   });
   if (session.isConfirmed)
     return (
@@ -39,7 +40,7 @@ const SessionCard: React.FC<Props> = ({
   hideSpeakers,
 }) => {
   const showSpeakers = !!session.speakers.length && !hideSpeakers;
-  const showFooter = showSpeakers || session.isKeynote || session.isSponsor;
+  const showFooter = showSpeakers || session.isKeynote || session.isSponsor || session.recordingUrl;
   return (
     <div className={className}>
       <CardContainer session={session}>
@@ -86,6 +87,12 @@ const SessionCard: React.FC<Props> = ({
                   <span className={styles.sponsor}>Sponsor</span>
                 )}
               </div>
+              {session.recordingUrl && (
+                <span className={styles.video}>
+                  Watch video
+                  <img className="inline-block pl-2" src={youtubeIcon.src} alt="YouTube" />
+                </span>
+              )}
             </div>
           )}
           {showRoomName && !!session.room && (
