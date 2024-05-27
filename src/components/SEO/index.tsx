@@ -2,7 +2,8 @@ const siteTitle = "Nextflow SUMMIT 2024";
 const descDefault = `Join us at the Nextflow SUMMIT 2024 for the latest developments and innovations from the Nextflow world.`;
 import imgDefault from "./share-default.jpg";
 import imgBoston from "./share-boston.png";
-const images = [imgDefault, imgBoston];
+import imgBarcelona from "./share-barcelona.png";
+const images = [imgDefault, imgBoston, imgBarcelona];
 
 type Props = {
   description?: string;
@@ -27,7 +28,16 @@ const SEO: React.FC<Props> = ({
   bcn,
   ...props
 }) => {
-  let shareImg = img ? images[img].src : imgUrl ? imgUrl : imgDefault.src;
+  let shareImg: string;
+  if (img) {
+      shareImg = images[img].src;
+  } else if (imgUrl) {
+      shareImg = imgUrl;
+  } else if (bcn) {
+      shareImg = imgBarcelona.src;
+  } else {
+      shareImg = imgDefault.src;
+  }
 
   if (dynamicImage) {
     const url = "https://summit.nextflow.io/og.png";
