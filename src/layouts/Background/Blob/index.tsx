@@ -6,6 +6,8 @@ import green3 from "./green3.module.css";
 import green4 from "./green4.module.css";
 import orange1 from "./orange1.module.css";
 import orange2 from "./orange2.module.css";
+import blue1 from "./blue1.module.css";
+import blue2 from "./blue2.module.css";
 
 const styles = {
   green1,
@@ -14,6 +16,8 @@ const styles = {
   green4,
   orange1,
   orange2,
+  blue1,
+  blue2,
 };
 
 type Props = {

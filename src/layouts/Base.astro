@@ -30,7 +30,7 @@ import CookieNotice from "./CookieNotice";
   <body>
     <CookieHandler client:load />
     {showHeader !== false && <Header namespace={namespace} showNav={showNav} />}
-    <Background altBG={altBG}>
+    <Background namespace={namespace} altBG={altBG}>
       <main id="body">
         <slot />
       </main>
