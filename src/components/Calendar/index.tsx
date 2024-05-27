@@ -108,6 +108,7 @@ const Calendar: React.FC<Props> = ({ location = "boston" }) => {
                               key={i}
                               session={fullSession}
                               hideTime
+                              showVideoButton={true}
                               showRoomName={showRoomName}
                             />
                           );

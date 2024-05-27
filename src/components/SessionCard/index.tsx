@@ -15,6 +15,7 @@ type Props = {
   hideTime?: boolean;
   showRoomName?: boolean;
   hideSpeakers?: boolean;
+  showVideoButton?: boolean;
 };
 
 const CardContainer = ({ children, session }) => {
@@ -38,6 +39,7 @@ const SessionCard: React.FC<Props> = ({
   session,
   showRoomName,
   hideSpeakers,
+  showVideoButton,
 }) => {
   const showSpeakers = !!session.speakers.length && !hideSpeakers;
   const showFooter = showSpeakers || session.isKeynote || session.isSponsor || session.recordingUrl;
@@ -87,7 +89,7 @@ const SessionCard: React.FC<Props> = ({
                   <span className={styles.sponsor}>Sponsor</span>
                 )}
               </div>
-              {session.recordingUrl && (
+              {showVideoButton && !!session.recordingUrl && (
                 <Button
                   href={session.url}
                   cta
