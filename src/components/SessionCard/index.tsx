@@ -1,6 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 import { prettyDate, prettyTime } from "@utils/prettyDate";
+import Button from "@components/Button";
 
 import type { Session } from "@data/sessions";
 
@@ -19,7 +20,7 @@ type Props = {
 const CardContainer = ({ children, session }) => {
   const className = clsx(styles.card, {
     [styles.keynote]: session.isKeynote,
-    [styles.confirmed]: session.isConfirmed,
+    [styles.confirmed]: session.isConfirmed
   });
   if (session.isConfirmed)
     return (
@@ -39,7 +40,7 @@ const SessionCard: React.FC<Props> = ({
   hideSpeakers,
 }) => {
   const showSpeakers = !!session.speakers.length && !hideSpeakers;
-  const showFooter = showSpeakers || session.isKeynote || session.isSponsor;
+  const showFooter = showSpeakers || session.isKeynote || session.isSponsor || session.recordingUrl;
   return (
     <div className={className}>
       <CardContainer session={session}>
@@ -86,6 +87,15 @@ const SessionCard: React.FC<Props> = ({
                   <span className={styles.sponsor}>Sponsor</span>
                 )}
               </div>
+              {session.recordingUrl && (
+                <Button
+                  href={session.url}
+                  cta
+                  arrow
+                  wide
+                  small
+                  className="ml-auto">Watch video</Button>
+              )}
             </div>
           )}
           {showRoomName && !!session.room && (
