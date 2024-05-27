@@ -1,12 +1,12 @@
 import React from "react";
 import clsx from "clsx";
 import { prettyDate, prettyTime } from "@utils/prettyDate";
+import Button from "@components/Button";
 
 import type { Session } from "@data/sessions";
 
 import styles from "./styles.module.css";
 import ProfilePic from "@components/ProfilePic";
-import youtubeIcon from "./youtube.svg";
 
 type Props = {
   session: Session;
@@ -88,10 +88,13 @@ const SessionCard: React.FC<Props> = ({
                 )}
               </div>
               {session.recordingUrl && (
-                <span className={styles.video}>
-                  Watch video
-                  <img className="inline-block pl-2" src={youtubeIcon.src} alt="YouTube" />
-                </span>
+                <Button
+                  href={session.url}
+                  cta
+                  arrow
+                  wide
+                  small
+                  className="ml-auto">Watch video</Button>
               )}
             </div>
           )}
