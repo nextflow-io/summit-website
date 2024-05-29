@@ -18,7 +18,7 @@ import SEO from "@components/SEO";
   />
   <section class="container py-20">
     <h2 class="h00 mb-12 text-center">
-      Nextflow and nf-core Foundational Training
+      Training track for Nextflow Summit 2024
     </h2>
     <div class="flex flex-wrap -m-2 sm:-m-4">
       <div class="w-full md:w-1/2 p-2 sm:p-4">
@@ -31,29 +31,42 @@ import SEO from "@components/SEO";
         </div>
       </div>
       <div class="w-full md:w-1/2 p-2 sm:p-4">
-        <Box className="">
-          We are excited to offer a 2-day training opportunity. Our training is
-          designed to provide you with a foundational understanding of Nextflow
-          and nf-core and equip you with the skills to build better pipelines.
-          <p class="pt-6 pb-6 font-bold">
-            By the end of the course you will be able to:
-          </p>
-          <ul class="list">
-            <li>
-              Summarize the benefits of using Nextflow as a workflow manager
-            </li>
-            <li>
-              Describe Nextflow concepts essential for pipeline development,
-              configuration, and deployment
-            </li>
-            <li>Build simple Nextflow pipelines</li>
-            <li>Discuss the features of nf-core pipelines and the community</li>
-            <li>
-              Utilize nf-core tooling to accelerate your pipeline development
-            </li>
+        <Box className="!border-nextflow-600/40">
+          This introductory course aims to equip participants who are new to Nextflow
+          with foundational skills in two key areas:
+          Nextflow language proficiency and command-line interface (CLI) execution.
+          Additionally, participants will learn to leverage the resources and
+          capabilities offered by the <a href="https://nf-co.re/" target="_blank">nf-core</a> initiative.
+
+          <ul class="list pt-6">
+            <li><strong>Audience:</strong> Beginners (no prior Nextflow experience)</li>
+            <li><strong>Required:</strong> basic experience with command line and scripting</li>
+            <li>Some bioinformatics and genomics concepts will be introduced</li>
           </ul>
         </Box>
       </div>
+    </div>
+    <div class="container smaller mt-5">
+      <Box alt>
+        <h2 class="h2 mb-6">Day 1: Getting Started with Nextflow</h2>
+
+        <p class="mt-6">Participants will be guided through hands-on, goal-oriented exercises that will allow them to develop the following skills:</p>
+
+
+        <ul class="list pt-6">
+          <li>Use core components of the Nextflow language to construct simple multi-step workflows effectively.</li>
+          <li>Launch Nextflow workflows locally, navigate output directories to access results, interpret log outputs for insights into workflow execution, and troubleshoot basic issues that may arise during workflow execution.</li>
+        </ul>
+
+        <p class="mt-6">By focusing on these essential skills, participants will be well-prepared to harness the power of Nextflow for their scientific computing needs.</p>
+
+
+        <h2 class="h2 mt-16 mb-6">Day 2: Getting Started with nf-core</h2>
+
+        <p class="mt-6">Beginning with an overview, participants will explore the collaborative nature of <a href="https://nf-co.re/" target="_blank">nf-core</a> and its significance in bioinformatics research. They will learn how to efficiently access nf-core resources, navigate existing pipelines, and leverage them for various bioinformatics tasks. Hands-on exercises will emphasize the practical aspects of working with nf-core resources, covering topics such as running pre-built pipelines, customizing parameters, and testing pipeline execution with built-in test profiles.</p>
+
+        <p class="mt-6">Participants will also delve into the process of developing pipelines, guided by nf-core conventions and best practices for using the nf-core pipeline template effectively, ensuring code quality through linting and validation, and collaborating using GitHub for version control and collaboration.</p>
+      </Box>
     </div>
   </section>
   <!-- <CTASection /> -->

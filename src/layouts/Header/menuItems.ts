@@ -6,6 +6,10 @@ export default {
         url: "/travel",
       },
       {
+        name: "Training",
+        url: "/training",
+      },
+      {
         name: "Why attend",
         url: "/why-attend",
       },
