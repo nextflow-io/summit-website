@@ -23,7 +23,7 @@ const KeyInformation: React.FC<Props> = ({
               title={info.title}
               subtitle={info.subtitle}
               icon={info.icon}
-              link={`${linkPath}${info.link}`}
+              link={!!info.link && `${linkPath}${info.link}`}
             >
               {info.description}
             </InfoBox>

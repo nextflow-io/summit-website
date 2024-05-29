@@ -34,7 +34,7 @@ export default {
       title: "Training | Oct 28 - 30",
       subtitle: "2.5 days · 60 people · training",
       icon: parentheses,
-      link: "#10-28",
+      link: "/training",
       description:
         "An in-person foundational training to supercharge your pipeline development with Nextflow and nf-core. Running in parallel to the hackathon.",
     },
@@ -42,7 +42,7 @@ export default {
       title: "Hackathon | Oct 28 - 30",
       subtitle: "2.5 days · 180 people · hackathon",
       icon: computer,
-      link: "#10-29",
+      link: "",
       description:
       "An in-person hackathon open to anyone with some Nextflow knowledge.. You’ll work on specific tasks in groups, collaborating on developing nf-core. Running in parallel to the training.",
     },
@@ -50,7 +50,7 @@ export default {
       title: "Summit | Oct 30 - Nov 1",
       subtitle: "2.5 days · 400 people · talks, networking, and more",
       icon: news,
-      link: "#10-30",
+      link: "",
       description:
         "A showcase of the latest developments and innovations from the Nextflow world. ",
     },
