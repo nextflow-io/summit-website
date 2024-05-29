@@ -42,6 +42,7 @@
   "devDependencies": {
     "@csstools/postcss-global-data": "^2.1.1",
     "@iconify-json/mdi": "^1.1.64",
+    "@tailwindcss/typography": "^0.5.13",
     "postcss-custom-media": "^10.0.2",
     "prettier": "^3.2.4",
     "prettier-plugin-astro": "^0.13.0",

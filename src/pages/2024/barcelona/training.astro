@@ -7,6 +7,7 @@ import Contact from "@modules/Contact";
 import img from "@photos/hackers-1a.jpg";
 import Box from "@components/Box";
 import SEO from "@components/SEO";
+import * as trainingBcn from "@components/MarkdownContent/training-bcn.md";
 ---
 
 <Layout namespace="2024/barcelona">
@@ -18,7 +19,7 @@ import SEO from "@components/SEO";
   />
   <section class="container py-20">
     <h2 class="h00 mb-12 text-center">
-      Nextflow and nf-core Foundational Training
+      {trainingBcn.frontmatter.title}
     </h2>
     <div class="flex flex-wrap -m-2 sm:-m-4">
       <div class="w-full md:w-1/2 p-2 sm:p-4">
@@ -32,28 +33,18 @@ import SEO from "@components/SEO";
       </div>
       <div class="w-full md:w-1/2 p-2 sm:p-4">
         <Box className="">
-          We are excited to offer a 2-day training opportunity. Our training is
-          designed to provide you with a foundational understanding of Nextflow
-          and nf-core and equip you with the skills to build better pipelines.
-          <p class="pt-6 pb-6 font-bold">
-            By the end of the course you will be able to:
-          </p>
-          <ul class="list">
-            <li>
-              Summarize the benefits of using Nextflow as a workflow manager
-            </li>
-            <li>
-              Describe Nextflow concepts essential for pipeline development,
-              configuration, and deployment
-            </li>
-            <li>Build simple Nextflow pipelines</li>
-            <li>Discuss the features of nf-core pipelines and the community</li>
-            <li>
-              Utilize nf-core tooling to accelerate your pipeline development
-            </li>
-          </ul>
+          <article class="prose text-white leading-normal prose-strong:text-white prose-li:mb-1 prose-li:mt-0 prose-headings:text-nextflow-600">
+            <Fragment set:html={trainingBcn.compiledContent().split('<!-- End header -->')[0]}/>
+          </article>
         </Box>
       </div>
+    </div>
+    <div class="container smaller mt-5">
+      <Box alt>
+        <article class="prose max-w-full text-white leading-normal prose-strong:text-white prose-li:mb-1 prose-li:mt-0 prose-headings:text-nextflow-600">
+          <Fragment set:html={trainingBcn.compiledContent().split('<!-- End header -->')[1]}/>
+        </article>
+      </Box>
     </div>
   </section>
   <!-- <CTASection /> -->

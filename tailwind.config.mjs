@@ -219,6 +219,7 @@ export default {
     },
   },
   plugins: [
+    require('@tailwindcss/typography'),
     function ({ addBase, theme }) {
       function extractColorVars(colorObj, colorGroup = "") {
         return Object.keys(colorObj).reduce((vars, colorKey) => {
