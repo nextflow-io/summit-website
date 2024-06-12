@@ -17,8 +17,18 @@ import Card from "./Card.astro";
         Get ready for SUMMIT events in 2024, in Boston and Barcelona!
       </h1>
       <div class="flex flex-wrap justify-center -mx-4">
-        <Card location="boston" />
-        <Card location="barcelona" />
+        <Card
+          location="boston"
+          btn_txt="Watch the recordings"
+          btn_url="/2024/boston/agenda#05-23"
+          btn_cta={false}
+         />
+        <Card
+          location="barcelona"
+          btn_txt="Register now"
+          btn_url="/2024/barcelona/register"
+          btn_cta={true}
+         />
       </div>
     </div>
   </div>

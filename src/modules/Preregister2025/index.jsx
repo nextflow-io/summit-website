@@ -9,7 +9,7 @@ const Preregister2025 = () => {
     <div className="sm:px-10 py-8">
       <div className="text-center w-full sm:px-8">
         <h3 className="h2 text-white mb-2">
-          Interested in attending Nextflow Summit Boston in Spring 2025?
+          Interested in attending a Nextflow Summit in 2025?
         </h3>
         <div
           className="text-xl mb-6 font-[200]"
@@ -17,6 +17,12 @@ const Preregister2025 = () => {
         >
           We'll be back next year! Sign up for updates to be the first to know
           when tickets go on sale.
+        </div>
+        <div
+          className="text-lg mb-6 font-[200]"
+          style={{ color: "rgba(255,255,255,0.8)" }}
+        >
+          As in 2024, Boston will be held in Spring and Barcelona in Autumn.
         </div>
       </div>
       <div className="w-full">
