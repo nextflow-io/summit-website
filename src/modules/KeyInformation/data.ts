@@ -36,7 +36,7 @@ export default {
       icon: parentheses,
       link: "/training",
       description:
-        "An in-person foundational training to supercharge your pipeline development with Nextflow and nf-core. Running in parallel to the hackathon.",
+        "An in-person foundational training for those who are completely new to Nextflow and nf-core. Running in parallel to the hackathon.",
     },
     {
       title: "Hackathon | Oct 28 - 30",
@@ -44,7 +44,7 @@ export default {
       icon: computer,
       link: "",
       description:
-      "An in-person hackathon open to anyone with some Nextflow knowledge.. You’ll work on specific tasks in groups, collaborating on developing nf-core. Running in parallel to the training.",
+      "An in-person hackathon open to anyone with some Nextflow knowledge. You’ll work on specific tasks in groups, collaborating on developing nf-core. Running in parallel to the training.",
     },
     {
       title: "Summit | Oct 30 - Nov 1",
