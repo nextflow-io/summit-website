@@ -12,7 +12,7 @@ const CallForAbstracts: React.FC<Props> = ({ className, href }) => {
     <Marquee
       speed={50}
       className={className}
-      href={href || "/2024/boston/call-for-abstracts/"}
+      href={href || "/2024/barcelona/call-for-abstracts/"}
     >
       <img className="ml-8" src={call_for_abstracts.src} />
       <img className="ml-8" src={call_for_abstracts.src} />
