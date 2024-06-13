@@ -8,7 +8,7 @@ export default {
       title: "Training | May 21-22",
       subtitle: "2 days · 30 people · training",
       icon: parentheses,
-      link: "#05-21",
+      link: "/2024/boston/agenda#05-21",
       description:
         "An in-person foundational training to supercharge your pipeline development with Nextflow and nf-core. Running in parallel to the hackathon.",
     },
@@ -16,7 +16,7 @@ export default {
       title: "Hackathon | May 21-22",
       subtitle: "2 days · 100 people · hackathon",
       icon: computer,
-      link: "#05-22",
+      link: "/2024/boston/agenda#05-22",
       description:
         "An in-person hackathon to develop nf-core. Running in parallel to the training.",
     },
@@ -24,7 +24,7 @@ export default {
       title: "Summit | May 23-24",
       subtitle: "1.5 days · 200 people · talks, networking, and more",
       icon: news,
-      link: "#05-23",
+      link: "/2024/boston/agenda#05-23",
       description:
         "A showcase of the latest developments and innovations from the Nextflow world.",
     },
@@ -34,7 +34,7 @@ export default {
       title: "Training | Oct 28 - 30",
       subtitle: "2.5 days · 60 people · training",
       icon: parentheses,
-      link: "/training",
+      link: "/2024/barcelona/training",
       description:
         "An in-person foundational training for those who are completely new to Nextflow and nf-core. Running in parallel to the hackathon.",
     },
@@ -42,7 +42,7 @@ export default {
       title: "Hackathon | Oct 28 - 30",
       subtitle: "2.5 days · 180 people · hackathon",
       icon: computer,
-      link: "",
+      link: "/2024/barcelona/agenda#10-28",
       description:
       "An in-person hackathon open to anyone with some Nextflow knowledge. You’ll work on specific tasks in groups, collaborating on developing nf-core. Running in parallel to the training.",
     },
@@ -50,7 +50,7 @@ export default {
       title: "Summit | Oct 30 - Nov 1",
       subtitle: "2.5 days · 400 people · talks, networking, and more",
       icon: news,
-      link: "",
+      link: "/2024/barcelona/agenda#10-30",
       description:
         "A showcase of the latest developments and innovations from the Nextflow world. ",
     },

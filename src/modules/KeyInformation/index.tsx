@@ -6,24 +6,22 @@ import data from "./data";
 type Props = {
   className?: string;
   location?: "boston" | "barcelona";
-  linkPath?: string;
 };
 
 const KeyInformation: React.FC<Props> = ({
   className = "",
-  location = "boston",
-  linkPath = "",
+  location = "boston"
 }) => {
   return (
     <section className={clsx("container", className)}>
-      <div className="flex -m-2 lg:-m-4 flex flex-wrap">
+      <div className="flex -m-2 lg:-m-4 flex-wrap">
         {data[location].map((info) => (
           <div className="w-full md:w-1/3 p-2 lg:p-4">
             <InfoBox
               title={info.title}
               subtitle={info.subtitle}
               icon={info.icon}
-              link={!!info.link && `${linkPath}${info.link}`}
+              link={!!info.link && `${info.link}`}
             >
               {info.description}
             </InfoBox>
