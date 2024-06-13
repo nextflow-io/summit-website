@@ -2,7 +2,7 @@ import type { Schedule } from "./schedule";
 
 const ids = {
   boston: "zaqv23uw",
-  barcelona: "t4f8qx5t",
+  barcelona: "hb4w1c5g",
 };
 
 const fetchSessionizeData = async (

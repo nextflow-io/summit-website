@@ -2,6 +2,10 @@ export default {
   barcelona: {
     main: [
       {
+        name: "Agenda",
+        url: "/agenda",
+      },
+      {
         name: "Travel",
         url: "/travel",
       },

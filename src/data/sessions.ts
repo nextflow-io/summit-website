@@ -132,10 +132,10 @@ const getSessions = (location: Location = "boston"): Session[] => {
       // Add custom attributes
       .map((session) => ({
         ...session,
-        isKeynote: isKeynote(session),
-        isSponsor: isSponsor(session),
-        projectURL: getProjectURL(session),
-        coAuthors: getCoAuthors(session),
+        isKeynote: isKeynote(session, location),
+        isSponsor: isSponsor(session, location),
+        projectURL: getProjectURL(session, location),
+        coAuthors: getCoAuthors(session, location),
       }))
 
       // Associate room
