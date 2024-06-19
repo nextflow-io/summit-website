@@ -23,7 +23,7 @@ const Menu: React.FC<Props> = ({
     return pathname.includes(path);
   }
 
-  function getURL(path, root) {
+  function getURL(path, root = false) {
     if (root) return path;
     if (!namespace) return path;
     return `/${namespace}${path}`;
