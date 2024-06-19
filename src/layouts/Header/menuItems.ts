@@ -53,6 +53,10 @@ export default {
         url: "/sponsors",
       },
       {
+        name: "Gallery",
+        url: "/gallery",
+      },
+      {
         name: "Why attend",
         url: "/why-attend",
       },
