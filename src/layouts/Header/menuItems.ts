@@ -19,10 +19,12 @@ export default {
       },
     ],
     secondary: [
+      /*
       {
         name: "Call for Abstracts",
         url: "/call-for-abstracts",
       },
+      */
       {
         name: "Register",
         url: "/register",
