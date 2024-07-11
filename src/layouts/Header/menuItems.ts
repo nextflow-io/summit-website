@@ -14,6 +14,10 @@ export default {
         url: "/training",
       },
       {
+        name: "Speakers",
+        url: "/speakers",
+      },
+      {
         name: "Why attend",
         url: "/why-attend",
       },

@@ -26,17 +26,22 @@ export type ScheduleItem = {
 
 export type Schedule = ScheduleItem[];
 
+function filterRooms(rooms: Room[]): Room[] {
+  // Holding room (only used so we can show the list of speakers)
+  return rooms.filter((room) => room.id !== 51987);
+}
+
 function parseGrid(data) {
   return data.map((item) => {
-    const rooms = item.rooms.map((room) => ({
+    const rooms = filterRooms(item.rooms).map((room) => ({
       ...room,
-      sessions: room.sessions.map(addSessionURL),
+      sessions: room.sessions.map((session) => addSessionURL(session)),
     }));
 
     const timeSlots = item.timeSlots.map((slot) => {
       return {
         ...slot,
-        rooms: slot.rooms.map((room) => ({
+        rooms: filterRooms(slot.rooms).map((room) => ({
           ...room,
           session: room.session ? addSessionURL(room.session) : undefined,
         })),
