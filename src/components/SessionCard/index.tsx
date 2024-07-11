@@ -16,14 +16,15 @@ type Props = {
   showRoomName?: boolean;
   hideSpeakers?: boolean;
   showVideoButton?: boolean;
+  minimal?: boolean;
 };
 
-const CardContainer = ({ children, session }) => {
+const CardContainer = ({ children, session, minimal = false }) => {
   const className = clsx(styles.card, {
     [styles.keynote]: session.isKeynote,
-    [styles.confirmed]: session.isConfirmed
+    [styles.confirmed]: session.isConfirmed,
   });
-  if (session.isConfirmed)
+  if (session.isConfirmed && !minimal)
     return (
       <a href={session.url} className={className}>
         {children}
@@ -40,15 +41,20 @@ const SessionCard: React.FC<Props> = ({
   showRoomName,
   hideSpeakers,
   showVideoButton,
+  minimal,
 }) => {
   const showSpeakers = !!session.speakers.length && !hideSpeakers;
-  const showFooter = showSpeakers || session.isKeynote || session.isSponsor || session.recordingUrl;
+  const showFooter =
+    showSpeakers ||
+    session.isKeynote ||
+    session.isSponsor ||
+    session.recordingUrl;
   return (
     <div className={className}>
-      <CardContainer session={session}>
+      <CardContainer session={session} minimal>
         <span className={styles.bg} />
         <span className={styles.content}>
-          {!!session.startsAt && (
+          {!!session.startsAt && !minimal && (
             <span
               className={clsx(
                 "block text-nextflow font-semibold mb-2",
@@ -96,7 +102,10 @@ const SessionCard: React.FC<Props> = ({
                   arrow
                   wide
                   small
-                  className="ml-auto">Watch video</Button>
+                  className="ml-auto"
+                >
+                  Watch video
+                </Button>
               )}
             </div>
           )}
