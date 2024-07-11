@@ -22,8 +22,8 @@ const CookieSVG = ({ className }) => (
 
 const CookieBanner = () => {
   const key = "preferencesSet";
-  const preference = readCookie(key);
-  const [isVisible, setIsVisible] = useState(preference === "true");
+  const preferencesSet = readCookie(key);
+  const [isVisible, setIsVisible] = useState(preferencesSet !== "true");
 
   const acceptAll = () => {
     writeCookie(key, "true");
