@@ -30,7 +30,11 @@ const CookieBanner = () => {
     setIsVisible(false);
     if (typeof window === "undefined") return;
     if (!window.dataLayer) window.dataLayer = [];
-    window.dataLayer.push("consent", "update", {
+    if (!window.gtag)
+      window.gtag = function () {
+        window.dataLayer.push(arguments);
+      };
+    window.gtag("consent", "update", {
       ad_user_data: "granted",
       ad_personalization: "granted",
       ad_storage: "granted",
