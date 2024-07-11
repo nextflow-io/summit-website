@@ -21,12 +21,25 @@ const CookieSVG = ({ className }) => (
 );
 
 const CookieBanner = () => {
-  const key = "useracceptedcookies";
+  const key = "preferencesSet";
   const preference = readCookie(key);
-  const [isVisible, setIsVisible] = useState(preference === null);
+  const [isVisible, setIsVisible] = useState(preference === "true");
 
-  const setPreference = (value) => {
-    writeCookie(key, value);
+  const acceptAll = () => {
+    writeCookie(key, "true");
+    setIsVisible(false);
+    if (typeof window === "undefined") return;
+    if (!window.dataLayer) window.dataLayer = [];
+    window.dataLayer.push("consent", "update", {
+      ad_user_data: "granted",
+      ad_personalization: "granted",
+      ad_storage: "granted",
+      analytics_storage: "granted",
+    });
+  };
+
+  const denyAll = () => {
+    writeCookie(key, "true");
     setIsVisible(false);
   };
 
@@ -61,12 +74,12 @@ const CookieBanner = () => {
           <div className="py-2">
             <div className="flex flex-wrap -mx-2 -my-1">
               <div className="px-2 py-1">
-                <Button secondary small onClick={() => setPreference(false)}>
-                  Keep only essential cookies
+                <Button secondary small onClick={denyAll}>
+                  Essential only
                 </Button>
               </div>
               <div className="px-2 py-1">
-                <Button brand small onClick={() => setPreference(true)}>
+                <Button brand small onClick={acceptAll}>
                   Accept all cookies
                 </Button>
               </div>
