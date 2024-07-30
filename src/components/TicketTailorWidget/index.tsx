@@ -43,7 +43,7 @@ const TicketTailorWidget: React.FC<Props> = ({ eventID, widgetID }) => {
     script.setAttribute("data-type", "inline");
     script.setAttribute("data-inline-minimal", "true");
     script.setAttribute("data-inline-show-logo", "false");
-    script.setAttribute("data-inline-bg-fill", "false");
+    script.setAttribute("data-inline-bg-fill", "true");
     script.setAttribute("data-inline-inherit-ref-from-url-param", "false");
     script.setAttribute("data-inline-ref", utmRef);
 
