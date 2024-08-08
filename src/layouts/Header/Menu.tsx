@@ -5,22 +5,16 @@ import Button from "@components/Button";
 import Link from "./Link";
 
 type Props = {
-  className?: string;
   namespace: string;
   pathname: string;
   second?: boolean;
   desktop?: boolean;
 };
 
-const Menu: React.FC<Props> = ({
-  className,
-  pathname,
-  namespace,
-  second,
-  desktop,
-}) => {
+const Menu: React.FC<Props> = (props) => {
+  const { pathname, namespace, second, desktop } = props | {};
   function isActive(path) {
-    return pathname.includes(path);
+    return pathname?.includes(path);
   }
 
   function getURL(path, root = false) {
@@ -36,10 +30,10 @@ const Menu: React.FC<Props> = ({
 
   if (second)
     return (
-      <nav className={className}>
+      <nav>
         <ul>
-          {secondary.map(({ name, url, cta, root }) => (
-            <li>
+          {secondary.map(({ name, url, cta, root }, i) => (
+            <li key={i}>
               {desktop && cta ? (
                 <Button href={getURL(url, root)} arrow cta wide>
                   {name}
@@ -56,10 +50,10 @@ const Menu: React.FC<Props> = ({
     );
 
   return (
-    <nav className={className}>
+    <nav>
       <ul>
-        {main.map(({ name, url }) => (
-          <li>
+        {main.map(({ name, url }, i) => (
+          <li key={i}>
             <Link href={getURL(url)} active={isActive(url)}>
               {name}
             </Link>
