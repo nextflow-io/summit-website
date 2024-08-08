@@ -12,7 +12,7 @@ type Props = {
 };
 
 const Menu: React.FC<Props> = (props) => {
-  const { pathname, namespace, second, desktop } = props | {};
+  const { pathname, namespace, second, desktop } = props;
   function isActive(path) {
     return pathname?.includes(path);
   }
