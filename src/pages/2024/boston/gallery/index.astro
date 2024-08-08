@@ -3,7 +3,7 @@ import Layout from "@layouts/Base.astro";
 import SEO from "@components/SEO";
 import Gallery from "@components/Gallery/index.astro";
 
-const photos = await Astro.glob("./photos/*");
+const photos = await Astro.glob("@images/photos/boston-2024/*");
 ---
 
 <Layout namespace="2024/boston" altBG>
