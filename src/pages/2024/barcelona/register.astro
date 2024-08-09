@@ -34,20 +34,32 @@ import Box from "@components/Box";
         </div>
         <div class="w-full md:w-1/2 p-2 sm:p-4">
           <Box className="!border-nextflow-600/40 text-left">
-            <p class="blockquote">Discover our ticket prices, discount dates, and exclusive perks below.</p>
+            <p class="blockquote">
+              Discover our ticket prices, discount dates, and exclusive perks
+              below.
+            </p>
 
             <div class="bg-nextflow-600/20 p-3 rounded mt-6 -mx-2">
-              <p>Register early to be part of <strong>The First 100 Club</strong> and get exclusive swag at the Nextflow Summit!</p>
+              <p>
+                Register early to be part of <strong>The First 100 Club</strong>
+                and get exclusive swag at the Nextflow Summit!
+              </p>
             </div>
 
             <p class="mt-6">Your ticket includes:</p>
             <ul class="list pt-2">
               <li>Access to in-person content and programming</li>
-              <li>Meals, social events, and shuttle service to social event venues</li>
+              <li>
+                Meals, social events, and shuttle service to social event venues
+              </li>
               <li>Network and connect with other attendees and sponsors.</li>
             </ul>
 
-            <p class="mt-4">For more details on hotels and the summit venue, please see the <a href="/2024/barcelona/travel/">travel page</a>.</p>
+            <p class="mt-4">
+              For more details on hotels and the summit venue, please see the <a
+                href="/2024/barcelona/travel/">travel page</a
+              >.
+            </p>
           </Box>
         </div>
       </div>
@@ -80,5 +92,5 @@ import Box from "@components/Box";
   </section>
   <PastEvents title="Past events" client:visible />
   <Contact className="py-8" />
-  <SponsoredBy client:load />
+  <SponsoredBy client:load location="barcelona" />
 </Layout>
