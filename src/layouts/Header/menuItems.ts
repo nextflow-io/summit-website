@@ -18,6 +18,10 @@ export default {
         url: "/speakers",
       },
       {
+        name: "Sponsors",
+        url: "/sponsors",
+      },
+      {
         name: "Why attend",
         url: "/why-attend",
       },

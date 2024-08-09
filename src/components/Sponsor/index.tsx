@@ -13,7 +13,8 @@ const Sponsor = ({ sponsor, location }) => {
     silver: "Silver",
     bronze: "Bronze",
   };
-  const rank = ranks[sponsor.rank];
+  let rank = ranks[sponsor.rank];
+  if (location === "barcelona") rank = ranks[sponsor.rankBarcelona];
   return (
     <div className="p-2">
       <a
