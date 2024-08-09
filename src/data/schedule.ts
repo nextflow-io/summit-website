@@ -31,11 +31,13 @@ function filterRooms(rooms: Room[]): Room[] {
   return rooms.filter((room) => room.id !== 51987);
 }
 
-function parseGrid(data) {
+function parseGrid(data, location) {
   return data.map((item) => {
     const rooms = filterRooms(item.rooms).map((room) => ({
       ...room,
-      sessions: room.sessions.map((session) => addSessionURL(session)),
+      sessions: room.sessions.map((session) =>
+        addSessionURL(location)(session),
+      ),
     }));
 
     const timeSlots = item.timeSlots.map((slot) => {
@@ -43,7 +45,9 @@ function parseGrid(data) {
         ...slot,
         rooms: filterRooms(slot.rooms).map((room) => ({
           ...room,
-          session: room.session ? addSessionURL(room.session) : undefined,
+          session: room.session
+            ? addSessionURL(location)(room.session)
+            : undefined,
         })),
       };
     });
@@ -58,8 +62,8 @@ function parseGrid(data) {
   });
 }
 
-const boston = parseGrid(sessionizeGrid.boston);
-const barcelona = parseGrid(sessionizeGrid.barcelona);
+const boston = parseGrid(sessionizeGrid.boston, "boston");
+const barcelona = parseGrid(sessionizeGrid.barcelona, "barcelona");
 
 export default {
   boston,

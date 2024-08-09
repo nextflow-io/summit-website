@@ -42,7 +42,13 @@ const Calendar: React.FC<Props> = ({ location = "boston" }) => {
       <nav className={clsx(styles.nav, "container smaller")}>
         <a
           className={clsx({
-            [styles.active]: ["#05-21", "#05-22", "#10-28", "#10-29", "#10-30"].includes(activeHash),
+            [styles.active]: [
+              "#05-21",
+              "#05-22",
+              "#10-28",
+              "#10-29",
+              "#10-30",
+            ].includes(activeHash),
           })}
           href={location == "boston" ? "#05-21" : "#10-28"}
         >
@@ -50,7 +56,13 @@ const Calendar: React.FC<Props> = ({ location = "boston" }) => {
         </a>
         <a
           className={clsx({
-            [styles.active]: ["#05-23", "#05-24", "#10-30", "#10-31", "#11-01"].includes(activeHash),
+            [styles.active]: [
+              "#05-23",
+              "#05-24",
+              "#10-30",
+              "#10-31",
+              "#11-01",
+            ].includes(activeHash),
           })}
           href={location == "boston" ? "#05-23" : "#10-30"}
         >

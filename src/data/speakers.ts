@@ -55,7 +55,7 @@ const getSpeakers = (
           data[location].sessions.find((s) => `${s.id}` === `${id}`),
         );
         sessions = sessions.filter((s) => !!s.isConfirmed);
-        sessions = sessions.map(addSessionURL);
+        sessions = sessions.map(addSessionURL(location));
         return {
           ...speaker,
           sessions,

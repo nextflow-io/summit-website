@@ -24,13 +24,11 @@ const CardContainer = ({ children, session, minimal = false }) => {
     [styles.keynote]: session.isKeynote,
     [styles.confirmed]: session.isConfirmed,
   });
-  if (session.isConfirmed && !minimal)
-    return (
-      <a href={session.url} className={className}>
-        {children}
-      </a>
-    );
-  return <div className={className}>{children}</div>;
+  return (
+    <a href={session.url} className={className}>
+      {children}
+    </a>
+  );
 };
 
 const SessionCard: React.FC<Props> = ({

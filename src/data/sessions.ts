@@ -52,46 +52,45 @@ const questionIDs = {
   },
 };
 
-export function addSessionURL(session: Session, location: Location = "boston") {
-  if (session.isServiceSession) return session;
+export const addSessionURL =
+  (location = "boston") =>
+  (session: Session) => {
+    if (session.isServiceSession) return session;
 
-  let slug = session.title
-    .toLowerCase()
-    .trimStart()
-    .trimEnd()
-    .replace(/ /g, "-")
-    .replace(/[^a-zA-Z0-9 -]/g, "");
+    if (!session.title) return session;
 
-  const parts = slug.split("-");
-  if (parts.length > 5) {
-    slug = parts.slice(0, 5).join("-");
-  }
+    let slug = session.title
+      ?.toLowerCase()
+      .trimStart()
+      .trimEnd()
+      .replace(/ /g, "-")
+      .replace(/[^a-zA-Z0-9 -]/g, "");
 
-  // TODO: PHIL HOTFIX
-  // location is set as an integer here, maybe a map index or something?
-  // Hotfix to hardcode to "boston" for now
-  location = "boston";
+    const parts = slug.split("-");
+    if (parts.length > 5) {
+      slug = parts.slice(0, 5).join("-");
+    }
 
-  const date = dateSlug(session.startsAt);
-  slug = `${date}--${slug}`;
-  const url = `/2024/${location}/agenda/${slug}`;
+    const date = dateSlug(session.startsAt);
+    slug = `${date}--${slug}`;
+    const url = `/2024/${location}/agenda/${slug}`;
 
-  return {
-    ...session,
-    slug,
-    url,
+    return {
+      ...session,
+      slug,
+      url,
+    };
   };
-}
 
 function isKeynote(session: Session, location: Location = "boston"): boolean {
-  return !!session.questionAnswers.find((q) => {
+  return !!session.questionAnswers?.find((q) => {
     const isKeynote = q.questionId === questionIDs[location].isKeynote;
     return isKeynote && q.answerValue === "true";
   });
 }
 
 function isSponsor(session: Session, location: Location = "boston"): boolean {
-  return !!session.questionAnswers.find((q) => {
+  return !!session.questionAnswers?.find((q) => {
     const isSponsor = q.questionId === questionIDs[location].isSponsor;
     return isSponsor && q.answerValue === "true";
   });
@@ -101,14 +100,14 @@ function getProjectURL(
   session: Session,
   location: Location = "boston",
 ): string {
-  const projectURL = session.questionAnswers.find(
+  const projectURL = session.questionAnswers?.find(
     (q) => q.questionId === questionIDs[location].projectURL,
   );
   return projectURL ? projectURL.answerValue : "";
 }
 
 function getCoAuthors(session: Session, location: Location = "boston"): string {
-  const coAuthors = session.questionAnswers.find(
+  const coAuthors = session.questionAnswers?.find(
     (q) => q.questionId === questionIDs[location].coAuthors,
   );
   return coAuthors?.answerValue || "";
@@ -127,7 +126,7 @@ const getSessions = (location: Location = "boston"): Session[] => {
       }))
 
       // Add URL & slug
-      .map(addSessionURL)
+      .map(addSessionURL(location))
 
       // Add custom attributes
       .map((session) => ({
@@ -158,9 +157,7 @@ const sessionPagesBoston = boston.filter(
   (session) => !session.isServiceSession,
 );
 
-const sessionPagesBarcelona = barcelona.filter(
-  (session) => !session.isServiceSession,
-);
+const sessionPagesBarcelona = barcelona;
 
 export default {
   boston,
