@@ -21,6 +21,7 @@ const KeyInformation: React.FC<Props> = ({
               title={info.title}
               subtitle={info.subtitle}
               icon={info.icon}
+              icon_extra={!!info.icon_extra && info.icon_extra}
               link={!!info.link && `${info.link}`}
             >
               {info.description}
