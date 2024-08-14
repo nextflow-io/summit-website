@@ -2,13 +2,13 @@ import data from "./sessionize";
 
 export type CategoryValue = {
   id: number;
-  name: String;
+  name: string;
   sort: number;
 };
 
 export type Category = {
   id: number;
-  title: String;
+  title: string;
   items: CategoryValue[];
 };
 

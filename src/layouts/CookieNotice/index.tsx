@@ -26,7 +26,8 @@ const CookieBanner = () => {
   const [isVisible, setIsVisible] = useState(preferencesSet !== "true");
 
   const acceptAll = () => {
-    writeCookie(key, "true");
+    const sixMonths = 30 * 6;
+    writeCookie(key, "true", sixMonths);
     setIsVisible(false);
     if (typeof window === "undefined") return;
     if (!window.dataLayer) window.dataLayer = [];

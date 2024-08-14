@@ -1,4 +1,15 @@
 import type { Schedule } from "./schedule";
+import type { Session } from "./sessions";
+import type { Speaker } from "./speakers";
+import type { Category } from "./categories";
+import type { Question } from "./questions";
+
+export type SessionizeData = {
+  sessions: Session[];
+  speakers: Speaker[];
+  categories: Category[];
+  questions: Question[];
+};
 
 const ids = {
   boston: "zaqv23uw",
@@ -7,7 +18,7 @@ const ids = {
 
 const fetchSessionizeData = async (
   location: "barcelona" | "boston" = "boston",
-): Promise<any> => {
+): Promise<SessionizeData> => {
   const res = fetch(
     `https://sessionize.com/api/v2/${ids[location]}/view/All`,
   ).then((res) => res.json());
@@ -31,4 +42,11 @@ export const sessionizeGrid = {
   barcelona: await fetchSessionizeGrid("barcelona"),
 };
 
-export default { boston, barcelona };
+export type AllSessionizeData = {
+  boston: SessionizeData;
+  barcelona: SessionizeData;
+};
+
+const data: AllSessionizeData = { boston, barcelona };
+
+export default data;
