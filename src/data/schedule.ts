@@ -1,6 +1,6 @@
 import { dateSlug } from "@utils/prettyDate";
-import { addSessionURL, type Session } from "./sessions";
-import { sessionizeGrid } from "./sessionize";
+import { parseSession, parseSessions, type Session } from "./sessionUtils";
+import sessionizeData, { sessionizeGrid } from "./sessionize";
 
 export type Room = {
   id: number;
@@ -35,9 +35,7 @@ function parseGrid(data, location) {
   return data.map((item) => {
     const rooms = filterRooms(item.rooms).map((room) => ({
       ...room,
-      sessions: room.sessions.map((session) =>
-        addSessionURL(location)(session),
-      ),
+      sessions: parseSessions(room.sessions, sessionizeData, location),
     }));
 
     const timeSlots = item.timeSlots.map((slot) => {
@@ -46,7 +44,7 @@ function parseGrid(data, location) {
         rooms: filterRooms(slot.rooms).map((room) => ({
           ...room,
           session: room.session
-            ? addSessionURL(location)(room.session)
+            ? parseSession(room.session, sessionizeData, location)
             : undefined,
         })),
       };

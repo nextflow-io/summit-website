@@ -89,10 +89,13 @@ const addSessionURL =
 
 function getAttributes(
   session: Session,
+  data: AllSessionizeData,
   location: Location = "boston",
-): { [key: string]: string } {
+): { [key: string]: string; categories: any } {
   const ids = questionIDs[location];
   const attributes = {};
+
+  // Parse question/answer pairs
   Object.keys(ids).forEach((key) => {
     const q = session.questionAnswers?.find((q) => q.questionId === ids[key]);
     let answer: string | boolean = q?.answerValue;
@@ -100,15 +103,33 @@ function getAttributes(
     if (answer === "false") answer = false;
     if (q) attributes[key] = answer;
   });
-  return attributes;
+
+  // Parse category items
+  const categories: any = {};
+  session.categoryItems?.forEach((id: number) => {
+    const cValue = data[location].categories.find((c) =>
+      c.items.find((item) => item.id === id),
+    );
+    if (!cValue) return;
+    let key = cValue.title.toLowerCase();
+    if (key === "presentation type") key = "type";
+    if (!categories[key]) categories[key] = [];
+    categories[key].push(cValue.items.find((item) => item.id === id).name);
+  });
+
+  return {
+    ...attributes,
+    categories: categories,
+  };
 }
 
-export const parseSessions = (
-  sessions: Session[],
+export const parseSession = (
+  session: Session,
   data: AllSessionizeData,
   location: Location = "boston",
   recursive = false,
-): Session[] => {
+): Session => {
+  const sessions = [session];
   return (
     sessions
 
@@ -125,22 +146,10 @@ export const parseSessions = (
         };
       })
 
-      // Associate categories
-      .map((session) => {
-        const categories = session.categoryItems.map((id) =>
-          data[location].categories.find((c) => `${c.id}` === `${id}`),
-        );
-        console.log(data[location].categories[1]?.items);
-        return {
-          ...session,
-          categories,
-        };
-      })
-
       // Add custom attributes
       .map((session) => ({
         ...session,
-        ...getAttributes(session, location),
+        ...getAttributes(session, data, location),
       }))
 
       // Add URL & slug
@@ -155,6 +164,15 @@ export const parseSessions = (
           ...session,
           room,
         };
-      })
+      })[0]
   );
+};
+
+export const parseSessions = (
+  sessions: Session[],
+  data: AllSessionizeData,
+  location: Location = "boston",
+  recursive = false,
+): Session[] => {
+  return sessions.map((s) => parseSession(s, data, location, recursive));
 };
