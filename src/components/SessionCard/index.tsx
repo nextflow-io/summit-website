@@ -6,7 +6,6 @@ import Button from "@components/Button";
 import type { Session } from "@data/sessions";
 
 import styles from "./styles.module.css";
-import ProfilePic from "@components/ProfilePic";
 
 type Props = {
   session: Session;
