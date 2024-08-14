@@ -1,0 +1,112 @@
+---
+import { Image } from "astro:assets";
+import Layout from "@layouts/Base.astro";
+import { SponsoredBy } from "@components/Marquee";
+import CTASection from "@modules/CTASection";
+import Contact from "@modules/Contact";
+import img from "@photos/hackers-2.jpg";
+import Box from "@components/Box";
+import SEO from "@components/SEO";
+import nfcore_logo from "@images/nf-core-mono.svg";
+import { Code } from "astro:components";
+import Button from "@components/Button";
+---
+
+<Layout namespace="2024/barcelona">
+  <SEO
+    slot="head"
+    title="nf-core hackathon at the Barcelona Nextflow Summit 2024"
+    img={2}
+    bcn
+  />
+  <section class="container py-20">
+    <h2 class="h00 mb-12 text-center">
+      nf-core hackathon at the Nextflow Summit 2024
+    </h2>
+    <div class="flex flex-wrap -m-2 sm:-m-4">
+      <div class="w-full md:w-1/2 p-2 sm:p-4">
+        <div class="relative w-full h-full rounded-lg overflow-hidden">
+          <Image
+            src={img}
+            alt="Nextflow training"
+            class="object-cover h-full absolute inset-0"
+          />
+        </div>
+      </div>
+      <div class="w-full md:w-1/2 p-2 sm:p-4">
+        <Box className="!border-nextflow-600/40">
+          <img src={nfcore_logo.src} class="mx-auto mb-2" />
+          <p class="mb-2">
+          <a
+            href="https://nf-co.re/"
+            target="_blank">nf-core</a
+          > is a community effort to collect a curated set of tools, modules and pipelines built using Nextflow.</p>
+
+          <>Whether you're already involved in nf-core or not, this hackathon is the perfect place to get to know
+            other members of the community in person. You'll collaborate on projects, discuss code and learn from each other.
+          </p>
+
+          <ul class="list pt-6">
+            <li>
+              <strong>Audience:</strong> All welcome, no prior nf-core contributions needed
+            </li>
+            <li>
+              <strong>Required:</strong> Some experience with writing Nextflow code.
+            </li>
+            <li>
+                Beginners welcome, but please note that this is not a training event.
+            </li>
+          </ul>
+        </Box>
+      </div>
+    </div>
+    <div class="container smaller mt-5">
+      <Box alt>
+        <h2 class="h2 mb-6">Full details on the nf-core website</h2>
+
+        <p class="mt-6">
+          For the most up-to-date information on the nf-core hackathon at the Nextflow Summit 2024, please visit the
+            <a href="https://nf-co.re/events/2024/hackathon-barcelona" target="_blank"
+                >nf-core website</a>.
+            That page will be updated with the latest information on the event, including the schedule, group details, and more:
+        </p>
+
+        <div class="text-center mt-3">
+            <Button href="https://nf-co.re/events/2024/hackathon-barcelona" cta large>nf-core website: hackathon page</Button>
+        </div>
+
+
+
+        <h2 class="h2 mt-16 mb-6">How the hackathon works</h2>
+
+        <p class="mt-6">
+          The nf-core hackathons are not competitve.
+          Instead, they are collaborative, community-driven events where
+            participants work together on projects.
+          Projects can be anything from adding new features to existing pipelines, to creating entirely new pipelines.
+          You can bring your own favourite topic or choose from a list of open issues in the community.
+          We try to group people based on the types of tasks that are being tackled,
+            so that you can work with others who have similar interests.
+        </p>
+        <p class="mt-6">For details of the schedule and topics, please see the
+            <a href="https://nf-co.re/events/2024/hackathon-barcelona" target="_blank"
+                >nf-core website</a>.
+
+        <h2 class="h2 mt-16 mb-6">Hackathon socials</h2>
+
+        <p class="mt-6">
+          nf-core hackathons are not just about coding! We also have a lot of fun.
+          We typically run things like a quiz, a bingo and have several small prizes for the winners.
+          In addition to small social games and contests during the event, we also have a social evening.
+        </p>
+        <p class="mt-6">
+          This year the hackathon social event will be held together with attendees from the training event.
+          We will be revealing the location and details of the social event closer to the time, but rest assured - you're in for a treat!
+        </p>
+      </Box>
+    </div>
+  </section>
+  <!-- <CTASection /> -->
+  <Contact />
+  <SponsoredBy client:load location="barcelona" />
+</Layout>

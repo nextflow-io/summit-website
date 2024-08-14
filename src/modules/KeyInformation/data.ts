@@ -42,9 +42,10 @@ export default {
       title: "Hackathon | Oct 28 - 30",
       subtitle: "2.5 days · 180 people · hackathon",
       icon: computer,
-      link: "/2024/barcelona/agenda#10-28",
+      icon_extra: "nf-core",
+      link: "/2024/barcelona/hackathon",
       description:
-      "An in-person hackathon open to anyone with some Nextflow knowledge. You’ll work on specific tasks in groups, collaborating on developing nf-core. Running in parallel to the training.",
+      "An in-person nf-core hackathon open to anyone with some Nextflow knowledge. You’ll work on specific tasks in groups, collaborating on developing nf-core. Running in parallel to the training.",
     },
     {
       title: "Summit | Oct 30 - Nov 1",
