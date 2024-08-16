@@ -1,0 +1,37 @@
+---
+import Layout from "@layouts/Base.astro";
+import { SponsoredBy } from "@components/Marquee";
+import Contact from "@modules/Contact";
+import SEO from "@components/SEO";
+import SessionCard from "@components/SessionCard";
+import sessions from "@data/sessions";
+
+let posters = Array();
+{sessions['barcelona']?.map((session, i) => {
+  if(session.categories.type && session.categories.type[0] === 'Poster') {
+    posters.push(session);
+  }
+})}
+---
+
+<Layout namespace="2024/barcelona" altBG>
+  <SEO slot="head" title="Agenda" img={2} bcn />
+  <section class="pb-6 pt-16 md:pt-20">
+    <div class="container island pb-10 md:pb-20 text-center">
+      <h1 class="h00 mb-8">Posters</h1>
+      <div class="blockquote">
+        This premier event brings together leading experts, innovators, and
+        researchers to showcase the latest breakthroughs in workflow management.
+      </div>
+    </div>
+  </section>
+  <section class="pt-10 pb-6">
+    <div class="container">
+      <div class="flex flex-wrap -m-4">
+        {posters.map((poster) => <SessionCard session={poster} className="w-full md:w-1/2 p-4" hideTime={true}/> )}
+      </div>
+    </div>
+  </section>
+  <SponsoredBy client:load className="mt-12" location="barcelona" />
+  <Contact />
+</Layout>
