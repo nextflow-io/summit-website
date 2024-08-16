@@ -1,4 +1,4 @@
-export function writeCookie(key, value, days = 30) {
+export function writeCookie(key, value, days = 182) { // default = 6 months
   if (typeof window === "undefined") return;
   const date = new Date();
   date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
