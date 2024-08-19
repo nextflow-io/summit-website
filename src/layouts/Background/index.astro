@@ -6,7 +6,7 @@ import Blob from "./Blob";
 ---
 
 <div class={styles.backgroundContainer}>
-  <div class={clsx(styles.background, { [styles.alt]: altBG })}>
+  <div class={clsx(styles.background, { [styles.alt]: altBG })} id="backgroundColors">
     {!altBG && <div class={styles.overlay} />}
     <Blob type="green1" />
     <Blob type="green2" />
