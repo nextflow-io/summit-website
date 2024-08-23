@@ -21,12 +21,12 @@ let posters = Array();
     <div class="container island pb-10 md:pb-20 text-center">
       <h1 class="h00 mb-8">Posters</h1>
       <div class="blockquote">
-        This premier event brings together leading experts, innovators, and
-        researchers to showcase the latest breakthroughs in workflow management.
+        Explore posters from the community and learn about their work.
+        Posters are exhibited in person and can be viewed online if the speaker chooses.
       </div>
     </div>
   </section>
-  <section class="pt-10 pb-6">
+  <section class="pb-6">
     <div class="container">
       <div class="flex flex-wrap -m-4">
         {posters.map((poster) => <SessionCard session={poster} className="w-full md:w-1/2 p-4" hideTime={true}/> )}
