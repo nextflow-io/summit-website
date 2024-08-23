@@ -20,7 +20,7 @@ type Props = {
 
 const SectionContact: React.FC<Props> = ({ className }) => {
   return (
-    <section className={clsx("container smaller py-8 md:py-26", className)}>
+    <section className={clsx("container smaller py-8 md:py-26", className)} id="footer">
       <h4 className="h5 mb-8 text-center">Contact us</h4>
       <div className="flex -m-2 sm:-m-4 flex flex-wrap">
         <div className="w-full md:w-1/2 p-2 sm:p-4">

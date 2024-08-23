@@ -9,6 +9,7 @@ import Contact from "@modules/Contact";
 import SEO from "@components/SEO";
 import Button from "@components/Button";
 import Accommodation from "@modules/Accommodation";
+import { Icon } from "astro-icon/components";
 ---
 
 <Layout namespace="2024/barcelona" altBG>
@@ -31,7 +32,7 @@ import Accommodation from "@modules/Accommodation";
       <div id="10-31"></div>
       <div id="11-01"></div>
       <h1 class="h00 mb-4 text-center pt-6 md:pt-10" id="timetable">Agenda</h1>
-      <div class="mb-6 text-brand-100 text-center">
+      <div class="mb-3 text-brand-100 text-center">
         Subscribe to calendar:
         <a
           class="text-nextflow"
@@ -42,6 +43,11 @@ import Accommodation from "@modules/Accommodation";
           href="https://calendar.google.com/calendar/render?cid=webcal://sessionize.com/api/v2/yyj6wctp/view/All"
           >Google Calendar</a
         >
+      </div>
+      <div class="mb-6 text-brand-100 text-center">
+        <a class="text-nextflow" href="/2024/barcelona/agenda/print">
+          <Icon name="mdi:printer" class="-mt-1 mr-2" /> One-page, printable agenda
+        </a>
       </div>
     </div>
     <Calendar client:load location="barcelona" />

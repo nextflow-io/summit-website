@@ -29,7 +29,7 @@ import CookieNotice from "./CookieNotice";
     <Scripts />
   </head>
   <body>
-    <CookieHandler client:load />
+    <CookieHandler client:only="react" />
     {showHeader !== false && <Header namespace={namespace} showNav={showNav} />}
     <Background namespace={namespace} altBG={altBG}>
       <main id="body">

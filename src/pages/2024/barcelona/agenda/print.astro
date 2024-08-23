@@ -1,0 +1,122 @@
+---
+import Layout from "@layouts/Base.astro";
+import { SponsoredBy } from "@components/Marquee";
+import KeyInformation from "@modules/KeyInformation";
+import ImageSection from "@modules/ImageSection";
+import CTASection from "@modules/CTASection";
+import Calendar from "@components/Calendar";
+import Contact from "@modules/Contact";
+import SEO from "@components/SEO";
+import Link from "@components/Button";
+import Button from "@components/Button";
+import Accommodation from "@modules/Accommodation";
+
+import schedule from "@data/schedule";
+import sessions from "@data/sessions";
+import { prettyDate, weekday } from "@utils/prettyDate";
+import { formatTime } from "@components/Calendar/utils";
+import styles from "@components/Calendar/styles.module.css";
+import button_styles from "@components/Button/styles.module.css";
+import SessionCard from "@components/SessionCard";
+import { Icon } from "astro-icon/components";
+
+import { Debug } from 'astro:components';
+---
+
+<Layout namespace="2024/barcelona" altBG>
+  <SEO slot="head" title="Agenda" img={2} bcn />
+  <section class="pt-10 pb-6">
+    <div class="container">
+      <h1 class="h00 mb-4 text-center pt-6 md:pt-10" id="timetable">
+        Nextflow Summit 2024 Barcelona - Agenda
+      </h1>
+    </div>
+    <div class="mb-6 text-brand-100 text-center" id="cal-subscribe">
+      <button onclick="window.print()" class={`${button_styles.button} ${button_styles.cta} h4 mt-8 mb-4`}>
+        <span class={button_styles.hoverBG} />
+        <div class={button_styles.content}>
+          <Icon name="mdi:printer" class="-mt-1 mr-3" /> Print this page
+        </div>
+      </button>
+    </div>
+
+    <div class="mb-6 text-brand-100 text-center" id="cal-subscribe">
+      Subscribe to calendar:
+      <a
+        class="text-nextflow"
+        href="https://sessionize.com/api/v2/yyj6wctp/view/All">iCal</a
+      > |
+      <a
+        class="text-nextflow"
+        href="https://calendar.google.com/calendar/render?cid=webcal://sessionize.com/api/v2/yyj6wctp/view/All"
+        >Google Calendar</a
+      >
+    </div>
+    {schedule['barcelona'].map(item => (
+      <div class="container smaller">
+        <h2 class="h1 text-center pt-24 pb-6">{`${weekday(item.date)}, ${prettyDate(item.date, false)}`}</h2>
+        {item.timeSlots.map((slot, key) => (
+          <div class={styles.item} key={`item-${key}`}>
+            <div class={styles.time}>
+              <div>
+                {formatTime(slot.slotStart).str}
+                <span>{formatTime(slot.slotStart).ampm}</span>
+              </div>
+            </div>
+            <div class={styles.sessions}>
+              {slot.rooms.map((room, i) => {
+                const fullSession = sessions['barcelona']?.find(
+                  (s) => s.id === room.session.id,
+                );
+                return (
+                  <SessionCard
+                    key={i}
+                    className="break-inside-avoid"
+                    session={fullSession}
+                    hideTime
+                    // showVideoButton={true}
+                    showRoomName={slot.rooms.length > 1}
+                  />
+                );
+              })}
+            </div>
+          </div>
+        ))}
+      </div>
+    ))}
+  </section>
+  <div id="sponsoredBy">
+    <SponsoredBy client:load className="mt-12" location="barcelona" />
+  </div>
+  <Contact />
+</Layout>
+
+
+<!-- Print CSS -->
+<style is:global>
+  @media print {
+    :root {
+      --color-nextflow-300: #0A967B;
+      --color-brand: white;
+    }
+    #header, #headerMobile, #backgroundColors, #cal-subscribe, #sponsoredBy, #footer {
+      display: none !important;
+    }
+    html, body {
+      background-color: white !important;
+      color: black !important;
+    }
+    h1, h2, h3, h4, h5, h6, p {
+      color: black !important;
+    }
+    .pt-24 {
+      padding-top: 50px !important;
+    }
+    a, div {
+      background: transparent !important;
+    }
+    body {
+      padding-bottom: 200px;
+    }
+  }
+</style>
