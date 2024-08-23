@@ -9,6 +9,7 @@ import sessions from "@data/sessions";
 let posters = Array();
 {sessions['barcelona']?.map((session, i) => {
   if(session.categories.type && session.categories.type[0] === 'Poster') {
+    session.url = session.url.replace('/agenda/', '/posters/');
     posters.push(session);
   }
 })}
