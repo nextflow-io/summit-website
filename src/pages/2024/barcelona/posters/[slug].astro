@@ -78,9 +78,22 @@ const speaker = speakers.barcelona?.find(
         </div>
         {
           !!session.projectURL && (
-            <Button cta href={session.projectURL} className="mt-6">
+            <Button cta href={session.projectURL} className="mt-6 mr-3">
               View project
             </Button>
+          )
+        }
+        {
+          !!session.posterPDF && (
+            <>
+              <Button cta href={session.posterPDF} className="mt-6">
+                Download poster
+              </Button>
+              {/* TODO: Hack to avoid downloads due to content-type header.
+              If we can, remove the google docs viewer prefix at a later date.
+               */}
+              <iframe src={"http://docs.google.com/gview?embedded=true&url="+session.posterPDF} class="w-full h-[800px] mt-10" />
+            </>
           )
         }
         {

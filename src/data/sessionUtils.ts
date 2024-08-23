@@ -32,6 +32,7 @@ export type Session = {
   room?: Room;
   liveUrl?: string;
   recordingUrl?: string;
+  posterPDF?: string;
   status: "Accepted" | "Declined" | "Nominated";
   isInformed: boolean;
   isConfirmed: boolean;
@@ -52,6 +53,7 @@ const questionIDs = {
     github: 76617,
     presentation: 76618,
     presentationPDF: 76619,
+    posterPDF: 83056,
     shareImage: 76621,
     shareImage2: 76622,
   },
