@@ -92,7 +92,7 @@ const speaker = speakers.barcelona?.find(
               {/* TODO: Hack to avoid downloads due to content-type header.
               If we can, remove the google docs viewer prefix at a later date.
                */}
-              <iframe src={`http://docs.google.com/gview?embedded=true&url=${encodeURIComponent(session.posterPDF)}`} class="w-full h-[800px] mt-10" />
+              <iframe src={`https://docs.google.com/gview?embedded=true&url=${encodeURIComponent(session.posterPDF)}`} class="w-full h-[800px] mt-10" />
             </>
           )
         }
