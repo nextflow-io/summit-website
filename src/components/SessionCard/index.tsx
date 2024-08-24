@@ -92,7 +92,7 @@ const SessionCard: React.FC<Props> = ({
                   <span className={styles.sponsor}>Sponsor</span>
                 )}
                 {!!session.posterPDF && (
-                  <span className={styles.sponsor}>View online</span>
+                  <span className={styles.sponsor}>View poster online</span>
                 )}
               </div>
               {showVideoButton && !!session.recordingUrl && (
