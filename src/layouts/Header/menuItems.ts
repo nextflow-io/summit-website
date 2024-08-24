@@ -22,12 +22,12 @@ export default {
         url: "/speakers",
       },
       {
-        name: "Sponsors",
-        url: "/sponsors",
+        name: "Posters",
+        url: "/posters",
       },
       {
-        name: "Why attend",
-        url: "/why-attend",
+        name: "Sponsors",
+        url: "/sponsors",
       },
     ],
     secondary: [
