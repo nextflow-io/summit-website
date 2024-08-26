@@ -6,6 +6,17 @@ import { SponsoredBy } from "@components/Marquee";
 import SEO from "@components/SEO";
 import PersonCard from "@components/PersonCard";
 import speakers from "@data/speakers";
+import { Debug } from 'astro:components';
+
+// Keynote speakers first
+const sortedSpeakers = speakers.barcelona.sort((a, b) => {
+  // Get the isKeynote status for the first session of each speaker
+  const aIsKeynote = a.sessions[0].isKeynote;
+  const bIsKeynote = b.sessions[0].isKeynote;
+  if (aIsKeynote && !bIsKeynote) return -1;
+  if (!aIsKeynote && bIsKeynote) return 1;
+  return 0;
+});
 ---
 
 <Layout namespace="2024/barcelona">
@@ -21,11 +32,12 @@ import speakers from "@data/speakers";
     <div class="container">
       <div class="flex flex-wrap -m-4">
         {
-          speakers.barcelona?.map((speaker) => (
+          sortedSpeakers?.map((speaker) => (
             <PersonCard
               location="barcelona"
               person={speaker}
               className="w-full md:w-1/2 p-4"
+              isKeynote={speaker.sessions[0].isKeynote}
             />
           ))
         }

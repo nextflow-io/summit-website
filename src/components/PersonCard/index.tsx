@@ -11,12 +11,14 @@ type Props = {
   person: Speaker;
   className?: string;
   smaller?: boolean;
+  isKeynote?: boolean;
   location?: "boston" | "barcelona";
 };
 
 const PersonCard: React.FC<Props> = ({
   className,
   smaller,
+  isKeynote,
   location = "boston",
   ...props
 }) => {
@@ -32,6 +34,7 @@ const PersonCard: React.FC<Props> = ({
           "flex flex-col sm:flex-row items-center sm:items-stretch",
           "bg-brand border border-brand-900 rounded-lg py-8 sm:py-4 px-4",
           "hover:border-nextflow transition-all duration-300",
+          (isKeynote ? "border-nextflow/70 shadow-2xl shadow-nextflow-800/50 bg-gradient-to-bl from-nextflow/20 to-nextflow/0 to-50% hover:from-nextflow/30" : ""),
         )}
       >
         <ProfilePic
@@ -54,6 +57,7 @@ const PersonCard: React.FC<Props> = ({
             <span className="block text-base text-gray-600 mb-4">
               {person.tagLine}
             </span>
+            {isKeynote && <span className="border border-nextflow/50 rounded bg-nextflow-1000/30 px-3 py-1">Keynote speaker</span>}
           </a>
           <span className="flex -m-2 justify-center sm:justify-end">
             {person.links.map((link) => (
