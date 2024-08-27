@@ -26,6 +26,19 @@ const isSingularSpeaker = speakerCount === 1;
 const speaker = speakers.barcelona?.find(
   (speaker) => speaker.fullName === session.speakers[0]?.fullName,
 );
+
+const isKeynote = speaker.sessions.some(session => session.isKeynote);
+const isSponsor = speaker.sessions.some(session => session.isSponsor);
+const isPoster = speaker.sessions.some(s => s.categories?.outcome?.includes('Poster'));
+
+let aboveTitle = "Trending talk";
+if(isPoster) {
+  aboveTitle = "Poster";
+} else if(isKeynote) {
+  aboveTitle = "Keynote";
+} else if(isSponsor) {
+  aboveTitle = "Sponsor talk";
+}
 ---
 
 <Layout namespace="2024/barcelona" altBG>
@@ -34,8 +47,8 @@ const speaker = speakers.barcelona?.find(
     title={session.title}
     dynamicImage={{
       title: session.title,
-      subtitle: `${prettyDate(session.startsAt, false)} @ ${prettyTime(session.startsAt)} - ${prettyTime(session.endsAt)}`,
       speaker: speaker?.slug,
+      abovetitle: aboveTitle,
       location: "barcelona",
     }}
     bcn

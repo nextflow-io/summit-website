@@ -4,6 +4,8 @@ import speakersBoston from "https://summit.nextflow.io/2024/boston/speakers.json
 import speakersBcn from "https://summit.nextflow.io/2024/barcelona/speakers.json" assert { type: "json" };
 
 const baseUrl = "https://summit.nextflow.io/";
+// netlify dev
+// const baseUrl = "http://localhost:8888/";
 
 const InterFont = fetch(
   `${baseUrl}/fonts/Inter-Regular.ttf`,
@@ -46,11 +48,19 @@ export default async function handler(request: Request) {
   const meta: any = {};
   if (speaker && params.get("title")) {
     meta.speaker = speaker;
+    img = speaker.profilePicture;
   }
 
   let titleSize = 64;
-  if (title.length > 50) titleSize = 48;
-  if (title.length > 70) titleSize = 40;
+  let titleLineHeight = 60;
+  if (title.length > 50){
+    titleSize = 54;
+    titleLineHeight = 45;
+  }
+  if (title.length > 70){
+    titleSize = 48;
+    titleLineHeight = 40;
+  }
 
   return new ImageResponse(
     (
@@ -86,6 +96,7 @@ export default async function handler(request: Request) {
               flexDirection: "column",
               maxWidth: "40rem",
               width: "100%",
+              paddingRight: "2rem",
             }}
           >
             {!abovetitle ? null : (
@@ -95,9 +106,8 @@ export default async function handler(request: Request) {
                   fontStyle: "normal",
                   fontFamily: "Degular",
                   fontSize: "26px",
-                  opacity: 0.8,
                   color: "#4E95FF",
-                  marginBottom: "-1rem",
+                  marginBottom: "0.5rem",
                 }}
               >
                 {abovetitle}
@@ -106,14 +116,39 @@ export default async function handler(request: Request) {
             <h1
               style={{
                 marginTop: "0",
-                marginBottom: "1rem",
+                marginBottom: "0",
                 fontSize: `${titleSize}px`,
                 fontWeight: 400,
                 fontFamily: "Degular",
+                lineHeight: `${titleLineHeight}px`,
               }}
             >
               {title}
             </h1>
+
+            {!!meta.speaker?.fullName && (
+              <h1 style={{
+                fontFamily: "Degular",
+                marginTop: "1.5rem",
+                marginBottom: 0,
+               }}>
+                with {meta.speaker.fullName}
+              </h1>
+            )}
+            {!!meta.speaker?.tagLine && (
+              <div
+                  style={{
+                    fontWeight: 400,
+                    fontStyle: "normal",
+                    fontFamily: "Inter",
+                    fontSize: "20px",
+                    width: "100%",
+                  }}
+                  >
+                    {meta.speaker.tagLine}
+                </div>
+            )}
+
             {!subtitle ? null : (
               <div
                 style={{
@@ -122,6 +157,7 @@ export default async function handler(request: Request) {
                   fontFamily: "Inter",
                   fontSize: "40px",
                   opacity: 0.8,
+                  marginTop: "1.5rem",
                 }}
               >
                 {subtitle}
@@ -138,29 +174,6 @@ export default async function handler(request: Request) {
                 filter: "grayscale(100%)",
               }}
             />
-          )}
-          {!!meta.speaker && (
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                height: "100%",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <img
-                src={meta.speaker.profilePicture}
-                style={{
-                  width: "250px",
-                  height: "250px",
-                  borderRadius: "100%",
-                }}
-              />
-              <h1 style={{ fontFamily: "Degular", opacity: 0.8 }}>
-                {meta.speaker.fullName}
-              </h1>
-            </div>
           )}
         </div>
       </div>
