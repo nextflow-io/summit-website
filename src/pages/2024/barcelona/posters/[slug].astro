@@ -34,8 +34,8 @@ const speaker = speakers.barcelona?.find(
     title={session.title}
     dynamicImage={{
       title: session.title,
-      subtitle: `${prettyDate(session.startsAt, false)} @ ${prettyTime(session.startsAt)} - ${prettyTime(session.endsAt)}`,
       speaker: speaker?.slug,
+      abovetitle: "Poster",
       location: "barcelona",
     }}
     bcn

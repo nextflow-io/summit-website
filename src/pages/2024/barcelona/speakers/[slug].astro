@@ -18,7 +18,7 @@ const speaker = speakers.barcelona?.find(
 );
 const isKeynote = speaker.sessions.some(session => session.isKeynote);
 const isSponsor = speaker.sessions.some(session => session.isSponsor);
-const isPoster = speaker.sessions.some(s => s.categories?.outcome?.includes('Poster'));
+const isPoster = speaker.sessions.every(s => s.categories?.outcome?.includes('Poster'));
 
 let aboveTitle = "Speaker";
 if(isPoster) {
@@ -81,15 +81,19 @@ if(isPoster) {
         <div class="text-left text-brand-300 font-light text-sm sm:text-base">
           {speaker.bio}
         </div>
-        <h2 class="h2 mt-16 text-left mb-6">Sessions</h2>
+        <h2 class="h2 mt-16 text-left mb-6">
+          {!isPoster && "Sessions"}
+          {isPoster && "Posters"}
+        </h2>
         <div class="flex flex-wrap -m-1 text-left">
           {
             speaker.sessions.map((session) => (
               <SessionCard
                 showDate
-                className="p-1"
+                className="p-1 w-full"
                 session={session}
                 hideSpeakers={true}
+                minimal={session.categories?.outcome?.includes('Poster')}
               />
             ))
           }
