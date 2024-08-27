@@ -16,6 +16,18 @@ export function getStaticPaths() {
 const speaker = speakers.barcelona?.find(
   (speaker) => speaker.slug === Astro.params.slug,
 );
+const isKeynote = speaker.sessions.some(session => session.isKeynote);
+const isSponsor = speaker.sessions.some(session => session.isSponsor);
+const isPoster = speaker.sessions.some(s => s.categories?.outcome?.includes('Poster'));
+
+let aboveTitle = "Speaker";
+if(isPoster) {
+  aboveTitle = "Poster Presenter";
+} else if(isKeynote) {
+  aboveTitle = "Keynote Speaker";
+} else if(isSponsor) {
+  aboveTitle = "Sponsor Speaker";
+}
 ---
 
 <Layout namespace="2024/barcelona" altBG>
@@ -25,6 +37,7 @@ const speaker = speakers.barcelona?.find(
     dynamicImage={{
       speaker: speaker.slug,
       location: "barcelona",
+      abovetitle: aboveTitle,
     }}
   />
   <section class="pb-10 pt-16 md:py-20">

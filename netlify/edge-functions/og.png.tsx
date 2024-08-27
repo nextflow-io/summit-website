@@ -3,12 +3,14 @@ import { ImageResponse } from "https://deno.land/x/og_edge/mod.ts";
 import speakersBoston from "https://summit.nextflow.io/2024/boston/speakers.json" assert { type: "json" };
 import speakersBcn from "https://summit.nextflow.io/2024/barcelona/speakers.json" assert { type: "json" };
 
+const baseUrl = "https://summit.nextflow.io/";
+
 const InterFont = fetch(
-  "https://summit.nextflow.io/fonts/Inter-Regular.ttf",
+  `${baseUrl}/fonts/Inter-Regular.ttf`,
 ).then((res) => res.arrayBuffer());
 
 const DegularFont = fetch(
-  "https://summit.nextflow.io/fonts/Degular-Bold.ttf",
+  `${baseUrl}/fonts/Degular-Bold.ttf`,
 ).then((res) => res.arrayBuffer());
 
 export default async function handler(request: Request) {
@@ -21,7 +23,7 @@ export default async function handler(request: Request) {
 
   let eventLocation = "boston";
   if (params.get("location") === "barcelona") eventLocation = "barcelona";
-  const bgImg = `https://summit.nextflow.io/share/card-bg_${eventLocation}.png`;
+  const bgImg = `${baseUrl}/share/card-bg_${eventLocation}.png`;
 
   const defaultTitle =
     "Join us for the latest developments and innovations from the Nextflow world.";
@@ -30,6 +32,7 @@ export default async function handler(request: Request) {
   let speaker;
   let title = params.get("title") || defaultTitle;
   let subtitle = params.get("subtitle") || "";
+  let abovetitle = params.get("abovetitle") || "";
   const speakerSlug = params.get("speaker");
   if (speakerSlug)
     speaker = speakers[eventLocation]?.find((s) => s.slug === speakerSlug);
@@ -74,19 +77,35 @@ export default async function handler(request: Request) {
             flexDirection: "row",
             alignItems: "center",
             justifyContent: "space-between",
-            padding: "5rem",
+            padding: "5rem 5rem 5rem 3.5rem",
           }}
         >
           <div
             style={{
               display: "flex",
               flexDirection: "column",
-              maxWidth: "42rem",
+              maxWidth: "40rem",
               width: "100%",
             }}
           >
+            {!abovetitle ? null : (
+              <div
+                style={{
+                  fontWeight: 400,
+                  fontStyle: "normal",
+                  fontFamily: "Degular",
+                  fontSize: "26px",
+                  opacity: 0.8,
+                  color: "#4E95FF",
+                  marginBottom: "-1rem",
+                }}
+              >
+                {abovetitle}
+              </div>
+            )}
             <h1
               style={{
+                marginTop: "0",
                 marginBottom: "1rem",
                 fontSize: `${titleSize}px`,
                 fontWeight: 400,
@@ -113,9 +132,10 @@ export default async function handler(request: Request) {
             <img
               src={img}
               style={{
-                width: "350px",
-                height: "350px",
+                width: "450px",
+                height: "450px",
                 borderRadius: "100%",
+                filter: "grayscale(100%)",
               }}
             />
           )}
