@@ -1,7 +1,7 @@
 import React from "https://esm.sh/react@18.2.0";
 import { ImageResponse } from "https://deno.land/x/og_edge/mod.ts";
 import speakersBoston from "https://summit.nextflow.io/2024/boston/speakers.json" assert { type: "json" };
-import speakersBcn from "https://summit.nextflow.io/2024/boston/speakers.json" assert { type: "json" };
+import speakersBcn from "https://summit.nextflow.io/2024/barcelona/speakers.json" assert { type: "json" };
 
 const InterFont = fetch(
   "https://summit.nextflow.io/fonts/Inter-Regular.ttf",
