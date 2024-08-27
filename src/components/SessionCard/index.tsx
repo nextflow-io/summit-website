@@ -23,8 +23,12 @@ const CardContainer = ({ children, session, minimal = false }) => {
     [styles.keynote]: session.isKeynote,
     [styles.confirmed]: session.isConfirmed,
   });
+  let sessionUrl = session.url;
+  if(session.categories?.outcome?.includes('Poster')){
+    sessionUrl = sessionUrl.replace('agenda', 'posters');
+  }
   return (
-    <a href={session.url} className={className}>
+    <a href={sessionUrl} className={className}>
       {children}
     </a>
   );

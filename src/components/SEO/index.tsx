@@ -15,6 +15,7 @@ type Props = {
   dynamicImage?: {
     title?: string;
     subtitle?: string;
+    abovetitle?: string;
     speaker?: string;
     location?: string;
   };
