@@ -36,7 +36,7 @@ export default {
       icon: parentheses,
       link: "/2024/barcelona/training",
       description:
-        "An in-person foundational training for those who are completely new to Nextflow and nf-core. Running in parallel to the hackathon.",
+        "An in-person foundational training for those who are completely new to Nextflow and nf-core. Running in parallel to the hackathon. You'll gain practical skills to start using these powerful tools and resources and will receive a certificate upon completion.",
     },
     {
       title: "Hackathon | Oct 28 - 30",
@@ -45,7 +45,7 @@ export default {
       icon_extra: "nf-core",
       link: "/2024/barcelona/hackathon",
       description:
-      "An in-person nf-core hackathon open to anyone with some Nextflow knowledge. You’ll work on specific tasks in groups, collaborating on developing nf-core. Running in parallel to the training.",
+        "An in-person nf-core hackathon open to anyone with some Nextflow knowledge. You'll work on specific tasks in groups, collaborating on developing nf-core, and gain hands-on experience contributing to real projects. Running in parallel to the training.",
     },
     {
       title: "Summit | Oct 30 - Nov 1",
@@ -53,7 +53,7 @@ export default {
       icon: news,
       link: "/2024/barcelona/agenda#10-30",
       description:
-        "A showcase of the latest developments and innovations from the Nextflow world. ",
+        "A showcase of the latest developments and innovations from the Nextflow world. You'll gain insights into cutting-edge advancements, best practices, and future trends directly from industry leaders and experts.",
     },
   ],
 };
