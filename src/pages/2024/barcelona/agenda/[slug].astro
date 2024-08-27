@@ -27,16 +27,14 @@ const speaker = speakers.barcelona?.find(
   (speaker) => speaker.fullName === session.speakers[0]?.fullName,
 );
 
-const isKeynote = speaker.sessions.some(session => session.isKeynote);
-const isSponsor = speaker.sessions.some(session => session.isSponsor);
-const isPoster = speaker.sessions.some(s => s.categories?.outcome?.includes('Poster'));
+const isPoster = session.categories?.outcome?.includes('Poster');
 
 let aboveTitle = "Trending talk";
 if(isPoster) {
   aboveTitle = "Poster";
-} else if(isKeynote) {
+} else if(session.isKeynote) {
   aboveTitle = "Keynote";
-} else if(isSponsor) {
+} else if(session.isSponsor) {
   aboveTitle = "Sponsor talk";
 }
 ---
