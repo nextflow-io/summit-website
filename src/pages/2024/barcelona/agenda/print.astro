@@ -25,22 +25,25 @@ import { Debug } from 'astro:components';
 
 <Layout namespace="2024/barcelona" altBG>
   <SEO slot="head" title="Agenda" img={2} bcn />
-  <section class="pt-10 pb-6">
-    <div class="container">
-      <h1 class="h00 mb-4 text-center pt-6 md:pt-10" id="timetable">
-        Nextflow Summit 2024 Barcelona - Agenda
-      </h1>
+  <div class="h-dvh">
+  <section class="pb-6 pt-16 md:pt-20">
+    <div class="container island text-center">
+      <h1 class="h00 mb-8" id="timetable">Join us in Barcelona</h1>
+      <div class="blockquote">
+        This premier event brings together leading experts, innovators, and
+        researchers to showcase the latest breakthroughs in workflow management.
+      </div>
     </div>
-    <div class="mb-6 text-brand-100 text-center" id="cal-subscribe">
+    <div class=" text-brand-100 text-center" id="cal-subscribe">
       <button onclick="window.print()" class={`${button_styles.button} ${button_styles.cta} h4 mt-8 mb-4`}>
         <span class={button_styles.hoverBG} />
-        <div class={button_styles.content}>
+        <div class={`${button_styles.content} text-lg`}>
           <Icon name="mdi:printer" class="-mt-1 mr-3" /> Print this page
         </div>
       </button>
     </div>
 
-    <div class="mb-6 text-brand-100 text-center" id="cal-subscribe">
+    <div class="text-brand-100 text-center" id="cal-subscribe">
       Subscribe to calendar:
       <a
         class="text-nextflow"
@@ -52,9 +55,20 @@ import { Debug } from 'astro:components';
         >Google Calendar</a
       >
     </div>
-    {schedule['barcelona'].map(item => (
-      <div class="container smaller">
-        <h2 class="h1 text-center pt-24 pb-6">{`${weekday(item.date)}, ${prettyDate(item.date, false)}`}</h2>
+  </section>
+  <section class="container smaller text-center mt-8 sticky top-3 z-50 ">
+    <div class="bg-brand-1100/70 backdrop-blur-sm rounded-lg py-2">
+      {schedule['barcelona'].map(item =>
+        <Button href={`#${weekday(item.date)}`} className="border !border-brand-900 mx-1">
+          {weekday(item.date)}
+        </Button>
+      )}
+    </div>
+  </section>
+  <section class="relative mt-3">
+    {schedule['barcelona'].map(item =>
+      <div class="container smaller relative mb-24">
+        <h2 id={weekday(item.date)} class="h1 text-center my-6 py-3 sticky top-15 z-40 bg-brand-1100/70 backdrop-blur-sm rounded-lg">{`${weekday(item.date)}, ${prettyDate(item.date, false)}`}</h2>
         {item.timeSlots.map((slot, key) => (
           <div class={styles.item} key={`item-${key}`}>
             <div class={styles.time}>
@@ -83,12 +97,13 @@ import { Debug } from 'astro:components';
           </div>
         ))}
       </div>
-    ))}
+    )}
   </section>
   <div id="sponsoredBy">
     <SponsoredBy client:load className="mt-12" location="barcelona" />
   </div>
   <Contact />
+  </div>
 </Layout>
 
 
