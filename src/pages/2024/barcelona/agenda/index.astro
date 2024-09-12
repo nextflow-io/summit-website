@@ -15,24 +15,18 @@ import { Icon } from "astro-icon/components";
 <Layout namespace="2024/barcelona" altBG>
   <SEO slot="head" title="Agenda" img={2} bcn />
   <section class="pb-6 pt-16 md:pt-20">
-    <div class="container island pb-10 md:pb-20 text-center">
-      <h1 class="h00 mb-8">Join us in Barcelona</h1>
+    <div class="container island text-center">
+      <h1 class="h00 mb-8" id="timetable">Join us in Barcelona</h1>
       <div class="blockquote">
         This premier event brings together leading experts, innovators, and
         researchers to showcase the latest breakthroughs in workflow management.
       </div>
-    </div>
-    <KeyInformation className="pb-8 md:pb-0" location="barcelona" />
-  </section>
-  <section class="pt-10 pb-6">
-    <div class="container">
       <div id="10-28"></div>
       <div id="10-29"></div>
       <div id="10-30"></div>
       <div id="10-31"></div>
       <div id="11-01"></div>
-      <h1 class="h00 mb-4 text-center pt-6 md:pt-10" id="timetable">Agenda</h1>
-      <div class="mb-3 text-brand-100 text-center">
+      <div class="mt-6 mb-3 text-brand-100 text-center">
         Subscribe to calendar:
         <a
           class="text-nextflow"
