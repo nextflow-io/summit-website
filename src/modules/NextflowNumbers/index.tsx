@@ -69,7 +69,7 @@ const Numbers: React.FC<Props> = (props = {}) => {
         <div className="flex flex-wrap">
           <div className="w-full lg:w-1/3 lg:pr-12">
             <h3 className="text-5xl font-display font-semibold text-center lg:text-left mb-12 px-4 lg:px-0 lg:mb-4">
-              Nextflow Summit
+              Nextflow Summit {location.charAt(0).toUpperCase() + location.slice(1)}
               <br className="hidden lg:block" /> in numbers
             </h3>
           </div>
