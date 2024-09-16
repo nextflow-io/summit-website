@@ -49,7 +49,7 @@ export default {
     },
     {
       title: "Summit | Oct 30 - Nov 1",
-      subtitle: "2.5 days · 400 people · talks, networking, and more",
+      subtitle: "2.5 days · 250 people · talks, networking, and more",
       icon: news,
       link: "/2024/barcelona/agenda#10-30",
       description:
