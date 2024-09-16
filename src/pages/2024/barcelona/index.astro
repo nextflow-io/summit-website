@@ -6,7 +6,7 @@ import ImageSection from "@modules/ImageSection";
 import title from "@images/title_barcelona-1a.svg";
 import Button from "@components/Button";
 import KeyInformation from "@modules/KeyInformation";
-import KeyDates from "@components/KeyDates";
+import KeyDates from "@components/KeyDates/index.astro";
 import YouTubeVideo from "@components/YouTubeVideo";
 import CTASection from "@modules/CTASection";
 import SectionContact from "@modules/Contact";
@@ -33,7 +33,7 @@ import SEO from "@components/SEO";
     <KeyInformation className="pt-16" location="barcelona" />
   </section>
   <section class="container relative z-10 mb-4 sm:mb-8 lg:mb-20">
-    <KeyDates showTitle showImg location="barcelona" />
+    <KeyDates showTitle showImg location="barcelona" hidePastDates={true} />
   </section>
   <section class="container mb-8 lg:mb-20">
     <YouTubeVideo id="JvjoZ9dPjq8" />
