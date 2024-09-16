@@ -27,6 +27,8 @@ const parseDates = (dates) =>
   dates.map((date) => ({
     title: date.title,
     description: date.description,
+    rawDate: date.date,
+    rawEndDate: date.endDate,
     date: prettyDate(date.date),
     endDate: prettyDate(date.endDate),
     endDay: getDay(date.endDate),
