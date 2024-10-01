@@ -1,3 +1,9 @@
 [[edge_functions]]
   function = "og.png"
   path = "/og.png"
+
+[[redirects]]
+  from = "/2024/barcelona/"
+  to = "https://nextflow-summit-2024-barcelona.sessionize.com"
+  status = 200
+  force = true
