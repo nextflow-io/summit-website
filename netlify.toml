@@ -5,5 +5,3 @@
 [[redirects]]
   from = "/2024/barcelona/app"
   to = "https://nextflow-summit-2024-barcelona.sessionize.com"
-  status = 200
-  force = true
