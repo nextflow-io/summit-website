@@ -43,7 +43,8 @@ if(isPoster) {
   <SEO
     slot="head"
     title={session.title}
-    dynamicImage={{
+    imgUrl={session.shareImage}
+    dynamicImage={!session.shareImage && {
       title: session.title,
       speaker: speaker?.slug,
       abovetitle: aboveTitle,
