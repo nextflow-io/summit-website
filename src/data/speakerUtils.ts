@@ -87,11 +87,13 @@ export const parseSpeakers = (
       .filter((speaker) => !!speaker.profilePicture)
 
       // Sort by name
+      /*
       .sort((a, b) => {
         if (a.fullName < b.fullName) return -1;
         if (a.fullName > b.fullName) return 1;
         return 0;
       })
+      */
 
       // Sort by top speaker
       .sort((a, b) => {

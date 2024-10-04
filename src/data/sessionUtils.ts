@@ -33,6 +33,7 @@ export type Session = {
   liveUrl?: string;
   recordingUrl?: string;
   posterPDF?: string;
+  shareImage?: string;
   status: "Accepted" | "Declined" | "Nominated";
   isInformed: boolean;
   isConfirmed: boolean;
