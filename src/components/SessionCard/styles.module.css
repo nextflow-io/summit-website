@@ -58,6 +58,11 @@
     font-size: 22px;
   }
 }
+.description {
+  font-weight: 100;
+  color: var(--color-nextflow-300);
+  margin-top: 8px;
+}
 .time {
   &.hideTime {
     @media (--sm) {
