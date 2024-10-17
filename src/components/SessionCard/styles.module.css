@@ -65,6 +65,13 @@
   & a {
     text-decoration: underline;
   }
+  & ul {
+    padding-left: 20px;
+    & li {
+      margin-top: 4px;
+      list-style: disc;
+    }
+  }
 }
 .time {
   &.hideTime {
