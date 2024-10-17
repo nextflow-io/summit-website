@@ -74,7 +74,7 @@ const SessionCard: React.FC<Props> = ({
             </span>
           )}
           <h2 className={styles.title}>{session.title}</h2>
-          {!showFooter && session.description && <div className={styles.description}><Markdown>{session.description}</Markdown></div> }
+          {session.isServiceSession && session.description && <div className={styles.description}><Markdown>{session.description}</Markdown></div> }
           {showFooter && (
             <div className={styles.footer}>
               {showSpeakers && (
