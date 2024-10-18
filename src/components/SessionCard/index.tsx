@@ -1,6 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 import { prettyDate, prettyTime } from "@utils/prettyDate";
+import Markdown from 'react-markdown'
 import Button from "@components/Button";
 
 import type { Session } from "@data/sessions";
@@ -73,6 +74,7 @@ const SessionCard: React.FC<Props> = ({
             </span>
           )}
           <h2 className={styles.title}>{session.title}</h2>
+          {session.isServiceSession && session.description && <div className={styles.description}><Markdown>{session.description}</Markdown></div> }
           {showFooter && (
             <div className={styles.footer}>
               {showSpeakers && (

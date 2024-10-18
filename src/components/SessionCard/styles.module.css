@@ -58,6 +58,21 @@
     font-size: 22px;
   }
 }
+.description {
+  font-weight: 100;
+  color: var(--color-nextflow-300);
+  margin-top: 8px;
+  & a {
+    text-decoration: underline;
+  }
+  & ul {
+    padding-left: 20px;
+    & li {
+      margin-top: 4px;
+      list-style: disc;
+    }
+  }
+}
 .time {
   &.hideTime {
     @media (--sm) {
