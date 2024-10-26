@@ -1,0 +1,131 @@
+---
+import Layout from "@layouts/Base.astro";
+import Contact from "@modules/Contact";
+import { SponsoredBy } from "@components/Marquee";
+import Box from "@components/Box";
+import Button from "@components/Button";
+import SlackIcon from "@icons/Slack";
+import YoutubeIcon from "@icons/Youtube";
+import YouTubeVideo from "@components/YouTubeVideo";
+
+import SEO from "@components/SEO";
+---
+
+<Layout namespace="2024/barcelona">
+  <SEO slot="head" title="Stream" img={2} bcn />
+  <section class="container py-20">
+    <h2 class="h00 mb-12 text-center">Join the Nextflow Summit 2024 online</h2>
+    <div class="container mt-5">
+      <div class="flex flex-wrap -m-2 sm:-m-4">
+        <div class="w-full p-2 sm:p-4">
+          <Box className="!border-nextflow-600/40 text-center">
+            <p>
+              If you missed the registration, you can still watch the talks live
+              on YouTube.
+            </p>
+            <div
+              class="flex flex-wrap flex-col md:flex-row gap-10 mt-10 mx-auto justify-center"
+            >
+              <Button
+                className="m-auto"
+                cta
+                large
+                arrow
+                href="https://www.youtube.com/playlist?list=PLPZ8WHdZGxmVKQga4KE15YVt95i-QXVvE"
+              >
+                <YoutubeIcon />
+                Watch on YouTube
+              </Button>
+              <Button
+                className="m-auto"
+                cta
+                large
+                arrow
+                href="https://nextflow.slack.com/channels/summit-2024-barcelona"
+              >
+                <SlackIcon />
+                Ask a question on Slack
+              </Button>
+            </div>
+          </Box>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mt-5">
+      <Box alt>
+        <div class="flex flex-wrap -m-2 sm:-m-4">
+          <div class="w-full md:w-1/2 p-2 min-h-[300px]">
+            <Box>
+              <h2 class="h2 mb-6">Watch on YouTube</h2>
+              <p class="mb-3 font-thin text-sm">
+                If you missed the online registration deadline, you can still
+                watch the live-streams of talks directly on YouTube.
+              </p>
+              <p class="mb-3 font-thin text-sm">
+                There will be one live-stream per day. The videos will be
+                available on YouTube after the event.
+              </p>
+              <Button
+                className="mt-5"
+                cta
+                large
+                arrow
+                href="https://www.youtube.com/playlist?list=PLPZ8WHdZGxmVKQga4KE15YVt95i-QXVvE"
+              >
+                <YoutubeIcon />
+                Watch on YouTube
+              </Button>
+            </Box>
+          </div>
+          <div class="w-full md:w-1/2 p-2 min-h-[300px] relative">
+            <div class="h-full w-full relative rounded-lg overflow-hidden">
+              <YouTubeVideo id="5wxEx2Sj0FU" />
+            </div>
+          </div>
+
+          <div class="flex flex-wrap mt-16 mx-3 w-full">
+            <div class="w-full">
+              <Box>
+                <h2 class="h2 mb-6">Ask questions on Slack</h2>
+
+                <p class="mb-3 font-thin text-sm">
+                  Questions to speakers and discussion about talks will on the
+                  Nextflow Slack, in the #summit-2024-barcelona channel.
+                </p>
+                <div
+                  class="flex flex-wrap flex-col md:flex-row gap-10 mt-10 mx-auto justify-center"
+                >
+                  <Button
+                    className="m-auto"
+                    cta
+                    large
+                    arrow
+                    href="https://www.nextflow.io/slack-invite.html"
+                  >
+                    <SlackIcon />
+                    Join Slack
+                  </Button>
+                  <Button
+                    className="m-auto"
+                    cta
+                    large
+                    arrow
+                    href="https://nextflow.slack.com/channels/summit-2024-barcelona"
+                  >
+                    <SlackIcon />
+                    View #summit-2024-barcelona
+                  </Button>
+                </div>
+              </Box>
+            </div>
+          </div>
+        </div>
+      </Box>
+    </div>
+  </section>
+
+    <!-- <CTASection /> -->
+    <Contact />
+    <SponsoredBy client:load location="barcelona" />
+</Layout>
