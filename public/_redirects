@@ -1,5 +1,5 @@
 # Redirect schedule/agenda
-/2024/boston/agenda/schedule/   /2024/boston/agenda/   301
+# /2024/boston/agenda/schedule/   /2024/boston/agenda/   301
 /2024/boston/agenda/   /2024/barcelona/agenda/   301
 
 # Redirect 2023 paths
