@@ -38,10 +38,10 @@ export default {
       },
       */
       {
-        name: "Register",
-        url: "/register",
-        // name: "Watch live",
-        // url: "/stream",
+        // name: "Register",
+        // url: "/register",
+        name: "Watch live",
+        url: "/stream",
         cta: true,
       },
     ],
