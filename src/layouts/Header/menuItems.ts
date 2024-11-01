@@ -40,7 +40,7 @@ export default {
       {
         // name: "Register",
         // url: "/register",
-        name: "Watch live",
+        name: "Watch the recordings",
         url: "/stream",
         cta: true,
       },
