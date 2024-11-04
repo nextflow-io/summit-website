@@ -7,6 +7,7 @@ import SEO from "@components/SEO";
 import { sessionPagesBarcelona as sessionPages } from "@data/sessions";
 import speakers from "@data/speakers";
 import { prettyDate, prettyTime } from "@utils/prettyDate";
+import YouTubeVideo from "@components/YouTubeVideo";
 
 export function getStaticPaths() {
   return sessionPages
@@ -83,6 +84,13 @@ if(isPoster) {
         <h1 class="text-3xl md:text-4xl font-bold mb-8 font-display">
           {session.title}
         </h1>
+        {
+          !!session.recordingUrl && (
+            <div class="mt-4 mb-8 border rounded-2xl border-[rgb(13,192,157)]/40">
+              <YouTubeVideo url={session.recordingUrl} />
+            </div>
+          )
+        }
         <div
           class="text-left text-brand-300 font-light text-sm sm:text-base whitespace-pre-line"
         >
