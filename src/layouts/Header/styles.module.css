@@ -26,7 +26,7 @@
       & li {
         & a:global(.navItem) {
           display: block;
-          padding: 12px 12px;
+          padding: 12px 10px;
           margin: 0 4px;
           line-height: 1;
           font-weight: 400;

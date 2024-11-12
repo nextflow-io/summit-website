@@ -213,7 +213,7 @@ export default {
           sm: "1240px",
           md: "1240px",
           lg: "1240px",
-          xl: "1240px",
+          xl: "1260px",
         },
       },
     },
