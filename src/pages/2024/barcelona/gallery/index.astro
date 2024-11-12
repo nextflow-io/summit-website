@@ -1,6 +1,5 @@
 ---
 import Layout from "@layouts/Base.astro";
-import PastEvents from "@modules/PastEvents";
 import Contact from "@modules/Contact";
 import { SponsoredBy } from "@components/Marquee";
 import SEO from "@components/SEO";
@@ -11,11 +10,10 @@ import clsx from 'clsx';
 import styles from "./_styles.module.css";
 import * as galleryImages from "./images";
 
-
 ---
 
 <Layout namespace="2024/barcelona" altBG>
-  <SEO slot="head" title="Gallery Summit Barcelona 2024" img={2} bcn />
+  <SEO slot="head" title="Gallery" img={2} bcn />
 
 <section class="pb-6 pt-16 md:pt-20">
     <div class="container island text-center mb-12">
