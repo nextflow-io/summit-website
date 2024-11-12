@@ -29,6 +29,10 @@ export default {
         name: "Sponsors",
         url: "/sponsors",
       },
+      {
+        name: "Gallery",
+        url: "/gallery",
+      },
     ],
     secondary: [
       /*
@@ -40,7 +44,7 @@ export default {
       {
         // name: "Register",
         // url: "/register",
-        name: "Watch the recordings",
+        name: "Watch recordings",
         url: "/stream",
         cta: true,
       },
