@@ -7,8 +7,20 @@ import e23_bcn_hack3 from "./images/e23_bcn_hack3.jpg";
 import e23_bcn_summit from "./images/e23_bcn_summit.jpg";
 import e23_boston_hack from "./images/e23_boston_hack.jpg";
 import e23_boston_summit from "./images/e23_boston_summit.jpg";
+import e24_boston_summit from "./images/e24_boston_summit.jpg";
+import e24_bcn_summit from "./images/e24_bcn_summit.jpg";
 
 export default [
+  {
+    title: "Boston Summit 2024",
+    url: "https://summit.nextflow.io/2024/boston/",
+    img: e24_boston_summit,
+  },
+  {
+    title: "Barcelona Summit 2024",
+    url: "https://summit.nextflow.io/2024/barcelona/",
+    img: e24_bcn_summit,
+  },
   {
     title: "Boston Summit 2023",
     url: "https://summit.nextflow.io/2023/boston/",

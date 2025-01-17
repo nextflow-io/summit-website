@@ -1,6 +1,8 @@
 ---
 import logo from "./logo.svg";
 import Card from "./Card.astro";
+import Preregister from "@modules/Preregister2025";
+import Box from "@components/Box"
 ---
 
 <section class="py-20">
@@ -14,26 +16,22 @@ import Card from "./Card.astro";
         />
       </div>
       <h1 class="w-full h00 my-14 opacity-90">
-        Get ready for SUMMIT events in 2024, in Boston and Barcelona!
+        Join Us at Nextflow Summit 2025!
       </h1>
-      <div class="flex flex-wrap justify-center -mx-4">
+      <Box className="mt-12 mx-auto max-w-[764px] mb-10">
+        <Preregister client:load />
+      </Box>
+
+      <h1 class="h1 mt-16 mb-8 px-4 ">Get ready for an unforgettable experience with the Nextflow community!</h1>
+      <div class="flex flex-wrap justify-center mx-4">
         <Card
           location="boston"
-          btn_txt="Watch the recordings"
-          btn_url="/2024/boston/agenda#05-23"
-          btn_cta={false}
          />
         <Card
           location="barcelona"
-          {/*
-          btn_txt="Register now"
-          btn_url="/2024/barcelona/register"
-          */}
-          btn_txt="Watch the recordings"
-          btn_url="/2024/barcelona/stream"
-          btn_cta={true}
          />
       </div>
+
     </div>
   </div>
 </section>
