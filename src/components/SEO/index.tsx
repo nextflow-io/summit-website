@@ -35,9 +35,9 @@ const SEO: React.FC<Props> = ({
   } else if (imgUrl) {
       shareImg = imgUrl;
   } else if (bcn) {
-      shareImg = imgBarcelona.src;
+      shareImg = imgDefault.src;
   } else {
-      shareImg = imgBoston.src;
+      shareImg = imgDefault.src;
   }
 
   if (dynamicImage) {
