@@ -16,7 +16,8 @@ import Button from "@components/Button";
   "w-full sm:w-1/2 max-w-[384px] min-h-[200px] bg-brand-1000 my-2 mx-4 rounded-[16px] overflow-hidden text-center flex-auto",
   styles.card,
 ]}>
-  <a href={url}>
+
+  <a href={btn_url && url}>
     <img src={photo.src} class="mb-8" />
     <img src={title.src} class="inline-block" />
     <div class="text-lg py-8 font-semibold">
@@ -31,6 +32,7 @@ import Button from "@components/Button";
         }
     </div>
   </a>
+  
   {btn_txt && btn_url && (
     <div class="mt-8">
       <Button
