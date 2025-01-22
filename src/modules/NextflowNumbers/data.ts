@@ -2,27 +2,27 @@ export default {
   boston: {
     pharma_biotech: {
       label: "Pharma & biotech",
-      value: 64,
+      value: 70,
     },
     research_academia: {
       label: "Research & academia",
-      value: 36,
+      value: 30,
     },
     summit_in_person_attendees_prev_year: {
-      label: "Summit in-person attendees in 2023",
-      value: 145,
+      label: "Summit in-person attendees in 2024",
+      value: 166,
     },
     summit_in_person_attendees_expected: {
-      label: "Summit in-person attendees expected in 2024",
+      label: "Summit in-person attendees expected in 2025",
       value: 200,
     },
     hackathon_in_person_attendees_prev_year: {
-      label: "Hackathon in-person attendees in 2023",
+      label: "Hackathon in-person attendees in 2024",
       value: 50,
     },
     hackathon_in_person_attendees_expected: {
-      label: "Hackathon in-person attendees expected in 2024",
-      value: 125,
+      label: "Hackathon in-person attendees expected in 2025",
+      value: 100,
     },
   },
   barcelona: {
