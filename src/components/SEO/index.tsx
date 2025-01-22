@@ -1,6 +1,6 @@
-const siteTitle = "Nextflow SUMMIT 2024";
-const descDefault = `Join us at the Nextflow SUMMIT 2024 for the latest developments and innovations from the Nextflow world.`;
-import imgDefault from "./share-default.jpg";
+const siteTitle = "Nextflow SUMMIT 2025";
+const descDefault = `Join us at the Nextflow SUMMIT 2025 for the latest developments and innovations from the Nextflow world.`;
+import imgDefault from "./share-default.png";
 import imgBoston from "./share-boston.png";
 import imgBarcelona from "./share-barcelona.png";
 const images = [imgDefault, imgBoston, imgBarcelona];
@@ -35,7 +35,7 @@ const SEO: React.FC<Props> = ({
   } else if (imgUrl) {
       shareImg = imgUrl;
   } else if (bcn) {
-      shareImg = imgBarcelona.src;
+      shareImg = imgDefault.src;
   } else {
       shareImg = imgDefault.src;
   }
