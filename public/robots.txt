@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://summit.nextflow.io/sitemap-index.xml
+Sitemap: https://nextflow-summit-2024.netlify.app/sitemap-index.xml

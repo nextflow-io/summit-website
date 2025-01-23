@@ -7,7 +7,7 @@ import glsl from "vite-plugin-glsl";
 import netlify from "@astrojs/netlify";
 import icon from "astro-icon";
 
-const host = "https://summit.nextflow.io";
+const host = "https://nextflow-summit-2024.netlify.app";
 
 export default defineConfig({
   site: host,

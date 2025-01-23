@@ -41,7 +41,7 @@ const SEO: React.FC<Props> = ({
   }
 
   if (dynamicImage) {
-    const url = "https://summit.nextflow.io/og.png";
+    const url = "https://nextflow-summit-2024.netlify.app/og.png";
     let queryString = "";
     for (const key in dynamicImage) {
       if (queryString) queryString += "&";
