@@ -1,0 +1,14 @@
+@font-face {
+    font-family: "PT Mono";
+    src: url("Inter-ExtraLight.eot");
+    src: 
+      url("PTMono-Regular.woff") format("woff"),
+      url("PTMono-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+}
+
+.monospace {
+    font-family: 'PT Mono', monospace;
+}
+  

@@ -43,3 +43,9 @@ main#body {
     max-width: 824px;
   }
 }
+.wrapper {
+  padding: 0 1.5rem;
+  @media (--md) {
+    padding: 0 6.25rem;
+  }
+}
