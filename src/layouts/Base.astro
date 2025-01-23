@@ -7,6 +7,7 @@ import "../styles/lists.css";
 import "../styles/fonts/degular/main.css";
 import "../styles/fonts/inter/main.css";
 import "../styles/fonts/pt-mono/main.css";
+import MainNavigation from "./MainNavigation/index.astro";
 import Header from "./Header/index.astro";
 import Background from "./Background/index.astro";
 import Scripts from "./Scripts.astro";
@@ -31,6 +32,7 @@ import CookieNotice from "./CookieNotice";
   </head>
   <body>
     <CookieHandler client:only="react" />
+    <MainNavigation/>
     {showHeader !== false && <Header namespace={namespace} showNav={showNav} />}
     <Background namespace={namespace} altBG={altBG}>
       <main id="body">
