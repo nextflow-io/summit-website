@@ -1,7 +1,7 @@
 import React from "https://esm.sh/react@18.2.0";
 import { ImageResponse } from "https://deno.land/x/og_edge/mod.ts";
-import speakersBoston from "https://67913c4fdb076e12f81e5454--nextflow-summit-2025.netlify.app/2024/boston/speakers.json" assert { type: "json" };
-import speakersBcn from "https://67913c4fdb076e12f81e5454--nextflow-summit-2025.netlify.app/2024/barcelona/speakers.json" assert { type: "json" };
+import speakersBoston from "https://nextflow-summit-2024.netlify.app/2024/boston/speakers.json" assert { type: "json" };
+import speakersBcn from "https://nextflow-summit-2024.netlify.app/2024/barcelona/speakers.json" assert { type: "json" };
 
 // archived
 const baseUrl = "https://nextflow-summit-2024.netlify.app/2024/";
