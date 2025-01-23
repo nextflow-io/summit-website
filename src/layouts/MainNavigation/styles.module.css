@@ -9,14 +9,14 @@
     rgba(27, 24, 44, 1) 0%,
     rgba(22, 15, 38, 1) 50%
   );
-  border-bottom: 2px solid #383343;
+  border-bottom: 1px solid #ffffff;
   z-index: 100;
   position: sticky;
   left: 0;
   top: 0;
   right: 0;
   & > div {
-    height: 104px;
+    height: 60px;
   }
   & nav {
     & ul {
@@ -32,24 +32,12 @@
           font-weight: 400;
           position: relative;
           color: var(--color-brand-200);
-          &:after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 10px;
-            right: 10px;
-            height: 2px;
-            background-color: transparent;
-            transform: scaleX(0);
-            transition: transform 0.3s;
-          }
+          transition: all .3s;
           &[data-active],
           &:hover {
-            &:after {
-              background-color: var(--color-nextflow);
-              transform: scaleX(1);
-              color: white;
-            }
+            opacity: 80%;
+            transition: all .25s;
+            color: var(--color-nextflow);
           }
         }
       }

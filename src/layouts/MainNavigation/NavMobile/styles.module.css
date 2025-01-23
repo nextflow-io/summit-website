@@ -59,11 +59,7 @@
         }
         &[data-active],
         &:hover {
-          &:after {
-            background-color: var(--color-nextflow);
-            transform: scaleX(1);
-            color: white;
-          }
+          color: var(--color-nextflow)
         }
         & span {
           padding: 0 !important;
