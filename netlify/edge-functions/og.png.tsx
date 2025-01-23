@@ -1,9 +1,14 @@
 import React from "https://esm.sh/react@18.2.0";
 import { ImageResponse } from "https://deno.land/x/og_edge/mod.ts";
-import speakersBoston from "https://summit.nextflow.io/2024/boston/speakers.json" assert { type: "json" };
-import speakersBcn from "https://summit.nextflow.io/2024/barcelona/speakers.json" assert { type: "json" };
+import speakersBoston from "https://nextflow-summit-2024.netlify.app/2024/boston/speakers.json" assert { type: "json" };
+import speakersBcn from "https://nextflow-summit-2024.netlify.app/2024/barcelona/speakers.json" assert { type: "json" };
 
-const baseUrl = "https://summit.nextflow.io/";
+// archived
+const baseUrl = "https://nextflow-summit-2024.netlify.app/2024/";
+
+// prod
+// const baseUrl = "https://summit.nextflow.io/";
+
 // netlify dev
 // const baseUrl = "http://localhost:8888/";
 
