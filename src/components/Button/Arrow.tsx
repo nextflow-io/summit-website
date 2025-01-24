@@ -1,24 +1,10 @@
 const Arrow = ({ className }) => (
-  <svg
-    className={className}
-    width="6"
-    height="10"
-    viewBox="0 0 6 10"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <g clipPath="url(#clip0_205_237)">
-      <path
-        d="M4.63286 4.99474L0.307678 0.652086L0.812929 0.146835L5.64336 4.99474L0.812929 9.82518L0.307678 9.31993L4.63286 4.99474Z"
-        fill="currentColor"
-      />
-    </g>
-    <defs>
-      <clipPath id="clip0_205_237">
-        <rect width="5.90909" height="10" fill="white" />
-      </clipPath>
-    </defs>
+  <div className={className}>
+  <svg  width="15" height="13" viewBox="0 0 15 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M1.05957 6.50098H13.0616" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M8.18555 1.625L13.0614 6.50079L8.18555 11.3766" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
   </svg>
+  </div>
 );
 
 export default Arrow;

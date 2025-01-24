@@ -39,7 +39,7 @@
 .h1 {
   font-size: var(--size-4xl);
   line-height: var(--leading-4xl);
-  font-weight: 700;
+  font-weight: 400;
 }
 .h2 {
   font-size: var(--size-3xl);

@@ -14,8 +14,8 @@
     background: var(--color-nextflow);
     color: white;
     transform: scale(1.02);
-    & svg path {
+    /* & svg path {
       fill: white !important;
-    }
+    } */
   }
 }

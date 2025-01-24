@@ -27,6 +27,7 @@ export default {
       display: ["Degular", "Helvetica", "sans-serif"],
       body: ["Inter", "Helvetica", "sans-serif"],
       sans: ["Inter", "Helvetica", "sans-serif"],
+      monospace: ["PT Mono", "monospace"],
     },
     fontSize: {
       xs: ["12px", "18px"],
