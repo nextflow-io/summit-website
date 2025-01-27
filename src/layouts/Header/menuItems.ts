@@ -53,16 +53,20 @@ export default {
   boston: {
     main: [
       {
+        name: "Overview",
+        url: "/",
+      },
+      // {
+      //   name: "Travel",
+      //   url: "/travel",
+      // },
+      // {
+      //   name: "Training",
+      //   url: "/training",
+      // },
+      {
         name: "Agenda",
         url: "/agenda",
-      },
-      {
-        name: "Travel",
-        url: "/travel",
-      },
-      {
-        name: "Training",
-        url: "/training",
       },
       {
         name: "Speakers",
@@ -72,10 +76,10 @@ export default {
         name: "Sponsors",
         url: "/sponsors",
       },
-      {
-        name: "Gallery",
-        url: "/gallery",
-      },
+      // {
+      //   name: "Gallery",
+      //   url: "/gallery",
+      // },
       {
         name: "Why attend",
         url: "/why-attend",

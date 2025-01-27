@@ -1,0 +1,57 @@
+---
+import { Image } from "astro:assets";
+import Layout from "@layouts/Base.astro";
+import { SponsoredBy } from "@components/Marquee";
+import CTASection from "@modules/CTASection";
+import Contact from "@modules/Contact";
+import img from "@photos/hackers-1a.jpg";
+import Box from "@components/Box";
+import SEO from "@components/SEO";
+---
+
+<Layout namespace="2025/boston">
+  <SEO slot="head" title="Nextflow and nf-core Foundational Training" img={1} />
+  <section class="container py-20">
+    <h2 class="h00 mb-12 text-center">
+      Nextflow and nf-core Foundational Training
+    </h2>
+    <div class="flex flex-wrap -m-2 sm:-m-4">
+      <div class="w-full md:w-1/2 p-2 sm:p-4">
+        <div class="relative w-full h-full rounded-lg overflow-hidden">
+          <Image
+            src={img}
+            alt="Nextflow training"
+            class="object-cover h-full absolute inset-0"
+          />
+        </div>
+      </div>
+      <div class="w-full md:w-1/2 p-2 sm:p-4">
+        <Box className="">
+          We are excited to offer a 2-day training opportunity. Our training is
+          designed to provide you with a foundational understanding of Nextflow
+          and nf-core and equip you with the skills to build better pipelines.
+          <p class="pt-6 pb-6 font-bold">
+            By the end of the course you will be able to:
+          </p>
+          <ul class="list">
+            <li>
+              Summarize the benefits of using Nextflow as a workflow manager
+            </li>
+            <li>
+              Describe Nextflow concepts essential for pipeline development,
+              configuration, and deployment
+            </li>
+            <li>Build simple Nextflow pipelines</li>
+            <li>Discuss the features of nf-core pipelines and the community</li>
+            <li>
+              Utilize nf-core tooling to accelerate your pipeline development
+            </li>
+          </ul>
+        </Box>
+      </div>
+    </div>
+  </section>
+  <CTASection />
+  <Contact />
+  <SponsoredBy client:load />
+</Layout>

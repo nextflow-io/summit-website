@@ -7,7 +7,6 @@
 .h4,
 .h5 {
   font-family: Degular, sans-serif;
-  font-weight: 600;
 }
 .h000 {
   font-size: var(--size-5xl);
@@ -37,7 +36,7 @@
   }
 }
 .h1 {
-  font-size: var(--size-4xl);
+  font-size: 80px;
   line-height: var(--leading-4xl);
   font-weight: 400;
 }
@@ -58,6 +57,11 @@
   line-height: var(--leading-lg);
   font-weight: 700;
   letter-spacing: 0.04em;
+}
+.h6 {
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 300;
 }
 .blockquote {
   font-size: var(--size-lg);

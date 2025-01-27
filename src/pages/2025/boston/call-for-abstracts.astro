@@ -1,0 +1,71 @@
+---
+import { Image } from "astro:assets";
+import Button from "@components/Button";
+import Layout from "@layouts/Base.astro";
+import talkImg from "@images/photos/talk-1a.jpg";
+import Box, { SubSection } from "@components/Box";
+import SEO from "@components/SEO";
+---
+
+<Layout namespace="2025/boston">
+  <SEO slot="head" title="Call for abstracts" img={1} />
+  <section class="container island text-center pt-10 md:pt-16">
+    <h2 class="h000 mb-2">The call for abstracts is now closed</h2>
+    <div class="blockquote my-8">
+      Abstracts will be read and presenters notified on a rolling basis, so
+      apply soon. The final abstracts will be accepted and presenters notified
+      in March. Accepted speakers will receive free registration for the
+      Nextflow Summit.
+    </div>
+  </section>
+  <section class="container py-20">
+    <div class="flex flex-wrap -m-2 sm:-m-4">
+      <div class="w-full md:w-1/2 p-2 sm:p-4">
+        <div class="relative w-full h-full rounded-lg overflow-hidden">
+          <Image
+            src={talkImg}
+            alt="Nextflow SUMMIT talk"
+            class="object-cover h-full absolute inset-0"
+          />
+        </div>
+      </div>
+      <div class="w-full md:w-1/2 p-2 sm:p-4">
+        <Box className="">
+          <h2 class="h2 mb-4 text-center">Talks</h2>
+          <SubSection>
+            <div class="font-bold mb-2">When and Where</div>
+            In person at the Summit, at the <a
+              href="https://maps.app.goo.gl/S9aZawB98jRa8DEC9"
+              target="_blank">Aloft Boston Seaport District</a
+            >
+          </SubSection>
+          <SubSection className="my-8">
+            <div class="font-bold mb-2">Formats</div>
+            <ul>
+              <li>Long-form (30 min)</li>
+              <li>Lightning (15 min)</li>
+            </ul>
+          </SubSection>
+          <SubSection>
+            <div class="font-bold mb-2">Themes</div>
+            <ul>
+              <li><b>Nextflow</b> - central tool, language and plugins</li>
+              <li><b>Community</b> - pipelines, applications and use cases</li>
+              <li><b>Ecosystem</b> - infrastructure and environments</li>
+              <li><b>Software</b> - containers and tool packaging</li>
+            </ul>
+          </SubSection>
+          <div class="text-center mt-8">
+            <Button
+              href="https://sessionize.com/nextflow-summit-2025-boston"
+              white
+              wide
+              arrow
+              className="mt-12">Apply now</Button
+            >
+          </div>
+        </Box>
+      </div>
+    </div>
+  </section>
+</Layout>

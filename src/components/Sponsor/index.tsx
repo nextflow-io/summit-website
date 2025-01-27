@@ -18,7 +18,7 @@ const Sponsor = ({ sponsor, location }) => {
   return (
     <div className="p-2">
       <a
-        href={`/2024/${location}/sponsors/${sponsor.slug}/`}
+        href={`/2025/${location}/sponsors/${sponsor.slug}/`}
         className={clsx(
           "block p-8 sm:p-12",
           "rounded-md transition-all bg-brand border border-brand-900 text-left",

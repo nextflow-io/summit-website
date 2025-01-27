@@ -1,0 +1,63 @@
+---
+import Layout from "@layouts/Base.astro";
+import Hero from "@components/Hero";
+import SEO from "@components/SEO";
+import Contact from "@modules/Contact";
+import InfoBox from "@components/InfoBox";
+import img1 from "@images/photos/call-for-abstracts-min.jpg";
+---
+
+<Layout showNav={false}>
+  <SEO slot="head" title="Call for Abstracts" img={1} />
+  <section class="wrapper">
+    <div class="">
+      <Hero
+        title="Call for abstracts is open until March 14, 2025"
+        content="Abstracts will be read and presenters notified on a rolling basis, so apply soon. The final abstracts will be accepted and presenters notified by end of March."
+        href={img1.src}
+        alt="Image of Nextflow Summit"
+        ctaText1="Apply Now"
+      />
+    </div>
+  </section>
+
+  <section class="mt-20 mb-20 container">
+    <h1 class="h1 mb-10">Info</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <InfoBox title="Format">
+        Long-form presentations should be 20 minutes total, including time for Q&A. Digital poster presented in person TBD.
+      </InfoBox>
+      <InfoBox title="Location">
+        In person at the Nextflow Summit
+      </InfoBox>
+      <InfoBox title="How to Apply">
+        Click here to apply, deadline is March 14, 2025.
+      </InfoBox>
+    </div>
+  </section>
+
+  <section class="my-10 container">
+    <h1 class="h1 mb-10">Themes</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <InfoBox title="1. Enabling science">
+        How is data technology helping researchers make discoveries?
+        Computational wizardry that allows researchers to try out ideas that
+        would have been impossible or too time-consuming before. Clever
+        algorithms that break through computational bottlenecks. Interfaces that
+        enable even wet lab scientists to use powerful computational tools.
+      </InfoBox>
+      <InfoBox title="2. Big Nextflow">
+        How are data engineers solving implementation challenges and overcoming
+        scaling problems? Building pipelines and systems that are robust and
+        fault-tolerant. What scalability means in different contexts. Designing
+        for growth. Lessons learned from horror stories.
+      </InfoBox>
+      <InfoBox title="3. Organizational impact">
+        How are data technologies and platforms empowering organizations?
+        Integration with business and R&D workflows. Processes and tooling that
+        enhance observability, reproducibility, and collaboration.
+      </InfoBox>
+    </div>
+  </section>
+  <!-- <Contact className="py-8" /> -->
+</Layout>

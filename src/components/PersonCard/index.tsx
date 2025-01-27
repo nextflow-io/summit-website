@@ -40,7 +40,7 @@ const PersonCard: React.FC<Props> = ({
         <ProfilePic
           alt={person.fullName}
           src={person.profilePicture}
-          url={`/2024/${location}/speakers/${person.slug}`}
+          url={`/2025/${location}/speakers/${person.slug}`}
           className={clsx({
             "max-w-[150px]": !smaller,
             "max-w-[100px]": smaller,
@@ -48,7 +48,7 @@ const PersonCard: React.FC<Props> = ({
         />
         <div className="flex flex-col flex-auto pt-8 sm:pt-0 sm:pl-4">
           <a
-            href={`/2024/${location}/speakers/${person.slug}`}
+            href={`/2025/${location}/speakers/${person.slug}`}
             className="flex-auto text-center sm:text-left"
           >
             <h2 className="text-2xl font-display font-bold mb-2 text-nextflow">

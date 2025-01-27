@@ -22,7 +22,7 @@ const Preregister2025 = () => {
           className="text-lg mb-6 font-[200]"
           style={{ color: "rgba(255,255,255,0.8)" }}
         >
-          As in 2024, Boston will be held in Spring and Barcelona in Autumn.
+          As in 2025, Boston will be held in Spring and Barcelona in Autumn.
         </div> */}
       </div>
       <div className="w-full">

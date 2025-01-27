@@ -20,7 +20,7 @@ type Props = {
 
 const SectionContact: React.FC<Props> = ({ className }) => {
   return (
-    <section className={clsx("container smaller py-8 md:py-26", className)} id="footer">
+    <section className={clsx("mt-40 container smaller", className)} id="footer">
       <div className="flex -m-2 sm:-m-4 flex flex-wrap">
         <div className="w-full md:w-1/2 p-2 sm:p-4">
           <SectionBox href="mailto:help.summit@nextflow.io">

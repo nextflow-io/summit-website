@@ -1,0 +1,136 @@
+---
+import Layout from "@layouts/Base.astro";
+import PersonCard from "@components/PersonCard";
+import ContentBox from "@components/ContentBox/index.astro";
+import Button from "@components/Button";
+import SEO from "@components/SEO";
+import { sessionPagesBarcelona as sessionPages } from "@data/sessions";
+import speakers from "@data/speakers";
+import { prettyDate, prettyTime } from "@utils/prettyDate";
+import YouTubeVideo from "@components/YouTubeVideo";
+
+export function getStaticPaths() {
+  return sessionPages
+    .map((session) => {
+      if (!session?.slug) return null;
+      return {
+        params: { slug: session?.slug },
+        props: { session },
+      };
+    })
+    .filter((session) => session);
+}
+
+const { session } = Astro.props;
+const speakerCount = session.speakers.length;
+const isSingularSpeaker = speakerCount === 1;
+const speaker = speakers.barcelona?.find(
+  (speaker) => speaker.fullName === session.speakers[0]?.fullName,
+);
+
+const isPoster = session.categories?.outcome?.includes('Poster');
+
+let aboveTitle = "Trending talk";
+if(isPoster) {
+  aboveTitle = "Poster";
+} else if(session.isKeynote) {
+  aboveTitle = "Keynote";
+} else if(session.isSponsor) {
+  aboveTitle = "Sponsor talk";
+}
+---
+
+<Layout namespace="2025/barcelona" altBG>
+  <SEO
+    slot="head"
+    title={session.title}
+    imgUrl={session.shareImage}
+    dynamicImage={!session.shareImage && {
+      title: session.title,
+      speaker: speaker?.slug,
+      abovetitle: aboveTitle,
+      location: "barcelona",
+    }}
+    bcn
+  />
+  <section class="pb-10 pt-16 md:py-20">
+    <div class="container smallest">
+      <ContentBox
+        backLink={{
+          label: "Back to sessions",
+          href: "/2025/barcelona/agenda#10-28",
+        }}
+      >
+        <div class="flex items-center mb-4">
+          {
+            !!session.isKeynote && (
+              <div class="bg-nextflow rounded-sm p-2 leading-none text-sm mr-4 text-brand">
+                Keynote
+              </div>
+            )
+          }
+          <div class="text-nextflow">
+            {prettyDate(session.startsAt, false)}
+            {
+              !!session.endsAt && (
+                <>
+                  <span class="opacity-50 -ml-1">, </span>
+                  {`${prettyTime(session.startsAt)} - ${prettyTime(session.endsAt)}`}
+                </>
+              )
+            }
+          </div>
+        </div>
+        <h1 class="text-3xl md:text-4xl font-bold mb-8 font-display">
+          {session.title}
+        </h1>
+        {
+          !!session.recordingUrl && (
+            <div class="mt-4 mb-8 border rounded-2xl border-[rgb(13,192,157)]/40">
+              <YouTubeVideo url={session.recordingUrl} />
+            </div>
+          )
+        }
+        <div
+          class="text-left text-brand-300 font-light text-sm sm:text-base whitespace-pre-line"
+        >
+          {session.description}
+        </div>
+        {
+          !!session.projectURL && (
+            <Button cta href={session.projectURL} className="mt-6">
+              View project
+            </Button>
+          )
+        }
+        {
+          !!speakerCount && (
+            <>
+              <h2 class="h2 mt-16 text-left mb-6">
+                {isSingularSpeaker ? "Speaker" : "Speakers"}
+              </h2>
+              <div class="flex flex-wrap -m-2">
+                {session.speakers.map((speaker, i) => (
+                  <PersonCard
+                    className="p-2 w-full"
+                    person={speaker}
+                    location="barcelona"
+                    smaller
+                  />
+                ))}
+              </div>
+            </>
+          )
+        }
+        {
+          !!session.coAuthors && (
+            <>
+              <h3 class="h4 mt-10 text-left mb-2">Co-authors</h3>
+              <div class="font-light text-brand-200">{session.coAuthors}</div>
+            </>
+          )
+        }
+      </ContentBox>
+    </div>
+  </section>
+</Layout>

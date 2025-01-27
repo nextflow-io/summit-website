@@ -1,0 +1,35 @@
+---
+import Layout from "@layouts/Base.astro";
+import PastEvents from "@modules/PastEvents";
+import Contact from "@modules/Contact";
+import { SponsoredBy } from "@components/Marquee";
+import SEO from "@components/SEO";
+import TicketTailorWidget from "@components/TicketTailorWidget";
+import Box from "@components/Box";
+---
+
+<Layout namespace="2025/barcelona">
+  <SEO slot="head" title="Register" img={2} bcn />
+  <section class="pb-6 pt-16 md:pt-20">
+    <div class="container island text-center">
+      <h2 class="h000 mb-2">
+        <span class="h1">Attend</span><br />Nextflow Summit 2025
+      </h2>
+      <b class="font-bold text-wave text-xl">
+        Barcelona <span class="opacity-40">|</span> Oct 28 - Nov 1
+      </b>
+    </div>
+    <div class="container text-center mt-10">
+      <Box className="!border-nextflow-600/40 mt-3 mx-auto w-full lg:w-[840px]">
+        <div class="text-sm mb-6 py-2 px-4 border rounded opacity-80 border-nextflow-800 mx-auto max-w-[700px]">
+          <strong>In-person registrations are closed</strong>, 
+          but remote registrations are still available.
+        </div>
+        <TicketTailorWidget eventID={4145429} widgetID="54e2" client:load />
+      </Box>
+    </div>
+  </section>
+  <PastEvents title="Past events" client:visible />
+  <Contact className="py-8" />
+  <SponsoredBy client:load location="barcelona" />
+</Layout>

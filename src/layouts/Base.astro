@@ -34,12 +34,12 @@ import CookieNotice from "./CookieNotice";
     <CookieHandler client:only="react" />
     <MainNavigation/>
     {showHeader !== false && <Header namespace={namespace} showNav={showNav} />}
-    <Background namespace={namespace} altBG={altBG}>
+  
       <main id="body">
         <slot />
       </main>
       <Footer />
-    </Background>
+
     <CookieNotice client:only="react" />
   </body>
 </html>

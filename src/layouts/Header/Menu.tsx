@@ -24,7 +24,7 @@ const Menu: React.FC<Props> = (props) => {
   }
 
   let location = "boston";
-  if (namespace === "2024/barcelona") location = "barcelona";
+  if (namespace === "2025/barcelona") location = "barcelona";
 
   const { main, secondary, cta } = menuItems[location];
 

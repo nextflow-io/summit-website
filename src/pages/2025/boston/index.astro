@@ -1,21 +1,35 @@
 ---
 import Layout from "@layouts/Base.astro";
-import EventSelector from "@modules/EventSelector/index.astro";
 import { CallForAbstracts } from "@components/Marquee";
 import NextflowNumbers from "@modules/NextflowNumbers";
 import ImageSection from "@modules/ImageSection";
-import PastEvents from "@modules/PastEvents";
-import Subscribe from "@modules/Subscribe";
+import title from "@images/title_boston-1a.svg";
+import Button from "@components/Button";
+import KeyInformation from "@modules/KeyInformation";
+import KeyDates from "@components/KeyDates/index.astro";
+import YouTubeVideo from "@components/YouTubeVideo";
+import CTASection from "@modules/CTASection";
+import SectionContact from "@modules/Contact";
+import { SponsoredBy } from "@components/Marquee";
 import SEO from "@components/SEO";
 ---
 
-<Layout showHeader={false}>
-    boston wip
-  <SEO slot="head" img={0} />
-   <!-- <CallForAbstracts client:load className="mt-20 opacity-75" /> -->
-  <EventSelector />
-  <PastEvents client:load />
-  <!-- <NextflowNumbers client:load className="py-20" />
-  <ImageSection client:load className="mb-20" /> -->
-  <!-- <Subscribe client:visible /> -->
+<Layout namespace="2025/boston">
+  <SEO slot="head" img={1} />
+  <section class="pb-6 pt-16 md:pt-20">
+    <div class="text-center container">
+      <img src={title.src} class="mx-auto w-full max-w-[555px] px-10" />
+      <div class="h00 mt-16 mb-8">MAY 21 - 24, 2025</div>
+      <Button href="/2025/boston/agenda#05-23" cta large className="mr-3">Watch the recordings</Button>
+      <Button href="/preregister-2025"large>Pre-register 2025</Button>
+    </div>
+    <KeyInformation className="pt-16" />
+  </section>
+  <section class="container relative z-10 mb-4 sm:mb-8 lg:mb-20">
+    <KeyDates showTitle showImg />
+  </section>
+
+
+  <SectionContact />
+
 </Layout>

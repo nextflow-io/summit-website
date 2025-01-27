@@ -2,13 +2,17 @@ import React from "react";
 import SeqeraLogo from "./SeqeraLogo";
 import FooterLogo from "./FooterLogo";
 import Subscribe from "@modules/Subscribe";
+import styles from "./styles.module.css";
+import Contact from "@modules/Contact";
+
 const currentYear = new Date().getFullYear();
 
 const Footer: React.FC = () => {
   return (
     <footer id="footer">
-      <div className="wrapper py-8 text-white monospace">
-        <nav className="flex flex-col lg:flex-row lg:justify-between">
+      <Contact className="py-8" />
+      <div className={`${styles.footer} wrapper mt-16 text-white monospace`}>
+        <nav className="container flex flex-col lg:flex-row lg:justify-between">
           <div className="w-full max-w-[500px] lg:pr-10 mb-10 lg:mb-0">
             <Subscribe />
           </div>

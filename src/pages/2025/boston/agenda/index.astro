@@ -1,0 +1,44 @@
+---
+import Layout from "@layouts/Base.astro";
+import { SponsoredBy } from "@components/Marquee";
+import KeyInformation from "@modules/KeyInformation";
+import ImageSection from "@modules/ImageSection";
+import CTASection from "@modules/CTASection";
+import Calendar from "@components/Calendar";
+import Contact from "@modules/Contact";
+import SEO from "@components/SEO";
+import Button from "@components/Button";
+import Accommodation from "@modules/Accommodation";
+---
+
+<Layout namespace="2025/boston" altBG>
+  <SEO slot="head" title="Agenda" img={1} />
+  <section class="pb-6 pt-16 md:pt-20">
+    <div class="container island pb-10 md:pb-20 text-center">
+      <h1 class="h00 mb-8">Join us in Boston</h1>
+      <div class="blockquote">
+        This premier event brings together leading experts, innovators, and
+        researchers to showcase the latest breakthroughs in workflow management.
+      </div>
+      <div id="05-21"></div>
+      <div id="05-22"></div>
+      <div id="05-23"></div>
+      <div id="05-24"></div>
+      <div class="mt-6 text-brand-100 text-center">
+        Subscribe to calendar:
+        <a
+          class="text-nextflow"
+          href="https://sessionize.com/api/v2/5akke6uq/view/All">iCal</a
+        > |
+        <a
+          class="text-nextflow"
+          href="https://calendar.google.com/calendar/render?cid=webcal://sessionize.com/api/v2/5akke6uq/view/All"
+          >Google Calendar</a
+        >
+      </div>
+    </div>
+    <Calendar client:load />
+  </section>
+  <SponsoredBy client:load className="mt-12" />
+  <Contact />
+</Layout>
