@@ -35,6 +35,7 @@ export default {
       base: ["16px", "24px"],
       lg: ["18px", "26px"],
       xl: ["24px", "32px"],
+      xxl: ["80px", "40px"],
       "2xl": ["28px", "1"],
       "3xl": ["32px", "1"],
       "4xl": ["40px", "1"],

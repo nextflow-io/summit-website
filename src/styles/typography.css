@@ -42,7 +42,7 @@
   font-weight: 400;
 }
 .h2 {
-  font-size: var(--size-3xl);
+  font-size: var(--size-xxl);
   line-height: var(--leading-3xl);
 }
 .h3 {

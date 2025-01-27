@@ -20,20 +20,22 @@ const Hero = ({ title, content, href, alt, ctaText1, ctaLink1, ctaText2, ctaLink
   return (
     <div className={clsx(styles.hero, "container pt-10")}>
         <div className="flex flex-col lg:flex-row lg:justify-between">
-            <div className="w-full pr-10">
-                <h1 className="h1 mb-10">{title}</h1>
+            <div className="w-full pr-10 pt-10">
+                <h1 className="h2 mb-10">{title}</h1>
                 <p className="monospace" dangerouslySetInnerHTML={{ __html: content }} />
 
                 {ctaText1 && (
-                    <Button arrow>
+                    <Button className="mt-16" arrow>
                     {ctaText1}
                     </Button>
                     )
                 }
             
             </div>
-            <div className="w-full">
-                <img src={href} alt={alt} />
+            <div className={clsx(styles.imageWrapper, "")}>
+                <div>
+                    <img src={href} alt={alt} />
+                </div>
             </div>
         </div>
     </div>
