@@ -7,12 +7,11 @@ import Link from "./Link";
 type Props = {
   namespace: string;
   pathname: string;
-  second?: boolean;
   desktop?: boolean;
 };
 
 const Menu: React.FC<Props> = (props) => {
-  const { pathname, namespace, second, desktop } = props;
+  const { pathname, namespace, desktop } = props;
   function isActive(path) {
     return pathname?.includes(path);
   }
@@ -26,28 +25,7 @@ const Menu: React.FC<Props> = (props) => {
   let location = "boston";
   if (namespace === "2025/barcelona") location = "barcelona";
 
-  const { main, secondary, cta } = menuItems[location];
-
-  if (second)
-    return (
-      <nav>
-        <ul>
-          {secondary.map(({ name, url, cta, root }, i) => (
-            <li key={i}>
-              {desktop && cta ? (
-                <Button href={getURL(url, root)} arrow cta wide>
-                  {name}
-                </Button>
-              ) : (
-                <Link href={getURL(url, root)} active={isActive(url)}>
-                  {name}
-                </Link>
-              )}
-            </li>
-          ))}
-        </ul>
-      </nav>
-    );
+  const { main, cta } = menuItems[location];
 
   return (
     <nav>

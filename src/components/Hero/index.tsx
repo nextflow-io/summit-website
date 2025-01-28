@@ -25,8 +25,15 @@ const Hero = ({ title, content, href, alt, ctaText1, ctaLink1, ctaText2, ctaLink
                 <p className="monospace" dangerouslySetInnerHTML={{ __html: content }} />
 
                 {ctaText1 && (
-                    <Button className="mt-16" arrow>
-                    {ctaText1}
+                    <Button className="mt-16 relative" arrow>
+                    {ctaLink1 && (<a className="absolute w-full h-full"href={ctaLink1}></a>)} {ctaText1}
+                    </Button>
+                    )
+                }
+
+                {ctaText2 && (
+                    <Button className="mt-16 relative" arrow>
+                    {ctaLink2 && (<a className="absolute w-full h-full"href={ctaLink2}></a>)} {ctaText2}
                     </Button>
                     )
                 }

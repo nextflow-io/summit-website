@@ -56,14 +56,14 @@ export default {
         name: "Overview",
         url: "/",
       },
-      // {
-      //   name: "Travel",
-      //   url: "/travel",
-      // },
-      // {
-      //   name: "Training",
-      //   url: "/training",
-      // },
+      {
+        name: "Travel",
+        url: "/travel",
+      },
+      {
+        name: "Training",
+        url: "/training",
+      },
       {
         name: "Agenda",
         url: "/agenda",

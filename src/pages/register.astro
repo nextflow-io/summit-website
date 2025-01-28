@@ -1,0 +1,50 @@
+---
+import Layout from "@layouts/Base.astro";
+import Hero from "@components/Hero";
+import SEO from "@components/SEO";
+import InfoBox from "@components/InfoBox";
+import HubspotForm from "@components/HubspotForm";
+import Button from "@components/Button";
+import img1 from "@images/photos/call-for-abstracts-min.jpg";
+import clsx from "clsx";
+import styles from "./styles.module.css";
+import SignUpForm from "@modules/SignUpForm";
+---
+
+<Layout showNav={false}>
+  <SEO slot="head" title="Call for Abstracts" img={1} />
+  <section class="wrapper">
+    <div class="">
+      <div class={clsx(styles.hero, "container pt-10")}>
+        <div class="flex flex-col lg:flex-row lg:justify-between">
+          <div class="w-full pr-10 pt-10">
+            <h1 class="h2 mb-10">Join us in Boston</h1>
+            <p class="monospace">
+              Discover the ticket prices, discount dates, and refund policy
+            </p>
+          </div>
+          <div class={clsx(styles.imageWrapper, "")}>
+            <div class="w-full">
+              <SignUpForm client:load />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mt-20 mb-20 container">
+    <h1 class="h1 mb-10">Tickets</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <InfoBox title="Early bird 20% off" subtitle="February 10 - March 14">
+        Applicable to Summit track only
+      </InfoBox>
+      <InfoBox title="Standard Pricing" subtitle="March 14 - April 25"> In person at the Nextflow Summit </InfoBox>
+      <InfoBox title="Cancellation Period">
+        Ends  April 25, 2025
+      </InfoBox>
+    </div>
+  </section>
+
+
+</Layout>

@@ -30,6 +30,7 @@ export default {
       monospace: ["PT Mono", "monospace"],
     },
     fontSize: {
+      xxs: ["10px", "16px"],
       xs: ["12px", "18px"],
       sm: ["14px", "21px"],
       base: ["16px", "24px"],

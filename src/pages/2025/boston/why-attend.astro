@@ -4,22 +4,36 @@ import ImageSection from "@modules/ImageSection";
 import CTASection from "@modules/CTASection";
 import Contact from "@modules/Contact";
 import { SponsoredBy } from "@components/Marquee";
+import Hero from "@components/Hero";
 import Accommodation from "@modules/Accommodation";
 import SEO from "@components/SEO";
-import WhyAttend from "@modules/WhyAttend";
+import  WhyAttend from "@modules/WhyAttend";
+import img1 from "@images/photos/call-for-abstracts-min.jpg";
 ---
 
 <Layout namespace="2025/boston">
   <SEO slot="head" title="Why attend" img={1} />
   <section class="md:pt-20 md:pb-10">
-    <div class="container smaller">
+    <section class="wrapper">
+      <div class="">
+        <Hero
+          title="Why Attend"
+          content="The Nextflow Summit is the leading event for scientific data processing and data analysis, offering high-quality programming that spans scientific talks, poster sessions, and networking opportunities. Here, the vibrant community gathers to showcase the latest developments and innovations from the Nextflow world. At the Summit, open science takes the main stage."
+          href={img1.src}
+          alt="Image of Nextflow Summit"
+          ctaText1="Register Now"
+          ctaLink1="/register"
+          ctaText2="Call for Abstracts"
+        />
+      </div>
+    </section>
+
+    <div class="container">
+      <div></div>
       <WhyAttend
         cta={{ url: "/2025/boston/register", title: "Attend SUMMIT 2025" }}
       />
     </div>
   </section>
-  <SponsoredBy client:load className="mb-10" />
-  <CTASection />
-  <ImageSection alt2 className="mt-20" />
-  <Contact />
+
 </Layout>
