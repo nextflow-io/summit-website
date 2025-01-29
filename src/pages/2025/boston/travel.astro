@@ -5,58 +5,65 @@ import { CallForAbstracts } from "@components/Marquee";
 import CTASection from "@modules/CTASection";
 import Contact from "@modules/Contact";
 import { SponsoredBy } from "@components/Marquee";
+import Hero from "@components/Hero";
 import Accommodation from "@modules/Accommodation";
 import MapEmbed from "@components/MapEmbed";
 import Box from "@components/Box";
 import SEO from "@components/SEO";
+import img1 from "@images/photos/call-for-abstracts-min.jpg";
+import InfoBox from "@components/InfoBox";
 ---
 
 <Layout namespace="2025/boston">
   <SEO slot="head" title="Travel" img={1} />
   <section class="pb-6 pt-16 md:py-20">
-    <div class="container island text-center">
-      <h1 class="h00 mb-8">Join us in Boston</h1>
-      <div class="blockquote">
-        Boston offers a captivating fusion of historical significance and
-        innovative spirit, making it a dynamic center for art and technology.
-        Boston's vibrant atmosphere fosters an environment where art and
-        technology coexist, offering a captivating experience for visitors
-        seeking a deep appreciation for both.
+    <section class="wrapper">
+      <div class="">
+        <Hero
+          title="Join us in Boston"
+          content="Boston offers a captivating fusion of historical significance and innovative spirit, making it a dynamic center for art and technology. Boston's vibrant atmosphere fosters an environment where art and technology coexist, offering a captivating experience for visitors seeking a deep appreciation for both."
+          href={img1.src}
+          alt="Image of Nextflow Summit"
+          ctaText1="Register Now"
+          ctaLink1="/register"
+          ctaText2="Call for Abstracts"
+        />
       </div>
+    </section>
+    <div class="container grid grid-cols-3 gap-6">
+      <InfoBox subtitle="The quintessential Nextflow Community event">
+        The Nextflow Summit unites Nextflow enthusiasts, experts, and
+        collaborators for unparalleled networking, building friendships, and
+        collaboration opportunities, including an in-person community
+        hackathon.
+      </InfoBox>
+      <InfoBox subtitle="Push boundaries and innovate with Nextflow">
+        At the Hackathon, you'll join forces to tackle real-world challenges,
+        pushing boundaries and creating innovative pipelines with Nextflow.
+        You'll also be inspired by the latest advancements and best practices
+        shared at the Summit.
+      </InfoBox>
+      <InfoBox subtitle="Learn and collaborate with Nextflow experts">
+        The Nextflow Summit provides a comprehensive experience in workflow
+        management and data orchestration, featuring real-life success
+        stories, inspiring keynotes, and panel discussions, catering to both
+        newcomers seeking foundational training and seasoned users aiming to
+        stay abreast of the latest technologies and trends.
+      </InfoBox>
+      <InfoBox subtitle="Showcase your work to industry leaders">
+        The Nextflow Summit offers a prime platform to showcase your work and
+        receive valuable community feedback on a wide range of
+        Nextflow-related topics, from novel analysis methods to optimizing
+        performance on cloud platforms.
+      </InfoBox>
+      <InfoBox subtitle="Need help convincing your manager?">
+        We’ve got you covered. To make it easier to explain the benefits of attending,
+        we’ve prepared a template letter for you. Just edit it to suit your
+        needs and make your case. Take the first step toward joining
+        us—download the template now and secure your spot!
+      </InfoBox>
     </div>
-    <div class="container flex flex-wrap pt-10 md:pt-20">
-      <div class="w-full md:w-1/2 p-2 min-h-[300px] relative">
-        <div class="h-full w-full relative rounded-lg overflow-hidden">
-          <MapEmbed />
-        </div>
-      </div>
-      <div class="w-full md:w-1/2 p-2 min-h-[300px]">
-        <Box>
-          <p class="h1 mb-6">Aloft Boston Seaport District</p>
-          <p class="mb-4">
-            Across from the Boston Convention & Exhibition Center, this trendy,
-            modern hotel is also 2 miles from the New England Aquarium and 3
-            miles from Boston Logan International Airport.
-          </p>
-          <p class="mb-2">
-            <a target="_blank" href="https://maps.app.goo.gl/S9aZawB98jRa8DEC9">
-              <Icon name="mdi:map-marker" class="-mt-1" />
-              401-403 D St, Boston
-            </a>
-          </p>
-          <a
-            target="_blank"
-            href="https://www.marriott.com/en-us/hotels/bosal-aloft-boston-seaport-district/overview/"
-          >
-            <Icon name="mdi:external-link" />
-            Website
-          </a>
-        </Box>
-      </div>
-    </div>
-    <Accommodation client:load />
+
   </section>
-  <CTASection />
-  <Contact />
-  <SponsoredBy client:load />
+
 </Layout>

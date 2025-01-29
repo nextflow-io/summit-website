@@ -4,7 +4,7 @@
 }
 
 .hamburger {
-  --bg: var(--color-brand-300);
+  --bg: white;
   position: relative;
   transition: all 0.3s ease-in-out;
   &:hover {
@@ -13,7 +13,7 @@
   & span {
     width: 50px;
     height: 5px;
-    background-color: var(--bg);
+    background-color: white;
     display: block;
     margin: 8px auto;
     transition: all 0.3s ease-in-out;
@@ -34,7 +34,7 @@
     --bg: var(--color-nextflow);
     transform: rotate(45deg) translate(-10px, 12px);
     &:before {
-      border: 5px solid var(--bg);
+      border: 5px solid white;
     }
 
     & span {

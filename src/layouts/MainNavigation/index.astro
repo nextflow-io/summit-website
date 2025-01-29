@@ -5,6 +5,7 @@ import styles from "./styles.module.css";
 import NavMobile from "./NavMobile";
 import Menu from "./Menu";
 import Logo from "./Logo";
+import ArrowRight from "./ArrowRight.svg";
 let showNav = true;
 if (typeof Astro.props.showNav !== "undefined") showNav = Astro.props.showNav;
 ---
@@ -20,9 +21,13 @@ if (typeof Astro.props.showNav !== "undefined") showNav = Astro.props.showNav;
       )
     }
 
-      <div>Register Now</div>
+    <button class="bg-white text-brand h-full px-4">
+      <a href="/register" class="flex flex-row uppercase items-center justify-center">
+         Register Now 
+        <div class="ml-4 bg-nextflow inline flex justify-center items-center p-2 rounded-sm"><img src={ArrowRight.src}/></div>
+      </a>
+    </button>
   </div>
-
 </header>
 <NavMobile
   pathname={pathname}
