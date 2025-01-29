@@ -10,7 +10,7 @@ type Props = {
 const Logo: React.FC<Props> = ({ namespace }) => {
   function url(path) {
     if (!namespace) return path;
-    return `/${namespace}${path}`;
+    return `/`;
   }
   return (
     <a className={styles.logo} href={url("/")}>

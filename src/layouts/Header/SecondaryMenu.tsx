@@ -1,7 +1,6 @@
 import React from "react";
 
 import menuItems from "./menuItems";
-import Button from "@components/Button";
 import Link from "./Link";
 
 type Props = {
@@ -22,8 +21,9 @@ const Menu: React.FC<Props> = (props) => {
     if (!namespace) return path;
     return `/${namespace}${path}`;
   }
-
-  let location = "menu";
+  let location;
+  if (namespace === "2025/boston") location = "boston";
+  if (namespace === "2025/barcelona") location = "barcelona";
   const { main } = menuItems[location];
 
   return (

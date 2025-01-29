@@ -1,26 +1,55 @@
 ---
-const { namespace } = Astro.props;
+const { namespace, showHeader } = Astro.props;
 const pathname = new URL(Astro.request.url).pathname;
 import styles from "./styles.module.css";
 import NavMobile from "./NavMobile";
 import Menu from "./Menu";
+import SecondaryMenu from "./SecondaryMenu";
 import Logo from "./Logo";
+import ArrowRight from "./ArrowRight.svg";
 let showNav = true;
 if (typeof Astro.props.showNav !== "undefined") showNav = Astro.props.showNav;
 ---
 
-<header id="header" class={styles.header}>
-  <div class="container flex items-center justify-center monospace text-xxs">
-   
-    {
-      showNav && (
-        <>
-          <Menu pathname={pathname} namespace={namespace} />
-        </>
-      )
-    }
+<header id="header" class={`${styles.header}`}>
+  <div class={`${styles.headerWrapper} border-b-white flex flex-col w-full`}>
+    <div class={`${styles.headerTop} flex justify-center items-center`}>
+      <div class="container flex items-center justify-between monospace h-full">
+      <Logo namespace={namespace} />
+      {
+        showNav && (
+          <>
+            <Menu />
+          </>
+        )
+      }
+      <button class="bg-white text-brand h-full px-4">
+        <a
+          href="/register"
+          class="flex flex-row uppercase items-center justify-center"
+        >
+          Register Now
+          <div
+            class="ml-4 bg-nextflow inline flex justify-center items-center p-2 rounded-sm"
+          >
+            <img src={ArrowRight.src} />
+          </div>
+        </a>
+      </button>
+    </div>
+    </div>
+    <div class={styles.navigation}>
+      <div class="container flex items-center justify-center monospace text-xxs">
+        {
+          namespace && (
+            <SecondaryMenu pathname={pathname} namespace={namespace} />
+          )
+        }
+      </div>
+    </div>
   </div>
 </header>
+
 <NavMobile
   pathname={pathname}
   namespace={namespace}

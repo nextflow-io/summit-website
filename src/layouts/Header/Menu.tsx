@@ -1,17 +1,14 @@
 import React from "react";
-
 import menuItems from "./menuItems";
-import Button from "@components/Button";
 import Link from "./Link";
 
 type Props = {
-  namespace: string;
-  pathname: string;
-  desktop?: boolean;
+  namespace?: string;
+  pathname?: string;
 };
 
 const Menu: React.FC<Props> = (props) => {
-  const { pathname, namespace, desktop } = props;
+  const { pathname, namespace } = props;
   function isActive(path) {
     return pathname?.includes(path);
   }
@@ -22,10 +19,8 @@ const Menu: React.FC<Props> = (props) => {
     return `/${namespace}${path}`;
   }
 
-  let location = "boston";
-  if (namespace === "2025/barcelona") location = "barcelona";
-
-  const { main, cta } = menuItems[location];
+  let location = "menu"
+  const { main } = menuItems[location];
 
   return (
     <nav>
