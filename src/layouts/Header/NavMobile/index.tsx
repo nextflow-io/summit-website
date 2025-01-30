@@ -3,6 +3,7 @@ import clsx from "clsx";
 
 import styles from "./styles.module.css";
 import Hamburger from "./Hamburger";
+import DropDowns from "./DropDowns/DropDowns";
 import useMediaQuery from "@utils/useMediaQuery";
 import Logo from "../Logo";
 import Menu from "../Menu";
@@ -27,9 +28,10 @@ const NavMobile: React.FC<Props> = ({ pathname, namespace, showNav }) => {
         <Hamburger setIsOpen={setIsOpen} isOpen={isOpen} />
       </div>
       {isOpen && (
-        <div className={styles.menuContainer}>
-          {showNav && <Menu pathname={pathname} namespace={namespace} />}
-        </div>
+        <DropDowns/>
+        // <div className={styles.menuContainer}>
+        //   {showNav && <Menu pathname={pathname} namespace={namespace} />}
+        // </div>
       )}
     </header>
   );
