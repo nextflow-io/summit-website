@@ -4,10 +4,12 @@ export default {
       {
         name: "Boston",
         url: "/2025/boston",
+        dropdown: 'boston',
       },
       {
         name: "Barcelona",
         url: "/2025/barcelona",
+        dropdown: 'barcelona',
       },
       {
         name: "Call for Abstracts",
