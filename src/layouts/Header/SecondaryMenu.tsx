@@ -1,5 +1,5 @@
 import React from "react";
-import menuItems from "./menuItems";
+import menuLinks from "./menuLinks";
 import Link from "./Link";
 
 type Props = {
@@ -20,21 +20,23 @@ const Menu: React.FC<Props> = (props) => {
     if (!namespace) return path;
     return `/${namespace}${path}`;
   }
+
   let location;
-  if (namespace === "2025/boston") location = "boston";
-  if (namespace === "2025/barcelona") location = "barcelona";
-  const { main } = menuItems[location];
+  if (namespace === "2025/boston") location = 0;
+  if (namespace === "2025/barcelona") location = 1;
 
   return (
     <nav>
-      <ul>
-        {main.map(({ name, url }, i) => (
-          <li key={i}>
+        <ul>
+        {menuLinks[location].dropdowns.map(({ name, url}, i) => {
+            return (
+              <li key={i}>
             <Link href={getURL(url)} active={isActive(url)}>
               {name}
             </Link>
-          </li>
-        ))}
+          </li> 
+           )
+        })}    
       </ul>
     </nav>
   );

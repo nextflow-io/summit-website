@@ -1,5 +1,5 @@
 import React from "react";
-import menuItems from "./menuItems";
+import menuLinks from "./menuLinks";
 import Link from "./Link";
 
 type Props = {
@@ -19,13 +19,10 @@ const Menu: React.FC<Props> = (props) => {
     return `/${namespace}${path}`;
   }
 
-  let location = "menu"
-  const { main } = menuItems[location];
-
   return (
     <nav>
       <ul>
-        {main.map(({ name, url }, i) => (
+        {menuLinks.map(({ name, url }, i) => (
           <li key={i}>
             <Link href={getURL(url)} active={isActive(url)}>
               {name}
