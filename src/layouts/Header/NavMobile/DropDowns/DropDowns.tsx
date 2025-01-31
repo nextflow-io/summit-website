@@ -19,9 +19,17 @@ const DropDownItem = ({ name, url, dropdowns, isOpen, onClick }) => {
     <div className={`border-b py-4 overflow-hidden`}>
       <button
         className={` flex flex-row justify-between items-center w-full ${isOpen ? "active" : ""}`}
-        onClick={onClick}
+        onClick={dropdowns && onClick}
       >
-        <p className="">{name}</p>
+      {dropdowns ? (
+             <p className="">
+             {name}
+             </p>
+      ) : (
+        <a href={url}> {name}</a>
+        )
+      }
+   
         {dropdowns && (
           <div className={`transition-all duration-500 ease-in-out ${isOpen ? "active rotate-180 " : ""}`}><img src={caret.src} alt="Caret Icon" /></div>
         )}
@@ -36,11 +44,15 @@ const DropDownItem = ({ name, url, dropdowns, isOpen, onClick }) => {
             : { height: "0px", overflow: "hidden" }
         }
       >
-        <div className="dropdown__links">
-          {dropdowns?.map((dataItem) => (
-            <div key={dataItem.id}>{dataItem.name}</div>
+        <ul className="dropdown__links">
+          {dropdowns?.map((dropdownLink) => (
+            <li key={dropdownLink.id}>
+              <a href={dropdownLink.url}>
+                {dropdownLink.name}
+              </a>
+              </li>
           ))}
-        </div>
+        </ul>
       </div>
     </div>
   );

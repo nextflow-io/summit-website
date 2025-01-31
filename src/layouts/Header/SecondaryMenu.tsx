@@ -15,11 +15,6 @@ const Menu: React.FC<Props> = (props) => {
     return pathname?.includes(path);
   }
 
-  function getURL(path, root = false) {
-    if (root) return path;
-    if (!namespace) return path;
-    return `/${namespace}${path}`;
-  }
 
   let location;
   if (namespace === "2025/boston") location = 0;
@@ -31,7 +26,7 @@ const Menu: React.FC<Props> = (props) => {
         {menuLinks[location].dropdowns.map(({ name, url}, i) => {
             return (
               <li key={i}>
-            <Link href={getURL(url)} active={isActive(url)}>
+            <Link href={url} active={isActive(url)}>
               {name}
             </Link>
           </li> 
