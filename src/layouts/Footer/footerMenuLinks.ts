@@ -79,6 +79,10 @@ const footerMenuLinks = [
     name: "Pages",
     dropdowns: [
       {
+        name: "Register",
+        url: "/register",
+      },
+      {
         name: "Call for Abstracts",
         url: "/call-for-abstracts",
       },

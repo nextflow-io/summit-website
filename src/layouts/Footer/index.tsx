@@ -2,7 +2,7 @@ import React from "react";
 import SeqeraLogo from "./SeqeraLogo";
 import FooterLogo from "./FooterLogo";
 import Subscribe from "@modules/Subscribe";
-import styles from "./styles.module.css";
+import styles from "./footer.module.css";
 import Contact from "@modules/Contact";
 import footerMenuLinks from "./footerMenuLinks";
 
@@ -14,44 +14,35 @@ const Footer: React.FC<Props> = (props) => {
   return (
     <footer id="footer">
       <Contact className="py-8" />
-      <div className={`${styles.footer} wrapper mt-16 text-white monospace`}>
-        <nav className="container flex flex-col lg:flex-row lg:justify-between">
+      <div className={`${styles.footer} mt-16 text-white monospace`}>
+        <nav className="container flex flex-col lg:flex-row lg:justify-between md:flex-wrap lg:flex-nowrap">
           <div className="w-full max-w-[500px] lg:pr-10 mb-10 lg:mb-0">
             <Subscribe />
           </div>
-          <div className="w-full flex lg:justify-center">
-            <div className="grid grid-cols-2 lg:grid-cols-4 lg:gap-x-12 lg:content-center whitespace-nowrap">
-              <nav>
-                <ul>
-                  {footerMenuLinks?.map(({ name, url, dropdowns }, i) => {
-                    let setTarget = false;
-                    if (name == "Follow") setTarget = true
-                    const linkProps = setTarget ? { target: '_blank', rel: 'noopener noreferrer' } : {}
+          <nav className="w-full flex lg:justify-center">
+            <div className="whitespace-nowrap grid grid-cols-2 gap-x-8 lg:flex lg:flex-row">
+              {footerMenuLinks?.map(({ name, url, dropdowns }, i) => {
+                let setTarget = false;
+                if (name == "Follow") setTarget = true;
+                const linkProps = setTarget
+                  ? { target: "_blank", rel: "noopener noreferrer" }
+                  : {};
 
-                    return (
-                      <div className="mb-10">
-                        <p className="mb-2">{name}</p>
-                        {dropdowns?.map(({ name, url }, i) => (
-                          <li key={i}>
-                            <a
-                              href={url}
-                              {...linkProps}
-                            >
-                              {name}
-                            </a>
-                          </li>
-                        ))}
-                      </div>
-                    );
-                  })}
-
-
-                </ul>
-              </nav>
-
-  
+                return (
+                  <ul className="mb-16 md:mb-0 lg:ml-16">
+                    <p className="mb-6">{name}</p>
+                    {dropdowns?.map(({ name, url }, i) => (
+                      <li key={i}>
+                        <a href={url} {...linkProps} className="transition-all duration-300 ease-in-out hover:transition-all hover:text-nextflow">
+                          {name}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                );
+              })}
             </div>
-          </div>
+          </nav>
         </nav>
       </div>
       <div className="wrapper mb-16">
