@@ -29,9 +29,6 @@ const NavMobile: React.FC<Props> = ({ pathname, namespace, showNav }) => {
       </div>
       {isOpen && (
         <DropDowns/>
-        // <div className={styles.menuContainer}>
-        //   {showNav && <Menu pathname={pathname} namespace={namespace} />}
-        // </div>
       )}
     </header>
   );

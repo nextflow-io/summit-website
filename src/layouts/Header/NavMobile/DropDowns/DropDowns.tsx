@@ -1,6 +1,5 @@
 import { useRef, useState } from "react";
 import menuLinks from "../../menuLinks";
-import data from "./DropDownLinks";
 import Link from "../../Link";
 import styles from "./dropdowns.module.css";
 

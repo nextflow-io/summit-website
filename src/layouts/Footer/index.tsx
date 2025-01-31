@@ -4,10 +4,16 @@ import FooterLogo from "./FooterLogo";
 import Subscribe from "@modules/Subscribe";
 import styles from "./styles.module.css";
 import Contact from "@modules/Contact";
+import footerMenuLinks from "./footerMenuLinks";
 
 const currentYear = new Date().getFullYear();
 
-const Footer: React.FC = () => {
+type Props = {
+
+};
+
+const Footer: React.FC<Props> = (props) => {
+
   return (
     <footer id="footer">
       <Contact className="py-8" />
@@ -18,26 +24,21 @@ const Footer: React.FC = () => {
           </div>
           <div className="w-full flex lg:justify-center">
             <div className="grid grid-cols-2 lg:grid-cols-4 lg:gap-x-12 lg:content-center whitespace-nowrap">
-              <ul className="flex flex-col">
-                <p className="mb-6">Pages</p>
-                <li>
-                  <a href="/past-events">Past Events</a>
-                </li>
-                <li>
-                  <a href="/register">Register</a>
-                </li>
-                <li>
-                  <a href="/call-for-abstracts">Call for Abstracts</a>
-                </li>
-              </ul>
-              <ul className="flex flex-col ">
-                <p className="mb-6">Boston</p>
-                <li>Coming Soon</li>
-              </ul>
-              <ul className="flex flex-col ">
-                <p className="mb-6">Barcelona</p>
-                <li>Coming Soon</li>
-              </ul>
+              <nav>
+                <ul>
+                  {footerMenuLinks?.map(({ name, url, dropdowns }, i) => (
+                    <div className="mb-10">
+                      <p className="mb-2">{name}</p>
+                      {dropdowns?.map(({ name, url }, i) => (
+                        <li key={i}>
+                          <a href={url}>{name}</a>
+                        </li>
+                      ))}
+                    </div>
+                  ))}
+                </ul>
+              </nav>
+
               <ul className="flex flex-col">
                 <p className="mb-6">Follow</p>
                 <li>
@@ -88,7 +89,9 @@ const Footer: React.FC = () => {
         <div className="flex flex-row justify-between">
           <div className="flex flex-row">
             <small>By</small>
-            <div className="pl-2 max-w-[150px]"><SeqeraLogo /></div>
+            <div className="pl-2 max-w-[150px]">
+              <SeqeraLogo />
+            </div>
           </div>
           <div className="monospace">{`© ${currentYear} Seqera`}</div>
         </div>
