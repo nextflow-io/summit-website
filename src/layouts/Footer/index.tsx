@@ -20,7 +20,7 @@ const Footer: React.FC<Props> = (props) => {
             <Subscribe />
           </div>
           <nav className="w-full flex lg:justify-center">
-            <div className="whitespace-nowrap grid grid-cols-2 gap-x-8 lg:flex lg:flex-row">
+            <div className="whitespace-nowrap grid grid-cols-2 gap-x-8 lg:gap-x-0 lg:flex lg:flex-row">
               {footerMenuLinks?.map(({ name, url, dropdowns }, i) => {
                 let setTarget = false;
                 if (name == "Follow") setTarget = true;
