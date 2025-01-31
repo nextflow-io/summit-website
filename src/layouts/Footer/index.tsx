@@ -8,12 +8,9 @@ import footerMenuLinks from "./footerMenuLinks";
 
 const currentYear = new Date().getFullYear();
 
-type Props = {
-
-};
+type Props = {};
 
 const Footer: React.FC<Props> = (props) => {
-
   return (
     <footer id="footer">
       <Contact className="py-8" />
@@ -26,58 +23,33 @@ const Footer: React.FC<Props> = (props) => {
             <div className="grid grid-cols-2 lg:grid-cols-4 lg:gap-x-12 lg:content-center whitespace-nowrap">
               <nav>
                 <ul>
-                  {footerMenuLinks?.map(({ name, url, dropdowns }, i) => (
-                    <div className="mb-10">
-                      <p className="mb-2">{name}</p>
-                      {dropdowns?.map(({ name, url }, i) => (
-                        <li key={i}>
-                          <a href={url}>{name}</a>
-                        </li>
-                      ))}
-                    </div>
-                  ))}
+                  {footerMenuLinks?.map(({ name, url, dropdowns }, i) => {
+                    let setTarget = false;
+                    if (name == "Follow") setTarget = true
+                    const linkProps = setTarget ? { target: '_blank', rel: 'noopener noreferrer' } : {}
+
+                    return (
+                      <div className="mb-10">
+                        <p className="mb-2">{name}</p>
+                        {dropdowns?.map(({ name, url }, i) => (
+                          <li key={i}>
+                            <a
+                              href={url}
+                              {...linkProps}
+                            >
+                              {name}
+                            </a>
+                          </li>
+                        ))}
+                      </div>
+                    );
+                  })}
+
+
                 </ul>
               </nav>
 
-              <ul className="flex flex-col">
-                <p className="mb-6">Follow</p>
-                <li>
-                  <a
-                    href="https://twitter.com/seqeralabs"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    X
-                  </a>
-                </li>
-                <li className="">
-                  <a
-                    href="https://github.com/seqeralabs"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Github
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.youtube.com/channel/UCBDzWsz3bDsxZblHbmGxsww"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Youtube
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.linkedin.com/company/14065390/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Linkedin
-                  </a>
-                </li>
-              </ul>
+  
             </div>
           </div>
         </nav>
