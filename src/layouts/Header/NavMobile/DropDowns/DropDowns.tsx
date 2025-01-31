@@ -1,8 +1,6 @@
 import { useRef, useState } from "react";
-import clsx from "clsx";
 import menuLinks from "../../menuLinks";
-import Link from "../../Link";
-import styles from "./dropdowns.module.css";
+import caret from "./caretIcon.svg";
 
 type Props = {
   namespace?: string;
@@ -18,23 +16,23 @@ type Props = {
 const DropDownItem = ({ name, url, dropdowns, isOpen, onClick }) => {
   const contentHeight = useRef();
   return (
-    <div className={`${styles.dropdown} border-b py-4`}>
+    <div className={`border-b py-4 overflow-hidden`}>
       <button
-        className={`dropdown__title flex flex-row justify-between w-full ${isOpen ? "active" : ""}`}
+        className={` flex flex-row justify-between items-center w-full ${isOpen ? "active" : ""}`}
         onClick={onClick}
       >
         <p className="">{name}</p>
         {dropdowns && (
-          <div className={`plus-btn ${isOpen ? "active" : ""}`}>+ {isOpen}</div>
+          <div className={`transition-all duration-500 ease-in-out ${isOpen ? "active rotate-180 " : ""}`}><img src={caret.src} alt="Caret Icon" /></div>
         )}
       </button>
 
       <div
         ref={contentHeight}
-        className="dropdown__content"
+        className={`transition-all duration-500 ease-in-out`}
         style={
           isOpen
-            ? { height: contentHeight?.current?.scrollHeight }
+            ? { height: contentHeight?.current?.scrollHeight, marginTop: '2rem', marginBottom: '2rem' }
             : { height: "0px", overflow: "hidden" }
         }
       >
