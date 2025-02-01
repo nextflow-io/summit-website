@@ -8,7 +8,7 @@ import styles from "./styles.module.css";
 const SectionSubscribe: React.FC<Props> = () => {
   return (
     <section className="">
-      <p className="">
+      <p className="mb-4">
       Sign up to receive the latest news
       </p>
       <div>
@@ -19,7 +19,7 @@ const SectionSubscribe: React.FC<Props> = () => {
         gtmEventID="gtm_newsletter"
       />
       </div>
-      <small>By submitting this form, you agree to our <a href="https://seqera.io/privacy-policy/" target="_blank">privacy policy.</a></small>
+      <p className="mt-2 text-xs">By submitting this form, you agree to our <a className="underline" href="https://seqera.io/privacy-policy/" target="_blank">privacy policy</a>.</p>
 
     </section>
   );
