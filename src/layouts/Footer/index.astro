@@ -1,0 +1,60 @@
+---
+import React from "react";
+import SeqeraLogo from "./SeqeraLogo";
+import FooterLogo from "./FooterLogo";
+import Subscribe from "@modules/Subscribe";
+import styles from "./footer.module.css";
+import footerMenuLinks from "./footerMenuLinks";
+const currentYear = new Date().getFullYear();
+---
+
+    <footer id="footer">
+      <div class={`${styles.footer} mt-16 text-white monospace`}>
+        <nav class="container flex flex-col lg:flex-row lg:justify-between md:flex-wrap lg:flex-nowrap">
+          <div class="w-full max-w-[500px] lg:pr-10 mb-10 lg:mb-0">
+            <Subscribe client:visible />
+          </div>
+          <nav class="w-full flex lg:justify-center">
+            <div class="whitespace-nowrap grid grid-cols-2 gap-x-8 lg:gap-x-0 lg:flex lg:flex-row">
+              {footerMenuLinks?.map(({ name, url, dropdowns }, i) => {
+                let setTarget = false;
+                if (name == "Follow") setTarget = true;
+                const linkProps = setTarget
+                  ? { target: "_blank", rel: "noopener noreferrer" }
+                  : {};
+
+                return (
+                  <ul class="mb-16 md:mb-0 lg:ml-16">
+                    <p class="mb-6">{name}</p>
+                    {dropdowns?.map(({ name, url }, i) => (
+                      <li>
+                        <a href={url} {...linkProps} class="transition-all duration-300 ease-in-out hover:transition-all hover:text-nextflow">
+                          {name}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                );
+              })}
+            </div>
+          </nav>
+        </nav>
+      </div>
+      <div class="wrapper mb-16">
+        <div class="mt-10 mb-6">
+          <FooterLogo />
+        </div>
+        <div class="flex flex-row justify-between">
+          <div class="flex flex-row">
+            <small>By</small>
+            <div class="pl-2 max-w-[150px]">
+              <SeqeraLogo />
+            </div>
+          </div>
+          <div class="monospace">{`© ${currentYear} Seqera`}</div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+

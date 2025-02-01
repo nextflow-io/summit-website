@@ -15,13 +15,13 @@
     }
     & :global(.hs_email) {
       & input {
-        border-radius: 99px;
+        /* border-radius: 99px; */
         padding-left: 25px;
       }
     }
     & :global(.hs_submit) {
       & input {
-        border-radius: 99px;
+        /* border-radius: 99px; */
         transition: all 0.3s;
         &:hover {
           background: var(--color-nextflow);
@@ -39,7 +39,7 @@
     & form {
       & :global(.hs_email) {
         & input {
-          border-radius: 99px 0 0 99px;
+          border-radius: 8px 0 0 8px;
           width: 350px;
         }
       }

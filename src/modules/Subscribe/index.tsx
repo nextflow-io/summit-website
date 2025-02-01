@@ -9,7 +9,7 @@ const SectionSubscribe: React.FC<Props> = () => {
   return (
     <section className="">
       <p className="">
-        Register and be the first to know about all our news and updates.
+      Sign up to receive the latest news
       </p>
       <div>
       <HubspotForm
@@ -19,7 +19,7 @@ const SectionSubscribe: React.FC<Props> = () => {
         gtmEventID="gtm_newsletter"
       />
       </div>
-      <small>We respect your data. By submitting this form, you agree that we may use ​this information in accordance with our Privacy Policy.</small>
+      <small>By submitting this form, you agree to our <a href="https://seqera.io/privacy-policy/" target="_blank">privacy policy.</a></small>
 
     </section>
   );
