@@ -16,7 +16,7 @@ if (typeof Astro.props.showNav !== "undefined") showNav = Astro.props.showNav;
     <div class={`${styles.headerTop} flex justify-center items-center`}>
       <div class="container flex items-center justify-between monospace h-full">
       <Logo namespace={namespace} />
-      <Menu />
+      <Menu  pathname={pathname} namespace={namespace}/>
       <button class="bg-white text-brand h-full px-4">
         <a
           href="/register"

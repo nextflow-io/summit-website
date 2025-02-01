@@ -24,8 +24,8 @@ const Menu: React.FC<Props> = (props) => {
       <ul>
         {menuLinks.map(({ name, url }, i) => (
           <li key={i}>
-            <Link href={getURL(url)} active={isActive(url)}>
-              {name}
+            <Link href={url} active={isActive(url)}>
+              {name} 
             </Link>
           </li>
         ))}
