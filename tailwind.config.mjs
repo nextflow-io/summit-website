@@ -12,11 +12,12 @@ const getSpacing = () => {
 };
 
 export const screens = {
-  xs: "340px",
-  sm: "640px",
-  md: "768px",
-  lg: "1024px",
-  xl: "1280px",
+  xxs: "400px",
+  xs: "800px",
+  sm: "1000px",
+  md: "1200px",
+  lg: "1400px",
+  xl: "1600px",
 };
 
 export default {
@@ -30,15 +31,15 @@ export default {
       monospace: ["PT Mono", "monospace"],
     },
     fontSize: {
-      xxs: ["10px", "16px"],
-      xs: ["12px", "18px"],
-      sm: ["14px", "21px"],
-      base: ["16px", "24px"],
-      lg: ["18px", "26px"],
-      xl: ["24px", "32px"],
-      xxl: ["80px", "40px"],
+      xxs: [".625rem"], //10px
+      xs: [".75rem"], // 12px
+      sm: ["14px"], //14px
+      base: ["1rem"], //16px
+      lg: ["1.125rem"], //18px
+      xl: ["1.5rem"], //24px
+      xxl: ["4.375rem"], //70px
       "2xl": ["28px", "1"],
-      "3xl": ["32px", "1"],
+      "3xl": ["36px", "1"],
       "4xl": ["40px", "1"],
       "5xl": ["48px", "1"],
       "6xl": ["56px", "1"],
@@ -213,10 +214,12 @@ export default {
       container: {
         center: true,
         screens: {
-          sm: "1240px",
-          md: "1240px",
-          lg: "1240px",
-          xl: "1260px",
+          // xxs: "340px",
+          // xs: "800px",
+          // sm: "1000px",
+          // md: "1200px",
+          // lg: "1400px",
+          xl: "1600px",
         },
       },
     },

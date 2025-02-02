@@ -10,7 +10,7 @@
     height: 100vh;
   }
   height: 76px;
-  padding: 0 15px;
+  padding: 0 16px;
   transition: height 0.2s;
   background: var(--color-brand);
   background: linear-gradient(

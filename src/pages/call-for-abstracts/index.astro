@@ -10,27 +10,26 @@ import img1 from "@images/photos/call-for-abstracts-min.jpg";
 
 <Layout showNav={false}>
   <SEO slot="head" title="Call for Abstracts" img={1} />
-  <section class="wrapper">
-    <div class="">
-      <Hero
-        title="Call for abstracts is open until March 14, 2025"
-        content="Abstracts will be read and presenters notified on a rolling basis, so apply soon. The final abstracts will be accepted and presenters notified by end of March."
-        href={img1.src}
-        alt="Image of Nextflow Summit"
-        ctaText1="Apply Now"
-      />
-    </div>
+  <section class="">
+    <Hero
+      preTitle="Call for abstracts is"
+      title="Open until March 14"
+      content="Abstracts will be read and presenters notified on a rolling basis, so apply soon. The final abstracts will be accepted and presenters notified by end of March."
+      href={img1.src}
+      alt="Image of Nextflow Summit"
+      ctaText1="Apply Now"
+    />
   </section>
 
-  <section class="mt-20 mb-20 container">
-    <h1 class="h1 mb-10">Key Info</h1>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  <section class="mt-20 mb-24 container">
+    <h1 class="h1 mb-4 lg:mb-8">Key Info</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
       <Box className="">
         <SubSection className="flex flex-col justify-between min-h-[350px]">
           <div class="border-b border-b-nextflow w-full">
             <h5 class="h5 mb-4">Talks & Formats</h5>
           </div>
-          <ul class="monospace">
+          <ul class="monospace text-lg">
             <li>Long-form: 20 minutes total including time for Q&A</li>
             <li>Digital Poster presented in person</li>
           </ul>
@@ -41,7 +40,7 @@ import img1 from "@images/photos/call-for-abstracts-min.jpg";
           <div class="border-b border-b-nextflow w-full">
             <h5 class="h5 mb-4">Location</h5>
           </div>
-          <p class="monospace">
+          <p class="monospace text-lg">
             In person at the Nextflow Summit 2025, located at <a
               href="https://maps.app.goo.gl/S9aZawB98jRa8DEC9"
               target="_blank">Aloft Boston Seaport District</a
@@ -54,7 +53,7 @@ import img1 from "@images/photos/call-for-abstracts-min.jpg";
           <div class="border-b border-b-nextflow w-full mb-4">
             <h5 class="h5 mb-4">How to Apply</h5>
           </div>
-          <p class="monospace">
+          <p class="monospace text-lg">
             Click <a href="" target="_blank">[add link here]</a> to apply now. The
             deadline is March 14, 2025.
           </p>
@@ -64,12 +63,12 @@ import img1 from "@images/photos/call-for-abstracts-min.jpg";
   </section>
 
   <section class="my-10 container">
-    <h1 class="h1 mb-10">Themes</h1>
+    <h1 class="h1 mb-4 lg:mb-8">Themes</h1>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <Box className="">
         <SubSection className="flex flex-col justify-between min-h-[350px]">
           <div class="border-b border-b-nextflow w-full mb-4">
-            <h6 class="h5 mb-4">1. Enabling science</h5>
+            <h6 class="h5 mb-4">1. Enabling science</h6>
           </div>
           <h6 class="h6 mb-4">
             How is data technology helping researchers make discoveries?
@@ -113,18 +112,17 @@ import img1 from "@images/photos/call-for-abstracts-min.jpg";
           <div class="border-b border-b-nextflow w-full">
             <h5 class="h5 mb-4">3. Organizational impact</h5>
           </div>
-     
-            <h6 class="h6 mb-4">
-              How are data technologies and platforms empowering organizations?
-            </h6>
-            <ul class="monospace">
-              <li>Integration with business and R&D workflows.</li>
-              <li>
-                Processes and tooling that enhance observability,
-                reproducibility, and collaboration.
-              </li>
-            </ul>
-     
+
+          <h6 class="h6 mb-4">
+            How are data technologies and platforms empowering organizations?
+          </h6>
+          <ul class="monospace">
+            <li>Integration with business and R&D workflows.</li>
+            <li>
+              Processes and tooling that enhance observability, reproducibility,
+              and collaboration.
+            </li>
+          </ul>
         </SubSection>
       </Box>
     </div>

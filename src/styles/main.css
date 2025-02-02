@@ -26,26 +26,10 @@ main#body {
   position: relative;
 }
 .container {
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 1rem;
+  padding-right: 1rem;
   @media (--sm) {
-    padding-left: 32px;
-    padding-right: 32px;
-  }
-  &.island {
-    width: fit-content;
-    max-width: 840px;
-  }
-  &.smaller {
-    max-width: 1000px;
-  }
-  &.smallest {
-    max-width: 824px;
-  }
-}
-.wrapper {
-  padding: 0 1.5rem;
-  @media (--md) {
-    padding: 0 6.25rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 }
