@@ -14,8 +14,11 @@
   }
 }
 .subsection {
-  background: var(--color-brand-100);
-  color: var(--color-brand);
-  padding: 16px;
-  border-radius: 8px;
+  ul {
+    list-style-type: circle;
+    padding-left: 1.25rem;
+    li {
+      margin-bottom: 1rem;
+    }
+  }
 }

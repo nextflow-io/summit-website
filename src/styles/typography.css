@@ -53,15 +53,14 @@
   line-height: var(--leading-xl);
 }
 .h5 {
-  font-size: var(--size-lg);
-  line-height: var(--leading-lg);
-  font-weight: 700;
-  letter-spacing: 0.04em;
+  font-size: 33px;
+  line-height: 1.2;
+  font-weight: 400;
 }
 .h6 {
-  font-size: 30px;
+  font-size: 20px;
   line-height: 1.2;
-  font-weight: 300;
+  font-weight: 400;
 }
 .blockquote {
   font-size: var(--size-lg);

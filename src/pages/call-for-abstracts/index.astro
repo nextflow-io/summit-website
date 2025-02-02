@@ -3,7 +3,8 @@ import Layout from "@layouts/Base.astro";
 import Hero from "@components/Hero";
 import SEO from "@components/SEO";
 import Contact from "@modules/Contact";
-import InfoBox from "@components/InfoBox";
+
+import Box, { SubSection } from "@components/Box";
 import img1 from "@images/photos/call-for-abstracts-min.jpg";
 ---
 
@@ -22,42 +23,110 @@ import img1 from "@images/photos/call-for-abstracts-min.jpg";
   </section>
 
   <section class="mt-20 mb-20 container">
-    <h1 class="h1 mb-10">Info</h1>
+    <h1 class="h1 mb-10">Key Info</h1>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <InfoBox title="Format">
-        Long-form presentations should be 20 minutes total, including time for Q&A. Digital poster presented in person TBD.
-      </InfoBox>
-      <InfoBox title="Location">
-        In person at the Nextflow Summit
-      </InfoBox>
-      <InfoBox title="How to Apply">
-        Click here  to apply now, deadline is March 14, 2025.
-      </InfoBox>
+      <Box className="">
+        <SubSection className="flex flex-col justify-between min-h-[350px]">
+          <div class="border-b border-b-nextflow w-full">
+            <h5 class="h5 mb-4">Talks & Formats</h5>
+          </div>
+          <ul class="monospace">
+            <li>Long-form: 20 minutes total including time for Q&A</li>
+            <li>Digital Poster presented in person</li>
+          </ul>
+        </SubSection>
+      </Box>
+      <Box className="">
+        <SubSection className="flex flex-col justify-between min-h-[350px]">
+          <div class="border-b border-b-nextflow w-full">
+            <h5 class="h5 mb-4">Location</h5>
+          </div>
+          <p class="monospace">
+            In person at the Nextflow Summit 2025, located at <a
+              href="https://maps.app.goo.gl/S9aZawB98jRa8DEC9"
+              target="_blank">Aloft Boston Seaport District</a
+            >
+          </p>
+        </SubSection>
+      </Box>
+      <Box className="">
+        <SubSection className="flex flex-col justify-between min-h-[350px]">
+          <div class="border-b border-b-nextflow w-full mb-4">
+            <h5 class="h5 mb-4">How to Apply</h5>
+          </div>
+          <p class="monospace">
+            Click <a href="" target="_blank">[add link here]</a> to apply now. The
+            deadline is March 14, 2025.
+          </p>
+        </SubSection>
+      </Box>
     </div>
   </section>
 
   <section class="my-10 container">
     <h1 class="h1 mb-10">Themes</h1>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <InfoBox title="1. Enabling science">
-        How is data technology helping researchers make discoveries?
-        Computational wizardry that allows researchers to try out ideas that
-        would have been impossible or too time-consuming before. Clever
-        algorithms that break through computational bottlenecks. Interfaces that
-        enable even wet lab scientists to use powerful computational tools.
-      </InfoBox>
-      <InfoBox title="2. Big Nextflow">
-        How are data engineers solving implementation challenges and overcoming
-        scaling problems? Building pipelines and systems that are robust and
-        fault-tolerant. What scalability means in different contexts. Designing
-        for growth. Lessons learned from horror stories.
-      </InfoBox>
-      <InfoBox title="3. Organizational impact">
-        How are data technologies and platforms empowering organizations?
-        Integration with business and R&D workflows. Processes and tooling that
-        enhance observability, reproducibility, and collaboration.
-      </InfoBox>
+      <Box className="">
+        <SubSection className="flex flex-col justify-between min-h-[350px]">
+          <div class="border-b border-b-nextflow w-full mb-4">
+            <h6 class="h5 mb-4">1. Enabling science</h5>
+          </div>
+          <h6 class="h6 mb-4">
+            How is data technology helping researchers make discoveries?
+          </h6>
+          <ul class="monospace">
+            <li>
+              Computational wizardry that allows researchers to try out ideas
+              that would have been impossible or too time-consuming before.
+            </li>
+            <li>
+              Clever algorithms that break through computational bottlenecks.
+            </li>
+            <li>
+              Interfaces that enable even wet lab scientists to use powerful
+              computational tools.
+            </li>
+          </ul>
+        </SubSection>
+      </Box>
+      <Box className="">
+        <SubSection className="flex flex-col justify-between min-h-[350px]">
+          <div class="border-b border-b-nextflow w-full mb-4">
+            <h5 class="h5 mb-4">2. Big Nextflow</h5>
+          </div>
+          <h6 class="h6 mb-4">
+            How are data engineers solving implementation challenges and
+            overcoming scaling problems?
+          </h6>
+          <ul class="monospace">
+            <li>
+              Building pipelines and systems that are robust and fault-tolerant.
+            </li>
+            <li>What scalability means in different contexts.</li>
+            <li>Designing for growth.</li>
+            <li>Lessons learned from horror stories.</li>
+          </ul>
+        </SubSection>
+      </Box>
+      <Box className="">
+        <SubSection className="flex flex-col justify-between min-h-[350px]">
+          <div class="border-b border-b-nextflow w-full">
+            <h5 class="h5 mb-4">3. Organizational impact</h5>
+          </div>
+     
+            <h6 class="h6 mb-4">
+              How are data technologies and platforms empowering organizations?
+            </h6>
+            <ul class="monospace">
+              <li>Integration with business and R&D workflows.</li>
+              <li>
+                Processes and tooling that enhance observability,
+                reproducibility, and collaboration.
+              </li>
+            </ul>
+     
+        </SubSection>
+      </Box>
     </div>
   </section>
-  <!-- <Contact className="py-8" /> -->
 </Layout>
