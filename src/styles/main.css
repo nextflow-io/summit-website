@@ -5,19 +5,19 @@ html,
 body {
   background-color: var(--color-brand) !important;
   color: white;
-  scroll-padding-top: 104px;
+  /* scroll-padding-top: 104px; */
 }
 body {
   min-height: 100vh;
 }
-header#header,
+/* header#header,
 header#headerMobile,
 main#body,
 footer#footer {
   min-width: 320px;
   width: 100vw;
   overflow-x: hidden;
-}
+} */
 footer#footer {
   position: relative;
   z-index: 10;
@@ -29,7 +29,7 @@ main#body {
   padding-left: 1rem;
   padding-right: 1rem;
   @media (--sm) {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }

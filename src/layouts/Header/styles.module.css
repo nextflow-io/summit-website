@@ -16,10 +16,11 @@
       & li {
         & a:global(.navItem) {
           display: block;
-          padding: 12px 10px;
+          padding: 12px 16px;
           margin: 0 4px;
           line-height: 1;
           font-weight: 400;
+          font-size: 18px;
           position: relative;
           color: var(--color-brand-200);
           transition: all .3s;
@@ -65,7 +66,7 @@
           display: block;
           padding: 0 10px;
           line-height: 40px;
-          font-size: 16px;
+          font-size: 18px;
           font-weight: 400;
           position: relative;
           color: black;
@@ -84,9 +85,7 @@
               height: 1200%;
               top: 0;
               left: 0;
-              bottom: 0;
-              background: pink;
-              
+              bottom: 0;           
             }
           }
         }
