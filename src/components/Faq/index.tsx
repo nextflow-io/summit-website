@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import data from "./data";
 
 type FaqProps = {
-  faqs?: any;
+  data?: any;
   index?: any;
   title?: string;
   question?: string;
@@ -11,7 +11,7 @@ type FaqProps = {
   onClick?: boolean;
 };
 
-const Faq = ({ question, answer }: FaqProps) => {
+const Faq = ({ data, title, question, answer }: FaqProps) => {
   const [activeIndex, setActiveIndex] = useState(null);
   const contentHeight = useRef();
   const handleItemClick = (index) => {
@@ -23,24 +23,24 @@ const Faq = ({ question, answer }: FaqProps) => {
   // };
 
   return (
-
-        <div className="container">
+    <section className="container">
+      <div className="flex flex-col md:flex-row">
+        <div className="w-full"><h2 className="h2">{title ? title : "More Information"}</h2></div>
+        <div>
           {data.map(({ question, answer }, index) => {
-        
             return (
               <div
             
-                 onClick={() => handleItemClick(index)}
                 key={index}
-                className={`border-b py-4`}
+                className={`border-b py-10`}
               >
                 <button
+                    onClick={() => handleItemClick(index)}
                   className={` flex flex-row justify-between items-center w-full ${activeIndex === index ? "active" : ""}`}
-          
                 >
-                  {question} - {index}
+                  <h3 className="h3">{question}</h3>
                   <div
-                    className={`transition-all duration-500 ease-in-out ${activeIndex === index ? "active rotate-180 " : ""}`}
+                    className={`transition-all duration-500 ease-in-out ${activeIndex === index ? "active rotate-45 " : ""}`}
                   >
                     +
                   </div>
@@ -59,13 +59,14 @@ const Faq = ({ question, answer }: FaqProps) => {
                       : { height: "0px", overflow: "hidden" }
                   }
                 >
-                  {answer}
+                 <div dangerouslySetInnerHTML={{ __html: answer }} />
                 </div>
               </div>
             );
           })}
         </div>
-    
+      </div>
+    </section>
   );
 };
 

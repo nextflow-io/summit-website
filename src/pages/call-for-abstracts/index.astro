@@ -6,12 +6,11 @@ import Faq from "@components/Faq";
 import Box, { SubSection } from "@components/Box";
 import img1 from "@images/photos/call-for-abstracts-min.jpg";
 import qa from "./qa";
-import Accordion from "@components/Accordion";
 ---
 
 <Layout>
   <SEO slot="head" title="Call for Abstracts" img={1} />
-  <!-- <section class="">
+   <section class="">
     <Hero
       preTitle="Call for abstracts is"
       title="Open until March 14"
@@ -127,17 +126,10 @@ import Accordion from "@components/Accordion";
         </SubSection>
       </Box>
     </div>
-  </section> -->
+  </section> 
 
-  <!-- <Accordion
-  client:load
-  title="Dress code"
-  content={`<p>
-    The dress code is casual. For the Summit social, you can go all out with a Halloween-themed outfit!
-  </p>   `}
-/> -->
 
-     <Faq client:load/>
+     <Faq client:load data={qa} />
 
 
 </Layout>
