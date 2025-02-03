@@ -36,7 +36,7 @@ export default {
       xs: [".75rem"], // 12px
       sm: ["14px"], //14px
       base: ["1rem"], //16px
-      lg: ["1.125rem"], //18px
+      lg: ["1.0625rem"], //18px
       xl: ["1.5rem"], //24px
       xxl: ["4.375rem"], //70px
       "2xl": ["28px", "1"],

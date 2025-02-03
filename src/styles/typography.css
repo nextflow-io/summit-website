@@ -27,12 +27,12 @@
   }
 }
 .h0 {
-  font-size: var(--size-4xl);
+  font-size: 70px;
   line-height: var(--leading-4xl);
   font-weight: 400;
   @media (--sm) {
-    font-size: 180px;
-    line-height: var(--leading-5xl);
+    font-size: 160px;
+    line-height: 1;
   }
 }
 .h1 {

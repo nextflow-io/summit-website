@@ -14,8 +14,8 @@
     align-items: center;
     justify-content: center;
     height: 100%;
-    padding: 5px 8px;
     background: transparent;
+    padding: 5px 8px;
   }
   & .arrowAfter {
     background: var(--color-nextflow);

@@ -28,10 +28,10 @@ const LandingHero = ({
   price,
 }: HeroProps) => {
   return (
-    <section className={clsx("container h-full min-h-screen")}>
+    <section className={clsx(styles.landingHero,"container h-screen relative")}>
       <div className="flex flex-col md:flex-row md:justify-between h-full">
-        <div className="w-full h-full mb-10 mb:mb-0 md:pr-10 max-w-[750px]">
-          <h1 className="h0">{title}</h1>
+        <div className="w-full h-full mt-10 md:mt-0 mb-10 mb:mb-0 md:pr-10 max-w-[750px]">
+          <h1 className="h0 mb-4">{title}</h1>
           <div
             className={clsx(
               styles.landingLogo,
@@ -41,11 +41,11 @@ const LandingHero = ({
             <p className="h3 mr-4">by</p> <SeqeraLogo />
           </div>
           <p
-            className="monospace max-w-[680px]"
+            className="monospace max-w-[680px] text-lg"
             dangerouslySetInnerHTML={{ __html: content }}
           />
 
-          <div className="flex md:flex-row items-center">
+          <div className="inline-flex flex-col md:flex-row md:items-center">
             {ctaText1 && (
               <Button className="mt-10 relative" white arrowAfter>
                 {ctaLink1 && (
@@ -56,7 +56,7 @@ const LandingHero = ({
             )}
 
             {ctaText2 && (
-              <Button className="ml-10 mt-10 relative" arrowBefore>
+              <Button className="md:ml-10 mt-6 md:mt-10 relative" arrowBefore>
                 {ctaLink2 && (
                   <a className="absolute w-full h-full" href={ctaLink2}></a>
                 )}{" "}
@@ -68,10 +68,10 @@ const LandingHero = ({
         <div
           className={clsx(
             styles.rightWrapper,
-            "h-full flex flex-col justify-between text-right mt-20",
+            "h-full flex flex-col justify-between md:text-right",
           )}
         >
-          <div>
+          <div className="mt-20">
             <div className="mb-10">
               <p className="text-nextflow monospace text-xl mb-2">When</p>
               <h3 className="h3">May 14-16</h3>
