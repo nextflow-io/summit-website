@@ -1,0 +1,92 @@
+---
+import { Image } from "astro:assets";
+import Layout from "@layouts/Base.astro";
+import Hero from "@components/Hero";
+import Box, { SubSection } from "@components/Box";
+import img from "@photos/hackers-1a.jpg";
+import SEO from "@components/SEO";
+import ArrowUpRight from "@icons/ArrowUpRight";
+import Training from "@icons/Training";
+import Exercises from "@icons/Exercises";
+---
+
+<Layout namespace="2025/boston">
+  <SEO slot="head" title="Nextflow and nf-core Foundational Training" img={1} />
+
+  <section class="mt-20">
+    <Hero
+      title="  Nextflow and nf-core Foundational Training"
+      content="We are excited to offer a 2-day training opportunity. Our training is designed to provide you with a foundational understanding of Nextflow and nf-core and equip you with the skills to build better pipelines."
+      href={img.src}
+      alt="Image of Nextflow Summit"
+      ctaText1="Apply Now"
+    />
+  </section>
+
+  <section class="mt-20 mb-24 container">
+    <h1 class="h3 mb-4 md:mb-8">
+      By the end of the course you will be able to:
+    </h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 md:grid-cols-3 gap-8">
+      <Box className="">
+        <SubSection className="flex flex-col justify-between min-h-[350px]">
+          <div>
+            <Training />
+            <div class="mt-10">
+              <h5 class="h5 pb-4">Learn Core Nextflow Concepts</h5>
+              <p class="monospace text-lg">
+                Understand the Nextflow language, essential commands, and
+                structure, allowing users to build and run simple workflows
+                locally.
+              </p>
+            </div>
+          </div>
+          <div
+            class="mt-4 pt-4 border-t border-t-nextflow w-full flex flex-row justify-between items-center"
+          >
+            <h5 class="h5">Register Now</h5>
+            <ArrowUpRight />
+          </div>
+        </SubSection>
+      </Box>
+      <Box className="">
+        <SubSection className="flex flex-col justify-between min-h-[350px]">
+          <div>
+            <Training />
+            <div class="mt-10">
+              <h5 class="h5 pb-4">Engage with nf-core Resources</h5>
+              <p class="monospace text-lg">
+                Discover the benefits of nf-core, including how to access, customize, and utilize community-built pipelines for various bioinformatics tasks.
+              </p>
+            </div>
+          </div>
+          <div
+            class="mt-4 pt-4 border-t border-t-nextflow w-full flex flex-row justify-between items-center"
+          >
+            <h5 class="h5">Register Now</h5>
+            <ArrowUpRight />
+          </div>
+        </SubSection>
+      </Box>
+      <Box className="">
+        <SubSection className="flex flex-col justify-between min-h-[350px]">
+          <div>
+            <Exercises />
+            <div class="mt-10">
+              <h5 class="h5 pb-4">Hands-on  Exercises</h5>
+              <p class="monospace text-lg">
+                Create pipelines using the nf-core template, covering best practices for version control, collaboration, and troubleshooting common errors.
+              </p>
+            </div>
+          </div>
+          <div
+            class="mt-4 pt-4 border-t border-t-nextflow w-full flex flex-row justify-between items-center"
+          >
+            <h5 class="h5">Register Now</h5>
+            <ArrowUpRight />
+          </div>
+        </SubSection>
+      </Box>
+    </div>
+  </section>
+</Layout>
