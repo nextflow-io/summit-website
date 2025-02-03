@@ -1,0 +1,41 @@
+---
+import Layout from "@layouts/Base.astro";
+import Hero from "@components/Hero";
+import SEO from "@components/SEO";
+import Box, { SubSection } from "@components/Box";
+import img1 from "@images/photos/call-for-abstracts-min.jpg";
+import arrowRightUp from "./arrowRightUp.svg";
+---
+
+<Layout>
+  <SEO slot="head" title="Call for Abstracts" img={1} />
+   <section class="">
+    <Hero
+      title="Past Events"
+      content="Past events have provided insights into Nexflow’s origins, development, and its applications in various domains, highting its potential and impact on scientific research, data analysis, and workflow management."
+      href={img1.src}
+      alt="Image of Nextflow Summit"
+      ctaText1="Register Now"
+      ctaText2="Call for abstracts"
+    />
+  </section>
+
+  <section class="mt-20 mb-24 container">
+    <div class="grid grid-cols-1 md:grid-cols-2 md:grid-cols-3 gap-8">
+      <Box href="https://summit.nextflow.io/2024/barcelona/" className="" >
+        <SubSection className="flex flex-col justify-between min-h-[350px]">
+          <div class="border-b border-b-nextflow w-full flex flex-row justify-between items-center pb-4">
+            <h5 class="h5">Barcelona 2024</h5>
+            <img src={arrowRightUp.src} alt="Caret Icon" />
+          </div>
+     
+        </SubSection>
+      </Box>
+      
+    </div>
+  </section>
+
+ 
+
+
+</Layout>
