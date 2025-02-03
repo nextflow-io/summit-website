@@ -1,0 +1,49 @@
+---
+import Layout from "@layouts/Base.astro";
+import Hero from "@components/Hero";
+import SEO from "@components/SEO";
+import Faq from "@components/Faq";
+import Box, { SubSection } from "@components/Box";
+import img1 from "@images/photos/call-for-abstracts-min.jpg";
+import qa from "./qa";
+import ArrowUpRight from "@icons/ArrowUpRight";
+---
+
+<Layout namespace="2025/boston">
+  <SEO slot="head" title="Travel" img={1} />
+   <section class="">
+    <Hero
+      title="Join us in Boston"
+      content="Boston offers a captivating fusion of historical significance and innovative spirit, making it a dynamic center for art and technology. Boston's vibrant atmosphere fosters an environment where art and technology coexist, offering a captivating experience for visitors seeking a deep appreciation for both."
+      href={img1.src}
+      alt="Image of Boston"
+      ctaText1="Apply Now"
+    />
+  </section>
+
+  <section class="mt-20 mb-24 container">
+    <h1 class="h1 mb-4 md:mb-8">Hotels</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 md:grid-cols-3 gap-8">
+      <Box className="">
+        <SubSection className="flex flex-col justify-between min-h-[350px]">
+          <div class="mb-4  pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center">
+            <h5 class="h5">Aloft Boston</h5>
+            <ArrowUpRight />
+          </div>
+          <div>
+          <h5 class="h4">Training, Hackathon and Summit venue</h5>
+          <p class="monospace">
+            Across from the Boston Convention & Exhibition Center, this trendy, modern hotel is also 3 miles from Boston Logan International Airport.
+          </p>
+        </div>
+        </SubSection>
+      </Box>
+     
+  </section>
+
+  
+
+  <Faq className="mt-40 mb-20" client:load data={qa} />
+
+
+</Layout>
