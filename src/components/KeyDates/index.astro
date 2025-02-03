@@ -48,15 +48,15 @@ const { showTitle, hidePastDates = false, location = "boston" } = Astro.props;
     )
   }
 
-  <div class={clsx("flex flex-col md:flex-row")}>
+  <div class={clsx("relative flex flex-col md:flex-row h-full")}>
     <div class="w-full border-t">
       {
         keyDates?.map((item, i) => (
           <div
             class={`flex flex-wrap border-b ${hidePastDates && isPast(item) ? "keyDatePast opacity-60 hidden" : ""}`}
           >
-            <div class="w-full flex flex-row w-full">
-              <h3 class="h3 whitespace-nowrap pt-4 w-full max-w-[90px] md:max-w-[120px]">
+            <div class="w-full flex flex-row">
+              <h3 class="h3 whitespace-nowrap pt-6 w-full max-w-[100px]">
                 {item.date}
               </h3>
 
@@ -72,7 +72,7 @@ const { showTitle, hidePastDates = false, location = "boston" } = Astro.props;
         ))
       }
     </div>
-    <div class="mt-8 md:mt-0 md:ml-10 w-full">
+    <div class="mt-8 md:mt-0 md:ml-20 w-full md:sticky md:top-40 self-start">
       <div class=" pb-[100%] relative w-full h-0 overflow-hidden">
         <img
           src={img1.src}

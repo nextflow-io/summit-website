@@ -20,8 +20,8 @@ const Faq = ({ className, data, title, question, answer }: FaqProps) => {
 
   return (
     <section className={`${className} container`}>
-      <div className="w-full flex flex-col md:flex-row">
-        <div className="w-full mb-6 md:mb-0">
+      <div className="relative w-full flex flex-col md:flex-row">
+        <div className="w-full mb-6 md:mb-0 md:sticky md:top-40 self-start">
           <h2 className="h2">{title ? title : "More Information"}</h2>
         </div>
         <div className="w-full">

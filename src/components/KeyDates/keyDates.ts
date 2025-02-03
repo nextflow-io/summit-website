@@ -13,7 +13,7 @@ const keyDates = [
     ],
   },
   {
-    date: "March 14",
+    date: "Mar 14",
     content: [
       {
         info: "Call for abstracts closes",
@@ -27,7 +27,7 @@ const keyDates = [
     ],
   },
   {
-    date: "March 28",
+    date: "Mar 28",
     content: [
       {
         info: "Accepted presenters notified",
