@@ -89,7 +89,3 @@ b {
 svg[data-icon] {
   display: inline-block;
 }
-
-p {
-  font-size: var(--size-lg);
-}
