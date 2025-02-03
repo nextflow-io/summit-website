@@ -26,6 +26,41 @@ const keyDates = [
       },
     ],
   },
+  {
+    date: "March 28",
+    content: [
+      {
+        info: "Accepted presenters notified",
+      },
+    ],
+  },
+  {
+    date: "April 25",
+    content: [
+      {
+        info: "Registration for the in-person Nextflow Summit closes",
+      },
+      {
+        info: "Cancellation period closes ",
+      },
+    ],
+  },
+  {
+    date: "May 13-14",
+    content: [
+      {
+        info: "Hackathon & Training",
+      },
+    ],
+  },
+  {
+    date: "May 15-16",
+    content: [
+      {
+        info: "Nextflow Summit",
+      },
+    ],
+  },
 ];
 
 export default keyDates;
