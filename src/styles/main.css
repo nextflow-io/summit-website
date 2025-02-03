@@ -49,3 +49,9 @@ main#body {
     padding: 0 2.5rem;
   }
 } */
+
+.js-hide-nav {
+  opacity: 0;
+  transition: all .25s;
+  pointer-events: none;
+}
