@@ -27,12 +27,12 @@ const LandingHero = ({
   price,
 }: HeroProps) => {
   return (
-    <div className={clsx(styles.hero, "container pt-10")}>
+    <div className={clsx(styles.hero, "container")}>
       <div className="flex flex-col md:flex-row md:justify-between">
-        <div className="w-full mb-10 mb:mb-0 md:pr-10 md:pt-10 max-w-[750px]">
-          <h2 className="h2 mb-10">
+        <div className="w-full mb-10 mb:mb-0 md:pr-10 max-w-[750px]">
+          <h1 className="h0 mb-10">
            {title}
-          </h2>
+          </h1>
           <p
             className="monospace"
             dangerouslySetInnerHTML={{ __html: content }}
@@ -40,7 +40,7 @@ const LandingHero = ({
 
          <div className="flex md:flex-row items-center">
           {ctaText1 && (
-            <Button className="mt-16 relative" white arrow arrowAfter>
+            <Button className="mt-16 relative" white arrowAfter>
               {ctaLink1 && (
                 <a className="absolute w-full h-full" href={ctaLink1}></a>
               )}{" "}
@@ -49,7 +49,7 @@ const LandingHero = ({
           )}
 
           {ctaText2 && (
-            <Button className="ml-10 mt-16 relative" arrow arrowBefore>
+            <Button className="ml-10 mt-16 relative" arrowBefore>
               {ctaLink2 && (
                 <a className="absolute w-full h-full" href={ctaLink2}></a>
               )}{" "}

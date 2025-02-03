@@ -29,9 +29,9 @@
 .h0 {
   font-size: var(--size-4xl);
   line-height: var(--leading-4xl);
-  font-weight: 700;
+  font-weight: 400;
   @media (--sm) {
-    font-size: var(--size-5xl);
+    font-size: 180px;
     line-height: var(--leading-5xl);
   }
 }
@@ -39,7 +39,7 @@
   font-size: var(--size-4xl);
   line-height: var(--leading-4xl);
   font-weight: 400;
-  @media (--lg) {
+  @media (--md) {
     font-size: 80px;
     line-height: var(--leading-3xl);
   }
