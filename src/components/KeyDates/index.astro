@@ -1,7 +1,7 @@
 ---
 import clsx from "clsx";
-import keyDates from "@data/keyDates";
-import tiles from "./tiles.png";
+import keyDates from "./keyDates";
+import img1 from "@images/photos/call-for-abstracts-min.jpg";
 import Box from "@components/Box";
 
 function getTitle(item) {
@@ -10,62 +10,83 @@ function getTitle(item) {
 }
 
 function isPast(item) {
-  if(item.title == "Hackathon & Training") return false;
-  if(item.title == "Nextflow Summit") return false;
-  const today = (new Date()).getTime();
-  const eventDate = Date.parse(item.rawEndDate ? item.rawEndDate : item.rawDate);
+  if (item.title == "Hackathon & Training") return false;
+  if (item.title == "Nextflow Summit") return false;
+  const today = new Date().getTime();
+  const eventDate = Date.parse(
+    item.rawEndDate ? item.rawEndDate : item.rawDate,
+  );
   return today > eventDate;
 }
 
 interface Props {
-  showImg?: boolean;
   showTitle?: boolean;
   hidePastDates?: boolean;
   location?: "boston" | "barcelona";
 }
 
-const { showImg, showTitle, hidePastDates = false, location = "boston" } = Astro.props;
+const { showTitle, hidePastDates = false, location = "boston" } = Astro.props;
 ---
 
-<Box>
-  <div class={clsx("relative", { "md:pr-[370px]": showImg })}>
-    {showTitle && (
+<section class="">
+  {
+    showTitle && (
       <h5 class="h3 mb-6">
         Key dates{" "}
-        {hidePastDates &&
-        <button id="togglePastDates" class="text-base font-normal opacity-50 ml-4">
-          [ show past dates ]
-        </button>
-        }
+        {hidePastDates && (
+          <button
+            id="togglePastDates"
+            class="text-base font-normal opacity-50 ml-4"
+          >
+            [ show past dates ]
+          </button>
+        )}
       </h5>
-    )}
-    {keyDates[location]?.map((item, i) => (
-      <div class={`flex flex-wrap items-center border-b border-brand-800 py-2 mb-4 ${hidePastDates && isPast(item) ? 'keyDatePast opacity-60 hidden' : ''}`}>
-        <div class="w-full text-xl font-display font-semibold">{getTitle(item)}</div>
-        <div class="w-full md:text-lg md:leading-6 py-2 md:py-0 text-brand-300">
-          {item.title}
-          {item.description && <p class="text-sm opacity-50">{item.description}</p>}
-        </div>
-      </div>
-    ))}
-    {showImg && (
-      <div class="w-[350px] hidden md:block absolute top-0 right-0 bottom-0 rounded-lg overflow-hidden">
-        <img src={tiles.src} class="h-full w-full object-cover" alt="Key dates illustration" />
-      </div>
-    )}
+    )
+  }
+
+  <div class={clsx("flex flex-row")}>
+    <div class="w-full">
+      {
+        keyDates?.map((item, i) => (
+          <div
+            class={`flex flex-wrap border-b border-brand-800 py-2 mb-4 ${hidePastDates && isPast(item) ? "keyDatePast opacity-60 hidden" : ""}`}
+          >
+            <div class="w-full md:text-lg md:leading-6 py-2 md:py-0 text-brand-300">
+              {item.date}
+
+              {item?.content?.map((item, i) => (
+                <div key={i} className={`border-b first:border-t py-10`}>
+                  {item.info}
+                </div>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+    <div
+      class="pl-10 relative w-full hidden md:block absolute top-0 right-0 bottom-0 rounded-lg overflow-hidden"
+    >
+      <img
+        src={img1.src}
+        class="h-full w-full object-cover"
+        alt="Key dates image"
+      />
+    </div>
   </div>
-</Box>
+</section>
 
 <script>
-  const toggleButton = document.getElementById('togglePastDates');
-  const pastDates = document.querySelectorAll('.keyDatePast');
+  const toggleButton = document.getElementById("togglePastDates");
+  const pastDates = document.querySelectorAll(".keyDatePast");
 
   if (toggleButton) {
-    toggleButton.addEventListener('click', () => {
-      pastDates.forEach(el => el.classList.toggle('hidden'));
-      toggleButton.textContent = toggleButton.textContent.includes('show')
-        ? '[ hide past dates ]'
-        : '[ show past dates ]';
+    toggleButton.addEventListener("click", () => {
+      pastDates.forEach((el) => el.classList.toggle("hidden"));
+      toggleButton.textContent = toggleButton.textContent.includes("show")
+        ? "[ hide past dates ]"
+        : "[ show past dates ]";
     });
   }
 </script>
