@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import data from "./data";
 
 type FaqProps = {
+  className?: string;
   data?: any;
   index?: any;
   title?: string;
@@ -11,7 +12,7 @@ type FaqProps = {
   onClick?: boolean;
 };
 
-const Faq = ({ data, title, question, answer }: FaqProps) => {
+const Faq = ({ className, data, title, question, answer }: FaqProps) => {
   const [activeIndex, setActiveIndex] = useState(null);
   const contentHeight = useRef();
   const handleItemClick = (index) => {
@@ -23,24 +24,22 @@ const Faq = ({ data, title, question, answer }: FaqProps) => {
   // };
 
   return (
-    <section className="container">
-      <div className="flex flex-col md:flex-row">
-        <div className="w-full"><h2 className="h2">{title ? title : "More Information"}</h2></div>
-        <div>
+    <section className={`${className} container`}>
+      <div className="w-full flex flex-col md:flex-row">
+        <div className="w-full">
+          <h2 className="h2">{title ? title : "More Information"}</h2>
+        </div>
+        <div className="w-full">
           {data.map(({ question, answer }, index) => {
             return (
-              <div
-            
-                key={index}
-                className={`border-b py-10`}
-              >
+              <div key={index} className={`border-b first:border-t py-10`}>
                 <button
-                    onClick={() => handleItemClick(index)}
-                  className={` flex flex-row justify-between items-center w-full ${activeIndex === index ? "active" : ""}`}
+                  onClick={() => handleItemClick(index)}
+                  className={`flex flex-row justify-between w-full ${activeIndex === index ? "active" : ""}`}
                 >
-                  <h3 className="h3">{question}</h3>
+                  <h3 className="h3 text-left">{question}</h3>
                   <div
-                    className={`transition-all duration-500 ease-in-out ${activeIndex === index ? "active rotate-45 " : ""}`}
+                    className={`h3 pl-10 transition-all duration-500 ease-in-out ${activeIndex === index ? "active rotate-45 " : ""}`}
                   >
                     +
                   </div>
@@ -59,7 +58,7 @@ const Faq = ({ data, title, question, answer }: FaqProps) => {
                       : { height: "0px", overflow: "hidden" }
                   }
                 >
-                 <div dangerouslySetInnerHTML={{ __html: answer }} />
+                  <div className="monospace" dangerouslySetInnerHTML={{ __html: answer }} />
                 </div>
               </div>
             );

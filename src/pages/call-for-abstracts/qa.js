@@ -1,23 +1,28 @@
 const qa = [
   {
-    question: "How do I register for the Nextflow Summit?",
+    question: "Who is eligible to submit an abstract for the Summit?",
     answer:
-      `Lorem <a href=\"#\">Ipsum</>`,
+      `Anyone is eligible to submit. THIS IS PLACEHOLDER COPY NEEDS TO BE UPDATED`,
   },
   {
-    question: "What is included in the registration fee?",
+    question: "What are the key deadlines for abstract submission?",
     answer:
-      "They are commonly employed in various contexts, including FAQs, product descriptions, navigation menus, settings panels, and data tables, to save screen space and provide a structured and user-friendly interface for presenting information or options."
+      "The deadline for this year's Boston Nextflow Summit is March 14, 2025."
   },
   {
-    question: "Are there early bird discounts options?",
+    question: "Are there specific topics or themes that the abstract should focus on??",
     answer:
-      "The accordion is a musical instrument with a keyboard and bellows. It produces sound by air passing over reeds when the player expands or compresses the bellows, used in various music genres."
+      "There are three themes this year"
   },
   {
-    question: "What is the refund or cancellation policy for registration?",
+    question: "Can I update or revise my abstract after submission?",
     answer:
-      "Yes of course, it is very possible to create an accordion component with another framework."
+      "THIS IS PLACEHOLDER COPY NEEDS TO BE UPDATED"
+  },
+  {
+    question: "What happens if my abstract is accepted?",
+    answer:
+      "Abstracts will be read and presenters notified on a rolling basis, so apply soon. The final abstracts will be accepted and presenters notified by end of March."
   }
 ];
 

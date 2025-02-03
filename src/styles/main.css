@@ -32,4 +32,20 @@ main#body {
     padding-left: 2rem;
     padding-right: 2rem;
   }
+  &.island {
+    width: fit-content;
+    max-width: 840px;
+  }
+  &.smaller {
+    max-width: 1000px;
+  }
+  &.smallest {
+    max-width: 824px;
+  }
 }
+/* .wrapper {
+  padding: 0 1.5rem;
+  @media (--md) {
+    padding: 0 2.5rem;
+  }
+} */

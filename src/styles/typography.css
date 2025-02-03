@@ -58,7 +58,7 @@
 }
 .h3 {
   font-size: var(--size-2xl);
-  line-height: var(--leading-2xl);
+  line-height: var(--leading-5xl);
 }
 .h4 {
   font-size: var(--size-xl);

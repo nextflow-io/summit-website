@@ -22,8 +22,8 @@ import qa from "./qa";
   </section>
 
   <section class="mt-20 mb-24 container">
-    <h1 class="h1 mb-4 lg:mb-8">Key Info</h1>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <h1 class="h1 mb-4 md:mb-8">Key Info</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 md:grid-cols-3 gap-8">
       <Box className="">
         <SubSection className="flex flex-col justify-between min-h-[350px]">
           <div class="border-b border-b-nextflow w-full">
@@ -62,9 +62,9 @@ import qa from "./qa";
     </div>
   </section>
 
-  <section class="my-10 container">
-    <h1 class="h1 mb-4 lg:mb-8">Themes</h1>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+  <section class="mt-10 mb-20 container">
+    <h1 class="h1 mb-4 md:mb-8">Themes</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 md:grid-cols-3 gap-8">
       <Box className="">
         <SubSection className="flex flex-col justify-between min-h-[350px]">
           <div class="border-b border-b-nextflow w-full mb-4">
@@ -129,7 +129,7 @@ import qa from "./qa";
   </section> 
 
 
-     <Faq client:load data={qa} />
+  <Faq className="mt-40 mb-20" client:load data={qa} />
 
 
 </Layout>
