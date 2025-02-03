@@ -4,9 +4,7 @@
   border: 1px solid var(--color-nextflow);
   transition: border-color 0.3s;
   padding: 20px;
-  & a {
-    color: var(--color-nextflow);
-  }
+
   &[href] {
     &:hover {
       border-color: var(--color-nextflow);
@@ -14,6 +12,9 @@
   }
 }
 .subsection {
+  & a {
+    color: var(--color-nextflow);
+  }
   ul {
     list-style-type: circle;
     padding-left: 1.25rem;
