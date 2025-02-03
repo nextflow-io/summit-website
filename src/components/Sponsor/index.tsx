@@ -24,24 +24,32 @@ const Sponsor = ({ sponsor, location }) => {
           </div>
         </div>
         <div>
-          <img
-            src={sponsor.image}
-            title={sponsor.name}
-            className="max-w-[200px] max-h-[55px] min-w-[100px] mr-4 my-10" 
-          />
+          <div className={clsx(styles.sponsorImage, "monospace")}>
+            <img
+              src={sponsor.image}
+              title={sponsor.name}
+              className="max-w-[200px] max-h-[55px] min-w-[100px] mr-4 my-10"
+            />
+          </div>
           <PortableText
             className="mt-4 monospace text-sm"
             value={sponsor.description}
           />
         </div>
       </SubSection>
-      <div className={clsx(styles.ctaLink, "relative mt-8 pt-4 border-t border-t-nextflow w-full flex flex-row justify-between items-center")}>
-          <h5 className="h5">
-            Find out more
-          </h5>
-          <ArrowUpRight />
-          <a className="absolute top-0 left-0 right-0 bottom-0 w-full h-full" href={sponsor.url}></a>
-        </div>
+      <div
+        className={clsx(
+          styles.ctaLink,
+          "relative mt-8 pt-4 border-t border-t-nextflow w-full flex flex-row justify-between items-center",
+        )}
+      >
+        <h5 className="h5">Find out more</h5>
+        <ArrowUpRight />
+        <a
+          className="absolute top-0 left-0 right-0 bottom-0 w-full h-full"
+          href={sponsor.url}
+        ></a>
+      </div>
     </Box>
   );
 };

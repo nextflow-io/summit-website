@@ -1,5 +1,4 @@
 import { useRef, useState } from "react";
-import data from "./data";
 
 type FaqProps = {
   className?: string;
@@ -18,15 +17,11 @@ const Faq = ({ className, data, title, question, answer }: FaqProps) => {
   const handleItemClick = (index) => {
     setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
   };
-  // const [isOpen, setIsOpen] = useState(false);
-  // const toggleAccordion = () => {
-  //   setIsOpen((prev) => !prev);
-  // };
 
   return (
     <section className={`${className} container`}>
       <div className="w-full flex flex-col md:flex-row">
-        <div className="w-full">
+        <div className="w-full mb-6 md:mb-0">
           <h2 className="h2">{title ? title : "More Information"}</h2>
         </div>
         <div className="w-full">
@@ -35,11 +30,11 @@ const Faq = ({ className, data, title, question, answer }: FaqProps) => {
               <div key={index} className={`border-b first:border-t py-10`}>
                 <button
                   onClick={() => handleItemClick(index)}
-                  className={`flex flex-row justify-between w-full ${activeIndex === index ? "active" : ""}`}
+                  className={`flex flex-row justify-between items-start w-full hover:text-nextflow transition-all duration-500 ease-in-out ${activeIndex === index ? "active  text-nextflow" : ""}`}
                 >
-                  <h3 className="h3 text-left">{question}</h3>
+                  <h3 className="h3 text-left pr-8">{question}</h3>
                   <div
-                    className={`h3 pl-10 transition-all duration-500 ease-in-out ${activeIndex === index ? "active rotate-45 " : ""}`}
+                    className={`h3 leading-none transition-transform duration-500 ease-in-out ${activeIndex === index ? "h2 active origin-center rotate-45" : "origin-center"}`}
                   >
                     +
                   </div>
@@ -58,7 +53,10 @@ const Faq = ({ className, data, title, question, answer }: FaqProps) => {
                       : { height: "0px", overflow: "hidden" }
                   }
                 >
-                  <div className="monospace" dangerouslySetInnerHTML={{ __html: answer }} />
+                  <div
+                    className="monospace"
+                    dangerouslySetInnerHTML={{ __html: answer }}
+                  />
                 </div>
               </div>
             );

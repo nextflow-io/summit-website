@@ -18,6 +18,14 @@
   }
 }
 
+.sponsorImage {
+  height: 60px;
+  img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+  }
+}
 .ctaLink {
   &:hover {
     color: var(--color-nextflow);
