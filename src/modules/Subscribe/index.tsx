@@ -19,7 +19,7 @@ const SectionSubscribe: React.FC<Props> = () => {
         gtmEventID="gtm_newsletter"
       />
       </div>
-      <p className="mt-2 text-xs">By submitting this form, you agree to our <a className="underline" href="https://seqera.io/privacy-policy/" target="_blank">privacy policy</a>.</p>
+      <p className="mt-2 text-xs">By submitting this form, you agree to our <a className="underline" href="/privacy-policy/" >privacy policy</a>.</p>
 
     </section>
   );

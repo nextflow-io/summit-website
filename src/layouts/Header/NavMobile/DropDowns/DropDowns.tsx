@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import menuLinks from "../../menuLinks";
-import caret from "./caretIcon.svg";
+import DownCaret from "@images/icons/DownCaret";
 
 type Props = {
   namespace?: string;
@@ -31,7 +31,7 @@ const DropDownItem = ({ name, url, dropdowns, isOpen, onClick }) => {
       }
    
         {dropdowns && (
-          <div className={`transition-all duration-500 ease-in-out ${isOpen ? "active rotate-180 " : ""}`}><img src={caret.src} alt="Caret Icon" /></div>
+          <div className={`transition-all duration-500 ease-in-out ${isOpen ? "active rotate-180 " : ""}`}><DownCaret/></div>
         )}
       </button>
 

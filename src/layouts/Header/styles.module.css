@@ -97,3 +97,26 @@
     }
   }
 }
+.registerBtn {
+  transition: all .3s;
+}
+.registerCTA {
+  transition: all .3s;
+  &:hover {
+    transition: all .3s;
+    background: var(--color-nextflow);
+    color: white;
+    div {
+      background: white;
+    }
+
+    svg path {
+      stroke: var(--color-nextflow);
+    }
+/* 
+    .registerBtn,
+    .svg {
+      transform: translateX(3px);
+    } */
+  }
+}

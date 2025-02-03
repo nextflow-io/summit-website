@@ -7,17 +7,7 @@
   padding: 0;
   overflow: hidden;
   position: relative;
-  & .hoverBG {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    background: transparent;
-    opacity: 0;
-    transition: opacity 0.4s;
-  }
-  &:hover .hoverBG {
-    opacity: 1;
-  }
+
   & .content {
     z-index: 1;
     display: flex;
@@ -25,28 +15,31 @@
     justify-content: center;
     height: 100%;
     padding: 5px 8px;
-    transition: all 0.4s;
     background: transparent;
-  }
-  &:hover .arrowAfter, 
-  &:hover .arrowBefore {
-    transform: translateX(4px);
   }
   & .arrowAfter {
     background: var(--color-nextflow);
     height: 100%;
     border-radius: 4px;
     padding: .35rem;
-    transition: transform 0.2s;
+    transition: all .3s;
   }
   & .arrowBefore {
     background: white;
     height: 100%;
     border-radius: 4px;
     padding: .35rem;
-    transition: transform 0.2s;
+    transition: all .3s;
     svg path {
       stroke: var(--color-nextflow);
+    }
+  }
+  transition: all .3s;
+  &:hover {
+    transition: all .3s;
+    background: var(--color-nextflow);
+    .arrowBefore {
+      /* transform: translateX(2px); */
     }
   }
 }
@@ -54,6 +47,22 @@
 .button.white {
   color: black;
   background: white;
+  &:hover {
+    background: var(--color-nextflow);
+    color: white;
+    .arrowAfter {
+      background: white;
+      /* transform: translateX(2px); */
+      svg path {
+        stroke: var(--color-nextflow);
+      }
+    }
+    .arrowBefore {
+      svg path {
+        stroke: var(--color-nextflow);
+      }
+    }
+  }
 }
 
 .button.secondary {
