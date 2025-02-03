@@ -16,11 +16,12 @@
       & li {
         & a:global(.navItem) {
           display: block;
-          padding: 12px 16px;
+          padding: 12px 12px;
           margin: 0 4px;
           line-height: 1;
           font-weight: 400;
-          font-size: 18px;
+          font-size: 16px;
+          white-space: nowrap;
           position: relative;
           color: var(--color-brand-200);
           transition: all .3s;

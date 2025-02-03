@@ -1,8 +1,5 @@
 ---
 import Layout from "@layouts/Base.astro";
-import CTASection from "@modules/CTASection";
-import Contact from "@modules/Contact";
-import { SponsoredBy } from "@components/Marquee";
 import SEO from "@components/SEO";
 import PersonCard from "@components/PersonCard";
 import speakers from "@data/speakers";
@@ -29,7 +26,4 @@ import speakers from "@data/speakers";
     </div>
   </section>
 
-  <CTASection />
-  <Contact />
-  <SponsoredBy client:load />
 </Layout>
