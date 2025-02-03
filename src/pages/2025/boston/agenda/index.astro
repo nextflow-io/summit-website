@@ -4,6 +4,7 @@ import { SponsoredBy } from "@components/Marquee";
 import KeyInformation from "@modules/KeyInformation";
 import ImageSection from "@modules/ImageSection";
 import CTASection from "@modules/CTASection";
+import KeyDates from "@components/KeyDates/index.astro";
 import Calendar from "@components/Calendar";
 import Contact from "@modules/Contact";
 import SEO from "@components/SEO";
@@ -29,13 +30,13 @@ import Box, { SubSection } from "@components/Box";
             </div>
           </div>
           <div>
-          <h5 class="h5 mb-2">2 days / 50 people</h5>
-          <p class="monospace">
-            An in-person foundational training to supercharge your pipeline
-            development with Nextflow and nf-core. <br /><br />Running in
-            parallel to the hackathon.
-          </p>
-        </div>
+            <h5 class="h5 mb-2">2 days / 50 people</h5>
+            <p class="monospace">
+              An in-person foundational training to supercharge your pipeline
+              development with Nextflow and nf-core. <br /><br />Running in
+              parallel to the hackathon.
+            </p>
+          </div>
         </SubSection>
       </Box>
 
@@ -50,13 +51,14 @@ import Box, { SubSection } from "@components/Box";
             </div>
           </div>
           <div>
-          <h5 class="h5 mb-2">2 days / 100 people</h5>
-          <p class="monospace">
-            An in-person hackathon to tackle real-world challenges, create
-            innovative pipelines with Nextflow, and develop nf-core.<br /><br />
-            Running in parallel to the training.
-          </p>
-        </div>
+            <h5 class="h5 mb-2">2 days / 100 people</h5>
+            <p class="monospace">
+              An in-person hackathon to tackle real-world challenges, create
+              innovative pipelines with Nextflow, and develop nf-core.<br /><br
+              />
+              Running in parallel to the training.
+            </p>
+          </div>
         </SubSection>
       </Box>
       <Box className="">
@@ -80,6 +82,10 @@ import Box, { SubSection } from "@components/Box";
         </SubSection>
       </Box>
     </div>
+  </section>
+
+  <section class="container">
+    <KeyDates showTitle />
   </section>
 
   <section class="pb-6 pt-16 md:pt-20">

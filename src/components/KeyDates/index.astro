@@ -56,11 +56,11 @@ const { showTitle, hidePastDates = false, location = "boston" } = Astro.props;
             class={`flex flex-wrap border-b ${hidePastDates && isPast(item) ? "keyDatePast opacity-60 hidden" : ""}`}
           >
             <div class="w-full flex flex-row w-full">
-              <h3 class="h3 whitespace-nowrap pt-4 w-full max-w-[90px] md:max-w-[150px]">{item.date}</h3>
+              <h3 class="h3 whitespace-nowrap pt-4 w-full max-w-[90px] md:max-w-[120px]">{item.date}</h3>
 
               <div class="pl-10 flex flex-col w-full monospace">
               {item?.content?.map((item, i) => (
-                <div key={i} className={` border-b last:border-b-0 py-4`}>
+                <div key={i} className={` border-b last:border-b-0 py-6`}>
                   {item.info}
                 </div>
               ))}
