@@ -9,12 +9,6 @@ import Subscribe from "@modules/Subscribe";
 import SEO from "@components/SEO";
 ---
 
-<Layout showHeader={false}>
+<Layout showHeader={false} redirect="/2025/boston">
   <SEO slot="head" img={0} />
-   <!-- <CallForAbstracts client:load className="mt-20 opacity-75" /> -->
-  <EventSelector />
-  <PastEvents client:load />
-  <!-- <NextflowNumbers client:load className="py-20" />
-  <ImageSection client:load className="mb-20" /> -->
-  <!-- <Subscribe client:visible /> -->
 </Layout>
