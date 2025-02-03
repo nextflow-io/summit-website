@@ -20,7 +20,7 @@ const Menu: React.FC<Props> = (props) => {
   }
 
   return (
-    <nav>
+    <nav className="main-nav">
       <ul>
         {menuLinks.map(({ name, url }, i) => (
           <li key={i}>

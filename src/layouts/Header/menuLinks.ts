@@ -5,7 +5,7 @@ const menuLinks = [
     dropdowns: [
       {
         name: "Overview",
-        url: "/2025/boston/",
+        url: "/2025/boston",
       },
       {
         name: "Travel",
@@ -69,10 +69,10 @@ const menuLinks = [
       //   name: "Hackathon",
       //   url: "/2025/barcelona/hackathon",
       // },
-      {
-        name: "Speakers",
-        url: "/2025/barcelona/speakers",
-      },
+      // {
+      //   name: "Speakers",
+      //   url: "/2025/barcelona/speakers",
+      // },
       // {
       //   name: "Posters",
       //   url: "/2025/barcelona/posters",
@@ -80,6 +80,10 @@ const menuLinks = [
       {
         name: "Sponsors",
         url: "/2025/barcelona/sponsors",
+      },
+      {
+        name: "Why Attend",
+        url: "/2025/boston/why-attend",
       },
       // {
       //   name: "Gallery",
