@@ -14,9 +14,10 @@ type Props = {
   wide?: boolean;
   wider?: boolean;
   white?: boolean;
-  white2?: boolean;
   secondary?: boolean;
   arrow?: boolean;
+  arrowBefore?: boolean;
+  arrowAfter?: boolean;
   cta?: boolean;
 };
 
@@ -34,25 +35,30 @@ const Button: React.FC<Props> = ({
     [styles.wide]: attributes.wide,
     [styles.wider]: attributes.wider,
     [styles.white]: attributes.white,
-    [styles.white2]: attributes.white2,
     [styles.secondary]: attributes.secondary,
     [styles.cta]: attributes.cta,
   });
 
-  let arrow = null;
-  if (attributes.arrow) {
-    arrow = <Arrow key="arrow" className={styles.arrow} />;
+  let arrowBefore = null;
+  let arrowAfter = null;
+
+  if (attributes.arrowBefore) {
+    arrowBefore = <Arrow key="arrow" className={styles.arrowBefore} />;
+  }
+  if (attributes.arrowAfter) {
+    arrowAfter = <Arrow key="arrow" className={styles.arrowAfter} />;
   }
 
   const url = to || href;
 
   const btnContent = (
     <Fragment>
-      <span className={styles.hoverBG} />
-      <span className={styles.content}>
+      <div className={styles.hoverBG} />
+      <div className={styles.content}>
+        {arrowBefore && (<div className="mr-2">{arrowBefore}</div>)}
         {children}
-        {arrow}
-      </span>
+        {arrowAfter && (<div className="ml-6">{arrowAfter}</div>)}
+      </div>
     </Fragment>
   );
 
@@ -61,7 +67,7 @@ const Button: React.FC<Props> = ({
     if (isOutLink) {
       return (
         <a href={url} className={cn} target="_blank" rel="noreferrer">
-          {btnContent}
+          {btnContent} 
         </a>
       );
     } else {
@@ -74,7 +80,7 @@ const Button: React.FC<Props> = ({
   }
 
   return (
-    <button type="button" onClick={onClick} className={`monospace ${cn}`}>
+    <button type="button" onClick={onClick} className={`monospace flex items-center justify-center ${cn}`}>
       {btnContent}
     </button>
   );
