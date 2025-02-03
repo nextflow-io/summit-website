@@ -31,17 +31,20 @@ const { showTitle, hidePastDates = false, location = "boston" } = Astro.props;
 <section class="">
   {
     showTitle && (
-      <h5 class="h3 mb-6">
-        Key dates{" "}
-        {hidePastDates && (
+      <div class="mb-10">
+        <h5 class="h2 mb-2">
+          Key dates{" "}
+          {/* {hidePastDates && (
           <button
             id="togglePastDates"
             class="text-base font-normal opacity-50 ml-4"
           >
             [ show past dates ]
           </button>
-        )}
-      </h5>
+        )} */}
+        </h5>
+        <p class="monospace">At a glance</p>
+      </div>
     )
   }
 
@@ -50,16 +53,18 @@ const { showTitle, hidePastDates = false, location = "boston" } = Astro.props;
       {
         keyDates?.map((item, i) => (
           <div
-            class={`flex flex-wrap border-b border-brand-800 py-2 mb-4 ${hidePastDates && isPast(item) ? "keyDatePast opacity-60 hidden" : ""}`}
+            class={`flex flex-wrap border-b ${hidePastDates && isPast(item) ? "keyDatePast opacity-60 hidden" : ""}`}
           >
-            <div class="w-full md:text-lg md:leading-6 py-2 md:py-0 text-brand-300">
-              {item.date}
+            <div class="w-full flex flex-row w-full border-t">
+              <h3 class="h3 whitespace-nowrap pt-4 w-full">{item.date}</h3>
 
+              <div class="pl-10 flex flex-col w-full monospace">
               {item?.content?.map((item, i) => (
-                <div key={i} className={`border-b first:border-t py-10`}>
+                <div key={i} className={` border-b last:border-b-0 last:border-0 py-4`}>
                   {item.info}
                 </div>
               ))}
+              </div>
             </div>
           </div>
         ))
