@@ -34,7 +34,7 @@
     --bg: white;
     transform: rotate(45deg) translate(-1px, -2px);
     &:before {
-      border: 5px solid var(--bg);
+      border: 3px solid var(--bg);
     }
 
     & span {

@@ -19,10 +19,11 @@ const NavMobile: React.FC<Props> = ({ pathname, namespace, showNav }) => {
   const isMobile = useMediaQuery({ maxWidth: "sm" });
   if (!isMobile) return null;
   return (
+    <div>
     <header
       id="headerMobile"
       className={clsx(styles.navMobile, { [styles.open]: isOpen })}
-    >
+    >  
       <div className={styles.header}>
         <Logo namespace={namespace} />
         <Hamburger setIsOpen={setIsOpen} isOpen={isOpen} />
@@ -32,7 +33,10 @@ const NavMobile: React.FC<Props> = ({ pathname, namespace, showNav }) => {
           <DropDowns />
         </div>
       )}
+      
     </header>
+      <div className="h-[76px]"></div>
+    </div>
   );
 };
 
