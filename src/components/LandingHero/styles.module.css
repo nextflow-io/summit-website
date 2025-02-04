@@ -10,21 +10,46 @@
 }
 
 @keyframes fadeInOut {
-  0%,100% { opacity: 0 }
-  50% { opacity: 1 }
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 .colorBarWrapper {
   width: 100%;
   max-width: 190px;
   position: absolute;
-  transition: opacity .3s;
   z-index: 0;
   animation-timing-function: ease-in-out;
-  animation: blocksAnimation 20s;
   animation-iteration-count: infinite;
+  transition: opacity .3s;
+  opacity: 0;
   @media (--sm) {
     max-width: 542px;
+  }
+  &:first-child {
+    animation: fadeInOut 4s ease-in-out;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+  }
+  &:nth-child(2) {
+    animation: fadeInOut 3s ease-in-out;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+  }
+  &:nth-child(3) {
+    animation: fadeInOut 3s ease-in-out;
+    animation-delay: 3s;
+    animation-iteration-count: infinite;
+  }
+  &:nth-child(4) {
+    animation: fadeInOut 3s ease-in-out;
+    animation-delay: 4s;
+    animation-iteration-count: infinite;
   }
 }
 
@@ -41,7 +66,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    content: '';
+    content: "";
     z-index: 10;
     width: 100%;
     height: 100%;
@@ -57,7 +82,6 @@
       background: var(--color-fusion);
     }
   }
-
 
   & > div {
     position: absolute;
@@ -85,27 +109,4 @@
   @media (--sm) {
     padding-bottom: 22%;
   }
-
-
-  /* .colorBar {
-  width: 100%;
-  max-width: 542px;
-  height: 111px;
-  position: relative;
-  background: var(--color-nextflow);
-  & > div {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    background: rgb(237,221,220);
-    background: linear-gradient(90deg, rgba(237,221,220,1) 0%, rgba(236,215,213,1) 16%, rgba(234,200,194,1) 38%, rgba(231,176,164,1) 58%, rgba(228,142,122,1) 74%, rgba(225,114,87,1) 860%);
-    background-repeat: no-repeat;
-    background-size: cover;
-  } */
 }
-
