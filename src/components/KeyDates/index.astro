@@ -48,7 +48,7 @@ const { showTitle, hidePastDates = false, location = "boston" } = Astro.props;
     )
   }
 
-  <div class={clsx("relative flex flex-col md:flex-row h-full")}>
+  <div class={clsx("relative flex flex-col sm:flex-row h-full")}>
     <div class="w-full border-t">
       {
         keyDates?.map((item, i) => (
@@ -72,7 +72,7 @@ const { showTitle, hidePastDates = false, location = "boston" } = Astro.props;
         ))
       }
     </div>
-    <div class="mt-8 md:mt-0 md:ml-20 w-full md:sticky md:top-40 self-start">
+    <div class="mt-8 sm:mt-0 sm:ml-20 w-full sm:sticky sm:top-40 self-start">
       <div class=" pb-[100%] relative w-full h-0 overflow-hidden">
         <img
           src={img1.src}

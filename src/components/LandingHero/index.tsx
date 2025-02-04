@@ -74,15 +74,15 @@ const LandingHero = ({
           <div className="mt-20">
             <div className="mb-10">
               <p className="h6 text-nextflow monospace mb-2">When</p>
-              <h3 className="h3">May 14-16</h3>
+              <h3 className="h3">{when}</h3>
             </div>
             <div className="mb-10">
               <p className="h6 text-nextflow monospace mb-2">Where</p>
-              <h3 className="h3">Boston</h3>
+              <h3 className="h3">{where}</h3>
             </div>
             <div className="mb-10">
               <p className="h6 text-nextflow monospace mb-2">Price</p>
-              <h3 className="h3">XXX</h3>
+              <h3 className="h3">{price}</h3>
             </div>
           </div>
           <h1 className="h0">2025</h1>
