@@ -2,22 +2,22 @@ const qa = [
   {
     question: "Who is eligible to submit an abstract for the Summit?",
     answer:
-      `Anyone is eligible to submit. THIS IS PLACEHOLDER COPY NEEDS TO BE UPDATED`,
+      `Anyone is eligible to submit. This is placeholder copy that needs to be updated or removed.`,
   },
   {
     question: "What are the key deadlines for abstract submission?",
     answer:
-      "The deadline for this year's Boston Nextflow Summit is March 14, 2025."
+      "The deadline is March 14, 2025."
   },
   {
     question: "Are there specific topics or themes that the abstract should focus on??",
     answer:
-      "There are three themes this year"
+      "Please see the Themes section at the top of this page for this year's three topics. "
   },
   {
     question: "Can I update or revise my abstract after submission?",
     answer:
-      "THIS IS PLACEHOLDER COPY NEEDS TO BE UPDATED"
+      "This is placeholder copy that needs to be updated or removed."
   },
   {
     question: "What happens if my abstract is accepted?",
