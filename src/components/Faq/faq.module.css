@@ -1,0 +1,10 @@
+.faqAnswer {
+    a {
+        text-decoration: underline;
+        transition: all .3s;
+        &:hover{
+            transition: all .3s;
+            color: var(--color-nextflow);
+        }
+    }
+}

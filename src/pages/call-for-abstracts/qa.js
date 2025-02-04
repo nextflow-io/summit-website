@@ -7,7 +7,7 @@ const qa = [
   {
     question: "What are the key deadlines for abstract submission?",
     answer:
-      "The deadline is March 14, 2025."
+      `The deadline is March 14, 2025. Submit your proposal by <a class="underline" href="/call-for-abstracts">clicking here</a>. `
   },
   {
     question: "Are there specific topics or themes that the abstract should focus on??",
