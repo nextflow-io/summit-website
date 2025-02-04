@@ -38,20 +38,27 @@ const LandingHero = ({
       // <GreenBar className="max-w-[542px]"/>
       <BlueBar className="max-w-[542px]"/> */}
 
-      <div className={clsx(styles.greenBarWrapper, "top-[13%] left-[0%]")}>
-        <div className={clsx(styles.greenBar, "bg-color-nextflow")}>
+
+       <div className={clsx(styles.colorBarWrapper, "top-[0%] right-[15%]")}>
+        <div className={clsx(styles.colorBar, styles["red"], "")}>
           <div></div>
         </div>
       </div>
 
-      <div className={clsx(styles.greenBarWrapper, "top-[50%] left-[50%]")}>
-        <div className={clsx(styles.greenBar, "bg-color-nextflow")}>
+      <div className={clsx(styles.colorBarWrapper, "top-[20%] left-[0%]")}>
+        <div className={clsx(styles.colorBar, styles["green"], "")}>
           <div></div>
         </div>
       </div>
 
-      <div className={clsx(styles.greenBarWrapper, "bottom-[5%] left-[10%]")}>
-        <div className={clsx(styles.greenBar, "bg-color-nextflow")}>
+      <div className={clsx(styles.colorBarWrapper, "top-[50%] right-[20%]")}>
+        <div className={clsx(styles.colorBar, styles["green"], "")}>
+          <div></div>
+        </div>
+      </div>
+
+      <div className={clsx(styles.colorBarWrapper, "bottom-[5%] right-[10%]")}>
+        <div className={clsx(styles.colorBar, styles["red"], "")}>
           <div></div>
         </div>
       </div>

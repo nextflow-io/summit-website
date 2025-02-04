@@ -14,7 +14,7 @@
   50% { opacity: 1 }
 }
 
-.greenBarWrapper {
+.colorBarWrapper {
   width: 100%;
   max-width: 190px;
   position: absolute;
@@ -28,17 +28,14 @@
   }
 }
 
-.greenBar {
+.colorBar {
   width: 100%;
   height: auto;
   overflow: hidden;
   padding-bottom: 22%;
   position: relative;
-  @media (--sm) {
-    padding-bottom: 22%;
-  }
+
   &::after {
-    background: var(--color-nextflow);
     position: absolute;
     top: 0;
     left: 0;
@@ -50,6 +47,17 @@
     height: 100%;
     mix-blend-mode: multiply;
   }
+  &.green {
+    &::after {
+      background: var(--color-nextflow);
+    }
+  }
+  &.red {
+    &::after {
+      background: var(--color-fusion);
+    }
+  }
+
 
   & > div {
     position: absolute;
@@ -74,7 +82,12 @@
     background-size: cover;
   }
 
-  /* .greenBar {
+  @media (--sm) {
+    padding-bottom: 22%;
+  }
+
+
+  /* .colorBar {
   width: 100%;
   max-width: 542px;
   height: 111px;
