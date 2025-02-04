@@ -28,16 +28,17 @@ import Training from "@icons/Training";
 
   <section class="mt-20 mb-24 container">
     <div class="grid grid-cols-1 md:grid-cols-2 md:grid-cols-3 gap-8">
-      <Box className="relative">
-        <div>
-          <img src={img1.src} />
-        </div>
-      </Box>
-      <Box className="">
+      <div class="border border-nextflow xl:aspect-square relative overflow-hidden object-cover">
+          <img
+            class="w-full h-full absolute top-0 left-0 right-0 bottom-0 object-cover"
+            src={img1.src}
+          />
+      </div>
+      <Box className="xl:aspect-square">
         <SubSection className="flex flex-col justify-between min-h-[350px]">
           <Training />
           <div class="mt-10">
-            <h5 class="h4 mb-4">The quintessential Nextflow Community event</h5>
+            <h5 class="h5 mb-4">The quintessential Nextflow Community event</h5>
             <p class="monospace">
               The Nextflow Summit unites Nextflow enthusiasts, experts, and
               collaborators for unparalleled networking, building friendships,
@@ -47,11 +48,11 @@ import Training from "@icons/Training";
           </div>
         </SubSection>
       </Box>
-      <Box className="">
+      <Box className="xl:aspect-square">
         <SubSection className="flex flex-col justify-between min-h-[350px]">
           <Training />
           <div class="mt-10">
-            <h5 class="h4 mb-4">Push boundaries and innovate with Nextflow</h5>
+            <h5 class="h5 mb-4">Push boundaries and innovate with Nextflow</h5>
             <p class="monospace">
               At the Hackathon, you'll join forces to tackle real-world
               challenges, pushing boundaries and creating innovative pipelines
@@ -61,27 +62,25 @@ import Training from "@icons/Training";
           </div>
         </SubSection>
       </Box>
-      <Box className="">
+      <Box className="xl:aspect-square">
         <SubSection className="flex flex-col justify-between min-h-[350px]">
           <Training />
           <div class="mt-10">
-            <h5 class="h4 mb-4">Learn and collaborate with Nextflow experts</h5>
+            <h5 class="h5 mb-4">Learn and collaborate with Nextflow experts</h5>
             <p class="monospace">
               The Nextflow Summit provides a comprehensive experience in
               workflow management and data orchestration, featuring real-life
-              success stories, inspiring keynotes, and panel discussions,
-              catering to both newcomers seeking foundational training and
-              seasoned users aiming to stay abreast of the latest technologies
-              and trends.
+              success stories, inspiring keynotes, and panel discussions and
+              seasoned users aiming to stay abreast of the latest technologies.
             </p>
           </div>
         </SubSection>
       </Box>
-      <Box className="">
+      <Box className="xl:aspect-square">
         <SubSection className="flex flex-col justify-between min-h-[350px]">
           <Training />
           <div class="mt-10">
-            <h5 class="h4 mb-4">Showcase your work to industry leaders</h5>
+            <h5 class="h5 mb-4">Showcase your work to industry leaders</h5>
             <p class="monospace">
               The Nextflow Summit offers a prime platform to showcase your work
               and receive valuable community feedback on a wide range of
@@ -91,11 +90,13 @@ import Training from "@icons/Training";
           </div>
         </SubSection>
       </Box>
-      <Box className="relative">
-        <div>
-          <img src={img3.src} />
-        </div>
-      </Box>
+
+      <div class="border border-nextflow xl:aspect-square relative overflow-hidden object-cover">
+        <img
+          class="w-full h-full absolute top-0 left-0 right-0 bottom-0 object-cover"
+          src={img3.src}
+        />
+    </div>
     </div>
 
     <Faq className="mt-40 mb-20" client:load data={qa} />
