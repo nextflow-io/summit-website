@@ -17,11 +17,8 @@ if (typeof Astro.props.showNav !== "undefined") showNav = Astro.props.showNav;
       <div class="container flex items-center justify-between monospace h-full">
         <Logo namespace={namespace} />
         <Menu pathname={pathname} namespace={namespace} />
-        <button class={`${styles.registerCTA} bg-white text-brand h-full px-4`}>
-          <a
-            href="/register"
-            class="flex flex-row uppercase items-center justify-center"
-          >
+        <button class={`${styles.registerCTA} bg-white text-brand h-full px-4 relative flex flex-row uppercase items-center justify-cente`}>
+       
             Register Now
             <div
               class={`${styles.registerBtn} arrowRight ml-4 bg-nextflow inline flex justify-center items-center p-2 rounded-sm`}
@@ -29,7 +26,8 @@ if (typeof Astro.props.showNav !== "undefined") showNav = Astro.props.showNav;
             >
               <ArrowRight />
             </div>
-          </a>
+            <a href="/register" class="absolute top-0 left-0 right-0 bottom-0 w-full h-full"></a>
+   
         </button>
       </div>
     </div>
