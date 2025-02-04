@@ -30,13 +30,19 @@ const LandingHero = ({
   where,
   price,
 }: HeroProps) => {
-
-  
   return (
-    <section className={clsx(styles.landingHero,"container h-screen relative")}>
-      <RedBar className="max-w-[542px]"/>
-      <GreenBar className="max-w-[542px]"/>
-      <BlueBar className="max-w-[542px]"/>
+    <section
+      className={clsx(styles.landingHero, "container h-screen relative")}
+    >
+      {/* <RedBar className="max-w-[542px]"/>
+       <GreenBar className="max-w-[542px]"/>
+      <BlueBar className="max-w-[542px]"/> */}
+
+      <div className={clsx(styles.greenBar, "bg-color-nextflow")}>
+        <div className="w-full h-full mix-blend-multiply">
+        </div>
+      </div>
+
       <div className="flex flex-col md:flex-row md:justify-between h-full">
         <div className="w-full h-full mt-10 md:mt-0 mb-10 mb:mb-0 md:pr-10 max-w-[750px]">
           <h1 className="h0 mb-4">{title}</h1>
