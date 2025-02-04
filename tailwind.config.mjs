@@ -20,7 +20,6 @@ export const screens = {
   xl: "1600px",
 };
 
-
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
@@ -32,21 +31,19 @@ export default {
       monospace: ["PT Mono", "monospace"],
     },
     fontSize: {
-      xxs: [".625rem"], //10px
+      xxs: [".625rem"], // 10px
       xs: [".75rem"], // 12px
-      sm: ["14px"], //14px
-      base: ["1rem"], //16px
-      lg: ["1.0625rem"], //18px
-      xl: ["1.5rem"], //24px
-      xxl: ["4.375rem"], //70px
-      "2xl": ["28px", "1"],
-      "3xl": ["36px", "1"],
-      "4xl": ["40px", "1"],
-      "5xl": ["48px", "1"],
-      "6xl": ["56px", "1"],
-      "7xl": ["60px", "1"],
-      "8xl": ["64px", "1"],
-      "9xl": ["68px", "1"],
+      sm: ["14px"], // 14px
+      base: ["1rem"], // 16px
+      body: ["1.0625rem"], // 17px
+      lg: ["1.125rem"], // 18px
+      xl: ["1.5rem"], // 24px
+      xxl: ["2.1875rem"], // 35px
+      "2xl": ["2.5rem", "1"], // 40px
+      "3xl": ["3.125rem", "1"], // 50px
+      "4xl": ["5rem", "1"], // 80px
+      "5xl": ["7.5rem", "1"], // 120px
+      "6xl": ["11.25rem", "1"], // 180px
     },
     extend: {
       colors: {
