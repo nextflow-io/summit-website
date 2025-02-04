@@ -1,6 +1,3 @@
-
-
-
 :root {
   --sl-blue: #4256e7;
 }
@@ -55,8 +52,24 @@ main#body {
 
 .js-hide-nav {
   opacity: 0;
-  transition: all .25s;
+  transition: all 0.25s;
   pointer-events: none;
 }
 
-
+.dropdownBtn {
+  &:hover {
+    svg path {
+      transition: all .3s;
+      fill: var(--color-nextflow);
+      stroke: var(--color-nextflow);
+    }
+  }
+}
+.caret {
+  &.active {
+    & > svg path {
+      fill: var(--color-nextflow);
+      stroke: var(--color-nextflow);
+    }
+  }
+}

@@ -112,3 +112,49 @@
     padding-bottom: 22%;
   }
 }
+
+
+
+
+.toggleSlider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-nextflow-200);
+  -webkit-transition: .4s;
+  border-radius: 6px;
+  transition: .4s;
+  &:before {
+    position: absolute;
+    height: 100%;
+    width: auto;
+    /* left: 4px;
+    bottom: 4px; */
+    color: black;
+    background-color: pink;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+}
+
+.toggleLocation {
+  position: relative;
+  display: inline-block;
+  width: auto;
+  height: 30px;
+  line-height: 30px;
+  & > input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    &:checked + .toggleSlider {
+      background-color: #2196F3;
+    }
+    &:checked + .toggleSlider:before {
+      transform: translateX(100%);
+    }
+  }
+}

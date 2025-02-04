@@ -28,7 +28,9 @@ const NavMobile: React.FC<Props> = ({ pathname, namespace, showNav }) => {
         <Hamburger setIsOpen={setIsOpen} isOpen={isOpen} />
       </div>
       {isOpen && (
-        <DropDowns/>
+        <div className={clsx(styles.navDropdown, { [styles.openDD]: isOpen })}>
+          <DropDowns />
+        </div>
       )}
     </header>
   );

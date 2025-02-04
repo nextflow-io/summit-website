@@ -122,8 +122,18 @@ const LandingHero = ({
               </div>
 
               <div className="sm:hidden">
+                <label
+                  className={clsx(styles.toggleLocation, "monospace relative")}
+                >
+                  <input className="absolute" type="checkbox" />
+                  <div className={clsx(styles.toggleSlider, "absolute")}></div>
+                  <div className="flex flex-row justify-between relative">
+                    <div className="px-4">Boston</div>
+                    <div className="px-4">Barcelona</div>
+                  </div>
+                </label>
                 <p
-                  className="monospace max-w-[580px]"
+                  className="monospace max-w-[580px] mt-10"
                   dangerouslySetInnerHTML={{ __html: content }}
                 />
                 <div className="inline-flex flex-col sm:flex-row sm:items-center">
@@ -156,7 +166,9 @@ const LandingHero = ({
                 </div>
               </div>
             </div>
-            <h1 className="absolute top-80 right-0 sm:top-auto sm:right-auto sm:relative h0">2025</h1>
+            <h1 className="absolute top-80 right-0 sm:top-auto sm:right-auto sm:relative h0">
+              2025
+            </h1>
           </div>
         </div>
       </section>
