@@ -8,7 +8,7 @@ import styles from "./styles.module.css";
 const SectionSubscribe: React.FC<Props> = () => {
   return (
     <section className="">
-      <p className="text-body mb-4">
+      <p className=" mb-4">
       Sign up to receive the latest news
       </p>
       <div>

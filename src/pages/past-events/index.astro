@@ -15,6 +15,27 @@ import e2023_boston from "@images/photos/past-events/e2023_boston.jpg";
 import e2023_bcn from "@images/photos/past-events/e2023_bcn.jpg";
 import e2024_bcn from "@images/photos/past-events/e2024_bcn.jpg";
 import e2024_boston from "@images/photos/past-events/e2024_boston.jpg";
+import { fade } from "astro:transitions";
+
+const anim = {
+  old: {
+    name: 'bump',
+    duration: '0.5s',
+    easing: 'ease-in',
+    direction: 'reverse',
+  },
+  new: {
+    name: 'bump',
+    duration: '0.5s',
+    easing: 'ease-in-out',
+  },
+};
+
+const customTransition = {
+  forwards: anim,
+  backwards: anim,
+};
+
 
 ---
 
@@ -22,6 +43,7 @@ import e2024_boston from "@images/photos/past-events/e2024_boston.jpg";
   <SEO slot="head" title="Past Events" img={1} />
   <section class="">
     <Hero
+    transition:animate={customTransition}
       title="Past Events"
       content="Past events have provided insights into Nexflow’s origins, development, and its applications in various domains, highting its potential and impact on scientific research, data analysis, and workflow management."
       href={img1.src}

@@ -1,3 +1,9 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 .h0,
 .h1,
 .h2,
@@ -5,69 +11,66 @@
 .h4,
 .h5 {
   font-family: Degular, sans-serif;
+  font-weight: 400;
 }
 
 /* biggest headline used on landing page  */
 .h0 {
   font-size: 70px;
-  line-height: var(--leading-4xl);
-  font-weight: 400;
-  @media (--md) {
+  line-height: 1;
+  @media (--sm) {
     font-size: 180px;
-    line-height: 1;
   }
 }
 
 /* main headline  */
 .h1 {
-  font-size: var(--size-4xl);
-  line-height: var(--leading-4xl);
-  font-weight: 400;
-  @media (--md) {
+  font-size: 60px;
+  line-height: 1;
+  @media (--sm) {
     font-size: 120px;
-    line-height: var(--leading-3xl);
   }
 }
 
 /* secondary headline  */
 .h2 {
-  font-size: var(--size-4xl);
-  line-height: var(--leading-3xl);
-  @media (--md) {
+  font-size: 50px;
+  line-height: 1;
+  @media (--sm) {
     font-size: 80px;
-    line-height: var(--leading-3xl);
   }
 }
 
 .h3 {
-  font-size: var(--size-2xl);
-  line-height: var(--leading-5xl);
-  @media (--md) {
+  font-size: 26px;
+  line-height: 1;
+  @media (--sm) {
     font-size: 50px;
-    line-height: var(--leading-3xl);
   }
 }
 
 .h4 {
-  @media (--md) {
+  font-size: 24px;
+  line-height: 1;
+  @media (--sm) {
     font-size: 40px;
-    line-height: var(--leading-3xl);
   }
 }
 
 .h5 {
-  font-size: 30px;
-  line-height: 1.2;
-  font-weight: 400;
-  @media (--md) {
+  font-size: 26px;
+  line-height: 1.3;
+  @media (--sm) {
     font-size: 35px;
   }
 }
 
 .h6 {
-  font-size: 24px;
+  font-size: 14px;
   line-height: 1.2;
-  font-weight: 400;
+  @media (--sm) {
+    font-size: 24px;
+  }
 }
 
 .blockquote {
@@ -78,17 +81,18 @@
 }
 
 b {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 svg[data-icon] {
   display: inline-block;
 }
 
-
 p {
-  font-size: 1rem;
-  @media (--md) {
-    font-size: 17px;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  @media (--sm) {
+    font-size: 1.0625rem;
+    line-height: 1.5;
   }
 }

@@ -30,13 +30,13 @@ const currentYear = new Date().getFullYear();
 
               return (
                 <ul class="mb-16 md:mb-0 md:ml-12 lg:ml-16">
-                  <p class="mb-6 text-body">{name}</p>
+                  <p class="mb-6 ">{name}</p>
                   {dropdowns?.map(({ name, url }, i) => (
                     <li>
                       <a
                         href={url}
                         {...linkProps}
-                        class="text-body transition-all duration-300 ease-in-out hover:transition-all hover:text-nextflow"
+                        class=" transition-all duration-300 ease-in-out hover:transition-all hover:text-nextflow"
                       >
                         {name}
                       </a>
@@ -61,7 +61,7 @@ const currentYear = new Date().getFullYear();
           <SeqeraLogo />
         </div>
       </div>
-      <div class="monospace text-body">{`© ${currentYear} Seqera`}</div>
+      <div class="monospace ">{`© ${currentYear} Seqera`}</div>
     </div>
   </div>
 </footer>

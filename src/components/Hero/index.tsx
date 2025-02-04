@@ -35,7 +35,7 @@ const Hero = ({
             {title}
           </h2>
           <p
-            className="monospace text-body"
+            className="monospace "
             dangerouslySetInnerHTML={{ __html: content }}
           />
 

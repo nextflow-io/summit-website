@@ -1,5 +1,7 @@
 ---
 const { redirect, namespace, showNav, altBG, showHeader } = Astro.props;
+import { ViewTransitions } from "astro:transitions";
+
 import "../styles/main.css";
 import "../styles/typography.css";
 import "../styles/forms.css";
@@ -14,6 +16,8 @@ import Footer from "./Footer/index.astro";
 import CookieHandler from "./CookieHandler";
 import CookieNotice from "./CookieNotice";
 import Contact from "@modules/Contact";
+
+
 ---
 
 <!doctype html>
@@ -29,12 +33,14 @@ import Contact from "@modules/Contact";
     <slot name="head" />
     {redirect && <meta http-equiv="refresh" content={`0;url=${redirect}`} />}
     <Scripts />
+    <ViewTransitions />
+    
   </head>
   <body>
     <CookieHandler client:only="react" />
       <Header namespace={namespace} showNav={showNav}/>
   
-      <main id="body">
+      <main id="body" >
         <slot />
       </main>
       <Contact />
@@ -43,3 +49,4 @@ import Contact from "@modules/Contact";
     <CookieNotice client:only="react" />
   </body>
 </html>
+

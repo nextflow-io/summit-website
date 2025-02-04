@@ -43,7 +43,7 @@ const { showTitle, hidePastDates = false, location = "boston" } = Astro.props;
           </button>
         )} */}
         </h5>
-        <p class="monospace text-body">At a glance</p>
+        <p class="monospace ">At a glance</p>
       </div>
     )
   }
@@ -62,7 +62,7 @@ const { showTitle, hidePastDates = false, location = "boston" } = Astro.props;
 
               <div class="pl-10 flex flex-col w-full monospace">
                 {item?.content?.map((item, i) => (
-                  <div key={i} className={`text-body border-b last:border-b-0 py-6`}>
+                  <div key={i} className={` border-b last:border-b-0 py-6`}>
                     {item.info}
                   </div>
                 ))}
