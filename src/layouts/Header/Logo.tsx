@@ -1,7 +1,7 @@
 import React from "react";
-
 import logo from "./logo.svg";
 import styles from "./styles.module.css";
+import SummitLogo from "@images/icons/SummitLogo";
 
 type Props = {
   namespace: string;
@@ -13,8 +13,9 @@ const Logo: React.FC<Props> = ({ namespace }) => {
     return `/`;
   }
   return (
-    <a className={styles.logo} href={url("/")}>
-      <img src={logo.src} alt="Nextflow SUMMIT 2025 Logo" />
+    <a href={url("/")}>
+      <SummitLogo className={`${styles.summitLogo}`}/>
+      {/* <img src={logo.src} alt="Nextflow SUMMIT 2025 Logo" /> */}
     </a>
   );
 };

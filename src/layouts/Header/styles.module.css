@@ -1,3 +1,14 @@
+.summitLogo {
+  path {
+    transition: all 0.3s;
+  }
+  &:hover {
+    g, path {
+      fill: var(--color-nextflow);
+    }
+  }
+}
+
 .header {
   display: none;
   @media (--sm) {
@@ -30,11 +41,11 @@
           white-space: nowrap;
           position: relative;
           color: var(--color-brand-200);
-          transition: all .3s;
+          transition: all 0.3s;
           &[data-active],
           &:hover {
             opacity: 80%;
-            transition: all .25s;
+            transition: all 0.25s;
             color: var(--color-nextflow);
           }
         }
@@ -76,12 +87,11 @@
             color: white;
           }
           &[data-active] {
-            
             position: relative;
             color: white;
             background: var(--color-brand);
             border-radius: 4px;
-            box-shadow:inset 0px 0px 0px 1px var(--color-nextflow-200);
+            box-shadow: inset 0px 0px 0px 1px var(--color-nextflow-200);
             &:before {
               position: absolute;
               top: 0;
@@ -90,7 +100,6 @@
               left: 0;
               background: var(--color-brand);
             }
-       
           }
         }
       }
@@ -98,12 +107,12 @@
   }
 }
 .registerBtn {
-  transition: all .3s;
+  transition: all 0.3s;
 }
 .registerCTA {
-  transition: all .3s;
+  transition: all 0.3s;
   &:hover {
-    transition: all .3s;
+    transition: all 0.3s;
     background: var(--color-nextflow);
     color: white;
     div {
@@ -113,7 +122,7 @@
     svg path {
       stroke: var(--color-nextflow);
     }
-/* 
+    /* 
     .registerBtn,
     .svg {
       transform: translateX(3px);
