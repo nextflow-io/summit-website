@@ -27,7 +27,7 @@ const qa = [
     {
         question: "Are there any discounted rates or travel partnerships available for attendees?",
         answer:
-          "This is placeholder copy that needs to be updated or removed.."
+          "This is placeholder copy that needs to be updated or removed."
     },
     {
       question: "Can I add training after I complete my registration??",

@@ -59,7 +59,7 @@
   font-size: 30px;
   line-height: 1.2;
   font-weight: 400;
-  @media (--lg) {
+  @media (--md) {
     font-size: 35px;
   }
 }
@@ -83,4 +83,12 @@ b {
 
 svg[data-icon] {
   display: inline-block;
+}
+
+
+p {
+  font-size: 1rem;
+  @media (--md) {
+    font-size: 17px;
+  }
 }
