@@ -57,11 +57,11 @@ const LandingHero = ({
       </div>
 
       <section
-        className={clsx(styles.landingHero, "container h-screen relative")}
+        className={clsx(styles.landingHero, "container h-full relative")}
       >
-        <div className="flex flex-col md:flex-row md:justify-between h-full relative z-10">
-          <div className="w-full h-full mt-10 md:mt-0 mb-10 mb:mb-0 md:pr-10 max-w-[750px]">
-            <h1 className="h0 mb-4">{title}</h1>
+        <div className="flex flex-col sm:flex-row sm:justify-between h-full relative z-10">
+          <div className="w-full h-full mt-10 sm:mt-0 mb-10 mb:mb-0 sm:pr-10 max-w-[750px]">
+            <h1 className="h0 mb-4 max-w-[250px] sm:max-w-[800px]">{title}</h1>
             <div
               className={clsx(
                 styles.landingLogo,
@@ -70,38 +70,44 @@ const LandingHero = ({
             >
               <p className="h3 mr-4">by</p> <SeqeraLogo />
             </div>
-            <p
-              className="monospace max-w-[680px]"
-              dangerouslySetInnerHTML={{ __html: content }}
-            />
 
-            <div className="inline-flex flex-col md:flex-row md:items-center">
-              {ctaText1 && (
-                <Button className="mt-10 relative" white arrowAfter>
-                  {ctaLink1 && (
-                    <a className="absolute w-full h-full" href={ctaLink1}></a>
-                  )}{" "}
-                  {ctaText1}
-                </Button>
-              )}
+            <div className="hidden sm:flex sm:flex-col">
+              <p
+                className="monospace sm:max-w-[600px] md:max-w-[680px]"
+                dangerouslySetInnerHTML={{ __html: content }}
+              />
 
-              {ctaText2 && (
-                <Button className="md:ml-10 mt-6 md:mt-10 relative" arrowBefore>
-                  {ctaLink2 && (
-                    <a className="absolute w-full h-full" href={ctaLink2}></a>
-                  )}{" "}
-                  {ctaText2}
-                </Button>
-              )}
+              <div className="inline-flex flex-col sm:flex-row sm:items-center">
+                {ctaText1 && (
+                  <Button className="mt-10 relative" white arrowAfter>
+                    {ctaLink1 && (
+                      <a className="absolute w-full h-full" href={ctaLink1}></a>
+                    )}{" "}
+                    {ctaText1}
+                  </Button>
+                )}
+
+                {ctaText2 && (
+                  <Button
+                    className="sm:ml-10 mt-6 sm:mt-10 relative"
+                    arrowBefore
+                  >
+                    {ctaLink2 && (
+                      <a className="absolute w-full h-full" href={ctaLink2}></a>
+                    )}{" "}
+                    {ctaText2}
+                  </Button>
+                )}
+              </div>
             </div>
           </div>
           <div
             className={clsx(
               styles.rightWrapper,
-              "h-full flex flex-col justify-between md:text-right",
+              "h-full flex flex-col justify-between sm:text-right",
             )}
           >
-            <div className="mt-20">
+            <div className="sm:mt-20">
               <div className="mb-10">
                 <p className="h6 text-nextflow monospace mb-2">When</p>
                 <h3 className="h3">{when}</h3>
@@ -114,8 +120,43 @@ const LandingHero = ({
                 <p className="h6 text-nextflow monospace mb-2">Price</p>
                 <h3 className="h3">{price}</h3>
               </div>
+
+              <div className="sm:hidden">
+                <p
+                  className="monospace max-w-[580px]"
+                  dangerouslySetInnerHTML={{ __html: content }}
+                />
+                <div className="inline-flex flex-col sm:flex-row sm:items-center">
+                  {ctaText1 && (
+                    <Button className="mt-10 relative" white arrowAfter>
+                      {ctaLink1 && (
+                        <a
+                          className="absolute w-full h-full"
+                          href={ctaLink1}
+                        ></a>
+                      )}{" "}
+                      {ctaText1}
+                    </Button>
+                  )}
+
+                  {ctaText2 && (
+                    <Button
+                      className="sm:ml-10 mt-6 sm:mt-10 relative"
+                      arrowBefore
+                    >
+                      {ctaLink2 && (
+                        <a
+                          className="absolute w-full h-full"
+                          href={ctaLink2}
+                        ></a>
+                      )}{" "}
+                      {ctaText2}
+                    </Button>
+                  )}
+                </div>
+              </div>
             </div>
-            <h1 className="h0">2025</h1>
+            <h1 className="absolute top-80 right-0 sm:top-auto sm:right-auto sm:relative h0">2025</h1>
           </div>
         </div>
       </section>
