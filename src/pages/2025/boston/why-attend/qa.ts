@@ -11,7 +11,7 @@ const qa = [
   },
   {
     question: "Who typically attends the summit, and what networking opportunities are available?",
-    answer: "THIS IS PLACEHOLDER COPY THAT NEEDS TO BE UPDATED",
+    answer: "This is placeholder copy that needs to be updated or removed.",
   },
   {
     question: "What skills or knowledge can I expect to gain by attending?",
@@ -19,16 +19,16 @@ const qa = [
   },
   {
     question: "Will there be opportunities to interact with Nextflow experts and developers?",
-    answer: "THIS IS PLACEHOLDER COPY THAT NEEDS TO BE UPDATED",
+    answer: "This is placeholder copy that needs to be updated or removed.",
   },
   {
     question:
       "What are the key topics or themes covered during the summit?",
-    answer: "THIS IS PLACEHOLDER COPY THAT NEEDS TO BE UPDATED.",
+    answer: "This is placeholder copy that needs to be updated or removed..",
   },
   {
     question: "How will attending the summit benefit my professional growth or research?",
-    answer: "THIS IS PLACEHOLDER COPY THAT NEEDS TO BE UPDATED",
+    answer: "This is placeholder copy that needs to be updated or removed.",
   },
 ];
 

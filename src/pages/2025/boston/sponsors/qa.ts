@@ -2,17 +2,17 @@ const qa = [
     {
       question: "This FAQ section can removed if it's not needed?",
       answer:
-        `THIS IS PLACEHOLDER COPY THAT NEEDS TO BE UPDATED`,
+        `This is placeholder copy that needs to be updated or removed.`,
     },
     {
       question: "What are the benefits of sponsoring the Summit?",
       answer:
-        "THIS IS PLACEHOLDER COPY THAT NEEDS TO BE UPDATED"
+        "This is placeholder copy that needs to be updated or removed."
     },
     {
       question: "How can I apply to become a sponsor?",
       answer:
-        "THIS IS PLACEHOLDER COPY THAT NEEDS TO BE UPDATED"
+        "This is placeholder copy that needs to be updated or removed."
     },
     {
       question: "What kind of visibility will my organization receive as a sponsor?",
@@ -22,7 +22,7 @@ const qa = [
     {
       question: "Who can I contact for more information about sponsorship opportunities??",
       answer:
-        "THIS IS PLACEHOLDER COPY THAT NEEDS TO BE UPDATED"
+        "This is placeholder copy that needs to be updated or removed."
     },
   ];
   

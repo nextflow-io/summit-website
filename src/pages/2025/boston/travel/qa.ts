@@ -2,7 +2,7 @@ const qa = [
     {
       question: "What is the best way to travel to Boston for the event?",
       answer:
-        `THIS IS PLACEHOLDER COPY THAT NEEDS TO BE UPDATED`,
+        `This is placeholder copy that needs to be updated or removed.`,
     },
     {
       question: "Are there recommended hotels near the event venue?",
@@ -12,7 +12,7 @@ const qa = [
     {
       question: "How can I register for a training session?",
       answer:
-        "THIS IS PLACEHOLDER COPY THAT NEEDS TO BE UPDATED"
+        "This is placeholder copy that needs to be updated or removed."
     },
     {
       question: "What transportation options are available in Boston?",
@@ -22,17 +22,17 @@ const qa = [
     {
       question: "Do I need a visa to travel to Boston?",
       answer:
-        "THIS IS PLACEHOLDER COPY THAT NEEDS TO BE UPDATED"
+        "This is placeholder copy that needs to be updated or removed."
     },
     {
         question: "Are there any discounted rates or travel partnerships available for attendees?",
         answer:
-          "THIS IS PLACEHOLDER COPY THAT NEEDS TO BE UPDATED."
+          "This is placeholder copy that needs to be updated or removed.."
     },
     {
       question: "Can I add training after I complete my registration??",
       answer:
-        "THIS IS PLACEHOLDER COPY THAT NEEDS TO BE UPDATED"
+        "This is placeholder copy that needs to be updated or removed."
     },
   ];
   

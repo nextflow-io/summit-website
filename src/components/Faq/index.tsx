@@ -32,9 +32,9 @@ const Faq = ({ className, data, title, question, answer }: FaqProps) => {
                   onClick={() => handleItemClick(index)}
                   className={`flex flex-row justify-between items-start w-full hover:text-nextflow transition-all duration-500 ease-in-out ${activeIndex === index ? "active  text-nextflow" : ""}`}
                 >
-                  <h3 className="h3 text-left pr-8">{question}</h3>
+                  <h5 className="h5 text-left pr-8">{question}</h5>
                   <div
-                    className={`h3 leading-none transition-transform duration-500 ease-in-out ${activeIndex === index ? "h2 active origin-center rotate-45" : "origin-center"}`}
+                    className={`h5 leading-none transition-transform duration-500 ease-in-out ${activeIndex === index ? "h2 active origin-center rotate-45" : "origin-center"}`}
                   >
                     +
                   </div>
@@ -54,7 +54,7 @@ const Faq = ({ className, data, title, question, answer }: FaqProps) => {
                   }
                 >
                   <div
-                    className="monospace"
+                    className="monospace text-body"
                     dangerouslySetInnerHTML={{ __html: answer }}
                   />
                 </div>
