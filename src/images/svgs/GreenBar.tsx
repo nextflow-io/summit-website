@@ -1,58 +1,40 @@
 import * as React from "react"
 const GreenBar = (props) => (
+  <div {...props}>
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={542}
-    height={111}
+    width="100%"
+    height="auto"
+    viewBox="0 0 542 111"
     fill="none"
-    {...props}
   >
-    <g clipPath="url(#a)">
-      <path fill="#0DC09D" d="M542 0H0v111h542V0Z" />
-      <mask
-        id="b"
-        width={542}
-        height={111}
-        x={0}
-        y={0}
-        maskUnits="userSpaceOnUse"
-        style={{
-          maskType: "alpha",
-        }}
-      >
-        <path fill="#FA6863" d="M542 0H0v111h542V0Z" />
-      </mask>
-      <g
-        mask="url(#b)"
-        style={{
-          mixBlendMode: "multiply",
-        }}
-      >
-        <mask
-          id="c"
-          width={2349}
-          height={1567}
-          x={-900}
-          y={-1094}
-          maskUnits="userSpaceOnUse"
-          style={{
-            maskType: "luminance",
-          }}
-        >
-          <path fill="#fff" d="M1448.51-1094H-900V472.35h2348.51V-1094Z" />
-        </mask>
-        <g mask="url(#c)">
-          <path fill="url(#d)" d="M-900 472.345h2348.51V-1094H-900V472.345Z" />
-          <path
-            fill="url(#e)"
-            d="M548.369-4.12H4.136v131.623h544.233V-4.119Z"
-          />
-        </g>
-      </g>
+    <path fill="#0DC09D" d="M0 0h542v111H0z" />
+    <mask
+      id="a"
+      width={542}
+      height={111}
+      x={0}
+      y={0}
+      maskUnits="userSpaceOnUse"
+      style={{
+        maskType: "alpha",
+      }}
+    >
+      <path fill="#FA6863" d="M0 0h542v111H0z" />
+    </mask>
+    <g
+      clipPath="url(#b)"
+      mask="url(#a)"
+      style={{
+        mixBlendMode: "multiply",
+      }}
+    >
+      <path fill="url(#c)" d="M-900 472.345h2348.51V-1094H-900V472.345Z" />
+      <path fill="url(#d)" d="M548.369-4.119H4.135v131.622H548.37V-4.119Z" />
     </g>
     <defs>
       <linearGradient
-        id="d"
+        id="c"
         x1={-900}
         x2={1448.51}
         y1={-310.847}
@@ -65,7 +47,7 @@ const GreenBar = (props) => (
         <stop offset={1} stopColor="#DFDDDB" />
       </linearGradient>
       <linearGradient
-        id="e"
+        id="d"
         x1={548.369}
         x2={4.136}
         y1={61.652}
@@ -79,10 +61,11 @@ const GreenBar = (props) => (
         <stop offset={0.74} stopColor="#ECD7D5" />
         <stop offset={0.86} stopColor="#EDDDDC" />
       </linearGradient>
-      <clipPath id="a">
-        <path fill="#fff" d="M0 0h542v111H0z" />
+      <clipPath id="b">
+        <path fill="#fff" d="M-900-1094h2348.51V472.35H-900z" />
       </clipPath>
     </defs>
   </svg>
+  </div>
 )
 export default GreenBar

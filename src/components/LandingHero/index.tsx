@@ -3,6 +3,9 @@ import Button from "@components/Button";
 import styles from "./styles.module.css";
 import clsx from "clsx";
 import SeqeraLogo from "@icons/SeqeraLogo";
+import RedBar from "@images/svgs/RedBar";
+import GreenBar from "@images/svgs/GreenBar";
+import BlueBar from "@images/svgs/BlueBar";
 
 interface HeroProps {
   title: string;
@@ -27,8 +30,13 @@ const LandingHero = ({
   where,
   price,
 }: HeroProps) => {
+
+  
   return (
     <section className={clsx(styles.landingHero,"container h-screen relative")}>
+      <RedBar className="max-w-[542px]"/>
+      <GreenBar className="max-w-[542px]"/>
+      <BlueBar className="max-w-[542px]"/>
       <div className="flex flex-col md:flex-row md:justify-between h-full">
         <div className="w-full h-full mt-10 md:mt-0 mb-10 mb:mb-0 md:pr-10 max-w-[750px]">
           <h1 className="h0 mb-4">{title}</h1>
