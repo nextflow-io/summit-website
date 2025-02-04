@@ -32,7 +32,7 @@ const { showTitle, hidePastDates = false, location = "boston" } = Astro.props;
   {
     showTitle && (
       <div class="mb-10">
-        <h5 class="h2 mb-2">
+        <h5 class="h1 mb-2">
           Key dates{" "}
           {/* {hidePastDates && (
           <button
@@ -43,7 +43,7 @@ const { showTitle, hidePastDates = false, location = "boston" } = Astro.props;
           </button>
         )} */}
         </h5>
-        <p class="monospace">At a glance</p>
+        <p class="monospace text-body">At a glance</p>
       </div>
     )
   }
@@ -55,14 +55,14 @@ const { showTitle, hidePastDates = false, location = "boston" } = Astro.props;
           <div
             class={`flex flex-wrap border-b ${hidePastDates && isPast(item) ? "keyDatePast opacity-60 hidden" : ""}`}
           >
-            <div class="w-full flex flex-row">
-              <h3 class="h3 whitespace-nowrap pt-6 w-full max-w-[100px]">
+            <div class="w-full flex flex-row items-center">
+              <h4 class="h4 pt-6 pb-6  w-full max-w-[100px]">
                 {item.date}
-              </h3>
+              </h4>
 
               <div class="pl-10 flex flex-col w-full monospace">
                 {item?.content?.map((item, i) => (
-                  <div key={i} className={` border-b last:border-b-0 py-6`}>
+                  <div key={i} className={`text-body border-b last:border-b-0 py-6`}>
                     {item.info}
                   </div>
                 ))}
