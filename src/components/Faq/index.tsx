@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import FaqBar from "@icons/FaqBar";
 
 type FaqProps = {
   className?: string;
@@ -22,7 +23,10 @@ const Faq = ({ className, data, title, question, answer }: FaqProps) => {
     <section className={`${className} container`}>
       <div className="relative w-full flex flex-col md:flex-row">
         <div className="w-full mb-6 md:mb-0 md:sticky md:top-40 self-start">
-          <h2 className="h2">{title ? title : "More Information"}</h2>
+          <h2 className="h1 max-w-[500px] relative z-20">More Information</h2>
+          <div className="mt-[-50px] ml-[-50px] z-0">
+           <FaqBar/>
+          </div>
         </div>
         <div className="w-full">
           {data.map(({ question, answer }, index) => {

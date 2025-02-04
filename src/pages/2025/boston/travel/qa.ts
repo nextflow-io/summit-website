@@ -30,7 +30,7 @@ const qa = [
           "This is placeholder copy that needs to be updated or removed."
     },
     {
-      question: "Can I add training after I complete my registration??",
+      question: "Can I add training after I complete my registration?",
       answer:
         "This is placeholder copy that needs to be updated or removed."
     },
