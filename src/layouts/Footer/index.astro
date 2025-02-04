@@ -1,5 +1,4 @@
 ---
-import React from "react";
 import SeqeraLogo from "./SeqeraLogo";
 import FooterLogo from "./FooterLogo";
 import Subscribe from "@modules/Subscribe";
@@ -9,11 +8,12 @@ const currentYear = new Date().getFullYear();
 ---
 
 <footer id="footer">
-  <div class={`${styles.footer} mt-16 text-white monospace`}>
+  <div class={`${styles.footerDivider}`}></div>
+  <div class={`mt-16 text-white monospace`}>
     <nav
-      class="container flex flex-col md:flex-row md:justify-between md:flex-wrap md:flex-nowrap"
+      class="container flex flex-col md:flex-row md:justify-between sm:flex-wrap md:flex-nowrap"
     >
-      <div class="w-full max-w-[500px] md:pr-10 mb-10 md:mb-0">
+      <div class="w-full max-w-[500px] lg:pr-10 mb-10 md:mb-0">
         <Subscribe client:visible />
       </div>
       <nav class="w-full flex md:justify-center">
@@ -29,14 +29,14 @@ const currentYear = new Date().getFullYear();
                 : {};
 
               return (
-                <ul class="mb-16 md:mb-0 md:ml-16">
-                  <p class="mb-6">{name}</p>
+                <ul class="mb-16 md:mb-0 md:ml-12 lg:ml-16">
+                  <p class="mb-6 text-body">{name}</p>
                   {dropdowns?.map(({ name, url }, i) => (
                     <li>
                       <a
                         href={url}
                         {...linkProps}
-                        class="transition-all duration-300 ease-in-out hover:transition-all hover:text-nextflow"
+                        class="text-body transition-all duration-300 ease-in-out hover:transition-all hover:text-nextflow"
                       >
                         {name}
                       </a>
@@ -50,7 +50,7 @@ const currentYear = new Date().getFullYear();
       </nav>
     </nav>
   </div>
-  <div class="container mb-16">
+  <div class="container mb-8">
     <div class="mt-10 mb-6">
       <FooterLogo />
     </div>
@@ -61,7 +61,7 @@ const currentYear = new Date().getFullYear();
           <SeqeraLogo />
         </div>
       </div>
-      <div class="monospace">{`© ${currentYear} Seqera`}</div>
+      <div class="monospace text-body">{`© ${currentYear} Seqera`}</div>
     </div>
   </div>
 </footer>
