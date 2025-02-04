@@ -12,12 +12,12 @@ const getSpacing = () => {
 };
 
 export const screens = {
-  xxs: "400px",
-  xs: "800px",
-  sm: "1000px",
-  md: "1200px",
-  lg: "1400px",
-  xl: "1600px",
+  xxs: "25rem", // 400px
+  xs: "48rem", // 768px
+  sm: "62.5rem", // 1000px
+  md: "75rem", //1200px
+  lg: "87.5rem", //1400px
+  xl: "100rem", //1600px
 };
 
 export default {

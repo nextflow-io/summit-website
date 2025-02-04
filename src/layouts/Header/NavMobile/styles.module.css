@@ -4,7 +4,6 @@
     align-items: center;
     justify-content: space-between;
     height: 76px;
-    flex: none;
   }
   &.open {
     height: 100vh;
@@ -26,7 +25,7 @@
   right: 0;
   display: flex;
   flex-direction: column;
-  @media (--lg) {
+  @media (--sm) {
     display: none;
   }
 }

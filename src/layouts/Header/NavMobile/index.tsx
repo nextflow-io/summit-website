@@ -16,7 +16,7 @@ type Props = {
 
 const NavMobile: React.FC<Props> = ({ pathname, namespace, showNav }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const isMobile = useMediaQuery({ maxWidth: "lg" });
+  const isMobile = useMediaQuery({ maxWidth: "sm" });
   if (!isMobile) return null;
   return (
     <header
