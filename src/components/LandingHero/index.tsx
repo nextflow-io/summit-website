@@ -41,7 +41,7 @@ const LandingHero = ({
             <p className="h3 mr-4">by</p> <SeqeraLogo />
           </div>
           <p
-            className="monospace max-w-[680px] text-lg"
+            className="monospace max-w-[680px] text-body"
             dangerouslySetInnerHTML={{ __html: content }}
           />
 
