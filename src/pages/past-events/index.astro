@@ -9,7 +9,7 @@ import arrowRightUp from "./arrowRightUp.svg";
 
 <Layout>
   <SEO slot="head" title="Past Events" img={1} />
-   <section class="">
+  <section class="">
     <Hero
       title="Past Events"
       content="Past events have provided insights into Nexflow’s origins, development, and its applications in various domains, highting its potential and impact on scientific research, data analysis, and workflow management."
@@ -23,21 +23,126 @@ import arrowRightUp from "./arrowRightUp.svg";
   </section>
 
   <section class="mt-20 mb-24 container">
-    <div class="grid grid-cols-1 md:grid-cols-2 md:grid-cols-3 gap-8">
-      <Box href="https://summit.nextflow.io/2024/barcelona/" className="" >
-        <SubSection className="flex flex-col justify-between min-h-[350px]">
-          <div class="border-b border-b-nextflow w-full flex flex-row justify-between items-center pb-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <Box href="https://summit.nextflow.io/2024/barcelona/" className="aspect-square">
+        <SubSection className="flex flex-col justify-between">
+          <div
+            class="border-b border-b-nextflow w-full flex flex-row justify-between items-center pb-4"
+          >
             <h5 class="h5">Barcelona 2024</h5>
             <img src={arrowRightUp.src} alt="Caret Icon" />
           </div>
-     
+          <div class="mt-6 mb-8 relative h-0 w-full overflow-hidden pb-[80%]">
+            <img class="max-w-none w-full h-full absolute top-0 bottom-0 left-0 right-0 object-cover" src={img1.src} />
+          </div>
         </SubSection>
       </Box>
-      
+
+      <Box href="https://summit.nextflow.io/2024/boston/" className="aspect-square">
+        <SubSection className="flex flex-col justify-between">
+          <div
+            class="border-b border-b-nextflow w-full flex flex-row justify-between items-center pb-4"
+          >
+            <h5 class="h5">Boston 2024</h5>
+            <img src={arrowRightUp.src} alt="Caret Icon" />
+          </div>
+          <div class="mt-6 mb-8 relative h-0 w-full overflow-hidden pb-[80%]">
+            <img class="max-w-none w-full h-full absolute top-0 bottom-0 left-0 right-0 object-cover" src={img1.src} />
+          </div>
+        </SubSection>
+      </Box>
+
+      <Box href="https://summit.nextflow.io/2023/barcelona/" className="aspect-square">
+        <SubSection className="flex flex-col justify-between">
+          <div
+            class="border-b border-b-nextflow w-full flex flex-row justify-between items-center pb-4"
+          >
+            <h5 class="h5">Barcelona 2023</h5>
+            <img src={arrowRightUp.src} alt="Caret Icon" />
+          </div>
+          <div class="mt-6 mb-8 relative h-0 w-full overflow-hidden pb-[80%]">
+            <img class="max-w-none w-full h-full absolute top-0 bottom-0 left-0 right-0 object-cover" src={img1.src} />
+          </div>
+        </SubSection>
+      </Box>
+      <Box href="https://summit.nextflow.io/2023/boston/" className="aspect-square">
+        <SubSection className="flex flex-col justify-between">
+          <div
+            class="border-b border-b-nextflow w-full flex flex-row justify-between items-center pb-4"
+          >
+            <h5 class="h5">Boston 2023</h5>
+            <img src={arrowRightUp.src} alt="Caret Icon" />
+          </div>
+          <div class="mt-6 mb-8 relative h-0 w-full overflow-hidden pb-[80%]">
+            <img class="max-w-none w-full h-full absolute top-0 bottom-0 left-0 right-0 object-cover" src={img1.src} />
+          </div>
+        </SubSection>
+      </Box>
+      <Box href="https://summit.nextflow.io/2022/barcelona/" className="aspect-square">
+        <SubSection className="flex flex-col justify-between">
+          <div
+            class="border-b border-b-nextflow w-full flex flex-row justify-between items-center pb-4"
+          >
+            <h5 class="h5">Barcelona 2022</h5>
+            <img src={arrowRightUp.src} alt="Caret Icon" />
+          </div>
+          <div class="mt-6 mb-8 relative h-0 w-full overflow-hidden pb-[80%]">
+            <img class="max-w-none w-full h-full absolute top-0 bottom-0 left-0 right-0 object-cover" src={img1.src} />
+          </div>
+        </SubSection>
+      </Box>
+      <Box href="https://summit.nextflow.io/2022/boston/" className="aspect-square">
+        <SubSection className="flex flex-col justify-between">
+          <div
+            class="border-b border-b-nextflow w-full flex flex-row justify-between items-center pb-4"
+          >
+            <h5 class="h5">Boston 2022</h5>
+            <img src={arrowRightUp.src} alt="Caret Icon" />
+          </div>
+          <div class="mt-6 mb-8 relative h-0 w-full overflow-hidden pb-[80%]">
+            <img class="max-w-none w-full h-full absolute top-0 bottom-0 left-0 right-0 object-cover" src={img1.src} />
+          </div>
+        </SubSection>
+      </Box>
+      <Box href="https://www.nextflow.io/nfcamp/2019/program.html" className="aspect-square">
+        <SubSection className="flex flex-col justify-between">
+          <div
+            class="border-b border-b-nextflow w-full flex flex-row justify-between items-center pb-4"
+          >
+            <h5 class="h5">Nextflow Camp 2019</h5>
+            <img src={arrowRightUp.src} alt="Caret Icon" />
+          </div>
+          <div class="mt-6 mb-8 relative h-0 w-full overflow-hidden pb-[80%]">
+            <img class="max-w-none w-full h-full absolute top-0 bottom-0 left-0 right-0 object-cover" src={img1.src} />
+          </div>
+        </SubSection>
+      </Box>
+      <Box href="https://github.com/nextflow-io/nf-hack18/blob/master/schedule.md" className="aspect-square">
+        <SubSection className="flex flex-col justify-between">
+          <div
+            class="border-b border-b-nextflow w-full flex flex-row justify-between items-center pb-4"
+          >
+            <h5 class="h5">nf-hack 2018</h5>
+            <img src={arrowRightUp.src} alt="Caret Icon" />
+          </div>
+          <div class="mt-6 mb-8 relative h-0 w-full overflow-hidden pb-[80%]">
+            <img class="max-w-none w-full h-full absolute top-0 bottom-0 left-0 right-0 object-cover" src={img1.src} />
+          </div>
+        </SubSection>
+      </Box>
+      <Box href="https://github.com/nextflow-io/nf-hack17/blob/master/schedule.md" className="aspect-square">
+        <SubSection className="flex flex-col justify-between">
+          <div
+            class="border-b border-b-nextflow w-full flex flex-row justify-between items-center pb-4"
+          >
+            <h5 class="h5">nf-hack 2017</h5>
+            <img src={arrowRightUp.src} alt="Caret Icon" />
+          </div>
+          <div class="mt-6 mb-8 relative h-0 w-full overflow-hidden pb-[80%]">
+            <img class="max-w-none w-full h-full absolute top-0 bottom-0 left-0 right-0 object-cover" src={img1.src} />
+          </div>
+        </SubSection>
+      </Box>
     </div>
   </section>
-
- 
-
-
 </Layout>
