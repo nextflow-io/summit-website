@@ -59,7 +59,7 @@ main#body {
 .dropdownBtn {
   &:hover {
     svg path {
-      transition: all .3s;
+      transition: all 0.3s;
       fill: var(--color-nextflow);
       stroke: var(--color-nextflow);
     }
@@ -72,4 +72,26 @@ main#body {
       stroke: var(--color-nextflow);
     }
   }
+}
+
+
+
+.toggleLocation {
+  position: relative;
+  display: inline-block;
+  width: auto;
+  height: 30px;
+  line-height: 30px;
+  background: var(--color-nextflow-200);
+  border-radius: 5px;
+  color: var(--color-brand);
+  .toggleLink {
+    &.active {
+      color: white;
+      background: var(--color-brand);
+      border-radius: 4px;
+      box-shadow: inset 0px 0px 0px 1px var(--color-nextflow-200);
+    }
+  }
+
 }

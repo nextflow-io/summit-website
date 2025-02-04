@@ -6,6 +6,7 @@ import SeqeraLogo from "@icons/SeqeraLogo";
 import RedBar from "@images/svgs/RedBar";
 import GreenBar from "@images/svgs/GreenBar";
 import BlueBar from "@images/svgs/BlueBar";
+import Link from "./Link";
 
 interface HeroProps {
   title: string;
@@ -17,19 +18,37 @@ interface HeroProps {
   when?: string;
   where?: string;
   price?: string;
+  namespace: string;
+  pathname: string;
 }
 
-const LandingHero = ({
-  title,
-  content,
-  ctaText1,
-  ctaLink1,
-  ctaText2,
-  ctaLink2,
-  when,
-  where,
-  price,
-}: HeroProps) => {
+const LandingHero: React.FC<HeroProps> = (props) => {
+  const {
+    title,
+    content,
+    ctaText1,
+    ctaLink1,
+    ctaText2,
+    ctaLink2,
+    when,
+    where,
+    price,
+    pathname,
+    namespace,
+  } = props;
+
+  function getURL(path, root = false) {
+    if (root) return path;
+    if (!namespace) return path;
+    return `/${namespace}${path}`;
+  }
+
+
+  function isActive(path) {
+    return pathname?.includes(path);
+  }
+
+
   return (
     <div className="relative w-full h-full">
       <div className={clsx(styles.colorBarWrapper, "top-[0%] right-[15%]")}>
@@ -122,16 +141,14 @@ const LandingHero = ({
               </div>
 
               <div className="sm:hidden">
-                <label
-                  className={clsx(styles.toggleLocation, "monospace relative")}
-                >
-                  <input className="absolute" type="checkbox" />
-                  <div className={clsx(styles.toggleSlider, "absolute")}></div>
-                  <div className="flex flex-row justify-between relative">
-                    <div className="px-4">Boston</div>
-                    <div className="px-4">Barcelona</div>
+                
+                <div className="toggleLocation relative monospace">
+                  <div className="flex flex-row">
+                  <Link href="/2025/boston" active={isActive("2025/boston")}> <div className="px-4">Boston</div></Link>
+                  <Link href="/2025/barcelona" active={isActive("2025/barcelona")}> <div className="px-4">Barcelona</div></Link>
                   </div>
-                </label>
+                </div>
+         
                 <p
                   className="monospace max-w-[580px] mt-10"
                   dangerouslySetInnerHTML={{ __html: content }}

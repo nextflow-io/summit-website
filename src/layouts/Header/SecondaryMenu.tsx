@@ -15,23 +15,22 @@ const Menu: React.FC<Props> = (props) => {
     return pathname?.includes(path);
   }
 
-
   let location;
   if (namespace === "2025/boston") location = 0;
   if (namespace === "2025/barcelona") location = 1;
 
   return (
     <nav>
-        <ul>
-        {menuLinks[location].dropdowns.map(({ name, url}, i) => {
-            return (
-              <li key={i}>
-            <Link href={url} active={isActive(url)}>
-              {name}
-            </Link>
-          </li> 
-           )
-        })}    
+      <ul>
+        {menuLinks[location].dropdowns.map(({ name, url }, i) => {
+          return (
+            <li key={i}>
+              <Link href={url} active={isActive(url)}>
+                {name}
+              </Link>
+            </li>
+          );
+        })}
       </ul>
     </nav>
   );
