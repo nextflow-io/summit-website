@@ -4,9 +4,9 @@ import LandingHero from "@components/LandingHero";
 import KeyDates from "@components/KeyDates/index.astro";
 import Box, { SubSection } from "@components/Box";
 import ArrowUpRight from "@icons/ArrowUpRight";
-// import Faq from "@components/Faq";
+import Faq from "@components/Faq";
 import SEO from "@components/SEO";
-// import qa from "./qa";
+import qa from "./qa";
 ---
 
 <Layout namespace="2025/barcelona">
@@ -96,5 +96,5 @@ import SEO from "@components/SEO";
   
   </section>
 
-  <!-- <Faq className="mt-40 mb-20" data={qa} /> -->
+  <Faq className="mt-40 mb-20" client:load data={qa} />
 </Layout>

@@ -49,10 +49,10 @@ const menuLinks = [
     name: "Barcelona",
     url: "/2025/barcelona",
     dropdowns: [
-      // {
-      //   name: "Overview",
-      //   url: "/2025/barcelona",
-      // },
+      {
+        name: "Overview",
+        url: "/2025/barcelona",
+      },
       // {
       //   name: "Travel",
       //   url: "/2025/barcelona/travel",
@@ -81,10 +81,10 @@ const menuLinks = [
       //   name: "Sponsors",
       //   url: "/2025/barcelona/sponsors",
       // },
-      // {
-      //   name: "Why Attend",
-      //   url: "/2025/boston/why-attend",
-      // },
+      {
+        name: "Why Attend",
+        url: "/2025/boston/why-attend",
+      },
       // {
       //   name: "Gallery",
       //   url: "/2025/barcelona/gallery",

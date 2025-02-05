@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import GreenBar from "@images/svgs/GreenBar";
 import clsx from "clsx";
 import styles from "./faq.module.css";
@@ -15,7 +15,7 @@ type FaqProps = {
 };
 
 const DropDownItem = ({ question, answer, isOpen, onClick }) => {
-  const contentHeight = useRef();
+  const contentHeight = useRef(null);
   return (
     <div className={`border-b first:border-t py-6 md:py-10`}>
       <button
@@ -55,7 +55,6 @@ const DropDownItem = ({ question, answer, isOpen, onClick }) => {
 
 const Faq = ({ className, data, title, question, answer }: FaqProps) => {
   const [activeIndex, setActiveIndex] = useState(null);
-  const contentHeight = useRef();
   const handleItemClick = (index) => {
     setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
   };
@@ -70,7 +69,7 @@ const Faq = ({ className, data, title, question, answer }: FaqProps) => {
           </div>
         </div>
         <div className="w-full">
-          {data.main?.map(({ question, answer }, index) => {
+          {data.main.map(({ question, answer }, index) => {
             return (
               <DropDownItem
                 key={index}
