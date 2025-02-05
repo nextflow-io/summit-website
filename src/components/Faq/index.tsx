@@ -45,7 +45,7 @@ const DropDownItem = ({ question, answer, isOpen, onClick }) => {
         }
       >
         <div
-          className={clsx(styles.faqAnswer, "monospace")}
+          className={clsx(styles.faqAnswer, "bodycopy monospace")}
           dangerouslySetInnerHTML={{ __html: answer }}
         />
       </div>

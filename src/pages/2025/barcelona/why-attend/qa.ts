@@ -2,7 +2,7 @@ export default {
     main: [
     {
       question: "Need help convincing your manager? ",
-      answer: `Need help getting approval to attend the Nextflow Summit? We’ve got you covered. To make it easier to explain the benefits of attending, we’ve prepared a template letter for you. Just edit it to suit your needs and make your case. Take the first step toward joining us—download the template now and secure your spot! <a href="">Download the template </a>
+      answer: `Need help getting approval to attend the Nextflow Summit? We’ve got you covered.<br><br> To make it easier to explain the benefits of attending, we’ve prepared a template letter for you. Just edit it to suit your needs and make your case. Take the first step toward joining us—download the template now and secure your spot! <a href="https://docs.google.com/document/d/10IoOqcCn93PhR4LwF_A_tXx40iCjOEBWKGyqb5FHVvw/edit?tab=t.0">Download the template </a>
   `,
     },
     {
