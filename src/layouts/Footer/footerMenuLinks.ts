@@ -83,10 +83,10 @@ export default {
       //   name: "Sponsors",
       //   url: "/2025/barcelona/sponsors",
       // },
-      // {
-      //   name: "Why Attend",
-      //   url: "/2025/boston/why-attend",
-      // },
+      {
+        name: "Why Attend",
+        url: "/2025/boston/why-attend",
+      },
       // {
       //   name: "Gallery",
       //   url: "/2025/barcelona/gallery",
@@ -98,7 +98,7 @@ export default {
     dropdowns: [
       {
         name: "Register",
-        url: "/register",
+        url: "/2025/boston/register",
       },
       {
         name: "Call for Abstracts",
@@ -119,15 +119,15 @@ export default {
       },
       {
         name: "Bluesky",
-        url: "https://bsky.app/profile/seqera.io",
+        url: "https://bsky.app/profile/nextflow.io",
       },
       {
         name: "Twitter / X",
-        url: "https://twitter.com/seqeralabs",
+        url: "https://twitter.com/nextflowio",
       },
       {
         name: "Github",
-        url: "https://github.com/seqeralabs",
+        url: "https://github.com/nextflow-io",
       },
       {
         name: "Youtube",
