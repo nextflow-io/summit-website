@@ -3,7 +3,7 @@ export default {
     {
       question: "How do I register for the Nextflow Summit?",
       answer:
-        `Find out more information on our <a class="underline" href="/register">Registera</a> or register now by clicking <a class="underline" href="/">here</a>. <span class="text-red-300">[need to update link]</span> `,
+        `Find out more information on registering <a class="underline" href="/2025/boston/register">here</a>.`,
     },
     {
       question: "What is included in the registration fee?",
