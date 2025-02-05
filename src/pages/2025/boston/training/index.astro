@@ -23,7 +23,7 @@ import qa from "./qa";
       href={img.src}
       alt="Image of Nextflow Summit"
       ctaText1="Register Now"
-      ctaLink1="/register"
+      ctaLink1="/2025/boston/register"
       ctaText2="Call for abstracts"
       ctaLink2="/call-for-abstracts"
     />
@@ -33,64 +33,79 @@ import qa from "./qa";
     <h1 class="h4 mb-4 md:mb-8">
       By the end of the course you will be able to:
     </h1>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
       <Box className="">
-        <SubSection className="flex flex-col justify-between min-h-[350px]">
+        <SubSection
+          className="flex flex-col justify-between h-full min-h-[350px]"
+        >
           <div>
             <Training />
+          </div>
+          <div>
             <div class="mt-10">
               <h5 class="h5 pb-4">Learn Core Nextflow Concepts</h5>
-              <p class="monospace text-lg">
+              <p class="monospace ">
                 Understand the Nextflow language, essential commands, and
                 structure, allowing users to build and run simple workflows
                 locally.
               </p>
             </div>
-          </div>
-          <div
-            class="mt-4 pt-4 border-t border-t-nextflow w-full flex flex-row justify-between items-center"
-          >
-            <h5 class="h5">Register Now</h5>
-            <ArrowUpRight />
+
+            <div
+              class="mt-4 pt-4 border-t border-t-nextflow w-full flex flex-row justify-between items-center"
+            >
+              <h5 class="h5">Register Now</h5>
+              <ArrowUpRight />
+            </div>
           </div>
         </SubSection>
       </Box>
       <Box className="">
-        <SubSection className="flex flex-col justify-between min-h-[350px]">
+        <SubSection
+          className="flex flex-col justify-between h-full min-h-[350px]"
+        >
           <div>
             <Laptop />
-            <div class="mt-10">
-              <h5 class="h5 pb-4">Engage with nf-core Resources</h5>
-              <p class="monospace text-lg">
-                Discover the benefits of nf-core, including how to access, customize, and utilize community-built pipelines for various bioinformatics tasks.
-              </p>
-            </div>
           </div>
-          <div
-            class="mt-4 pt-4 border-t border-t-nextflow w-full flex flex-row justify-between items-center"
-          >
-            <h5 class="h5">Register Now</h5>
-            <ArrowUpRight />
+          <div class="mt-10">
+            <h5 class="h5 pb-4">Engage with nf-core Resources</h5>
+            <p class="monospace ">
+              Discover the benefits of nf-core, including how to access,
+              customize, and utilize community-built pipelines for various
+              bioinformatics tasks.
+            </p>
+            <div
+              class="mt-4 pt-4 border-t border-t-nextflow w-full flex flex-row justify-between items-center"
+            >
+              <h5 class="h5">Register Now</h5>
+              <ArrowUpRight />
+            </div>
           </div>
         </SubSection>
       </Box>
       <Box className="">
-        <SubSection className="flex flex-col justify-between min-h-[350px]">
+        <SubSection
+          className="flex flex-col justify-between h-full min-h-[350px]"
+        >
           <div>
             <Exercises />
-            <div class="mt-10">
-              <h5 class="h5 pb-4">Hands-on Exercises</h5>
-              <p class="monospace text-lg">
-                Create pipelines using the nf-core template, covering best practices for version control, collaboration, and troubleshooting common errors.
-              </p>
+          </div>
+
+          <div class="mt-10">
+            <h5 class="h5 pb-4">Hands-on Exercises</h5>
+            <p class="monospace ">
+              Create pipelines using the nf-core template, covering best
+              practices for version control, collaboration, and troubleshooting
+              common errors.
+            </p>
+
+            <div
+              class="mt-4 pt-4 border-t border-t-nextflow w-full flex flex-row justify-between items-center"
+            >
+              <h5 class="h5">Register Now</h5>
+              <ArrowUpRight />
             </div>
           </div>
-          <div
-          class="mt-4 pt-4 border-t border-t-nextflow w-full flex flex-row justify-between items-center"
-        >
-          <h5 class="h5">Register Now</h5>
-          <ArrowUpRight />
-        </div>
         </SubSection>
       </Box>
     </div>
