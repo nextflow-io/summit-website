@@ -83,7 +83,7 @@ const menuLinks = [
       // },
       {
         name: "Why Attend",
-        url: "/2025/boston/why-attend",
+        url: "/2025/barcelona/why-attend",
       },
       // {
       //   name: "Gallery",
