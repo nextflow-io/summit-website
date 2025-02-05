@@ -1,15 +1,8 @@
 ---
 import Layout from "@layouts/Base.astro";
-import { SponsoredBy } from "@components/Marquee";
-import KeyInformation from "@modules/KeyInformation";
-import ImageSection from "@modules/ImageSection";
-import CTASection from "@modules/CTASection";
 import KeyDates from "@components/KeyDates/index.astro";
 import Calendar from "@components/Calendar";
-import Contact from "@modules/Contact";
 import SEO from "@components/SEO";
-import Button from "@components/Button";
-import Accommodation from "@modules/Accommodation";
 import Box, { SubSection } from "@components/Box";
 ---
 
@@ -18,7 +11,7 @@ import Box, { SubSection } from "@components/Box";
 
   <section class="mt-20 mb-24 container">
     <h1 class="h1 mb-4 md:mb-8">Join us in Boston</h1>
-    <div class="grid grid-cols-1 md:grid-cols-2 md:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
       <Box className="">
         <SubSection className="flex flex-col justify-between min-h-[350px]">
           <div>
@@ -91,8 +84,9 @@ import Box, { SubSection } from "@components/Box";
   <section class="pb-6 pt-16 md:pt-20">
     <div class="container">
       <h1 class="h2 mb-8">Agenda</h1>
-      <p class="monospace">Join us in Boston</p>
-      <div id="05-21"></div>
+      <p class="monospace">[Coming soon]</p>
+      
+      <!-- <div id="05-21"></div>
       <div id="05-22"></div>
       <div id="05-23"></div>
       <div id="05-24"></div>
@@ -109,6 +103,6 @@ import Box, { SubSection } from "@components/Box";
         >
       </div>
     </div>
-    <Calendar client:load />
+    <Calendar client:load /> -->
   </section>
 </Layout>

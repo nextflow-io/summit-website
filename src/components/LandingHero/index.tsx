@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Button from "@components/Button";
 import styles from "./styles.module.css";
 import clsx from "clsx";
@@ -43,11 +43,10 @@ const LandingHero: React.FC<HeroProps> = (props) => {
     return `/${namespace}${path}`;
   }
 
-
   function isActive(path) {
     return pathname?.includes(path);
   }
-
+  
 
   return (
     <div className="relative w-full h-full">
@@ -58,19 +57,19 @@ const LandingHero: React.FC<HeroProps> = (props) => {
       </div>
 
       <div className={clsx(styles.colorBarWrapper, "top-[20%] left-[0%]")}>
-        <div className={clsx(styles.colorBar, styles["green"], "")}>
+        <div className={clsx(styles.colorBar, styles["green"], "colorBar")}>
           <div></div>
         </div>
       </div>
 
       <div className={clsx(styles.colorBarWrapper, "top-[50%] right-[20%]")}>
-        <div className={clsx(styles.colorBar, styles["green"], "")}>
+        <div className={clsx(styles.colorBar, styles["green"], "colorBar")}>
           <div></div>
         </div>
       </div>
 
       <div className={clsx(styles.colorBarWrapper, "bottom-[5%] right-[00%]")}>
-        <div className={clsx(styles.colorBar, styles["red"], "")}>
+        <div className={clsx(styles.colorBar, styles["red"], "colorBar")}>
           <div></div>
         </div>
       </div>
@@ -141,14 +140,22 @@ const LandingHero: React.FC<HeroProps> = (props) => {
               </div>
 
               <div className="sm:hidden">
-                
                 <div className="toggleLocation relative monospace">
                   <div className="flex flex-row">
-                  <Link href="/2025/boston" active={isActive("2025/boston")}> <div className="px-4">Boston</div></Link>
-                  <Link href="/2025/barcelona" active={isActive("2025/barcelona")}> <div className="px-4">Barcelona</div></Link>
+                    <Link href="/2025/boston" active={isActive("2025/boston")}>
+                      {" "}
+                      <div className="px-4">Boston</div>
+                    </Link>
+                    <Link
+                      href="/2025/barcelona"
+                      active={isActive("2025/barcelona")}
+                    >
+                      {" "}
+                      <div className="px-4">Barcelona</div>
+                    </Link>
                   </div>
                 </div>
-         
+
                 <p
                   className="monospace max-w-[580px] mt-10"
                   dangerouslySetInnerHTML={{ __html: content }}
