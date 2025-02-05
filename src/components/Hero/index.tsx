@@ -39,9 +39,9 @@ const Hero = ({
             dangerouslySetInnerHTML={{ __html: content }}
           />
 
-          <div className="flex md:flex-row items-center">
+          <div className="inline-flex flex-col sm:flex-row sm:items-center">
             {ctaText1 && (
-              <Button className="mt-16 relative" white arrowAfter>
+              <Button className="mt-10 relative" white arrowAfter>
                 {ctaLink1 && (
                   <a className="absolute w-full h-full" href={ctaLink1}></a>
                 )}{" "}
@@ -50,13 +50,14 @@ const Hero = ({
             )}
 
             {ctaText2 && (
-              <Button className="ml-10 mt-16 relative" arrowBefore>
+              <Button className="sm:ml-10 mt-6 sm:mt-10 relative" arrowBefore>
                 {ctaLink2 && (
                   <a className="absolute w-full h-full" href={ctaLink2}></a>
                 )}{" "}
                 {ctaText2}
               </Button>
             )}
+
           </div>
         </div>
         <div className={clsx(styles.imageWrapper, "")}>

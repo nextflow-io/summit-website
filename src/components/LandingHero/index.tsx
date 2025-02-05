@@ -78,15 +78,15 @@ const LandingHero: React.FC<HeroProps> = (props) => {
         className={clsx(styles.landingHero, "container h-full relative")}
       >
         <div className="flex flex-col sm:flex-row sm:justify-between h-full relative z-10">
-          <div className="w-full h-full mt-10 sm:mt-0 mb-10 mb:mb-0 sm:pr-10 max-w-[750px]">
+          <div className="w-full h-full mt-10 sm:mt-0 sm:pr-10 max-w-[750px]">
             <h1 className="h0 mb-4 max-w-[250px] sm:max-w-[800px]">{title}</h1>
             <div
               className={clsx(
                 styles.landingLogo,
-                "flex flex-row items-center mb-16",
+                "flex flex-row items-center mb-8 md:mb-16",
               )}
             >
-              <p className="h3 mr-4">by</p> <SeqeraLogo />
+              <p className="h3 mr-4">by</p> <SeqeraLogo className="w-full"/>
             </div>
 
             <div className="hidden sm:flex sm:flex-col">
