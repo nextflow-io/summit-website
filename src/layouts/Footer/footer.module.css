@@ -1,0 +1,11 @@
+
+.footerDivider {
+    margin-top: 120px;
+    background: rgb(182, 236, 226);
+    background: linear-gradient(
+      90deg,
+      rgba(182, 236, 226, 1) 0%,
+      rgba(13, 192, 157, 1) 100%
+    );
+    height: 6px;
+}

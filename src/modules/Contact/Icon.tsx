@@ -1,28 +1,11 @@
 const Icon = () => (
-  <svg
-    width="36"
-    height="37"
-    viewBox="0 0 36 37"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <g clipPath="url(#clip0_360_553)">
-      <path
-        d="M17.7784 24.763C17.7784 24.3475 17.8273 23.9441 17.8884 23.5408H6.77843V11.3186L16.5562 17.4297L26.334 11.3186V17.5397C27.214 17.6864 28.0329 17.9919 28.7784 18.4197V8.87413C28.7784 7.52969 27.6784 6.42969 26.334 6.42969H6.77843C5.43398 6.42969 4.33398 7.52969 4.33398 8.87413V23.5408C4.33398 24.8852 5.43398 25.9852 6.77843 25.9852H17.8884C17.8273 25.5819 17.7784 25.1786 17.7784 24.763ZM26.334 8.87413L16.5562 14.9852L6.77843 8.87413H26.334ZM26.334 28.4297V25.9852H21.4451V23.5408H26.334V21.0964L30.0007 24.763L26.334 28.4297Z"
-        fill="#0DC09D"
-      />
-    </g>
-    <defs>
-      <clipPath id="clip0_360_553">
-        <rect
-          width="25.6667"
-          height="22"
-          fill="white"
-          transform="translate(4.33398 6.42969)"
-        />
-      </clipPath>
-    </defs>
-  </svg>
+  <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0.854004 26.4792H9.39567" stroke="#0DC09D" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+  <path d="M4.271 21.3542H10.2502" stroke="#0DC09D" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+  <path d="M7.6875 16.2292H11.1042" stroke="#0DC09D" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+  <path d="M38.4375 29.8958H12.8125L14.5208 12.8125H40.1458L38.4375 29.8958Z" stroke="#0DC09D" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+  <path d="M14.521 12.8125L27.3335 23.0625L40.146 12.8125" stroke="#0DC09D" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>  
 );
 
 export default Icon;

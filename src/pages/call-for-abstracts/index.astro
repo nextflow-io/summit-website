@@ -1,0 +1,135 @@
+---
+import Layout from "@layouts/Base.astro";
+import Hero from "@components/Hero";
+import SEO from "@components/SEO";
+// import Faq from "@components/Faq";
+import Box, { SubSection } from "@components/Box";
+import img1 from "@images/photos/2025/boston/call-for-abstracts-boston.jpg";
+// import qa from "./qa";
+---
+
+<Layout>
+  <SEO slot="head" title="Call for Abstracts" img={1} />
+  <section class="">
+    <Hero
+      preTitle="Call for abstracts is"
+      title="Open until March 14"
+      content="Abstracts will be read and presenters notified on a rolling basis, so apply soon. The final abstracts will be accepted and presenters notified by end of March."
+      href={img1.src}
+      alt="Image of Nextflow Summit"
+      ctaText1="Apply Now"
+      ctaLink1="https://seqera.swoogo.com/nextflow-summit-boston-2025/call-for-abstracts"
+    />
+  </section>
+
+  <section class="mt-20 mb-24 container">
+    <h1 class="h1 mb-4 md:mb-8">Key Info</h1>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <Box className="">
+        <SubSection className="flex flex-col justify-between min-h-[350px]">
+          <div class="border-b border-b-nextflow w-full">
+            <h5 class="h5 mb-4">Talks & Formats</h5>
+          </div>
+          <p>
+            <ul class="monospace bodycopy">
+              <li>Long-form: 20 minutes total including time for Q&A</li>
+              <li>Digital Poster presented in person</li>
+            </ul>
+          </p>
+        </SubSection>
+      </Box>
+      <Box className="">
+        <SubSection className="flex flex-col justify-between min-h-[350px]">
+          <div class="border-b border-b-nextflow w-full">
+            <h5 class="h5 mb-4">Location</h5>
+          </div>
+          <p class="monospace">
+            In person at the Nextflow Summit 2025, located at <a
+              href="https://maps.app.goo.gl/S9aZawB98jRa8DEC9"
+              target="_blank">Aloft Boston Seaport District</a
+            >
+          </p>
+        </SubSection>
+      </Box>
+      <Box className="">
+        <SubSection className="flex flex-col justify-between min-h-[350px]">
+          <div class="border-b border-b-nextflow w-full mb-4">
+            <h5 class="h5 mb-4">How to Apply</h5>
+          </div>
+          <p class="monospace">
+            Click <a href="" target="_blank">[add link here]</a> to apply now. The
+            deadline is March 14, 2025.
+          </p>
+        </SubSection>
+      </Box>
+    </div>
+  </section>
+
+  <section class="mt-10 mb-20 container">
+    <h1 class="h1 mb-4 md:mb-8">Themes</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 md:grid-cols-3 gap-8">
+      <Box className="">
+        <SubSection className="flex flex-col justify-between min-h-[350px]">
+          <div class="border-b border-b-nextflow w-full mb-4">
+            <h6 class="h5 mb-4">1. Enabling science</h6>
+          </div>
+          <h6 class="h6 mb-4">
+            How is data technology helping researchers make discoveries?
+          </h6>
+          <ul class="monospace">
+            <li>
+              Computational wizardry that allows researchers to try out ideas
+              that would have been impossible or too time-consuming before.
+            </li>
+            <li>
+              Clever algorithms that break through computational bottlenecks.
+            </li>
+            <li>
+              Interfaces that enable even wet lab scientists to use powerful
+              computational tools.
+            </li>
+          </ul>
+        </SubSection>
+      </Box>
+      <Box className="">
+        <SubSection className="flex flex-col justify-between min-h-[350px]">
+          <div class="border-b border-b-nextflow w-full mb-4">
+            <h5 class="h5 mb-4">2. Big Nextflow</h5>
+          </div>
+          <h6 class="h6 mb-4">
+            How are data engineers solving implementation challenges and
+            overcoming scaling problems?
+          </h6>
+          <ul class="monospace">
+            <li>
+              Building pipelines and systems that are robust and fault-tolerant.
+            </li>
+            <li>What scalability means in different contexts.</li>
+            <li>Designing for growth.</li>
+            <li>Lessons learned from horror stories.</li>
+          </ul>
+        </SubSection>
+      </Box>
+      <Box className="">
+        <SubSection className="flex flex-col justify-between min-h-[350px]">
+          <div class="border-b border-b-nextflow w-full">
+            <h5 class="h5 mb-4">3. Organizational impact</h5>
+          </div>
+
+          <h6 class="h6 mb-4">
+            How are data technologies and platforms empowering organizations?
+          </h6>
+          <ul class="monospace">
+            <li>Integration with business and R&D workflows.</li>
+            <li>
+              Processes and tooling that enhance observability, reproducibility,
+              and collaboration.
+            </li>
+          </ul>
+        </SubSection>
+      </Box>
+    </div>
+  </section>
+
+  <!-- <Faq className="mt-20 mb-20" data={qa} /> -->
+</Layout>

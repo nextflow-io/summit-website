@@ -21,7 +21,7 @@ export default defineConfig({
     }),
     icon(),
     sitemap({
-      filter: (page) => page !== `${host}/2024/`,
+      filter: (page) => page !== `${host}/2025/`,
     }),
   ],
   vite: {

@@ -9,7 +9,7 @@ export default {
       value: 30,
     },
     summit_in_person_attendees_prev_year: {
-      label: "Summit in-person attendees in 2024",
+      label: "Summit in-person attendees in 2025",
       value: 166,
     },
     summit_in_person_attendees_expected: {
@@ -17,7 +17,7 @@ export default {
       value: 200,
     },
     hackathon_in_person_attendees_prev_year: {
-      label: "Hackathon in-person attendees in 2024",
+      label: "Hackathon in-person attendees in 2025",
       value: 50,
     },
     hackathon_in_person_attendees_expected: {
@@ -39,7 +39,7 @@ export default {
       value: 225,
     },
     summit_in_person_attendees_expected: {
-      label: "Summit in-person attendees expected in 2024",
+      label: "Summit in-person attendees expected in 2025",
       value: 250,
     },
     hackathon_in_person_attendees_prev_year: {
@@ -47,7 +47,7 @@ export default {
       value: 100,
     },
     hackathon_in_person_attendees_expected: {
-      label: "Hackathon in-person attendees expected in 2024",
+      label: "Hackathon in-person attendees expected in 2025",
       value: 150,
     },
   },

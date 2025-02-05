@@ -5,14 +5,10 @@ type Props = {
   children: React.ReactNode;
   className?: string;
   href?: string;
-  alt?: boolean;
-  alt2?: boolean;
 };
 
-const Box: React.FC<Props> = ({ children, className, href, alt, alt2 }) => {
+const Box: React.FC<Props> = ({ children, className, href}) => {
   const cn = clsx(styles.box, className, {
-    [styles.alt]: alt,
-    [styles.alt2]: alt2,
   });
   if (href)
     return (

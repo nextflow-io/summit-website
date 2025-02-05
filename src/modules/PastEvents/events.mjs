@@ -12,13 +12,13 @@ import e24_bcn_summit from "./images/e24_bcn_summit.jpg";
 
 export default [
   {
-    title: "Boston Summit 2024",
-    url: "https://summit.nextflow.io/2024/boston/",
+    title: "Boston Summit 2025",
+    url: "https://summit.nextflow.io/2025/boston/",
     img: e24_boston_summit,
   },
   {
-    title: "Barcelona Summit 2024",
-    url: "https://summit.nextflow.io/2024/barcelona/",
+    title: "Barcelona Summit 2025",
+    url: "https://summit.nextflow.io/2025/barcelona/",
     img: e24_bcn_summit,
   },
   {

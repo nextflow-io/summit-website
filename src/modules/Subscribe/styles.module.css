@@ -1,26 +1,27 @@
 .form {
-  margin: 0 auto;
+  width: 100%;
+  /* margin: 0 auto; */
   max-width: 440px;
   & form {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     & :global(.hs-form-field),
     & :global(.hs_submit) {
       flex: 1 1 auto;
-      padding: 6px;
       & input {
         width: 100%;
+        margin-bottom: 12px;
       }
     }
     & :global(.hs_email) {
       & input {
-        border-radius: 99px;
+        /* border-radius: 99px; */
         padding-left: 25px;
       }
     }
     & :global(.hs_submit) {
       & input {
-        border-radius: 99px;
+        /* border-radius: 99px; */
         transition: all 0.3s;
         &:hover {
           background: var(--color-nextflow);
@@ -36,10 +37,12 @@
 @media (--sm) {
   .form {
     & form {
+      flex-direction: row;
       & :global(.hs_email) {
         & input {
-          border-radius: 99px 0 0 99px;
+          border-radius: 8px 0 0 8px;
           width: 350px;
+          margin-bottom: 0;
         }
       }
       & :global(.hs_submit) {

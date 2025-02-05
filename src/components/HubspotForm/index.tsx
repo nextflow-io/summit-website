@@ -8,7 +8,7 @@ declare global {
   interface Window {
     hbspt: any;
     lintrk: any;
-    dataLayer: any;
+    dataLayer: any[];
   }
 }
 

@@ -1,8 +1,8 @@
 const siteTitle = "Nextflow SUMMIT 2025";
 const descDefault = `Join us at the Nextflow SUMMIT 2025 for the latest developments and innovations from the Nextflow world.`;
-import imgDefault from "./share-default.png";
-import imgBoston from "./share-boston.png";
-import imgBarcelona from "./share-barcelona.png";
+import imgDefault from "./share-default.jpg";
+import imgBoston from "./share-boston.jpg";
+import imgBarcelona from "./share-barcelona.jpg";
 const images = [imgDefault, imgBoston, imgBarcelona];
 
 type Props = {

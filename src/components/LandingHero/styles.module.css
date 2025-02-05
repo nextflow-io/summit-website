@@ -1,0 +1,126 @@
+.landingLogo {
+  svg {
+    max-width: 180px;
+  }
+}
+
+.landingHero {
+  position: relative;
+  @media (--lg) {
+    height: calc(100vh - 130px);
+  }
+}
+
+@keyframes fadeInOut {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes delayAnimation {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  50.01% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.colorBarWrapper {
+  width: 100%;
+  max-width: 190px;
+  position: absolute;
+  z-index: 0;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  transition: all .3s;
+  opacity: 0;
+  @media (--sm) {
+    max-width: 542px;
+  }
+  &:first-child {
+    animation: fadeInOut 5s ease-in-out 0s infinite alternate;
+
+  }
+  &:nth-child(2) {
+    animation:fadeInOut 5s ease-in-out 3s infinite alternate ;
+  }
+  &:nth-child(3) {
+    animation: fadeInOut 5s ease-in-out 6s infinite alternate;
+  }
+  &:nth-child(4) {
+    animation: fadeInOut 5s ease-in-out 9s infinite alternate;
+  }
+}
+
+.colorBar {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  padding-bottom: 22%;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: multiply;
+  }
+  &.green {
+    &::after {
+      background: var(--color-nextflow);
+    }
+  }
+  &.red {
+    &::after {
+      background: var(--color-fusion);
+    }
+  }
+
+  & > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: rgb(237, 221, 220);
+    background: linear-gradient(
+      90deg,
+      rgba(237, 221, 220, 1) 0%,
+      rgba(236, 215, 213, 1) 16%,
+      rgba(234, 200, 194, 1) 38%,
+      rgba(231, 176, 164, 1) 58%,
+      rgba(228, 142, 122, 1) 74%,
+      rgba(225, 114, 87, 1) 86%
+    );
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  @media (--sm) {
+    padding-bottom: 22%;
+  }
+}
+
+
+
+
