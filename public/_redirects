@@ -1,6 +1,3 @@
-<!-- # 2025 - archive site proxy
-/2025/*       https://nextflow-summit-2025.netlify.app/2025/:splat    200! -->
-
 # 2024 - archive site proxy
 /2024/*       https://nextflow-summit-2024.netlify.app/2025/:splat    200!
 
