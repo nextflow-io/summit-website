@@ -1,4 +1,5 @@
-const dates = [
+export default {
+  main: [
     {
       name: "Boston",
       dates: [
@@ -108,7 +109,7 @@ const dates = [
         },
       ],
     },
-  ];
+  ]
+}
   
-  export default dates;
   

@@ -1,79 +1,77 @@
 ---
 import clsx from "clsx";
 import keyDates from "./keyDates";
+import datesBarcelona from "./datesBarcelona";
 import img1 from "@images/photos/2025/boston/training-computer.jpg";
 import Box from "@components/Box";
 
-function getTitle(item) {
-  if (!item.endDay) return item.date;
-  return `${item.date} - ${item.endDay}`;
-}
-
-function isPast(item) {
-  if (item.title == "Hackathon & Training") return false;
-  if (item.title == "Nextflow Summit") return false;
-  const today = new Date().getTime();
-  const eventDate = Date.parse(
-    item.rawEndDate ? item.rawEndDate : item.rawDate,
-  );
-  return today > eventDate;
-}
 
 interface Props {
   showTitle?: boolean;
   hidePastDates?: boolean;
-  location?: "boston" | "barcelona";
+  location?: string;
 }
 
-const { showTitle, hidePastDates = false, location = "boston" } = Astro.props;
+const { showTitle, hidePastDates = false, location = "boston"} = Astro.props;
 ---
 
 <section class="">
-  {
-    showTitle && (
+
       <div class="mb-10">
         <h5 class="h1 mb-2">
           Key dates{" "}
-          {/* {hidePastDates && (
-          <button
-            id="togglePastDates"
-            class="text-base font-normal opacity-50 ml-4"
-          >
-            [ show past dates ]
-          </button>
-        )} */}
         </h5>
         <p class="monospace ">At a glance</p>
       </div>
-    )
-  }
+   
+  
 
   <div class={clsx("relative flex flex-col sm:flex-row h-full")}>
     <div class="w-full border-t">
-      {
-        keyDates?.map((item, i) => (
-          <div
-            class={`flex flex-wrap border-b ${hidePastDates && isPast(item) ? "keyDatePast opacity-60 hidden" : ""}`}
-          >
-            <div class="w-full flex flex-row items-center">
-              <h4 class="h4 pt-6 pb-6  w-full max-w-[100px]">
-                {item.date}
-              </h4>
+    
+          <!-- {keyDates?.map((item, i) => (
+            <div
+              class={`flex flex-wrap border-b`}
+            >
+              <div class="w-full flex flex-row items-center">
+                <h4 class="h4 pt-6 pb-6  w-full max-w-[100px]">{item.date}</h4>
 
-              <div class="pl-10 flex flex-col w-full monospace">
-                {item?.content?.map((item, i) => (
-                  <div key={i} className={` border-b last:border-b-0 py-6`}>
-                    {item.info}
-                  </div>
-                ))}
+                <div class="pl-10 flex flex-col w-full monospace">
+                  {item?.content?.map((item, i) => (
+                    <div key={i} className={` border-b last:border-b-0 py-6`}>
+                      {item.info}
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-        ))
-      }
+          ))
+          
+      } -->
+<!-- 
+      {
+        location == "barcelona" &&
+          datesBarcelona?.map((item, i) => (
+            <div
+              class={`flex flex-wrap border-b`}
+            >
+              <div class="w-full flex flex-row items-center">
+                <h4 class="h4 pt-6 pb-6  w-full max-w-[100px]">{item.date}</h4>
+
+                <div class="pl-10 flex flex-col w-full monospace">
+                  {item?.content?.map((item, i) => (
+                    <div key={i} className={` border-b last:border-b-0 py-6`}>
+                      {item.info}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))
+      } -->
     </div>
     <div class="mt-8 sm:mt-0 sm:ml-20 w-full sm:sticky sm:top-40 self-start">
-      <div class=" pb-[100%] relative w-full h-0 overflow-hidden">
+      <div class="pb-[100%] relative w-full h-0 overflow-hidden">
         <img
           src={img1.src}
           class="absolute top-0 left-0 right-0 bottom-0 h-full w-full object-cover border border-nextflow"
@@ -83,17 +81,3 @@ const { showTitle, hidePastDates = false, location = "boston" } = Astro.props;
     </div>
   </div>
 </section>
-
-<script>
-  const toggleButton = document.getElementById("togglePastDates");
-  const pastDates = document.querySelectorAll(".keyDatePast");
-
-  if (toggleButton) {
-    toggleButton.addEventListener("click", () => {
-      pastDates.forEach((el) => el.classList.toggle("hidden"));
-      toggleButton.textContent = toggleButton.textContent.includes("show")
-        ? "[ hide past dates ]"
-        : "[ show past dates ]";
-    });
-  }
-</script>

@@ -1,7 +1,7 @@
 ---
 import Layout from "@layouts/Base.astro";
 import LandingHero from "@components/LandingHero";
-import KeyDates from "@components/KeyDatesSection";
+import KeyDates from "@components/KeyDates/index.astro";
 import Box, { SubSection } from "@components/Box";
 import ArrowUpRight from "@icons/ArrowUpRight";
 import Faq from "@components/Faq";
@@ -91,7 +91,7 @@ import qa from "./qa";
   </section>
   <section class="container relative z-10 mb-4 sm:mb-8 lg:mb-20">
     <section class="container relative z-10 mb-4 sm:mb-8 lg:mb-20">
-      <KeyDates namespace="2025/barcelona" pathname="2025/barcelona"/>
+      <!-- <KeyDates location="barcelona" client:load/> -->
     </section>
   
   </section>
