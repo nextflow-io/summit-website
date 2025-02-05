@@ -1,4 +1,5 @@
-const qa = [
+export default {
+  main: [
     {
       question: "How do I register for the Nextflow Summit?",
       answer:
@@ -35,7 +36,5 @@ const qa = [
         answer:
           "This is placeholder copy that needs to be updated or removed.."
     },
-  ];
-  
-  export default qa;
-  
+  ]
+}

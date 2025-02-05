@@ -1,4 +1,5 @@
-const qa = [
+export default {
+  main: [
     {
       question: "What is the best way to travel to Boston for the event?",
       answer:
@@ -34,7 +35,5 @@ const qa = [
       answer:
         "This is placeholder copy that needs to be updated or removed."
     },
-  ];
-  
-  export default qa;
-  
+  ]
+}

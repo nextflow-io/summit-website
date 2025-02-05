@@ -1,6 +1,7 @@
-const qa = [
+export default {
+  main: [
     {
-      question: "How do I register for the Nextflow Summit?",
+      question: "How do I register for the Nextflow Summit Barcelona?",
       answer:
         `Find out more info on our Registration <a class="underline" href="/register">page</a> or register now by clicking <a class="underline" href="/">here</a>. <span class="text-red-300">[need to update link]</span> `,
     },
@@ -35,7 +36,9 @@ const qa = [
         answer:
           "This is placeholder copy that needs to be updated or removed.."
     },
-  ];
+  ]
   
-  export default qa;
+}
+  
+  
   

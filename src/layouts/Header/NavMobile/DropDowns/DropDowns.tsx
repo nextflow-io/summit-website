@@ -81,7 +81,7 @@ const DropDowns: React.FC<Props> = (props) => {
 
   return (
     <div className="text-lg px-4 pt-20">
-      {menuLinks.map(({ name, url, dropdowns }, index) => (
+      {menuLinks?.map(({ name, url, dropdowns }, index) => (
         <DropDownItem
           key={index}
           name={name}

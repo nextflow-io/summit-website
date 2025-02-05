@@ -1,4 +1,6 @@
-const footerMenuLinks = [
+
+export default {
+  main: [
   {
     name: "Boston",
     url: "/2025/boston",
@@ -133,6 +135,5 @@ const footerMenuLinks = [
       },
     ],
   },
-];
-
-export default footerMenuLinks;
+]
+}

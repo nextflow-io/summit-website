@@ -2,12 +2,12 @@
 import Layout from "@layouts/Base.astro";
 import Hero from "@components/Hero";
 import SEO from "@components/SEO";
-import Faq from "@components/Faq";
+// import Faq from "@components/Faq";
 import Box, { SubSection } from "@components/Box";
 import img1 from "@images/photos/2025/boston/training-computer.jpg";
 import img2 from "@images/photos/2025/boston/why-attend.jpg";
 import img3 from "@images/photos/2025/boston/audience.jpg";
-import qa from "./qa";
+// import qa from "./qa";
 import Training from "@icons/Training";
 ---
 
@@ -99,6 +99,6 @@ import Training from "@icons/Training";
     </div>
     </div>
 
-    <Faq className="mt-40 mb-20" client:load data={qa} />
+    <!-- <Faq className="mt-40 mb-20" data={qa} /> -->
   </section>
 </Layout>

@@ -21,7 +21,7 @@ const currentYear = new Date().getFullYear();
           class="whitespace-nowrap grid grid-cols-2 gap-x-8 md:gap-x-0 md:flex md:flex-row"
         >
           {
-            footerMenuLinks?.map(({ name, url, dropdowns }, i) => {
+            footerMenuLinks?.main?.map(({ name, dropdowns }, i) => {
               let setTarget = false;
               if (name == "Follow") setTarget = true;
               const linkProps = setTarget
@@ -31,7 +31,7 @@ const currentYear = new Date().getFullYear();
               return (
                 <ul class="mb-16 md:mb-0 md:ml-12 lg:ml-16">
                   <p class="mb-6 ">{name}</p>
-                  {dropdowns?.map(({ name, url }, i) => (
+                  {dropdowns && dropdowns?.map(({ name, url }, i) => (
                     <li>
                       <a
                         href={url}

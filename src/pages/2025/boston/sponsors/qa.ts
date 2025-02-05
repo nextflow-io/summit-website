@@ -1,4 +1,5 @@
-const qa = [
+export default {
+  main: [
     {
       question: "This FAQ section can removed if it's not needed?",
       answer:
@@ -24,7 +25,5 @@ const qa = [
       answer:
         "This is placeholder copy that needs to be updated or removed."
     },
-  ];
-  
-  export default qa;
-  
+  ]
+}

@@ -1,4 +1,5 @@
-const qa = [
+export default {
+  main: [
     {
       question: "How do I register for the Nextflow Summit?",
       answer:
@@ -29,7 +30,5 @@ const qa = [
         answer:
           "Abstracts will be read and presenters notified on a rolling basis, so apply soon. The final abstracts will be accepted and presenters notified by end of March."
       }
-  ];
-  
-  export default qa;
+  ]}
   

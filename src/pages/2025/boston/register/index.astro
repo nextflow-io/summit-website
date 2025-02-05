@@ -1,7 +1,7 @@
 ---
 import Layout from "@layouts/Base.astro";
 import SEO from "@components/SEO";
-import Faq from "@components/Faq";
+// import Faq from "@components/Faq";
 import Box, { SubSection } from "@components/Box";
 import HubspotForm from "@components/HubspotForm";
 import Button from "@components/Button";
@@ -9,7 +9,7 @@ import clsx from "clsx";
 import styles from "./register.module.css";
 import ArrowUpRight from "@icons/ArrowUpRight";
 import SignUpForm from "@modules/SignUpForm";
-import qa from "./qa";
+// import qa from "./qa";
 ---
 
 <Layout showNav={false}>
@@ -108,5 +108,5 @@ import qa from "./qa";
     </div>
   </section>
 
-  <Faq className="mt-40 mb-20" client:load data={qa} />
+  <!-- <Faq className="mt-40 mb-20" data={qa} /> -->
 </Layout>

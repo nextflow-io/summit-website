@@ -22,7 +22,7 @@ const Menu: React.FC<Props> = (props) => {
   return (
     <nav>
       <ul>
-        {menuLinks[location].dropdowns.map(({ name, url }, i) => {
+        {menuLinks[location].dropdowns?.map(({ name, url }, i) => {
           return (
             <li key={i}>
               <Link href={url} active={isActive(url)}>

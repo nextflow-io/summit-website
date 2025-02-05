@@ -70,7 +70,7 @@ const Faq = ({ className, data, title, question, answer }: FaqProps) => {
           </div>
         </div>
         <div className="w-full">
-          {data.map(({ question, answer }, index) => {
+          {data.main?.map(({ question, answer }, index) => {
             return (
               <DropDownItem
                 key={index}

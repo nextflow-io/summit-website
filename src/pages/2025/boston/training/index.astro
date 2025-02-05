@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 import Layout from "@layouts/Base.astro";
 import Hero from "@components/Hero";
-import Faq from "@components/Faq";
+// import Faq from "@components/Faq";
 import Box, { SubSection } from "@components/Box";
 import img from "@photos/2025/boston/training.jpg";
 import SEO from "@components/SEO";
@@ -10,7 +10,7 @@ import ArrowUpRight from "@icons/ArrowUpRight";
 import Training from "@icons/Training";
 import Exercises from "@icons/Exercises";
 import Laptop from "@icons/Laptop";
-import qa from "./qa";
+// import qa from "./qa";
 ---
 
 <Layout namespace="2025/boston">
@@ -111,5 +111,5 @@ import qa from "./qa";
     </div>
   </section>
 
-  <Faq className="mt-40 mb-20" client:load data={qa} />
+  <!-- <Faq className="mt-40 mb-20" data={qa} /> -->
 </Layout>

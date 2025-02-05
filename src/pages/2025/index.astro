@@ -1,8 +1,103 @@
 ---
 import Layout from "@layouts/Base.astro";
+import LandingHero from "@components/LandingHero";
+import KeyDates from "@components/KeyDates/index.astro";
+import Box, { SubSection } from "@components/Box";
+import ArrowUpRight from "@icons/ArrowUpRight";
+import Faq from "@components/Faq";
 import SEO from "@components/SEO";
+// import qa from "./qa";
 ---
 
-<Layout namespace="2025" redirect="/">
-  <SEO slot="head" />
+<Layout namespace="2025/boston">
+  <SEO slot="head" img={1} />
+
+  <LandingHero
+    title="Nextflow Summit"
+    content="Whether you're a bioinformatician, data scientist, developer, or leader, you'll leave the Nextflow Summit feeling inspired, equipped, and excited about the future of scalable, reproducible workflows. Join us to gain insights into the latest advancements in Nextflow."
+    ctaText1="Register Now"
+    ctaLink1="/2025/boston/register"
+    ctaText2="Call for abstracts"
+    ctaLink2="/call-for-abstracts"
+    when="May 13-16"
+    where="Boston"
+    price="$XXX"
+    namespace="2025/boston"
+    pathname="2025/boston"
+  />
+
+  <section class="pt-40 mb-24 container">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <Box className="aspect-square md:aspect-auto lg:aspect-square	relative">
+        <SubSection className="flex flex-col justify-between h-full">
+          <div class="">
+            <div class="pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center">
+              <h5 class="h4">Training</h5>
+              <ArrowUpRight/>
+            </div>
+            <div class=" py-2 monospace border-b border-b-nextflow">
+              May 13-14 • training
+            </div>
+          </div>
+          <div class="mt-6 lg:mt-0">
+            <h5 class="h4 mb-4">2 days / 50 people</h5>
+            <p class=" monospace min-h-[140px]">
+              An in-person foundational training to supercharge your pipeline
+              development with Nextflow and nf-core. <br /><br />Running in
+              parallel to the hackathon.
+            </p>
+          </div>
+        </SubSection>
+      </Box>
+
+      <Box className="aspect-square md:aspect-auto lg:aspect-square	">
+        <SubSection className="flex flex-col justify-between h-full">
+          <div class="">
+            <div class="pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center">
+              <h5 class="h4">Hackathon</h5>
+              <ArrowUpRight/>
+            </div>
+            <div class=" py-2 monospace border-b border-b-nextflow">
+              May 13-14 • hackathon
+            </div>
+          </div>
+          <div class="mt-6 lg:mt-0">
+            <h5 class="h4 mb-4">2 days / 100+ people</h5>
+            <p class=" monospace min-h-[140px]">
+              An in-person hackathon to tackle real-world challenges, create
+              innovative pipelines with Nextflow, and develop nf-core.<br /><br
+              />
+              Running in parallel to the training.
+            </p>
+          </div>
+        </SubSection>
+      </Box>
+      <Box className="aspect-square md:aspect-auto lg:aspect-square	">
+        <SubSection className="flex flex-col justify-between h-full">
+          <div class="">
+            <div class="pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center">
+              <h5 class="h4">Summit</h5>
+              <ArrowUpRight/>
+            </div>
+            <div class=" py-2 monospace border-b border-b-nextflow">
+            May 15-16 • talks, networking & more
+            </div>
+          </div>
+          <div class="mt-6 lg:mt-0">
+            <h5 class="h4 mb-4"> 1.5 days / 200+ people</h5>
+            <p class=" monospace min-h-[140px]">
+              A showcase of the latest developments and innovations from the
+              Nextflow world. Session themes include: Enabling Science, Big
+              Nextflow, and Organizational impact. 
+            </p>
+          </div>
+        </SubSection>
+      </Box>
+    </div>
+  </section>
+  <section class="container relative z-10 mb-4 sm:mb-8 lg:mb-20">
+    <KeyDates />
+  </section>
+
+  <!-- <Faq className="mt-40 mb-20" data={qa} /> -->
 </Layout>
