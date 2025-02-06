@@ -1,6 +1,6 @@
 ---
 import clsx from "clsx";
-import keyDates from "./keyDates";
+import datesBoston from "./datesBoston";
 import datesBarcelona from "./datesBarcelona";
 import img1 from "@images/photos/2025/boston/training-computer.jpg";
 import Box from "@components/Box";
@@ -31,7 +31,7 @@ const { showTitle, hidePastDates = false, location = "boston"} = Astro.props;
     
          {
          location == "boston" &&
-         keyDates?.map((item, i) => (
+         datesBoston?.map((item, i) => (
             <div
               class={`flex flex-wrap border-b`}
             >

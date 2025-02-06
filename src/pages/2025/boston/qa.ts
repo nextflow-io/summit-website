@@ -17,9 +17,12 @@ export default {
           `
     },
     {
-      question: "Are there early bird discounts options?",
+      question: "Are there early bird discounts?",
       answer:
-        "Enjoy early bird 20% off discount on registrations until March 14."
+        `<ul><p>Enjoy our early bird discounts:</p>
+          <li>- Early bird 25% until February 28</li>
+          <li>- Early bird 15% until March 31</li></ul>
+          `
     },
     {
       question: "Are there discounts for group registration?",
@@ -29,12 +32,12 @@ export default {
     {
       question: "What is the refund or cancellation policy for registration?",
       answer:
-        "This is placeholder copy that needs to be updated or removed."
+        "We will guarantee a 100% refund if you cancel by April 25. "
     },
     {
         question: "Can I add training after I complete my registration?",
         answer:
-          "This is placeholder copy that needs to be updated or removed.."
+          `Contact our team at <a href="mailto:help.summit@nextflow.io">help.summit@nextflow.io</a> to check if training seats are still available. If they are, we’ll assist you with registration.`
     },
   ]
 }

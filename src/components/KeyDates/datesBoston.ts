@@ -1,4 +1,4 @@
-const keyDates = [
+const datesBoston = [
   {
     date: "Feb 10",
     content: [
@@ -7,7 +7,20 @@ const keyDates = [
         url: "/call-for-abstracts",
       },
       {
-        info: "Early bird 20% off registration starts",
+        info: "Early bird 25% off registration starts",
+        url: "/register",
+      },
+    ],
+  },
+  {
+    date: "Feb 28",
+    content: [
+      {
+        info: "Early bird 25% off registration closes",
+        url: "/register",
+      },
+      {
+        info: "Early bird 15% off registration starts",
         url: "/register",
       },
     ],
@@ -17,12 +30,6 @@ const keyDates = [
     content: [
       {
         info: "Call for abstracts closes",
-      },
-      {
-        info: "Early bird 20% off registration ends",
-      },
-      {
-        info: "Standard pricing starts (until supplies last)",
       },
     ],
   },
@@ -35,13 +42,21 @@ const keyDates = [
     ],
   },
   {
+    date: "Mar 31",
+    content: [
+      {
+        info: "Early bird 15% off registration closes",
+      },
+    ],
+  },
+  {
     date: "April 25",
     content: [
       {
         info: "Registration for the in-person Nextflow Summit closes",
       },
       {
-        info: "Cancellation period closes ",
+        info: "Cancellation period closes",
       },
     ],
   },
@@ -65,4 +80,4 @@ const keyDates = [
 
 
 
-export default keyDates;
+export default datesBoston;

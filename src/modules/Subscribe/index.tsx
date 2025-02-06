@@ -9,7 +9,7 @@ const SectionSubscribe: React.FC<Props> = () => {
   return (
     <section className="">
       <p className=" mb-4">
-      Sign up to receive the latest news
+      Sign up to receive the latest updates on Nextflow, Seqera, and the nf-core community
       </p>
       <div>
       <HubspotForm

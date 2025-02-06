@@ -33,7 +33,7 @@ export default {
     {
       question: "Can I add training after I complete my registration?",
       answer:
-        "This is placeholder copy that needs to be updated or removed."
+       `Contact our team at <a href="mailto:help.summit@nextflow.io">help.summit@nextflow.io</a> to check if training seats are still available. If they are, we’ll assist you with registration.`
     },
   ]
 }

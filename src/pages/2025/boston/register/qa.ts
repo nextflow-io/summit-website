@@ -10,7 +10,7 @@ export default {
         "The deadline for this year's Boston Nextflow Summit is March 14, 2025.",
     },
     {
-      question: "Are there early bird discounts options?",
+      question: "Are there early bird discounts?",
       answer: "There are three themes this year",
     },
     {
