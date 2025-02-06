@@ -8,7 +8,7 @@ export default {
   {
     question: "Are there recommended hotels near the event venue?",
     answer:
-      "Please see above for our hotel recommendations near the event venue.",
+      `Please see the <a href="/travel">Travel</a> page for hotel recommendations near the venue.`,
   },
   {
     question: "Who typically attends the summit, and what networking opportunities are available?",
@@ -16,7 +16,7 @@ export default {
   },
   {
     question: "What skills or knowledge can I expect to gain by attending?",
-    answer: "THIS IS PLACEHOLDER COPY NEEDS TO BE UPDATED",
+    answer: "This is placeholder copy that needs to be updated or removed",
   },
   {
     question: "Will there be opportunities to interact with Nextflow experts and developers?",

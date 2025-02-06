@@ -91,7 +91,7 @@ const LandingHero: React.FC<HeroProps> = (props) => {
 
             <div className="hidden sm:flex sm:flex-col">
               <p
-                className="monospace sm:max-w-[600px] md:max-w-[680px]"
+                className="monospace sm:max-w-[600px] md:max-w-[590px]"
                 dangerouslySetInnerHTML={{ __html: content }}
               />
 
@@ -134,10 +134,10 @@ const LandingHero: React.FC<HeroProps> = (props) => {
                 <p className="h6 text-nextflow monospace mb-2">Where</p>
                 <h3 className="h3">{where}</h3>
               </div>
-              <div className="mb-10">
+              {/* <div className="mb-10">
                 <p className="h6 text-nextflow monospace mb-2">Price</p>
                 <h3 className="h3">{price}</h3>
-              </div>
+              </div> */}
 
               <div className="sm:hidden">
                 <div className="toggleLocation relative monospace">

@@ -8,7 +8,7 @@ export default {
     {
       question: "Are there recommended hotels near the event venue?",
       answer:
-        "Please see above for our hotel recommendations near the event venue."
+        `Please see the <a href="#hotels">Hotel Section</a> above for our hotel recommendations near the event venue.`
     },
     {
       question: "How can I register for a training session?",
@@ -18,7 +18,7 @@ export default {
     {
       question: "What transportation options are available in Boston?",
       answer:
-        "THIS IS PLACEHOLDER COPY NEEDS TO BE UPDATED"
+        "This is placeholder copy that needs to be updated or removed."
     },
     {
       question: "Do I need a visa to travel to Boston?",
