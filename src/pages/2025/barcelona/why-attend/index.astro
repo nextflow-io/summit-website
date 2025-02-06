@@ -3,11 +3,13 @@ import Layout from "@layouts/Base.astro";
 import Hero from "@components/Hero";
 import SEO from "@components/SEO";
 import Faq from "@components/Faq";
+import WhyAttend from "@modules/WhyAttend";
 import Box, { SubSection } from "@components/Box";
 import img1 from "@images/photos/2025/boston/training-computer.jpg";
 import img2 from "@images/photos/2025/boston/why-attend.jpg";
 import img3 from "@images/photos/2025/boston/audience.jpg";
 import qa from "./qa";
+
 import Training from "@icons/Training";
 import SignUpForm from "@modules/SignUpForm";
 ---
@@ -26,100 +28,27 @@ import SignUpForm from "@modules/SignUpForm";
   </section>
 
   <section class="mt-20 mb-24 container">
-    <div class="grid grid-cols-1 md:grid-cols-2 md:grid-cols-3 gap-8">
-      <div
-        class="imageBlend border w-full h-full border-nextflow xl:aspect-square object-cover"
-      >
-        <img class="aspect-square w-full h-full object-cover" src={img1.src} />
-      </div>
-      <Box className="xl:aspect-square">
-        <SubSection className="flex flex-col justify-between min-h-[350px]">
-          <Training />
-          <div class="mt-10">
-            <h5 class="h5 mb-4">The quintessential Nextflow Community event</h5>
+    <WhyAttend />
+  </section>
+  <section id="register" class="wrapper">
+    <div>
+      <div class="container pt-10">
+        <div class="flex flex-col sm:flex-row sm:justify-between">
+          <div class="w-full pr-10 pt-10">
+            <h1 class="h1 mb-10">Join us in Barcelona</h1>
             <p class="monospace">
-              The Nextflow Summit unites Nextflow enthusiasts, experts, and
-              collaborators for unparalleled networking, building friendships,
-              and collaboration opportunities, including an in-person community
-              hackathon.
+              Discover the ticket prices, discount dates, and refund policy
             </p>
           </div>
-        </SubSection>
-      </Box>
-      <Box className="xl:aspect-square">
-        <SubSection className="flex flex-col justify-between min-h-[350px]">
-          <Training />
-          <div class="mt-10">
-            <h5 class="h5 mb-4">Push boundaries and innovate with Nextflow</h5>
-            <p class="monospace">
-              At the Hackathon, you'll join forces to tackle real-world
-              challenges, pushing boundaries and creating innovative pipelines
-              with Nextflow. You'll also be inspired by the latest advancements
-              and best practices shared at the Summit.
-            </p>
-          </div>
-        </SubSection>
-      </Box>
-      <Box className="xl:aspect-square">
-        <SubSection className="flex flex-col justify-between min-h-[350px]">
-          <Training />
-          <div class="mt-10">
-            <h5 class="h5 mb-4">Learn and collaborate with Nextflow experts</h5>
-            <p class="monospace">
-              The Nextflow Summit provides a comprehensive experience in
-              workflow management and data orchestration, featuring real-life
-              success stories, inspiring keynotes, and panel discussions and
-              seasoned users aiming to stay abreast of the latest technologies.
-            </p>
-          </div>
-        </SubSection>
-      </Box>
-      <Box className="xl:aspect-square">
-        <SubSection className="flex flex-col justify-between min-h-[350px]">
-          <Training />
-          <div class="mt-10">
-            <h5 class="h5 mb-4">Showcase your work to industry leaders</h5>
-            <p class="monospace">
-              The Nextflow Summit offers a prime platform to showcase your work
-              and receive valuable community feedback on a wide range of
-              Nextflow-related topics, from novel analysis methods to optimizing
-              performance on cloud platforms.
-            </p>
-          </div>
-        </SubSection>
-      </Box>
-
-      <div
-        class="imageBlend border w-full h-full border-nextflow xl:aspect-square object-cover"
-      >
-        <img
-          class="aspect-square w-full h-full object-cover"
-          src={img3.src}
-          alt="Audience members at Nextflow Summit"
-        />
-      </div>
-    </div>
-
-    <section id="register" class="wrapper">
-      <div>
-        <div class="container pt-10">
-          <div class="flex flex-col sm:flex-row sm:justify-between">
-            <div class="w-full pr-10 pt-10">
-              <h1 class="h1 mb-10">Join us in Barcelona</h1>
-              <p class="monospace">
-                Discover the ticket prices, discount dates, and refund policy
-              </p>
-            </div>
-            <div>
-              <div class="w-full">
-                <SignUpForm client:load />
-              </div>
+          <div>
+            <div class="w-full">
+              <SignUpForm client:load />
             </div>
           </div>
         </div>
       </div>
-    </section>
-
-    <Faq className="mt-40 mb-20" client:load data={qa} />
+    </div>
   </section>
+
+  <Faq className="mt-40 mb-20" client:load data={qa} />
 </Layout>

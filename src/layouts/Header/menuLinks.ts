@@ -48,48 +48,6 @@ const menuLinks = [
   {
     name: "Barcelona",
     url: "/2025/barcelona",
-    dropdowns: [
-      {
-        name: "Overview",
-        url: "/2025/barcelona",
-      },
-      // {
-      //   name: "Travel",
-      //   url: "/2025/barcelona/travel",
-      // },
-      // {
-      //   name: "Training",
-      //   url: "/2025/barcelona/training",
-      // },
-      // {
-      //   name: "Agenda",
-      //   url: "/2025/barcelona/agenda",
-      // },
-      // {
-      //   name: "Hackathon",
-      //   url: "/2025/barcelona/hackathon",
-      // },
-      // {
-      //   name: "Speakers",
-      //   url: "/2025/barcelona/speakers",
-      // },
-      // {
-      //   name: "Posters",
-      //   url: "/2025/barcelona/posters",
-      // },
-      // {
-      //   name: "Sponsors",
-      //   url: "/2025/barcelona/sponsors",
-      // },
-      {
-        name: "Why Attend",
-        url: "/2025/barcelona/why-attend",
-      },
-      // {
-      //   name: "Gallery",
-      //   url: "/2025/barcelona/gallery",
-      // },
-    ],
   },
   {
     name: "Call for Abstracts",

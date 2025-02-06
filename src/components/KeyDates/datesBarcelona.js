@@ -1,5 +1,4 @@
-export default {
-  main: [
+const datesBarcelona = [
   {
     date: "TBA",
     content: [
@@ -37,7 +36,6 @@ export default {
       },
     ],
   },
-  ]
-}
-  
-  
+]
+
+export default datesBarcelona;
