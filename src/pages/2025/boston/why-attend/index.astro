@@ -18,7 +18,7 @@ import Training from "@icons/Training";
       title="Why Attend"
       content="The Nextflow Summit is the leading event for scientific data processing and data analysis, offering high-quality programming that spans scientific talks, poster sessions, and networking opportunities. Here, the vibrant community gathers to showcase the latest developments and innovations from the Nextflow world. At the Summit, open science takes the main stage."
       href={img2.src}
-      alt="Image of Boston"
+      alt="Image of person viewing booth at Nextflow Summit"
       ctaText1="Register Now"
       ctaLink1="/2025/boston/register"
       ctaText2="Call for abstracts"
@@ -28,11 +28,10 @@ import Training from "@icons/Training";
 
   <section class="mt-20 mb-24 container">
     <div class="grid grid-cols-1 md:grid-cols-2 md:grid-cols-3 gap-8">
-      <div class="border border-nextflow xl:aspect-square relative overflow-hidden object-cover">
-          <img
-            class="w-full h-full absolute top-0 left-0 right-0 bottom-0 object-cover"
-            src={img1.src}
-          />
+      <div
+        class="imageBlend border w-full h-full border-nextflow xl:aspect-square object-cover"
+      >
+        <img class="aspect-square w-full h-full object-cover" src={img1.src} />
       </div>
       <Box className="xl:aspect-square">
         <SubSection className="flex flex-col justify-between min-h-[350px]">
@@ -91,12 +90,11 @@ import Training from "@icons/Training";
         </SubSection>
       </Box>
 
-      <div class="border border-nextflow xl:aspect-square relative overflow-hidden object-cover">
-        <img
-          class="w-full h-full absolute top-0 left-0 right-0 bottom-0 object-cover"
-          src={img3.src}
-        />
-    </div>
+      <div
+        class="imageBlend border w-full h-full border-nextflow xl:aspect-square object-cover"
+      >
+        <img class="aspect-square w-full h-full object-cover" src={img3.src} />
+      </div>
     </div>
 
     <Faq className="mt-40 mb-20" client:load data={qa} />

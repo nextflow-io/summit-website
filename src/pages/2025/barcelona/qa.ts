@@ -3,7 +3,7 @@ export default {
     {
       question: "How do I register for the Nextflow Summit Barcelona?",
       answer:
-        `Find out more info on our Registration <a class="underline" href="/register">page</a> or register now by clicking <a class="underline" href="/">here</a>. <span class="text-red-300">[need to update link]</span> `,
+        `Registration will open up soon. Sign up for updates by subscribing <a href="#register">here</a>.`,
     },
     {
       question: "What is included in the registration fee?",
@@ -19,9 +19,7 @@ export default {
     {
       question: "Are there early bird discounts?",
       answer:
-        `<p>Enjoy our early bird discounts:<br/><br/>
-          Early bird 25% until February 28<br/>
-          Early bird 15% until March 31</p>
+        `<p>Information on early bird discounts coming soon.</p>
           `
     },
     {
@@ -32,7 +30,7 @@ export default {
     {
       question: "What is the refund or cancellation policy for registration?",
       answer:
-        "This is placeholder copy that needs to be updated or removed."
+        "We will guarantee a 100% refund if you cancel by by September 29.",
     },
     {
         question: "Can I add training after I complete my registration?",

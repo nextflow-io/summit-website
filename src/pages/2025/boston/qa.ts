@@ -32,7 +32,7 @@ export default {
     {
       question: "What is the refund or cancellation policy for registration?",
       answer:
-        "We will guarantee a 100% refund if you cancel by April 25. "
+        "We will guarantee a 100% refund if you cancel by April 25."
     },
     {
         question: "Can I add training after I complete my registration?",

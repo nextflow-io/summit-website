@@ -86,7 +86,7 @@ const LandingHero: React.FC<HeroProps> = (props) => {
                 "flex flex-row items-center mb-8 md:mb-16",
               )}
             >
-              <p className="h5 mr-4">by</p> <SeqeraLogo className="w-full"/>
+              <p className="h5 mr-4">by</p> <SeqeraLogo className="w-full" alt="Seqera Logo" />
             </div>
 
             <div className="hidden sm:flex sm:flex-col">

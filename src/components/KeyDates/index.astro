@@ -3,8 +3,6 @@ import clsx from "clsx";
 import datesBoston from "./datesBoston";
 import datesBarcelona from "./datesBarcelona";
 import img1 from "@images/photos/2025/boston/training-computer.jpg";
-import Box from "@components/Box";
-
 
 interface Props {
   showTitle?: boolean;
@@ -12,35 +10,32 @@ interface Props {
   location?: string;
 }
 
-const { showTitle, hidePastDates = false, location = "boston"} = Astro.props;
+const { showTitle, hidePastDates = false, location = "boston" } = Astro.props;
 ---
 
 <section class="">
+  <div class="mb-10">
+    <h5 class="h1 mb-2">
+      Key dates{" "}
+    </h5>
+    <p class="monospace">At a glance</p>
+  </div>
 
-      <div class="mb-10">
-        <h5 class="h1 mb-2">
-          Key dates{" "}
-        </h5>
-        <p class="monospace ">At a glance</p>
-      </div>
-   
-  
-
-  <div class={clsx("relative flex flex-col sm:flex-row h-full")}>
+  <div class={clsx("w-full relative flex flex-col sm:flex-row h-full")}>
     <div class="w-full border-t">
-    
-         {
-         location == "boston" &&
-         datesBoston?.map((item, i) => (
-            <div
-              class={`flex flex-wrap border-b`}
-            >
+      {
+        location == "boston" &&
+          datesBoston?.map((item, i) => (
+            <div class={`flex flex-wrap border-b`}>
               <div class="w-full flex flex-row items-center">
                 <h4 class="h4 pt-6 pb-6  w-full max-w-[100px]">{item.date}</h4>
 
                 <div class="pl-10 flex flex-col w-full monospace">
                   {item?.content?.map((item, i) => (
-                    <div key={i} className={` border-b last:border-b-0 py-6 bodycopy`}>
+                    <div
+                      key={i}
+                      className={` border-b last:border-b-0 py-6 bodycopy`}
+                    >
                       {item.info}
                     </div>
                   ))}
@@ -48,21 +43,21 @@ const { showTitle, hidePastDates = false, location = "boston"} = Astro.props;
               </div>
             </div>
           ))
-          
-      } 
+      }
 
       {
         location == "barcelona" &&
           datesBarcelona?.map((item, i) => (
-            <div
-              class={`flex flex-wrap border-b`}
-            >
+            <div class={`flex flex-wrap border-b`}>
               <div class="w-full flex flex-row items-center">
                 <h4 class="h4 pt-6 pb-6  w-full max-w-[100px]">{item.date}</h4>
 
                 <div class="pl-10 flex flex-col w-full monospace">
                   {item?.content?.map((item, i) => (
-                    <div key={i} className={` border-b last:border-b-0 py-6 bodycopy`}>
+                    <div
+                      key={i}
+                      className={` border-b last:border-b-0 py-6 bodycopy`}
+                    >
                       {item.info}
                     </div>
                   ))}
@@ -70,16 +65,17 @@ const { showTitle, hidePastDates = false, location = "boston"} = Astro.props;
               </div>
             </div>
           ))
-      } 
+      }
     </div>
     <div class="mt-8 sm:mt-0 sm:ml-20 w-full sm:sticky sm:top-40 self-start">
-      <div class="pb-[100%] relative w-full h-0 overflow-hidden">
+      <div class="imageBlend relative w-full h-full pb-[100%]">
         <img
           src={img1.src}
-          class="absolute top-0 left-0 right-0 bottom-0 h-full w-full object-cover border border-nextflow"
-          alt="Key dates image"
+          class="absolute top-0 left-0 right-0 bottom-0 w-full h-full object-cover"
+          alt="Image of workshop at Nextflow Summit"
         />
       </div>
     </div>
+    
   </div>
 </section>

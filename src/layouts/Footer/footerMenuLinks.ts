@@ -33,10 +33,10 @@ export default {
       //   name: "Posters",
       //   url: "/2025/boston/posters",
       // },
-      {
-        name: "Sponsors",
-        url: "/2025/boston/sponsors",
-      },
+      // {
+      //   name: "Sponsors",
+      //   url: "/2025/boston/sponsors",
+      // },
       {
         name: "Why Attend",
         url: "/2025/boston/why-attend",

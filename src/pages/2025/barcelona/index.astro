@@ -4,6 +4,7 @@ import LandingHero from "@components/LandingHero";
 import KeyDates from "@components/KeyDates/index.astro";
 import Box, { SubSection } from "@components/Box";
 import ArrowUpRight from "@icons/ArrowUpRight";
+import SignUpForm from "@modules/SignUpForm";
 import Faq from "@components/Faq";
 import SEO from "@components/SEO";
 import qa from "./qa";
@@ -16,7 +17,7 @@ import qa from "./qa";
     title="Nextflow Summit"
     content="Key dates and registrations will open in Spring 2025—stay tuned for details!"
     ctaText1="Sign up for updates"
-    ctaLink1="/2025/barcelona/register"
+    ctaLink1="#register"
     when="October 27-29"
     where="Barcelona"
     namespace="2025/barcelona"
@@ -86,6 +87,26 @@ import qa from "./qa";
         </SubSection>
       </Box>
 
+    </div>
+  </section>
+
+  <section id="register" class="wrapper">
+    <div>
+      <div class="container pt-10">
+        <div class="flex flex-col sm:flex-row sm:justify-between">
+          <div class="w-full pr-10 pt-10">
+            <h1 class="h1 mb-10">Join us in Barcelona</h1>
+            <p class="monospace">
+              Discover the ticket prices, discount dates, and refund policy
+            </p>
+          </div>
+          <div>
+            <div class="w-full">
+              <SignUpForm client:load />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
   <section class="container relative z-10 mb-4 sm:mb-8 lg:mb-20">
