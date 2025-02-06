@@ -14,7 +14,7 @@ const Logo: React.FC<Props> = ({ namespace }) => {
   return (
     <a href={url("/")}>
       <SummitLogo className={`${styles.summitLogo}`}/>
-      {/* <img src={logo.src} alt="Nextflow SUMMIT 2025 Logo" /> */}
+      {/* <img src={logo.src} alt="Nextflow Summit 2025 Logo" /> */}
     </a>
   );
 };

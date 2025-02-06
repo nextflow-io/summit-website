@@ -1,5 +1,5 @@
-const siteTitle = "Nextflow SUMMIT 2025";
-const descDefault = `Join us at the Nextflow SUMMIT 2025 for the latest developments and innovations from the Nextflow world.`;
+const siteTitle = "Nextflow Summit 2025";
+const descDefault = `Join us at the Nextflow Summit 2025 for the latest developments and innovations from the Nextflow world.`;
 import imgDefault from "./share-default.jpg";
 import imgBoston from "./share-boston.jpg";
 import imgBarcelona from "./share-barcelona.jpg";

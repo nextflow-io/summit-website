@@ -34,7 +34,7 @@ const currentYear = new Date().getFullYear();
                 <ul class="mb-16 md:mb-0 md:ml-12 lg:ml-16">
                   <p class="mb-6 ">{name}</p>
                   {dropdowns && dropdowns?.map(({ name, url }, i) => (
-                    <li>
+                    <li class="leading-[30px]">
                       <a
                         href={url}
                         {...linkProps}

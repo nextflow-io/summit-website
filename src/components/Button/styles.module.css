@@ -45,7 +45,7 @@
 }
 
 .button.white {
-  color: black;
+  color: var(--color-brand);
   background: white;
   &:hover {
     background: var(--color-nextflow);

@@ -43,7 +43,7 @@ export default {
       "3xl": ["3.125rem", "1"], // 50px
       "4xl": ["5rem", "1"], // 80px
       "5xl": ["7.5rem", "1"], // 120px
-      "6xl": ["11.25rem", "1"], // 180px
+      "6xl": ["8.75rem", "1"], // 140px
     },
     extend: {
       colors: {

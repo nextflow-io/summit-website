@@ -22,7 +22,7 @@ h6,
     font-size: 120px;
   }
   @media (--md) {
-    font-size: 180px;
+    font-size: 140px;
   }
 }
 
@@ -95,7 +95,7 @@ p, .bodycopy {
   font-size: 0.875rem;
   line-height: 1.6;
   @media (--sm) {
-    font-size: 1.0625rem;
+    font-size: 1rem;
     line-height: 1.5;
   }
 }

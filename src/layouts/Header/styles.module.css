@@ -82,7 +82,7 @@
           font-size: 16px;
           font-weight: 400;
           position: relative;
-          color: black;
+          color: var(--color-brand);
           &:hover {
             color: white;
           }
