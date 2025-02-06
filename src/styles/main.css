@@ -99,3 +99,21 @@ main#body {
   background: #d9d9d9;
   mix-blend-mode: exclusion;
 }
+
+.box-hover {
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 0px 0px var(--color-nextflow);
+  .arrow-up-right {
+
+    transition: all 0.3s ease-in-out;
+  }
+  &:hover {
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 25px 1px var(--color-nextflow);
+   
+    .arrow-up-right {
+      transform: rotate(45deg);
+      transition: all 0.3s ease-in-out;
+    }
+  }
+}

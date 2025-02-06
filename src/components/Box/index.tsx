@@ -14,12 +14,12 @@ const Box: React.FC<Props> = ({ children, className, href, externalLink}) => {
   if (href)
     if (externalLink) 
       return (
-        <a href={href} className={cn} target="_blank">
+        <a href={href} className={`${cn} box-hover`} target="_blank">
         {children}
        </a>
      ); else
     return (
-      <a href={href} className={cn}>
+      <a href={href} className={`${cn} box-hover`}>
         {children}
       </a>
     );

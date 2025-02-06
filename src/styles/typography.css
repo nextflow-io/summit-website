@@ -94,6 +94,7 @@ svg[data-icon] {
 p, .bodycopy {
   font-size: 0.875rem;
   line-height: 1.6;
+  font-family: "PT Mono", monospace;
   @media (--sm) {
     font-size: 1rem;
     line-height: 1.5;
