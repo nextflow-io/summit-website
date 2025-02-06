@@ -50,6 +50,12 @@ export default {
   {
     name: "Barcelona",
     url: "/2025/barcelona",
+    dropdowns: [
+      {
+        name: "Overview",
+        url: "/2025/barcelona",
+      },
+    ],
   },
   {
     name: "Pages",
