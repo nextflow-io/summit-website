@@ -1,34 +1,19 @@
 export default {
   main: [
     {
-      question: "What is the best way to travel to Boston for the event?",
-      answer:
-        `This is placeholder copy that needs to be updated or removed.`,
-    },
-    {
       question: "Are there recommended hotels near the event venue?",
       answer:
         `Please see the <a href="#hotels">Hotel Section</a> above for our hotel recommendations near the event venue.`
     },
     {
-      question: "How can I register for a training session?",
+      question: "I need a Visa invitation letter to attend the Summit.",
       answer:
-        "This is placeholder copy that needs to be updated or removed."
-    },
-    {
-      question: "What transportation options are available in Boston?",
-      answer:
-        "This is placeholder copy that needs to be updated or removed."
-    },
-    {
-      question: "Do I need a visa to travel to Boston?",
-      answer:
-        "This is placeholder copy that needs to be updated or removed."
+        `Contact our team at <a href="mailto:help.summit@nextflow.io">help.summit@nextflow.io</a>, and we’ll assist you with the necessary documentation.`
     },
     {
         question: "Are there any discounted rates or travel partnerships available for attendees?",
         answer:
-          "This is placeholder copy that needs to be updated or removed."
+          "Unfortunately, hotels near the Summit venue have not provided any discounted rates. We recommend booking early to secure the best available options."
     },
     {
       question: "Can I add training after I complete my registration?",

@@ -9,6 +9,7 @@ import img2 from "@images/photos/2025/boston/why-attend.jpg";
 import img3 from "@images/photos/2025/boston/audience.jpg";
 import qa from "./qa";
 import Training from "@icons/Training";
+import SignUpForm from "@modules/SignUpForm";
 ---
 
 <Layout namespace="2025/barcelona">
@@ -19,10 +20,8 @@ import Training from "@icons/Training";
       content="The Nextflow Summit is the leading event for scientific data processing and data analysis, offering high-quality programming that spans scientific talks, poster sessions, and networking opportunities. Here, the vibrant community gathers to showcase the latest developments and innovations from the Nextflow world. At the Summit, open science takes the main stage."
       href={img2.src}
       alt="Image of person viewing booth at Nextflow Summit"
-      ctaText1="Register Now"
-      ctaLink1="/2025/boston/register"
-      ctaText2="Call for abstracts"
-      ctaLink2="/call-for-abstracts"
+      ctaText1="Sign Up for Updates"
+      ctaLink1="#register"
     />
   </section>
 
@@ -100,6 +99,26 @@ import Training from "@icons/Training";
         />
       </div>
     </div>
+
+    <section id="register" class="wrapper">
+      <div>
+        <div class="container pt-10">
+          <div class="flex flex-col sm:flex-row sm:justify-between">
+            <div class="w-full pr-10 pt-10">
+              <h1 class="h1 mb-10">Join us in Barcelona</h1>
+              <p class="monospace">
+                Discover the ticket prices, discount dates, and refund policy
+              </p>
+            </div>
+            <div>
+              <div class="w-full">
+                <SignUpForm client:load />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <Faq className="mt-40 mb-20" client:load data={qa} />
   </section>

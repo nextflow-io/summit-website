@@ -3,31 +3,26 @@ export default {
     {
       question: "Do I need prior experience with Nextflow to attend the training?",
       answer:
-        `No prior experience is needed to attend the training. This is placeholder copy that needs to be updated or removed.`,
+        `No prior experience is needed to attend the training.`,
     },
     {
-      question: "What types of training sessions are offered at the Nextflow Summit?",
+      question: "What training level is offered at the Nextflow Summit?",
       answer:
-        "This is placeholder copy that needs to be updated or removed."
-    },
-    {
-      question: "How can I register for a training session?",
-      answer:
-        "This is placeholder copy that needs to be updated or removed."
+        "We offer foundation training designed for those new to Nextflow."
     },
     {
       question: "What is the duration and format of the training sessions?",
       answer:
-        "THIS IS PLACEHOLDER COPY NEEDS TO BE UPDATED"
+        `The training will run for two full days, from 9 AM to 5 PM. Trainees are expected to attend both days to get the full benefit of the program. Please check the <a href="/2025/boston/agenda">online agenda</a> for updates.`
     },
     {
       question: "Are training materials provided, and will recordings be available?",
       answer:
-        "This is placeholder copy that needs to be updated or removed."
+        "Materials will be provided to in-person attendees. However, recordings will not be available."
     },
     {
         question: "Is there an additional fee to attend the training sessions?",
         answer:
-          "This is placeholder copy that needs to be updated or removed.."
+          `There is a fee associated with taking the training. Click <a href="/2025/boston/register">register now</a> to see the training pricing.`
       }
   ]}
