@@ -7,7 +7,7 @@ const datesBoston = [
         url: "/call-for-abstracts",
       },
       {
-        info: "Early bird 25% off registration starts",
+        info: "Registration opens: early bird 25% off",
         url: "/register",
       },
     ],
@@ -16,11 +16,7 @@ const datesBoston = [
     date: "Feb 28",
     content: [
       {
-        info: "Early bird 25% off registration closes",
-        url: "/register",
-      },
-      {
-        info: "Early bird 15% off registration starts",
+        info: "Registration: early bird 15% off",
         url: "/register",
       },
     ],
@@ -45,7 +41,7 @@ const datesBoston = [
     date: "Mar 31",
     content: [
       {
-        info: "Early bird 15% off registration closes",
+        info: "Registration: full price",
       },
     ],
   },
@@ -53,7 +49,7 @@ const datesBoston = [
     date: "April 25",
     content: [
       {
-        info: "Registration for the in-person Nextflow Summit closes",
+        info: "Registration closes",
       },
       {
         info: "Cancellation period closes",

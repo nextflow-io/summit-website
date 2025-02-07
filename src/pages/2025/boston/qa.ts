@@ -27,7 +27,7 @@ export default {
     {
       question: "Are there discounts for group registration?",
       answer:
-        "This is placeholder copy that needs to be updated or removed."
+        `Contact our team at <a href="mailto:help.summit@nextflow.io">help.summit@nextflow.io</a> to inquire about group registrations.`
     },
     {
       question: "What is the refund or cancellation policy for registration?",
