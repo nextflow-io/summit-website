@@ -133,6 +133,6 @@ main#body {
 }
 
 
-/* .swoogo-form {
-  height: calc(100svh - 11rem);
-} */
+.swoogo-form {
+  height: calc(100svh - 6rem);
+}

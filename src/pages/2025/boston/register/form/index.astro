@@ -1,26 +1,18 @@
 ---
 import Layout from "@layouts/Base.astro";
+import NoFooter from "@layouts/NoFooter.astro";
 import SEO from "@components/SEO";
-
 ---
 
-<Layout showNav={false} namespace="2025/boston">
+<NoFooter showNav={false} namespace="2025/boston">
   <!-- <SEO slot="head" title="Register" img={1} /> -->
   <section class="wrapper">
-
     <!-- to do: testing swoogo form -->
-    <section class="pt-40 mb-24 container">
-    <iframe onload="iframeLoaded()" id="swoogo-form" src="https://seqera.swoogo.com/test-summit-dev" class="swoogo-form w-full"></iframe>
+    <section class="pt-10 mb-20 container">
+      <iframe
+        id="swoogo-form"
+        src="https://seqera.swoogo.com/test-summit-dev"
+        class="swoogo-form w-full"></iframe>
     </section>
   </section>
-</Layout>
-
-<script type="text/javascript">
-    function iframeLoaded() {
-        let iFrameID = document.getElementById('swoogo-form');
-        if(iFrameID) {
-              iFrameID.height = "";
-              iFrameID.height = iFrameID.contentWindow.document.body.scrollHeight + "px";
-        }   
-    }
-  </script> 
+</NoFooter>
