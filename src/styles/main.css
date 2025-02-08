@@ -136,3 +136,10 @@ main#body {
 .swoogo-form {
   height: calc(100svh - 6rem);
 }
+
+.main-nav {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translate(-50%);
+}

@@ -39,6 +39,10 @@ const menuLinks = [
         name: "Why Attend",
         url: "/2025/boston/why-attend",
       },
+      {
+        name: "Register",
+        url: "/2025/boston/register",
+      },
       // {
       //   name: "Gallery",
       //   url: "/2025/boston/gallery",
