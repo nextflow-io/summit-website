@@ -5,6 +5,7 @@ html,
 body {
   background-color: var(--color-brand) !important;
   color: white;
+  scroll-behavior: smooth;
   /* scroll-padding-top: 104px; */
 }
 body {
