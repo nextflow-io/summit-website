@@ -33,19 +33,21 @@ const DropDownItem = ({ question, answer, isOpen, onClick }) => {
 
       <div
         ref={contentHeight}
-        className={`transition-all duration-500 ease-in-out`}
+        className={`transition-all duration-500 transition-delay-800 ease-in-out opacity-0`}
         style={
           isOpen
             ? {
                 height: contentHeight?.current?.scrollHeight,
                 marginTop: "2rem",
                 marginBottom: "2rem",
+                opacity: 1,
               }
-            : { height: "0px", overflow: "hidden" }
+            : { height: "0px", overflow: "hidden", opacity: 0 }
         }
       >
+    
         <div
-          className={clsx(styles.faqAnswer, "bodycopy monospace")}
+          className={clsx(styles.faqAnswer, `bodycopy monospace`)}
           dangerouslySetInnerHTML={{ __html: answer }}
         />
       </div>
