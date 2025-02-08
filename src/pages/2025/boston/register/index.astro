@@ -1,15 +1,16 @@
 ---
 import Layout from "@layouts/Base.astro";
 import SEO from "@components/SEO";
-// import Faq from "@components/Faq";
+import Faq from "@components/Faq";
 import Box, { SubSection } from "@components/Box";
 import HubspotForm from "@components/HubspotForm";
+import PastEvents from "@modules/PastEvents";
 import Button from "@components/Button";
 import clsx from "clsx";
 import styles from "./register.module.css";
 import ArrowUpRight from "@icons/ArrowUpRight";
 import SignUpForm from "@modules/SignUpForm";
-// import qa from "./qa";
+import qa from "./qa";
 ---
 
 <Layout showNav={false} namespace="2025/boston">
@@ -115,7 +116,7 @@ import SignUpForm from "@modules/SignUpForm";
       </Box>
     </div>
   </section>
+  <PastEvents />
 
-
-  <!-- <Faq className="mt-40 mb-20" client:load data={qa} /> -->
+  <Faq className="mt-40 mb-20" client:load data={qa} />
 </Layout>

@@ -4,7 +4,7 @@ import Hero from "@components/Hero";
 import SEO from "@components/SEO";
 import Box, { SubSection } from "@components/Box";
 import img1 from "@images/photos/2025/past-events.jpg";
-import arrowRightUp from "./arrowRightUp.svg";
+import ArrowUpRight from "@icons/ArrowUpRight";
 import e2019_nf_camp from "@images/photos/past-events/e2019_nf_camp.jpg";
 import e2017_nf from "@images/photos/past-events/e2017_nf.jpg";
 import e2018_nf from "@images/photos/past-events/e2018_nf.jpg";
@@ -17,25 +17,6 @@ import e2024_bcn from "@images/photos/past-events/e2024_bcn.jpg";
 import e2024_boston from "@images/photos/past-events/e2024_boston.jpg";
 import { fade } from "astro:transitions";
 
-const anim = {
-  old: {
-    name: 'bump',
-    duration: '0.5s',
-    easing: 'ease-in',
-    direction: 'reverse',
-  },
-  new: {
-    name: 'bump',
-    duration: '0.5s',
-    easing: 'ease-in-out',
-  },
-};
-
-const customTransition = {
-  forwards: anim,
-  backwards: anim,
-};
-
 
 ---
 
@@ -43,7 +24,6 @@ const customTransition = {
   <SEO slot="head" title="Past Events" img={1} />
   <section class="">
     <Hero
-    transition:animate={customTransition}
       title="Past Events"
       content="Past events have provided insights into Nexflow’s origins, development, and its applications in various domains, highting its potential and impact on scientific research, data analysis, and workflow management."
       href={img1.src}
@@ -63,7 +43,7 @@ const customTransition = {
             class="border-b border-b-nextflow w-full flex flex-row justify-between items-center pb-4"
           >
             <h5 class="h5">Barcelona 2024</h5>
-            <img src={arrowRightUp.src} alt="Caret Icon" />
+            <ArrowUpRight/>
           </div>
           <div class="imageBlend mt-6 mb-8 relative h-0 w-full overflow-hidden pb-[80%]">
             <img class="max-w-none w-full h-full absolute top-0 bottom-0 left-0 right-0 object-cover" src={e2024_bcn.src} alt="Barcelona 2024 Nextflow Summit" />
@@ -77,7 +57,7 @@ const customTransition = {
             class="border-b border-b-nextflow w-full flex flex-row justify-between items-center pb-4"
           >
             <h5 class="h5">Boston 2024</h5>
-            <img src={arrowRightUp.src} alt="Caret Icon" />
+            <ArrowUpRight/>
           </div>
           <div class="imageBlend mt-6 mb-8 relative h-0 w-full overflow-hidden pb-[80%]">
             <img class="max-w-none w-full h-full absolute top-0 bottom-0 left-0 right-0 object-cover" src={e2024_boston.src} alt="Boston 2024 Nextflow Summit" />
@@ -91,7 +71,7 @@ const customTransition = {
             class="border-b border-b-nextflow w-full flex flex-row justify-between items-center pb-4"
           >
             <h5 class="h5">Barcelona 2023</h5>
-            <img src={arrowRightUp.src} alt="Caret Icon" />
+            <ArrowUpRight/>
           </div>
           <div class="imageBlend mt-6 mb-8 relative h-0 w-full overflow-hidden pb-[80%]">
             <img class="max-w-none w-full h-full absolute top-0 bottom-0 left-0 right-0 object-cover" src={e2023_bcn.src} alt="Barcelona 2023 Nextflow Summit presenters" />
@@ -104,7 +84,7 @@ const customTransition = {
             class="border-b border-b-nextflow w-full flex flex-row justify-between items-center pb-4"
           >
             <h5 class="h5">Boston 2023</h5>
-            <img src={arrowRightUp.src} alt="Caret Icon" />
+            <ArrowUpRight/>
           </div>
           <div class="imageBlend mt-6 mb-8 relative h-0 w-full overflow-hidden pb-[80%]">
             <img class="max-w-none w-full h-full absolute top-0 bottom-0 left-0 right-0 object-cover" src={e2023_boston.src} alt="Boston 2023 Nextflow Summit presenter"/>
@@ -117,7 +97,7 @@ const customTransition = {
             class="border-b border-b-nextflow w-full flex flex-row justify-between items-center pb-4"
           >
             <h5 class="h5">Barcelona 2022</h5>
-            <img src={arrowRightUp.src} alt="Caret Icon" />
+            <ArrowUpRight/>
           </div>
           <div class="imageBlend mt-6 mb-8 relative h-0 w-full overflow-hidden pb-[80%]">
             <img class="max-w-none w-full h-full absolute top-0 bottom-0 left-0 right-0 object-cover" src={e2022_summit.src} alt="Barcelona 2022 Nextflow Summit presenters"/>
@@ -130,7 +110,7 @@ const customTransition = {
             class="border-b border-b-nextflow w-full flex flex-row justify-between items-center pb-4"
           >
             <h5 class="h5">Nextflow Camp 2019</h5>
-            <img src={arrowRightUp.src} alt="Caret Icon" />
+            <ArrowUpRight/>
           </div>
           <div class="imageBlend mt-6 mb-8 relative h-0 w-full overflow-hidden pb-[80%]">
             <img class="max-w-none w-full h-full absolute top-0 bottom-0 left-0 right-0 object-cover" src={e2022_hack.src} alt="Nextflow Camp 2019 attendees"/>
@@ -143,7 +123,7 @@ const customTransition = {
             class="border-b border-b-nextflow w-full flex flex-row justify-between items-center pb-4"
           >
             <h5 class="h5">nf-hack 2018</h5>
-            <img src={arrowRightUp.src} alt="Caret Icon" />
+            <ArrowUpRight/>
           </div>
           <div class="imageBlend mt-6 mb-8 relative h-0 w-full overflow-hidden pb-[80%]">
             <img class="max-w-none w-full h-full absolute top-0 bottom-0 left-0 right-0 object-cover" src={e2018_nf.src} alt="nf-hack 2018 attendees" />
@@ -156,7 +136,7 @@ const customTransition = {
             class="border-b border-b-nextflow w-full flex flex-row justify-between items-center pb-4"
           >
             <h5 class="h5">nf-hack 2017</h5>
-            <img src={arrowRightUp.src} alt="Caret Icon" />
+            <ArrowUpRight/>
           </div>
           <div class="imageBlend mt-6 mb-8 relative h-0 w-full overflow-hidden pb-[80%]">
             <img class="max-w-none w-full h-full absolute top-0 bottom-0 left-0 right-0 object-cover" src={e2017_nf.src} alt="person working on laptop during hackathon" />
