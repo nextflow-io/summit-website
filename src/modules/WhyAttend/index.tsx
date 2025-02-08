@@ -4,6 +4,9 @@ import img1 from "@images/photos/2025/boston/training-computer.jpg";
 import img2 from "@images/photos/2025/boston/why-attend.jpg";
 import img3 from "@images/photos/2025/boston/audience.jpg";
 import Training from "@icons/Training";
+import NextflowExperts from "@icons/NextflowExperts";
+import NextflowLearning from "@icons/NextflowLearning";
+import NextflowTeam from "@icons/NextflowTeam";
 
 type Props = {
   className?: string;
@@ -21,7 +24,7 @@ const WhyAttend: React.FC<Props> = ({ className }) => {
         </div>
         <Box className="xl:aspect-square">
           <SubSection className="flex flex-col justify-between min-h-[350px]">
-            <Training />
+            <NextflowTeam />
             <div className="mt-10">
               <h5 className="h5 mb-4">
                 The quintessential Nextflow Community event
@@ -37,7 +40,7 @@ const WhyAttend: React.FC<Props> = ({ className }) => {
         </Box>
         <Box className="xl:aspect-square">
           <SubSection className="flex flex-col justify-between min-h-[350px]">
-            <Training />
+          <NextflowTeam />
             <div className="mt-10">
               <h5 className="h5 mb-4">
                 Push boundaries and innovate with Nextflow
@@ -53,7 +56,7 @@ const WhyAttend: React.FC<Props> = ({ className }) => {
         </Box>
         <Box className="xl:aspect-square">
           <SubSection className="flex flex-col justify-between min-h-[350px]">
-            <Training />
+            <NextflowExperts />
             <div className="mt-10">
               <h5 className="h5 mb-4">
                 Learn and collaborate with Nextflow experts
@@ -70,7 +73,7 @@ const WhyAttend: React.FC<Props> = ({ className }) => {
         </Box>
         <Box className="xl:aspect-square">
           <SubSection className="flex flex-col justify-between min-h-[350px]">
-            <Training />
+          <NextflowLearning />
             <div className="mt-10">
               <h5 className="h5 mb-4">
                 Showcase your work to industry leaders
