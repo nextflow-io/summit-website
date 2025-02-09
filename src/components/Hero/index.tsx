@@ -9,8 +9,10 @@ interface HeroProps {
   alt?: string;
   ctaText1?: string;
   ctaLink1?: string;
+  ctaExternal1?: boolean;
   ctaText2?: string;
   ctaLink2?: string;
+  ctaExternal2?: boolean;
 }
 
 const Hero = ({
@@ -23,6 +25,8 @@ const Hero = ({
   ctaLink1,
   ctaText2,
   ctaLink2,
+  ctaExternal1,
+  ctaExternal2,
 }: HeroProps) => {
   return (
     <div className={"container pt-10"}>
@@ -41,7 +45,7 @@ const Hero = ({
             {ctaText1 && (
               <Button className="mt-10 relative" white arrowAfter>
                 {ctaLink1 && (
-                  <a className="absolute w-full h-full" href={ctaLink1}></a>
+                  <a className="absolute w-full h-full" href={ctaLink1} target={`${ctaExternal1 ? '_blank' : '_self'}`} ></a>
                 )}{" "}
                 {ctaText1}
               </Button>
@@ -50,7 +54,7 @@ const Hero = ({
             {ctaText2 && (
               <Button className="sm:ml-10 mt-6 sm:mt-10 relative" arrowBefore>
                 {ctaLink2 && (
-                  <a className="absolute w-full h-full" href={ctaLink2}></a>
+                  <a className="absolute w-full h-full" href={ctaLink2} target={`${ctaExternal2 ? '_blank' : '_self'}`}></a>
                 )}{" "}
                 {ctaText2}
               </Button>
