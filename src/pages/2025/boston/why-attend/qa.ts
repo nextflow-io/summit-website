@@ -18,13 +18,14 @@ export default {
     {
       question: "What skills or knowledge can I expect to gain by attending?",
       answer: `
-            <p><ul>By attending the Summit you will get to: <br/>
-        <li>-Take training which will equip you with the skills to build better pipelines.
-        Participate in the hands-on Hackathon to solve real-world challenges and develop advanced pipelines.</li>
-        <li>-Gain insights from scientific talks, keynotes, and panel discussions.
-        <li>-Present your project, receive community feedback, and identify optimization opportunities.</li>
-       <li>-Build connections with industry leaders, experts, and the broader Nextflow community.</li>
-        </ul></p>`,
+            <p><ul>By attending the Summit you will get to:</p> 
+            <ul>
+        <li>Take training which will equip you with the skills to build better pipelines.</li>
+        <li>Participate in the hands-on Hackathon to solve real-world challenges and develop advanced pipelines.</li>
+        <li>Gain insights from scientific talks, keynotes, and panel discussions.</li>
+        <li>Present your project, receive community feedback, and identify optimization opportunities.</li>
+       <li>Build connections with industry leaders, experts, and the broader Nextflow community.</li>
+        </ul>`,
     },
     {
       question:

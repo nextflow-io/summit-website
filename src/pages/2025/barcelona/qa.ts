@@ -10,9 +10,9 @@ export default {
       answer:
         `Your ticket includes:
           <ul>
-          <li>- Access to all in-person content and programming</li>
-          <li>- Enjoy meals and social events</li>
-          <li>- Network and connect with other attendees and sponsors</li>
+          <li>Access to all in-person content and programming</li>
+          <li>Enjoy meals and social events</li>
+          <li>Network and connect with other attendees and sponsors</li>
           </ul>
           `
     },

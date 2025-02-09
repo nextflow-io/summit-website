@@ -8,17 +8,18 @@ export default {
       question: "What is included in the registration fee?",
       answer: `Your ticket includes:
       <ul>
-      <li>- Access to all in-person content and programming</li>
-      <li>- Enjoy meals and social events</li>
-      <li>- Network and connect with other attendees and sponsors</li>
+      <li>Access to all in-person content and programming</li>
+      <li>Enjoy meals and social events</li>
+      <li>Network and connect with other attendees and sponsors</li>
       </ul>
       `,
     },
     {
       question: "Are there early bird discounts?",
-      answer: `<ul><p>Enjoy our early bird discounts:</p>
-      <li>- Early bird 25% until February 28</li>
-      <li>- Early bird 15% until March 31</li></ul>
+      answer: `<p>Enjoy our early bird discounts:</p>
+      <ul>
+      <li>Early bird 25% until February 28</li>
+      <li>Early bird 15% until March 31</li></ul>
       `,
     },
     {

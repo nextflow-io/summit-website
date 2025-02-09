@@ -2,7 +2,7 @@ export default {
   main: [
     {
       question: "Who is eligible to submit an abstract for the Summit?",
-      answer: `Anyone is eligible to submit. This is placeholder copy that needs to be updated or removed.`,
+      answer: `Anyone is eligible to submit!`,
     },
     {
       question: "What are the key deadlines for abstract submission?",
@@ -10,18 +10,20 @@ export default {
     },
     {
       question:
-        "Are there specific topics or themes that the abstract should focus on??",
+        "Are there specific topics or themes that the abstract should focus on?",
       answer:
-        "Please see the Themes section at the top of this page for this year's three topics. ",
-    },
-    {
-      question: "Can I update or revise my abstract after submission?",
-      answer: "This is placeholder copy that needs to be updated or removed.",
+        `<p>There are three themes this year. </p>
+        <ul>
+        <li>Enabling science: How is data technology helping researchers make discoveries?</li>
+        <li>Big Nextflow: How are data engineers solving implementation challenges and overcoming scaling problems?</li>
+        <li>Organizational Impact: How are data technologies and platforms empowering organizations?</li>
+        </ul>
+        <p>Please see the <a href="#themes">Themes</a> section above for more info.</p>`,
     },
     {
       question: "What happens if my abstract is accepted?",
       answer:
-        "Abstracts will be read and presenters notified on a rolling basis, so apply soon. The final abstracts will be accepted and presenters notified by end of March.",
+        "Abstracts will be read and presenters notified on a rolling basis, so apply soon. The final abstracts will be accepted and presenters notified by March 28.",
     },
   ],
 };

@@ -7,4 +7,12 @@
             color: var(--color-nextflow);
         }
     }
+    ul {
+        margin-top: 1rem;
+        list-style-type:disc;
+        padding-left: 1.25rem;
+        li {
+          margin-bottom: 1rem;
+        }
+      }
 }
