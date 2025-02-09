@@ -1,18 +1,62 @@
 .faqAnswer {
-    a {
-        text-decoration: underline;
-        transition: all .3s;
-        &:hover{
-            transition: all .3s;
-            color: var(--color-nextflow);
-        }
+  a {
+    text-decoration: underline;
+    transition: all 0.3s;
+    &:hover {
+      transition: all 0.3s;
+      color: var(--color-nextflow);
     }
-    ul {
-        margin-top: 1rem;
-        list-style-type:disc;
-        padding-left: 1.25rem;
-        li {
-          margin-bottom: 1rem;
-        }
-      }
+  }
+  ul {
+    margin-top: 1rem;
+    list-style-type: disc;
+    padding-left: 1.25rem;
+    li {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.greenBarWrapper {
+  width: 100%;
+  max-width: 190px;
+  position: relative;
+  z-index: 0;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  transition: all 0.3s;
+  @media (--sm) {
+    max-width: 542px;
+  }
+}
+.greenBar {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  padding-bottom: 22%;
+  position: relative;
+  @media (--sm) {
+    max-width: 542px;
+  }
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: multiply;
+    background: var(--color-nextflow);
+    background: linear-gradient(
+      90deg,
+      rgba(12, 166, 135, 1) 0%,
+      rgba(12, 150, 119, 1) 36%,
+      rgba(12, 126, 94, 1) 58%,
+      rgba(12, 102, 70, 1) 80%,
+      rgba(11, 89, 57, 1) 95%
+    );
+  }
 }

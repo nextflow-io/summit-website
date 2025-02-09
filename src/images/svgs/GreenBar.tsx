@@ -8,7 +8,7 @@ const GreenBar = (props) => (
     viewBox="0 0 542 111"
     fill="none"
   >
-    <path fill="#0DC09D" d="M0 0h542v111H0z" />
+      <path fill="#0DC09D" d="M0 0h542v111H0z" />
     <mask
       id="a"
       width={542}
@@ -29,8 +29,8 @@ const GreenBar = (props) => (
         mixBlendMode: "multiply",
       }}
     >
-      <path fill="url(#c)" d="M-900 472.345h2348.51V-1094H-900V472.345Z" />
-      <path fill="url(#d)" d="M548.369-4.119H4.135v131.622H548.37V-4.119Z" />
+      <path fill="url(#c)" d="M-900 472.346h2348.51V-1094H-900V472.346Z" />
+      <path fill="url(#d)" d="M548.369-4.12H4.136v131.623h544.233V-4.119Z" />
     </g>
     <defs>
       <linearGradient

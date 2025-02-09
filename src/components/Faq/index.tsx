@@ -45,7 +45,6 @@ const DropDownItem = ({ question, answer, isOpen, onClick }) => {
             : { height: "0px", overflow: "hidden", opacity: 0 }
         }
       >
-    
         <div
           className={clsx(styles.faqAnswer, `bodycopy monospace`)}
           dangerouslySetInnerHTML={{ __html: answer }}
@@ -65,9 +64,13 @@ const Faq = ({ className, data, title, question, answer }: FaqProps) => {
     <section className={`${className} container`}>
       <div className="relative w-full flex flex-col sm:flex-row">
         <div className="w-full mb-6 sm:mb-0 sm:sticky sm:top-40 self-start">
-          <h2 className="h1 max-w-[200px] sm:max-w-[500px] relative z-20">More Information</h2>
+          <h2 className="h1 max-w-[200px] sm:max-w-[500px] relative z-20">
+            More Information
+          </h2>
           <div className="mt-[-25px] ml-[-25px] sm:mt-[-50px] sm:ml-[-50px] z-0 w-full max-w-[542px] overflow-hidden">
-            <GreenBar className="w-full max-w-[230px] sm:max-w-[542px] overflow-hidde"/>
+            <div className={clsx(styles.greenBarWrapper, ``)}>
+              <div className={clsx(styles.greenBar, ``)}></div>
+            </div>
           </div>
         </div>
         <div className="w-full">

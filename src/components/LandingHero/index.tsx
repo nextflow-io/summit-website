@@ -51,13 +51,13 @@ const LandingHero: React.FC<HeroProps> = (props) => {
   return (
     <div className="relative w-full h-full">
       <div className={clsx(styles.colorBarWrapper, "top-[0%] right-[15%]")}>
-        <div className={clsx(styles.colorBar, styles["red"], "")}>
+        <div className={clsx(styles.colorBar, styles[`${where == 'Boston' ? 'red' : 'blue' }`], "")}>
           <div></div>
         </div>
       </div>
 
       <div className={clsx(styles.colorBarWrapper, "top-[20%] left-[0%]")}>
-        <div className={clsx(styles.colorBar, styles["green"], "colorBar")}>
+        <div className={clsx(styles.colorBar, styles[`green`], "colorBar")}>
           <div></div>
         </div>
       </div>
@@ -69,7 +69,7 @@ const LandingHero: React.FC<HeroProps> = (props) => {
       </div>
 
       <div className={clsx(styles.colorBarWrapper, "bottom-[5%] right-[00%]")}>
-        <div className={clsx(styles.colorBar, styles["red"], "colorBar")}>
+        <div className={clsx(styles.colorBar, styles[`${where == 'Boston' ? 'red' : 'blue' }`], "colorBar")}>
           <div></div>
         </div>
       </div>

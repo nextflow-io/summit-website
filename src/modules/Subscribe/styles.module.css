@@ -22,12 +22,14 @@
       & input {
         border-radius: 4px;
         transition: all 0.3s;
+        background: var(--color-nextflow);
         @media (--sm) {
           border-top-left-radius:0px;
           border-bottom-left-radius: 0px;
         }
         &:hover {
-          background: var(--color-nextflow);
+          background: #4256E7;
+          color: white;
         }
       }
     }
