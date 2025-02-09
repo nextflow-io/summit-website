@@ -22,10 +22,10 @@ const DropDownItem = ({ name, url, dropdowns, isOpen, onClick }) => {
         onClick={dropdowns && onClick}
       >
         {dropdowns ? (
-          <p className="text-lg">{name}</p>
+          <h3 className="h3">{name}</h3>
         ) : (
-          <div className="relative w-full h-full flex flex-row">
-            {name}
+          <div className=" relative w-full h-full flex flex-row">
+            <h3 className="h3">{name}</h3>
 
             <a className="absolute top-0 left-0 right-0 bottom-0 w-full h-full" href={url}></a>
           </div>
@@ -57,7 +57,7 @@ const DropDownItem = ({ name, url, dropdowns, isOpen, onClick }) => {
           {dropdowns?.map((dropdownLink) => (
             <li key={dropdownLink.id}>
               <a
-                className="transition-all duration-400 hover:text-nextflow"
+                className="h3 transition-all duration-400 hover:text-nextflow"
                 href={dropdownLink.url}
               >
                 {dropdownLink.name}
@@ -80,7 +80,7 @@ const DropDowns: React.FC<Props> = (props) => {
   // const { pathname, namespace, onClick , isOpen } = props;
 
   return (
-    <div className="text-lg px-4 pt-20">
+    <div className="text-xl px-4 pt-20">
       {menuLinks?.map(({ name, url, dropdowns }, index) => (
         <DropDownItem
           key={index}

@@ -30,7 +30,7 @@ const { showTitle, hidePastDates = false, location = "boston" } = Astro.props;
               <div class="w-full flex flex-row items-center">
                 <h4 class="h4 pt-6 pb-6  w-full max-w-[100px]">{item.date}</h4>
 
-                <div class="pl-10 flex flex-col w-full monospace">
+                <div class="pl-4 sm:pl-10 flex flex-col w-full monospace">
                   {item?.content?.map((item, i) => (
                     <div
                       key={i}
@@ -52,7 +52,7 @@ const { showTitle, hidePastDates = false, location = "boston" } = Astro.props;
               <div class="w-full flex flex-row items-center">
                 <h4 class="h4 pt-6 pb-6  w-full max-w-[100px]">{item.date}</h4>
 
-                <div class="pl-10 flex flex-col w-full monospace">
+                <div class="pl-4 sm:pl-10 flex flex-col w-full monospace">
                   {item?.content?.map((item, i) => (
                     <div
                       key={i}

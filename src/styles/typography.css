@@ -37,7 +37,7 @@ h6,
 
 /* secondary headline  */
 .h2 {
-  font-size: 50px;
+  font-size: 45px;
   line-height: 1;
   @media (--md) {
     font-size: 80px;
