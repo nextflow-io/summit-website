@@ -4,6 +4,9 @@ import Hero from "@components/Hero";
 import SEO from "@components/SEO";
 import Faq from "@components/Faq";
 import ArrowUpRight from "@icons/ArrowUpRight";
+import OpenSign from "@icons/OpenSign";
+import City from "@icons/City";
+import Talk from "@icons/Talk";
 import Box, { SubSection } from "@components/Box";
 import img1 from "@images/photos/2025/boston/call-for-abstracts-boston.jpg";
 import qa from "./qa";
@@ -26,60 +29,70 @@ import qa from "./qa";
   <section class="mt-20 mb-24 container">
     <h1 class="h1 mb-4 md:mb-8">Key Info</h1>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-
-      <Box  className="aspect-square md:aspect-auto lg:aspect-square	">
+      <Box className="lg:aspect-square	">
         <SubSection className="flex flex-col justify-between h-full">
           <div class="">
-            <div class="pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center">
+            <div
+              class="pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center"
+            >
               <h5 class="h4">Talks & Formats</h5>
-         
             </div>
-            <div class=" py-2 monospace border-b border-b-nextflow">
-             Long-form and Poster
+            <div class="bodycopy py-2 monospace border-b border-b-nextflow">
+              Long-form and Digital Poster
             </div>
           </div>
           <div class="mt-6 lg:mt-0">
-            <p class=" monospace min-h-[140px]">
-              <ul class="monospace bodycopy">
-                <li>Long-form: 20 minutes total including time for Q&A</li>
-                <li>Digital Poster presented in person</li>
-              </ul>
+            <p class="monospace">
+              <Talk  className="mb-4" />
+              Long-form Talk: 20 minutes total including time for Q&A.
+            Digital Poster presented in person
+            
             </p>
           </div>
         </SubSection>
       </Box>
-      <Box className="aspect-square md:aspect-auto lg:aspect-square	">
+      <Box className="lg:aspect-square	">
         <SubSection className="flex flex-col justify-between h-full">
           <div class="">
-            <div class="pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center">
+            <div
+              class="pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center"
+            >
               <h5 class="h4">Location</h5>
-          
             </div>
-            <div class=" py-2 monospace border-b border-b-nextflow">
-             Boston, MA
+            <div class="bodycopy py-2 monospace border-b border-b-nextflow">
+              Boston, Massachusetts
             </div>
           </div>
           <div class="mt-6 lg:mt-0">
-            <p class=" monospace min-h-[140px]">
-              In person at the Nextflow Summit 2025, located at Aloft Boston Seaport District
+            <City className="mb-4" />
+            <p class="monospace">
+              In person at the Nextflow Summit 2025. This year's event venue is located at <a href=`https://maps.app.goo.gl/S9aZawB98jRa8DEC9` target="_blank">Aloft Boston
+              Seaport District</a>
             </p>
           </div>
         </SubSection>
       </Box>
-      <Box externalLink href="https://seqera.swoogo.com/nextflow-summit-boston-2025/call-for-abstracts" className="aspect-square md:aspect-auto lg:aspect-square	">
+      <Box
+        externalLink
+        href="https://seqera.swoogo.com/nextflow-summit-boston-2025/call-for-abstracts"
+        className="lg:aspect-square	"
+      >
         <SubSection className="flex flex-col justify-between h-full">
           <div class="">
-            <div class="pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center">
+            <div
+              class="pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center"
+            >
               <h5 class="h4">Apply Now</h5>
-              <ArrowUpRight/>
+              <ArrowUpRight />
             </div>
-            <div class=" py-2 monospace border-b border-b-nextflow">
-            Deadline is March 14
+            <div class="bodycopy py-2 monospace border-b border-b-nextflow">
+              Deadline is March 14, 2025
             </div>
           </div>
           <div class="mt-6 lg:mt-0">
-            <p class=" monospace min-h-[140px]">
-              Abstracts will be read and presenters notified on a rolling basis, so apply soon. The final abstracts will be accepted and presenters notified by March 28.
+            <OpenSign  className="mb-4"/>
+            <p class="monospace">
+              Abstracts will be read and presenters notified on a rolling basis, so apply soon. <span class="text-nextflow">Click here to apply now!</span>
             </p>
           </div>
         </SubSection>
@@ -96,10 +109,10 @@ import qa from "./qa";
             <h6 class="h5 mb-4">1. Enabling science</h6>
           </div>
           <div class="mt-4 flex flex-col justify-between">
-            <p class="text-lg monospace mb-2 min-h-[80px]">
+            <p class=" monospace mb-2 min-h-[80px]">
               How is data technology helping researchers make discoveries?
             </p>
-            <ul class="monospace">
+            <ul class="bodycopy monospace">
               <li>
                 Computational wizardry that allows researchers to try out ideas
                 that would have been impossible or too time-consuming before.
@@ -121,12 +134,12 @@ import qa from "./qa";
             <h5 class="h5 mb-4">2. Big Nextflow</h5>
           </div>
           <div class="mt-4 flex flex-col justify-between h-full">
-            <p class="text-lg monospace mb-2 h-full min-h-[80px]">
+            <p class=" monospace mb-2 h-full min-h-[80px]">
               How are data engineers solving implementation challenges and
               overcoming scaling problems?
             </p>
 
-            <ul class="monospace h-full">
+            <ul class="bodycopy monospace h-full">
               <li>
                 Building pipelines and systems that are robust and
                 fault-tolerant.
@@ -144,10 +157,10 @@ import qa from "./qa";
             <h5 class="h5 mb-4">3. Organizational Impact</h5>
           </div>
           <div class="mt-4 flex flex-col justify-between h-full">
-            <p class="text-lg monospace mb-2 h-full min-h-[80px]">
+            <p class=" monospace mb-2 h-full min-h-[80px]">
               How are data technologies and platforms empowering organizations?
             </p>
-            <ul class="monospace">
+            <ul class="bodycopy monospace">
               <li>Integration with business and R&D workflows.</li>
               <li>
                 Processes and tooling that enhance observability,
@@ -157,7 +170,6 @@ import qa from "./qa";
           </div>
         </SubSection>
       </Box>
-
     </div>
   </section>
 
