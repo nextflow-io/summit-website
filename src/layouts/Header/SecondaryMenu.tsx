@@ -11,8 +11,9 @@ type Props = {
 
 const Menu: React.FC<Props> = (props) => {
   const { pathname, namespace, desktop } = props;
+
   function isActive(path) {
-    return pathname == path
+    return String(pathname) == String(path)
   }
   let location;
   if (namespace === "2025/boston") location = 0;

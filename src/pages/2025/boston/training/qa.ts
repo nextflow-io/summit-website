@@ -23,6 +23,6 @@ export default {
     {
         question: "Is there an additional fee to attend the training sessions?",
         answer:
-          `There is a fee associated with taking the training. Click <a href="/2025/boston/register">register now</a> to see the training pricing.`
+          `There is a fee associated with taking the training. Click <a href="https://seqera.swoogo.com/nextflow-summit-boston-2025" target="_blank">register now</a> to see the training pricing.`
       }
   ]}
