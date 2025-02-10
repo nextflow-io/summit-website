@@ -1,0 +1,34 @@
+.nav {
+    line-height: 0;
+    position: relative;
+    z-index: 2;
+    & button {
+      background: transparent;
+      background-image: url("./nav-left.svg");
+      background-repeat: no-repeat;
+      line-height: 0;
+      padding: 0;
+      border: none;
+      display: inline-block;
+      height: 33px;
+      width: 32px;
+      transition: transform 0.2s;
+      &:last-child {
+        background-image: url("./nav-right.svg");
+        margin-left: 10px;
+      }
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+  .swiper {
+    padding-bottom: 50px;
+    & :global(.swiper-pagination) {
+      transform: translateY(10px);
+      & :global(.swiper-pagination-bullet) {
+        background: var(--color-brand-500);
+      }
+    }
+  }
+  

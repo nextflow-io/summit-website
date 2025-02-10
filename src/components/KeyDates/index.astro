@@ -3,6 +3,7 @@ import clsx from "clsx";
 import datesBoston from "./datesBoston";
 import datesBarcelona from "./datesBarcelona";
 import img1 from "@images/photos/2025/boston/training-computer.jpg";
+import Slideshow from "./Slideshow";
 
 interface Props {
   showTitle?: boolean;
@@ -21,8 +22,8 @@ const { showTitle, hidePastDates = false, location = "boston" } = Astro.props;
     <p class="monospace">At a glance</p>
   </div>
 
-  <div class={clsx("w-full relative flex flex-col sm:flex-row h-full")}>
-    <div class="w-full border-t">
+  <div class={"w-full relative flex flex-col sm:flex-row h-full"}>
+    <div class="relative w-full border-t">
       {
         location == "boston" &&
           datesBoston?.map((item, i) => (
@@ -67,15 +68,8 @@ const { showTitle, hidePastDates = false, location = "boston" } = Astro.props;
           ))
       }
     </div>
-    <div class="mt-8 sm:mt-0 sm:ml-20 w-full sm:sticky sm:top-40 self-start">
-      <div class="imageBlend relative w-full h-full pb-[100%] block">
-        <img
-          src={img1.src}
-          class="border border-nextflow absolute top-0 left-0 right-0 bottom-0 w-full h-full object-cover z-10 block"
-          alt="Image of workshop at Nextflow Summit"
-        />
-      </div>
+    <div class="w-full relative mt-8 sm:mt-0 sm:ml-20 sm:sticky sm:top-30 self-start sm:max-w-[50%]">
+      <div class="w-full relative"><Slideshow client:load /></div>
     </div>
-    
   </div>
 </section>

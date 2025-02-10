@@ -1,9 +1,10 @@
 import { useCallback, useRef } from "react";
 import clsx from "clsx";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import {Autoplay, EffectFade, Pagination } from "swiper/modules";
 import { screens } from "../../../tailwind.config.mjs";
-
+import SliderRight from "@images/icons/SliderRight";
+import SliderLeft from "@images/icons/SliderLeft";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -16,7 +17,7 @@ type Props = {
   children: React.ReactNode[];
 };
 
-const SwiperSection: React.FC<Props> = ({ title, children }) => {
+const ImageSlider: React.FC<Props> = ({ title, children }) => {
   const breakpoints = Object.values(screens).map((bp) => parseInt(bp));
   const sliderRef = useRef(null);
 
@@ -30,40 +31,40 @@ const SwiperSection: React.FC<Props> = ({ title, children }) => {
 
   return (
     <>
-      {!!title && <h3 className="h0 mt-24 mb-8 md:mb-16">{title}</h3>}
       <Swiper
-        className={styles.swiper}
+        className={`${styles.swiper} relative w-full`}
         loop
+        effect={'fade'}
         ref={sliderRef}
-        modules={[Pagination]}
-        pagination={{
-          clickable: true,
+        modules={[Autoplay, EffectFade, Pagination]}
+        // pagination={{
+        //   clickable: true,
+        // }}
+        fadeEffect={{
+          crossFade: true
         }}
         breakpoints={{
           [breakpoints[0]]: {
             slidesPerView: 1,
             spaceBetween: 0,
           },
-          [breakpoints[1]]: {
-            slidesPerView: 2,
-            spaceBetween: 32,
-          },
-          [breakpoints[2]]: {
-            slidesPerView: 3,
-            spaceBetween: 32,
-          },
+        }}
+        speed={1500}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: true,
         }}
       >
         {children.map((node, index) => (
-          <SwiperSlide key={index}>{node}</SwiperSlide>
+          <SwiperSlide key={index} className="imageBlend w-full h-0 pb-[100%] overflow-hidden relative">{node}</SwiperSlide>
         ))}
       </Swiper>
-      <nav className={clsx(styles.nav, "-mt-6")}>
-        <button onClick={handlePrev} />
-        <button onClick={handleNext} />
+      <nav className={clsx(styles.nav, "")}>
+        <button onClick={handlePrev} ><SliderLeft/></button>
+        <button onClick={handleNext} ><SliderRight/></button>
       </nav>
     </>
   );
 };
 
-export default SwiperSection;
+export default ImageSlider;
