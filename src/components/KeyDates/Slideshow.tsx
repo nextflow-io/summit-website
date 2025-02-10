@@ -19,10 +19,13 @@ const Slideshow: React.FC<Props> = (props = {}) => {
         {data.main.map((event, index) => (
           <div
             key={index}
-            className={`top-0 left-0 right-0 bottom-0 object-cover absolute w-full h-full border border-nextflow `}
+            className={` top-0 left-0 right-0 bottom-0 object-cover absolute w-full h-full border border-nextflow `}
           >
-            <img src={event.img.src} loading="lazy" className="top-0 left-0 right-0 bottom-0 object-cover absolute w-full h-full" />
+  
+            <img src={event.img.src} loading="lazy" className=" top-0 left-0 right-0 bottom-0 object-cover absolute w-full h-full" />
+            <div className="mix-blend-exclusion bg-indigo-900 top-0 left-0 right-0 bottom-0 object-cover absolute w-full h-full opacity-40"></div>
             {/* <div className="swiper-lazy-preloader"></div> */}
+      
           </div>
         ))}
       </ImageSlider>
