@@ -36,35 +36,42 @@ import qa from "./qa";
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
       <Box className="">
         <SubSection
-          className="flex flex-col justify-between h-full min-h-[350px]"
+          className="flex flex-col justify-between h-full md:min-h-[350px]"
         >
-
-          <div>
-            <Training />
+        <div>
+        <div class="border-b border-b-nextflow w-full">
+          <h5 class="h6 mb-4">Learn Core Nextflow Concepts</h5>
+        </div>
+          <div class="mt-6">
+            <Training/>
           </div>
+        </div>
           <div>
-            <div class="mt-10">
-              <h5 class="h5 pb-4">Learn Core Nextflow Concepts</h5>
-              <p class="monospace ">
+            <div class="mt-10"> 
+              <p class="monospace">
                 Understand the Nextflow language, essential commands, and
                 structure, allowing users to build and run simple workflows
                 locally.
               </p>
             </div>
-
           </div>
         </SubSection>
       </Box>
       <Box className="">
         <SubSection
-          className="flex flex-col justify-between h-full min-h-[350px]"
+          className="flex flex-col justify-between h-full md:min-h-[350px]"
         >
-          <div>
+        <div>
+          <div class="border-b border-b-nextflow w-full">
+            <h5 class="h6 mb-4">Engage with nf-core Resources</h5>
+          </div>
+
+          <div class="mt-6 max-w-[150px]">
             <Laptop />
           </div>
+        </div>
           <div class="mt-10">
-            <h5 class="h5 pb-4">Engage with nf-core Resources</h5>
-            <p class="monospace ">
+            <p class="monospace">
               Discover the benefits of nf-core, including how to access,
               customize, and utilize community-built pipelines for various
               bioinformatics tasks.
@@ -74,15 +81,20 @@ import qa from "./qa";
       </Box>
       <Box className="">
         <SubSection
-          className="flex flex-col justify-between h-full min-h-[350px]"
+          className="flex flex-col justify-between h-full md:min-h-[350px]"
         >
-          <div>
-            <Exercises />
+        <div>
+          <div class="border-b border-b-nextflow w-full">
+            <h5 class="h6 mb-4">Hands-on Exercise</h5>
           </div>
 
+          <div class="mt-6">
+            <Exercises />
+          </div>
+        </div>
+
           <div class="mt-10">
-            <h5 class="h5 pb-4">Hands-on Exercises</h5>
-            <p class="monospace ">
+            <p class="monospace">
               Create pipelines using the nf-core template, covering best
               practices for version control, collaboration, and troubleshooting
               common errors.
