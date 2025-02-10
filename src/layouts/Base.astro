@@ -38,13 +38,11 @@ import Contact from "@modules/Contact";
   <body>
     <CookieHandler client:only="react" />
       <Header namespace={namespace} showNav={showNav}/>
-  
       <main id="body" >
         <slot />
       </main>
       <Contact />
       <Footer />
-
     <CookieNotice client:only="react" />
   </body>
 </html>
