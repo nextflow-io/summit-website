@@ -146,19 +146,14 @@ main#body {
 }
 
 .navItem {
-  &.is-active {
-    position: relative;
-    color: white!important;
-    background: var(--color-brand);
-    border-radius: 4px;
-    box-shadow: inset 0px 0px 0px 1px var(--color-nextflow-200);
-    &:before {
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      left: 0;
-      background: var(--color-brand);
-    }
-  }
+
+}
+.nav__highlight {
+  position: absolute;
+  z-index: 0;
+  height: 100%;
+  color: white!important;
+  background: var(--color-brand);
+  border-radius: 4px;
+  box-shadow: inset 0px 0px 0px 1px var(--color-nextflow-200);
 }
