@@ -84,7 +84,7 @@
           position: relative;
           color: var(--color-brand);
           &:hover {
-            color: white;
+            color: var(--color-brand-800);
           }
           &[data-active] {
             position: relative;

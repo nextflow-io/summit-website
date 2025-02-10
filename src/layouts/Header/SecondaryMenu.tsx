@@ -15,6 +15,8 @@ const Menu: React.FC<Props> = (props) => {
   function isActive(path) {
     return String(pathname) == String(path)
   }
+ 
+    
   let location;
   if (namespace === "2025/boston") location = 0;
   if (namespace === "2025/barcelona") location = 1;
@@ -25,9 +27,12 @@ const Menu: React.FC<Props> = (props) => {
         {menuLinks[location].dropdowns?.map(({ name, url }, i) => {
           return (
             <li key={i}>
-              <Link href={url} active={isActive(url)}>
+              {/* <Link href={url} active={isActive(url)}>
                 {name}
-              </Link>
+              </Link> */}
+                <a href={url} className={`navItem ${pathname === url ? "is-active" : ""}`}>
+                {name}
+              </a>
             </li>
           );
         })}
