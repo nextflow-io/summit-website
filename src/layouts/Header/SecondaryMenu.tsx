@@ -93,6 +93,7 @@ const Cursor = ({ position }) => {
       animate={{
         ...position,
       }}
+      initial={false}
       className="nav__highlight"
     />
   );

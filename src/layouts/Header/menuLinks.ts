@@ -5,7 +5,7 @@ const menuLinks = [
     dropdowns: [
       {
         name: "Overview",
-        url: "/2025/boston",
+        url: "/2025/boston/overview",
       },
       {
         name: "Travel",
