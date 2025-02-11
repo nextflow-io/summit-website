@@ -60,7 +60,7 @@ const LandingHero: React.FC<HeroProps> = (props) => {
         duration: 0.25,
         ease: "linear",
       }}
-      className="relative w-full h-full"
+      className="min-h-[800px] relative w-full h-full"
     >
       <div className={clsx(styles.colorBarWrapper, "top-[0%] right-[15%]")}>
         <div
