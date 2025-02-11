@@ -241,12 +241,15 @@ const LandingHero: React.FC<HeroProps> = (props) => {
               )}
 
               <div className="sm:hidden">
+                
                 <div className="toggleLocation relative monospace">
                   <div className="flex flex-row">
+     
                     <Link href="/2025/boston" active={isActive("2025/boston")}>
                       {" "}
-                      <div className="px-4">Boston</div>
+                      <div className={`${isBoth && 'border-r border-r-brand'} px-4`}>Boston</div>
                     </Link>
+              
                     <Link
                       href="/2025/barcelona"
                       active={isActive("2025/barcelona")}
@@ -256,6 +259,7 @@ const LandingHero: React.FC<HeroProps> = (props) => {
                     </Link>
                   </div>
                 </div>
+                
 
                 <p
                   className="monospace max-w-[580px] mt-10"
