@@ -7,5 +7,5 @@
 # 2022 - archive site proxy
 /2022/*       https://nextflow-summit-2022.netlify.app/2022/:splat    200!
 
-
-
+# 404
+/* /.netlify/functions/entry 404
