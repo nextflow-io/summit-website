@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Button from "@components/Button";
+import { motion } from "framer-motion";
 
 interface HeroProps {
   preTitle?: string;
@@ -29,7 +30,23 @@ const Hero = ({
   ctaExternal2,
 }: HeroProps) => {
   return (
-    <div className={"container pt-10"}>
+    <motion.div 
+    initial={{
+      opacity: 0,
+    }}
+    whileInView={{
+      opacity: 1,
+    }}
+    viewport={{
+      once: true,
+    }}
+    transition={{
+      duration: 0.25,
+      ease: "linear",
+      delay: .7,
+    }}
+    
+    className={"container pt-10"}>
       <div className="flex flex-col md:flex-row md:justify-between">
         <div className="w-full mb-10 mb:mb-0 md:pr-10 md:pt-10 max-w-[750px]">
           <h2 className="h2 mb-10">
@@ -71,7 +88,7 @@ const Hero = ({
      
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
