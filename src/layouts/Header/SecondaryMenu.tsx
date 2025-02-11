@@ -56,8 +56,8 @@ const SecondaryMenu: React.FC<Props> = (props) => {
 const Tab = ({ children, setPosition, url, pathname }) => {
   const ref = useRef(null);
   function isActive(path) {
-    // return pathname?.includes(path);
-    return pathname.toString() == path.toString()
+    return pathname?.includes(path);
+    // return pathname.toString() == path.toString()
   }
 
   return (
