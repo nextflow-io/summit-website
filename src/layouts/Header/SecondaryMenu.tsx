@@ -55,6 +55,10 @@ const SecondaryMenu: React.FC<Props> = (props) => {
 
 const Tab = ({ children, setPosition, url, pathname }) => {
   const ref = useRef(null);
+  function isActive(path) {
+    // return pathname?.includes(path);
+    return pathname.toString() == path.toString()
+  }
 
   return (
     <li
@@ -70,12 +74,15 @@ const Tab = ({ children, setPosition, url, pathname }) => {
       }}
       className="relative z-10 block cursor-pointer text-brand"
     >
-      <a
+      {/* <a
         href={url}
         className={`navItem`}
       >
         {children}
-      </a>
+      </a> */}
+           <Link href={url} active={isActive(url)}>
+           {children}
+          </Link>
     </li>
   );
 };
