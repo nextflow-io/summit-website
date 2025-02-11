@@ -1,6 +1,8 @@
 .form {
   display: block;
-
+  & li label {
+    max-width: 20px;
+  }
   input[type="submit"] {
     background: var(--color-nextflow);
     transition: all .24s;
