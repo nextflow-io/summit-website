@@ -15,7 +15,7 @@ const SliderLeft = (props) => (
     <path
       fill="#fff"
       stroke="#fff"
-      strokeWidth={1.5}
+      strokeWidth={1}
       d="m12.983 16.585 6.343 6.369-.74.74-7.085-7.11L18.584 9.5l.741.741-6.343 6.344Z"
     />
   </svg>

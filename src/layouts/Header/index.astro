@@ -83,6 +83,24 @@ if (typeof Astro.props.showNav !== "undefined") showNav = Astro.props.showNav;
         },
         false,
       );
+
+      let isHovered = false;
+      secondaryNav.addEventListener("mouseenter", () => {
+        isHovered = true;
+      });
+      secondaryNav.addEventListener("mouseleave", () => {
+        isHovered = false;
+      });
+
+      const links = secondaryNav.querySelectorAll("a");
+
+      links.forEach((link) => {
+        if (
+          window.location.pathname === link.getAttribute("href")
+        ) {
+          link.setAttribute("data-active", "");
+        }
+      });
     }
   });
 </script>

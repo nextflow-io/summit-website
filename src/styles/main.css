@@ -145,9 +145,6 @@ main#body {
   transform: translate(-50%);
 }
 
-.navItem {
-
-}
 .nav__highlight {
   position: absolute;
   z-index: 0;

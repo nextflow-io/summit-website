@@ -15,7 +15,7 @@ const SliderRight = (props) => (
     <path
       fill="#0DC09D"
       stroke="#fff"
-      strokeWidth={1.5}
+      strokeWidth={1}
       d="m20.017 16.415-6.343-6.369.74-.74 7.086 7.11-7.085 7.084-.741-.741 6.343-6.344Z"
     />
   </svg>

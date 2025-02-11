@@ -72,7 +72,7 @@ const Tab = ({ children, setPosition, url, pathname }) => {
     >
       <a
         href={url}
-        className={`navItem ${pathname === url ? "is-active" : ""}`}
+        className={`navItem`}
       >
         {children}
       </a>
