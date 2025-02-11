@@ -1,5 +1,5 @@
 # 2024 - archive site proxy
-/2024/*       https://nextflow-summit-2024.netlify.app/2025/:splat    200!
+/2024/*       https://nextflow-summit-2024.netlify.app/2024/:splat    200!
 
 # 2023 - archive site proxy
 /2023/*       https://nextflow-summit-2023.netlify.app/2023/:splat    200!
