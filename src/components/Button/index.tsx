@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import clsx from "clsx";
-import Arrow from "./Arrow.tsx";
+import ArrowRight from "@icons/ArrowRight";
 import styles from "./styles.module.css";
 
 type Props = {
@@ -14,6 +14,7 @@ type Props = {
   wide?: boolean;
   wider?: boolean;
   white?: boolean;
+  brand?: boolean;
   secondary?: boolean;
   arrow?: boolean;
   arrowBefore?: boolean;
@@ -35,6 +36,7 @@ const Button: React.FC<Props> = ({
     [styles.wide]: attributes.wide,
     [styles.wider]: attributes.wider,
     [styles.white]: attributes.white,
+    [styles.brand]: attributes.brand,
     [styles.secondary]: attributes.secondary,
     [styles.cta]: attributes.cta,
   });
@@ -43,10 +45,10 @@ const Button: React.FC<Props> = ({
   let arrowAfter = null;
 
   if (attributes.arrowBefore) {
-    arrowBefore = <Arrow key="arrow" className={styles.arrowBefore} />;
+    arrowBefore = <ArrowRight key="arrow" className={styles.arrowBefore} />;
   }
   if (attributes.arrowAfter) {
-    arrowAfter = <Arrow key="arrow" className={styles.arrowAfter} />;
+    arrowAfter = <ArrowRight key="arrow" className={styles.arrowAfter} />;
   }
 
   const url = to || href;

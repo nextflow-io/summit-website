@@ -6,7 +6,7 @@ export default {
     },
     {
       question: "What are the key deadlines for abstract submission?",
-      answer: `The deadline is March 14, 2025. Submit your proposal by <a class="underline" href="/call-for-abstracts">clicking here</a>. `,
+      answer: `The deadline is March 14, 2025. Submit your proposal by <a class="underline" href="https://seqera.swoogo.com/nextflow-summit-boston-2025/call-for-abstracts" target="_blank">clicking here</a>. `,
     },
     {
       question:

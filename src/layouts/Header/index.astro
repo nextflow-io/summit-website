@@ -24,7 +24,6 @@ if (typeof Astro.props.showNav !== "undefined") showNav = Astro.props.showNav;
           Register Now
           <div
             class={`${styles.registerBtn} arrowRight ml-4 bg-nextflow flex justify-center items-center p-2 rounded-sm`}
-            class=""
           >
             <ArrowRight />
           </div>
@@ -68,6 +67,8 @@ if (typeof Astro.props.showNav !== "undefined") showNav = Astro.props.showNav;
     let prevScrollDirection = "";
 
     if (secondaryNav) {
+
+      console.log(window.location.pathname)
       window.addEventListener(
         "scroll",
         function () {
@@ -98,7 +99,8 @@ if (typeof Astro.props.showNav !== "undefined") showNav = Astro.props.showNav;
         if (
           window.location.pathname === link.getAttribute("href")
         ) {
-          link.setAttribute("data-active", "");
+          link.classList.add("is-active");
+          console.log(link)
         }
       });
     }
