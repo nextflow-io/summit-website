@@ -16,8 +16,13 @@ interface HeroProps {
   when?: string;
   where?: string;
   price?: string;
-  namespace: string;
-  pathname: string;
+  boston?: string;
+  barcelona?: string;
+  namespace?: string;
+  pathname?: string;
+  isBoston?: boolean;
+  isBarcelona?:boolean;
+  isBoth?:boolean;
 }
 
 const LandingHero: React.FC<HeroProps> = (props) => {
@@ -33,6 +38,11 @@ const LandingHero: React.FC<HeroProps> = (props) => {
     price,
     pathname,
     namespace,
+    boston,
+    barcelona,
+    isBoston,
+    isBarcelona,
+    isBoth
   } = props;
 
   function getURL(path, root = false) {
@@ -66,8 +76,10 @@ const LandingHero: React.FC<HeroProps> = (props) => {
         <div
           className={clsx(
             styles.colorBar,
-            styles[`${where == "Boston" ? "red" : "blue"}`],
-            "",
+            styles[`${isBarcelona && "blue"}`],
+            styles[`${isBoston && "red"}`],
+            styles[`${isBoth && "red"}`],
+            ``,
           )}
         >
           <div></div>
@@ -90,8 +102,9 @@ const LandingHero: React.FC<HeroProps> = (props) => {
         <div
           className={clsx(
             styles.colorBar,
-            styles[`${where == "Boston" ? "red" : "blue"}`],
-            "colorBar",
+            styles[`${isBarcelona && "blue"}`],
+            styles[`${isBoston && "red"}`],
+            styles[`${isBoth && "blue"}`],
           )}
         >
           <div></div>
@@ -202,14 +215,30 @@ const LandingHero: React.FC<HeroProps> = (props) => {
             )}
           >
             <div className="sm:mt-20">
-              <div className="mb-10">
-                <p className="h6 text-nextflow monospace mb-2">When</p>
-                <h3 className="h3">{when}</h3>
-              </div>
-              <div className="mb-10">
-                <p className="h6 text-nextflow monospace mb-2">Where</p>
-                <h3 className="h3">{where}</h3>
-              </div>
+              {when && (
+                <div className="mb-10">
+                  <p className="h6 text-nextflow monospace mb-2">When</p>
+                  <h3 className="h3">{when}</h3>
+                </div>
+              )}
+              {where && where !== "both" && (
+                <div className="mb-10">
+                  <p className="h6 text-nextflow monospace mb-2">Where</p>
+                  <h3 className="h3">{where}</h3>
+                </div>
+              )}
+              {boston && (
+                <div className="mb-10">
+                  <p className="h6 text-nextflow monospace mb-2">Boston</p>
+                  <h3 className="h3">{boston}</h3>
+                </div>
+              )}
+              {barcelona && (
+                <div className="mb-10">
+                  <p className="h6 text-nextflow monospace mb-2">Barcelona</p>
+                  <h3 className="h3">{barcelona}</h3>
+                </div>
+              )}
 
               <div className="sm:hidden">
                 <div className="toggleLocation relative monospace">
