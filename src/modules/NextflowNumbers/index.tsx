@@ -30,9 +30,9 @@ const Item: React.FC<ItemProps> = ({
       duration = Number(key);
     }
   });
-  let cn = "w-full xs:w-1/2 flex-auto min-w-[100px]  py-4 md:px-4";
+  let cn = "w-full xs:w-1/2 flex-auto min-w-[100px]  py-4 px-4";
   if (smaller)
-    cn = "w-full xs:w-1/2 md:w-full flex-auto min-w-[100px]  py-4 md:px-4";
+    cn = "w-full xs:w-1/2 md:w-full flex-auto min-w-[100px]  py-4 px-4";
   return (
     <CountUp
       start={ready ? 0 : null}
