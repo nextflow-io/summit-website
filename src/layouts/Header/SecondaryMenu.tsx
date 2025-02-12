@@ -12,7 +12,7 @@ type Props = {
 
 const SecondaryMenu: React.FC<Props> = (props) => {
   const [position, setPosition] = useState({
-    left: 0,
+    left: undefined,
     width: 0,
     opacity: 0,
   });
@@ -93,6 +93,7 @@ const Cursor = ({ position }) => {
       animate={{
         ...position,
       }}
+      style={{...position}}
       initial={false}
       className="nav__highlight"
     />
