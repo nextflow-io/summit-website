@@ -15,7 +15,7 @@ type Props = {
 const WhyAttend: React.FC<Props> = ({ className }) => {
   return (
     <div className={className}>
-      <div className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         <div className="hidden sm:flex  imageBlend border w-full h-full border-nextflow xl:aspect-square object-cover">
           <img
             className="aspect-square w-full h-full object-cover"
