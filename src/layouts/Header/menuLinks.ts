@@ -8,6 +8,10 @@ const menuLinks = [
         url: "/2025/boston/overview",
       },
       {
+        name: "Register",
+        url: "/2025/boston/register",
+      },
+      {
         name: "Travel",
         url: "/2025/boston/travel",
       },
@@ -38,10 +42,6 @@ const menuLinks = [
       {
         name: "Why Attend",
         url: "/2025/boston/why-attend",
-      },
-      {
-        name: "Register",
-        url: "/2025/boston/register",
       },
       // {
       //   name: "Gallery",

@@ -5,6 +5,10 @@ export default {
     name: "Boston",
     url: "/2025/boston",
     dropdowns: [
+        {
+        name: "Agenda",
+        url: "/2025/boston/agenda",
+      },
       {
         name: "Overview",
         url: "/2025/boston",

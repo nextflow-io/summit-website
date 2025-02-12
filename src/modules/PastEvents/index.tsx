@@ -21,7 +21,7 @@ const SectionPastEvents: React.FC<Props> = ({ title }) => {
   return (
     <section className="mt-20 mb-24 container">
       <h1 className="h2 mb-10">See our past events</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         <Box
           externalLink={true}
           href="https://summit.nextflow.io/2024/barcelona/"
