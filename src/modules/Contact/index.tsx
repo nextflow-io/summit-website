@@ -20,19 +20,18 @@ type Props = {
 
 const SectionContact: React.FC<Props> = ({ className }) => {
   return (
-    <section className={clsx("container smaller py-8 md:py-26", className)} id="footer">
-      <h4 className="h5 mb-8 text-center">Contact us</h4>
+    <section className={clsx("mt-20 md:mt-40 container smaller", className)} id="footer">
       <div className="flex -m-2 sm:-m-4 flex flex-wrap">
         <div className="w-full md:w-1/2 p-2 sm:p-4">
           <SectionBox href="mailto:help.summit@nextflow.io">
-            <h5 className="h5 mb-2">Ticketing questions</h5>
-            <div>help.summit@nextflow.io</div>
+            <p className="text-lg font-semibold font-display mb-2">Ticketing questions</p>
+            <div className="monospace text-nextflow">help.summit@nextflow.io</div>
           </SectionBox>
         </div>
         <div className="w-full md:w-1/2 p-2 sm:p-4">
           <SectionBox href="mailto:summit@nextflow.io">
-            <h5 className="h5 mb-2">Program questions</h5>
-            <div>summit@nextflow.io</div>
+            <h5 className="text-lg font-semibold font-display mb-2">Program questions</h5>
+            <div className="monospace text-nextflow">summit@nextflow.io</div>
           </SectionBox>
         </div>
       </div>

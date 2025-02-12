@@ -7,17 +7,121 @@ import ImageSection from "@modules/ImageSection";
 import PastEvents from "@modules/PastEvents";
 import Subscribe from "@modules/Subscribe";
 import SEO from "@components/SEO";
+import LandingHero from "@components/LandingHero";
+import Faq from "@components/Faq";
+import qa from "./qa";
+import SignUpForm from "@modules/SignUpForm";
+import Box, { SubSection } from "@components/Box";
+import ArrowUpRight from "@icons/ArrowUpRight";
+import imgBoston from "@images/photos/2025/boston/boston.jpg";
+import imgBarcelona from "@images/photos/2025/barcelona/barcelona.jpg";
 ---
 
 <Layout showHeader={false}>
-  <SEO slot="head" img={0} />
-  <!--  <CallForAbstracts client:load className="mt-20 opacity-75" /> -->
-  <EventSelector />
-  <h2 class="h00 text-center mt-10 mb-16 relative z-10">
-    Previous Nextflow Events
-  </h2>
-  <PastEvents client:load />
-  <NextflowNumbers client:load className="py-20" />
-  <ImageSection client:load className="mb-20" />
-  <Subscribe client:visible />
+  <SEO slot="head" title="Home" img={0} />
+
+  <LandingHero
+    isBoth
+    title="Nextflow Summit"
+    content="Join us to explore groundbreaking developments in Nextflow, discover innovative solutions for scalable data analysis, and connect with a global community dedicated to advancing reproducible science."
+    where="both"
+    ctaText1="Register Now"
+    ctaLink1="#register"
+    boston="May 13-16"
+    barcelona="October 27-29"
+    client:load
+  />
+
+  <section class="mt-20 mb-24">
+    <div class="mt-20  mb-20 container smaller grid grid-cols-1 md:grid-cols-2 gap-8">
+      <Box className="box__image aspect-square	relative" href="/2025/boston">
+
+        <SubSection
+          className="relative flex flex-col justify-between h-full z-10"
+        >
+          <div class="">
+            <div
+              class="pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center"
+            >
+              <h5 class="h4">Boston 2025</h5>
+              <ArrowUpRight />
+            </div>
+            <div class=" py-2 monospace border-b border-b-nextflow flex flex-row justify-between">
+              <p>May 13-16</p>
+              <p>Aloft Boston</p>
+            </div>
+          </div>
+          <div
+          class="mt-6 relative imageBlend w-full h-0 pb-[40%] overflow-hidden "
+        >
+          <img
+            class="absolute top-0 left-0 right-0 bottom-0 w-full h-full z-0 object-cover"
+            src={imgBoston.src}
+            alt="Image of Boston cityscape"
+          />
+        </div>
+          <div class="">
+            <!-- <h5 class="h5 mb-2">May 13 - 16</h5> -->
+            <!-- <p class="monospace">Aloft Boston Seaport District</p> -->
+          </div>
+        </SubSection>
+      </Box>
+
+      <Box className="box__image aspect-square	relative" href="/2025/barcelona">
+
+        <SubSection
+          className="relative flex flex-col justify-between h-full z-10"
+        >
+          <div class="">
+            <div
+              class="pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center"
+            >
+              <h5 class="h4">Barcelona 2025</h5>
+              <ArrowUpRight />
+            </div>
+            <div class=" py-2 monospace border-b border-b-nextflow flex flex-row justify-between">
+              <p>October 27-29</p>
+              <p>To be announced</p>
+            </div>
+          </div>
+          <div
+          class="mt-6 relative imageBlend w-full h-0 pb-[40%] overflow-hidden "
+        >
+          <img
+            class="absolute top-0 left-0 right-0 bottom-0 w-full h-full z-0 object-cover"
+            src={imgBarcelona.src}
+            alt="Image of Boston cityscape"
+          />
+        </div>
+          <div class="">
+            <!-- <h5 class="h5 mb-2">May 13 - 16</h5> -->
+            <!-- <p class="monospace">Aloft Boston Seaport District</p> -->
+          </div>
+        </SubSection>
+      </Box>
+    </div>
+
+    <section id="register" class="wrapper">
+      <div>
+        <div class="container pt-10">
+          <div class="flex flex-col sm:flex-row sm:justify-between">
+            <div class="w-full pr-10 pt-10">
+              <h1 class="h2 mb-10">Join us at Nextflow Summit 2025</h1>
+              <p class="monospace">
+                Discover the ticket prices, discount dates, and refund policy
+              </p>
+            </div>
+            <div>
+              <div class="w-full">
+                <SignUpForm client:load />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <NextflowNumbers client:load className="my-20 md:my-40"/>
+    <PastEvents />
+    <Faq className="mt-20 md:mt-40 mb-20" client:load data={qa} />
+  </section>
 </Layout>

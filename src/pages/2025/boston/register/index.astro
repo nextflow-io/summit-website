@@ -1,0 +1,140 @@
+---
+import Layout from "@layouts/Base.astro";
+import SEO from "@components/SEO";
+import Faq from "@components/Faq";
+import Box, { SubSection } from "@components/Box";
+import HubspotForm from "@components/HubspotForm";
+import Hero from "@components/Hero";
+import PastEvents from "@modules/PastEvents";
+import Button from "@components/Button";
+import clsx from "clsx";
+import styles from "./register.module.css";
+import ArrowUpRight from "@icons/ArrowUpRight";
+import Ticket from "@icons/Ticket";
+import Ticket25 from "@icons/Ticket25";
+import SignUpForm from "@modules/SignUpForm";
+import qa from "./qa";
+import img from "@photos/2025/boston/crowd.jpg";
+---
+
+<Layout showNav={false} namespace="2025/boston">
+  <SEO slot="head" title="Register | Boston" img={1} />
+
+
+  <section class="">
+    <Hero
+      title="Join us in Boston"
+      content="Discover the ticket prices, discount dates, and refund policy"
+      href={img.src}
+      alt="Image of two speakers at Nextflow Summit"
+      ctaText1="Register Now"
+      ctaLink1="https://seqera.swoogo.com/nextflow-summit-boston-2025"
+      ctaExternal1
+      client:load
+    />
+  </section>
+
+  <!-- <section class="wrapper">
+    <div class="">
+      <div class={clsx(styles.hero, "container pt-10")}>
+        <div class="flex flex-col sm:flex-row sm:justify-between">
+          <div class="w-full pr-10 pt-10">
+            <h1 class="h1 mb-10 max-w-[500px]">Join us in Boston</h1>
+            <p class="monospace">
+              Discover the ticket prices, discount dates, and refund policy
+            </p>
+            <div class="flex md:flex-row items-center">
+              <Button className="mt-16 relative" white arrowAfter>
+                <a
+                  class="absolute w-full h-full"
+                  href="https://seqera.swoogo.com/nextflow-summit-boston-2025"
+                ></a>
+
+                Register Now
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <section class="pt-20 md:pt-40 mb-24 container">
+    <h1 class="h1 mb-10">Tickets</h1>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+
+      <Box
+      externalLink={true}
+     href="https://seqera.swoogo.com/nextflow-summit-boston-2025"
+      className="	relative"
+    >
+      <SubSection className="flex flex-col justify-between h-full">
+        <div class="mb-8">
+          <div
+            class="pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center"
+          >
+            <h5 class="h4">Early bird 25% off</h5>
+            <ArrowUpRight />
+          </div>
+          <div class="py-2 monospace border-b border-b-nextflow">
+            February 10 - February 27
+          </div>
+        </div>
+        <div class="h-full pt-24 lg:mt-0">
+          <h5 class="h6">Applicable to Summit track only</h5>
+        </div>
+      </SubSection>
+    </Box>
+
+      <Box
+        externalLink={true}
+        className=""
+        href="https://seqera.swoogo.com/nextflow-summit-boston-2025"
+      >
+        <SubSection className="flex flex-col justify-between h-full">
+          <div class="mb-8">
+            <div
+              class="pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center"
+            >
+              <h5 class="h4">Early bird 15% off</h5>
+              <ArrowUpRight />
+            </div>
+            <div class="py-2 monospace border-b border-b-nextflow">
+              February 28 - March 30
+            </div>
+          </div>
+          <div class="h-full pt-24 lg:mt-0">
+            <h5 class="h6"> Applicable to Summit track only</h5>
+          </div>
+        </SubSection>
+      </Box>
+
+      <Box
+      externalLink={true}
+      className=""
+      href="https://seqera.swoogo.com/nextflow-summit-boston-2025"
+    >
+      <SubSection className="flex flex-col justify-between h-full">
+        <div class="mb-8">
+          <div
+            class="pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center"
+          >
+            <h5 class="h4">Standard Pricing</h5>
+            <ArrowUpRight />
+          </div>
+          <div class="py-2 monospace border-b border-b-nextflow">
+            March 31 - April 25
+          </div>
+        </div>
+        <div class="h-full pt-24 lg:mt-0">
+          <h5 class="h6">Cancellation period ends April 25</h5>
+        </div>
+      </SubSection>
+    </Box>
+
+    </div>
+  </section>
+  <PastEvents />
+
+  <Faq className="mt-20 md:mt-40 mb-20" client:load data={qa} />
+</Layout>

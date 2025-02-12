@@ -1,0 +1,123 @@
+.landingLogo {
+  svg {
+    max-width: 180px;
+  }
+}
+
+.landingHero {
+  position: relative;
+  @media (--lg) {
+    height: calc(100vh - 130px);
+  }
+}
+
+@keyframes fadeInOut {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes delayAnimation {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  50.01% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.colorBarWrapper {
+  width: 100%;
+  max-width: 190px;
+  position: absolute;
+  z-index: 0;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  transition: all 0.3s;
+  opacity: 0;
+  @media (--sm) {
+    max-width: 542px;
+  }
+  &:first-child {
+    animation: fadeInOut 5s ease-in-out 0s infinite alternate;
+  }
+  &:nth-child(2) {
+    animation: fadeInOut 5s ease-in-out 3s infinite alternate;
+  }
+  &:nth-child(3) {
+    animation: fadeInOut 5s ease-in-out 6s infinite alternate;
+  }
+  &:nth-child(4) {
+    animation: fadeInOut 5s ease-in-out 9s infinite alternate;
+  }
+}
+
+.colorBar {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  padding-bottom: 22%;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: multiply;
+  }
+  &.green {
+    &::after {
+      background: var(--color-nextflow);
+      background: linear-gradient(
+        90deg,
+        rgba(12, 166, 135, 1) 0%,
+        rgba(12, 150, 119, 1) 36%,
+        rgba(12, 126, 94, 1) 58%,
+        rgba(12, 102, 70, 1) 80%,
+        rgba(11,89,57,1) 95%)
+    }
+  }
+  &.red {
+    background: var(--color-fusion);
+    &::after {
+      background: linear-gradient(
+        90deg,
+        rgba(237, 221, 220, 1) 0%,
+        rgba(236, 215, 213, 1) 16%,
+        rgba(234, 200, 194, 1) 38%,
+        rgba(231, 176, 164, 1) 58%,
+        rgba(228, 142, 122, 1) 74%,
+        rgba(225, 114, 87, 1) 100%
+      );
+    }
+  }
+  &.blue {
+    &::after {
+      background: var(--color-wave);
+      background: linear-gradient(90deg, rgba(49,104,158,1) 0%, rgba(56,116,177,1) 36%, rgba(55,117,188,1) 58%, rgba(53,118,197,1) 86%);
+    }
+  }
+
+ 
+
+  @media (--sm) {
+    padding-bottom: 22%;
+  }
+}

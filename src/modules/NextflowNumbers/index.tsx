@@ -30,9 +30,9 @@ const Item: React.FC<ItemProps> = ({
       duration = Number(key);
     }
   });
-  let cn = "w-full xs:w-1/2 flex-auto min-w-[100px] px-8 py-4 md:px-4";
+  let cn = "w-full xs:w-1/2 flex-auto min-w-[100px]  py-4 px-4";
   if (smaller)
-    cn = "w-full xs:w-1/2 md:w-full flex-auto min-w-[100px] px-8 py-4 md:px-4";
+    cn = "w-full xs:w-1/2 md:w-full flex-auto min-w-[100px]  py-4 px-4";
   return (
     <CountUp
       start={ready ? 0 : null}
@@ -43,7 +43,7 @@ const Item: React.FC<ItemProps> = ({
     >
       {({ countUpRef }) => (
         <div className={cn}>
-          <div className="font-semibold text-4xl mb-2">
+          <div className="text-4xl mb-2">
             <span ref={countUpRef} className="font-display" />
             {percent && "%"}
             {plus && "+"}
@@ -67,10 +67,9 @@ const Numbers: React.FC<Props> = (props = {}) => {
     <section className={className}>
       <div className="container">
         <div className="flex flex-wrap">
-          <div className="w-full lg:w-1/3 lg:pr-12">
-            <h3 className="text-5xl font-display font-semibold text-center lg:text-left mb-12 px-4 lg:px-0 lg:mb-4">
-              Nextflow Summit {location.charAt(0).toUpperCase() + location.slice(1)}
-              <br className="hidden lg:block" /> in numbers
+          <div className="mb-4 md:mb-10 w-full lg:w-1/3 lg:pr-12">
+            <h3 className="h2">
+              Nextflow in numbers
             </h3>
           </div>
           <div className="w-full lg:w-2/3 flex flex-wrap">

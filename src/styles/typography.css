@@ -1,5 +1,9 @@
-.h000,
-.h00,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 .h0,
 .h1,
 .h2,
@@ -7,67 +11,92 @@
 .h4,
 .h5 {
   font-family: Degular, sans-serif;
-  font-weight: 600;
+  font-weight: 400;
 }
-.h000 {
-  font-size: var(--size-5xl);
-  line-height: var(--leading-5xl);
-  font-weight: 700;
-  @media (--sm) {
-    font-size: var(--size-8xl);
-    line-height: var(--leading-8xl);
-  }
-}
-.h00 {
-  font-size: var(--size-4xl);
-  line-height: var(--leading-4xl);
-  font-weight: 700;
-  @media (--sm) {
-    font-size: var(--size-6xl);
-    line-height: var(--leading-6xl);
-  }
-}
+
+/* biggest headline used on landing page  */
 .h0 {
-  font-size: var(--size-4xl);
-  line-height: var(--leading-4xl);
-  font-weight: 700;
+  font-size: 70px;
+  line-height: 1;
   @media (--sm) {
-    font-size: var(--size-5xl);
-    line-height: var(--leading-5xl);
+    font-size: 120px;
+  }
+  @media (--md) {
+    font-size: 140px;
   }
 }
+
+/* main headline  */
 .h1 {
-  font-size: var(--size-4xl);
-  line-height: var(--leading-4xl);
-  font-weight: 700;
+  font-size: 60px;
+  line-height: 1;
+  @media (--md) {
+    font-size: 120px;
+  }
 }
+
+/* secondary headline  */
 .h2 {
-  font-size: var(--size-3xl);
-  line-height: var(--leading-3xl);
+  font-size: 45px;
+  line-height: 1;
+  @media (--md) {
+    font-size: 80px;
+  }
 }
+
 .h3 {
-  font-size: var(--size-2xl);
-  line-height: var(--leading-2xl);
+  font-size: 26px;
+  line-height: 1;
+  @media (--md) {
+    font-size: 50px;
+  }
 }
+
 .h4 {
-  font-size: var(--size-xl);
-  line-height: var(--leading-xl);
+  font-size: 32px;
+  line-height: 1;
+  @media (--md) {
+    font-size: 40px;
+  }
 }
+
 .h5 {
-  font-size: var(--size-lg);
-  line-height: var(--leading-lg);
-  font-weight: 700;
-  letter-spacing: 0.04em;
+  font-size: 26px;
+  line-height: 1.2;
+  @media (--md) {
+    font-size: 35px;
+  }
 }
+
+.h6 {
+  font-size: 20px;
+  line-height: 1.2;
+  @media (--md) {
+    font-size: 24px;
+  }
+}
+
 .blockquote {
   font-size: var(--size-lg);
   line-height: var(--leading-lg);
   font-weight: 300;
   letter-spacing: 0.02em;
 }
+
 b {
-  font-weight: 700;
+  font-weight: 600;
 }
+
 svg[data-icon] {
   display: inline-block;
+}
+
+p, .bodycopy {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-family: "PT Mono", monospace;
+  @media (--sm) {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
 }

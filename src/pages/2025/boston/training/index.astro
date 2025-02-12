@@ -1,0 +1,110 @@
+---
+import { Image } from "astro:assets";
+import Layout from "@layouts/Base.astro";
+import Hero from "@components/Hero";
+import Faq from "@components/Faq";
+import Box, { SubSection } from "@components/Box";
+import img from "@photos/2025/boston/training.jpg";
+import SEO from "@components/SEO";
+import ArrowUpRight from "@icons/ArrowUpRight";
+import Training from "@icons/Training";
+import Exercises from "@icons/Exercises";
+import Laptop from "@icons/Laptop";
+import qa from "./qa";
+---
+
+<Layout namespace="2025/boston">
+  <SEO slot="head" title="Training | Boston" img={1} />
+
+  <section class="">
+    <Hero
+      title="Nextflow and nf-core Foundational Training"
+      content="We are excited to offer a 2-day training opportunity. Our training is designed to provide you with a foundational understanding of Nextflow and nf-core and equip you with the skills to build better pipelines."
+      href={img.src}
+      alt="classroom with Nextflow training participants"
+      ctaText1="Register Now"
+      ctaLink1="/2025/boston/register"
+      ctaText2="Call for abstracts"
+      ctaLink2="/call-for-abstracts"
+      client:load
+    />
+  </section>
+
+  <section class="mt-20 mb-24 container">
+    <h1 class="h4 mb-4 md:mb-8">
+      By the end of the course you will be able to:
+    </h1>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <Box className="">
+        <SubSection
+          className="flex flex-col justify-between h-full md:min-h-[350px]"
+        >
+        <div>
+        <div class="border-b border-b-nextflow w-full">
+          <h5 class="h6 mb-4">Learn Core Nextflow Concepts</h5>
+        </div>
+          <div class="mt-6">
+            <Training/>
+          </div>
+        </div>
+          <div>
+            <div class="mt-10"> 
+              <p class="monospace">
+                Understand the Nextflow language, essential commands, and
+                structure, allowing users to build and run simple workflows
+                locally.
+              </p>
+            </div>
+          </div>
+        </SubSection>
+      </Box>
+      <Box className="">
+        <SubSection
+          className="flex flex-col justify-between h-full md:min-h-[350px]"
+        >
+        <div>
+          <div class="border-b border-b-nextflow w-full">
+            <h5 class="h6 mb-4">Engage with nf-core Resources</h5>
+          </div>
+
+          <div class="mt-6 max-w-[150px]">
+            <Laptop />
+          </div>
+        </div>
+          <div class="mt-10">
+            <p class="monospace">
+              Discover the benefits of nf-core, including how to access,
+              customize, and utilize community-built pipelines for various
+              bioinformatics tasks.
+            </p>
+          </div>
+        </SubSection>
+      </Box>
+      <Box className="">
+        <SubSection
+          className="flex flex-col justify-between h-full md:min-h-[350px]"
+        >
+        <div>
+          <div class="border-b border-b-nextflow w-full">
+            <h5 class="h6 mb-4">Hands-on Exercise</h5>
+          </div>
+
+          <div class="mt-6">
+            <Exercises />
+          </div>
+        </div>
+
+          <div class="mt-10">
+            <p class="monospace">
+              Create pipelines using the nf-core template, covering best
+              practices for version control, collaboration, and troubleshooting
+              common errors.
+            </p>
+          </div>
+        </SubSection>
+      </Box>
+    </div>
+  </section>
+
+  <Faq className="mt-20 md:mt-40 mb-20" client:load data={qa} />
+</Layout>

@@ -1,29 +1,35 @@
 .form {
-  margin: 0 auto;
+  width: 100%;
+  /* margin: 0 auto; */
   max-width: 440px;
   & form {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     & :global(.hs-form-field),
     & :global(.hs_submit) {
       flex: 1 1 auto;
-      padding: 6px;
       & input {
         width: 100%;
+        margin-bottom: 12px;
       }
     }
     & :global(.hs_email) {
       & input {
-        border-radius: 99px;
         padding-left: 25px;
       }
     }
     & :global(.hs_submit) {
       & input {
-        border-radius: 99px;
+        border-radius: 4px;
         transition: all 0.3s;
+        background: var(--color-nextflow);
+        @media (--sm) {
+          border-top-left-radius:0px;
+          border-bottom-left-radius: 0px;
+        }
         &:hover {
-          background: var(--color-nextflow);
+          background: #4256E7;
+          color: white;
         }
       }
     }
@@ -36,10 +42,12 @@
 @media (--sm) {
   .form {
     & form {
+      flex-direction: row;
       & :global(.hs_email) {
         & input {
-          border-radius: 99px 0 0 99px;
+          border-radius: 4px 0 0 4px;
           width: 350px;
+          margin-bottom: 0;
         }
       }
       & :global(.hs_submit) {

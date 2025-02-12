@@ -1,33 +1,9 @@
 .box {
   height: 100%;
-  border-radius: 16px;
   color: var(--color-brand-100);
-  background: var(--color-brand);
-  padding: 32px;
-  border: 1px solid var(--color-brand);
+  border: 1px solid var(--color-nextflow);
   transition: border-color 0.3s;
-  & a {
-    color: var(--color-nextflow);
-  }
-  &.alt,
-  &.alt2 {
-    background: rgba(22, 15, 28, 0.5);
-    margin: 0 -16px;
-    padding: 48px 24px;
-    @media (--sm) {
-      border: 1px solid rgba(13, 192, 157, 0.4);
-      box-shadow: 0 0 100px rgba(13, 192, 157, 0.4);
-      margin: 0;
-      border-radius: 16px;
-      padding: 32px;
-    }
-    @media (--md) {
-      padding: 48px;
-    }
-  }
-  &.alt2 {
-    border-radius: 0;
-  }
+  padding: 20px;
   &[href] {
     &:hover {
       border-color: var(--color-nextflow);
@@ -35,8 +11,14 @@
   }
 }
 .subsection {
-  background: var(--color-brand-100);
-  color: var(--color-brand);
-  padding: 16px;
-  border-radius: 8px;
+  & a {
+    color: var(--color-nextflow);
+  }
+  ul {
+    list-style-type:disc;
+    padding-left: 1.25rem;
+    li {
+      margin-bottom: 1rem;
+    }
+  }
 }

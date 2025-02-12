@@ -1,0 +1,32 @@
+.nav {
+  line-height: 0;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 2;
+  & button {
+    line-height: 0;
+    padding: 0;
+    border: none;
+    display: inline-block;
+    height: 33px;
+    width: 32px;
+    transition: transform 0.2s;
+    &:last-child {
+      margin-left: 10px;
+    }
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+.swiper {
+  width: 100%;
+  & :global(.swiper-pagination) {
+    transform: translateY(10px);
+    & :global(.swiper-pagination-bullet) {
+      background: var(--color-brand-500);
+    }
+  }
+
+}

@@ -5,18 +5,21 @@ type Props = {
   children: React.ReactNode;
   className?: string;
   href?: string;
-  alt?: boolean;
-  alt2?: boolean;
+  externalLink?: boolean;
 };
 
-const Box: React.FC<Props> = ({ children, className, href, alt, alt2 }) => {
+const Box: React.FC<Props> = ({ children, className, href, externalLink}) => {
   const cn = clsx(styles.box, className, {
-    [styles.alt]: alt,
-    [styles.alt2]: alt2,
   });
   if (href)
+    if (externalLink) 
+      return (
+        <a href={href} className={`${cn} box-hover`} target="_blank">
+        {children}
+       </a>
+     ); else
     return (
-      <a href={href} className={cn}>
+      <a href={href} className={`${cn} box-hover`}>
         {children}
       </a>
     );

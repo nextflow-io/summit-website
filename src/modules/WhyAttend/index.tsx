@@ -1,69 +1,101 @@
 import React from "react";
-import Box from "@components/Box";
-import Button from "@components/Button";
-
-const Row = ({ children, title }) => {
-  return (
-    <div className="flex flex-wrap items-center border-t mt-6 border-brand-800 pt-6 mb-4">
-      <div className="w-full text-xl font-display font-semibold text-nextflow">
-        {title}
-      </div>
-      <div className="w-full md:text-lg md:leading-6 py-2 md:py-0 text-brand-300 font-light">
-        {children}
-      </div>
-    </div>
-  );
-};
+import Box, { SubSection } from "@components/Box";
+import img1 from "@images/photos/2025/boston/training-computer.jpg";
+import img2 from "@images/photos/2025/boston/why-attend.jpg";
+import img3 from "@images/photos/2025/boston/audience.jpg";
+import Training from "@icons/Training";
+import NextflowExperts from "@icons/NextflowExperts";
+import NextflowLearning from "@icons/NextflowLearning";
+import NextflowTeam from "@icons/NextflowTeam";
 
 type Props = {
-  cta?: {
-    title: string;
-    url: string;
-  };
+  className?: string;
 };
 
-const WhyAttend: React.FC<Props> = ({ cta }) => {
+const WhyAttend: React.FC<Props> = ({ className }) => {
   return (
-    <Box alt>
-      <h1 className="h0 mb-8">Why attend</h1>
-      <div className="text-brand-300 font-light md:text-lg">
-        The Nextflow Summit is the leading event for scientific data processing
-        and data analysis, offering high-quality programming that spans
-        scientific talks, poster sessions, and networking opportunities. Here,
-        the vibrant community gathers to showcase the latest developments and
-        innovations from the Nextflow world. At the Summit, open science takes
-        the main stage.
+    <div className={className}>
+      <div className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-3 gap-8">
+        <div className="hidden sm:flex  imageBlend border w-full h-full border-nextflow xl:aspect-square object-cover">
+          <img
+            className="aspect-square w-full h-full object-cover"
+            src={img1.src}
+          />
+        </div>
+        <Box className="xl:aspect-square">
+          <SubSection className="flex flex-col justify-between min-h-[350px]">
+            <NextflowTeam />
+            <div className="mt-10">
+              <h5 className="h5 mb-4">
+                The quintessential Nextflow Community event
+              </h5>
+              <p className="monospace">
+                The Nextflow Summit unites Nextflow enthusiasts, experts, and
+                collaborators for unparalleled networking, building friendships,
+                and collaboration opportunities, including an in-person
+                community hackathon.
+              </p>
+            </div>
+          </SubSection>
+        </Box>
+        <Box className="xl:aspect-square">
+          <SubSection className="flex flex-col justify-between min-h-[350px]">
+          <NextflowTeam />
+            <div className="mt-10">
+              <h5 className="h5 mb-4">
+                Push boundaries and innovate with Nextflow
+              </h5>
+              <p className="monospace">
+                At the Hackathon, you'll join forces to tackle real-world
+                challenges, pushing boundaries and creating innovative pipelines
+                with Nextflow. You'll also be inspired by the latest
+                advancements and best practices shared at the Summit.
+              </p>
+            </div>
+          </SubSection>
+        </Box>
+        <Box className="xl:aspect-square">
+          <SubSection className="flex flex-col justify-between min-h-[350px]">
+            <NextflowExperts />
+            <div className="mt-10">
+              <h5 className="h5 mb-4">
+                Learn and collaborate with Nextflow experts
+              </h5>
+              <p className="monospace">
+                The Nextflow Summit provides a comprehensive experience in
+                workflow management and data orchestration, featuring real-life
+                success stories, inspiring keynotes, and panel discussions and
+                seasoned users aiming to stay abreast of the latest
+                technologies.
+              </p>
+            </div>
+          </SubSection>
+        </Box>
+        <Box className="xl:aspect-square">
+          <SubSection className="flex flex-col justify-between min-h-[350px]">
+          <NextflowLearning />
+            <div className="mt-10">
+              <h5 className="h5 mb-4">
+                Showcase your work to industry leaders
+              </h5>
+              <p className="monospace">
+                The Nextflow Summit offers a prime platform to showcase your
+                work and receive valuable community feedback on a wide range of
+                Nextflow-related topics, from novel analysis methods to
+                optimizing performance on cloud platforms.
+              </p>
+            </div>
+          </SubSection>
+        </Box>
+
+        <div className="imageBlend border w-full h-full border-nextflow xl:aspect-square object-cover">
+          <img
+            className="aspect-square w-full h-full object-cover"
+            src={img3.src}
+          />
+        </div>
       </div>
-      <Row title="The quintessential Nextflow Community event">
-        The Nextflow Summit unites Nextflow enthusiasts, experts, and
-        collaborators for unparalleled networking, building friendships, and
-        collaboration opportunities, including an in-person community hackathon.
-      </Row>
-      <Row title="Push boundaries and innovate with Nextflow">
-        At the Hackathon, you'll join forces to tackle real-world challenges,
-        pushing boundaries and creating innovative pipelines with Nextflow.
-        You'll also be inspired by the latest advancements and best practices
-        shared at the Summit.
-      </Row>
-      <Row title="Learn and collaborate with Nextflow experts">
-        The Nextflow Summit provides a comprehensive experience in workflow
-        management and data orchestration, featuring real-life success stories,
-        inspiring keynotes, and panel discussions, catering to both newcomers
-        seeking foundational training and seasoned users aiming to stay abreast
-        of the latest technologies and trends.
-      </Row>
-      <Row title="Showcase your work to industry leaders">
-        The Nextflow Summit offers a prime platform to showcase your work and
-        receive valuable community feedback on a wide range of Nextflow-related
-        topics, from novel analysis methods to optimizing performance on cloud
-        platforms.
-      </Row>
-      {!!cta && (
-        <Button href={cta.url} cta2 large className="mt-8">
-          {cta.title}
-        </Button>
-      )}
-    </Box>
+    </div>
   );
 };
 

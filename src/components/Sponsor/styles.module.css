@@ -1,20 +1,39 @@
 .rank {
   display: block;
-  padding: 4px 8px;
-  border-radius: 4px;
-  line-height: 1;
-  font-size: 12px;
-  text-transform: uppercase;
-  font-weight: bold;
-  background: white;
-  color: #111;
-  background: rgb(13 192 157);
-  border: 1px solid rgb(13 192 157);
-  &.Gold,
-  &.Silver,
+  line-height: 1.2;
+  &.Diamond {
+    color: var(--color-nextflow);
+  }
+  &.Platinum {
+    color: var(--color-multiqc-300);
+  }
+  &.Gold {
+    color: var(--color-fusion);
+  }
+  &.Silver {
+    color: var(--color-gray-300);
+  }
   &.Bronze {
-    background: transparent;
-    color: white;
-    font-weight: 400;
+    color: var(--color-wave);
+  }
+}
+
+.sponsorImage {
+  height: 60px;
+  img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+  }
+}
+.ctaLink {
+  &:hover {
+    color: var(--color-nextflow);
+    transition: all .3s;
+    cursor: pointer;
+    svg path {
+      transition: all .3s;
+      stroke: var(--color-nextflow);
+    }
   }
 }

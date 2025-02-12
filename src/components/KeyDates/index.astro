@@ -1,71 +1,75 @@
 ---
 import clsx from "clsx";
-import keyDates from "@data/keyDates";
-import tiles from "./tiles.png";
-import Box from "@components/Box";
-
-function getTitle(item) {
-  if (!item.endDay) return item.date;
-  return `${item.date} - ${item.endDay}`;
-}
-
-function isPast(item) {
-  if(item.title == "Hackathon & Training") return false;
-  if(item.title == "Nextflow Summit") return false;
-  const today = (new Date()).getTime();
-  const eventDate = Date.parse(item.rawEndDate ? item.rawEndDate : item.rawDate);
-  return today > eventDate;
-}
+import datesBoston from "./datesBoston";
+import datesBarcelona from "./datesBarcelona";
+import img1 from "@images/photos/2025/boston/training-computer.jpg";
+import Slideshow from "./Slideshow";
 
 interface Props {
-  showImg?: boolean;
   showTitle?: boolean;
   hidePastDates?: boolean;
-  location?: "boston" | "barcelona";
+  location?: string;
 }
 
-const { showImg, showTitle, hidePastDates = false, location = "boston" } = Astro.props;
+const { showTitle, hidePastDates = false, location = "boston" } = Astro.props;
 ---
 
-<Box>
-  <div class={clsx("relative", { "md:pr-[370px]": showImg })}>
-    {showTitle && (
-      <h5 class="h3 mb-6">
-        Key dates{" "}
-        {hidePastDates &&
-        <button id="togglePastDates" class="text-base font-normal opacity-50 ml-4">
-          [ show past dates ]
-        </button>
-        }
-      </h5>
-    )}
-    {keyDates[location]?.map((item, i) => (
-      <div class={`flex flex-wrap items-center border-b border-brand-800 py-2 mb-4 ${hidePastDates && isPast(item) ? 'keyDatePast opacity-60 hidden' : ''}`}>
-        <div class="w-full text-xl font-display font-semibold">{getTitle(item)}</div>
-        <div class="w-full md:text-lg md:leading-6 py-2 md:py-0 text-brand-300">
-          {item.title}
-          {item.description && <p class="text-sm opacity-50">{item.description}</p>}
-        </div>
-      </div>
-    ))}
-    {showImg && (
-      <div class="w-[350px] hidden md:block absolute top-0 right-0 bottom-0 rounded-lg overflow-hidden">
-        <img src={tiles.src} class="h-full w-full object-cover" alt="Key dates illustration" />
-      </div>
-    )}
+<section class="bg-brand">
+  <div class="mb-10">
+    <h5 class="h1 mb-2">
+      Key dates{" "}
+    </h5>
+    <p class="monospace">At a glance</p>
   </div>
-</Box>
 
-<script>
-  const toggleButton = document.getElementById('togglePastDates');
-  const pastDates = document.querySelectorAll('.keyDatePast');
+  <div class={"w-full relative flex flex-col sm:flex-row h-full"}>
+    <div class="relative w-full border-t">
+      {
+        location == "boston" &&
+          datesBoston?.map((item, i) => (
+            <div class={`flex flex-wrap border-b`}>
+              <div class="w-full flex flex-row items-center">
+                <h4 class="h4 pt-6 pb-6  w-full max-w-[100px]">{item.date}</h4>
 
-  if (toggleButton) {
-    toggleButton.addEventListener('click', () => {
-      pastDates.forEach(el => el.classList.toggle('hidden'));
-      toggleButton.textContent = toggleButton.textContent.includes('show')
-        ? '[ hide past dates ]'
-        : '[ show past dates ]';
-    });
-  }
-</script>
+                <div class="pl-4 sm:pl-10 flex flex-col w-full monospace">
+                  {item?.content?.map((item, i) => (
+                    <div
+                      key={i}
+                      className={` border-b last:border-b-0 py-6 bodycopy`}
+                    >
+                      {item.info}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))
+      }
+
+      {
+        location == "barcelona" &&
+          datesBarcelona?.map((item, i) => (
+            <div class={`flex flex-wrap border-b`}>
+              <div class="w-full flex flex-row items-center">
+                <h4 class="h4 pt-6 pb-6  w-full max-w-[100px]">{item.date}</h4>
+
+                <div class="pl-4 sm:pl-10 flex flex-col w-full monospace">
+                  {item?.content?.map((item, i) => (
+                    <div
+                      key={i}
+                      className={` border-b last:border-b-0 py-6 bodycopy`}
+                    >
+                      {item.info}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))
+      }
+    </div>
+    <div class="w-full relative mt-8 sm:mt-0 sm:ml-20 sm:sticky sm:top-30 self-start sm:max-w-[50%]">
+      <div class="w-full relative"><Slideshow client:load /></div>
+    </div>
+  </div>
+</section>

@@ -7,17 +7,20 @@ import styles from "./styles.module.css";
 
 const SectionSubscribe: React.FC<Props> = () => {
   return (
-    <section className="container text-center pb-30">
-      <h4 className="h00">Subscribe to our newsletter</h4>
-      <div className="blockquote mt-2 mb-6">
-        Register and be the first to know about all our news and updates.
-      </div>
+    <section className="">
+      <p className=" mb-4">
+      Sign up to receive the latest updates on Nextflow, Seqera, and the nf-core community
+      </p>
+      <div>
       <HubspotForm
         className={styles.form}
         formID="a3ee7c65-a905-451d-aba6-cf125a3b89b3"
         linkedInEventID={13682684}
         gtmEventID="gtm_newsletter"
       />
+      </div>
+      <p className="mt-2 text-xs">By submitting this form, you agree to our <a className="underline" href="/privacy-policy/" >privacy policy</a>.</p>
+
     </section>
   );
 };

@@ -12,11 +12,12 @@ const getSpacing = () => {
 };
 
 export const screens = {
-  xs: "340px",
-  sm: "640px",
-  md: "768px",
-  lg: "1024px",
-  xl: "1280px",
+  xxs: "25rem", // 400px
+  xs: "48rem", // 768px
+  sm: "62.5rem", // 1000px
+  md: "75rem", //1200px
+  lg: "87.5rem", //1400px
+  xl: "100rem", //1600px
 };
 
 export default {
@@ -27,21 +28,22 @@ export default {
       display: ["Degular", "Helvetica", "sans-serif"],
       body: ["Inter", "Helvetica", "sans-serif"],
       sans: ["Inter", "Helvetica", "sans-serif"],
+      monospace: ["PT Mono", "monospace"],
     },
     fontSize: {
-      xs: ["12px", "18px"],
-      sm: ["14px", "21px"],
-      base: ["16px", "24px"],
-      lg: ["18px", "26px"],
-      xl: ["24px", "32px"],
-      "2xl": ["28px", "1"],
-      "3xl": ["32px", "1"],
-      "4xl": ["40px", "1"],
-      "5xl": ["48px", "1"],
-      "6xl": ["56px", "1"],
-      "7xl": ["60px", "1"],
-      "8xl": ["64px", "1"],
-      "9xl": ["68px", "1"],
+      xxs: [".625rem"], // 10px
+      xs: [".75rem"], // 12px
+      sm: ["14px"], // 14px
+      base: ["1rem"], // 16px
+      body: ["1.0625rem"], // 17px
+      lg: ["1.125rem"], // 18px
+      xl: ["1.5rem"], // 24px
+      xxl: ["2.1875rem"], // 35px
+      "2xl": ["2.5rem", "1"], // 40px
+      "3xl": ["3.125rem", "1"], // 50px
+      "4xl": ["5rem", "1"], // 80px
+      "5xl": ["7.5rem", "1"], // 120px
+      "6xl": ["8.75rem", "1"], // 140px
     },
     extend: {
       colors: {
@@ -210,10 +212,12 @@ export default {
       container: {
         center: true,
         screens: {
-          sm: "1240px",
-          md: "1240px",
-          lg: "1240px",
-          xl: "1260px",
+          // xxs: "340px",
+          // xs: "800px",
+          // sm: "1000px",
+          // md: "1200px",
+          // lg: "1400px",
+          xl: "1600px",
         },
       },
     },

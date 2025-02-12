@@ -1,0 +1,108 @@
+---
+import Layout from "@layouts/Base.astro";
+import KeyDates from "@components/KeyDates/index.astro";
+import Calendar from "@components/Calendar";
+import SEO from "@components/SEO";
+import Box, { SubSection } from "@components/Box";
+---
+
+<Layout namespace="2025/boston" altBG>
+  <SEO slot="head" title="Agenda | Boston" img={1} />
+
+  <section class="mt-10 md:mt-20 mb-24 container">
+    <h1 class="h1 mb-4 md:mb-8">Join us in Boston</h1>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <Box className="">
+        <SubSection className="flex flex-col justify-between min-h-[350px]">
+          <div>
+            <div class="border-b border-b-nextflow w-full">
+              <h5 class="h5 mb-4">Training</h5>
+            </div>
+            <div class="py-2 monospace border-b border-b-nextflow">
+              May 13-14 • training
+            </div>
+          </div>
+          <div>
+            <h5 class="h5 mb-2">2 days / 50 people</h5>
+            <p class="monospace">
+              An in-person foundational training to supercharge your pipeline
+              development with Nextflow and nf-core. <br /><br />Running in
+              parallel to the hackathon.
+            </p>
+          </div>
+        </SubSection>
+      </Box>
+
+      <Box className="">
+        <SubSection className="flex flex-col justify-between min-h-[350px]">
+          <div>
+            <div class="border-b border-b-nextflow w-full">
+              <h5 class="h5 mb-4">Hackathon</h5>
+            </div>
+            <div class="py-2 monospace border-b border-b-nextflow">
+              May 13-14 • hackathon
+            </div>
+          </div>
+          <div>
+            <h5 class="h5 mb-2">2 days / 100 people</h5>
+            <p class="monospace">
+              An in-person hackathon to tackle real-world challenges, create
+              innovative pipelines with Nextflow, and develop nf-core.<br /><br
+              />
+              Running in parallel to the training.
+            </p>
+          </div>
+        </SubSection>
+      </Box>
+      <Box className="">
+        <SubSection className="flex flex-col justify-between min-h-[350px]">
+          <div>
+            <div class="border-b border-b-nextflow w-full">
+              <h5 class="h5 mb-4">Summit</h5>
+            </div>
+            <div class="py-2 monospace border-b border-b-nextflow">
+              May 15-16 • talks, networking and more
+            </div>
+          </div>
+          <div>
+            <h5 class="h5 mb-2">1.5 days / 200+ people</h5>
+            <p class="monospace">
+              A showcase of the latest developments and innovations from the
+              Nextflow world. Session themes include: Enabling Science, Big
+              Nextflow, and Organizational Impact.
+            </p>
+          </div>
+        </SubSection>
+      </Box>
+    </div>
+  </section>
+
+  <section class="container">
+    <KeyDates location="boston" />
+  </section>
+
+  <section class="pb-6 pt-16 md:pt-20">
+    <div class="container">
+      <h1 class="h2 mb-8">Agenda</h1>
+      <p class="monospace">[Coming soon]</p>
+      
+      <!-- <div id="05-21"></div>
+      <div id="05-22"></div>
+      <div id="05-23"></div>
+      <div id="05-24"></div>
+      <div class="mt-6 text-brand-100 text-center">
+        Subscribe to calendar:
+        <a
+          class="text-nextflow"
+          href="https://sessionize.com/api/v2/5akke6uq/view/All">iCal</a
+        > |
+        <a
+          class="text-nextflow"
+          href="https://calendar.google.com/calendar/render?cid=webcal://sessionize.com/api/v2/5akke6uq/view/All"
+          >Google Calendar</a
+        >
+      </div>
+    </div>
+    <Calendar client:load /> -->
+  </section>
+</Layout>

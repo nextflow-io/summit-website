@@ -1,0 +1,149 @@
+---
+import Layout from "@layouts/Base.astro";
+import Hero from "@components/Hero";
+import SEO from "@components/SEO";
+import Box, { SubSection } from "@components/Box";
+import img1 from "@images/photos/2025/past-events.jpg";
+import ArrowUpRight from "@icons/ArrowUpRight";
+import e2019_nf_camp from "@images/photos/past-events/e2019_nf_camp.jpg";
+import e2017_nf from "@images/photos/past-events/e2017_nf.jpg";
+import e2018_nf from "@images/photos/past-events/e2018_nf.jpg";
+import e2022_summit from "@images/photos/past-events/e2022_summit.jpg";
+import e2022_bcn from "@images/photos/past-events/e2022_bcn.jpg";
+import e2022_hack from "@images/photos/past-events/e2022_hack.jpg";
+import e2023_boston from "@images/photos/past-events/e2023_boston.jpg";
+import e2023_bcn from "@images/photos/past-events/e2023_bcn.jpg";
+import e2024_bcn from "@images/photos/past-events/e2024_bcn.jpg";
+import e2024_boston from "@images/photos/past-events/e2024_boston.jpg";
+import { fade } from "astro:transitions";
+
+
+---
+
+<Layout>
+  <SEO slot="head" title="Past Events" img={1} />
+  <section class="">
+    <Hero
+      title="Past Events"
+      content="Past events have provided insights into Nexflow’s origins, development, and its applications in various domains, highting its potential and impact on scientific research, data analysis, and workflow management."
+      href={img1.src}
+      alt="Nextflow Summit attendees"
+      ctaText1="Register Now"
+      ctaLink1="/2025/boston/register"
+      ctaText2="Call for abstracts"
+      ctaLink2="/call-for-abstracts"
+      client:load
+    />
+  </section>
+
+  <section class="mt-20 mb-24 container">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <Box externalLink={true} href="https://summit.nextflow.io/2024/barcelona/" className="aspect-square">
+        <SubSection className="flex flex-col justify-between">
+          <div
+            class="border-b border-b-nextflow w-full flex flex-row justify-between items-center pb-4"
+          >
+            <h5 class="h5">Barcelona 2024</h5>
+            <ArrowUpRight/>
+          </div>
+          <div class="imageBlend mt-6 mb-8 relative h-0 w-full overflow-hidden pb-[80%]">
+            <img class="max-w-none w-full h-full absolute top-0 bottom-0 left-0 right-0 object-cover" src={e2024_bcn.src} alt="Barcelona 2024 Nextflow Summit" />
+          </div>
+        </SubSection>
+      </Box>
+
+      <Box externalLink={true} href="https://summit.nextflow.io/2024/boston/" className="aspect-square">
+        <SubSection className="flex flex-col justify-between">
+          <div
+            class="border-b border-b-nextflow w-full flex flex-row justify-between items-center pb-4"
+          >
+            <h5 class="h5">Boston 2024</h5>
+            <ArrowUpRight/>
+          </div>
+          <div class="imageBlend mt-6 mb-8 relative h-0 w-full overflow-hidden pb-[80%]">
+            <img class="max-w-none w-full h-full absolute top-0 bottom-0 left-0 right-0 object-cover" src={e2024_boston.src} alt="Boston 2024 Nextflow Summit" />
+          </div>
+        </SubSection>
+      </Box>
+
+      <Box externalLink={true} href="https://summit.nextflow.io/2023/barcelona/" className="aspect-square">
+        <SubSection className="flex flex-col justify-between">
+          <div
+            class="border-b border-b-nextflow w-full flex flex-row justify-between items-center pb-4"
+          >
+            <h5 class="h5">Barcelona 2023</h5>
+            <ArrowUpRight/>
+          </div>
+          <div class="imageBlend mt-6 mb-8 relative h-0 w-full overflow-hidden pb-[80%]">
+            <img class="max-w-none w-full h-full absolute top-0 bottom-0 left-0 right-0 object-cover" src={e2023_bcn.src} alt="Barcelona 2023 Nextflow Summit presenters" />
+          </div>
+        </SubSection>
+      </Box>
+      <Box externalLink={true} href="https://summit.nextflow.io/2023/boston/" className="aspect-square">
+        <SubSection className="flex flex-col justify-between">
+          <div
+            class="border-b border-b-nextflow w-full flex flex-row justify-between items-center pb-4"
+          >
+            <h5 class="h5">Boston 2023</h5>
+            <ArrowUpRight/>
+          </div>
+          <div class="imageBlend mt-6 mb-8 relative h-0 w-full overflow-hidden pb-[80%]">
+            <img class="max-w-none w-full h-full absolute top-0 bottom-0 left-0 right-0 object-cover" src={e2023_boston.src} alt="Boston 2023 Nextflow Summit presenter"/>
+          </div>
+        </SubSection>
+      </Box>
+      <Box externalLink={true} href="https://summit.nextflow.io/2022/barcelona/" className="aspect-square">
+        <SubSection className="flex flex-col justify-between">
+          <div
+            class="border-b border-b-nextflow w-full flex flex-row justify-between items-center pb-4"
+          >
+            <h5 class="h5">Barcelona 2022</h5>
+            <ArrowUpRight/>
+          </div>
+          <div class="imageBlend mt-6 mb-8 relative h-0 w-full overflow-hidden pb-[80%]">
+            <img class="max-w-none w-full h-full absolute top-0 bottom-0 left-0 right-0 object-cover" src={e2022_summit.src} alt="Barcelona 2022 Nextflow Summit presenters"/>
+          </div>
+        </SubSection>
+      </Box>
+      <Box externalLink={true} href="https://www.nextflow.io/nfcamp/2019/program.html" className="aspect-square">
+        <SubSection className="flex flex-col justify-between">
+          <div
+            class="border-b border-b-nextflow w-full flex flex-row justify-between items-center pb-4"
+          >
+            <h5 class="h5">Nextflow Camp 2019</h5>
+            <ArrowUpRight/>
+          </div>
+          <div class="imageBlend mt-6 mb-8 relative h-0 w-full overflow-hidden pb-[80%]">
+            <img class="max-w-none w-full h-full absolute top-0 bottom-0 left-0 right-0 object-cover" src={e2022_hack.src} alt="Nextflow Camp 2019 attendees"/>
+          </div>
+        </SubSection>
+      </Box>
+      <Box externalLink={true} href="https://github.com/nextflow-io/nf-hack18/blob/master/schedule.md" className="aspect-square">
+        <SubSection className="flex flex-col justify-between">
+          <div
+            class="border-b border-b-nextflow w-full flex flex-row justify-between items-center pb-4"
+          >
+            <h5 class="h5">nf-hack 2018</h5>
+            <ArrowUpRight/>
+          </div>
+          <div class="imageBlend mt-6 mb-8 relative h-0 w-full overflow-hidden pb-[80%]">
+            <img class="max-w-none w-full h-full absolute top-0 bottom-0 left-0 right-0 object-cover" src={e2018_nf.src} alt="nf-hack 2018 attendees" />
+          </div>
+        </SubSection>
+      </Box>
+      <Box externalLink={true} href="https://github.com/nextflow-io/nf-hack17/blob/master/schedule.md" className="aspect-square">
+        <SubSection className="flex flex-col justify-between">
+          <div
+            class="border-b border-b-nextflow w-full flex flex-row justify-between items-center pb-4"
+          >
+            <h5 class="h5">nf-hack 2017</h5>
+            <ArrowUpRight/>
+          </div>
+          <div class="imageBlend mt-6 mb-8 relative h-0 w-full overflow-hidden pb-[80%]">
+            <img class="max-w-none w-full h-full absolute top-0 bottom-0 left-0 right-0 object-cover" src={e2017_nf.src} alt="person working on laptop during hackathon" />
+          </div>
+        </SubSection>
+      </Box>
+    </div>
+  </section>
+</Layout>

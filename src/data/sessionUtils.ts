@@ -81,7 +81,7 @@ const addSessionURL =
 
     const date = dateSlug(session.startsAt);
     slug = `${date}--${slug}`;
-    const url = `/2024/${location}/agenda/${slug}`;
+    const url = `/2025/${location}/agenda/${slug}`;
 
     return {
       ...session,

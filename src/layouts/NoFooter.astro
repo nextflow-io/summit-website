@@ -1,0 +1,50 @@
+---
+const { redirect, namespace, showNav, altBG, showHeader } = Astro.props;
+import { ViewTransitions } from "astro:transitions";
+
+import "../styles/main.css";
+import "../styles/typography.css";
+import "../styles/forms.css";
+import "../styles/lists.css";
+import "../styles/fonts/degular/main.css";
+import "../styles/fonts/inter/main.css";
+import "../styles/fonts/pt-mono/main.css";
+import Header from "./Header/index.astro";
+import Scripts from "./Scripts.astro";
+import Footer from "./Footer/index.astro";
+import CookieHandler from "./CookieHandler";
+import CookieNotice from "./CookieNotice";
+import Contact from "@modules/Contact";
+
+
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <slot name="head" />
+    {redirect && <meta http-equiv="refresh" content={`0;url=${redirect}`} />}
+    <Scripts />
+    <ViewTransitions />
+    
+  </head>
+  <body>
+
+    <CookieHandler client:only="react" />
+      <Header namespace={namespace} showNav={showNav}/>
+      <main id="body" >
+        <slot />
+      </main>
+      <!-- <Contact /> -->
+      <!-- <Footer />
+    <CookieNotice client:only="react" /> -->
+  </body>
+</html>
+

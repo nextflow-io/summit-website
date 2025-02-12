@@ -1,0 +1,33 @@
+---
+import Layout from "@layouts/Base.astro";
+import Hero from "@components/Hero";
+import SEO from "@components/SEO";
+import Faq from "@components/Faq";
+import WhyAttend from "@modules/WhyAttend";
+import img2 from "@images/photos/2025/boston/why-attend.jpg";
+import qa from "./qa";
+
+---
+
+<Layout namespace="2025/boston">
+  <SEO slot="head" title="Why Attend | Boston" img={1} />
+  <section class="">
+    <Hero
+      title="Why Attend"
+      content="The Nextflow Summit is the leading event for scientific data processing and data analysis, offering high-quality programming that spans scientific talks, poster sessions, and networking opportunities. Here, the vibrant community gathers to showcase the latest developments and innovations from the Nextflow world. At the Summit, open science takes the main stage."
+      href={img2.src}
+      alt="Image of person viewing booth at Nextflow Summit"
+      ctaText1="Register Now"
+      ctaLink1="/2025/boston/register"
+      ctaText2="Call for abstracts"
+      ctaLink2="/call-for-abstracts"
+      client:load
+    />
+  </section>
+
+  <section class="mt-20 mb-24 container">
+    <WhyAttend/>
+
+    <Faq className="mt-20 md:mt-40 mb-20" client:load data={qa} />
+  </section>
+</Layout>

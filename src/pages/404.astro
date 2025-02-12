@@ -1,0 +1,10 @@
+---
+import Layout from "@layouts/Base.astro";
+import SEO from "@components/SEO";
+import NotFound from "@components/NotFound";
+---
+
+<Layout showHeader={false}>
+  <SEO slot="head" title="404" img={0} />
+  <NotFound  />
+</Layout>

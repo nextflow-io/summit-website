@@ -1,18 +1,14 @@
 import React from "react";
-
-import menuItems from "./menuItems";
-import Button from "@components/Button";
+import menuLinks from "./menuLinks";
 import Link from "./Link";
 
 type Props = {
-  namespace: string;
-  pathname: string;
-  second?: boolean;
-  desktop?: boolean;
+  namespace?: string;
+  pathname?: string;
 };
 
 const Menu: React.FC<Props> = (props) => {
-  const { pathname, namespace, second, desktop } = props;
+  const { pathname, namespace } = props;
   function isActive(path) {
     return pathname?.includes(path);
   }
@@ -23,39 +19,13 @@ const Menu: React.FC<Props> = (props) => {
     return `/${namespace}${path}`;
   }
 
-  let location = "boston";
-  if (namespace === "2024/barcelona") location = "barcelona";
-
-  const { main, secondary, cta } = menuItems[location];
-
-  if (second)
-    return (
-      <nav>
-        <ul>
-          {secondary.map(({ name, url, cta, root }, i) => (
-            <li key={i}>
-              {desktop && cta ? (
-                <Button href={getURL(url, root)} arrow cta wide>
-                  {name}
-                </Button>
-              ) : (
-                <Link href={getURL(url, root)} active={isActive(url)}>
-                  {name}
-                </Link>
-              )}
-            </li>
-          ))}
-        </ul>
-      </nav>
-    );
-
   return (
-    <nav>
+    <nav className="main-nav">
       <ul>
-        {main.map(({ name, url }, i) => (
+        {menuLinks.map(({ name, url }, i) => (
           <li key={i}>
-            <Link href={getURL(url)} active={isActive(url)}>
-              {name}
+            <Link href={url} active={isActive(url)}>
+              {name} 
             </Link>
           </li>
         ))}

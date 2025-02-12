@@ -1,0 +1,69 @@
+---
+
+import FooterLogo from "@icons/FooterLogo";
+import SeqeraLogo from "@icons/SeqeraLogo";
+import Subscribe from "@modules/Subscribe";
+import styles from "./footer.module.css";
+import footerMenuLinks from "./footerMenuLinks";
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer id="footer">
+  <div class={`${styles.footerDivider}`}></div>
+  <div class={`mt-16 text-white monospace`}>
+    <nav
+      class="container flex flex-col md:flex-row md:justify-between sm:flex-wrap md:flex-nowrap"
+    >
+      <div class="w-full max-w-[500px] lg:pr-10 mb-10 md:mb-0">
+        <Subscribe client:visible />
+      </div>
+      <nav class="w-full flex md:justify-center">
+        <div
+          class="whitespace-nowrap grid grid-cols-2 gap-x-8 md:gap-x-0 md:flex md:flex-row"
+        >
+          {
+            footerMenuLinks?.main?.map(({ name, dropdowns }, i) => {
+              let setTarget = false;
+              if (name == "Follow") setTarget = true;
+              const linkProps = setTarget
+                ? { target: "_blank", rel: "noopener noreferrer" }
+                : {};
+
+              return (
+                <ul class="mb-16 md:mb-0 md:ml-12 lg:ml-16">
+                  <p class="mb-6 ">{name}</p>
+                  {dropdowns && dropdowns?.map(({ name, url }, i) => (
+                    <li class="leading-[30px]">
+                      <a
+                        href={url}
+                        {...linkProps}
+                        class=" transition-all duration-300 ease-in-out hover:transition-all hover:text-nextflow"
+                      >
+                        {name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              );
+            })
+          }
+        </div>
+      </nav>
+    </nav>
+  </div>
+  <div class="container mb-8">
+    <div class="mt-10 mb-6">
+      <FooterLogo alt="Nextflow Summit Logo"/>
+    </div>
+    <div class="flex flex-row justify-between">
+      <div class="flex flex-row">
+        <small>by</small>
+        <div class="pl-2 max-w-[150px]">
+          <SeqeraLogo className="w-full" alt="Seqera Logo"/>
+        </div>
+      </div>
+      <div class="monospace ">{`© ${currentYear} Seqera`}</div>
+    </div>
+  </div>
+</footer>

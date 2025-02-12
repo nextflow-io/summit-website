@@ -1,0 +1,147 @@
+---
+import Layout from "@layouts/Base.astro";
+import Hero from "@components/Hero";
+import SEO from "@components/SEO";
+import Faq from "@components/Faq";
+import Box, { SubSection } from "@components/Box";
+import img1 from "@images/photos/2025/boston/boston.jpg";
+import qa from "./qa";
+import ArrowUpRight from "@icons/ArrowUpRight";
+---
+
+<Layout namespace="2025/boston">
+  <SEO slot="head" title="Travel | Boston" img={1} />
+   <section class="">
+    <Hero
+      title="Join us in Boston"
+      content="Boston offers a captivating fusion of historical significance and innovative spirit, making it a dynamic center for art and technology. Boston's vibrant atmosphere fosters an environment where art and technology coexist, offering a captivating experience for visitors seeking a deep appreciation for both."
+      href={img1.src}
+      alt="Boston landscape"
+      ctaText1="Register Now"
+      ctaLink1="/2025/boston/register"
+      ctaText2="Call for abstracts"
+      ctaLink2="/call-for-abstracts"
+      client:load
+    />
+  </section>
+
+  <section class="mt-20 mb-24 container">
+    <h1 id="hotels" class="h1 mb-4 md:mb-8">Hotels</h1>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+
+      <Box externalLink={true} className="aspect-square	relative" href="https://www.marriott.com/en-us/hotels/bosal-aloft-boston-seaport-district/overview/">
+        <SubSection className="flex flex-col justify-between h-full">
+          <div class="">
+            <div class="pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center">
+              <h5 class="h4">Aloft Boston</h5>
+              <ArrowUpRight/>
+            </div>
+            <div class=" py-2 monospace border-b border-b-nextflow flex flex-row justify-between">
+              <p>Training, Hackathon & Summit venue</p>
+            </div>
+          </div>
+          <div class="">
+            <p class=" monospace min-h-[120px]">
+             Across from the Boston Convention & Exhibition Center, this trendy, modern hotel is also 3 miles from Boston Logan International Airport.
+            </p>
+          </div>
+        </SubSection>
+      </Box>
+
+      <Box externalLink={true} className="aspect-square	relative" href="https://www.marriott.com/en-us/hotels/bosel-element-boston-seaport-district/overview/">
+        <SubSection className="flex flex-col justify-between h-full">
+          <div class="">
+            <div class="pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center">
+              <h5 class="h4">Element Boston</h5>
+              <ArrowUpRight/>
+            </div>
+            <div class=" py-2 monospace border-b border-b-nextflow flex flex-row justify-between">
+              <p>1 min walk</p>
+            </div>
+          </div>
+          <div class="">
+            <p class=" monospace min-h-[120px]">
+              Learn the definition of comfort at the Element Boston Seaport District, located two miles from Boston Logan Airport.
+            </p>
+          </div>
+        </SubSection>
+      </Box>
+
+      <Box externalLink={true} className="aspect-square	relative" href="https://www.marriott.com/en-us/hotels/bosow-the-westin-boston-seaport-district/overview/">
+        <SubSection className="flex flex-col justify-between h-full">
+          <div class="">
+            <div class="pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center">
+              <h5 class="h4">The Westin Boston</h5>
+              <ArrowUpRight/>
+            </div>
+            <div class=" py-2 monospace border-b border-b-nextflow flex flex-row justify-between">
+              <p>9 min walk</p>
+            </div>
+          </div>
+          <div class="">
+            <p class=" monospace min-h-[120px]">
+              Ideally Located Along the Waterfront in the Seaport District
+            </p>
+          </div>
+        </SubSection>
+      </Box>
+
+      <Box externalLink={true} className="aspect-square	relative" href="https://www.omnihotels.com/hotels/boston-seaport">
+        <SubSection className="flex flex-col justify-between h-full">
+          <div class="">
+            <div class="pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center">
+              <h5 class="h4">Omni Boston</h5>
+              <ArrowUpRight/>
+            </div>
+            <div class=" py-2 monospace border-b border-b-nextflow flex flex-row justify-between">
+              <p>7 min walk</p>
+            </div>
+          </div>
+          <div class="">
+            <p class=" monospace min-h-[120px]">
+              The AAA Four Diamond-rated hotel is conveniently located near South Station, the harbor, the Boston Convention and Exhibition Center, and is less than three miles from Logan International Airport.
+            </p>
+          </div>
+        </SubSection>
+      </Box>
+      <Box externalLink={true} className="aspect-square	relative" href="https://www.hyatt.com/hyatt-place/boszs-hyatt-place-boston-seaport-district">
+        <SubSection className="flex flex-col justify-between h-full">
+          <div class="">
+            <div class="pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center">
+              <h5 class="h4">Hyatt Place</h5>
+              <ArrowUpRight/>
+            </div>
+            <div class=" py-2 monospace border-b border-b-nextflow flex flex-row justify-between">
+              <p>15 min walk</p>
+            </div>
+          </div>
+          <div class="">
+            <p class=" monospace min-h-[120px]">
+              With comfortable rooms, modern amenities and stunning views, it's the perfect home base for exploring the vibrant Seaport district and surrounding areas.
+            </p>
+          </div>
+        </SubSection>
+      </Box>
+      <Box externalLink={true} className="aspect-square	relative" href="https://www.seaportboston.com/">
+        <SubSection className="flex flex-col justify-between h-full">
+          <div class="">
+            <div class="pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center">
+              <h5 class="h4">Seaport Hotel Boston</h5>
+              <ArrowUpRight/>
+            </div>
+            <div class=" py-2 monospace border-b border-b-nextflow flex flex-row justify-between">
+              <p>12 min walk</p>
+            </div>
+          </div>
+          <div class="">
+            <p class=" monospace min-h-[120px]">
+              Discover an authentic New England experience at the award-winning, independent Seaport Hotel on Boston's historic waterfront.
+            </p>
+          </div>
+        </SubSection>
+      </Box>
+  </section>
+
+  <Faq className="mt-20 md:mt-40 mb-20" client:load data={qa} />
+
+</Layout>
