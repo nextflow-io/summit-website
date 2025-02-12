@@ -47,8 +47,8 @@ const Hero = ({
     }}
     
     className={"container pt-10"}>
-      <div className="flex flex-col md:flex-row md:justify-between">
-        <div className="w-full mb-10 mb:mb-0 md:pr-10 md:pt-10 max-w-[750px]">
+      <div className="flex flex-col sm:flex-row sm:justify-between">
+        <div className="w-full mb-10 sm:mb-0 sm:pr-10 sm:pt-10 max-w-[750px]">
           <h2 className="h2 mb-10">
             {preTitle && <span className="text-nextflow">{preTitle}</span>}{" "}
             {title}
