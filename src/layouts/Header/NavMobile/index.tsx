@@ -40,7 +40,7 @@ const NavMobile: React.FC<Props> = ({ pathname, namespace, showNav }) => {
                 white
                 arrowAfter
               >
-                Register Now
+                Register now for Boston
                 <a
                   className="absolute w-full h-full"
                   href="https://seqera.swoogo.com/nextflow-summit-boston-2025"
