@@ -1,7 +1,7 @@
 import { useState } from "react";
 import classnames from "classnames";
 import Button from "@components/Button";
-
+import { motion } from "framer-motion";
 import { readCookie, writeCookie } from "@utils/cookies";
 
 const CookieSVG = ({ className }) => (
@@ -51,7 +51,20 @@ const CookieBanner = () => {
   if (!isVisible) return null;
 
   return (
-    <div
+    <motion.div
+    initial={{
+      opacity: 0,
+    }}
+    whileInView={{
+      opacity: 1,
+    }}
+    transition={{
+      ease: "linear",
+      delay: 1.4,
+    }}
+    viewport={{
+      once: true,
+    }}
       className={classnames(
         "bg-nextflow text-brand text-xs fixed bottom-0 w-full z-[2147483648] py-4 border-t border-nextflow-900",
         {
@@ -92,7 +105,7 @@ const CookieBanner = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
