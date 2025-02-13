@@ -11,7 +11,7 @@ export default {
       },
       {
         name: "Overview",
-        url: "/2025/boston",
+        url: "/2025/boston/overview",
       },
       {
         name: "Travel",
@@ -57,7 +57,7 @@ export default {
     dropdowns: [
       {
         name: "Overview",
-        url: "/2025/barcelona",
+        url: "/2025/barcelona/overview",
       },
     ],
   },

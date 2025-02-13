@@ -51,7 +51,7 @@ const menuLinks = [
   },
   {
     name: "Barcelona",
-    url: "/2025/barcelona",
+    url: "/2025/barcelona/overview",
   },
   {
     name: "Call for Abstracts",
