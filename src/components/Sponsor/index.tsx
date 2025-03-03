@@ -7,7 +7,7 @@ import styles from "./styles.module.css";
 
 const Sponsor = ({ sponsor, location }) => {
   const ranks = {
-    diamond: "Diamond",
+    diamond: "Organizer",
     platinum: "Platinum",
     gold: "Gold",
     silver: "Silver",
@@ -20,7 +20,7 @@ const Sponsor = ({ sponsor, location }) => {
       <SubSection className="">
         <div className="mb-4 pb-4 border-b border-b-nextflow w-full flex flex-row justify-between">
           <div className={clsx(styles.rank, styles[rank], "monospace")}>
-            {rank} Sponsor of Nextflow Summer 2025
+            {rank} {rank !== "Organizer" && 'Sponsor ' } of Nextflow Summit 2025
           </div>
         </div>
         <div>
