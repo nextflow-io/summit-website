@@ -21,7 +21,7 @@ export default {
         "THIS IS PLACEHOLDER COPY NEEDS TO BE UPDATED"
     },
     {
-      question: "Who can I contact for more information about sponsorship opportunities??",
+      question: "Who can I contact for more information about sponsorship opportunities?",
       answer:
         "This is placeholder copy that needs to be updated or removed."
     },

@@ -3,9 +3,15 @@ input[type="email"] {
   border: none;
   padding: 10px;
   outline: none;
-  color: var(--color-brand-900);
+  color: var(--color-brand-1000);
   border-radius: 4px;
 }
+.input {
+  ::placeholder {
+    color: var(--color-brand-500);
+  }
+}
+
 input[type="submit"] {
   background-color: #4256E7;
   color: white;

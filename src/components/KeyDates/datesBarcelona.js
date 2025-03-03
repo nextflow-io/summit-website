@@ -1,6 +1,6 @@
 const datesBarcelona = [
   {
-    date: "TBA",
+    date: "May 1",
     content: [
       {
         info: "Call for abstracts opens",

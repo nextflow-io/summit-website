@@ -1,7 +1,7 @@
 .rank {
   display: block;
   line-height: 1.2;
-  &.Diamond {
+  &.Organizer {
     color: var(--color-nextflow);
   }
   &.Platinum {
