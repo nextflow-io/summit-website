@@ -6,6 +6,31 @@ export default {
           `Find out more information on registering <a class="underline" href="/2025/boston/register">here</a>.`,
       },
       {
+        question: "How much are the registration fees?",
+        answer:
+          `
+            <p>
+            <span class="underline">Training</span><br/>
+            Academic $120<br/>
+            Corporate $300</p> 
+
+            <p>
+            <span class="underline">Hackathon</span><br/>
+               Academic $120 <br/>
+               Corporate $120 
+            </p>
+
+            <p>
+            <span class="underline">Summit</span><br/>
+              Academic <s>$300</s> $255 <br/>
+             Corporate <s>$600</s> $510<br/>
+            *Early bird pricing: 15% off until March 30
+            </p>
+
+          
+            `
+    },
+      {
         question: "What is included in the registration fee?",
         answer:
           `Your ticket includes:
@@ -22,7 +47,7 @@ export default {
           `<p>Enjoy our early bird discounts:</p>
           <ul>
             <li>Early bird 25% until February 28</li>
-            <li>Early bird 15% until March 31</li></ul>
+            <li>Early bird 15% until March 30</li></ul>
             `
       },
       {

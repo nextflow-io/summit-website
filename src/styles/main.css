@@ -154,3 +154,18 @@ main#body {
   border-radius: 4px;
   box-shadow: inset 0px 0px 0px 1px var(--color-nextflow-200);
 }
+
+.crossed-out {
+  position: relative;
+  &:after {
+    content: ''; 
+    height: 1px;
+    width: 141.421%;
+    background-color: var(--color-nextflow);
+    position: absolute;
+    left: -1px;
+    top: 0px; 
+    transform: rotate(45deg);
+    transform-origin: 1px 1px;
+}
+}
