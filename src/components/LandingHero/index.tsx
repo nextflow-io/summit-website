@@ -70,7 +70,7 @@ const LandingHero: React.FC<HeroProps> = (props) => {
         duration: 0.25,
         ease: "linear",
       }}
-      className="md:min-h-[800px] relative w-full h-full"
+      className="md:min-h-[750px] relative w-full h-full"
     >
       <div className={clsx(styles.colorBarWrapper, "top-[0%] right-[15%]")}>
         <div
@@ -166,7 +166,7 @@ const LandingHero: React.FC<HeroProps> = (props) => {
               className="hidden sm:flex sm:flex-col"
             >
               <p
-                className="monospace sm:max-w-[600px] md:max-w-[590px]"
+                className="monospace sm:max-w-[580px] md:max-w-[550px]"
                 dangerouslySetInnerHTML={{ __html: content }}
               />
 
