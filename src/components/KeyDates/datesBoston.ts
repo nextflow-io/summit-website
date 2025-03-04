@@ -38,7 +38,7 @@ const datesBoston = [
     ],
   },
   {
-    date: "Mar 31",
+    date: "April 1",
     content: [
       {
         info: "Registration: full price",

@@ -24,7 +24,7 @@ export default {
             <span class="underline">Summit</span><br/>
               Academic <s>$300</s> $255 <br/>
              Corporate <s>$600</s> $510<br/>
-            *Early bird pricing: 15% off until March 30
+            *Early bird pricing: 15% off until March 31
             </p>
 
           
@@ -47,7 +47,7 @@ export default {
           `<p>Enjoy our early bird discounts:</p>
           <ul>
             <li>Early bird 25% until February 28</li>
-            <li>Early bird 15% until March 30</li></ul>
+            <li>Early bird 15% until March 31</li></ul>
             `
       },
       {
