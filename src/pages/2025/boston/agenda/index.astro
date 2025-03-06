@@ -2,6 +2,7 @@
 import Layout from "@layouts/Base.astro";
 import KeyDates from "@components/KeyDates/index.astro";
 import Calendar from "@components/Calendar";
+import Schedule from "@components/Schedule";
 import SEO from "@components/SEO";
 import Box, { SubSection } from "@components/Box";
 ---
@@ -93,9 +94,10 @@ import Box, { SubSection } from "@components/Box";
           >Google Calendar</a
         >
       </div></p>
-      <p>[Full schedule coming soon]</p>
+      <p class="mb-10">[Full schedule coming soon]</p>
+      <Schedule client:load />
     </div>
-    <!-- <Calendar client:load /> -->
+
   </section>
 
   <section class="container">
