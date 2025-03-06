@@ -108,7 +108,7 @@ const Schedule: React.FC<Props> = ({
         <ScheduleItem time="10:00am" name="Hackathon Session 3" name2="Training Session 3" />
         <ScheduleItem time="1:00pm" name="Lunch" highlighted={true} />
         <ScheduleItem time="2:00pm" name="Hackathon Session 4" name2="Training Session 4" />
-        <ScheduleItem time="4:45pm" name="Hackathon Wrap-up"  />
+        <ScheduleItem time="4:45pm" name="Hackathon Wrap-up" name2="Training Wrap-up"  />
         <ScheduleItem time="5:00pm" name="Hackathon and Training: End" />
       </section>
 
