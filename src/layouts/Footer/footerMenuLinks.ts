@@ -72,10 +72,10 @@ export default {
         name: "Call for Abstracts",
         url: "/call-for-abstracts",
       },
-      {
-        name: "Training",
-        url: "/training",
-      },
+      // {
+      //   name: "Training",
+      //   url: "/training",
+      // },
       {
         name: "Past Events",
         url: "/past-events",
