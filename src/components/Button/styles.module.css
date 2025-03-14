@@ -44,6 +44,11 @@
   }
 }
 
+.button.small {
+  font-size: .8rem;
+  text-transform: none;
+  padding: 0 1rem;
+}
 .button.white {
   color: var(--color-brand);
   background: white;
