@@ -45,12 +45,12 @@ const Banner = ({ title, ctaLink, ctaText }: BannerProps) => {
             delay: 2.5,
           }}
           className={
-            "mx-3 md:mx-auto pt-2 md:pb-2 container max-w-[800px] fixed top-[100px] md:top-[80px] left-0 right-0 h-auto md:h-[40px] bg-nextflow-200 w-auto z-[1000] rounded-md border border-nextflow"
+            "mx-3 md:mx-auto pt-2 md:pb-2 container max-w-[700px] fixed top-[100px] md:top-[75px] left-0 right-0 h-auto md:h-[40px] bg-nextflow-200 w-auto z-[1000] rounded-md border border-nextflow"
           }
         >
           <div className="w-full h-full flex justify-between items-center text-brand ">
             <div className="relative z-20 w-full">
-              <div className="w-full h-full flex flex-col md:flex-row justify-between items-center mr-4 text-center md:text-left">
+              <div className="w-full h-full flex flex-col md:flex-row justify-between items-center mr-5 text-center md:text-left">
                 <p className="text-[.9rem] md:text-[1rem] monospace mr-6">
                   {title}
                 </p>

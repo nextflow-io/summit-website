@@ -73,6 +73,10 @@ export default {
         url: "/call-for-abstracts",
       },
       {
+        name: "Training",
+        url: "/training",
+      },
+      {
         name: "Past Events",
         url: "/past-events",
       },
