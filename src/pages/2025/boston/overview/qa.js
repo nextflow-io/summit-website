@@ -22,9 +22,8 @@ export default {
 
             <p>
             <span class="underline">Summit</span><br/>
-              Academic <s>$300</s> $255 <br/>
-             Corporate <s>$600</s> $510<br/>
-            *Early bird pricing: 15% off until March 31
+              Academic $300 <br/>
+             Corporate $600<br/>
             </p>
 
           
