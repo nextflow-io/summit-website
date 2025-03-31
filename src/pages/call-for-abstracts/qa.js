@@ -6,7 +6,7 @@ export default {
     },
     {
       question: "What are the key deadlines for abstract submission?",
-      answer: `The deadline has been extended to March 21, 2025.`,
+      answer: `Call for Abstracts talks are now closed. The deadline for posters has been extended to April 18, 2025.`,
     },
     {
       question:
