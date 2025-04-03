@@ -1,9 +1,7 @@
 ---
 import Layout from "@layouts/Base.astro";
 import SEO from "@components/SEO";
-import SpeakerCard from "@components/SpeakerCard";
-import Button from "@components/Button";
-import speakers from "./speakers";
+import SpeakersSection from "@modules/SpeakersSection";
 import Hero from "@components/Hero";
 ---
 
@@ -23,28 +21,7 @@ import Hero from "@components/Hero";
  </section>
 
 
-    <div class="container mt-14">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-      {speakers.main.map(({ name, jobTitle, track, date, time, submissionTitle, bio, github, twitter, linkedin, image, keynote }) => {
-        return (
-        <SpeakerCard
-        name={name}
-        jobTitle={jobTitle}
-        track={track}
-        date={date}
-        time={time}
-        submissionTitle={submissionTitle}
-        bio={bio}
-        github={github}
-        twitter={twitter}
-        linkedin={linkedin}
-        image={image}
-        keynote={keynote}
-        />
-        );
-      })}
-      </div>
-    </div>
+  <SpeakersSection client:load/>
     </div>
   </section>
 
