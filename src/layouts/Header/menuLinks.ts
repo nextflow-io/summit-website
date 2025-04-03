@@ -27,10 +27,10 @@ const menuLinks = [
       //   name: "Hackathon",
       //   url: "/2025/boston/hackathon",
       // },
-      // {
-      //   name: "Speakers",
-      //   url: "/2025/boston/speakers",
-      // },
+      {
+        name: "Speakers",
+        url: "/2025/boston/speakers",
+      },
       // {
       //   name: "Posters",
       //   url: "/2025/boston/posters",

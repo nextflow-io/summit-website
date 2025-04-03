@@ -1,29 +1,50 @@
 ---
 import Layout from "@layouts/Base.astro";
 import SEO from "@components/SEO";
-import PersonCard from "@components/PersonCard";
-import speakers from "@data/speakers";
+import SpeakerCard from "@components/SpeakerCard";
+import Button from "@components/Button";
+import speakers from "./speakers";
+import Hero from "@components/Hero";
 ---
 
 <Layout namespace="2025/boston">
   <SEO slot="head" title="Speakers" img={1} />
-  <section class="pb-16 pt-16 md:pt-20">
-    <div class="container island pb-10 md:pb-20 text-center">
-      <h1 class="h00 mb-8">Speakers <span class="text-nextflow">2025</span></h1>
-      <div class="blockquote">
-        This premier event brings together leading experts, innovators, and
-        researchers to showcase the latest breakthroughs in workflow management.
+
+
+  <section class="py-8">
+    <Hero
+    title="Speakers"
+    content=" Meet the experts, partners, and community team members who are speaking at this year's event."
+    ctaText1="Register for Boston"
+    ctaLink1="https://seqera.swoogo.com/nextflow-summit-boston-2025"
+    ctaExternal1
+    client:load
+  />
+ </section>
+
+
+    <div class="container mt-14">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      {speakers.main.map(({ name, jobTitle, track, date, time, submissionTitle, bio, github, twitter, linkedin, image, keynote }) => {
+        return (
+        <SpeakerCard
+        name={name}
+        jobTitle={jobTitle}
+        track={track}
+        date={date}
+        time={time}
+        submissionTitle={submissionTitle}
+        bio={bio}
+        github={github}
+        twitter={twitter}
+        linkedin={linkedin}
+        image={image}
+        keynote={keynote}
+        />
+        );
+      })}
       </div>
     </div>
-    <p>Coming Soon</p>
-    <!-- <div class="container">
-      <div class="flex flex-wrap -m-4">
-        {
-          speakers.boston?.map((speaker) => (
-            <PersonCard person={speaker} className="w-full md:w-1/2 p-4" />
-          ))
-        }
-      </div> -->
     </div>
   </section>
 

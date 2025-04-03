@@ -11,8 +11,10 @@ interface HeroProps {
   content: string;
   ctaText1?: string;
   ctaLink1?: string;
+  ctaExternal1?: boolean;
   ctaText2?: string;
   ctaLink2?: string;
+  ctaExternal2?: boolean;
   when?: string;
   where?: string;
   price?: string;
@@ -33,6 +35,8 @@ const LandingHero: React.FC<HeroProps> = (props) => {
     ctaLink1,
     ctaText2,
     ctaLink2,
+    ctaExternal1,
+    ctaExternal2,
     when,
     where,
     price,
@@ -174,7 +178,7 @@ const LandingHero: React.FC<HeroProps> = (props) => {
                 {ctaText1 && (
                   <Button className="mt-10 relative" white arrowAfter>
                     {ctaLink1 && (
-                      <a className="absolute w-full h-full" href={ctaLink1}></a>
+                      <a className="absolute w-full h-full" href={ctaLink1} target={`${ctaExternal1 ? '_blank' : '_self'}`}></a>
                     )}{" "}
                     {ctaText1}
                   </Button>
@@ -186,7 +190,7 @@ const LandingHero: React.FC<HeroProps> = (props) => {
                     arrowBefore
                   >
                     {ctaLink2 && (
-                      <a className="absolute w-full h-full" href={ctaLink2}></a>
+                      <a className="absolute w-full h-full" href={ctaLink2} target={`${ctaExternal2 ? '_blank' : '_self'}`}></a>
                     )}{" "}
                     {ctaText2}
                   </Button>

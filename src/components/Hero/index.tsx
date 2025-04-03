@@ -6,7 +6,7 @@ interface HeroProps {
   preTitle?: string;
   title: string;
   content: string;
-  href: string;
+  href?: string;
   alt?: string;
   ctaText1?: string;
   ctaLink1?: string;
@@ -78,15 +78,15 @@ const Hero = ({
             )}
           </div>
         </div>
+        {href &&
         <div className={"imageBlend border border-nextflow w-full -h-ful"}>
-        
             <img
               className="aspect-square w-full h-full object-cover"
               src={href}
               alt={alt}
             />
-     
         </div>
+        }
       </div>
     </motion.div>
   );

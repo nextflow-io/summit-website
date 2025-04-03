@@ -116,23 +116,25 @@ const Schedule: React.FC<Props> = ({
         <h5 className="h5 mb-2">Thursday, May 15</h5>
         <ScheduleHeader />
         <ScheduleItem time="8:30am" name="Registration and Breakfast" highlighted={true} />
-        <ScheduleItem time="9:30am" name="Welcome and Product Keynote" speakers="Evan Floden" category="Welcome" />
-        <ScheduleItem time="10:20am" name="Talk" category="Enabling Science" />
-        <ScheduleItem time="10:40am" name="Talk" category="Enabling Science" />
+        <ScheduleItem time="9:30am" name="Welcome" category="Welcome" />
+        <ScheduleItem time="9:40am" name="Product Keynote" speakers="Evan Floden" category="Welcome" />
+        <ScheduleItem time="10:20am" name="Talk" category="Enabling Science" speakers="Hyun-Hwan Jeong"/>
+        <ScheduleItem time="10:40am" name="Talk" category="Enabling Science" speakers="Alexandra Bartlett"/>
         <ScheduleItem time="11:00am" name="Coffee Break" highlighted={true} />
         <ScheduleItem time="11:30am" name="Sponsor Talk" category="Enabling Science" />
-        <ScheduleItem time="12:00pm" name="Talk" category="Enabling Science" />
-        <ScheduleItem time="12:20pm" name="Talk" category="Enabling Science" />
-        <ScheduleItem time="12:40pm" name="nf-core Updates" category="Enabling Science" />
+        <ScheduleItem time="11:50am" name="Talk" category="Enabling Science" speakers="" />
+        <ScheduleItem time="12:10pm" name="Talk" category="Enabling Science" speakers="Franz Arnold Ake" />
+        <ScheduleItem time="12:30pm" name="Talk" category="Enabling Science" speakers="Adriana Messyasz" />
+        <ScheduleItem time="12:50pm" name="Lightning Round" category="Poster Pitches" />
         <ScheduleItem time="1:00pm" name="Lunch" highlighted={true} />
-        <ScheduleItem time="2:00pm" name="Nextflow Updates" speakers="Paolo di Tommaso" category="Big Nextflow" />
-        <ScheduleItem time="2:30pm" name="Talk" category="Big Nextflow" />
-        <ScheduleItem time="2:50pm" name="Talk" category="Big Nextflow" />
-        <ScheduleItem time="3:10pm" name="Sponsor Talk" category="Big Nextflow" />
+        <ScheduleItem time="2:00pm" name="Nextflow Updates" speakers="Paolo di Tommaso and Ben Sherman" category="Big Nextflow" />
+        <ScheduleItem time="2:30pm" name="Talk" category="Big Nextflow" speakers="Angel Pizarro"/>
+        <ScheduleItem time="3:00pm" name="Talk" category="Big Nextflow" speakers="Lorena Pantano"/>
+        <ScheduleItem time="3:20pm" name="Lightning Round" category="Poster Pitches" />
         <ScheduleItem time="3:30pm" name="Coffee Break" highlighted={true} />
         <ScheduleItem time="4:00pm" name="Talk" category="Big Nextflow" />
         <ScheduleItem time="4:20pm" name="Talk" category="Big Nextflow" />
-        <ScheduleItem time="4:40pm" name="Keynote" category="Keynote" />
+        <ScheduleItem time="4:40pm" name="Keynote" category="Keynote" speakers="Luisa Herrmann"/>
         <ScheduleItem time="5:30pm" name="Summit Reception"  />
         <ScheduleItem time="7:30pm" name="Summit Reception: End"  />
       </section>
@@ -142,13 +144,13 @@ const Schedule: React.FC<Props> = ({
         <ScheduleHeader />
         <ScheduleItem time="7:00am" name="Morning Walk and Run to Seaport" highlighted={true}/>
         <ScheduleItem time="8:30am" name="Registration and Breakfast" highlighted={true}/>
-        <ScheduleItem time="9:30am" name="Seqera Updates" />
+        <ScheduleItem time="9:30am" name="Seqera: SciDev Demo" />
         <ScheduleItem time="10:00am" name="Talk" category="Organizational Impact" />
-        <ScheduleItem time="10:20am" name="Talk" category="Organizational Impact" />
+        <ScheduleItem time="10:20am" name="Talk" category="Organizational Impact" speakers="Adrianto Wirawan" />
         <ScheduleItem time="10:40am" name="Sponsor Talk" category="Organizational Impact" />
         <ScheduleItem time="11:00am" name="Coffee Break" highlighted={true}/>
-        <ScheduleItem time="11:30am" name="Talk" category="Organizational Impact" />
-        <ScheduleItem time="11:50am" name="Keynote"  />
+        <ScheduleItem time="11:30am" name="Talk" category="Organizational Impact" speakers="Olaitan Awe"/>
+        <ScheduleItem time="11:50am" name="Panel Discussion"  />
         <ScheduleItem time="12:40pm" name="Summit Closing"  />
         <ScheduleItem time="1:00pm" name="Summit End"  />
       </section>
