@@ -10,6 +10,28 @@ import Box, { SubSection } from "@components/Box";
 <Layout namespace="2025/boston" altBG>
   <SEO slot="head" title="Agenda | Boston" img={1} />
 
+
+  <section class="pb-6 pt-16 md:pt-20 mb-20">
+      <div class="container">
+      <h1 class="h1 mb-4 md:mb-6">Agenda</h1>
+        <div class="monospace mt-6 text-brand-100 mb-10">
+        Subscribe to calendar:
+        <a
+          class="text-nextflow"
+          href="https://calendar.google.com/calendar/ical/c_6fcf2965db184555c52131dac98866739ec4536b396c440688d48392bf2d9f22%40group.calendar.google.com/public/basic.ics" target="blank">iCal</a
+        > |
+        <a
+          class="text-nextflow"
+          href="https://calendar.google.com/calendar/u/0?cid=Y182ZmNmMjk2NWRiMTg0NTU1YzUyMTMxZGFjOTg4NjY3MzllYzQ1MzZiMzk2YzQ0MDY4OGQ0ODM5MmJmMmQ5ZjIyQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20" target="_blank"
+          >Google Calendar</a
+        >
+      </div>
+
+      <Schedule client:load />
+    </div>
+
+  </section>
+
   <section class="mt-10 md:mt-20 mb-24 container">
     <h1 class="h1 mb-4 md:mb-8">Join us in Boston</h1>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
@@ -76,27 +98,6 @@ import Box, { SubSection } from "@components/Box";
         </SubSection>
       </Box>
     </div>
-  </section>
-
-  <section class="pb-6 pt-16 md:pt-20 mb-20">
-      <div class="container">
-      <h1 class="h1 mb-4 md:mb-6">Agenda</h1>
-        <div class="monospace mt-6 text-brand-100 mb-10">
-        Subscribe to calendar:
-        <a
-          class="text-nextflow"
-          href="https://calendar.google.com/calendar/ical/c_6fcf2965db184555c52131dac98866739ec4536b396c440688d48392bf2d9f22%40group.calendar.google.com/public/basic.ics" target="blank">iCal</a
-        > |
-        <a
-          class="text-nextflow"
-          href="https://calendar.google.com/calendar/u/0?cid=Y182ZmNmMjk2NWRiMTg0NTU1YzUyMTMxZGFjOTg4NjY3MzllYzQ1MzZiMzk2YzQ0MDY4OGQ0ODM5MmJmMmQ5ZjIyQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20" target="_blank"
-          >Google Calendar</a
-        >
-      </div>
-
-      <Schedule client:load />
-    </div>
-
   </section>
 
   <section class="container">

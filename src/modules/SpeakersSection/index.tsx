@@ -3,7 +3,7 @@ import speakers from "./speakers";
 import IconClose from "./IconClose.svg"
 import clsx from "clsx";
 import styles from "./speakers.module.css";
-
+import SocialIcon from '@components/SocialIcon'
 type Props = {
   title?: string;
 };
@@ -44,7 +44,7 @@ const SpeakerBox = ({
               <div className="w-full h-full bg-nextflow"></div>
             )}
           </div>
-          <div className="text-center mb-6 mt-6 min-h-[120px] w-full">
+          <div className="text-center mb-6 mt-6 md:min-h-[170px] w-full">
             <h3 className="font-display text-2xl mb-2">{name}</h3>
             <p className="monospace">{jobTitle}</p>
             {keynote && (
@@ -52,13 +52,39 @@ const SpeakerBox = ({
                 Keynote Speaker
               </div>
             )}
+
+            {twitter &&
+              <SocialIcon
+                key={twitter}
+                href={twitter}
+                type={"Twitter"}
+                className="p-2 text-nextflow"
+              />
+            }
+              {linkedin &&
+              <SocialIcon
+                key={linkedin}
+                href={linkedin}
+                type={"LinkedIn"}
+                className="p-2 text-nextflow"
+              />
+            }
+            {github &&
+              <SocialIcon
+                key={github}
+                href={github}
+                type={"GitHub"}
+                className="p-2 text-nextflow"
+              />
+            }
+
           </div>
         </div>
         <div className="flex flex-row justify-between w-full border-t border-b border-nextflow py-2 mb-4">
           <p className="monospace">{date}</p>
           <p className="font-display">{time}</p>
         </div>
-        <h5 className="text-[1.2rem] leading-1 font-medium">
+        <h5 className="text-[1.2rem] leading-tight font-medium">
           {submissionTitle}
         </h5>
       </div>
@@ -108,6 +134,31 @@ const SpeakerBox = ({
                     Keynote Speaker
                   </div>
                 )}
+
+{twitter &&
+              <SocialIcon
+                key={twitter}
+                href={twitter}
+                type={"Twitter"}
+                className="p-2 text-nextflow"
+              />
+            }
+              {linkedin &&
+              <SocialIcon
+                key={linkedin}
+                href={linkedin}
+                type={"LinkedIn"}
+                className="p-2 text-nextflow"
+              />
+            }
+            {github &&
+              <SocialIcon
+                key={github}
+                href={github}
+                type={"GitHub"}
+                className="p-2 text-nextflow"
+              />
+            }
               </div>
             </div>
             <div className="flex flex-row justify-between w-full border-t border-b border-nextflow py-2 mb-4">
