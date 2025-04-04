@@ -12,25 +12,25 @@ const menuLinks = [
         url: "/2025/boston/register",
       },
       {
-        name: "Travel",
-        url: "/2025/boston/travel",
+        name: "Agenda",
+        url: "/2025/boston/agenda",
+      },
+      {
+        name: "Speakers",
+        url: "/2025/boston/speakers",
       },
       {
         name: "Training",
         url: "/2025/boston/training",
       },
       {
-        name: "Agenda",
-        url: "/2025/boston/agenda",
+        name: "Travel",
+        url: "/2025/boston/travel",
       },
       // {
       //   name: "Hackathon",
       //   url: "/2025/boston/hackathon",
       // },
-      {
-        name: "Speakers",
-        url: "/2025/boston/speakers",
-      },
       // {
       //   name: "Posters",
       //   url: "/2025/boston/posters",

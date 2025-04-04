@@ -5,42 +5,42 @@ export default {
     name: "Boston",
     url: "/2025/boston",
     dropdowns: [
-        {
-        name: "Agenda",
-        url: "/2025/boston/agenda",
-      },
       {
         name: "Overview",
         url: "/2025/boston/overview",
       },
       {
-        name: "Travel",
-        url: "/2025/boston/travel",
+        name: "Register",
+        url: "/2025/boston/register",
+      },
+      {
+        name: "Agenda",
+        url: "/2025/boston/agenda",
+      },
+      {
+        name: "Speakers",
+        url: "/2025/boston/speakers",
       },
       {
         name: "Training",
         url: "/2025/boston/training",
       },
       {
-        name: "Agenda",
-        url: "/2025/boston/agenda",
+        name: "Travel",
+        url: "/2025/boston/travel",
+      },
+      {
+        name: "Sponsors",
+        url: "/2025/boston/sponsors",
       },
       // {
       //   name: "Hackathon",
       //   url: "/2025/boston/hackathon",
       // },
-      {
-        name: "Speakers",
-        url: "/2025/boston/speakers",
-      },
       // {
       //   name: "Posters",
       //   url: "/2025/boston/posters",
       // },
-      {
-        name: "Sponsors",
-        url: "/2025/boston/sponsors",
-      },
       {
         name: "Why Attend",
         url: "/2025/boston/why-attend",

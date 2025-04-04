@@ -1,5 +1,5 @@
 .speakersBio {
-    font-size: .85rem;
+    font-size: .9rem;
     a {
       text-decoration: underline;
       transition: all 0.3s;
@@ -18,7 +18,7 @@
     }
     p {
       margin-bottom: 1rem;
-      font-size: .85rem;
+      font-size: .9rem;
     }
   }
   

@@ -44,7 +44,7 @@ export default {
         track: "Session 1: Enabling science",
         date:"May 15",
         time: "12PM - 12:20PM",
-        submissionTitle: "Scalpel, a Nextflow based pipeline for quantification of isoform at single-cell resolution",
+        submissionTitle: "SCALPEL, a Nextflow based pipeline for quantification of isoform at single-cell resolution",
         bio: `Franz AKE is a Bioinformatician specializing in single-cell transcriptomics. He pursuing his PhD in Bioinformatics at IDIBELL Institute (Barcelona, SPAIN) under the supervison of Dr Mireya PLASS. He advocates for workflow automation and the integration of Nextflow in omics studies.`,
         twitter: "https://x.com/franz_ake",
         linkedin: "https://www.linkedin.com/in/franz-arnold-ake-3a657b11b/",

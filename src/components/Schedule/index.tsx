@@ -29,7 +29,7 @@ export const ScheduleItem: React.FC<ScheduleItemProps> = ({
         <div className={`${highlighted ? 'absolute bg-nextflow-100 w-full h-full z-0 top-0 left-0 right-0 left-0 opacity-25' : 'hidden' } `}></div>
          <div className="basis-2/6 sm:basis-1/5 sm:w-full uppercase">{time}</div>
 
-            <div className="hidden sm:basis-2/5 w-full sm:flex flex-row">
+            <div className="hidden sm:basis-2/5 w-full sm:flex flex-row pr-6">
                 <div className={`w-full ${name2 && 'basis-1/2'}`}>
                     <h4 className="font-semibold display">{name}</h4>
                     <p>{room && room}</p>
@@ -97,8 +97,8 @@ const Schedule: React.FC<Props> = ({
         <ScheduleItem time="1:00pm" name="Lunch" highlighted={true} />
         <ScheduleItem time="2:00pm" name="Hackathon Session 2" name2="Training Session 2" />
         <ScheduleItem time="4:45pm" name="Hackathon Wrap-up" name2="Training Wrap-up" />
-        <ScheduleItem time="5:00pm" name="Hackathon and Training: Social Event" />
-        <ScheduleItem time="8:00pm" name="Hackathon and Training: Social Event Ends" />
+        <ScheduleItem time="5:00pm" name="Hackathon and Training: Social Event"   highlighted={true}/>
+        <ScheduleItem time="8:00pm" name="Hackathon and Training: Social Event Ends"  />
       </section>
 
       <section className="mb-20">
@@ -108,7 +108,7 @@ const Schedule: React.FC<Props> = ({
         <ScheduleItem time="10:00am" name="Hackathon Session 3" name2="Training Session 3" />
         <ScheduleItem time="1:00pm" name="Lunch" highlighted={true} />
         <ScheduleItem time="2:00pm" name="Hackathon Session 4" name2="Training Session 4" />
-        <ScheduleItem time="4:45pm" name="Hackathon Wrap-up" name2="Training Wrap-up"  />
+        <ScheduleItem time="4:45pm" name="Hackathon Wrap-up" name2="Training Wrap-up"  highlighted={true} />
         <ScheduleItem time="5:00pm" name="Hackathon and Training: End" />
       </section>
 
@@ -118,24 +118,24 @@ const Schedule: React.FC<Props> = ({
         <ScheduleItem time="8:30am" name="Registration and Breakfast" highlighted={true} />
         <ScheduleItem time="9:30am" name="Welcome" category="Welcome" />
         <ScheduleItem time="9:40am" name="Product Keynote" speakers="Evan Floden" category="Welcome" />
-        <ScheduleItem time="10:20am" name="Talk" category="Enabling Science" speakers="Hyun-Hwan Jeong"/>
-        <ScheduleItem time="10:40am" name="Talk" category="Enabling Science" speakers="Alexandra Bartlett"/>
+        <ScheduleItem time="10:20am" name="From Technical Debt to Sustainable Workflows: The AI-MARRVEL Nextflow Journey" category="Enabling Science" speakers="Hyun-Hwan Jeong"/>
+        <ScheduleItem time="10:40am" name="Streamlining RNA-Seq Data Analysis with rnaseq-reports" category="Enabling Science" speakers="Alexandra Bartlett"/>
         <ScheduleItem time="11:00am" name="Coffee Break" highlighted={true} />
         <ScheduleItem time="11:30am" name="Sponsor Talk" category="Enabling Science" />
-        <ScheduleItem time="11:50am" name="Talk" category="Enabling Science" speakers="" />
-        <ScheduleItem time="12:10pm" name="Talk" category="Enabling Science" speakers="Franz Arnold Ake" />
-        <ScheduleItem time="12:30pm" name="Talk" category="Enabling Science" speakers="Adriana Messyasz" />
+        <ScheduleItem time="11:50am" name="Create the best protein annotation pipeline in the world, aka Protein fasta → ??? → Profit!" category="Enabling Science" speakers="Olga Botvinnik" />
+        <ScheduleItem time="12:10pm" name="SCALPEL, a Nextflow based pipeline for quantification of isoform at single-cell resolution" category="Enabling Science" speakers="Franz Arnold Ake" />
+        <ScheduleItem time="12:30pm" name="Developing a Scalable Workflow for Analyzing Long-Read 16S Sequences from Oxford Nanopore Sequencing" category="Enabling Science" speakers="Adriana Messyasz" />
         <ScheduleItem time="12:50pm" name="Lightning Round" category="Poster Pitches" />
         <ScheduleItem time="1:00pm" name="Lunch" highlighted={true} />
         <ScheduleItem time="2:00pm" name="Nextflow Updates" speakers="Paolo di Tommaso and Ben Sherman" category="Big Nextflow" />
-        <ScheduleItem time="2:30pm" name="Talk" category="Big Nextflow" speakers="Angel Pizarro"/>
-        <ScheduleItem time="3:00pm" name="Talk" category="Big Nextflow" speakers="Lorena Pantano"/>
+        <ScheduleItem time="2:30pm" name="What it took to run a pipeline on aarch64" category="Big Nextflow" speakers="Angel Pizarro"/>
+        <ScheduleItem time="3:00pm" name="Unified, community-developed analysis guidelines and templates for multi-omics data interpretability" category="Enabling science" speakers="Lorena Pantano"/>
         <ScheduleItem time="3:20pm" name="Lightning Round" category="Poster Pitches" />
         <ScheduleItem time="3:30pm" name="Coffee Break" highlighted={true} />
-        <ScheduleItem time="4:00pm" name="Talk" category="Big Nextflow" />
-        <ScheduleItem time="4:20pm" name="Talk" category="Big Nextflow" />
-        <ScheduleItem time="4:40pm" name="Keynote" category="Keynote" speakers="Luisa Herrmann"/>
-        <ScheduleItem time="5:30pm" name="Summit Reception"  />
+        <ScheduleItem time="4:00pm" name="Generative AI in novel vaccine design" category="Enabling science" speakers="Matthew Davies"/>
+        <ScheduleItem time="4:20pm" name="Seqera Fusion x NVIDIA Parabricks for Accelerated Analysis" category="Enabling science" speakers="Gary Burnett" />
+        <ScheduleItem time="4:40pm" name="Keynote: Doing AI right" category="Big Nextflow" speakers="Luisa Herrmann"/>
+        <ScheduleItem time="5:30pm" name="Summit Reception" highlighted={true} />
         <ScheduleItem time="7:30pm" name="Summit Reception: End"  />
       </section>
 
@@ -145,14 +145,14 @@ const Schedule: React.FC<Props> = ({
         <ScheduleItem time="7:00am" name="Morning Walk and Run to Seaport" highlighted={true}/>
         <ScheduleItem time="8:30am" name="Registration and Breakfast" highlighted={true}/>
         <ScheduleItem time="9:30am" name="Seqera: SciDev Demo" />
-        <ScheduleItem time="10:00am" name="Talk" category="Organizational Impact" />
+        <ScheduleItem time="10:00am" name="Building an Omics Data Infrastructure to Bridge Data Management and Data Science" category="Organizational Impact" speakers="Juliana Assis" />
         <ScheduleItem time="10:20am" name="Talk" category="Organizational Impact" speakers="Adrianto Wirawan" />
         <ScheduleItem time="10:40am" name="Sponsor Talk" category="Organizational Impact" />
         <ScheduleItem time="11:00am" name="Coffee Break" highlighted={true}/>
-        <ScheduleItem time="11:30am" name="Talk" category="Organizational Impact" speakers="Olaitan Awe"/>
+        <ScheduleItem time="11:30am" name="Enabling Reproducible Science and African Represenation in Science through Nextflow Workshops" category="Enabling science" speakers="Olaitan Awe"/>
         <ScheduleItem time="11:50am" name="Panel Discussion"  />
-        <ScheduleItem time="12:40pm" name="Summit Closing"  />
-        <ScheduleItem time="1:00pm" name="Summit End"  />
+        <ScheduleItem time="12:40pm" name="Summit Closing" highlighted={true} />
+        <ScheduleItem time="1:00pm" name="Summit End" />
       </section>
     </div>
   );

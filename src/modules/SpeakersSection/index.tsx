@@ -72,7 +72,7 @@ const SpeakerBox = ({
 
       {/* popup */}
       <div
-        className={`w-full h-full md:max-w-[850px] top-[50%] left-[50%] fixed z-[999] p-4 border border-nextflow bg-brand max-h-[650px] lg:max-h-[550px] my-2 overflow-hidden overflow-y-scroll md:overflow-y-hidden`}
+        className={`w-full h-full md:max-w-[850px] top-[50%] left-[50%] fixed z-[999] p-4 border border-nextflow bg-brand max-h-[600px] md:max-h-[500px] my-2 overflow-y-scroll md:overflow-y-hidden`}
         style={
           isOpen
             ? {
@@ -86,8 +86,8 @@ const SpeakerBox = ({
         <button className="fixed top-4 right-4 z-[999]"  onClick={onClick}>
           <img src={IconClose.src} alt="close" className="w-[20px] h-[20px]" />
         </button>
-        <div className="flex flex-col lg:flex-row items-end md:fixed md:top-0 md:left-0 md:bottom-0 p-4 w-full md:max-w-[45%]">
-          <div className="flex flex-col w-full pr-1 pb-4">
+        <div className={`flex flex-col lg:flex-row  md:fixed md:top-0 md:left-0 md:bottom-0 p-4 w-full ${bio ? 'md:max-w-[45%]' : 'w-full'}`}>
+          <div className="flex flex-col w-full pr-1 pb-4 pt-4">
             <div className="flex flex-col justify-center items-center p-2 w-full">
               <div className="speaker-card__image rounded-full w-[150px] h-[150px] object-cover overflow-hidden">
                 {image ? (
@@ -100,9 +100,9 @@ const SpeakerBox = ({
                   <div className="w-full h-full bg-nextflow"></div>
                 )}
               </div>
-              <div className="text-center mb-6 mt-6 min-h-[120px] w-full">
+              <div className="text-center mb-6 mt-6  w-full">
                 <h3 className="font-display text-[1.6rem] mb-1">{name}</h3>
-                <p className="monospace text-[.9rem]">{jobTitle}</p>
+                <p className="monospace text-[.95rem]">{jobTitle}</p>
                 {keynote && (
                   <div className="text-nextflow mt-2 font-display font-medium text-[1rem]">
                     Keynote Speaker
@@ -114,14 +114,16 @@ const SpeakerBox = ({
               <p className="monospace">{date}</p>
               <p className="font-display">{time}</p>
             </div>
-            <h5 className="text-[1.1rem] leading-tight font-medium">
+            <h5 className="text-[1.05rem] leading-tight font-medium">
               {submissionTitle}
             </h5>
           </div>
-          <div className="md:p-4 md:fixed md:right-0 md:bottom-0 top-0 w-full md:max-w-[55%] overflow-scroll h-full flex flex-col  justify-end overflow-y-scroll">
+          {bio &&
+          <div className="md:p-4 md:fixed md:right-0 md:bottom-0 top-0 w-full md:max-w-[55%] overflow-scroll h-full flex flex-col overflow-y-scroll md:pr-8">
             <small className="text-nextflow mt-6 mb-2">About</small>
             <div  className={clsx(styles.speakersBio, `monospace`)}  dangerouslySetInnerHTML={{ __html: bio }}></div>
           </div>
+           }
         </div>
       </div>
     </div>
@@ -136,7 +138,7 @@ const SpeakersSection: React.FC<Props> = ({ title }) => {
 
   return (
     <div className="container mt-14">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
         {speakers.main.map(
           (
             {
