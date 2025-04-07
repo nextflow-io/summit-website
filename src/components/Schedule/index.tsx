@@ -144,7 +144,7 @@ const Schedule: React.FC<Props> = ({
         <ScheduleHeader />
         <ScheduleItem time="7:00am" name="Morning Walk and Run to Seaport" highlighted={true}/>
         <ScheduleItem time="8:30am" name="Registration and Breakfast" highlighted={true}/>
-        <ScheduleItem time="9:30am" name="Seqera: SciDev Demo" />
+        <ScheduleItem time="9:30am" name="Seqera: SciDev Demo" category="Organizational Impact" speakers="Esha Joshi" />
         <ScheduleItem time="10:00am" name="Building an Omics Data Infrastructure to Bridge Data Management and Data Science" category="Organizational Impact" speakers="Juliana Assis" />
         <ScheduleItem time="10:20am" name="Talk" category="Organizational Impact" speakers="Adrianto Wirawan" />
         <ScheduleItem time="10:40am" name="Sponsor Talk" category="Organizational Impact" />

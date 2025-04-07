@@ -22,3 +22,8 @@
     }
   }
   
+
+  .speakersPopup {
+    scrollbar-color: var(--color-nextflow) var(--color-nextflow);
+    scrollbar-width:thin;
+  }

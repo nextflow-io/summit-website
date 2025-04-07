@@ -18,7 +18,7 @@ import chen from "./speakerImages/rebecca-chen.jpg";
 import zhang from "./speakerImages/wenchao-zhang.jpg";
 import sherman from "./speakerImages/ben-sherman.jpg";
 import floden from "./speakerImages/evan-floden.jpg";
-
+import joshi from "./speakerImages/esha-joshi.jpg";
 
 export default {
     main: [
@@ -63,17 +63,17 @@ export default {
         linkedin: "https://www.linkedin.com/in/juliana-assis-6419a230/",
         image: assis.src,
       },
-      {
-        name: "Olaitan Awe",
-        jobTitle: "Training Officer at African Society for Bioinformatics and Computational Biology",
-        track: "Session 1: Enabling science",
-        date:"May 16",
-        time: "11:30AM - 11:50AM",
-        submissionTitle: `Enabling Reproducible Science and African Represenation in Science through Nextflow Workshops`,
-        bio: `<p>Olaitan I. Awe (Ph.D.) is the training officer for the African Society for Bioinformatics and Computational Biology (ASBCB) and his research focuses on the development of computational tools and the analysis of Next-Generation Sequencing datasets. He completed his PhD in bioinformatics at the Computer Science Department, University of Ibadan with a research focus on transcriptomic region identification in model organisms using machine learning, an MS in Computer Science and a BS in Electrical and Electronic Engineering also from the Univerisity of Ibadan.</p><p> He contributes to solving the gene-finding problem. He has used comparative genomics techniques to study filoviruses and arboviruses. He has conducted gene expression studies on complex phenotypes (colorectal cancer, breast cancer, prostate cancer) and neurological disorders (Epilepsy, Multiple Sclerosis, Alzheimers). He is interested in developing reproducible bioinformatics pipelines. He has a record of primary and collaborative authorship in peer-reviewed publications in internationally recognized journals.</p><p> With over a decade of experience in scientific research computing, he is passionate about African bioinformatics, reproducible research and capacity building and he organizes webinars, codeathons and workshops to train life scientists from more than 59 countries in genomic data science skills.</p>`,
-        linkedin: "https://www.linkedin.com/in/juliana-assis-6419a230/",
-        image: awe.src,
-      },
+      // {
+      //   name: "Olaitan Awe",
+      //   jobTitle: "Training Officer at African Society for Bioinformatics and Computational Biology",
+      //   track: "Session 1: Enabling science",
+      //   date:"May 16",
+      //   time: "11:30AM - 11:50AM",
+      //   submissionTitle: `Enabling Reproducible Science and African Represenation in Science through Nextflow Workshops`,
+      //   bio: `<p>Olaitan I. Awe (Ph.D.) is the training officer for the African Society for Bioinformatics and Computational Biology (ASBCB) and his research focuses on the development of computational tools and the analysis of Next-Generation Sequencing datasets. He completed his PhD in bioinformatics at the Computer Science Department, University of Ibadan with a research focus on transcriptomic region identification in model organisms using machine learning, an MS in Computer Science and a BS in Electrical and Electronic Engineering also from the Univerisity of Ibadan.</p><p> He contributes to solving the gene-finding problem. He has used comparative genomics techniques to study filoviruses and arboviruses. He has conducted gene expression studies on complex phenotypes (colorectal cancer, breast cancer, prostate cancer) and neurological disorders (Epilepsy, Multiple Sclerosis, Alzheimers). He is interested in developing reproducible bioinformatics pipelines. He has a record of primary and collaborative authorship in peer-reviewed publications in internationally recognized journals.</p><p> With over a decade of experience in scientific research computing, he is passionate about African bioinformatics, reproducible research and capacity building and he organizes webinars, codeathons and workshops to train life scientists from more than 59 countries in genomic data science skills.</p>`,
+      //   linkedin: "https://www.linkedin.com/in/juliana-assis-6419a230/",
+      //   image: awe.src,
+      // },
       {
         name: "Alexandra Bartlett",
         jobTitle: "Bioinformatician II at Harvard Chan Bioinformatics Core",
@@ -161,6 +161,16 @@ export default {
         
         <p>His research has been published in notable journals, including Genome Research, Neuron, and Cell Reports, and he currently serves as the lead maintainer for the AI-MARRVEL pipeline, an AI-based genetic diagnosis tool designed to facilitate precise genetic analysis and diagnosis.</p>`,
         image: jeong.src,
+      },
+      {
+        name: "Esha Joshi",
+        jobTitle: "Bioinformatics Engineer at Seqera",
+        track: "Session 3: Organizational impact",
+        date:"May 16",
+        time: "9:30AM - 10:00AM",
+        submissionTitle: "To be announced",
+        bio: ``,
+        image: joshi.src,
       },
       {
         name: "Adriana Messyasz",
