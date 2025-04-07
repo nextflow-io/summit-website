@@ -1,0 +1,28 @@
+---
+import Layout from "@layouts/Base.astro";
+import SEO from "@components/SEO";
+import PostersSection from "@modules/PostersSection";
+import Hero from "@components/Hero";
+---
+
+<Layout namespace="2025/boston">
+  <SEO slot="head" title="Speakers" img={1} />
+
+
+  <section class="py-8">
+    <Hero
+    title="Posters"
+    content=" Explore posters from the community and learn about their work. Posters will be presented during lightning rounds during the event. "
+    ctaText1="Register for Boston"
+    ctaLink1="https://seqera.swoogo.com/nextflow-summit-boston-2025"
+    ctaExternal1
+    client:load
+  />
+ </section>
+
+
+  <PostersSection client:load/>
+    </div>
+  </section>
+
+</Layout>

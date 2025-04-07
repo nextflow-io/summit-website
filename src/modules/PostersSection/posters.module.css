@@ -1,0 +1,29 @@
+.postersBio {
+    font-size: .9rem;
+    a {
+      text-decoration: underline;
+      transition: all 0.3s;
+      &:hover {
+        transition: all 0.3s;
+        color: var(--color-nextflow);
+      }
+    }
+    ul {
+      margin-top: 1rem;
+      list-style-type: disc;
+      padding-left: 1.25rem;
+      li {
+        margin-bottom: 1rem;
+      }
+    }
+    p {
+      margin-bottom: 1rem;
+      font-size: .9rem;
+    }
+  }
+  
+
+  .postersPopup {
+    scrollbar-color: var(--color-nextflow) var(--color-nextflow);
+    scrollbar-width:thin;
+  }

@@ -22,6 +22,10 @@ export default {
         url: "/2025/boston/speakers",
       },
       {
+        name: "Posters",
+        url: "/2025/boston/posters",
+      },
+      {
         name: "Training",
         url: "/2025/boston/training",
       },
@@ -37,10 +41,7 @@ export default {
       //   name: "Hackathon",
       //   url: "/2025/boston/hackathon",
       // },
-      // {
-      //   name: "Posters",
-      //   url: "/2025/boston/posters",
-      // },
+
       {
         name: "Why Attend",
         url: "/2025/boston/why-attend",

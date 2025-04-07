@@ -20,6 +20,10 @@ const menuLinks = [
         url: "/2025/boston/speakers",
       },
       {
+        name: "Posters",
+        url: "/2025/boston/posters",
+      },
+      {
         name: "Training",
         url: "/2025/boston/training",
       },
@@ -30,10 +34,6 @@ const menuLinks = [
       // {
       //   name: "Hackathon",
       //   url: "/2025/boston/hackathon",
-      // },
-      // {
-      //   name: "Posters",
-      //   url: "/2025/boston/posters",
       // },
       {
         name: "Sponsors",
