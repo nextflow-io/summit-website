@@ -69,14 +69,6 @@ export default {
         linkedin: 'https://www.linkedin.com/in/laura-blum-a6ba76198/',
       },
       {
-        name: "Laura Blum",
-        jobTitle: "Development Scientist, Bioinformatics at New England Biolabs",
-        track: "Poster",
-        submissionTitle: "Workflow for germline variant calling with EM-seq data",
-        bio: `<p>Laura is a development scientist in the bioinformatics group at New England Biolabs, where she supports NEBNext product development for sequencing applications. Currently she works closely with scientists developing a variety of epigenetic products. Laura holds an M.S. from Dartmouth College and a B.S. from Middlebury College.</p>`,
-        linkedin: 'https://www.linkedin.com/in/laura-blum-a6ba76198/',
-      },
-      {
         name: "Michael Mueller",
         jobTitle: "Senior Solutions Architect at Amazon Web Services",
         track: "Poster",
