@@ -41,7 +41,6 @@ const SpeakerBox = ({
     transition={{
       duration: 0.25,
       ease: "linear",
-      delay: .7,
     }}
     >
       {/* personcard */}
@@ -61,7 +60,7 @@ const SpeakerBox = ({
               <div className="w-full h-full bg-nextflow"></div>
             )}
           </div>
-          <div className="text-center mb-6 mt-6 sm:min-h-[150px] w-full">
+          <div className="text-center mb-6 mt-6 sm:min-h-[160px] w-full">
             <h3 className="font-display text-2xl mb-2">{name}</h3>
             <p className="monospace">{jobTitle}</p>
   
@@ -224,6 +223,7 @@ const postersSection: React.FC<Props> = ({ title }) => {
           ) => {
             return (
               <SpeakerBox
+                key={index}
                 name={name}
                 jobTitle={jobTitle}
                 track={track}

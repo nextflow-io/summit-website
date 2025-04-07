@@ -41,7 +41,6 @@ const SpeakerBox = ({
     transition={{
       duration: 0.25,
       ease: "linear",
-      delay: .7,
     }}
     >
       {/* personcard */}
@@ -238,6 +237,7 @@ const SpeakersSection: React.FC<Props> = ({ title }) => {
           ) => {
             return (
               <SpeakerBox
+              key={name}
                 name={name}
                 jobTitle={jobTitle}
                 track={track}

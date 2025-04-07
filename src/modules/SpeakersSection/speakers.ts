@@ -188,7 +188,7 @@ export default {
         <p> Lorena holds a Ph.D. in Biomedicine and developed the first tool for discovering small non-coding RNAs in brain samples using next-generation sequencing (NGS) data. After five years of research at the Harvard School of Public Health, she transitioned to the biotech industry in 2019, working with companies like eGenesis on gene editing of pig genomes for xenotransplantation and NextRNA for novel non-coding RNA discovery.</p>
         <p> In 2016, she founded the 'Women in Bioinformatics' Meetup to promote collaboration among women in the Boston area. In her free time, Lorena offers mentorship and support to women in the field.</p>`,
         linkedin: "https://www.linkedin.com/in/lpantano/",
-        github: "https://www.linkedin.com/in/lpantano/",
+        github: "https://github.com/lpantano",
         image: pantano.src,
       },
       {
