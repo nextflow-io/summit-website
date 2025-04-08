@@ -11,9 +11,9 @@ import burnett from "./speakerImages/gary-burnett.jpg";
 import assis from "./speakerImages/juliana-assis.jpg";
 import awe from "./speakerImages/olaitan-awe.jpg";
 import botvinnik from "./speakerImages/olga-botvinnik.jpg";
-import sherman from "./speakerImages/ben-sherman.jpg";
 import floden from "./speakerImages/evan-floden.jpg";
 import joshi from "./speakerImages/esha-joshi.jpg";
+import sarver from "./speakerImages/brice-sarver.jpg";
 
 export default {
     main: [
@@ -58,17 +58,17 @@ export default {
         linkedin: "https://www.linkedin.com/in/juliana-assis-6419a230/",
         image: assis.src,
       },
-      // {
-      //   name: "Olaitan Awe",
-      //   jobTitle: "Training Officer at African Society for Bioinformatics and Computational Biology",
-      //   track: "Session 1: Enabling science",
-      //   date:"May 16",
-      //   time: "11:30AM - 11:50AM",
-      //   submissionTitle: `Enabling Reproducible Science and African Represenation in Science through Nextflow Workshops`,
-      //   bio: `<p>Olaitan I. Awe (Ph.D.) is the training officer for the African Society for Bioinformatics and Computational Biology (ASBCB) and his research focuses on the development of computational tools and the analysis of Next-Generation Sequencing datasets. He completed his PhD in bioinformatics at the Computer Science Department, University of Ibadan with a research focus on transcriptomic region identification in model organisms using machine learning, an MS in Computer Science and a BS in Electrical and Electronic Engineering also from the Univerisity of Ibadan.</p><p> He contributes to solving the gene-finding problem. He has used comparative genomics techniques to study filoviruses and arboviruses. He has conducted gene expression studies on complex phenotypes (colorectal cancer, breast cancer, prostate cancer) and neurological disorders (Epilepsy, Multiple Sclerosis, Alzheimers). He is interested in developing reproducible bioinformatics pipelines. He has a record of primary and collaborative authorship in peer-reviewed publications in internationally recognized journals.</p><p> With over a decade of experience in scientific research computing, he is passionate about African bioinformatics, reproducible research and capacity building and he organizes webinars, codeathons and workshops to train life scientists from more than 59 countries in genomic data science skills.</p>`,
-      //   linkedin: "https://www.linkedin.com/in/juliana-assis-6419a230/",
-      //   image: awe.src,
-      // },
+      {
+        name: "Olaitan Awe",
+        jobTitle: "Training Officer at African Society for Bioinformatics and Computational Biology",
+        track: "Session 1: Enabling science",
+        date:"May 16",
+        time: "11:30AM - 11:50AM",
+        submissionTitle: `Enabling Reproducible Science and African Represenation in Science through Nextflow Workshops`,
+        bio: `<p>Olaitan I. Awe (Ph.D.) is the training officer for the African Society for Bioinformatics and Computational Biology (ASBCB) and his research focuses on the development of computational tools and the analysis of Next-Generation Sequencing datasets. He completed his PhD in bioinformatics at the Computer Science Department, University of Ibadan with a research focus on transcriptomic region identification in model organisms using machine learning, an MS in Computer Science and a BS in Electrical and Electronic Engineering also from the Univerisity of Ibadan.</p><p> He contributes to solving the gene-finding problem. He has used comparative genomics techniques to study filoviruses and arboviruses. He has conducted gene expression studies on complex phenotypes (colorectal cancer, breast cancer, prostate cancer) and neurological disorders (Epilepsy, Multiple Sclerosis, Alzheimers). He is interested in developing reproducible bioinformatics pipelines. He has a record of primary and collaborative authorship in peer-reviewed publications in internationally recognized journals.</p><p> With over a decade of experience in scientific research computing, he is passionate about African bioinformatics, reproducible research and capacity building and he organizes webinars, codeathons and workshops to train life scientists from more than 59 countries in genomic data science skills.</p>`,
+        linkedin: "https://www.linkedin.com/in/juliana-assis-6419a230/",
+        image: awe.src,
+      },
       {
         name: "Alexandra Bartlett",
         jobTitle: "Bioinformatician II at Harvard Chan Bioinformatics Core",
@@ -163,8 +163,8 @@ export default {
         track: "Session 3: Organizational impact",
         date:"May 16",
         time: "9:30AM - 10:00AM",
-        submissionTitle: "To be announced",
-        bio: ``,
+        submissionTitle: "Scale with Seqera: Accelerate, Expand, and Collaborate",
+        bio: `<p>Esha is a Bioinformatician with a background in human genetics, with expertise bridging bioinformatics and software development. Her career has spanned biotech startups, academia, and government positions where she developed Nextflow pipelines and tools for large-scale genomic analysis.</p><p> Her role at Seqera's Scientific Development team allows her to leverage her diverse experience to assist scientists in optimizing their use of Nextflow and integrating the Seqera Platform into their research workflows.</p>`,
         image: joshi.src,
       },
       {
@@ -204,15 +204,15 @@ export default {
         image: pizarro.src,
       },
       {
-        name: "Ben Sherman",
-        jobTitle: "Senior Software Engineer at Seqera",
-        track: "Session 2: Big Nextflow",
-        date:"May 15",
-        time: "2PM - 2:30PM",
-        submissionTitle: "Nextflow Updates",
-        bio: `<p>Ben Sherman is a Senior Software Engineer at Seqera. He earned a PhD in Computer Engineering from Clemson University, where he developed high-performance applications for computational scientists (particularly bioinformaticians).</p><p> Ben has employed a variety of techniques, including machine learning, GPU programming, and Nextflow pipelines, to enable scientists to perform data-intensive scientific research. Ben has been using Nextflow since 2018, and started working on Nextflow full-time when he joined Seqera in 2021.</p><p> As a core maintainer of Nextflow, Ben is focused on improving the Nextflow language and optimizing the Nextflow runtime for HPC and cloud.</p>`,
-        image: sherman.src,
-        linkedin: "https://www.linkedin.com/in/ben-t-sherman/",
+        name: "Brice Sarver",
+        jobTitle: "Director at ZS Associates",
+        track: "Session 3: Organizational impact",
+        date:"May 16",
+        time: "10:40AM - 11AM",
+        submissionTitle: "Integrating Bioinformatics into the Regulated Pharmaceutical Lifecycle (Fireside Chat)",
+        bio: `<p>Brice has over 15 years of experience leveraging a variety of genetic and omics data from humans and other species to answer scientific questions in academia, biotech, and pharma. He has consistently collaborated with cross-functional teams, using his scientific expertise in genomics, population genetics, and phylogenetics to provide end-to-end perspectives on designing, implementing, and interpreting scientific analyses in the fields of computational biology, bioinformatics, and systematics.</p><p> He leads the global bioinformatics track in ZS’s Medical and Scientific Expertise Center as well as a ZS Discovery solution area focused on developing scalable, portable, and reproducible bioinformatic workflows. Drawing upon his academic insights and professional journey, he is a member of ZS’s advanced degree council, which provides professional guidance for ZSers with doctoral degrees.</p>`,
+        image: sarver.src,
+        linkedin: "https://www.linkedin.com/in/bricesarver",
       },
       {
         name: "Adrianto Wirawan",

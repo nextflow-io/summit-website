@@ -3,6 +3,9 @@ import lyu from "./posterImages/huimin-lyu.jpg";
 import valeriani from "./posterImages/lucrezia-valeriani.jpg";
 import chen from "./posterImages/rebecca-chen.jpg";
 import zhang from "./posterImages/wenchao-zhang.jpg";
+import mueller from './posterImages/michael-mueller.jpg'
+import desalvador from './posterImages/wolfgang-de-salvador.jpg'
+import blum from './posterImages/laura-blum.jpg'
 
 export default {
     main: [
@@ -67,6 +70,7 @@ export default {
         submissionTitle: "Workflow for germline variant calling with EM-seq data",
         bio: `<p>Laura is a development scientist in the bioinformatics group at New England Biolabs, where she supports NEBNext product development for sequencing applications. Currently she works closely with scientists developing a variety of epigenetic products. Laura holds an M.S. from Dartmouth College and a B.S. from Middlebury College.</p>`,
         linkedin: 'https://www.linkedin.com/in/laura-blum-a6ba76198/',
+        image: blum.src,
       },
       {
         name: "Michael Mueller",
@@ -75,6 +79,7 @@ export default {
         submissionTitle: "Cost-effective and scalable Oxford Nanopore basecalling with Nextflow and Amazon EC2 G Instances",
         bio: `<p>Dr. Michael Mueller is a Senior Solutions Architect in AWS's UK Public Sector Healthcare team, where he helps public sector organisations leverage cloud computing to accelerate genomic research and improve clinical outcomes. After completing his studies in Cell Biology at the University of Heidelberg, he earned his Ph.D. in Bioinformatics from Cambridge University.</p><p> He brings two decades of experience in bioinformatics, having worked across various roles related to clinical genomics in academia and public sector before joining AWS where he specialises in architecting cost-effective, scalable solutions for large-scale genomic data processing and analysis.</p>`,
         linkedin: 'http://www.linkedin.com/in/michael-mueller-5013a36',
+        image: mueller.src,
       },
       {
         name: "Wolfgang De Salvador",
@@ -83,7 +88,8 @@ export default {
         submissionTitle: "Running Nextflow on Microsoft Azure: selecting executors and infrastructure components",
         bio: `<p>Wolfgang is a mechanical engineer with a strong passion and innate aptitude towards technology and computer science, but also an experienced HPC system administrator, for cloud and on premises systems.</p><p> He owns a long industrial and academic experience in FEA and CFD modelling applied to product design and manufacturing. He is passionate about amplifying business value and innovation through HPC/AI in research contexts.</p><p>Wolfgang loves to drive and promote the latest innovative technologies in the HPC/ AI domain. Wolfgang owns a PhD in Design, Manufacturing and Operations Engineering as well as a Master in Business Administration.</p>`,
         linkedin: 'https://www.linkedin.com/in/wolfgang-de-salvador/',
-        github: 'https://github.com/wolfgang-desalvador'
+        github: 'https://github.com/wolfgang-desalvador',
+        image: desalvador.src,
       },
     ]
   }
