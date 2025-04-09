@@ -6,6 +6,7 @@ import zhang from "./posterImages/wenchao-zhang.jpg";
 import mueller from './posterImages/michael-mueller.jpg'
 import desalvador from './posterImages/wolfgang-de-salvador.jpg'
 import blum from './posterImages/laura-blum.jpg'
+import ianov from './posterImages/lara-ianov.jpg'
 
 export default {
     main: [
@@ -43,16 +44,17 @@ export default {
         bio: `<p>Phd Student in Artificial Intelligence at University of Trieste and AREA Science Park.</p>`,
         image: valeriani.src
       },
-    //   {
-    //     name: "Lara Ianov",
-    //     jobTitle: "Assistant Professor at University of Alabama at Birmingham",
-    //     track: "Poster",
-    //     submissionTitle: "scnanoseq: an nf-core pipeline for Oxford Nanopore single-cell RNA-sequencing",
-    //     bio: `<p>Lara Ianov is the Co-Director of the UAB Biological Data Science Core and an Assistant Professor at the UAB Department of Neurobiology. She directs the development of transcriptomics and epigenomics pipelines including the nf-core/scnanoseq pipeline.</p><p>Beyond secondary data analysis pipelines, Dr. Ianov also leads the establishment and development of analytical best practices and tertiary analysis pipelines for applications such as single-cell/single-nuclei RNA-seq, CITE-seq, ATAC-seq and spatial transcriptomics (10X Visium and Xenium).</p><p> Within the core, and as part of research collaborations, Dr. Ianov’s involvement in the analysis, interpretation and visualization of omics data have resulted in many peer-reviewed publications and funded grants. <./p><p>Dr. Ianov is also a dedicated contributor to the training community at UAB, having led multiple workshops focused on bioinformatics and computational workflows. As a Nextflow Ambassador, she is currently expanding these efforts by promoting Nextflow and nf-core topics, fostering a broader adoption of reproducible and scalable data analysis practices.</p>`,
-    //     twitter: 'https://x.com/UAB_BDS',
-    //     linkedin: 'https://www.linkedin.com/in/lara-ianov/',
-    //     github: 'https://github.com/lianov'
-    //   },
+      {
+        name: "Lara Ianov",
+        jobTitle: "Assistant Professor at University of Alabama at Birmingham",
+        track: "Poster",
+        submissionTitle: "scnanoseq: an nf-core pipeline for Oxford Nanopore single-cell RNA-sequencing",
+        bio: `<p>Lara Ianov is the Co-Director of the UAB Biological Data Science Core and an Assistant Professor at the UAB Department of Neurobiology. She directs the development of transcriptomics and epigenomics pipelines including the nf-core/scnanoseq pipeline.</p><p>Beyond secondary data analysis pipelines, Dr. Ianov also leads the establishment and development of analytical best practices and tertiary analysis pipelines for applications such as single-cell/single-nuclei RNA-seq, CITE-seq, ATAC-seq and spatial transcriptomics (10X Visium and Xenium).</p><p> Within the core, and as part of research collaborations, Dr. Ianov’s involvement in the analysis, interpretation and visualization of omics data have resulted in many peer-reviewed publications and funded grants. <./p><p>Dr. Ianov is also a dedicated contributor to the training community at UAB, having led multiple workshops focused on bioinformatics and computational workflows. As a Nextflow Ambassador, she is currently expanding these efforts by promoting Nextflow and nf-core topics, fostering a broader adoption of reproducible and scalable data analysis practices.</p>`,
+        twitter: 'https://x.com/UAB_BDS',
+        linkedin: 'https://www.linkedin.com/in/lara-ianov/',
+        github: 'https://github.com/lianov',
+        image: ianov.src
+      },
       {
         name: "Bowen Yang",
         jobTitle: "Bioinformatics Specialist III at Stowers Institute for Medical Research",

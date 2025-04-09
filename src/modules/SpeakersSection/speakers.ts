@@ -150,6 +150,7 @@ export default {
         date:"May 15",
         time: "10:20AM - 10:40AM",
         submissionTitle: "From Technical Debt to Sustainable Workflows: The AI-MARRVEL Nextflow Journey",
+        coAuthors: 'Jaeyen Lee, Chaozhong Liu, Zhandong Liu',
         bio: `<p>Hyun-Hwan Jeong is a scientist specializing in bioinformatics, computational biology, and machine learning, currently serving as an Assistant Professor in the Department of Pediatrics at Baylor College of Medicine. With extensive experience in next-generation sequencing analysis, Dr. Jeong has developed computational methods such as CRISPRBetaBinomial, SalmonTE, and the cloud-based analytic platform CRISPRcloud.</p>
  
         <p>Dr. Jeong earned his Ph.D. in Computer Science and Engineering from Ajou University, South Korea. His career includes roles at Baylor College of Medicine, Precede Biosciences, and UT Health Science Center, where he has applied bioinformatics and artificial intelligence to address challenges in precision medicine.</p>
@@ -198,6 +199,7 @@ export default {
         date:"May 15",
         time: "2:30PM - 3PM",
         submissionTitle: "What it took to run a pipeline on aarch64",
+        coAuthors: "Kostis Karagiannis",
         bio: `<p>Angel Pizarro is a Principal Developer Advocate for HPC at AWS. He has over 20 years of experience in research computing, bioinformatics and high-throughput computing.</p><p> His focus has been on the development of system architectures for scalable computing in genomics and other high throughput life science domains, democratizing access to large scale datasets, and development of cloud architectures for science.</p>`,
         linkedin: "https://www.linkedin.com/in/angelpizarro/",
         github: "https://github.com/delagoya",
