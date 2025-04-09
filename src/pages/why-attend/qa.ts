@@ -7,7 +7,7 @@ export default {
     },
     {
       question: "Are there recommended hotels near the event venue?",
-      answer: `Please see the <a href="/travel">Travel</a> page for hotel recommendations near the venue.`,
+      answer: `<p>Please see the <a href="/travel">Travel</a> page for hotel recommendations near the Boston venue.</p> <p>More information on the Barcelona Summit coming soon.</p>`,
     },
     {
       question:
@@ -30,11 +30,12 @@ export default {
     {
       question:
         "Will there be opportunities to interact with Nextflow experts and developers?",
-      answer: "Yes, you'll have the chance to connect with top experts across multiple event tracks throughout the 4 action-packed days!",
+      answer: "Yes, you'll have the chance to connect with top experts across multiple event tracks throughout the action-packed days!",
     },
     {
       question: "What are the key topics and themes covered during the Summit?",
-      answer: "This year the Summit will cover the following themes Enabling Science, Big Nextflow, and Organizational Impact.",
+      answer: `<p>This year the Boston Summit will cover the following themes Enabling Science, Big Nextflow, and Organizational Impact.</p> 
+      <p>More information on the Barcelona Summit coming soon.</p>`,
     },
   ],
 };

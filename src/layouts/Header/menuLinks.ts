@@ -39,10 +39,6 @@ const menuLinks = [
         name: "Sponsors",
         url: "/2025/boston/sponsors",
       },
-      {
-        name: "Why Attend",
-        url: "/2025/boston/why-attend",
-      },
       // {
       //   name: "Gallery",
       //   url: "/2025/boston/gallery",
@@ -57,10 +53,10 @@ const menuLinks = [
     name: "Call for Abstracts",
     url: "/call-for-abstracts",
   },
-  // {
-  //   name: "Training",
-  //   url: "/training",
-  // },
+  {
+    name: "Why Attend",
+    url: "/why-attend",
+  },
   {
     name: "Past Events",
     url: "/past-events",

@@ -41,11 +41,6 @@ export default {
       //   name: "Hackathon",
       //   url: "/2025/boston/hackathon",
       // },
-
-      {
-        name: "Why Attend",
-        url: "/2025/boston/why-attend",
-      },
       // {
       //   name: "Gallery",
       //   url: "/2025/boston/gallery",
@@ -73,10 +68,10 @@ export default {
         name: "Call for Abstracts",
         url: "/call-for-abstracts",
       },
-      // {
-      //   name: "Training",
-      //   url: "/training",
-      // },
+      {
+        name: "Why Attend",
+        url: "/why-attend",
+      },
       {
         name: "Past Events",
         url: "/past-events",
