@@ -5,6 +5,7 @@ import Hero from "@components/Hero";
 import Box, { SubSection } from "@components/Box";
 import ArrowUpRight from "@icons/ArrowUpRight";
 import img from "@images/photos/2025/boston/hackathon-2.jpg";
+import img2 from "@images/photos/2025/boston/hackathon-3.jpg";
 ---
 
 <Layout namespace="2025/boston">
@@ -25,7 +26,7 @@ import img from "@images/photos/2025/boston/hackathon-2.jpg";
     />
   </section>
 
-  <section class="mt-20 mb-16" id="learn">
+  <section class="mt-20 mb-8" id="learn">
     <h1 class="h4 mb-4 md:mb-8"></h1>
     <div class="container grid grid-cols-1 md:grid-cols-3 gap-8">
       <Box className="">
@@ -114,12 +115,12 @@ import img from "@images/photos/2025/boston/hackathon-2.jpg";
     </div>
   </section>
 
-  <section class="px-10 w-full container relative grid grid-cols-1 md:grid-cols-2 gap-8">
+  <section class="px-10 w-full container relative grid grid-cols-1 md:grid-cols-3 gap-8">
     <Box externalLink={true} className="w-full relative mb-10" href="https://nf-co.re/events/2025/hackathon-boston">
         <SubSection className="flex flex-col h-full">
           <div class="">
             <div class="pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center">
-              <h5 class="h5">Visit the nf-core website</h5>
+              <h5 class="h5">Visit nf-core website</h5>
               <ArrowUpRight/>
             </div>
           </div>
@@ -154,7 +155,13 @@ import img from "@images/photos/2025/boston/hackathon-2.jpg";
   
         </SubSection>
       </Box>
-      
+      <div class="imageBlend border w-full h-full border-nextflow xl:aspect-square object-cover">
+        <img
+          class="aspect-square w-full h-full object-cover"
+          src={img2.src}
+          alt="image of person at Nextflow Summit hackathon"
+        />
+      </div>
 
   </section>
 
