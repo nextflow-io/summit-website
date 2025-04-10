@@ -118,7 +118,7 @@ const SpeakerBox = ({
       {/* popup */}
   
       <div
-        className={`w-full h-full max-w-[350px] sm:max-w-[850px] top-[50%] left-[50%] fixed z-[999] p-4 border border-nextflow bg-brand max-h-[600px] md:max-h-[550px] my-2 overflow-y-scroll md:overflow-y-hidden`}
+        className={`w-full h-full max-w-[350px] sm:max-w-[850px] top-[50%] left-[50%] fixed z-[999] p-4 border border-nextflow bg-brand max-h-[600px] md:max-h-[550px] my-2  overflow-y-hidden`}
         style={
           isOpen
             ? {
@@ -128,11 +128,14 @@ const SpeakerBox = ({
             : { display: "none" }
         }
       >
+        
 
-        <button className="fixed top-4 right-4 z-[999]"  onClick={onClick}>
+         <button className="fixed top-4 right-4 z-[999]"  onClick={onClick}>
           <img src={IconClose.src} alt="close" className="w-[20px] h-[20px]" />
         </button>
-        <div className={`flex flex-col justify-between lg:flex-row  md:fixed md:top-0 md:left-0 md:bottom-0 p-4 w-full ${bio ? 'md:max-w-[45%]' : 'w-full'}`}>
+        <div className={`overflow-y-scroll flex flex-col justify-between relative lg:flex-row  md:fixed md:top-0 md:left-0 md:bottom-0 p-4 w-full  h-full ${bio ? 'md:max-w-[45%]' : 'w-full'}`}>
+
+
           <div className="flex flex-col w-full pr-1 pt-4 justify-between  h-full">
             <div className="flex flex-col justify-center items-center p-2 w-full">
               <div className="speaker-card__image rounded-full w-[150px] h-[150px] object-cover overflow-hidden">
