@@ -19,7 +19,7 @@ export default {
     main: [
       {
         name: "Luisa Herrmann",
-        jobTitle: "Founder at AIINovva",
+        jobTitle: "Founder at AINovva",
         track: "Session 2: Big Nextflow",
         date:"May 15",
         time: "4:40PM - 5:30PM",
