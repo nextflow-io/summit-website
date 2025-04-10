@@ -26,6 +26,10 @@ export default {
         url: "/2025/boston/posters",
       },
       {
+        name: "Hackathon",
+        url: "/2025/boston/hackathon",
+      },
+      {
         name: "Training",
         url: "/2025/boston/training",
       },

@@ -79,7 +79,7 @@ const Hero = ({
           </div>
         </div>
         {href &&
-        <div className={"imageBlend border border-nextflow w-full -h-ful"}>
+        <div className={"imageBlend border border-nextflow w-full h-full object-cover"}>
             <img
               className="aspect-square w-full h-full object-cover"
               src={href}

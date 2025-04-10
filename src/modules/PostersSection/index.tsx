@@ -41,6 +41,7 @@ const SpeakerBox = ({
     transition={{
       duration: 0.25,
       ease: "linear",
+      delay: .4,
     }}
     >
       {/* personcard */}

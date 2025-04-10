@@ -40,6 +40,7 @@ const SpeakerBox = ({
     }}
     transition={{
       duration: 0.25,
+      delay: .4,
       ease: "linear",
     }}
     >
