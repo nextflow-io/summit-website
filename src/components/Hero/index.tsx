@@ -58,7 +58,7 @@ const Hero = ({
             dangerouslySetInnerHTML={{ __html: content }}
           />
 
-          <div className="inline flex-col sm:flex-row sm:items-center mr-4" >
+          <div className="inline flex-col sm:flex-row sm:items-center mr-8" >
             {ctaText1 && (
               <Button className="mt-10 relative" white arrowAfter>
                 {ctaLink1 && (

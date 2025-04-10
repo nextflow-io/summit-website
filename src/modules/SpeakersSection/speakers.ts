@@ -32,6 +32,7 @@ export default {
         linkedin: "https://www.linkedin.com/in/luisahr/",
         image: herrmann.src,
         keynote: true,
+        speaker: true,
       },
       {
         name: "Franz Arnold Ake",
@@ -45,6 +46,7 @@ export default {
         linkedin: "https://www.linkedin.com/in/franz-arnold-ake-3a657b11b/",
         github: "https://github.com/Franzx7",
         image: ake.src,
+        speaker: true,
       },
       {
         name: "Juliana Assis",
@@ -57,6 +59,7 @@ export default {
         <p>Currently, Juliana applies these approaches to taxonomic and functional characterization of microbial communities, leveraging both Nanopore and Illumina sequencing technologies. While not a core Nextflow developer, she actively implements and customizes workflows to bridge the gap between data management and computational analysis, making powerful bioinformatics tools more accessible to researchers.</p>`,
         linkedin: "https://www.linkedin.com/in/juliana-assis-6419a230/",
         image: assis.src,
+        speaker: true,
       },
       {
         name: "Olaitan Awe",
@@ -68,6 +71,7 @@ export default {
         bio: `<p>Olaitan I. Awe (Ph.D.) is the training officer for the African Society for Bioinformatics and Computational Biology (ASBCB) and his research focuses on the development of computational tools and the analysis of Next-Generation Sequencing datasets. He completed his PhD in bioinformatics at the Computer Science Department, University of Ibadan with a research focus on transcriptomic region identification in model organisms using machine learning, an MS in Computer Science and a BS in Electrical and Electronic Engineering also from the Univerisity of Ibadan.</p><p> He contributes to solving the gene-finding problem. He has used comparative genomics techniques to study filoviruses and arboviruses. He has conducted gene expression studies on complex phenotypes (colorectal cancer, breast cancer, prostate cancer) and neurological disorders (Epilepsy, Multiple Sclerosis, Alzheimers). He is interested in developing reproducible bioinformatics pipelines. He has a record of primary and collaborative authorship in peer-reviewed publications in internationally recognized journals.</p><p> With over a decade of experience in scientific research computing, he is passionate about African bioinformatics, reproducible research and capacity building and he organizes webinars, codeathons and workshops to train life scientists from more than 59 countries in genomic data science skills.</p>`,
         linkedin: "https://www.linkedin.com/in/juliana-assis-6419a230/",
         image: awe.src,
+        speaker: true,
       },
       {
         name: "Alexandra Bartlett",
@@ -83,6 +87,7 @@ export default {
         linkedin: "https://www.linkedin.com/in/alexandra-bartlett-926b32109/",
         github: "https://github.com/abartlett004",
         image: bartlett.src,
+        speaker: true,
       },
       {
         name: "Olga Botvinnik",
@@ -97,6 +102,7 @@ export default {
         linkedin: "https://www.linkedin.com/in/olgabotvinnik/",
         github: "https://github.com/olgabot",
         image: botvinnik.src,
+        speaker: true,
       },
       {
         name: "Gary Burnett",
@@ -109,6 +115,7 @@ export default {
         linkedin: "https://www.linkedin.com/in/alexandra-bartlett-926b32109/",
         github: "https://github.com/abartlett004",
         image: burnett.src,
+        speaker: true,
       },
       // {
       //   name: "Matthew Davies",
@@ -130,6 +137,10 @@ export default {
         submissionTitle: "Nextflow Updates",
         bio: `<p>Paolo is the CTO and co-founder of Seqera. He is a computer scientist with a strong interest in high-throughput scientific computing, data-intensive applications, parallel programming, cloud computing and containerisation technologies. He has broad experience as a software engineer and software architect in life science and healthcare applications.</p><p> He is an open-source advocate and the creator and maintainer of the Nextflow workflow system.</p>`,
         image: ditommaso.src,
+        github: 'https://github.com/pditommaso',
+        twitter: 'https://x.com/paoloditommaso?lang=en',
+        linkedin: 'https://es.linkedin.com/in/paoloditommaso',
+        speaker: true,
       },
       {
         name: "Evan Floden",
@@ -142,6 +153,7 @@ export default {
         image: floden.src,
         twitter: "https://x.com/EvanFloden",
         linkedin: "https://www.linkedin.com/in/evan-floden-36137018/",
+        github: 'https://github.com/evanfloden',
       },
       {
         name: "Hyun-Hwan Jeong",
@@ -157,6 +169,7 @@ export default {
         
         <p>His research has been published in notable journals, including Genome Research, Neuron, and Cell Reports, and he currently serves as the lead maintainer for the AI-MARRVEL pipeline, an AI-based genetic diagnosis tool designed to facilitate precise genetic analysis and diagnosis.</p>`,
         image: jeong.src,
+        speaker: true,
       },
       {
         name: "Esha Joshi",
@@ -167,6 +180,7 @@ export default {
         submissionTitle: "Scale with Seqera: Accelerate, Expand, and Collaborate",
         bio: `<p>Esha is a Bioinformatician with a background in human genetics, with expertise bridging bioinformatics and software development. Her career has spanned biotech startups, academia, and government positions where she developed Nextflow pipelines and tools for large-scale genomic analysis.</p><p> Her role at Seqera's Scientific Development team allows her to leverage her diverse experience to assist scientists in optimizing their use of Nextflow and integrating the Seqera Platform into their research workflows.</p>`,
         image: joshi.src,
+        speaker: true,
       },
       {
         name: "Adriana Messyasz",
@@ -177,6 +191,7 @@ export default {
         submissionTitle: "Developing a Scalable Workflow for Analyzing Long-Read 16S Sequences from Oxford Nanopore Sequencing",
         bio: `<p>Bioinformatician and microbial scientist who loves to collaborate and solve complex problems regarding data generation, analysis, and interpretation.</p><p> As a bioinformatics specialist at the Rutgers NJMS Molecular and Genomics Informatics Core (MaGIC), I help researchers generate, organize, and interpret all types of sequencing data.</p>`,
         image: messyasz.src,
+        speaker: true,
       },
       {
         name: "Lorena Pantano",
@@ -191,6 +206,7 @@ export default {
         linkedin: "https://www.linkedin.com/in/lpantano/",
         github: "https://github.com/lpantano",
         image: pantano.src,
+        speaker: true,
       },
       {
         name: "Angel Pizarro",
@@ -204,6 +220,7 @@ export default {
         linkedin: "https://www.linkedin.com/in/angelpizarro/",
         github: "https://github.com/delagoya",
         image: pizarro.src,
+        speaker: true,
       },
       {
         name: "Brice Sarver",
@@ -215,6 +232,7 @@ export default {
         bio: `<p>Brice has over 15 years of experience leveraging a variety of genetic and omics data from humans and other species to answer scientific questions in academia, biotech, and pharma. He has consistently collaborated with cross-functional teams, using his scientific expertise in genomics, population genetics, and phylogenetics to provide end-to-end perspectives on designing, implementing, and interpreting scientific analyses in the fields of computational biology, bioinformatics, and systematics.</p><p> He leads the global bioinformatics track in ZS’s Medical and Scientific Expertise Center as well as a ZS Discovery solution area focused on developing scalable, portable, and reproducible bioinformatic workflows. Drawing upon his academic insights and professional journey, he is a member of ZS’s advanced degree council, which provides professional guidance for ZSers with doctoral degrees.</p>`,
         image: sarver.src,
         linkedin: "https://www.linkedin.com/in/bricesarver",
+        speaker: true,
       },
       {
         name: "Adrianto Wirawan",
@@ -224,7 +242,8 @@ export default {
         // submissionTitle: "[Coming soon]",
         time: "10:20AM - 10:40AM",
         image: wirawan.src,
-        bio: 'Coming soon.'
+        bio: 'Coming soon.',
+        speaker: true,
       },
       // {
       //   name: "TBD",

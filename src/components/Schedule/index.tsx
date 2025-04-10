@@ -39,7 +39,7 @@ export const ScheduleItem: React.FC<ScheduleItemProps> = ({
                     <p>{room2 && room2}</p>
                 </div>
             </div>
-            <div className="hidden sm:flex w-full sm:basis-1/5"><h4 className="font-semibold display">{speakers}</h4></div>
+            <div className="hidden sm:flex w-full sm:basis-1/5 sm:pr-4"><h4 className="font-semibold display">{speakers}</h4></div>
             <div className="hidden sm:flex w-full sm:basis-1/5"><h4 className="font-semibold display">{category}</h4></div>
  
 
@@ -116,12 +116,12 @@ const Schedule: React.FC<Props> = ({
         <h5 className="h5 mb-2">Thursday, May 15</h5>
         <ScheduleHeader />
         <ScheduleItem time="8:30am" name="Registration, coffee and light pastries" highlighted={true} />
-        <ScheduleItem time="9:30am" name="Welcome" category="Welcome" />
-        <ScheduleItem time="9:40am" name="Product Keynote" speakers="Evan Floden" category="Welcome" />
+        <ScheduleItem time="9:30am" name="Welcome" category="Welcome" speakers="Evan Floden" />
+        <ScheduleItem time="9:40am" name="Product Keynote" speakers="Evan Floden" category="Enabling science" />
         <ScheduleItem time="10:20am" name="From Technical Debt to Sustainable Workflows: The AI-MARRVEL Nextflow Journey" category="Enabling Science" speakers="Hyun-Hwan Jeong"/>
         <ScheduleItem time="10:40am" name="Streamlining RNA-Seq Data Analysis with rnaseq-reports" category="Enabling Science" speakers="Alexandra Bartlett"/>
         <ScheduleItem time="11:00am" name="Coffee break and snacks" highlighted={true} />
-        <ScheduleItem time="11:30am" name="TBA" speakers="Quilt" category="Enabling Science" />
+        <ScheduleItem time="11:30am" name="TBA: Quilt" speakers="Kevin Moore" category="Enabling Science" />
         <ScheduleItem time="11:50am" name="Create the best protein annotation pipeline in the world, aka Protein fasta → ??? → Profit!" category="Enabling Science" speakers="Olga Botvinnik" />
         <ScheduleItem time="12:10pm" name="SCALPEL, a Nextflow based pipeline for quantification of isoform at single-cell resolution" category="Enabling Science" speakers="Franz Arnold Ake" />
         <ScheduleItem time="12:30pm" name="Developing a Scalable Workflow for Analyzing Long-Read 16S Sequences from Oxford Nanopore Sequencing" category="Enabling Science" speakers="Adriana Messyasz" />
@@ -129,11 +129,11 @@ const Schedule: React.FC<Props> = ({
         <ScheduleItem time="1:00pm" name="Lunch" highlighted={true} />
         <ScheduleItem time="2:00pm" name="Nextflow Updates" speakers="Paolo Di Tommaso and Ben Sherman" category="Big Nextflow" />
         <ScheduleItem time="2:30pm" name="What it took to run a pipeline on aarch64" category="Big Nextflow" speakers="Angel Pizarro"/>
-        <ScheduleItem time="3:00pm" name="Unified, community-developed analysis guidelines and templates for multi-omics data interpretability" category="Enabling science" speakers="Lorena Pantano"/>
+        <ScheduleItem time="3:00pm" name="Unified, community-developed analysis guidelines and templates for multi-omics data interpretability" category="Big Nextflow" speakers="Lorena Pantano"/>
         <ScheduleItem time="3:20pm" name="Lightning Round" category="Poster Pitches" />
         <ScheduleItem time="3:30pm" name="Coffee break and snacks" highlighted={true} />
         <ScheduleItem time="4:00pm" name="TBA" category="Enabling science" speakers="TBA"/>
-        <ScheduleItem time="4:20pm" name="Seqera Fusion x NVIDIA Parabricks for Accelerated Analysis" category="Enabling science" speakers="Gary Burnett" />
+        <ScheduleItem time="4:20pm" name="Seqera Fusion x NVIDIA Parabricks for Accelerated Analysis" category="Big Nextflow" speakers="Gary Burnett" />
         <ScheduleItem time="4:40pm" name="Keynote: Doing AI right" category="Big Nextflow" speakers="Luisa Herrmann"/>
         <ScheduleItem time="5:30pm" name="Summit Reception" highlighted={true} />
         <ScheduleItem time="7:30pm" name="Summit Reception: End"  />
@@ -145,13 +145,13 @@ const Schedule: React.FC<Props> = ({
         <ScheduleItem time="7:00am" name="Network: Morning Walk and Run to Seaport" highlighted={true}/>
         <ScheduleItem time="8:30am" name="Welcome breakfast and coffee" highlighted={true}/>
         <ScheduleItem time="9:30am" name="Scale with Seqera: Accelerate, Expand, and Collaborate" category="Organizational Impact" speakers="Esha Joshi" />
-        <ScheduleItem time="10:00am" name="Sponsor Talk" category="Organizational Impact" speakers="ZS" />
+        <ScheduleItem time="10:00am" name="TBA: ZS" category="Organizational Impact" speakers="Brice Sarver and Kostis Karagiannis" />
         <ScheduleItem time="10:20am" name="Building an Omics Data Infrastructure to Bridge Data Management and Data Science" category="Organizational Impact" speakers="Juliana Assis" />
         <ScheduleItem time="10:40am" name="Talk" category="Organizational Impact" speakers="Adrianto Wirawan" />
         <ScheduleItem time="11:00am" name="Coffee break and snacks" highlighted={true}/>
-        <ScheduleItem time="11:30am" name="TBA" speakers="Champions Oncology" />
+        <ScheduleItem time="11:30am" name="TBA: Champions Oncology" speakers="Gervaise Henry" />
         <ScheduleItem time="11:45am" name="TBA" speakers="Merck" />
-        <ScheduleItem time="12:00pm" name="Enabling Reproducible Science and African Represenation in Science through Nextflow Workshops" category="Enabling science" speakers="Olaitan Awe"/>
+        <ScheduleItem time="12:00pm" name="Enabling Reproducible Science and African Represenation in Science through Nextflow Workshops" category="Organizational Impact" speakers="Olaitan Awe"/>
         <ScheduleItem time="12:20pm" name="Panel Discussion"  speakers="Saba Nafees and guests" />
         <ScheduleItem time="1:00pm" name="Summit: Wrap-up" highlighted={true} />
         <ScheduleItem time="1:10pm" name="Summit: End" highlighted={true} />
