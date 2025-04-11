@@ -23,7 +23,7 @@ const SpeakersSection = ({   }) => {
               twitter,
               linkedin,
               image,
-              posterPageUrl,
+              pageUrl,
             },
             index,
           ) => {
@@ -41,7 +41,7 @@ const SpeakersSection = ({   }) => {
                 image={image}
                 isOpen={activeIndex === index}
                 onClick={() => handleItemClick(index)}
-                posterPageUrl={posterPageUrl}
+                pageUrl={pageUrl}
               />
             );
           },

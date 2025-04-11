@@ -35,6 +35,7 @@ export default {
         image: herrmann.src,
         keynote: true,
         speaker: true,
+        pageUrl: '',
       },
       {
         name: "Gervaise Henry",
@@ -48,6 +49,7 @@ export default {
         image: henry.src,
         linkedin: "https://www.linkedin.com/in/gervaise-henry-7790679a/",
         speaker: true,
+        pageUrl: '',
       },
       {
         name: "Kevin Moore",
@@ -61,6 +63,7 @@ export default {
         linkedin: "https://www.linkedin.com/in/kevinemoore/",
         github: 'https://github.com/quiltdata/quilt',
         speaker: true,
+        pageUrl: '',
       },
       {
         name: "Angel Pizarro",
@@ -75,6 +78,7 @@ export default {
         github: "https://github.com/delagoya",
         image: pizarro.src,
         speaker: true,
+        pageUrl: '',
       },
       {
         name: "Brice Sarver",
@@ -87,6 +91,7 @@ export default {
         image: sarver.src,
         linkedin: "https://www.linkedin.com/in/bricesarver",
         speaker: true,
+        pageUrl: '',
       },
       {
         name: "Franz Arnold Ake",
@@ -101,6 +106,7 @@ export default {
         github: "https://github.com/Franzx7",
         image: ake.src,
         speaker: true,
+        pageUrl: '',
       },
       {
         name: "Juliana Assis",
@@ -114,6 +120,7 @@ export default {
         linkedin: "https://www.linkedin.com/in/juliana-assis-6419a230/",
         image: assis.src,
         speaker: true,
+        pageUrl: '',
       },
       {
         name: "Olaitan Awe",
@@ -126,6 +133,7 @@ export default {
         linkedin: "https://www.linkedin.com/in/juliana-assis-6419a230/",
         image: awe.src,
         speaker: true,
+        pageUrl: '',
       },
       {
         name: "Alexandra Bartlett",
@@ -142,6 +150,7 @@ export default {
         github: "https://github.com/abartlett004",
         image: bartlett.src,
         speaker: true,
+        pageUrl: '',
       },
       {
         name: "Olga Botvinnik",

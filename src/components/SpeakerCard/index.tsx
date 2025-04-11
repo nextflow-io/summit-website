@@ -24,7 +24,7 @@ type Props = {
   image?: any;
   isOpen: boolean;
   onClick: any;
-  posterPageUrl?: any;
+  pageUrl?: any;
 };
 
 const SpeakerCard: React.FC<Props> = ({
@@ -42,7 +42,7 @@ const SpeakerCard: React.FC<Props> = ({
   image,
   isOpen,
   onClick,
-  posterPageUrl,
+  pageUrl,
 }) => {
   return (
     <motion.div
@@ -116,7 +116,7 @@ const SpeakerCard: React.FC<Props> = ({
 
         <div>
           <div
-            className={`flex flex-row justify-between w-full border-t ${date && "border-b"} border-nextflow pt-2 mb-2`}
+            className={`flex flex-row justify-between w-full border-t ${date && "border-b border-nextflow pb-2"} border-nextflow pt-2 mb-2`}
           >
             <p className="monospace">{date}</p>
             <p className="font-display">{time}</p>
@@ -125,20 +125,6 @@ const SpeakerCard: React.FC<Props> = ({
           <h5 className="text-[1.2rem] leading-tight font-medium pb-2">
             {submissionTitle}
           </h5>
-
-          {/* {posterPageUrl && (
-            <div className="border-t border-nextflow w-full pt-2  text-center ">
-              <Button
-              
-                small
-                arrowBefore
-                className="monospace mt-4"
-                to={`/2025/boston/agenda/${posterPageUrl}`}
-              >
-                Poster Information
-              </Button>
-            </div>
-          )} */}
         </div>
       </div>
 
@@ -223,14 +209,15 @@ const SpeakerCard: React.FC<Props> = ({
             <div>
               <div>
                 <div
-                  className={`flex flex-row justify-between w-full border-t ${date && "border-b"} border-nextflow py-2 `}
+                  className={`flex flex-row justify-between w-full border-t ${date && "border-b border-nextflow pb-2 mb-2"} border-nextflow py-2 `}
                 >
                   <p className="monospace">{date}</p>
                   <p className="font-display">{time}</p>
                 </div>
 
-                <h5 className=" ">
-                <a className="text-[1.1rem] leading-tight font-medium text-white hover:text-nextflow duration-300 transition-all" href={`/2025/boston/agenda/${posterPageUrl}`}> {submissionTitle}</a>
+                <h5 className="">
+                {submissionTitle}
+                {/* <a className="text-[1.1rem] leading-tight font-medium text-white hover:text-nextflow duration-300 transition-all" href={`/2025/boston/agenda/${pageUrl}`}> {submissionTitle}</a> */}
                 </h5>
               </div>
               {bio && (
