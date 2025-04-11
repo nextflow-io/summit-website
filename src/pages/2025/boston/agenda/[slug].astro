@@ -18,7 +18,7 @@ export function getStaticPaths() {
 const { post } = Astro.props;
 ---
 
-<Layout namespace="2025/boston" >
+<Layout namespace="2025/boston" imgUrl={post.mainImage && post.mainImage.asset.url } >
   <SEO slot="head" title={post.title}  />
   <section class="mt-10 md:mt-20 mb-24 container">
     <EventPost post={post}   client:only="react" />
