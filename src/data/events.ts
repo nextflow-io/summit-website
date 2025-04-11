@@ -5,7 +5,8 @@ const getAllEventPosts = await sanityClient.fetch(
   `*[_type == "eventPost"]{
    ...,
    title,
-   associatedPerson-> {
+   body,
+   associatedPerson[]->{
      ...,
      name,
      role,
