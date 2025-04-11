@@ -12,7 +12,7 @@ type Props = {
 const EventPosts: React.FC<Props> = ({ post }) => {
 
   return (
-    <section className="container smaller mx-auto flex flex-col h-full">
+    <section className="flex flex-col h-full">
       <div className="border border-nextflow p-4">
         <div className="">
           {/* <p className="text-nextflow-200">{post?.publishedAt}</p> */}
@@ -66,6 +66,7 @@ const EventPosts: React.FC<Props> = ({ post }) => {
               </div>
             )}
 
+          <div className="flex flex-row justify-center">
             {person.twitter && (
               <SocialIcon
                 key={person.twitter}
@@ -90,6 +91,7 @@ const EventPosts: React.FC<Props> = ({ post }) => {
                 className="p-2 text-nextflow"
               />
             )}
+            </div>
           </div>
         </div>
       </div>

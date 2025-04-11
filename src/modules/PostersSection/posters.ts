@@ -19,6 +19,7 @@ export default {
         linkedin: 'https://www.linkedin.com/in/wolfgang-de-salvador/',
         github: 'https://github.com/wolfgang-desalvador',
         image: desalvador.src,
+        posterPageUrl: 'running-nextflow-on-microsoft-azure-selecting-executors-and-infrastructure-components',
       },
       {
         name: "Michael Mueller",
@@ -28,6 +29,7 @@ export default {
         bio: `<p>Dr. Michael Mueller is a Senior Solutions Architect in AWS's UK Public Sector Healthcare team, where he helps public sector organisations leverage cloud computing to accelerate genomic research and improve clinical outcomes. After completing his studies in Cell Biology at the University of Heidelberg, he earned his Ph.D. in Bioinformatics from Cambridge University.</p><p> He brings two decades of experience in bioinformatics, having worked across various roles related to clinical genomics in academia and public sector before joining AWS where he specialises in architecting cost-effective, scalable solutions for large-scale genomic data processing and analysis.</p>`,
         linkedin: 'http://www.linkedin.com/in/michael-mueller-5013a36',
         image: mueller.src,
+        posterPageUrl: 'cost-effective-and-scalable-oxford-nanopore-basecalling-with-nextflow-and-amazon-ec2-g-instances',
       },
       {
         name: "Laura Blum",
@@ -37,6 +39,7 @@ export default {
         bio: `<p>Laura is a development scientist in the bioinformatics group at New England Biolabs, where she supports NEBNext product development for sequencing applications. Currently she works closely with scientists developing a variety of epigenetic products. Laura holds an M.S. from Dartmouth College and a B.S. from Middlebury College.</p>`,
         linkedin: 'https://www.linkedin.com/in/laura-blum-a6ba76198/',
         image: blum.src,
+        posterPageUrl: 'workflow-for-germline-variant-calling-with-em-seq-data',
       },
       {
         name: "Rebecca Chen",
@@ -44,7 +47,8 @@ export default {
         track: "Poster",
         submissionTitle: "Large-scale analysis of drug resistance in livestock parasites",
         bio: `<p>Graduate student from the University of Calgary, Canada. Thesis project focuses on developing pipelines for analyzing Illumina and Nanopore amplicon sequencing of parasitic nematode marker genes.</p>`,
-        image: chen.src
+        image: chen.src,
+        posterPageUrl: 'large-scale-analysis-of-drug-resistance-in-livestock-parasites',
       },
       {
         name: "Lara Ianov",
@@ -55,7 +59,8 @@ export default {
         twitter: 'https://x.com/UAB_BDS',
         linkedin: 'https://www.linkedin.com/in/lara-ianov/',
         github: 'https://github.com/lianov',
-        image: ianov.src
+        image: ianov.src,
+        posterPageUrl: 'scnanoseq-an-nf-core-pipeline-for-oxford-nanopore-single-cell-rna-sequencing',
       },
       {
         name: "Huimin Lyu",
@@ -63,7 +68,8 @@ export default {
         track: "Poster",
         submissionTitle: "nf-core/airrflow: a workflow for adaptive immune receptor analysis using the Immcantation framework",
         bio: `<p>With a background in bioinformatics and computer science, Huimin Lyu is currently a bioinformatics programmer at Yale School of Medicine, focusing on AIRR-seq analysis and the maintenance and development of the airrflow pipeline.</p>`,
-        image: lyu.src
+        image: lyu.src,
+        posterPageUrl: 'nf-core-airrflow-a-workflow-for-adaptive-immune-receptor-analysis-using-the-immcantation',
       },
       {
         name: "Lucrezia Valeriani",
@@ -71,7 +77,8 @@ export default {
         track: "Poster",
         submissionTitle: "nf-core/tumourevo: accelerates understanding in tumour evolution",
         bio: `<p>Phd Student in Artificial Intelligence at University of Trieste and AREA Science Park.</p>`,
-        image: valeriani.src
+        image: valeriani.src,
+        posterPageUrl: 'nf-core-tumourevo-accelerates-understanding-in-tumour-evolution',
       },
       {
         name: "Bowen Yang",
@@ -82,6 +89,7 @@ export default {
         linkedin: 'https://www.linkedin.com/in/bowen-yang-ph-d-0a9714126/',
         github: 'https://github.com/boweny920',
         image: yang.src,
+        posterPageUrl: 'streamlined-bioinformatics-services-available-at-the-stowers-institute-for-medical-research',
       },
       {
         name: "Wenchao Zhang",
@@ -91,7 +99,8 @@ export default {
         bio: `<p>Dr. Wenchao Zhang is a Senior Computational Research Scientist at the Center for Applied Bioinformatics (CAB) at St. Jude Children's Research Hospital (SJCRH). He began his career as an electronics engineer before transitioning to the field of bioinformatics. Over the past 15 years, Dr. Zhang has cultivated extensive expertise in computational biology, with a particular focus on developing innovative solutions for complex biological problems.</p>
         <p>His research interests include the development of Nextflow pipelines, the creation of bioinformatics algorithms and tools, and the application of high-performance computing (HPC) techniques to accelerate bioinformatics analyses. Dr. Zhang specializes in leveraging both task-driven parallel computing frameworks, such as MPI, and data-driven parallel computing platforms, such as CUDA GPU, to optimize computational efficiency and scalability in bioinformatics workflows.</p>`,
         linkedin: "https://www.linkedin.com/in/wenchao-zhang-5095044a",
-        image: zhang.src
+        image: zhang.src,
+        posterPageUrl: 'hifi-somatic-nextflow-a-customizable-nextflow-pipeline-for-somatic-variant-calling-using-hifi',
       },
     ]
   }
