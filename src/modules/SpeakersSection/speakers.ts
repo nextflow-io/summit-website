@@ -14,6 +14,8 @@ import botvinnik from "./speakerImages/olga-botvinnik.jpg";
 import floden from "./speakerImages/evan-floden.jpg";
 import joshi from "./speakerImages/esha-joshi.jpg";
 import sarver from "./speakerImages/brice-sarver.jpg";
+import moore from "./speakerImages/kevin-moore.jpg";
+import henry from "./speakerImages/gervaise-henry.jpg";
 
 export default {
     main: [
@@ -35,8 +37,34 @@ export default {
         speaker: true,
       },
       {
+        name: "Gervaise Henry",
+        jobTitle: "Director at ZS Associates",
+        track: "Session 3: Organizational Impact",
+        date:"May 16",
+        time: "11:30AM - 11:45AM",
+        submissionTitle: "Optimizing Compute Costs with Seqera Cloud: Champions Oncology's PDX Bank and Multi-Omics Data",
+        bio: `<p>Gervaise Henry began his career as a molecular biologist in the lab, where he honed his expertise in experimental biology before transitioning into the dynamic field of computational biology. As an early adopter of Nextflow, Gervaise has been at the forefront of workflow orchestration, leveraging cutting-edge tools to streamline complex bioinformatics processes.</p><p>Currently, Gervaise works at Champions Oncology, where he leads the company's data infrastructure and management strategy. He is responsible for designing, implementing, and maintaining a robust data platform that supports both Champions Oncology's research and development initiatives and its customers. His work focuses on managing multi-omics and research data in alignment with FAIR (Findable, Accessible, Interoperable, and Reusable) principles, ensuring the seamless integration, accessibility, and utility of data across the organization and for customer projects.</p>
+        <p>With a unique blend of laboratory experience and computational innovation, Gervaise plays a pivotal role in driving advancements in precision oncology, fostering research efficiency, and pushing the boundaries of data-driven discovery.</p>`,
+        image: henry.src,
+        linkedin: "https://www.linkedin.com/in/gervaise-henry-7790679a/",
+        speaker: true,
+      },
+      {
+        name: "Kevin Moore",
+        jobTitle: "CEO at Quilt",
+        track: "Session 3: Organizational Impact",
+        date:"May 15",
+        time: "11:30AM - 11:50AM",
+        submissionTitle: "Closing the Metadata Gap: Linking Sample Context to Nextflow Outputs with Quilt",
+        bio: `<p>Kevin has over 20 years of experience in enterprise data processing, from processor and memory system architectures to in-memory database software and cloud architecture. Prior to Quilt Data, Kevin developed hardware-optimized software and scale-out in-memory database processing systems at Oracle and Sun Microsystems. Kevin earned a Ph.D. from the University of Wisconsin.</p>`,
+        image: moore.src,
+        linkedin: "https://www.linkedin.com/in/kevinemoore/",
+        github: 'https://github.com/quiltdata/quilt',
+        speaker: true,
+      },
+      {
         name: "Angel Pizarro",
-        jobTitle: "Principal Developer Advocate at Amazon Web Services",
+        jobTitle: "VP Head of Data Engineering at Champions Oncology",
         track: "Session 2: Big Nextflow",
         date:"May 15",
         time: "2:30PM - 3PM",
@@ -51,7 +79,7 @@ export default {
       {
         name: "Brice Sarver",
         jobTitle: "Director at ZS Associates",
-        track: "Session 3: Organizational impact",
+        track: "Session 3: Organizational Impact",
         date:"May 16",
         time: "10:40AM - 11AM",
         submissionTitle: "Integrating Bioinformatics into the Regulated Pharmaceutical Lifecycle (Fireside Chat)",
@@ -63,7 +91,7 @@ export default {
       {
         name: "Franz Arnold Ake",
         jobTitle: "PHD Student at IDIBELL",
-        track: "Session 1: Enabling science",
+        track: "Session 1: Enabling Science",
         date:"May 15",
         time: "12:10PM - 12:30PM",
         submissionTitle: "SCALPEL, a Nextflow based pipeline for quantification of isoform at single-cell resolution",
@@ -77,7 +105,7 @@ export default {
       {
         name: "Juliana Assis",
         jobTitle: "Senior Data Scientist at DTU Biosustain: The Novo Nordisk Foundation Center for Biosustainability",
-        track: "Session 3: Organizational impact",
+        track: "Session 3: Organizational Impact",
         date:"May 16",
         time: "10AM - 10:20AM",
         submissionTitle: `Building an Omics Data Infrastructure to Bridge Data Management and Data Science`,
@@ -90,7 +118,7 @@ export default {
       {
         name: "Olaitan Awe",
         jobTitle: "Training Officer at African Society for Bioinformatics and Computational Biology",
-        track: "Session 1: Enabling science",
+        track: "Session 1: Enabling Science",
         date:"May 16",
         time: "11:30AM - 11:50AM",
         submissionTitle: `Enabling Reproducible Science and African Represenation in Science through Nextflow Workshops`,
@@ -102,7 +130,7 @@ export default {
       {
         name: "Alexandra Bartlett",
         jobTitle: "Bioinformatician II at Harvard Chan Bioinformatics Core",
-        track: "Session 1: Enabling science",
+        track: "Session 1: Enabling Science",
         date:"May 15",
         time: "10:40AM - 11AM",
         submissionTitle: "Streamlining RNA-Seq Data Analysis with rnaseq-reports",
@@ -118,7 +146,7 @@ export default {
       {
         name: "Olga Botvinnik",
         jobTitle: "CEO & Founder at Seanome",
-        track: "Session 1: Enabling science",
+        track: "Session 1: Enabling Science",
         date:"May 15",
         time: "11:50AM - 12:10PM",
         submissionTitle: "Create the best protein annotation pipeline in the world, aka Protein fasta → ??? → Profit!",
@@ -133,7 +161,7 @@ export default {
       {
         name: "Gary Burnett",
         jobTitle: "Engineer at NVIDIA",
-        track: "Session 1: Enabling science",
+        track: "Session 1: Enabling Science",
         date:"May 15",
         time: "4:20PM - 4:40PM",
         submissionTitle: "Seqera Fusion x NVIDIA Parabricks for Accelerated Analysis",
@@ -146,7 +174,7 @@ export default {
       // {
       //   name: "Matthew Davies",
       //   jobTitle: "Head of Bioinformatics at DIOSynVax",
-      //   track: "Session 1: Enabling science",
+      //   track: "Session 1: Enabling Science",
       //   date:"May 15",
       //   time: "4PM - 4:20PM",
       //   submissionTitle: "Generative AI in novel vaccine design",
@@ -171,7 +199,7 @@ export default {
       {
         name: "Evan Floden",
         jobTitle: "CEO at Seqera",
-        track: "Session 1: Enabling science",
+        track: "Session 1: Enabling Science",
         date:"May 15",
         time: "9:40AM - 10:20AM",
         submissionTitle: "Summit Opening",
@@ -184,7 +212,7 @@ export default {
       {
         name: "Hyun-Hwan Jeong",
         jobTitle: "Assistant Professor at Baylor College of Medicine",
-        track: "Session 1: Enabling science",
+        track: "Session 1: Enabling Science",
         date:"May 15",
         time: "10:20AM - 10:40AM",
         submissionTitle: "From Technical Debt to Sustainable Workflows: The AI-MARRVEL Nextflow Journey",
@@ -200,7 +228,7 @@ export default {
       {
         name: "Esha Joshi",
         jobTitle: "Bioinformatics Engineer at Seqera",
-        track: "Session 3: Organizational impact",
+        track: "Session 3: Organizational Impact",
         date:"May 16",
         time: "9:30AM - 10:00AM",
         submissionTitle: "Scale with Seqera: Accelerate, Expand, and Collaborate",
@@ -211,7 +239,7 @@ export default {
       {
         name: "Adriana Messyasz",
         jobTitle: "Bioinformatics Analyst at Rutgers NJMS",
-        track: "Session 1: Enabling science",
+        track: "Session 1: Enabling Science",
         date:"May 15",
         time: "12:30PM - 12:50PM",
         submissionTitle: "Developing a Scalable Workflow for Analyzing Long-Read 16S Sequences from Oxford Nanopore Sequencing",
@@ -222,7 +250,7 @@ export default {
       {
         name: "Lorena Pantano",
         jobTitle: "Director of the Bioinformatics Platform at the Harvard Chan Bioinformatics Core",
-        track: "Session 1: Enabling science",
+        track: "Session 1: Enabling Science",
         date:"May 15",
         time: "3PM - 3:20PM",
         submissionTitle: "Unified, community-developed analysis guidelines and templates for multi-omics data interpretability",
@@ -237,7 +265,7 @@ export default {
       {
         name: "Adrianto Wirawan",
         jobTitle: "Director of Bioinformatics Engineering at Genomics England",
-        track: "Session 3: Organizational impact",
+        track: "Session 3: Organizational Impact",
         date:"May 16",
         // submissionTitle: "[Coming soon]",
         time: "10:20AM - 10:40AM",
@@ -248,14 +276,14 @@ export default {
       // {
       //   name: "TBD",
       //   jobTitle: "TBD at ZS",
-      //   track: "Session 3: Organizational impact",
+      //   track: "Session 3: Organizational Impact",
       //   date:"May 16",
       //   time: "10:40AM - 11:00AM",
       // },
       // {
       //   name: "TBD",
       //   jobTitle: "TBD at QUILT",
-      //   track: "Session 1: Enabling science",
+      //   track: "Session 1: Enabling Science",
       //   date:"May 15",
       //   time: "11:30AM - 11:50AM",
       // },

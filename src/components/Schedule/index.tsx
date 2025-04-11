@@ -117,11 +117,11 @@ const Schedule: React.FC<Props> = ({
         <ScheduleHeader />
         <ScheduleItem time="8:30am" name="Registration, coffee and light pastries" highlighted={true} />
         <ScheduleItem time="9:30am" name="Welcome" category="Welcome" speakers="Evan Floden" />
-        <ScheduleItem time="9:40am" name="Product Keynote" speakers="Evan Floden" category="Enabling science" />
+        <ScheduleItem time="9:40am" name="Product Keynote" speakers="Evan Floden" category="Enabling Science" />
         <ScheduleItem time="10:20am" name="From Technical Debt to Sustainable Workflows: The AI-MARRVEL Nextflow Journey" category="Enabling Science" speakers="Hyun-Hwan Jeong"/>
         <ScheduleItem time="10:40am" name="Streamlining RNA-Seq Data Analysis with rnaseq-reports" category="Enabling Science" speakers="Alexandra Bartlett"/>
         <ScheduleItem time="11:00am" name="Coffee break and snacks" highlighted={true} />
-        <ScheduleItem time="11:30am" name="TBA: Quilt" speakers="Kevin Moore" category="Enabling Science" />
+        <ScheduleItem time="11:30am" name="Closing the Metadata Gap: Linking Sample Context to Nextflow Outputs with Quilt" speakers="Kevin Moore" category="Organizational Impact" />
         <ScheduleItem time="11:50am" name="Create the best protein annotation pipeline in the world, aka Protein fasta → ??? → Profit!" category="Enabling Science" speakers="Olga Botvinnik" />
         <ScheduleItem time="12:10pm" name="SCALPEL, a Nextflow based pipeline for quantification of isoform at single-cell resolution" category="Enabling Science" speakers="Franz Arnold Ake" />
         <ScheduleItem time="12:30pm" name="Developing a Scalable Workflow for Analyzing Long-Read 16S Sequences from Oxford Nanopore Sequencing" category="Enabling Science" speakers="Adriana Messyasz" />
@@ -132,7 +132,7 @@ const Schedule: React.FC<Props> = ({
         <ScheduleItem time="3:00pm" name="Unified, community-developed analysis guidelines and templates for multi-omics data interpretability" category="Big Nextflow" speakers="Lorena Pantano"/>
         <ScheduleItem time="3:20pm" name="Lightning Round" category="Poster Pitches" />
         <ScheduleItem time="3:30pm" name="Coffee break and snacks" highlighted={true} />
-        <ScheduleItem time="4:00pm" name="TBA" category="Enabling science" speakers="TBA"/>
+        <ScheduleItem time="4:00pm" name="TBA" category="Enabling Science" speakers="TBA"/>
         <ScheduleItem time="4:20pm" name="Seqera Fusion x NVIDIA Parabricks for Accelerated Analysis" category="Big Nextflow" speakers="Gary Burnett" />
         <ScheduleItem time="4:40pm" name="Keynote: Doing AI right" category="Big Nextflow" speakers="Luisa Herrmann"/>
         <ScheduleItem time="5:30pm" name="Summit Reception" highlighted={true} />
@@ -149,7 +149,7 @@ const Schedule: React.FC<Props> = ({
         <ScheduleItem time="10:20am" name="Building an Omics Data Infrastructure to Bridge Data Management and Data Science" category="Organizational Impact" speakers="Juliana Assis" />
         <ScheduleItem time="10:40am" name="Talk" category="Organizational Impact" speakers="Adrianto Wirawan" />
         <ScheduleItem time="11:00am" name="Coffee break and snacks" highlighted={true}/>
-        <ScheduleItem time="11:30am" name="TBA: Champions Oncology" speakers="Gervaise Henry" />
+        <ScheduleItem time="11:30am" name="Optimizing Compute Costs with Seqera Cloud: Champions Oncology's PDX Bank and Multi-Omics Data" speakers="Gervaise Henry" category="Organizational Impact" />
         <ScheduleItem time="11:45am" name="TBA" speakers="Merck" />
         <ScheduleItem time="12:00pm" name="Enabling Reproducible Science and African Represenation in Science through Nextflow Workshops" category="Organizational Impact" speakers="Olaitan Awe"/>
         <ScheduleItem time="12:20pm" name="Panel Discussion"  speakers="Saba Nafees and guests" />
