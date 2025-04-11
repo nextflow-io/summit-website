@@ -15,6 +15,7 @@ const Sponsor = ({ sponsor, location }) => {
   };
   let rank = ranks[sponsor.rank];
   if (location === "barcelona") rank = ranks[sponsor.rankBarcelona];
+  debugger
   return (
     <Box className="flex flex-col justify-between min-h-[350px]">
       <SubSection className="">

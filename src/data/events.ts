@@ -1,19 +1,35 @@
 import { sanityClient } from "sanity:client";
 
 
-export async function getAllEventPosts() {
-  return await sanityClient.fetch(`
-    *[_type == "blogPost"] {
-      ...,
-      tags[]->,
-      meta {
-        slug {
-          current
-        },
-        description,
-        "shareImage": shareImage.asset->url
+const getAllEventPosts = await sanityClient.fetch(
+  `*[_type == "eventPost"]{
+   ...,
+   title,
+   body,
+    mainImage{
+    ...,
+      asset-> {
+      url,
       },
-      author->,
-      authors[]->
-    }`);
-}
+    },
+   associatedPerson[]->{
+     ...,
+     name,
+     role,
+     keynote,
+     linkedin,
+     github,
+     twitter,
+     image{
+       asset-> {
+       url,
+       },
+     },
+     bio, 
+   },
+  }`
+);
+
+
+export default getAllEventPosts;
+
