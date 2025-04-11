@@ -145,9 +145,9 @@ const Schedule: React.FC<Props> = ({
         <ScheduleItem time="7:00am" name="Network: Morning Walk and Run to Seaport" highlighted={true}/>
         <ScheduleItem time="8:30am" name="Welcome breakfast and coffee" highlighted={true}/>
         <ScheduleItem time="9:30am" name="Scale with Seqera: Accelerate, Expand, and Collaborate" category="Organizational Impact" speakers="Esha Joshi" />
-        <ScheduleItem time="10:00am" name="TBA: ZS" category="Organizational Impact" speakers="Brice Sarver and Kostis Karagiannis" />
+        <ScheduleItem time="10:00am" name="TBA with ZS" category="Organizational Impact" speakers="Brice Sarver and Kostis Karagiannis" />
         <ScheduleItem time="10:20am" name="Building an Omics Data Infrastructure to Bridge Data Management and Data Science" category="Organizational Impact" speakers="Juliana Assis" />
-        <ScheduleItem time="10:40am" name="Talk" category="Organizational Impact" speakers="Adrianto Wirawan" />
+        <ScheduleItem time="10:40am" name="TBA" category="Organizational Impact" speakers="Adrianto Wirawan" />
         <ScheduleItem time="11:00am" name="Coffee break and snacks" highlighted={true}/>
         <ScheduleItem time="11:30am" name="Optimizing Compute Costs with Seqera Cloud: Champions Oncology's PDX Bank and Multi-Omics Data" speakers="Gervaise Henry" category="Organizational Impact" />
         <ScheduleItem time="11:45am" name="TBA" speakers="Merck" />
