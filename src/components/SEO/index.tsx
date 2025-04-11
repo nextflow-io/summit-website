@@ -19,6 +19,7 @@ type Props = {
     speaker?: string;
     location?: string;
   };
+  sanityImage?: string;
 };
 
 const SEO: React.FC<Props> = ({

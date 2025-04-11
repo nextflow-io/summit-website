@@ -6,6 +6,12 @@ const getAllEventPosts = await sanityClient.fetch(
    ...,
    title,
    body,
+    mainImage{
+    ...,
+      asset-> {
+      url,
+      },
+    },
    associatedPerson[]->{
      ...,
      name,

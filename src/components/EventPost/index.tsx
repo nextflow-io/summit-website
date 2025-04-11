@@ -19,17 +19,17 @@ const EventPosts: React.FC<Props> = ({ post }) => {
           {post?.category}
           <h1 className="h4 py-2"> {post?.title}</h1>
 
-          <div className="pb-4 mt-6">
+          <div className="pb-6 mt-6">
             {post.associatedPerson?.map((person, index) => (
               <div key={index}>
                 {person.name} {index < post.associatedPerson.length - 1 && ", "}
               </div>
             ))}
-            <div>{post.associatedPerson.name}</div>
+            <div className="mb-1">{post.associatedPerson.name}</div>
             {post.coauthors && <div>Coauthors: {post.coauthors} </div>}
           </div>
 
-          <div className="border-t border-nextflow py-4">
+          <div className="border-t border-nextflow py-2">
             <p> {post?.category}</p>
             <PortableText
               className="mt-4 monospace text-sm"
@@ -43,7 +43,7 @@ const EventPosts: React.FC<Props> = ({ post }) => {
      
       {post.associatedPerson?.map((person, index) => (
       <div className="mt-8 speaker-card border border-nextflow p-4 flex flex-col h-full">
-        <div className="flex flex-col justify-center items-center w-full">
+        <div className="flex flex-col justify-center items-center w-full pt-2">
           <div className="speaker-card__image rounded-full w-[150px] h-[150px] object-cover overflow-hidden">
             {person.image ? (
               <img

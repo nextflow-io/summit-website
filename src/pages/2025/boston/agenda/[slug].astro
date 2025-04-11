@@ -19,7 +19,7 @@ const { post } = Astro.props;
 ---
 
 <Layout namespace="2025/boston">
-  <SEO slot="head" title={post.title} img={1} />
+  <SEO slot="head" title={post.title} imgUrl={post.mainImage.asset.url && post.mainImage.asset.url } />
   <section class="mt-10 md:mt-20 mb-24 container">
     <EventPost post={post}  />
   </section>
