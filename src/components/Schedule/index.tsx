@@ -121,7 +121,7 @@ const Schedule: React.FC<Props> = ({
         <ScheduleHeader />
         <ScheduleItem time="8:30am" name="Registration, coffee and light pastries" highlighted={true} />
         <ScheduleItem time="9:30am" name="Welcome" category="Welcome" speakers="Evan Floden" />
-        <ScheduleItem time="9:40am" name="Product Keynote" speakers="Evan Floden" category="Enabling Science" />
+        <ScheduleItem time="9:40am" name="Product Keynote" speakers="Evan Floden" category="Enabling Science" url="product-keynote" />
         <ScheduleItem time="10:20am" name="From Technical Debt to Sustainable Workflows: The AI-MARRVEL Nextflow Journey" category="Enabling Science" speakers="Hyun-Hwan Jeong" url="from-technical-debt-to-sustainable-workflows-the-ai-marrvel-nextflow-journey"/>
         <ScheduleItem time="10:40am" name="Streamlining RNA-Seq Data Analysis with rnaseq-reports" category="Enabling Science" speakers="Alexandra Bartlett" url="streamlining-rna-seq-data-analysis-with-rnaseq-reports"/>
         <ScheduleItem time="11:00am" name="Coffee break and snacks" highlighted={true} />
@@ -131,7 +131,7 @@ const Schedule: React.FC<Props> = ({
         <ScheduleItem time="12:30pm" name="Developing a Scalable Workflow for Analyzing Long-Read 16S Sequences from Oxford Nanopore Sequencing" category="Enabling Science" speakers="Adriana Messyasz" />
         <ScheduleItem time="12:50pm" name="Lightning Round" category="Poster Pitches" />
         <ScheduleItem time="1:00pm" name="Lunch" highlighted={true} />
-        <ScheduleItem time="2:00pm" name="Nextflow Updates" speakers="Paolo Di Tommaso and Ben Sherman" category="Big Nextflow" />
+        <ScheduleItem time="2:00pm" name="Nextflow Updates" speakers="Paolo Di Tommaso and Ben Sherman" category="Big Nextflow" url="nextflow-updates" />
         <ScheduleItem time="2:30pm" name="What it took to run a pipeline on aarch64" category="Big Nextflow" speakers="Angel Pizarro" url="what-it-took-to-run-a-pipeline-on-aarch64"/>
         <ScheduleItem time="3:00pm" name="Unified, community-developed analysis guidelines and templates for multi-omics data interpretability" category="Big Nextflow" speakers="Lorena Pantano" url="unified-community-developed-analysis-guidelines-and-templates-for-multi-omics-data"/>
         <ScheduleItem time="3:20pm" name="Lightning Round" category="Poster Pitches" />

@@ -206,6 +206,7 @@ export default {
         twitter: 'https://x.com/paoloditommaso?lang=en',
         linkedin: 'https://es.linkedin.com/in/paoloditommaso',
         speaker: true,
+        pageUrl: 'nextflow-updates'
       },
       {
         name: "Evan Floden",
@@ -213,12 +214,13 @@ export default {
         track: "Session 1: Enabling Science",
         date:"May 15",
         time: "9:40AM - 10:20AM",
-        submissionTitle: "Summit Opening",
+        submissionTitle: "Summit Welcome and Product Keynote",
         bio: "<p>Evan Floden is the CEO and co-founder of Seqera where the team has spent the last decade building Nextflow and the modern biotech stack. By providing scientists with modern software development tools such as containers, cloud, and git - Seqera is making scientific data analysis accessible at any scale.</p><p> Evan is a strong advocate for open science through Seqera projects such as MultiQC and Wave containers.</p>",
         image: floden.src,
         twitter: "https://x.com/EvanFloden",
         linkedin: "https://www.linkedin.com/in/evan-floden-36137018/",
         github: 'https://github.com/evanfloden',
+        pageUrl: 'product-keynote'
       },
       {
         name: "Hyun-Hwan Jeong",
