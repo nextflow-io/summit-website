@@ -25,6 +25,8 @@ type Props = {
   isOpen: boolean;
   onClick: any;
   pageUrl?: any;
+  speaker?: boolean;
+  poster?: boolean;
 };
 
 const SpeakerCard: React.FC<Props> = ({
@@ -43,6 +45,8 @@ const SpeakerCard: React.FC<Props> = ({
   isOpen,
   onClick,
   pageUrl,
+  speaker,
+  poster,
 }) => {
   return (
     <motion.div
@@ -63,7 +67,7 @@ const SpeakerCard: React.FC<Props> = ({
       }}
     >
       {/* personcard */}
-      <div className="speaker-card border border-nextflow hover:border-nextflow-200 transition-all duration-300 p-4 flex flex-col h-full">
+      <div className="speaker-card border border-nextflow hover:border-nextflow-200 transition-all duration-300 p-2 flex flex-col h-full">
         <div onClick={onClick} className="mb-2">
           <div className="flex flex-col justify-between items-center p-2 w-full">
             <div className="speaker-card__image rounded-full w-[200px] h-[200px] object-cover overflow-hidden">
@@ -122,9 +126,23 @@ const SpeakerCard: React.FC<Props> = ({
             <p className="font-display">{time}</p>
           </div>
 
-          <h5 className="text-[1.2rem] leading-tight font-medium pb-2">
-            {submissionTitle}
+         <div className="text-center w">
+          <h5 className="text-[1.2rem] leading-tight font-medium pb-3 flex flex-col">
+           {pageUrl ? (
+            <div>
+              <a href={`/2025/boston/agenda/${pageUrl}`} className="hover:text-nextflow-200 transition-all duration-300">
+              {submissionTitle}
+              </a>
+            </div>
+           ) : (
+            <div>
+              {submissionTitle} 
+            </div>
+            )}
+      
           </h5>
+
+        </div>
         </div>
       </div>
 
@@ -208,23 +226,47 @@ const SpeakerCard: React.FC<Props> = ({
             </div>
             <div>
               <div>
+           
                 <div
-                  className={`flex flex-row justify-between w-full border-t ${date && "border-b border-nextflow pb-2 mb-2"} border-nextflow py-2 `}
+                  className={`flex flex-row justify-between w-full border-t ${date && "border-b border-nextflow pb-2 mb-1 pt-2"} border-nextflow pt-1`}
                 >
+                  {date &&
+                  (
+                    <>
                   <p className="monospace">{date}</p>
                   <p className="font-display">{time}</p>
+                  </>
+                  )
+                }
                 </div>
+               
 
-                <h5 className="">
-                {submissionTitle}
-                {/* <a className="text-[1.1rem] leading-tight font-medium text-white hover:text-nextflow duration-300 transition-all" href={`/2025/boston/agenda/${pageUrl}`}> {submissionTitle}</a> */}
-                </h5>
+                {pageUrl ? (
+            <div className="pb-2 pt-1">
+              <a href={`/2025/boston/agenda/${pageUrl}`} className="hover:text-nextflow-200 transition-all duration-300 text-[.9rem] ">
+              {submissionTitle}
+              </a>
+            </div>
+           ) : (
+            <div className="text-[.9rem] py-2">
+              {submissionTitle} 
+            </div>
+            )}
+      
+                {pageUrl && (
+            <div className="border-t border-nextflow mb-2 hover:text-nextflow-200 transition-all duration-300 pt-2">
+              → <a href={`/2025/boston/agenda/${pageUrl}`} className=" monospace text-sm">    
+                      <span>View Abstract</span>    
+              </a>
+            </div>
+           )}
+      
               </div>
               {bio && (
                 <div
                   className={clsx(
                     styles.speakersPopup,
-                    "md:p-4 md:fixed md:right-0 md:bottom-0 top-0 w-full md:max-w-[55%] overflow-scroll h-full flex flex-col overflow-y-scroll md:pr-8",
+                    "md:fixed md:right-0 md:bottom-0 top-0 w-full md:max-w-[55%] overflow-scroll h-full flex flex-col overflow-y-scroll md:pr-8",
                   )}
                 >
                   <small className="text-nextflow mt-6 mb-2">About</small>

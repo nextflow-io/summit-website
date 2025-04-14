@@ -35,7 +35,7 @@ export default {
         image: herrmann.src,
         keynote: true,
         speaker: true,
-        pageUrl: '',
+        pageUrl: 'doing-ai-right',
       },
       {
         name: "Gervaise Henry",
@@ -49,7 +49,7 @@ export default {
         image: henry.src,
         linkedin: "https://www.linkedin.com/in/gervaise-henry-7790679a/",
         speaker: true,
-        pageUrl: '',
+        pageUrl: 'optimizing-compute-costs-with-seqera-cloud-champions-oncology-s-pdx-bank-and-multi-omics-data',
       },
       {
         name: "Kevin Moore",
@@ -63,7 +63,7 @@ export default {
         linkedin: "https://www.linkedin.com/in/kevinemoore/",
         github: 'https://github.com/quiltdata/quilt',
         speaker: true,
-        pageUrl: '',
+        pageUrl: 'closing-the-metadata-gap-linking-sample-context-to-nextflow-outputs-with-quilt',
       },
       {
         name: "Angel Pizarro",
@@ -78,7 +78,7 @@ export default {
         github: "https://github.com/delagoya",
         image: pizarro.src,
         speaker: true,
-        pageUrl: '',
+        pageUrl: 'what-it-took-to-run-a-pipeline-on-aarch64',
       },
       {
         name: "Brice Sarver",
@@ -91,7 +91,7 @@ export default {
         image: sarver.src,
         linkedin: "https://www.linkedin.com/in/bricesarver",
         speaker: true,
-        pageUrl: '',
+        pageUrl: 'integrating-bioinformatics-into-the-regulated-pharmaceutical-lifecycle',
       },
       {
         name: "Franz Arnold Ake",
@@ -106,7 +106,7 @@ export default {
         github: "https://github.com/Franzx7",
         image: ake.src,
         speaker: true,
-        pageUrl: '',
+        pageUrl: 'scalpel-a-nextflow-based-pipeline-for-quantification-of-isoform-at-single-cell-resolution',
       },
       {
         name: "Juliana Assis",
@@ -120,7 +120,7 @@ export default {
         linkedin: "https://www.linkedin.com/in/juliana-assis-6419a230/",
         image: assis.src,
         speaker: true,
-        pageUrl: '',
+        pageUrl: 'building-an-omics-data-infrastructure-to-bridge-data-management-and-data-science',
       },
       {
         name: "Olaitan Awe",
@@ -133,7 +133,7 @@ export default {
         linkedin: "https://www.linkedin.com/in/juliana-assis-6419a230/",
         image: awe.src,
         speaker: true,
-        pageUrl: '',
+        pageUrl: 'enabling-reproducible-science-and-african-represenation-in-science-through-nextflow-workshops',
       },
       {
         name: "Alexandra Bartlett",
@@ -166,6 +166,7 @@ export default {
         github: "https://github.com/olgabot",
         image: botvinnik.src,
         speaker: true,
+        pageUrl: 'create-the-best-protein-annotation-pipeline-in-the-world-aka-protein-fasta-profit'
       },
       {
         name: "Gary Burnett",
@@ -179,6 +180,7 @@ export default {
         github: "https://github.com/abartlett004",
         image: burnett.src,
         speaker: true,
+        pageUrl: 'seqera-fusion-x-nvidia-parabricks-for-accelerated-analysis'
       },
       // {
       //   name: "Matthew Davies",
@@ -233,6 +235,7 @@ export default {
         <p>His research has been published in notable journals, including Genome Research, Neuron, and Cell Reports, and he currently serves as the lead maintainer for the AI-MARRVEL pipeline, an AI-based genetic diagnosis tool designed to facilitate precise genetic analysis and diagnosis.</p>`,
         image: jeong.src,
         speaker: true,
+        pageUrl: 'from-technical-debt-to-sustainable-workflows-the-ai-marrvel-nextflow-journey'
       },
       {
         name: "Esha Joshi",
@@ -244,6 +247,7 @@ export default {
         bio: `<p>Esha is a Bioinformatician with a background in human genetics, with expertise bridging bioinformatics and software development. Her career has spanned biotech startups, academia, and government positions where she developed Nextflow pipelines and tools for large-scale genomic analysis.</p><p> Her role at Seqera's Scientific Development team allows her to leverage her diverse experience to assist scientists in optimizing their use of Nextflow and integrating the Seqera Platform into their research workflows.</p>`,
         image: joshi.src,
         speaker: true,
+        pageUrl: 'scale-with-seqera-accelerate-expand-and-collaborate'
       },
       {
         name: "Adriana Messyasz",
@@ -255,6 +259,7 @@ export default {
         bio: `<p>Bioinformatician and microbial scientist who loves to collaborate and solve complex problems regarding data generation, analysis, and interpretation.</p><p> As a bioinformatics specialist at the Rutgers NJMS Molecular and Genomics Informatics Core (MaGIC), I help researchers generate, organize, and interpret all types of sequencing data.</p>`,
         image: messyasz.src,
         speaker: true,
+        pageUrl: 'developing-a-scalable-workflow-for-analyzing-long-read-16s-sequences-from-oxford-nanopore'
       },
       {
         name: "Lorena Pantano",
@@ -270,6 +275,7 @@ export default {
         github: "https://github.com/lpantano",
         image: pantano.src,
         speaker: true,
+        pageUrl: 'unified-community-developed-analysis-guidelines-and-templates-for-multi-omics-data'
       },
       {
         name: "Adrianto Wirawan",

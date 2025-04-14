@@ -26,6 +26,9 @@ const SpeakersSection = ({   }) => {
               linkedin,
               image,
               keynote,
+              pageUrl,
+              speaker,
+              poster,
             },
             index,
           ) => {
@@ -43,7 +46,10 @@ const SpeakersSection = ({   }) => {
                 twitter={twitter}
                 linkedin={linkedin}
                 image={image}
+                pageUrl={pageUrl}
                 keynote={keynote}
+                speaker={speaker}
+                poster={poster}
                 isOpen={activeIndex === index}
                 onClick={() => handleItemClick(index)}
               />
