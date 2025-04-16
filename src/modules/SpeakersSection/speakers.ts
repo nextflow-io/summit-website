@@ -39,7 +39,7 @@ export default {
       },
       {
         name: "Gervaise Henry",
-        jobTitle: "Director at ZS Associates",
+        jobTitle: "VP Head of Data Engineering at Champions Oncology",
         track: "Session 3: Organizational Impact",
         date:"May 16",
         time: "11:30AM - 11:45AM",
@@ -67,7 +67,7 @@ export default {
       },
       {
         name: "Angel Pizarro",
-        jobTitle: "VP Head of Data Engineering at Champions Oncology",
+        jobTitle: "Principal Developer Advocate at Amazon Web Services",
         track: "Session 2: Big Nextflow",
         date:"May 15",
         time: "2:30PM - 3PM",
