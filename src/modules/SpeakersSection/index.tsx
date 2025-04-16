@@ -8,10 +8,14 @@ const SpeakersSection = ({   }) => {
     setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
   };
 
+  const sortedSpeakers = [...speakers.main].sort((a, b) => 
+    a.name.localeCompare(b.name)
+  );
+
   return (
     <div className="container mt-14">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
-        {speakers.main.map(
+        {sortedSpeakers.map(
           (
             {
               name,
@@ -28,13 +32,12 @@ const SpeakersSection = ({   }) => {
               keynote,
               pageUrl,
               speaker,
-              poster,
             },
             index,
           ) => {
             return (
               <SpeakerCard
-              key={name}
+                key={name}
                 name={name}
                 jobTitle={jobTitle}
                 track={track}
@@ -49,7 +52,6 @@ const SpeakersSection = ({   }) => {
                 pageUrl={pageUrl}
                 keynote={keynote}
                 speaker={speaker}
-                poster={poster}
                 isOpen={activeIndex === index}
                 onClick={() => handleItemClick(index)}
               />
