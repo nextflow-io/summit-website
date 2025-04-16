@@ -16,6 +16,7 @@ import joshi from "./speakerImages/esha-joshi.jpg";
 import sarver from "./speakerImages/brice-sarver.jpg";
 import moore from "./speakerImages/kevin-moore.jpg";
 import henry from "./speakerImages/gervaise-henry.jpg";
+import norton from "./speakerImages/scott.jpg";
 
 export default {
     main: [
@@ -289,6 +290,19 @@ export default {
         image: wirawan.src,
         bio: 'Coming soon.',
         speaker: true,
+      },
+      {
+        name: "Scott Norton",
+        jobTitle: "Senior Bioinformatics Data Scientist at Merck",
+        track: "Session 3: Organizational Impact",
+        date:"May 16",
+        submissionTitle: "DRAGoN - Divide-and-conquer strategy for processing large DRUG-seq experiments",
+        time: "11:45AM - 12:00PM",
+        image: norton.src,
+        bio: 'Coming soon.',
+        github: 'https://github.com/ScottNortonPhD',
+        speaker: true,
+        pageUrl: 'dragon-divide-and-conquer-strategy-for-processing-large-drug-seq-experiments'
       },
       // {
       //   name: "TBD",
