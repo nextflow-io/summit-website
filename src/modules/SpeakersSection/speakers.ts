@@ -230,7 +230,7 @@ export default {
         date:"May 15",
         time: "10:20AM - 10:40AM",
         submissionTitle: "From Technical Debt to Sustainable Workflows: The AI-MARRVEL Nextflow Journey",
-        coAuthors: 'Jaeyen Lee, Chaozhong Liu, Zhandong Liu',
+        coAuthors: 'Hyun-Hwan Jeong, Jaeyeon Lee, Seon Young Kim, Chaozhong Liu, Zhandong Liu',
         bio: `<p>Hyun-Hwan Jeong is a scientist specializing in bioinformatics, computational biology, and machine learning, currently serving as an Assistant Professor in the Department of Pediatrics at Baylor College of Medicine. With extensive experience in next-generation sequencing analysis, Dr. Jeong has developed computational methods such as CRISPRBetaBinomial, SalmonTE, and the cloud-based analytic platform CRISPRcloud.</p>
  
         <p>Dr. Jeong earned his Ph.D. in Computer Science and Engineering from Ajou University, South Korea. His career includes roles at Baylor College of Medicine, Precede Biosciences, and UT Health Science Center, where he has applied bioinformatics and artificial intelligence to address challenges in precision medicine.</p>
