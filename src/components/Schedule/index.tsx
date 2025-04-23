@@ -151,7 +151,7 @@ const Schedule: React.FC<Props> = ({
         <ScheduleItem time="9:30am" name="Scale with Seqera: Accelerate, Expand, and Collaborate" category="Organizational Impact" speakers="Esha Joshi" url="scale-with-seqera-accelerate-expand-and-collaborate"/>
         <ScheduleItem time="10:00am" name="Integrating Bioinformatics into the Regulated Pharmaceutical Lifecycle" category="Organizational Impact" speakers="Brice Sarver and Kostis Karagiannis" url="integrating-bioinformatics-into-the-regulated-pharmaceutical-lifecycle"/>
         <ScheduleItem time="10:20am" name="Building an Omics Data Infrastructure to Bridge Data Management and Data Science" category="Organizational Impact" speakers="Juliana Assis" url="building-an-omics-data-infrastructure-to-bridge-data-management-and-data-science"/>
-        <ScheduleItem time="10:40am" name="TBA" category="Organizational Impact" speakers="Adrianto Wirawan" />
+        <ScheduleItem time="10:40am" name="How Genie Empowers Genomic England’s Generation Study" category="Organizational Impact" speakers="Adrianto Wirawan" url="how-genie-empowers-genomic-englands-generation-study"/>
         <ScheduleItem time="11:00am" name="Coffee break and snacks" highlighted={true}/>
         <ScheduleItem time="11:30am" name="Optimizing Compute Costs with Seqera Cloud: Champions Oncology's PDX Bank and Multi-Omics Data" speakers="Gervaise Henry" category="Organizational Impact" url="optimizing-compute-costs-with-seqera-cloud-champions-oncology-s-pdx-bank-and-multi-omics-data"/>
         <ScheduleItem time="11:45am" name="DRAGoN - Divide-and-conquer strategy for processing large DRUG-seq experiments" speakers="Scott Norton" url="dragon-divide-and-conquer-strategy-for-processing-large-drug-seq-experiments"  />

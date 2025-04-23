@@ -285,11 +285,14 @@ export default {
         jobTitle: "Director of Bioinformatics Engineering at Genomics England",
         track: "Session 3: Organizational Impact",
         date:"May 16",
-        // submissionTitle: "[Coming soon]",
+        submissionTitle: "How Genie Empowers Genomic England’s Generation Study",
         time: "10:40AM - 11:00AM",
         image: wirawan.src,
-        bio: 'Coming soon.',
+        bio: `<p>As Director of Bioinformatics Engineering at Genomics England, Adrianto oversees a diverse team of more than 40 software engineers and bioinformaticians, providing technical leadership and subject matter expertise in developing bioinformatics solutions across healthcare and research domains.</p>
+        <p>Previously, as Associate Director at AstraZeneca in the UK, he managed platform development, pipeline orchestration, and data management for a wide range of omics data—including genomics, transcriptomics, proteomics, and metabolomics. He has also held key roles at companies such as immunoSCAPE and Human Longevity, Inc.</p>
+        <p>Adrianto earned his PhD in High-Performance Computing in Bioinformatics from Nanyang Technological University in Singapore, where he pioneered innovative DNA and protein-related bioinformatics tools using the PlayStation 3 gaming console as a computational platform.</p>`,
         speaker: true,
+        pageUrl: 'how-genie-empowers-genomic-england-s-generation-study',
       },
       {
         name: "Scott Norton",
