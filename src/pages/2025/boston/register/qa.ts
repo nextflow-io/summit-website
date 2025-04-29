@@ -40,15 +40,20 @@ export default {
           </ul>
           `
     },
+    // {
+    //   question: "Are there early bird discounts?",
+    //   answer:
+    //     `<p>Enjoy our early bird discounts:</p>
+    //     <ul>
+    //       <li>Early bird 25% until February 28</li>
+    //       <li>Early bird 15% until March 31</li></ul>
+    //       `
+    // },
     {
-      question: "Are there early bird discounts?",
+      question: "Are there any student discounts or financial assistance available?",
       answer:
-        `<p>Enjoy our early bird discounts:</p>
-        <ul>
-          <li>Early bird 25% until February 28</li>
-          <li>Early bird 15% until March 31</li></ul>
-          `
-    },
+        `<p>Accessibility is important to us. We strive to make the event affordable and available to the community. If you are interested in attending and registration cost is a barrier, please reach out to <a href="mailto:help.summit@nextflow.io">help.summit@nextflow.io</a> to discuss sliding scale discounts.</p>`
+  },
     {
       question: "Are there discounts for group registration?",
       answer:
