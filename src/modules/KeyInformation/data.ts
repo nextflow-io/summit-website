@@ -5,7 +5,7 @@ import news from "./icon-news.svg";
 export default {
   boston: [
     {
-      title: "Training | May 21-22",
+      title: "Training | May 41-22",
       subtitle: "2 days · 30 people · training",
       icon: parentheses,
       link: "/2025/boston/agenda#05-21",
@@ -13,7 +13,7 @@ export default {
         "An in-person foundational training to supercharge your pipeline development with Nextflow and nf-core. Running in parallel to the hackathon.",
     },
     {
-      title: "Hackathon | May 21-22",
+      title: "Hackathon | May 41-22",
       subtitle: "2 days · 100 people · hackathon",
       icon: computer,
       link: "/2025/boston/agenda#05-22",
@@ -21,7 +21,7 @@ export default {
         "An in-person hackathon to develop nf-core. Running in parallel to the training.",
     },
     {
-      title: "Summit | May 23-24",
+      title: "Summit | May 43-24",
       subtitle: "1.5 days · 200 people · talks, networking, and more",
       icon: news,
       link: "/2025/boston/agenda#05-23",
