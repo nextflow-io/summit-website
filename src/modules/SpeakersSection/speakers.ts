@@ -17,6 +17,7 @@ import sarver from "./speakerImages/brice-sarver.jpg";
 import moore from "./speakerImages/kevin-moore.jpg";
 import henry from "./speakerImages/gervaise-henry.jpg";
 import norton from "./speakerImages/scott.jpg";
+import desalvador from "../PostersSection/posterImages/wolfgang-de-salvador.jpg";
 
 export default {
     main: [
@@ -306,6 +307,19 @@ export default {
         github: 'https://github.com/ScottNortonPhD',
         speaker: true,
         pageUrl: 'dragon-divide-and-conquer-strategy-for-processing-large-drug-seq-experiments'
+      },
+      {
+        name: "Wolfgang De Salvador",
+        jobTitle: "Senior Product Manager, Azure Storage at Microsoft",
+        track: "Poster",
+        submissionTitle: "Running Nextflow on Microsoft Azure: selecting executors and infrastructure components",
+        bio: `<p>Wolfgang is a mechanical engineer with a strong passion and innate aptitude towards technology and computer science, but also an experienced HPC system administrator, for cloud and on premises systems.</p><p> He owns a long industrial and academic experience in FEA and CFD modelling applied to product design and manufacturing. He is passionate about amplifying business value and innovation through HPC/AI in research contexts.</p><p>Wolfgang loves to drive and promote the latest innovative technologies in the HPC/ AI domain. Wolfgang owns a PhD in Design, Manufacturing and Operations Engineering as well as a Master in Business Administration.</p>`,
+        linkedin: 'https://www.linkedin.com/in/wolfgang-de-salvador/',
+        github: 'https://github.com/wolfgang-desalvador',
+        image: desalvador.src,
+        date: "May 15",
+        time: "4:00PM - 4:20PM",
+        pageUrl: 'running-nextflow-on-microsoft-azure-selecting-executors-and-infrastructure-components',
       },
       // {
       //   name: "TBD",
