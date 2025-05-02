@@ -136,7 +136,7 @@ const Schedule: React.FC<Props> = ({
         <ScheduleItem time="3:00pm" name="Unified, community-developed analysis guidelines and templates for multi-omics data interpretability" category="Big Nextflow" speakers="Lorena Pantano" url="unified-community-developed-analysis-guidelines-and-templates-for-multi-omics-data"/>
         <ScheduleItem time="3:20pm" name="Lightning Round" category="Poster Pitches" />
         <ScheduleItem time="3:30pm" name="Coffee break and snacks" highlighted={true} />
-        <ScheduleItem time="4:00pm" name="TBD" category="Enabling Science" />
+        <ScheduleItem time="4:00pm" name="Running Nextflow on Microsoft Azure: selecting executors and infrastructure components" speakers="Wolfgang De Salvador" category="Big Nextflow" url="running-nextflow-on-microsoft-azure-selecting-executors-and-infrastructure-components/"/>
         <ScheduleItem time="4:20pm" name="Seqera Fusion x NVIDIA Parabricks for Accelerated Analysis" category="Big Nextflow" speakers="Gary Burnett" url="seqera-fusion-x-nvidia-parabricks-for-accelerated-analysis" />
         <ScheduleItem time="4:40pm" name="Keynote: Doing AI right" category="Big Nextflow" speakers="Luisa Herrmann" url="doing-ai-right"/>
         <ScheduleItem time="5:30pm" name="Summit Reception" highlighted={true} />
