@@ -7,6 +7,7 @@ import mueller from './posterImages/michael-mueller.jpg'
 import desalvador from './posterImages/wolfgang-de-salvador.jpg'
 import blum from './posterImages/laura-blum.jpg'
 import ianov from './posterImages/lara-ianov.jpg'
+import grindle from './posterImages/riley-grindle.png'
 
 export default {
     main: [
@@ -101,6 +102,17 @@ export default {
         linkedin: "https://www.linkedin.com/in/wenchao-zhang-5095044a",
         image: zhang.src,
         pageUrl: 'hifi-somatic-nextflow-a-customizable-nextflow-pipeline-for-somatic-variant-calling-using-hifi',
+      },
+      {
+        name: "Riley Grindle",
+        jobTitle: "Bioinformatics Analyst at MDI Biological Laboratory",
+        track: "Poster",
+        submissionTitle: "CGDS Collaborations in Research & Innovation",
+        // bio: `<p></p>`,
+        linkedin: "https://www.linkedin.com/in/riley-grindle",
+        github: 'https://github.com/Riley-Grindle',
+        image: grindle.src,
+        pageUrl: 'cgds-collaborations-in-research-and-innovation',
       },
     ]
   }
