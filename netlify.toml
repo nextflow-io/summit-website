@@ -1,3 +1,10 @@
 [[edge_functions]]
   function = "og.png"
   path = "/og.png"
+
+
+[[redirects]]
+  from = "/2025/boston/agenda/doing-ai-right"
+  to = /2025/boston/agenda/responsible-ai-in-genomicsx"
+  status = 301
+  force = true
