@@ -121,7 +121,7 @@ const Schedule: React.FC<Props> = ({
         <ScheduleHeader />
         <ScheduleItem time="8:30am" name="Registration, coffee and light pastries" highlighted={true} />
         <ScheduleItem time="9:30am" name="Welcome" category="Welcome" speakers="Evan Floden" />
-        <ScheduleItem time="9:40am" name="Product Keynote" speakers="Evan Floden" category="Enabling Science" url="product-keynote" />
+        <ScheduleItem time="9:40am" name="Product Keynote: From Pipelines to Platform" speakers="Evan Floden" category="Enabling Science" url="from-pipelines-to-platform" />
         <ScheduleItem time="10:20am" name="From Technical Debt to Sustainable Workflows: The AI-MARRVEL Nextflow Journey" category="Enabling Science" speakers="Hyun-Hwan Jeong" url="from-technical-debt-to-sustainable-workflows-the-ai-marrvel-nextflow-journey"/>
         <ScheduleItem time="10:40am" name="Streamlining RNA-Seq Data Analysis with rnaseq-reports" category="Enabling Science" speakers="Alexandra Bartlett" url="streamlining-rna-seq-data-analysis-with-rnaseq-reports"/>
         <ScheduleItem time="11:00am" name="Coffee break and snacks" highlighted={true} />
