@@ -8,6 +8,7 @@ import desalvador from './posterImages/wolfgang-de-salvador.jpg'
 import blum from './posterImages/laura-blum.jpg'
 import ianov from './posterImages/lara-ianov.jpg'
 import grindle from './posterImages/riley-grindle.png'
+import maxime from './posterImages/maxime.jpeg'
 
 export default {
     main: [
@@ -42,15 +43,15 @@ export default {
         image: blum.src,
         pageUrl: 'workflow-for-germline-variant-calling-with-em-seq-data',
       },
-      // {
-      //   name: "Rebecca Chen",
-      //   jobTitle: "Graduate Student at University of Calgary",
-      //   track: "Poster",
-      //   submissionTitle: "Large-scale analysis of drug resistance in livestock parasites",
-      //   bio: `<p>Graduate student from the University of Calgary, Canada. Thesis project focuses on developing pipelines for analyzing Illumina and Nanopore amplicon sequencing of parasitic nematode marker genes.</p>`,
-      //   image: chen.src,
-      //   pageUrl: 'large-scale-analysis-of-drug-resistance-in-livestock-parasites',
-      // },
+      {
+        name: "Maxime Garcia",
+        jobTitle: "Bioinformatics Engineer at Seqera",
+        track: "Poster",
+        submissionTitle: "nf-core/references: rethinking the way references are managed",
+        image: maxime.src,
+        linkedin: 'https://se.linkedin.com/in/maxugarcia',
+        pageUrl: 'nf-core-references-rethinking-the-way-references-are-managed',
+      },
       {
         name: "Lara Ianov",
         jobTitle: "Assistant Professor at University of Alabama at Birmingham",

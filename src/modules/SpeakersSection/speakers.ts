@@ -322,6 +322,5 @@ export default {
         linkedin: 'https://www.linkedin.com/in/k-karagiannis',
         pageUrl: 'integrating-bioinformatics-into-the-regulated-pharmaceutical-lifecycle',
       },
-
     ]
   }
