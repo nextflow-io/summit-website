@@ -191,7 +191,7 @@ export default {
         track: "Session 2: Big Nextflow",
         date:"May 15",
         time: "2PM - 2:30PM",
-        submissionTitle: "Nextflow Updates",
+        submissionTitle: "What’s new in Nextflow: Defining the future of reproducible workflows",
         bio: `<p>Paolo is the CTO and co-founder of Seqera. He is a computer scientist with a strong interest in high-throughput scientific computing, data-intensive applications, parallel programming, cloud computing and containerisation technologies. He has broad experience as a software engineer and software architect in life science and healthcare applications.</p><p> He is an open-source advocate and the creator and maintainer of the Nextflow workflow system.</p>`,
         image: ditommaso.src,
         github: 'https://github.com/pditommaso',
