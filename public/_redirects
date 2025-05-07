@@ -11,6 +11,6 @@
 /* /.netlify/functions/entry 404
 
 
-/2025/boston/agenda/product-keynote   https://summit.nextflow.io/docs/2025/boston/agenda/from-pipelines-to-platform 301
-/2025/boston/agenda/doing-ai-right    https://summit.nextflow.io/docs/2025/boston/agenda/responsible-ai-in-genomics    301
-/2025/boston/agenda/enabling-reproducible-science-and-african-represenation-in-science-through-nextflow-workshops   https://summit.nextflow.io/docs/2025/boston/agenda/enabling-reproducible-science-and-african-representation-in-science-through-nextflow-workshops 301
+/2025/boston/agenda/product-keynote   https://summit.nextflow.io/2025/boston/agenda/from-pipelines-to-platform 301
+/2025/boston/agenda/doing-ai-right    https://summit.nextflow.io/2025/boston/agenda/responsible-ai-in-genomics    301
+/2025/boston/agenda/enabling-reproducible-science-and-african-represenation-in-science-through-nextflow-workshops   https://summit.nextflow.io/2025/boston/agenda/enabling-reproducible-science-and-african-representation-in-science-through-nextflow-workshops 301
