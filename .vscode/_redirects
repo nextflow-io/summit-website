@@ -1,0 +1,16 @@
+# 2024 - archive site proxy
+/2024/*       https://nextflow-summit-2024.netlify.app/2024/:splat    200!
+
+# 2023 - archive site proxy
+/2023/*       https://nextflow-summit-2023.netlify.app/2023/:splat    200!
+
+# 2022 - archive site proxy
+/2022/*       https://nextflow-summit-2022.netlify.app/2022/:splat    200!
+
+# 404
+/* /.netlify/functions/entry 404
+
+
+/2025/boston/agenda/product-keynote   https://summit.nextflow.io/docs/2025/boston/agenda/from-pipelines-to-platform 301
+/2025/boston/agenda/doing-ai-right    https://summit.nextflow.io/docs/2025/boston/agenda/responsible-ai-in-genomics    301
+/2025/boston/agenda/enabling-reproducible-science-and-african-represenation-in-science-through-nextflow-workshops   https://summit.nextflow.io/docs/2025/boston/agenda/enabling-reproducible-science-and-african-representation-in-science-through-nextflow-workshops 301

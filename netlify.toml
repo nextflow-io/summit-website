@@ -1,3 +1,19 @@
 [[edge_functions]]
   function = "og.png"
   path = "/og.png"
+
+
+[[redirects]]
+  from = "/2025/boston/agenda/product-keynote"
+  to = "/2025/boston/agenda/from-pipelines-to-platform"
+  status = 301
+
+[[redirects]]
+  from = "/2025/boston/agenda/doing-ai-right"
+  to = "/2025/agenda/responsible-ai-in-genomics"
+  status = 301
+
+  [[redirects]]
+  from = "/2025/boston/agenda/enabling-reproducible-science-and-african-represenation-in-science-through-nextflow-workshops"
+  to = "/2025/agenda/enabling-reproducible-science-and-african-representation-in-science-through-nextflow-workshops"
+  status = 301
