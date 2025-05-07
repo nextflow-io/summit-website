@@ -18,6 +18,7 @@ import moore from "./speakerImages/kevin-moore.jpg";
 import henry from "./speakerImages/gervaise-henry.jpg";
 import norton from "./speakerImages/scott.jpg";
 import desalvador from "../PostersSection/posterImages/wolfgang-de-salvador.jpg";
+import kostis from "./speakerImages/kostis.jpg";
 
 export default {
     main: [
@@ -184,17 +185,6 @@ export default {
         speaker: true,
         pageUrl: 'seqera-fusion-x-nvidia-parabricks-for-accelerated-analysis'
       },
-      // {
-      //   name: "Matthew Davies",
-      //   jobTitle: "Head of Bioinformatics at DIOSynVax",
-      //   track: "Session 1: Enabling Science",
-      //   date:"May 15",
-      //   time: "4PM - 4:20PM",
-      //   submissionTitle: "Generative AI in novel vaccine design",
-      //   bio: `Head of the Bioinformatics department for <a href="https://www.diosvax.com" target="_blank">DioSynVax</a>, a biotech startup from the University of Cambridge. DioSynVax uses Deep Learning techniques and Generative AI in order to design novel synthetic vaccines derived from sequential and structural data. The company is a member of the NIVIDIA Inception programs and we implement our pipelines in the AWS environment, using AWS Sagemaker to implement our Deep Learning models to design synthetic vaccines. Previously I designed and implemented the EDAPT pipeline for <a href="https://enarabio.com/technology" target="_blank">Enara Bio</a> to identify cancer-specific transcripts for the development of TCR-directed immunotherapies and therapeutic vaccines. The pipeline was used create several off-the-shelf immunotherapies for non-small cell lung cancer (NSCLC) that were subsequently licenced by Boehringer Ingelheim licenses. I also implemented the PELEUS pipeline for <a href="https://achillestx.com/science" target="_blank">Achilles Therapeutics</a>, which identifies clonal neoantigens specific to a patient’s tumour profile as a means to develop a personalised vaccine response. I have worked for many years in the field of bioinformatics for many years, both in academica and industry, and continue to enjoy the rapid development of the field and the new challenges it poses.`,
-      //   twitter: "https://x.com/matthewndavies",
-      //   linkedin: "https://www.linkedin.com/in/matthew-davies-615051b6/",
-      // },
       {
         name: "Paolo Di Tommaso",
         jobTitle: "CTO at Seqera",
@@ -321,19 +311,17 @@ export default {
         time: "4:00PM - 4:20PM",
         pageUrl: 'running-nextflow-on-microsoft-azure-selecting-executors-and-infrastructure-components',
       },
-      // {
-      //   name: "TBD",
-      //   jobTitle: "TBD at ZS",
-      //   track: "Session 3: Organizational Impact",
-      //   date:"May 16",
-      //   time: "10:40AM - 11:00AM",
-      // },
-      // {
-      //   name: "TBD",
-      //   jobTitle: "TBD at QUILT",
-      //   track: "Session 1: Enabling Science",
-      //   date:"May 15",
-      //   time: "11:30AM - 11:50AM",
-      // },
+      {
+        name: "Kostis Karagiannis",
+        jobTitle: "Director, INT Bioinformatics Engineering, Moderna Tx",
+        track: "Speaker",
+        submissionTitle: "Integrating Bioinformatics into the Regulated Pharmaceutical Lifecycle (Fireside Chat)",
+        image: kostis.src,
+        date: "May 16",
+        time: "9:00AM - 9:20AM",
+        linkedin: 'https://www.linkedin.com/in/k-karagiannis',
+        pageUrl: 'integrating-bioinformatics-into-the-regulated-pharmaceutical-lifecycle',
+      },
+
     ]
   }
