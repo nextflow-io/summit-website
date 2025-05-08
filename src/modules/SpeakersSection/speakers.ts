@@ -19,6 +19,7 @@ import henry from "./speakerImages/gervaise-henry.jpg";
 import norton from "./speakerImages/scott.jpg";
 import desalvador from "../PostersSection/posterImages/wolfgang-de-salvador.jpg";
 import kostis from "./speakerImages/kostis.jpg";
+import fisher from "./speakerImages/yan-fisher.png";
 
 export default {
     main: [
@@ -75,7 +76,7 @@ export default {
         date:"May 15",
         time: "2:30PM - 3PM",
         submissionTitle: "What it took to run a pipeline on aarch64",
-        coAuthors: "Kostis Karagiannis",
+        coAuthors: "Phil Ewels, David Lecomber",
         bio: `<p>Angel Pizarro is a Principal Developer Advocate for HPC at AWS. He has over 20 years of experience in research computing, bioinformatics and high-throughput computing.</p><p> His focus has been on the development of system architectures for scalable computing in genomics and other high throughput life science domains, democratizing access to large scale datasets, and development of cloud architectures for science.</p>`,
         linkedin: "https://www.linkedin.com/in/angelpizarro/",
         github: "https://github.com/delagoya",
@@ -313,14 +314,25 @@ export default {
       },
       {
         name: "Kostis Karagiannis",
-        jobTitle: "Director, INT Bioinformatics Engineering, Moderna Tx",
-        track: "Speaker",
+        jobTitle: "Director, INT Bioinformatics Engineering, Moderna",
+        track: "Session 3: Organizational Impact",
         submissionTitle: "Integrating Bioinformatics into the Regulated Pharmaceutical Lifecycle (Fireside Chat)",
         image: kostis.src,
         date: "May 16",
         time: "9:00AM - 9:20AM",
         linkedin: 'https://www.linkedin.com/in/k-karagiannis',
         pageUrl: 'integrating-bioinformatics-into-the-regulated-pharmaceutical-lifecycle',
+      },
+      {
+        name: "Yan Fisher",
+        jobTitle: "Director of Software Ecosystem at Arm",
+        submissionTitle: "What it took to run a pipeline on aarch64",
+        image: fisher.src,
+        track: "Session 2: Big Nextflow",
+        date:"May 15",
+        time: "2:30PM - 3PM",
+        linkedin: 'https://www.linkedin.com/in/k-karagiannis',
+        pageUrl: 'what-it-took-to-run-a-pipeline-on-aarch64',
       },
     ]
   }
