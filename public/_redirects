@@ -1,3 +1,8 @@
+# 2025 - Update provisional talk title URLs
+/2025/boston/agenda/product-keynote   /2025/boston/agenda/from-pipelines-to-platform
+/2025/boston/agenda/doing-ai-right    /2025/boston/agenda/responsible-ai-in-genomics
+/2025/boston/agenda/enabling-reproducible-science-and-african-represenation-in-science-through-nextflow-workshops   /2025/boston/agenda/enabling-reproducible-science-and-african-representation-in-science-through-nextflow-workshops
+
 # 2024 - archive site proxy
 /2024/*       https://nextflow-summit-2024.netlify.app/2024/:splat    200!
 
@@ -9,8 +14,3 @@
 
 # 404
 /* /.netlify/functions/entry 404
-
-
-/2025/boston/agenda/product-keynote   https://summit.nextflow.io/2025/boston/agenda/from-pipelines-to-platform 301
-/2025/boston/agenda/doing-ai-right    https://summit.nextflow.io/2025/boston/agenda/responsible-ai-in-genomics    301
-/2025/boston/agenda/enabling-reproducible-science-and-african-represenation-in-science-through-nextflow-workshops   https://summit.nextflow.io/2025/boston/agenda/enabling-reproducible-science-and-african-representation-in-science-through-nextflow-workshops 301
