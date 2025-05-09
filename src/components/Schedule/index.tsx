@@ -28,7 +28,7 @@ export const ScheduleItem: React.FC<ScheduleItemProps> = ({
 }) => {
   return (
     <div className={`relative w-full flex flex-row border border-nextflow transition-all duration-300 p-4 rounded-sm mb-2 ${url && "hover:border-nextflow-200" }`}>
-        <div className={`${highlighted ? 'absolute bg-nextflow-100 w-full h-full z-0 top-0 left-0 right-0 left-0 opacity-25' : 'hidden' } `}></div>
+        <div className={`${highlighted ? 'absolute bg-nextflow-100 w-full h-full z-0 top-0 right-0 left-0 opacity-25' : 'hidden' } `}></div>
          <div className="basis-2/6 sm:basis-1/5 sm:w-full uppercase">{time}</div>
 
             <div className="hidden sm:basis-2/5 w-full sm:flex flex-row pr-6">

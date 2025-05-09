@@ -20,13 +20,15 @@ import Banner from '@components/Banner'
 
 <Layout showHeader={false}>
   <SEO slot="head" title="Home" img={0} />
-  <!-- <Banner title="Last week to register for Nextflow Summit 2025!" ctaText="Register Now" ctaLink="https://seqera.swoogo.com/nextflow-summit-boston-2025" client:load />  -->
+  <Banner title="Register to access the event recordings" ctaText="Register Now" ctaLink="https://seqera.swoogo.com/nextflow-summit-boston-2025" client:load /> 
   <LandingHero
     isBoth
     title="Nextflow Summit"
     content=`Step into the Future of Software-Driven Science.</br></br>Nextflow Summit, presented by Seqera, brings together scientists from around the world to shape the future of biotech R&D through community-driven innovation in data science and computational biology.``
     where="both"
-
+    ctaText1="Register to access event recordings"
+    ctaLink1="https://seqera.swoogo.com/nextflow-summit-boston-2025"
+    ctaExternal1
     boston="May 13-16"
     barcelona="October 27-29"
     client:load
