@@ -68,7 +68,7 @@ export const ScheduleHeader = ({}) => {
   return (
     <div className="monospace hidden sm:flex flex-row w-full border-b border-white p-4 mb-6">
  
-      <div className="w-full basis-1/5">Time: GMT+1</div>
+      <div className="w-full basis-1/5">Time: EDT</div>
       <div className="w-full basis-2/5">Name</div>
       <div className="w-full basis-1/5">Speakers</div>
       <div className="w-full basis-1/5">Category</div>
