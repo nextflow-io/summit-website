@@ -1,15 +1,12 @@
 import React, { useState } from "react";
-// import speakers from "./speakers";
 import IconClose from "./IconClose.svg";
 import clsx from "clsx";
 import styles from "./speakers.module.css";
 import SocialIcon from "@components/SocialIcon";
 import { motion } from "framer-motion";
-import Button from "@components/Button";
 import { urlFor } from "@data/sanity-image";
 import PortableText from "@components/PortableText";
-import dayjs from 'dayjs';
-
+import dayjs from "dayjs";
 
 type Props = {
   title?: string;
@@ -39,7 +36,6 @@ const SpeakerCard: React.FC<Props> = ({
   time,
   endTime,
   submissionTitle,
-  track,
   twitter,
   github,
   linkedin,
@@ -50,11 +46,9 @@ const SpeakerCard: React.FC<Props> = ({
   onClick,
   pageUrl,
 }) => {
-
-
-  const monthDate = dayjs(date).format('MMMM D');
-  const timeStart =  dayjs(date).format('h:mm A');
-  const timeEnd = dayjs(endTime).format('h:mm A');
+  const monthDate = dayjs(date).format("MMMM D");
+  const timeStart = dayjs(date).format("h:mm A");
+  const timeEnd = dayjs(endTime).format("h:mm A");
 
   return (
     <motion.div
@@ -82,7 +76,7 @@ const SpeakerCard: React.FC<Props> = ({
               {image ? (
                 <img
                   className="imageBlend  w-full h-full object-cover"
-                  src={urlFor(image).width(400).height(300).url()} 
+                  src={urlFor(image).width(600).height(600).url()}
                   alt={`image of ${name}`}
                 />
               ) : (
@@ -127,32 +121,37 @@ const SpeakerCard: React.FC<Props> = ({
         </div>
 
         <div>
+
+          
           <div
             className={`flex flex-row justify-between w-full border-t ${date && "border-b border-nextflow pb-2"} border-nextflow pt-2 mb-2`}
           >
+             {date && (
             <p className="monospace">{monthDate && monthDate}</p>
-            {timeStart && (
-            <p className="font-display">{timeStart} -  {timeEnd && (timeEnd)}</p> 
+             )}
+            {date && (
+              <p className="font-display">
+                {timeStart} - {timeEnd && timeEnd}
+              </p>
             )}
           </div>
 
-         <div className="text-center w">
-          <h5 className="text-[1.2rem] leading-tight font-medium pb-3 flex flex-col">
-           {pageUrl ? (
-            <div>
-              <a href={`/2025/boston/agenda/${pageUrl}`} className="hover:text-nextflow-200 transition-all duration-300">
-              {submissionTitle}
-              </a>
-            </div>
-           ) : (
-            <div>
-              {submissionTitle} 
-            </div>
-            )}
-      
-          </h5>
-
-        </div>
+          <div className="text-center w">
+            <h5 className="text-[1.2rem] leading-tight font-medium pb-3 flex flex-col">
+              {pageUrl ? (
+                <div>
+                  <a
+                    href={`/2025/boston/agenda/${pageUrl}`}
+                    className="hover:text-nextflow-200 transition-all duration-300"
+                  >
+                    {submissionTitle}
+                  </a>
+                </div>
+              ) : (
+                <div>{submissionTitle}</div>
+              )}
+            </h5>
+          </div>
         </div>
       </div>
 
@@ -186,8 +185,8 @@ const SpeakerCard: React.FC<Props> = ({
               <div className="speaker-card__image rounded-full w-[150px] h-[150px] object-cover overflow-hidden">
                 {image ? (
                   <img
-                    className="imageBlend  w-full h-full object-cover"
-                    src={urlFor(image).width(400).height(300).url()} 
+                    className="imageBlend  w-full h-full object-contain"
+                    src={urlFor(image).width(600).height(600).url()}
                     alt={`image of ${name}`}
                   />
                 ) : (
@@ -204,75 +203,77 @@ const SpeakerCard: React.FC<Props> = ({
                 )}
 
                 <div className="flex flex-row justify-center">
-
-                {twitter && (
-                  <SocialIcon
-                    key={twitter}
-                    href={twitter}
-                    type={"Twitter"}
-                    className="p-2 text-nextflow"
-                  />
-                )}
-                {linkedin && (
-                  <SocialIcon
-                    key={linkedin}
-                    href={linkedin}
-                    type={"LinkedIn"}
-                    className="p-2 text-nextflow"
-                  />
-                )}
-                {github && (
-                  <SocialIcon
-                    key={github}
-                    href={github}
-                    type={"GitHub"}
-                    className="p-2 text-nextflow"
-                  />
-                )}
-                
+                  {twitter && (
+                    <SocialIcon
+                      key={twitter}
+                      href={twitter}
+                      type={"Twitter"}
+                      className="p-2 text-nextflow"
+                    />
+                  )}
+                  {linkedin && (
+                    <SocialIcon
+                      key={linkedin}
+                      href={linkedin}
+                      type={"LinkedIn"}
+                      className="p-2 text-nextflow"
+                    />
+                  )}
+                  {github && (
+                    <SocialIcon
+                      key={github}
+                      href={github}
+                      type={"GitHub"}
+                      className="p-2 text-nextflow"
+                    />
+                  )}
                 </div>
               </div>
-              
             </div>
             <div>
               <div>
-           
                 <div
                   className={`flex flex-row justify-between w-full border-t ${date && "border-b border-nextflow pb-2 mb-1 pt-2"} border-nextflow pt-1`}
                 >
-                  {date &&
-                  (
+                  {date && (
                     <>
-                  <p className="monospace">{monthDate}</p>
-                  <p className="font-display">   {timeStart && (
-            <span className="font-display">{timeStart} -  {timeEnd && (timeEnd)}</span> 
-            )}</p>
-                  </>
-                  )
-                }
+                      <p className="monospace">{monthDate}</p>
+                      <p className="font-display">
+                        {" "}
+                      
+                          <span className="font-display">
+                            {timeStart} - {timeEnd && timeEnd}
+                          </span>
+                        
+                      </p>
+                    </>
+                  )}
                 </div>
-               
 
                 {pageUrl ? (
-            <div className="pb-2 pt-1">
-              <a href={`/2025/boston/agenda/${pageUrl.slug}`} className="hover:text-nextflow-200 transition-all duration-300 text-[.9rem] ">
-              {submissionTitle}
-              </a>
-            </div>
-           ) : (
-            <div className="text-[.9rem] py-2">
-              {submissionTitle} 
-            </div>
-            )}
-      
+                  <div className="pb-2 pt-1">
+                    <a
+                      href={`/2025/boston/agenda/${pageUrl.slug}`}
+                      className="hover:text-nextflow-200 transition-all duration-300 text-[.9rem] "
+                    >
+                      {submissionTitle}
+                    </a>
+                  </div>
+                ) : (
+                  <div className="text-[.9rem] py-2">{submissionTitle}</div>
+                )}
+
                 {pageUrl && (
-            <div className="border-t border-nextflow mb-2 hover:text-nextflow-200 transition-all duration-300 pt-2">
-              → <a href={`/2025/boston/agenda/${pageUrl}`} className=" monospace text-sm">    
-                      <span>View Abstract</span>    
-              </a>
-            </div>
-           )}
-      
+                  <div className="border-t border-nextflow mb-2 hover:text-nextflow-200 transition-all duration-300 pt-2">
+                    →{" "}
+                    <a
+                      href={`/2025/boston/agenda/${pageUrl}`}
+                      className=" monospace text-sm"
+                    >
+                      <span>View Abstract</span>
+                    </a>
+                  </div>
+                )}
               </div>
               {bio && (
                 <div
@@ -283,10 +284,9 @@ const SpeakerCard: React.FC<Props> = ({
                 >
                   <small className="text-nextflow mt-6 mb-2">About</small>
                   <PortableText
-                     className={clsx(styles.speakersBio, `monospace`)}
+                    className={clsx(styles.speakersBio, `monospace`)}
                     value={bio}
                   />
-                
                 </div>
               )}
             </div>
