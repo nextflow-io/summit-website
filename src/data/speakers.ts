@@ -1,13 +1,45 @@
-import data from "./sessionize";
-import { parseSpeakers, type Speaker } from "./speakerUtils";
-export type { Speaker };
+import { sanityClient } from "sanity:client";
 
-const boston = parseSpeakers(data.boston.speakers, data, "boston", true);
-const barcelona = parseSpeakers(
-  data.barcelona.speakers,
-  data,
-  "barcelona",
-  true,
+
+const getAllSpeakers = await sanityClient.fetch(
+  `*[_type == "speakerListing"] {
+    speakers[]-> {
+    name,
+    role,
+    associatedEvent-> {
+    title,
+   "slug": slug.current,
+    associatedPerson[] {
+     name,
+    },
+    coauthors,
+    associatedCategory,
+    publishedAt,
+    endTime,
+    ...,
+    mainImage {
+      ...,
+      asset-> {
+      url,
+      },
+     },
+    },
+    keynote,
+    linkedin,
+    github,
+    twitter,
+    company,
+    bio,
+    image {
+      ...,
+      asset-> {
+      url,
+      },
+    },
+    },
+  }`
 );
 
-export default { boston, barcelona };
+
+export default getAllSpeakers;
+

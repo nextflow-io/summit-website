@@ -3,6 +3,12 @@ import Layout from "@layouts/Base.astro";
 import SEO from "@components/SEO";
 import SpeakersSection from "@modules/SpeakersSection";
 import Hero from "@components/Hero";
+import getAllSpeakers from "@data/speakers";
+
+const sortedMembers = getAllSpeakers[0].speakers.sort((a, b) =>
+  a.name.localeCompare(b.name)
+);
+
 ---
 
 <Layout namespace="2025/boston">
@@ -17,5 +23,21 @@ import Hero from "@components/Hero";
   />
  </section>
 
-  <SpeakersSection client:load/>
+
+  <div class="container mt-14">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+      {
+        sortedMembers.map((name,index) => (
+           <div>
+           <SpeakersSection 
+           person={name} 
+           index="{index"
+           client:only="react"/>
+           </div>
+        ))
+      }
+
+    </div>
+  </div>
+
 </Layout>

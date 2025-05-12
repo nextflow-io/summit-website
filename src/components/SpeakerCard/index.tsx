@@ -6,6 +6,10 @@ import styles from "./speakers.module.css";
 import SocialIcon from "@components/SocialIcon";
 import { motion } from "framer-motion";
 import Button from "@components/Button";
+import { urlFor } from "@data/sanity-image";
+import PortableText from "@components/PortableText";
+import dayjs from 'dayjs';
+
 
 type Props = {
   title?: string;
@@ -25,8 +29,7 @@ type Props = {
   isOpen: boolean;
   onClick: any;
   pageUrl?: any;
-  speaker?: boolean;
-  poster?: boolean;
+  endTime?: any;
 };
 
 const SpeakerCard: React.FC<Props> = ({
@@ -34,6 +37,7 @@ const SpeakerCard: React.FC<Props> = ({
   jobTitle,
   date,
   time,
+  endTime,
   submissionTitle,
   track,
   twitter,
@@ -45,9 +49,13 @@ const SpeakerCard: React.FC<Props> = ({
   isOpen,
   onClick,
   pageUrl,
-  speaker,
-  poster,
 }) => {
+
+
+  const monthDate = dayjs(date).format('MMMM D');
+  const timeStart =  dayjs(date).format('h:mm A');
+  const timeEnd = dayjs(endTime).format('h:mm A');
+
   return (
     <motion.div
       className={`hover:cursor-pointer`}
@@ -74,7 +82,7 @@ const SpeakerCard: React.FC<Props> = ({
               {image ? (
                 <img
                   className="imageBlend  w-full h-full object-cover"
-                  src={image}
+                  src={urlFor(image).width(400).height(300).url()} 
                   alt={`image of ${name}`}
                 />
               ) : (
@@ -122,8 +130,10 @@ const SpeakerCard: React.FC<Props> = ({
           <div
             className={`flex flex-row justify-between w-full border-t ${date && "border-b border-nextflow pb-2"} border-nextflow pt-2 mb-2`}
           >
-            <p className="monospace">{date}</p>
-            <p className="font-display">{time}</p>
+            <p className="monospace">{monthDate && monthDate}</p>
+            {timeStart && (
+            <p className="font-display">{timeStart} -  {timeEnd && (timeEnd)}</p> 
+            )}
           </div>
 
          <div className="text-center w">
@@ -177,7 +187,7 @@ const SpeakerCard: React.FC<Props> = ({
                 {image ? (
                   <img
                     className="imageBlend  w-full h-full object-cover"
-                    src={image}
+                    src={urlFor(image).width(400).height(300).url()} 
                     alt={`image of ${name}`}
                   />
                 ) : (
@@ -233,8 +243,10 @@ const SpeakerCard: React.FC<Props> = ({
                   {date &&
                   (
                     <>
-                  <p className="monospace">{date}</p>
-                  <p className="font-display">{time}</p>
+                  <p className="monospace">{monthDate}</p>
+                  <p className="font-display">   {timeStart && (
+            <span className="font-display">{timeStart} -  {timeEnd && (timeEnd)}</span> 
+            )}</p>
                   </>
                   )
                 }
@@ -243,7 +255,7 @@ const SpeakerCard: React.FC<Props> = ({
 
                 {pageUrl ? (
             <div className="pb-2 pt-1">
-              <a href={`/2025/boston/agenda/${pageUrl}`} className="hover:text-nextflow-200 transition-all duration-300 text-[.9rem] ">
+              <a href={`/2025/boston/agenda/${pageUrl.slug}`} className="hover:text-nextflow-200 transition-all duration-300 text-[.9rem] ">
               {submissionTitle}
               </a>
             </div>
@@ -270,10 +282,11 @@ const SpeakerCard: React.FC<Props> = ({
                   )}
                 >
                   <small className="text-nextflow mt-6 mb-2">About</small>
-                  <div
-                    className={clsx(styles.speakersBio, `monospace`)}
-                    dangerouslySetInnerHTML={{ __html: bio }}
-                  ></div>
+                  <PortableText
+                     className={clsx(styles.speakersBio, `monospace`)}
+                    value={bio}
+                  />
+                
                 </div>
               )}
             </div>
