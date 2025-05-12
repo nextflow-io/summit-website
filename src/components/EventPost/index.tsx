@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import PortableText from "@components/PortableText";
 import SocialIcon from "@components/SocialIcon";
-
+import Button from  "@components/Button"
 
 type Props = {
   post: any;
@@ -39,6 +39,11 @@ const EventPosts: React.FC<Props> = ({ post }) => {
               value={post?.body}
             />
           </div>
+            {post.projectLink && (
+              <div className="mt-10">
+                <Button white arrowAfter className="monospace" href={post.projectLink}>Link to Project</Button>
+              </div>
+            )}
 
           {post?.category}
         </div>

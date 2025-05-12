@@ -20,6 +20,7 @@ const getAllEventPosts = await sanityClient.fetch(
      linkedin,
      github,
      twitter,
+     projectLink,
      image{
        asset-> {
        url,
