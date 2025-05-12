@@ -156,7 +156,7 @@ const Schedule: React.FC<Props> = ({
         <ScheduleItem time="11:30am" name="Optimizing Compute Costs with Seqera Cloud: Champions Oncology's PDX Bank and Multi-Omics Data" speakers="Gervaise Henry" category="Organizational Impact" url="optimizing-compute-costs-with-seqera-cloud-champions-oncology-s-pdx-bank-and-multi-omics-data"/>
         <ScheduleItem time="11:45am" name="DRAGoN - Divide-and-conquer strategy for processing large DRUG-seq experiments" speakers="Scott Norton" url="dragon-divide-and-conquer-strategy-for-processing-large-drug-seq-experiments"  />
         <ScheduleItem time="12:00pm" name="Enabling Reproducible Science and African Representation in Science through Nextflow Workshops" category="Organizational Impact" speakers="Olaitan Awe" url="enabling-reproducible-science-and-african-representation-in-science-through-nextflow-workshops"/>
-        <ScheduleItem time="12:20pm" name="Panel Discussion"  speakers="Saba Nafees, Lorena Pantano and Francine Camacho" />
+        <ScheduleItem time="12:20pm" name="Panel Discussion: Beyond the Pipeline: Advancing Diversity in Challenging Times"  speakers="Saba Nafees, Lorena Pantano and Francine Camacho" url="beyond-the-pipeline-advancing-diversity-in-challenging-times"/>
         <ScheduleItem time="1:00pm" name="Summit: Wrap-up" highlighted={true} />
         <ScheduleItem time="1:10pm" name="Summit: End" highlighted={true} />
       </section>
