@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import speakers from "./speakers";
 import SpeakerCard from '@components/SpeakerCard'
 
 const SpeakersSection = ({  person , index}) => {
