@@ -6,6 +6,13 @@ const getAllEventPosts = await sanityClient.fetch(
    ...,
    title,
    body,
+  poster {
+      asset->{
+        url,
+        originalFilename,
+        mimeType
+      }
+    },
     mainImage{
     ...,
       asset-> {
@@ -21,7 +28,6 @@ const getAllEventPosts = await sanityClient.fetch(
      github,
      twitter,
      youtube,
-    "poster": file.asset->url,
      projectLink,
      image{
        asset-> {
