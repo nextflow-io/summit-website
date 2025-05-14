@@ -119,7 +119,7 @@ const Schedule: React.FC<Props> = ({
       <section className="mb-20">
         <h5 className="h5 mb-2">Thursday, May 15</h5>
         <ScheduleHeader />
-        <ScheduleItem time="8:30am" name="Registration, coffee and light pastries" highlighted={true} />
+        <ScheduleItem time="8:30am" name="Registration, coffee and breakfast" highlighted={true} />
         <ScheduleItem time="9:30am" name="Welcome" category="Welcome" speakers="Evan Floden" />
         <ScheduleItem time="9:40am" name="Product Keynote: From Pipelines to Platform" speakers="Evan Floden" category="Enabling Science" url="from-pipelines-to-platform" />
         <ScheduleItem time="10:20am" name="From Technical Debt to Sustainable Workflows: The AI-MARRVEL Nextflow Journey" category="Enabling Science" speakers="Hyun-Hwan Jeong" url="from-technical-debt-to-sustainable-workflows-the-ai-marrvel-nextflow-journey"/>
@@ -147,7 +147,7 @@ const Schedule: React.FC<Props> = ({
         <h5 className="h5 mb-2">Friday, May 16</h5>
         <ScheduleHeader />
         <ScheduleItem time="7:00am" name="Network: Morning Walk and Run to Seaport" highlighted={true}/>
-        <ScheduleItem time="8:30am" name="Welcome breakfast and coffee" highlighted={true}/>
+        <ScheduleItem time="8:30am" name="Coffee and breakfast" highlighted={true}/>
         <ScheduleItem time="9:30am" name="Scale with Seqera: Accelerate, Expand, and Collaborate" category="Organizational Impact" speakers="Esha Joshi" url="scale-with-seqera-accelerate-expand-and-collaborate"/>
         <ScheduleItem time="10:00am" name="Integrating Bioinformatics into the Regulated Pharmaceutical Lifecycle" category="Organizational Impact" speakers="Brice Sarver and Kostis Karagiannis" url="integrating-bioinformatics-into-the-regulated-pharmaceutical-lifecycle"/>
         <ScheduleItem time="10:20am" name="Building an Omics Data Infrastructure to Bridge Data Management and Data Science" category="Organizational Impact" speakers="Juliana Assis" url="building-an-omics-data-infrastructure-to-bridge-data-management-and-data-science"/>
