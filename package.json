@@ -38,7 +38,9 @@
     "sanity": "^3.26.0",
     "swiper": "^11.0.5",
     "tailwindcss": "^3.4.1",
-    "three": "^0.136.0"
+    "three": "^0.136.0",
+    "timezone": "^1.0.23",
+    "utc": "^0.1.0"
   },
   "devDependencies": {
     "@csstools/postcss-global-data": "^2.1.1",

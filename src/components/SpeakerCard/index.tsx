@@ -7,6 +7,8 @@ import { motion } from "framer-motion";
 import { urlFor } from "@data/sanity-image";
 import PortableText from "@components/PortableText";
 import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+import timezone from "dayjs/plugin/timezone";
 
 type Props = {
   title?: string;
@@ -46,9 +48,15 @@ const SpeakerCard: React.FC<Props> = ({
   onClick,
   pageUrl,
 }) => {
-  const monthDate = dayjs(date).format("MMMM D");
-  const timeStart = dayjs(date).format("h:mm A");
-  const timeEnd = dayjs(endTime).format("h:mm A");
+  dayjs.extend(utc);
+dayjs.extend(timezone);
+
+  // const monthDate = dayjs(date).format("MMMM D");
+  // const timeStart = dayjs(date).format("h:mm A");
+  // const timeEnd = dayjs(endTime).format("h:mm A");
+  const monthDate = dayjs(date).tz("America/New_York").format("MMMM D");
+const timeStart = dayjs(date).tz("America/New_York").format("h:mm A");
+const timeEnd = dayjs(endTime).tz("America/New_York").format("h:mm A");
 
   return (
     <motion.div
