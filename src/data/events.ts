@@ -6,6 +6,8 @@ const getAllEventPosts = await sanityClient.fetch(
    ...,
    title,
    body,
+   youtube,
+   projectLink,
   poster {
       asset->{
         url,
@@ -27,8 +29,6 @@ const getAllEventPosts = await sanityClient.fetch(
      linkedin,
      github,
      twitter,
-     youtube,
-     projectLink,
      image{
        asset-> {
        url,

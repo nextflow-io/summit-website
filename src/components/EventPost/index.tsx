@@ -8,7 +8,28 @@ type Props = {
   title?: string;
 };
 
+const YouTubeEmbed = ({ id}) => {
+  if (!id) return null;
+
+  const embedUrl = `https://www.youtube.com/embed/${id}`;
+
+  return (
+    <div className="w-full h-0 relative pb-[56.75%] overflow-hidden">
+      <iframe
+        width="100%"
+        height="100%"
+        src={embedUrl}
+        title=""
+        className="absolute top-0 left-0 right-0 bottom-0 w-full h-full"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      ></iframe>
+    </div>
+  );
+};
+
 const EventPosts: React.FC<Props> = ({ post }) => {
+  
   return (
     <section className="flex flex-col h-full">
       <div className="border border-nextflow p-4">
@@ -53,6 +74,14 @@ const EventPosts: React.FC<Props> = ({ post }) => {
           {post?.category}
         </div>
       </div>
+
+      {post.youtube && (
+        <div className="w-full h-full my-10 border border-nextflow ">
+          <div className="w-full h-full">
+          <YouTubeEmbed id={post.youtube}/>
+          </div>
+        </div>
+      )}
 
       {post.poster?.asset.url && (
         <div className="my-10 border border-nextflow ">
