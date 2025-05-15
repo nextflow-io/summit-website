@@ -49,14 +49,11 @@ const SpeakerCard: React.FC<Props> = ({
   pageUrl,
 }) => {
   dayjs.extend(utc);
-dayjs.extend(timezone);
+  dayjs.extend(timezone);
 
-  // const monthDate = dayjs(date).format("MMMM D");
-  // const timeStart = dayjs(date).format("h:mm A");
-  // const timeEnd = dayjs(endTime).format("h:mm A");
-  const monthDate = dayjs(date).tz("America/New_York").format("MMMM D");
-const timeStart = dayjs(date).tz("America/New_York").format("h:mm A");
-const timeEnd = dayjs(endTime).tz("America/New_York").format("h:mm A");
+    const monthDate = dayjs(date).utcOffset(-5, true).format("MMMM D");
+    const timeStart = dayjs(date).utcOffset(-5, true).format("h:mm A");
+    const timeEnd = dayjs(endTime).utcOffset(-5, true).format("h:mm A");
 
   return (
     <motion.div
