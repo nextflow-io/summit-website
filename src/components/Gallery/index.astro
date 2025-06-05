@@ -12,7 +12,7 @@ const { images, title, ctaURL } = Astro.props;
       {
         !!ctaURL && (
           <div class="mb-12">
-            <Button to={ctaURL} arrow cta2>
+            <Button to={ctaURL} arrowBefore cta>
               See all {images.length} images in Google Photos
             </Button>
           </div>

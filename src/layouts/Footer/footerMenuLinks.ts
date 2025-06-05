@@ -41,14 +41,10 @@ export default {
         name: "Sponsors",
         url: "/2025/boston/sponsors",
       },
-      // {
-      //   name: "Hackathon",
-      //   url: "/2025/boston/hackathon",
-      // },
-      // {
-      //   name: "Gallery",
-      //   url: "/2025/boston/gallery",
-      // },
+      {
+        name: "Gallery",
+        url: "/2025/boston/gallery",
+      },
     ],
   },
   {
@@ -64,10 +60,10 @@ export default {
   {
     name: "Pages",
     dropdowns: [
-      {
-        name: "Register",
-        url: "/2025/boston/register",
-      },
+      // {
+      //   name: "Register",
+      //   url: "/2025/boston/register",
+      // },
       {
         name: "Call for Abstracts",
         url: "/call-for-abstracts",

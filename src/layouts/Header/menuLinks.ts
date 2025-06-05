@@ -39,10 +39,10 @@ const menuLinks = [
         name: "Sponsors",
         url: "/2025/boston/sponsors",
       },
-      // {
-      //   name: "Gallery",
-      //   url: "/2025/boston/gallery",
-      // },
+      {
+        name: "Gallery",
+        url: "/2025/boston/gallery",
+      },
     ],
   },
   {
