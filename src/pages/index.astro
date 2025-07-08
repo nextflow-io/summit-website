@@ -13,14 +13,14 @@ import qa from "./qa";
 import SignUpForm from "@modules/SignUpForm";
 import Box, { SubSection } from "@components/Box";
 import ArrowUpRight from "@icons/ArrowUpRight";
-import imgBoston from "@images/photos/2025/boston/boston.jpg";
+import imgVirtual from "@images/photos/2025/virtual.jpg";
 import imgBarcelona from "@images/photos/2025/barcelona/barcelona.jpg";
 import Banner from '@components/Banner'
 ---
 
 <Layout showHeader={false}>
   <SEO slot="head" title="Home" img={0} />
-  <Banner title="Register to access the event recordings" ctaText="Register Now" ctaLink="https://seqera.swoogo.com/nextflow-summit-boston-2025" client:load /> 
+  <!-- <Banner title="Register to access the event recordings" ctaText="Register Now" ctaLink="https://seqera.swoogo.com/nextflow-summit-boston-2025" client:load />  -->
   <LandingHero
     isBoth
     title="Nextflow Summit"
@@ -28,14 +28,14 @@ import Banner from '@components/Banner'
     where="both"
     ctaText1="Barcelona 2025 Overview"
     ctaLink1="/2025/barcelona/overview"
-    boston="May 13-16"
-    barcelona="Coming soon"
+    virtual="October 23-24"
+    barcelona="October 28-29"
     client:load
   />
 
   <section class="mt-20 mb-24">
     <div class="mt-10 mb-10 md:mt-20 md:mb-20 container smaller grid grid-cols-1 sm:grid-cols-2 gap-8">
-      <Box className="box__image aspect-square	relative" href="/2025/boston">
+      <Box className="box__image aspect-square	relative" href="/2025/barcelona">
 
         <SubSection
           className="relative flex flex-col justify-between h-full z-10"
@@ -44,12 +44,14 @@ import Banner from '@components/Banner'
             <div
               class="pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center"
             >
-              <h5 class="h4">Boston 2025</h5>
+              <h5 class="h4">Barcelona 2025</h5>
               <ArrowUpRight />
             </div>
-            <div class=" py-2 monospace border-b border-b-nextflow flex flex-row justify-between">
-              <p>May 13-16</p>
-              <p>Aloft Boston</p>
+            <div class=" py-2 monospace border-b border-b-nextflow md:flex md:flex-row md:justify-between">
+              <p class="pr-4">October 28-29</p>
+              <p>
+                Hotel SB Glow
+              </p>
             </div>
           </div>
           <div
@@ -57,7 +59,7 @@ import Banner from '@components/Banner'
         >
           <img
             class="absolute top-0 left-0 right-0 bottom-0 w-full h-full z-0 object-cover"
-            src={imgBoston.src}
+            src={imgBarcelona.src}
             alt="Image of Boston cityscape"
           />
         </div>
@@ -77,13 +79,13 @@ import Banner from '@components/Banner'
             <div
               class="pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center"
             >
-              <h5 class="h4">Barcelona 2025</h5>
+              <h5 class="h4">Virtual 2025</h5>
               <ArrowUpRight />
             </div>
             <div class=" py-2 monospace border-b border-b-nextflow md:flex md:flex-row md:justify-between">
-              <p class="pr-4">Coming soon</p>
+              <p class="pr-4">October 23-24</p>
               <p>
-                <!-- Torre Glòries & SB Glow -->
+                Online
               </p>
             </div>
           </div>
@@ -92,8 +94,8 @@ import Banner from '@components/Banner'
         >
           <img
             class="absolute top-0 left-0 right-0 bottom-0 w-full h-full z-0 object-cover"
-            src={imgBarcelona.src}
-            alt="Image of Boston cityscape"
+            src={imgVirtual.src}
+            alt="Image of Person using computer"
           />
         </div>
           <div class="">

@@ -1,10 +1,15 @@
 export default {
     main: [
       {
-        question: "How do I register for the Nextflow Summit?",
+        question: "How do I register for the Nextflow Training and nf-core Hackathon Barcelona 2025?",
         answer:  
-          `<p>You can register for the Nextflow Summit in Boston by clicking <a href="/2025/boston/register">here</a>.</p>
-          <p>Find out more information on future events by <a href="#register">registering here</a>.</p>`,
+          `<p>To register for Nextflow Training Barcelona 2025, click <a href="https://seqera.swoogo.com/nextflow-training" target="_blank">here</a>.</p>
+          <p>To register for the nf-core Hackathon Barcelona 2025, click <a href="https://seqera.swoogo.com/nfcore-hackathon" target="_blank">here</a>.</p>`,
+      },
+      {
+        question: "How do I register for Nextflow Virtual Summit?",
+        answer:  
+          `<p>Registration will open in August.</p>`
       },
       {
         question: "What is included in the registration fee?",
@@ -13,7 +18,7 @@ export default {
             <ul>
             <li>Access to all in-person content and programming</li>
             <li>Enjoy meals and social events</li>
-            <li>Network and connect with other attendees and sponsors</li>
+            <li>Network and connect with other attendees</li>
             </ul>
             `
       },

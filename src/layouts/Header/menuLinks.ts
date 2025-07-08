@@ -47,7 +47,25 @@ const menuLinks = [
   },
   {
     name: "Barcelona",
-    url: "/2025/barcelona/overview",
+    url: "/2025/barcelona",
+    dropdowns: [
+      {
+        name: "Overview",
+        url: "/2025/barcelona/overview",
+      },
+      {
+        name: "Hackathon",
+        url: "/2025/barcelona/hackathon",
+      },
+      {
+        name: "Training",
+        url: "/2025/barcelona/training",
+      },
+      {
+        name: "Travel",
+        url: "/2025/barcelona/travel",
+      },
+    ],
   },
   {
     name: "Call for Abstracts",

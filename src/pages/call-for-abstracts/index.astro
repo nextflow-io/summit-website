@@ -17,10 +17,11 @@ import qa from "./qa";
   <section class="">
     <Hero
       preTitle="Call for abstracts"
-      title={`is now closed`}`
-      content="The final posters will be accepted and presenters notified by end of April."
+      title={`will open on July 10`}`
+      content="The final posters will be accepted and presenters notified by end of August. You'll be able to submit a poster and present it during the Hackathon and the Training."
       href={img1.src}
       alt="Image of Nextflow Summit presenter"
+      ctaText1="Submit abstract"
 
       client:load
     />
@@ -29,45 +30,45 @@ import qa from "./qa";
   <section id="learn" class="mt-20 mb-24 container">
     <h1 class="h1 mb-4 md:mb-8">Key Info</h1>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-      <Box className="lg:aspect-square	">
-        <SubSection className="flex flex-col justify-between h-full">
+      <Box className="">
+        <SubSection className="flex flex-col  h-full">
           <div class="">
             <div
               class="pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center"
             >
-              <h5 class="h4">Talks & Formats</h5>
+              <h5 class="h4">Talks</h5>
             </div>
             <div class="bodycopy py-2 monospace border-b border-b-nextflow">
-              Long-form and Digital Poster
+              Virtual
             </div>
           </div>
           <div class="mt-6 lg:mt-0">
             <p class="monospace">
-              <Talk  className="mb-12" />
-              Long-form Talk: 20 minutes total including time for Q&A.
-            Digital Poster presented in person
+              <Talk  className="my-8" />
+              Virtual Talk: 20 minutes total including time for Q&A.<br/><br/>
+              Submit CFA for Nextflow Summit, Virtual by clicking <a href="" target="_blank">here</a>.
             
             </p>
           </div>
         </SubSection>
       </Box>
-      <Box className="lg:aspect-square	">
-        <SubSection className="flex flex-col justify-between h-full">
+      <Box className="">
+        <SubSection className="flex flex-col  h-full">
           <div class="">
             <div
               class="pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center"
             >
-              <h5 class="h4">Location</h5>
+              <h5 class="h4">Posters</h5>
             </div>
             <div class="bodycopy py-2 monospace border-b border-b-nextflow">
-              Boston, Massachusetts
+              Location: Virtual & Barcelona
             </div>
           </div>
           <div class="mt-6 lg:mt-0">
-            <City className="mb-12" />
+            <City className="my-8" />
             <p class="monospace">
-              In person at the Nextflow Summit 2025. This year's event venue is located at <a href=`https://maps.app.goo.gl/S9aZawB98jRa8DEC9` target="_blank">Aloft Boston
-              Seaport District</a>
+              Present your poster at Nextflow Summit, Virtual or in-person at the Nextflow Training and nf-core Hackathon, Barcelona. <br/><br/>
+              Submit your poster submission <a href="" target="_blank">here</a>.
             </p>
           </div>
         </SubSection>
@@ -100,7 +101,7 @@ import qa from "./qa";
     </div>
   </section>
 
-  <section id="themes" class="mt-10 mb-20 container">
+  <!-- <section id="themes" class="mt-10 mb-20 container">
     <h1 class="h1 mb-4 md:mb-8">Themes</h1>
     <div class="grid grid-cols-1 md:grid-cols-2 md:grid-cols-3 gap-8">
       <Box className="">
@@ -171,7 +172,7 @@ import qa from "./qa";
         </SubSection>
       </Box>
     </div>
-  </section>
+  </section> -->
 
   <Faq className="mt-20 mb-20" data={qa} client:load />
 </Layout>

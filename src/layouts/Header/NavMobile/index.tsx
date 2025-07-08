@@ -40,10 +40,10 @@ const NavMobile: React.FC<Props> = ({ pathname, namespace, showNav }) => {
                 white
                 arrowAfter
               >
-                View Boston Schedule
+                View Barcelona 2025 Overview
                 <a
                   className="absolute w-full h-full"
-                  href="/2025/boston/agenda"
+                  href="/2025/barcelona/overview"
               
                 ></a>
               </Button>

@@ -1,0 +1,170 @@
+---
+import Layout from "@layouts/Base.astro";
+import SEO from "@components/SEO";
+import Hero from "@components/Hero";
+import Box, { SubSection } from "@components/Box";
+import ArrowUpRight from "@icons/ArrowUpRight";
+import img from "@images/photos/2025/boston/hackathon-2.jpg";
+import img2 from "@images/photos/2025/boston/hackathon-3.jpg";
+---
+
+<Layout namespace="2025/barcelona">
+  <SEO slot="head" title="Hackathon" img={1} />
+
+  <section class="py-8">
+    <Hero
+      title="nf-core hackathon at Nextflow Summit"
+      content="October 28-29, 2025 at SB Glow Hotel"
+      ctaText1="Register Now"
+      ctaLink1="https://seqera.swoogo.com/nfcore-hackathon"
+      ctaExternal1={true}
+      client:load
+      href={img.src}
+      alt="Image of three people at Nextflow Summit Hackathon"
+    />
+  </section>
+
+  <section class="mt-20 mb-8" id="learn">
+    <h1 class="h4 mb-4 md:mb-8"></h1>
+    <div class="container grid grid-cols-1 md:grid-cols-3 gap-8">
+      <Box className="">
+        <SubSection className="flex flex-col h-full">
+          <div class="border-b border-b-nextflow w-full">
+            <h5 class="h5 mb-4">Overview</h5>
+          </div>
+
+          <div>
+            <div class="mt-6">
+              <p class="monospace mb-4">
+                nf-core is a community effort to collect a curated set of tools,
+                modules and pipelines built using Nextflow.
+              </p>
+              <p class="monospace mb-4">
+                Whether you're already involved in nf-core or not, this hackathon is the perfect place to get to know other members of the community in person. You'll collaborate on projects, discuss code and learn from each other.
+              </p>
+              <p class="monospace">
+                <p class="mb-4">
+                  <span class="underline text-nextflow">Audience</span>: All
+                  welcome, no prior nf-core contributions needed
+                </p>
+                <p class="mb-4">
+                  <span class="underline text-nextflow">Required</span>: Some
+                  experience with writing Nextflow code.
+                </p>
+                <p class="mb-4">
+                  <span class="underline text-nextflow"
+                    >Beginners are welcome</span
+                  >: Please note that this is not a training event.
+                </p>
+              </p>
+            </div>
+          </div>
+        </SubSection>
+      </Box>
+
+      <Box className="">
+        <SubSection className="flex flex-col h-full">
+          <div class="border-b border-b-nextflow w-full">
+            <h5 class="h5 mb-4">How It Works</h5>
+          </div>
+
+          <div>
+            <div class="mt-6">
+              <p class="monospace mb-4">
+                The nf-core hackathons are not competitve. Instead, they are
+                collaborative, community-driven events where participants work
+                together on projects. Projects can be anything from adding new
+                features to existing pipelines, to creating entirely new
+                pipelines.
+              </p>
+              <p class="monospace mb-4">
+                You can bring your own favourite topic or choose from a list of
+                open issues in the community. We try to group people based on
+                the types of tasks that are being tackled, so that you can work
+                with others who have similar interests.
+              </p>
+            </div>
+          </div>
+        </SubSection>
+      </Box>
+      <Box className="">
+        <SubSection className="flex flex-col h-full">
+          <div class="border-b border-b-nextflow w-full">
+            <h5 class="h5 mb-4">Hackathon Social</h5>
+          </div>
+
+          <div>
+            <div class="mt-6">
+              <p class="monospace mb-4">
+                nf-core hackathons are not just about coding! We also have a lot
+                of fun. We typically run things like a quiz, a bingo and have
+                several small prizes for the winners. In addition to small
+                social games and contests during the event, we also have a
+                social evening.
+              </p>
+              <p>
+                This year the hackathon social event will be held together with
+                attendees from the training event
+              </p>
+            </div>
+          </div>
+        </SubSection>
+      </Box>
+    </div>
+  </section>
+
+  <section class="px-10 w-full container relative grid grid-cols-1 md:grid-cols-3 gap-8">
+    <Box externalLink={true} className="w-full relative mb-10" href="https://nf-co.re/events/2025/hackathon-barcelona">
+        <SubSection className="flex flex-col h-full">
+          <div class="">
+            <div class="pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center">
+              <h5 class="h5">Visit nf-core website</h5>
+              <ArrowUpRight/>
+            </div>
+          </div>
+          <p class="mt-6 monospace">
+            For the most up-to-date information on the nf-core hackathon at
+            the Nextflow Summit 2025, please visit the <span class="text-nextflow">nf-core website</span>. 
+        </p>
+        </SubSection>
+      </Box>
+      <Box externalLink={true} className="relative" href="https://seqera.swoogo.com/nfcore-hackathon">
+        <SubSection className="flex flex-col h-full">
+          <div class="">
+            <div class="pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center">
+              <h5 class="h5">Register Now</h5>
+              <ArrowUpRight/>
+            </div>
+          </div>
+          <p class="monospace pt-6">
+            <p class="mb-4">
+              <span class="underline text-nextflow">Location</span>: SB Glow Hotel
+            </p>
+            <p class="mb-4">
+              <span class="underline text-nextflow">Address</span>: Carrer de Badajoz, 148, 154, Sant Martí, 08018 Barcelona
+            </p>
+            <p class="mb-4">
+              <span class="underline text-nextflow">Dates</span>: October 28-29, 2025
+            </p>
+            <p class="mb-4">
+              <span class="underline text-nextflow"
+                >Price</span
+              >:<s>€120</s> €90 (Early bird 25% off until August 1)<br/>
+            </p>
+        
+          </p>
+
+  
+        </SubSection>
+      </Box>
+      <div class="imageBlend border w-full h-full border-nextflow xl:aspect-square object-cover">
+        <img
+          class="aspect-square w-full h-full object-cover"
+          src={img2.src}
+          alt="image of person at Nextflow Summit hackathon"
+        />
+      </div>
+
+  </section>
+
+</Layout>

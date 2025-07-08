@@ -20,6 +20,7 @@ interface HeroProps {
   price?: string;
   boston?: string;
   barcelona?: string;
+  virtual?: string;
   namespace?: string;
   pathname?: string;
   isBoston?: boolean;
@@ -44,6 +45,7 @@ const LandingHero: React.FC<HeroProps> = (props) => {
     namespace,
     boston,
     barcelona,
+    virtual,
     isBoston,
     isBarcelona,
     isBoth
@@ -237,9 +239,15 @@ const LandingHero: React.FC<HeroProps> = (props) => {
                   <h3 className="h3">{boston}</h3>
                 </div>
               )}
+              {virtual && (
+                <div className="mb-10">
+                  <p className="h6 text-nextflow monospace mb-2">Summit (Virtual)</p>
+                  <h3 className="h3">{virtual}</h3>
+                </div>
+              )}
               {barcelona && (
                 <div className="mb-10">
-                  <p className="h6 text-nextflow monospace mb-2">Barcelona</p>
+                  <p className="h6 text-nextflow monospace mb-2">Nextflow Training & nf-core Hackathon<br/>(SB Glow, Barcelona)</p>
                   <h3 className="h3">{barcelona}</h3>
                 </div>
               )}
