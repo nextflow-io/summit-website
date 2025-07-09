@@ -307,7 +307,7 @@ const LandingHero: React.FC<HeroProps> = (props) => {
                 </div>
               </div>
             </div>
-            <h1 className="absolute top-80 right-0 sm:top-auto sm:right-auto sm:relative h0">
+            <h1 className="hidden sm:block absolute top-80 right-0 sm:top-auto sm:right-auto sm:relative h0">
               2025
             </h1>
           </motion.div>
