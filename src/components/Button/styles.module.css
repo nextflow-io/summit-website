@@ -85,14 +85,15 @@
 }
 
 .button.brand {
-  background: var(--color-brand);
-  color: #fff;
+  background: var(--color-nextflow-200);
+  color: var(--color-brand);
   & .hoverBG {
     background: #fff;
   }
   &:hover {
-    background:#fff;
-    color: var(--color-brand);
+    background:transparent;
+    color: white;
+    border: white;
   } 
 }
 

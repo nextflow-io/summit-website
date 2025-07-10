@@ -4,38 +4,177 @@ import SEO from "@components/SEO";
 import Faq from "@components/Faq";
 import Box, { SubSection } from "@components/Box";
 import HubspotForm from "@components/HubspotForm";
+import Hero from "@components/Hero";
+import PastEvents from "@modules/PastEvents";
 import Button from "@components/Button";
 import clsx from "clsx";
 import styles from "./register.module.css";
+import ArrowUpRight from "@icons/ArrowUpRight";
+import Ticket from "@icons/Ticket";
+import Ticket25 from "@icons/Ticket25";
 import SignUpForm from "@modules/SignUpForm";
 import qa from "./qa";
+import img from "@photos/2025/boston/crowd.jpg";
 ---
 
-<Layout showNav={false}>
-  <SEO slot="head" title="Register" img={2} />
-  <section class="wrapper">
+<Layout showNav={false} namespace="2025/barcelona">
+  <SEO slot="head" title="Register | Barcelona" img={1} />
+
+  <section class="">
+    <Hero
+      title="Registrations for Barcelona are now open!"
+      content="Thank you to everyone who attended this year's Nextflow Summit 2025 at Boston!"
+      href={img.src}
+      alt="Image of two speakers at Nextflow Summit"
+      ctaText1="View the Recordings"
+      ctaLink1="https://www.youtube.com/playlist?list=PLPZ8WHdZGxmWF9fpFcrUuHiozeUZoLb65"
+      ctaExternal1
+      client:load
+    />
+  </section>
+
+  <!-- <section class="wrapper">
     <div class="">
       <div class={clsx(styles.hero, "container pt-10")}>
         <div class="flex flex-col sm:flex-row sm:justify-between">
           <div class="w-full pr-10 pt-10">
-            <h1 class="h1 mb-10">Join us in Barcelona</h1>
+            <h1 class="h1 mb-10 max-w-[500px]">Join us in Boston</h1>
             <p class="monospace">
               Discover the ticket prices, discount dates, and refund policy
             </p>
-          </div>
-          <div class={clsx(styles.imageWrapper, "")}>
-            <div class="w-full">
-              <SignUpForm client:load />
+            <div class="flex md:flex-row items-center">
+              <Button className="mt-16 relative" white arrowAfter>
+                <a
+                  class="absolute w-full h-full"
+                  href="https://seqera.swoogo.com/nextflow-summit-boston-2025"
+                ></a>
+
+                Register Now
+              </Button>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </section> -->
+
+  <section class="pt-20 md:pt-40 mb-24 container">
+    <h1 class="h1 mb-10">Tickets</h1>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <Box className="relative">
+        <SubSection className="flex flex-col  justify-between h-full">
+          <div class="mb-8">
+            <div
+              class="pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center"
+            >
+              <h5 class="h4">Early bird 25% off</h5>
+              <!-- <ArrowUpRight /> -->
+            </div>
+            <div class="py-4 monospace border-b border-b-nextflow">
+              Training & Hackathon (In-Person)
+            </div>
+            <h5 class="h6 mt-4">
+              Early bird pricing begins July 15 and ends August 15.</br><br/>
+            </h5>
+            <p><span class="underline">Nextflow Training</span> <br/>
+              Academic: <s>€120</s> €90<br/>
+              Corporate: <s>€300</s> €225<br/><br/>
+              
+              <span class="underline">nf-core Hackathon</span><br/>
+              Academic: <s>€120</s> €90</p>
+          </div>
+      
+          <div>
+            <Button brand arrowAfter className="w-full mb-3">
+              <a
+                class="absolute w-full h-full"
+                href="https://seqera.swoogo.com/nextflow-training"
+                target="_blank"></a>
+
+              Register for Training
+            </Button>
+            <Button white arrowAfter className="w-full">
+              <a
+                class="absolute w-full h-full"
+                href="https://seqera.swoogo.com/nfcore-hackathon"
+                target="_blank"></a>
+
+              Register for Hackathon
+            </Button>
+          </div>
+        </SubSection>
+      </Box>
+
+      <Box className="relative ">
+        <SubSection className="flex flex-col justify-between h-full">
+          <div class="mb-8">
+            <div
+              class="pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center"
+            >
+              <h5 class="h4">Standard Pricing</h5>
+              <!-- <ArrowUpRight /> -->
+            </div>
+            <div class="py-4 monospace border-b border-b-nextflow">
+              Training & Hackathon (In-Person)
+            </div>
+            <h5 class="h6 pt-4">
+              Standard pricing begins August 16 and ends October 17<br/><br/>
+            </h5>
+            <p><span class="underline">Nextflow Training</span> <br/>
+              Academic: €120 <br/>
+              Corporate: €300<br/><br/>
+              
+              <span class="underline">nf-core Hackathon</span><br/>
+              Academic: €120</p>
+          </div>
+          <div>
+            <Button brand arrowAfter className="w-full mb-3">
+              <a
+                class="absolute w-full h-full"
+                href="https://seqera.swoogo.com/nextflow-training"
+                target="_blank"></a>
+
+              Register for Training
+            </Button>
+            <Button white arrowAfter className="w-full">
+              <a
+                class="absolute w-full h-full"
+                href="https://seqera.swoogo.com/nfcore-hackathon"
+                target="_blank"></a>
+
+              Register for Hackathon
+            </Button>
+          </div>
+          <!-- <div class="pt-4 monospace border-t border-t-nextflow">
+          Academic: €120 •
+          Corporate:  €300 
+        </div> -->
+        </SubSection>
+      </Box>
+      <Box className="relative ">
+        <SubSection className="flex flex-col justify-between h-full">
+          <div class="mb-8">
+            <div
+              class="pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center"
+            >
+              <h5 class="h4">Free</h5>
+              <!-- <ArrowUpRight /> -->
+            </div>
+            <div class="py-4 monospace border-b border-b-nextflow">
+              Virtual Nextflow Summit (Online)
+            </div>
+            <h5 class="h6 pt-4">
+              Registration for Virtual Online Summit open in August
+            </h5>
+          </div>
+          <!-- <div class="pt-4 monospace border-t border-t-nextflow">
+            Free for everyone
+          </div> -->
+        </SubSection>
+      </Box>
+    </div>
   </section>
-
-
+  <PastEvents />
 
   <Faq className="mt-20 md:mt-40 mb-20" client:load data={qa} />
-
-
 </Layout>
