@@ -12,7 +12,7 @@ export default {
           `<p>Registration will open in August.</p>`
       },
       {
-        question: "What is included in the registration fee?",
+        question: "What is included in the registration fee for Training and Hackathon?",
         answer:
           `Your ticket includes:
             <ul>
@@ -27,5 +27,17 @@ export default {
         answer:
           `Contact our team at <a href="mailto:help.summit@nextflow.io">help.summit@nextflow.io</a> to inquire about group registrations.`
       },
+      {
+        question: "Are there student discounts or financial assistance available?",
+        answer:
+          `<p>Accessibility is important to us. We strive to make the event affordable and available to the community. If you are interested in attending and registration cost is a barrier, please reach out to <a href="mailto:help.summit@nextflow.io">help.summit@nextflow.io</a> to discuss sliding scale discounts.</p>`
+    },
+      {
+        question: "Why is Nextflow Summit virtual?",
+        answer:
+          `<p>Nextflow Summit wants to spotlight more amazing community talks and make it easier for people everywhere to take part. </p>
+          <p>With in-person time for connection and collaboration in Barcelona, and online talks to reach a global audience, this format brings the best of both worlds.</p>`
+      },
+      
     ]
   }

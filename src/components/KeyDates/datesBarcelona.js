@@ -57,6 +57,15 @@ const datesBarcelona = [
     ],
   },
   {
+    date: "Oct 23-24",
+    content: [
+      {
+        info: "virtual Nexflow Summit",
+      },
+
+    ],
+  },
+  {
     date: "Oct 28-29",
     content: [
       {

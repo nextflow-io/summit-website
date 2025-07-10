@@ -29,5 +29,10 @@ export default {
         question: "Is there an additional fee to attend the training sessions?",
         answer:
           `There is a fee associated with taking the training. Click <a href="https://seqera.swoogo.com/nextflow-training" target="_blank">register now</a> to see the training pricing.`
-      }
+      },
+      {
+        question: "Are there student discounts or financial assistance available?",
+        answer:
+          `<p>Accessibility is important to us. We strive to make the event affordable and available to the community. If you are interested in attending and registration cost is a barrier, please reach out to <a href="mailto:help.summit@nextflow.io">help.summit@nextflow.io</a> to discuss sliding scale discounts.</p>`
+    },
   ]}

@@ -19,7 +19,7 @@ import qa from "./qa";
   <section class="">
     <Hero
     title="Nextflow Training Barcelona 2025"
-    content="This training workshop is intended as a “getting started” course for students and early-career researchers who are completely new to Nextflow."
+    content=`This year’s training offers two tailored tracks to meet you where you are: a Beginner Track for those new to Nextflow, and an Advanced Track for experienced users ready to level up. Whether you're just getting started or looking to build more scalable, production-ready pipelines, there's a session designed for you.`
     href={img.src}
     alt="computer screen with Nextflow Training"
     ctaText1="Register Now"
@@ -57,7 +57,7 @@ import qa from "./qa";
           </div>
         </SubSection>
       </Box>
-      <Box className="">
+      <!-- <Box className="">
         <SubSection
           className="flex flex-col justify-between h-full md:min-h-[350px]"
         >
@@ -75,6 +75,46 @@ import qa from "./qa";
               Discover the benefits of nf-core, including how to access,
               customize, and utilize community-built pipelines for various
               bioinformatics tasks.
+            </p>
+          </div>
+        </SubSection>
+      </Box> -->
+      <Box className="">
+        <SubSection
+          className="flex flex-col justify-between h-full md:min-h-[350px]"
+        >
+        <div>
+          <div class="border-b border-b-nextflow w-full">
+            <h5 class="h6 mb-4">Beginner Training</h5>
+          </div>
+
+          <div class="mt-6 max-w-[150px]">
+            <Laptop />
+          </div>
+        </div>
+          <div class="mt-10">
+            <p class="monospace">
+              This beginner-friendly session is perfect if you're new to Nextflow. You'll learn how to build simple multi-step workflows and run them from the command line, with guided hands-on exercises that cover workflow logic and language basics. You'll leave with the skills and resources to continue developing reproducible workflows on your own.
+            </p>
+          </div>
+        </SubSection>
+      </Box>
+      <Box className="">
+        <SubSection
+          className="flex flex-col justify-between h-full md:min-h-[350px]"
+        >
+        <div>
+          <div class="border-b border-b-nextflow w-full">
+            <h5 class="h6 mb-4">Advanced Training</h5>
+          </div>
+
+          <div class="mt-6 max-w-[150px]">
+            <Laptop />
+          </div>
+        </div>
+          <div class="mt-10">
+            <p class="monospace">
+              Designed for those already familiar with Nextflow basics, this track dives into more advanced capabilities including testing, handling complex inputs, and composing modular workflows for scalable, production-ready pipelines.
             </p>
           </div>
         </SubSection>

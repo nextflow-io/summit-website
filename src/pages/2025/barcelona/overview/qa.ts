@@ -39,13 +39,13 @@ export default {
         `
   },
   {
-    question: "What is included in the registration fee?",
+    question: "What is included in the registration fee for Training and Hackathon?",
     answer:
       `Your ticket includes:
         <ul>
         <li>Access to all in-person content and programming</li>
         <li>Enjoy meals and social events</li>
-        <li>Network and connect with other attendeess</li>
+        <li>Network and connect with other attendees</li>
         </ul>
         `
   },
@@ -62,15 +62,21 @@ export default {
       `Contact our team at <a href="mailto:help.summit@nextflow.io">help.summit@nextflow.io</a> to inquire about group registrations.`
   },
   {
+    question: "Are there student discounts or financial assistance available?",
+    answer:
+      `<p>Accessibility is important to us. We strive to make the event affordable and available to the community. If you are interested in attending and registration cost is a barrier, please reach out to <a href="mailto:help.summit@nextflow.io">help.summit@nextflow.io</a> to discuss sliding scale discounts.</p>`
+},
+  {
     question: "What is the refund or cancellation policy for registration?",
     answer:
       "We will guarantee a 100% refund if you cancel by October 17."
   },
-    // {
-    //   question: "When will the Call for Abstracts open?",
-    //   answer:
-    //     `The Call for Abstracts will open on May 1, 2025.`
-    // },
+  {
+      question: "Why is Nextflow Summit virtual?",
+      answer:
+        `<p>Nextflow Summit wants to spotlight more amazing community talks and make it easier for people everywhere to take part. </p>
+        <p>With in-person time for connection and collaboration in Barcelona, and online talks to reach a global audience, this format brings the best of both worlds.</p>`
+    },
   ]
   
 }
