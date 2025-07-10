@@ -2,7 +2,7 @@
 export default {
   main: [
     {
-      name: "Barcelona",
+      name: "Barcelona & Virtual",
       url: "/2025/barcelona",
       dropdowns: [
         {
@@ -12,6 +12,10 @@ export default {
         {
           name: "Register",
           url: "/2025/barcelona/register",
+        },
+        {
+          name: "Virtual",
+          url: "/2025/barcelona/hackathon",
         },
         {
           name: "Hackathon",

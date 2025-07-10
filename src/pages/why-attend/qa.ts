@@ -12,7 +12,7 @@ export default {
   <p>To register for the nf-core Hackathon Barcelona 2025, click <a href="https://seqera.swoogo.com/nfcore-hackathon" target="_blank">here</a>.</p>`,
 },
     {
-      question: "How do I register for Nextflow Virtual Summit?",
+      question: "How do I register for virtual Nextflow Summit?",
       answer:  
         `<p>Registration will open in August.</p>`
     },
@@ -21,17 +21,18 @@ export default {
       answer:
         `<p>Early-bird 25% discount available until August 1.</p>
         
-        <p>   <span class="underline">Training (Barcelona)</span><br/>
-             Academic <s>€120</s> €90  <br/>
-             Corporate <s>€300</s> €225 
+        <p>   <span class="underline">Nextflow Training (Barcelona)</span><br/>
+             Academic: <s>€120</s> €90  <br/>
+             Corporate: <s>€300</s> €225 
           </p>
           <p>
-          <span class="underline">Hackathon (Barcelona)</span><br/>
-          Academic <s>€120</s> €90<br/>
+          <span class="underline">nf-core Hackathon (Barcelona)</span><br/>
+          Academic: <s>€120</s> €90<br/>
+          Corporate <s>€120</s> €90<br/>
 
           <p>
           <p>
-          <span class="underline">Virtual Summit</span><br/>
+          <span class="underline">Virtual Nextflow Summit</span><br/>
             Free
           
           </p>
