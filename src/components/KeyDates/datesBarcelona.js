@@ -1,6 +1,6 @@
 const datesBarcelona = [
   {
-    date: "July 9",
+    date: "July 15",
     content: [
       {
         info: "Nextflow Training and nf-core Hackathon Barcelona registration opens: early-bird 25% off",
@@ -11,18 +11,10 @@ const datesBarcelona = [
     ],
   },
   {
-    date: "Aug (TBD)",
+    date: "Aug",
     content: [
       {
-        info: "Registration for Virtual Summit opens",
-      },
-    ],
-  },
-  {
-    date: "Aug 1",
-    content: [
-      {
-        info: "Early-bird 25% discount ends",
+        info: "Registration for Virtual Nextflow Summit opens",
       },
     ],
   },
@@ -31,6 +23,9 @@ const datesBarcelona = [
     content: [
       {
         info: "Poster submissions closes",
+      },
+      {
+        info: "Early-bird 25% discount ends",
       },
     ],
   },

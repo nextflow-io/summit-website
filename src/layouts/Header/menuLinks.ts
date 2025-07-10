@@ -1,5 +1,31 @@
 const menuLinks = [
   {
+    name: "Barcelona",
+    url: "/2025/barcelona",
+    dropdowns: [
+      {
+        name: "Overview",
+        url: "/2025/barcelona/overview",
+      },
+      {
+        name: "Register",
+        url: "/2025/barcelona/register",
+      },
+      {
+        name: "Hackathon",
+        url: "/2025/barcelona/hackathon",
+      },
+      {
+        name: "Training",
+        url: "/2025/barcelona/training",
+      },
+      {
+        name: "Travel",
+        url: "/2025/barcelona/travel",
+      },
+    ],
+  },
+  {
     name: "Boston",
     url: "/2025/boston",
     dropdowns: [
@@ -42,28 +68,6 @@ const menuLinks = [
       {
         name: "Gallery",
         url: "/2025/boston/gallery",
-      },
-    ],
-  },
-  {
-    name: "Barcelona",
-    url: "/2025/barcelona",
-    dropdowns: [
-      {
-        name: "Overview",
-        url: "/2025/barcelona/overview",
-      },
-      {
-        name: "Hackathon",
-        url: "/2025/barcelona/hackathon",
-      },
-      {
-        name: "Training",
-        url: "/2025/barcelona/training",
-      },
-      {
-        name: "Travel",
-        url: "/2025/barcelona/travel",
       },
     ],
   },
