@@ -10,6 +10,7 @@ import ArrowUpRight from "@icons/ArrowUpRight";
 import Training from "@icons/Training";
 import Exercises from "@icons/Exercises";
 import Laptop from "@icons/Laptop";
+import Button from "@components/Button";
 import qa from "./qa";
 ---
 
@@ -24,36 +25,194 @@ import qa from "./qa";
       alt="computer screen with Nextflow Training"
       ctaText1="Register Now"
       ctaLink1="https://seqera.swoogo.com/nextflow-training"
+            ctaText2="Learn More"
+      ctaLink2="#learn"
       ctaExternal1={true}
       client:load
     />
   </section>
 
-  <section class="mt-20 mb-24 container">
-    <h1 class="h4 mb-4 md:mb-8">Beginner Track</h1>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-      <!-- <Box className="">
-        <SubSection
-          className="flex flex-col justify-between h-full md:min-h-[350px]"
-        >
-        <div>
-          <div class="border-b border-b-nextflow w-full">
-            <h5 class="h6 mb-4">Engage with nf-core Resources</h5>
-          </div>
+  <section id="learn" class="h-20"></section>
 
-          <div class="mt-6 max-w-[150px]">
-            <Laptop />
+  <section   class=" mb-24 container">
+    <h1 class="h3 mb-4 md:mb-8">Beginner Track</h1>
+    
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-8">
+        <Box className="">
+          <SubSection
+            className="flex flex-col justify-between h-full md:min-h-[350px]"
+          >
+          <div>
+            <div>
+              <div class="border-b border-b-nextflow w-full">
+                <h5 class="h6 mb-4">Who It's For</h5>
+              </div>
+  
+              <div class="mt-6 max-w-[150px]">
+                <Laptop />
+              </div>
+            </div>
+            <div class="mt-10">
+              <p class="monospace">
+                This beginner-friendly session is perfect if you're new to
+                Nextflow. You'll learn how to build simple multi-step workflows
+                and run them from the command line, with guided hands-on exercises
+                that cover workflow logic and language basics. You'll leave with
+                the skills and resources to continue developing reproducible
+                workflows on your own.
+              </p>
+            </div>
           </div>
-        </div>
-          <div class="mt-10">
-            <p class="monospace">
-              Discover the benefits of nf-core, including how to access,
-              customize, and utilize community-built pipelines for various
-              bioinformatics tasks.
+            <Button white arrowAfter className="w-full mb-3">
+              <a
+                class="absolute w-full h-full"
+                href="https://seqera.swoogo.com/nextflow-training"
+                target="_blank"></a>
+
+              Register for Training
+            </Button>
+          </SubSection>
+        </Box>
+        <Box className="mb-12">
+          <SubSection className="flex flex-col justify-between h-full">
+            <div class="">
+              <div
+                class="pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center"
+              >
+                <h5 class="h6">Beginner Training Overview</h5>
+              </div>
+            </div>
+            <div class="monospace h-full pb-2 pt-6 lg:mt-0">
+              <p class="">
+                This training workshop is intended as a “getting started” course for
+                students and early-career researchers who are completely new to
+                Nextflow. It aims to equip participants with foundational knowledge
+                and skills in three key areas: (1) understanding the logic of how
+                data analysis workflows are constructed, (2) Nextflow language
+                proficiency and (3) command-line interface (CLI) execution. <br
+                /><br />
+                Additionally, participants will learn to leverage the resources and capabilities
+                offered by the <a href="http://nf-core" target="_blank">nf-core</a> initiative
+                and the <a href="https://seqera.io/platform/" target="_blank"
+                  >Seqera platform.</a
+                >
+              </p>
+            </div>
+    
+            <div class="monospace">
+              <ul>
+                <li>
+                  <span class="underline">Audience</span>: Beginners (no prior
+                  Nextflow experience)
+                </li>
+                <li>
+                  <span class="underline"> Required</span>: basic experience with
+                  command line and scripting Some bioinformatics concepts will be
+                  introduced
+                </li>
+              </ul>
+    
+              By the end of the workshop, participants will be well-prepared for
+              tackling the next steps in their journey to develop and apply
+              reproducible workflows for their scientific computing needs.
+              Additional study-at-home materials will be provided for them to
+              continue learning and developing their skills further.
+              </div>
             </p>
-          </div>
-        </SubSection>
-      </Box> -->
+          </SubSection>
+        </Box>
+      </div>
+
+
+      <h1 class="h3 mb-4 md:mb-8 mt-20">Advanced Track</h1>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-8">
+        <Box className="">
+          <SubSection
+            className="flex flex-col justify-between h-full md:min-h-[350px]"
+          >
+          <div>
+            <div>
+              <div class="border-b border-b-nextflow w-full">
+                <h5 class="h6 mb-4">Who It's For</h5>
+              </div>
+  
+              <div class="mt-6 max-w-[150px]">
+                <Laptop />
+              </div>
+            </div>
+            <div class="mt-10">
+              <p class="monospace">
+                Designed for those already familiar with Nextflow basics, this
+                track dives into more advanced capabilities including testing,
+                handling complex inputs, and composing modular workflows for
+                scalable, production-ready pipelines.
+              </p>
+            </div>
+            </div>
+            <Button white arrowAfter className="w-full mb-3">
+              <a
+                class="absolute w-full h-full"
+                href="https://seqera.swoogo.com/nextflow-training"
+                target="_blank"></a>
+
+              Register for Training
+            </Button>
+          </SubSection>
+        </Box>
+        <Box className="mb-12">
+          <SubSection className="flex flex-col justify-between h-full">
+            <div class="">
+              <div
+                class="pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center"
+              >
+                <h5 class="h4">Advanced Training Overview</h5>
+              </div>
+            </div>
+            <div class="monospace h-full pb-2 pt-6 lg:mt-0">
+              <p class="">
+                This advanced training workshop is designed for researchers and
+                developers who already have a basic understanding of Nextflow and are
+                ready to deepen their skills. The course focuses on best practices for
+                building production-ready pipelines, with hands-on experience in
+                workflow testing, modular design, resource optimization, and complex
+                input handling.
+                <br /><br />
+      
+                Participants will also learn how to integrate with the <a
+                  href="http://nf-core"
+                  target="_blank">nf-core</a
+                > framework and use the <a
+                  href="https://seqera.io/platform/"
+                  target="_blank">Seqera platform.</a
+                > to support collaborative development and streamline deployment in real-world
+                research environments.
+                <br /><br />
+      
+                <ul>
+                  <li>
+                    <span class="underline">Audience</span>: Intermediate to advanced
+                    users with basic familiarity of Nextflow.
+                  </li>
+                  <li>
+                    <span class="underline"> Required</span>: Prior experience writing
+                    and running basic Nextflow workflows
+                  </li>
+                </ul>
+      
+                By the end of the workshop, participants will be equipped to
+                confidently design, test, and manage robust workflows that scale
+                across compute environments.<br /><br />
+      
+                Additional reference materials and examples will be provided to
+                support continued development beyond the course.
+              </p>
+            </div>
+          </SubSection>
+        </Box>
+      </div>
+ 
+    <!-- <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
       <Box className="">
         <SubSection
           className="flex flex-col justify-between h-full md:min-h-[350px]"
@@ -102,61 +261,10 @@ import qa from "./qa";
           </div>
         </SubSection>
       </Box>
-    </div>
+    </div> -->
   </section>
 
-  <section id="learn" class="pt-10 mb-24 container smaller">
-    <Box className="mb-12">
-      <SubSection className="flex flex-col justify-between h-full">
-        <div class="">
-          <div
-            class="pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center"
-          >
-            <h5 class="h4">Beginner Training Overview</h5>
-          </div>
-        </div>
-        <div class="monospace h-full pb-2 pt-6 lg:mt-0">
-          <p class="">
-            This training workshop is intended as a “getting started” course for
-            students and early-career researchers who are completely new to
-            Nextflow. It aims to equip participants with foundational knowledge
-            and skills in three key areas: (1) understanding the logic of how
-            data analysis workflows are constructed, (2) Nextflow language
-            proficiency and (3) command-line interface (CLI) execution. <br
-            /><br />
-            Additionally, participants will learn to leverage the resources and capabilities
-            offered by the <a href="http://nf-core" target="_blank">nf-core</a> initiative
-            and the <a href="https://seqera.io/platform/" target="_blank"
-              >Seqera platform.</a
-            >
-          </p>
-        </div>
-
-        <div class="monospace">
-          <ul>
-            <li>
-              <span class="underline">Audience</span>: Beginners (no prior
-              Nextflow experience)
-            </li>
-            <li>
-              <span class="underline"> Required</span>: basic experience with
-              command line and scripting Some bioinformatics concepts will be
-              introduced
-            </li>
-          </ul>
-
-          By the end of the workshop, participants will be well-prepared for
-          tackling the next steps in their journey to develop and apply
-          reproducible workflows for their scientific computing needs.
-          Additional study-at-home materials will be provided for them to
-          continue learning and developing their skills further.
-          </div>
-        </p>
-      </SubSection>
-    </Box>
-  </section>
-
-  <Box className="mb-12">
+  <!-- <Box className="mb-12">
     <SubSection className="flex flex-col justify-between h-full">
       <div class="">
         <div
@@ -205,7 +313,7 @@ import qa from "./qa";
         </p>
       </div>
     </SubSection>
-  </Box>
+  </Box> -->
 </Layout>
 
 <!-- <div class="grid grid-cols-1 gap-8 ">
