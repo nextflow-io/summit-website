@@ -7,7 +7,8 @@ import Link from "./Link";
 import { motion } from "framer-motion";
 
 interface HeroProps {
-  title: string;
+  title?: string;
+  subtitle?: string;
   content: string;
   ctaText1?: string;
   ctaLink1?: string;
@@ -31,6 +32,7 @@ interface HeroProps {
 const LandingHero: React.FC<HeroProps> = (props) => {
   const {
     title,
+    subtitle,
     content,
     ctaText1,
     ctaLink1,
@@ -142,6 +144,9 @@ const LandingHero: React.FC<HeroProps> = (props) => {
             >
               <h1 className="h0 mb-4 max-w-[250px] sm:max-w-[800px]">
                 {title}
+              </h1>
+              <h1 className="h1 mb-4 max-w-[250px] sm:max-w-[500px]">
+                {subtitle}
               </h1>
               <div
                 className={clsx(
