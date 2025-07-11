@@ -7,11 +7,6 @@ export default {
       <p>To register for the nf-core Hackathon Barcelona 2025, click <a href="https://seqera.swoogo.com/nfcore-hackathon" target="_blank">here</a>.</p>`,
     },
     {
-      question: "How do I register for Virtual Nextflow Summit?",
-      answer:  
-        `<p>Registration will open in August.</p>`
-    },
-    {
       question: "How much are the registration fees?",
       answer:
         `<p>Early-bird 25% discount available until August 15.</p>
@@ -23,13 +18,6 @@ export default {
           <p>
           <span class="underline">Hackathon (Barcelona)</span><br/>
           Academic <s>€120</s> €90<br/>
-
-          <p>
-          <p>
-          <span class="underline">Virtual Nextflow Summit (Online)</span><br/>
-            Free
-          
-          </p>
           `
   },
   {
@@ -71,12 +59,6 @@ export default {
     answer:
       "We will guarantee a 100% refund if you cancel by October 17."
   },
-  {
-      question: "Why is Nextflow Summit virtual?",
-      answer:
-        `<p>Nextflow Summit wants to spotlight more amazing community talks and make it easier for people everywhere to take part. </p>
-        <p>With in-person time for connection and collaboration in Barcelona, and online talks to reach a global audience, this format brings the best of both worlds.</p>`
-    },
   ]
   
 }

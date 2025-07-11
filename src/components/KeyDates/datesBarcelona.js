@@ -5,43 +5,13 @@ const datesBarcelona = [
       {
         info: "Nextflow Training and nf-core Hackathon Barcelona registration opens: early-bird 25% off",
       },
-      {
-        info: "Call for Abstracts opens",
-      },
-    ],
-  },
-  {
-    date: "Aug",
-    content: [
-      {
-        info: "Registration for virtual Nextflow Summit opens",
-      },
     ],
   },
   {
     date: "Aug 15",
     content: [
       {
-        info: "Call for Abstracts closes",
-      },
-      {
         info: "Early-bird 25% discount ends",
-      },
-    ],
-  },
-  {
-    date: "Aug 31",
-    content: [
-      {
-        info: "Accepted abstracts notified",
-      },
-    ],
-  },
-  {
-    date: "Sept",
-    content: [
-      {
-        info: "Agenda release",
       },
     ],
   },
@@ -54,15 +24,6 @@ const datesBarcelona = [
       {
         info: "Cancellation period closes",
       },
-    ],
-  },
-  {
-    date: "Oct 23-24",
-    content: [
-      {
-        info: "Nexflow Summit",
-      },
-
     ],
   },
   {
