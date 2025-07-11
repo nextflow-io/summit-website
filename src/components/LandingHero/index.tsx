@@ -262,7 +262,7 @@ const LandingHero: React.FC<HeroProps> = (props) => {
 
               <div className="sm:hidden">
                 
-                <div className="toggleLocation relative monospace">
+                {/* <div className="toggleLocation relative monospace">
                   <div className="flex flex-row">
      
                     <Link href="/2025/boston" active={isActive("2025/boston")}>
@@ -278,7 +278,7 @@ const LandingHero: React.FC<HeroProps> = (props) => {
                       <div className="px-4">Barcelona</div>
                     </Link>
                   </div>
-                </div>
+                </div> */}
                 
 
                 <p
