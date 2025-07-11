@@ -14,16 +14,16 @@ export default {
           url: "/2025/barcelona/register",
         },
         {
-          name: "Virtual",
-          url: "/2025/barcelona/hackathon",
-        },
-        {
-          name: "Hackathon",
-          url: "/2025/barcelona/hackathon",
+          name: "Virtual Summit",
+          url: "/2025/virtual",
         },
         {
           name: "Training",
           url: "/2025/barcelona/training",
+        },
+        {
+          name: "Hackathon",
+          url: "/2025/barcelona/hackathon",
         },
         {
           name: "Travel",

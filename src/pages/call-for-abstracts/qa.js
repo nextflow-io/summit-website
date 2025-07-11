@@ -1,7 +1,7 @@
 export default {
   main: [
     {
-      question: "Who is eligible to submit an abstract for the Summit?",
+      question: "Who is eligible to submit an abstract?",
       answer: `Anyone is eligible to submit!`,
     },
     {
@@ -12,7 +12,7 @@ export default {
       question:
         "Are there specific topics or themes that the abstract should focus on?",
       answer:
-        `<p>At Virtual Nextflow Summit, there are no set themes—just great science. Whether it's pipelines, platforms, or bold new ideas, this is your chance to share the work you think the community needs to see.</p>`,
+        `<p>There are no set themes—just great science. Whether it's pipelines, platforms, or bold new ideas, this is your chance to share the work you think the community needs to see.</p>`,
     },
     {
       question: "What happens if my abstract is accepted?",

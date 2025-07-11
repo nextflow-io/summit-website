@@ -27,7 +27,7 @@ const menuLinks = [
   },
   {
     name: "Virtual",
-    url: "/2025/barcelona/virtual",
+    url: "/2025/virtual",
     // dropdowns: [
     //   {
     //     name: "Overview",

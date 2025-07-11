@@ -60,7 +60,7 @@ const datesBarcelona = [
     date: "Oct 23-24",
     content: [
       {
-        info: "virtual Nexflow Summit",
+        info: "Nexflow Summit",
       },
 
     ],

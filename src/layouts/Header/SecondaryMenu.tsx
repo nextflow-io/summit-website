@@ -26,6 +26,7 @@ const SecondaryMenu: React.FC<Props> = (props) => {
   let location;
   if (namespace === "2025/boston") location = 1;
   if (namespace === "2025/barcelona") location = 0;
+  if (namespace === "2025/virtual") location = 2;
   return (
     <nav>
       <ul

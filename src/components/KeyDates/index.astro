@@ -2,6 +2,7 @@
 import clsx from "clsx";
 import datesBoston from "./datesBoston";
 import datesBarcelona from "./datesBarcelona";
+import datesVirtual from "./datesVirtual";
 import img1 from "@images/photos/2025/boston/training-computer.jpg";
 import Slideshow from "./Slideshow";
 
@@ -67,6 +68,27 @@ const { showTitle, hidePastDates = false, location = "boston" } = Astro.props;
             </div>
           ))
       }
+            {
+              location == "virtual" &&
+                datesVirtual?.map((item, i) => (
+                  <div class={`flex flex-wrap border-b`}>
+                    <div class="w-full flex flex-row items-center">
+                      <h4 class="h4 pt-6 pb-6  w-full max-w-[175px]">{item.date}</h4>
+      
+                      <div class="pl-4 sm:pl-10 flex flex-col w-full monospace">
+                        {item?.content?.map((item, i) => (
+                          <div
+                            key={i}
+                            className={` border-b last:border-b-0 py-6 bodycopy`}
+                          >
+                            {item.info}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ))
+            }
     </div>
     <div class="w-full relative mt-8 sm:mt-0 sm:ml-20 sm:sticky sm:top-30 self-start sm:max-w-[50%]">
       <div class="w-full relative"><Slideshow client:load /></div>

@@ -90,10 +90,17 @@
   & .hoverBG {
     background: #fff;
   }
+  
   &:hover {
-    background:transparent;
+    background: var(--color-nextflow-700);
     color: white;
-    border: white;
+    .arrowAfter {
+      background: white;
+      /* transform: translateX(2px); */
+      svg path {
+        stroke: var(--color-nextflow);
+      }
+    }
   } 
 }
 
