@@ -12,12 +12,13 @@ export default {
         `<p>Early-bird 25% discount available until August 15.</p>
         
         <p>   <span class="underline">Training (Barcelona)</span><br/>
-             Academic <s>€120</s> €90  <br/>
-             Corporate <s>€300</s> €225 
+             Academic: <s>€120</s> €90  <br/>
+             Corporate: <s>€300</s> €225 
           </p>
           <p>
           <span class="underline">Hackathon (Barcelona)</span><br/>
-          Academic <s>€120</s> €90<br/>
+          Academic: <s>€120</s> €90<br/>
+          Corporate: <s>€120</s> €90<br/>
           `
   },
   {
@@ -40,7 +41,7 @@ export default {
   {
     question: "Are there early bird discounts?",
     answer:
-      `<p>Early-bird 25% discount is available until August 1.</p>
+      `<p>Early-bird 25% discount is available until August 15.</p>
 
         `
   },

@@ -13,7 +13,8 @@ export default {
     {
         question: "Are there any discounted rates or travel partnerships available for attendees?",
         answer:
-          "Unfortunately, hotels near the Summit venue have not provided any discounted rates. We recommend booking early to secure the best available options."
+          `<p>While there are no official discounted rates confirmed for the Summit, it may be possible to get a lower rate at SB Glow Hotel by contacting Zoraida Lopo at <a href="mailto:conventions.glow@sbhotels.es">conventions.glow@sbhotels.es</a>. Be sure to mention your attendance for Seqera's event when reaching out.</p>
+<p>Unfortunately, the rest of the nearby hotels are not offering special rates. We recommend booking early to secure the best available prices.</p>`
     },
   ]
 }
