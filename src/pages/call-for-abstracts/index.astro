@@ -8,6 +8,7 @@ import OpenSign from "@icons/OpenSign";
 import City from "@icons/City";
 import Talk from "@icons/Talk";
 import Box, { SubSection } from "@components/Box";
+import Button from "@components/Button";
 import img1 from "@images/photos/2025/boston/call-for-abstracts-boston.jpg";
 import qa from "./qa";
 ---
@@ -17,7 +18,7 @@ import qa from "./qa";
   <section class="">
     <Hero
       preTitle="Call for abstracts"
-      title={`will open on July 15`}`
+      title={`is open`}`
       content="The final abstracts will be accepted and presenters notified by end of August."
       href={img1.src}
       alt="Image of Nextflow Summit presenter"
@@ -47,7 +48,7 @@ import qa from "./qa";
             <p class="monospace">
               <Talk  className="my-8" />
               Virtual Talk: 20 minutes total including time for Q&A.<br/><br/>
-              Submit CFA for virtual Nextflow Summit by clicking <a href="https://seqera.swoogo.com/nfcore-hackathon/call-for-abstracts/8033231" target="_blank">here</a>.
+              Submit CFA for Nextflow Summit by clicking <a href="https://seqera.swoogo.com/nfcore-hackathon/call-for-abstracts/8033231" target="_blank">here</a>.
             
             </p>
           </div>
@@ -68,9 +69,38 @@ import qa from "./qa";
           <div class="mt-6 lg:mt-0">
             <City className="my-8" />
             <p class="monospace">
-              Present your poster at virtual Nextflow Summit or in-person at the Nextflow Training and nf-core Hackathon, Barcelona. <br/><br/>
+              Present your poster online at Nextflow Summit or in-person at the Nextflow Training and nf-core Hackathon in Barcelona. <br/><br/>
               Submit your poster submission <a href="https://seqera.swoogo.com/nfcore-hackathon/call-for-abstracts/8033231" target="_blank">here</a>.
             </p>
+          </div>
+        </SubSection>
+      </Box>
+      <Box className="">
+        <SubSection className="flex flex-col  h-full">
+          <div class="">
+            <div
+              class="pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center"
+            >
+              <h5 class="h4">Deadline</h5>
+            </div>
+            <div class="bodycopy py-2 monospace border-b border-b-nextflow">
+              Submit your abstract by August 17
+            </div>
+          </div>
+          <div class="mt-6 lg:mt-0">
+            <OpenSign  className="my-8" />
+            <p class="monospace">
+              The final abstracts will be accepted and presenters notified by end of August.
+            </p>
+            <Button
+            white
+            arrowAfter
+            className="w-full mt-6"
+          >
+            <a class="absolute w-full h-full" href="https://seqera.swoogo.com/nfcore-hackathon/call-for-abstracts/8033231" target="_blank"></a>
+
+            Submit abstract
+          </Button>
           </div>
         </SubSection>
       </Box>
