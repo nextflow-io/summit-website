@@ -1,4 +1,12 @@
 const datesVirtual = [
+  {
+    date: "July 15",
+    content: [
+      {
+        info: "Call for abstracts opens",
+      },
+    ],
+  },
     {
       date: "Aug",
       content: [

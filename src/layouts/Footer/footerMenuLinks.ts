@@ -6,15 +6,11 @@ export default {
       url: "/2025/barcelona",
       dropdowns: [
         {
-          name: "Overview",
+          name: "Barcelona Overview",
           url: "/2025/barcelona/overview",
         },
         {
-          name: "Register",
-          url: "/2025/barcelona/register",
-        },
-        {
-          name: "Virtual Summit",
+          name: "Nextflow Summit",
           url: "/2025/virtual",
         },
         {
@@ -26,7 +22,11 @@ export default {
           url: "/2025/barcelona/hackathon",
         },
         {
-          name: "Travel",
+          name: "Register Now",
+          url: "/2025/barcelona/register",
+        },
+        {
+          name: "Travel Info",
           url: "/2025/barcelona/travel",
         },
       ],

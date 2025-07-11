@@ -241,8 +241,8 @@ const LandingHero: React.FC<HeroProps> = (props) => {
               )}
               {virtual && (
                 <div className="mb-10">
-                  <h3 className="h3">Virtual Summit</h3>
-                  <p className="h6 text-nextflow monospace mb-2">Online</p>
+                  <h3 className="h3">Nextflow Summit</h3>
+                  <p className="h6 text-nextflow monospace mb-2">Virtual</p>
                   <p className="h6 text-nextflow monospace mb-2">{virtual}</p>
                 </div>
               )}

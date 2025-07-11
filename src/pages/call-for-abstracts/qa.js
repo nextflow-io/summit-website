@@ -6,7 +6,7 @@ export default {
     },
     {
       question: "What are the key deadlines for abstract submission?",
-      answer: `Call for abstracts will open on July 15. The deadline to submit an abstract or poster is August 15.`,
+      answer: `Call for abstracts will open on July 15. The deadline to submit is August 15.`,
     },
     {
       question:
