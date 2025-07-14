@@ -9,6 +9,7 @@ import ArrowUpRight from "@icons/ArrowUpRight";
 import Faq from "@components/Faq";
 import SEO from "@components/SEO";
 import qa from "./qa";
+import Button from "@components/Button";
 ---
 
 <Layout namespace="2025/barcelona">
@@ -16,12 +17,10 @@ import qa from "./qa";
 
   <LandingHero
     isBarcelona
-    title="Nextflow Summit"
-    content="No matter your role—bioinformatician, data scientist, developer, or industry leader—Nextflow Summit by Seqera is where you’ll connect, learn, and innovate. Leave inspired, equipped, and ready to drive the future of science and technology."
-    ctaText1="Sign up for updates"
-    ctaLink1="#register"
-    when="Coming soon"
-    where="Barcelona"
+    subtitle="Nextflow Training & nf-core Hackathon"
+    content="This October, the Nextflow community is coming together in Barcelona for two days of immersive learning, hacking, and meaningful collaboration. Whether you're building robust workflows or scaling analysis across environments—join us to push the boundaries of what’s possible with Nextflow."
+    when="October 28-29"
+    where="SB Glow, Barcelona"
     namespace="2025/barcelona"
     pathname="/2025/barcelona"
     client:load
@@ -35,114 +34,85 @@ import qa from "./qa";
             <div
               class="pb-4 border-b border-b-nextflow w-full flex flex-row items-center"
             >
-              <h5 class="h4">Summit</h5>
-     
+              <h5 class="h5">Training (In-Person)</h5>
             </div>
             <!-- <div class="py-4 monospace border-b border-b-nextflow">
-              October 27 • talks, networking & more
-            </div> -->
+              Early-bird 25% discount until August 1
+              </div> -->
           </div>
-          <div class="py-4 mt-6 lg:mt-0 h-full">
-            <!-- <h5 class="h4 mb-4">1 day / 200+ people</h5> -->
-            <p class="monospace md:min-h-[140px]">
-              A showcase of the latest developments and innovations from the
-              Nextflow world. Session themes include: Enabling Science, Big
-              Nextflow, and Organizational Impact.
-            </p>
-            <!-- <p class="text-nextflow-200 pb-2">*Early bird discounts will run from May 1 to August 30</p> -->
-          </div>
-          <div class="pt-4 monospace border-t border-t-nextflow">
-            Full price: Academic €200 • Corporate €400 
-          </div>
-        </SubSection>
-      </Box>
-      <Box className="">
-        <SubSection className="flex flex-col justify-between h-full">
-          <div class="">
-            <div
-              class="pb-4 border-b border-b-nextflow w-full flex flex-row items-center"
-            >
-              <h5 class="h4">Training</h5>
- 
-            </div>
-            <!-- <div class="py-4 monospace border-b border-b-nextflow">
-              October 28-29 • training
-            </div> -->
-          </div>
-          <div class="py-4 mt-6 lg:mt-0 h-full">
+          <div class="py-4 mt-6 lg:mt-0 h-full ">
             <!-- <h5 class="h4 mb-4">1.5 days / 200+ people</h5> -->
             <p class="monospace md:min-h-[140px]">
-              An in-person foundational training to supercharge your pipeline
+              A beginner and advanced training in Barcelona to supercharge your pipeline
               development with Nextflow and nf-core.
-              <br /><br />Running in parallel to the hackathon.
+
+              <br /><br />
+              Early-bird 25% discount until August 15<br/><br/>
+              Academic: <s>€120</s> €90 <br/>
+              Corporate: <s>€300</s> €225 <br /><br />
+              <a href="/2025/barcelona/training">→ Learn more</a> 
+              
             </p>
           </div>
-          <div class="pt-4 monospace border-t border-t-nextflow">
-            Academic €120 • Corporate €300 
+    
+          <div class="pt-4 monospace">
+            <Button
+              white
+              arrowAfter
+              className="w-full"
+            >
+              <a class="absolute w-full h-full" href="https://seqera.swoogo.com/nextflow-training" target="_blank"></a>
+
+              Register for Training
+            </Button>
           </div>
         </SubSection>
       </Box>
       <Box className="">
         <SubSection className="flex flex-col justify-between h-full">
           <div class="">
-            <div
-              class="pb-4 border-b border-b-nextflow w-full flex flex-row "
-            >
-              <h5 class="h4">Hackathon</h5>
-    
+            <div class="pb-4 border-b border-b-nextflow w-full flex flex-row">
+              <h5 class="h5">Hackathon (In-Person)</h5>
+              
             </div>
             <!-- <div class="py-4 monospace border-b border-b-nextflow">
-              October 28-29 • hackathon
-            </div> -->
+              Early-bird 25% discount until August 1
+              </div> -->
           </div>
           <div class="py-4 mt-6 lg:mt-0 h-full">
             <!-- <h5 class="h4 mb-4">2 days / 100+ people</h5> -->
             <p class="monospace md:min-h-[140px]">
-              And in-person hackathon to tackle real-world challenges, create
+              A hackathon in Barcelona to tackle real-world challenges, create
               innovative pipelines with Nextflow, and develop nf-core. <br /><br
               />
-              Running in parallel to the training.
+              Early-bird 25% discount until August 15<br/><br/>
+              Academic: <s>€120</s> €90 <br/>
+              Corporate: <s>€120</s> €90 <br /><br />
+
+              <a href="/2025/barcelona/hackathon">→ Learn more</a> 
             </p>
           </div>
-          <div class="pt-4 monospace border-t border-t-nextflow">
-            Academic €120 • Corporate €120 
+          <div class="pt-4 monospace">
+            <Button
+            white
+            arrowAfter
+            className="w-full"
+          >
+            <a class="absolute w-full h-full" href="https://seqera.swoogo.com/nfcore-hackathon" target="_blank"></a>
+
+            Register for Hackathon
+          </Button>
+
           </div>
         </SubSection>
       </Box>
     </div>
   </section>
 
-
-  <!-- <section class="container relative z-10 mb-4 sm:mb-8 lg:mb-20">
+  <section class="container relative z-10 mb-4 sm:mb-8 lg:mb-20">
     <KeyDates location="barcelona" />
-  </section> -->
-
-  <section class="mt-20 mb-24 container">
-    <h1 class="h2 mb-10">Why Attend?</h1>
-    <WhyAttend />
   </section>
 
   <Faq className="mt-20 md:mt-40 mb-20" client:load data={qa} />
-
-  <section id="register" class="wrapper">
-    <div>
-      <div class="container pt-10">
-        <div class="flex flex-col sm:flex-row sm:justify-between">
-          <div class="w-full pr-10 pt-10">
-            <h1 class="h1 mb-10">Sign up for updates</h1>
-            <p class="monospace">
-              Discover the ticket prices, discount dates, and refund policy
-            </p>
-          </div>
-          <div>
-            <div class="w-full">
-              <SignUpForm client:load />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
 
 </Layout>

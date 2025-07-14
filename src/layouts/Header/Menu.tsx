@@ -22,13 +22,15 @@ const Menu: React.FC<Props> = (props) => {
   return (
     <nav className="main-nav">
       <ul>
-        {menuLinks.map(({ name, url }, i) => (
-          <li key={i}>
-            <Link href={url} active={isActive(url)}>
-              {name} 
-            </Link>
-          </li>
-        ))}
+        {menuLinks
+          .filter(({ hide }) => hide !== true)
+          .map(({ name, url }, i) => (
+            <li key={i}>
+              <Link href={url} active={isActive(url)}>
+                {name}
+              </Link>
+            </li>
+          ))}
       </ul>
     </nav>
   );

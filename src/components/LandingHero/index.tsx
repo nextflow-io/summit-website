@@ -7,7 +7,8 @@ import Link from "./Link";
 import { motion } from "framer-motion";
 
 interface HeroProps {
-  title: string;
+  title?: string;
+  subtitle?: string;
   content: string;
   ctaText1?: string;
   ctaLink1?: string;
@@ -20,6 +21,7 @@ interface HeroProps {
   price?: string;
   boston?: string;
   barcelona?: string;
+  virtual?: string;
   namespace?: string;
   pathname?: string;
   isBoston?: boolean;
@@ -30,6 +32,7 @@ interface HeroProps {
 const LandingHero: React.FC<HeroProps> = (props) => {
   const {
     title,
+    subtitle,
     content,
     ctaText1,
     ctaLink1,
@@ -44,6 +47,7 @@ const LandingHero: React.FC<HeroProps> = (props) => {
     namespace,
     boston,
     barcelona,
+    virtual,
     isBoston,
     isBarcelona,
     isBoth
@@ -141,6 +145,9 @@ const LandingHero: React.FC<HeroProps> = (props) => {
               <h1 className="h0 mb-4 max-w-[250px] sm:max-w-[800px]">
                 {title}
               </h1>
+              <h1 className="h1 mb-4 max-w-[250px] sm:max-w-[500px]">
+                {subtitle}
+              </h1>
               <div
                 className={clsx(
                   styles.landingLogo,
@@ -237,16 +244,25 @@ const LandingHero: React.FC<HeroProps> = (props) => {
                   <h3 className="h3">{boston}</h3>
                 </div>
               )}
+              {virtual && (
+                <div className="mb-10">
+                  <h3 className="h3 mb-2">Nextflow Summit</h3>
+                  <p className="h6 text-nextflow monospace mb-2">Virtual</p>
+                  <p className="h6 text-nextflow monospace mb-2">{virtual}</p>
+                </div>
+              )}
               {barcelona && (
                 <div className="mb-10">
-                  <p className="h6 text-nextflow monospace mb-2">Barcelona</p>
-                  <h3 className="h3">{barcelona}</h3>
+                   <h3 className="h3 mb-2">Training & Hackathon</h3>
+                   <p className="h6 text-nextflow monospace mb-2">Barcelona</p>
+                  <p className="h6 text-nextflow monospace mb-2">{barcelona}</p>
+                  
                 </div>
               )}
 
               <div className="sm:hidden">
                 
-                <div className="toggleLocation relative monospace">
+                {/* <div className="toggleLocation relative monospace">
                   <div className="flex flex-row">
      
                     <Link href="/2025/boston" active={isActive("2025/boston")}>
@@ -262,7 +278,7 @@ const LandingHero: React.FC<HeroProps> = (props) => {
                       <div className="px-4">Barcelona</div>
                     </Link>
                   </div>
-                </div>
+                </div> */}
                 
 
                 <p
@@ -299,7 +315,7 @@ const LandingHero: React.FC<HeroProps> = (props) => {
                 </div>
               </div>
             </div>
-            <h1 className="absolute top-80 right-0 sm:top-auto sm:right-auto sm:relative h0">
+            <h1 className="hidden sm:block absolute top-80 right-0 sm:top-auto sm:right-auto sm:relative h0">
               2025
             </h1>
           </motion.div>

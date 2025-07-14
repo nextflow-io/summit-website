@@ -1,6 +1,46 @@
 
 export default {
   main: [
+    {
+      name: "Virtual",
+      url: "/2025/virtual",
+      dropdowns: [
+        {
+          name: "Nextflow Summit",
+          url: "/2025/virtual/overview",
+        },
+        {
+          name: "Call for Speakers & Posters",
+          url: "/call-for-abstracts",
+        },
+      ],
+    },
+    {
+      name: "Barcelona",
+      url: "/2025/barcelona",
+      dropdowns: [
+        {
+          name: "Overview",
+          url: "/2025/barcelona/overview",
+        },
+        {
+          name: "Training",
+          url: "/2025/barcelona/training",
+        },
+        {
+          name: "Hackathon",
+          url: "/2025/barcelona/hackathon",
+        },
+        {
+          name: "Travel Info",
+          url: "/2025/barcelona/travel",
+        },
+        {
+          name: "Register Now",
+          url: "/2025/barcelona/register",
+        },
+      ],
+    },
   {
     name: "Boston",
     url: "/2025/boston",
@@ -47,42 +87,28 @@ export default {
       },
     ],
   },
-  {
-    name: "Barcelona",
-    url: "/2025/barcelona",
-    dropdowns: [
-      {
-        name: "Overview",
-        url: "/2025/barcelona/overview",
-      },
-    ],
-  },
-  {
-    name: "Pages",
-    dropdowns: [
-      // {
-      //   name: "Register",
-      //   url: "/2025/boston/register",
-      // },
-      {
-        name: "Call for Abstracts",
-        url: "/call-for-abstracts",
-      },
-      {
-        name: "Why Attend",
-        url: "/why-attend",
-      },
-      {
-        name: "Past Events",
-        url: "/past-events",
-      },
-    ],
-  },
+  // {
+  //   name: "Pages",
+  //   dropdowns: [
+  //     {
+  //       name: "Call for Abstracts",
+  //       url: "/call-for-abstracts",
+  //     },
+  //     {
+  //       name: "Why Attend",
+  //       url: "/why-attend",
+  //     },
+  //     {
+  //       name: "Past Events",
+  //       url: "/past-events",
+  //     },
+  //   ],
+  // },
   {
     name: "Follow",
     dropdowns: [
       {
-        name: "Linkedin",
+        name: "LinkedIn",
         url: "https://www.linkedin.com/company/14065390/",
       },
       {
@@ -94,12 +120,16 @@ export default {
         url: "https://twitter.com/nextflowio",
       },
       {
-        name: "Github",
+        name: "GitHub",
         url: "https://github.com/nextflow-io",
       },
       {
-        name: "Youtube",
+        name: "YouTube",
         url: "https://www.youtube.com/channel/UCBDzWsz3bDsxZblHbmGxsww",
+      },
+      {
+        name: "Past Events",
+        url: "/past-events",
       },
     ],
   },

@@ -1,7 +1,48 @@
 const menuLinks = [
   {
+    name: "Summit",
+    url: "/2025/virtual",
+    dropdowns: [
+      {
+        name: "Overview",
+        url: "/2025/virtual/overview",
+      },
+      {
+        name: "Submissions",
+        url: "/call-for-abstracts",
+      },
+    ],
+  },
+  {
+    name: "Training & Hackathon",
+    url: "/2025/barcelona",
+    dropdowns: [
+      {
+        name: "Overview",
+        url: "/2025/barcelona/overview",
+      },
+      {
+        name: "Register",
+        url: "/2025/barcelona/register",
+      },
+      {
+        name: "Hackathon",
+        url: "/2025/barcelona/hackathon",
+      },
+      {
+        name: "Training",
+        url: "/2025/barcelona/training",
+      },
+      {
+        name: "Travel",
+        url: "/2025/barcelona/travel",
+      },
+    ],
+  },
+  {
     name: "Boston",
     url: "/2025/boston",
+    hide: true,
     dropdowns: [
       {
         name: "Overview",
@@ -46,21 +87,17 @@ const menuLinks = [
     ],
   },
   {
-    name: "Barcelona",
-    url: "/2025/barcelona/overview",
-  },
-  {
-    name: "Call for Abstracts",
+    name: "Call for Speakers and Posters",
     url: "/call-for-abstracts",
   },
   {
     name: "Why Attend",
     url: "/why-attend",
   },
-  {
-    name: "Past Events",
-    url: "/past-events",
-  },
+  // {
+  //   name: "Past Events",
+  //   url: "/past-events",
+  // },
 ];
 
 export default menuLinks;

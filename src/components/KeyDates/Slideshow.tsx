@@ -1,35 +1,38 @@
 import React from "react";
-
 import Button from "@components/Button";
 import ImageSlider from "@components/ImageSlider";
 import data from "./images.js";
-
 import styles from "./styles.module.css";
-import 'swiper/css/effect-fade';
+import "swiper/css/effect-fade";
+
 type Props = {
   className?: string;
-  location?: "boston" | "barcelona";
+  location?: "boston" | "barcelona" | "virtual";
 };
 
-const Slideshow: React.FC<Props> = (props = {}) => {
-  const { className, location = "boston" } = props;
+const Slideshow: React.FC<Props> = ({ location }) => {
+  const fallbackLocation = "virtual";
+  const selectedLocation =
+    data.main.find((item) => item.location === location) ||
+    data.main.find((item) => item.location === fallbackLocation);
+
   return (
-
-      <ImageSlider>
-        {data.main.map((event, index) => (
-          <div
-            key={index}
-            className={` top-0 left-0 right-0 bottom-0 object-cover absolute w-full h-full border border-nextflow `}
-          >
-  
-            <img src={event.img.src} loading="lazy" className=" top-0 left-0 right-0 bottom-0 object-cover absolute w-full h-full" />
-            <div className="mix-blend-exclusion bg-indigo-900 top-0 left-0 right-0 bottom-0 object-cover absolute w-full h-full opacity-40"></div>
-            {/* <div className="swiper-lazy-preloader"></div> */}
-      
-          </div>
-        ))}
-      </ImageSlider>
-
+    <ImageSlider>
+      {selectedLocation.images.map((image, idx) => (
+        <div
+          key={idx}
+          className="absolute top-0 left-0 right-0 bottom-0 w-full h-full object-cover"
+        >
+          <img
+            src={image.img?.src || image.img}
+            loading="lazy"
+            alt={image.alt || ""}
+            className="absolute top-0 left-0 right-0 bottom-0 w-full h-full object-cover"
+          />
+          <div className="absolute top-0 left-0 right-0 bottom-0 w-full h-full bg-indigo-900 mix-blend-exclusion opacity-40"></div>
+        </div>
+      ))}
+    </ImageSlider>
   );
 };
 

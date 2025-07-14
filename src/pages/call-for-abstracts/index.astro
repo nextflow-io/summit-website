@@ -8,20 +8,23 @@ import OpenSign from "@icons/OpenSign";
 import City from "@icons/City";
 import Talk from "@icons/Talk";
 import Box, { SubSection } from "@components/Box";
-import img1 from "@images/photos/2025/boston/call-for-abstracts-boston.jpg";
+import Button from "@components/Button";
+import img1 from "@images/photos/2025/barcelona/cfa-bcn.jpg";
 import qa from "./qa";
 ---
 
 <Layout>
-  <SEO slot="head" title="Call for Abstracts" img={1} />
+  <SEO slot="head" title="Call for Speakers and Posters" img={3} />
   <section class="">
     <Hero
-      preTitle="Call for abstracts"
-      title={`is now closed`}`
-      content="The final posters will be accepted and presenters notified by end of April."
+      preTitle="Call for speakers and posters"
+      title={`now open`}`
+      content="Accepted speakers and posters will notified by end of August."
       href={img1.src}
       alt="Image of Nextflow Summit presenter"
-
+      ctaText1="Submit a Talk or Poster"
+      ctaExternal1={true}
+      ctaLink1="https://seqera.swoogo.com/nfcore-hackathon/call-for-abstracts/8033231"
       client:load
     />
   </section>
@@ -29,46 +32,91 @@ import qa from "./qa";
   <section id="learn" class="mt-20 mb-24 container">
     <h1 class="h1 mb-4 md:mb-8">Key Info</h1>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-      <Box className="lg:aspect-square	">
-        <SubSection className="flex flex-col justify-between h-full">
+      <Box className="">
+        <SubSection className="flex flex-col  justify-between h-full">
           <div class="">
             <div
               class="pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center"
             >
-              <h5 class="h4">Talks & Formats</h5>
+              <h5 class="h4">Speakers</h5>
             </div>
             <div class="bodycopy py-2 monospace border-b border-b-nextflow">
-              Long-form and Digital Poster
+              Virtual
             </div>
           </div>
           <div class="mt-6 lg:mt-0">
             <p class="monospace">
-              <Talk  className="mb-12" />
-              Long-form Talk: 20 minutes total including time for Q&A.
-            Digital Poster presented in person
-            
+              <Talk  className="my-8" />
+              Virtual Talk: 20 minutes total including time for Q&A.
+         
             </p>
+            <Button
+            white
+            arrowAfter
+            className="w-full mt-6"
+          >
+            <a class="absolute w-full h-full" href="https://seqera.swoogo.com/nfcore-hackathon/call-for-abstracts/8033231" target="_blank"></a>
+
+            Submit a talk
+          </Button>
           </div>
         </SubSection>
       </Box>
-      <Box className="lg:aspect-square	">
-        <SubSection className="flex flex-col justify-between h-full">
+      <Box className="">
+        <SubSection className="flex flex-col  justify-between h-full">
           <div class="">
             <div
               class="pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center"
             >
-              <h5 class="h4">Location</h5>
+              <h5 class="h4">Posters</h5>
             </div>
             <div class="bodycopy py-2 monospace border-b border-b-nextflow">
-              Boston, Massachusetts
+              Location: Virtual & Barcelona
             </div>
           </div>
           <div class="mt-6 lg:mt-0">
-            <City className="mb-12" />
+            <City className="my-8" />
             <p class="monospace">
-              In person at the Nextflow Summit 2025. This year's event venue is located at <a href=`https://maps.app.goo.gl/S9aZawB98jRa8DEC9` target="_blank">Aloft Boston
-              Seaport District</a>
+              Present your poster online at Nextflow Summit or in-person at the Nextflow Training and nf-core Hackathon in Barcelona.
             </p>
+            <Button
+            white
+            arrowAfter
+            className="w-full mt-6"
+          >
+            <a class="absolute w-full h-full" href="https://seqera.swoogo.com/nfcore-hackathon/call-for-abstracts/8033231" target="_blank"></a>
+
+            Submit a poster
+          </Button>
+          </div>
+        </SubSection>
+      </Box>
+      <Box className="">
+        <SubSection className="flex flex-col h-full">
+          <div class="">
+            <div
+              class="pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center"
+            >
+              <h5 class="h4">Deadline</h5>
+            </div>
+            <div class="bodycopy py-2 monospace border-b border-b-nextflow">
+              Submit your abstract by August 15
+            </div>
+          </div>
+          <div class="mt-6 lg:mt-0">
+            <OpenSign  className="my-8" />
+            <p class="monospace">
+              Accepted speakers and posters will notified by end of August.
+            </p>
+            <!-- <Button
+            white
+            arrowAfter
+            className="w-full mt-6"
+          >
+            <a class="absolute w-full h-full" href="https://seqera.swoogo.com/nfcore-hackathon/call-for-abstracts/8033231" target="_blank"></a>
+
+            Submit a Talk or Poster
+          </Button> -->
           </div>
         </SubSection>
       </Box>
@@ -100,7 +148,7 @@ import qa from "./qa";
     </div>
   </section>
 
-  <section id="themes" class="mt-10 mb-20 container">
+  <!-- <section id="themes" class="mt-10 mb-20 container">
     <h1 class="h1 mb-4 md:mb-8">Themes</h1>
     <div class="grid grid-cols-1 md:grid-cols-2 md:grid-cols-3 gap-8">
       <Box className="">
@@ -171,7 +219,7 @@ import qa from "./qa";
         </SubSection>
       </Box>
     </div>
-  </section>
+  </section> -->
 
   <Faq className="mt-20 mb-20" data={qa} client:load />
 </Layout>

@@ -81,7 +81,10 @@ const DropDowns: React.FC<Props> = (props) => {
 
   return (
     <div className="text-xl px-4 pt-20">
-      {menuLinks?.map(({ name, url, dropdowns }, index) => (
+      {menuLinks
+         .filter(({ hide }) => hide !== true)
+         
+         .map(({ name, url, dropdowns }, index) => (
         <DropDownItem
           key={index}
           name={name}
@@ -91,6 +94,7 @@ const DropDowns: React.FC<Props> = (props) => {
           onClick={() => handleItemClick(index)}
         />
       ))}
+         
     </div>
   );
 };

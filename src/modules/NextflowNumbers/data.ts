@@ -9,20 +9,20 @@ export default {
       value: 30,
     },
     summit_in_person_attendees_prev_year: {
-      label: "Summit in-person attendees in 2024",
-      value: 166,
+      label: "Nextflow Training in-person attendees in 2024",
+      value: 50,
     },
     summit_in_person_attendees_expected: {
-      label: "Summit in-person attendees expected in 2025",
-      value: 200,
+      label: "Nextflow Training in-person attendees expected in 2025",
+      value: 60,
     },
     hackathon_in_person_attendees_prev_year: {
       label: "Hackathon in-person attendees in 2024",
-      value: 50,
+      value: 116,
     },
     hackathon_in_person_attendees_expected: {
       label: "Hackathon in-person attendees expected in 2025",
-      value: 100,
+      value: 130,
     },
   },
   barcelona: {

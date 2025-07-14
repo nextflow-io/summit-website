@@ -11,6 +11,9 @@ import e2023_boston from "@images/photos/past-events/e2023_boston.jpg";
 import e2023_bcn from "@images/photos/past-events/e2023_bcn.jpg";
 import e2024_bcn from "@images/photos/past-events/e2024_bcn.jpg";
 import e2024_boston from "@images/photos/past-events/e2024_boston.jpg";
+import e2025_boston from "@images/photos/past-events/e25_boston_summit.jpg";
+
+
 import Button from "@components/Button";
 
 type Props = {
@@ -22,6 +25,25 @@ const SectionPastEvents: React.FC<Props> = ({ title }) => {
     <section className="mt-20 mb-24 container">
       <h1 className="h2 mb-10">See our past events</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <Box
+          externalLink={true}
+          href="https://summit.nextflow.io/2025/boston/"
+          className="aspect-square"
+        >
+          <SubSection className="flex flex-col justify-between">
+            <div className="border-b border-b-nextflow w-full flex flex-row justify-between items-center pb-4">
+              <h5 className="h5">Boston 2025</h5>
+              <ArrowUpRight />
+            </div>
+            <div className="imageBlend mt-6 mb-8 relative h-0 w-full overflow-hidden pb-[80%]">
+              <img
+                className="max-w-none w-full h-full absolute top-0 bottom-0 left-0 right-0 object-cover"
+                src={e2025_boston.src}
+                alt="Boston 2025 Nextflow Summit"
+              />
+            </div>
+          </SubSection>
+        </Box>
         <Box
           externalLink={true}
           href="https://summit.nextflow.io/2024/barcelona/"
@@ -62,7 +84,7 @@ const SectionPastEvents: React.FC<Props> = ({ title }) => {
           </SubSection>
         </Box>
 
-        <Box
+        {/* <Box
           externalLink={true}
           href="https://summit.nextflow.io/2023/barcelona/"
           className="aspect-square"
@@ -80,7 +102,7 @@ const SectionPastEvents: React.FC<Props> = ({ title }) => {
               />
             </div>
           </SubSection>
-        </Box>
+        </Box> */}
       </div>
       <div className="text-center">
         <Button className="mt-10 relative" white arrowAfter>

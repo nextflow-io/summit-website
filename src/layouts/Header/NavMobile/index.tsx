@@ -37,13 +37,38 @@ const NavMobile: React.FC<Props> = ({ pathname, namespace, showNav }) => {
             <div className="container">
               <Button
                 className="container mt-8 relative w-full"
-                white
+                brand
                 arrowAfter
               >
-                View Boston Schedule
+                Submit a Talk or Poster
                 <a
                   className="absolute w-full h-full"
-                  href="/2025/boston/agenda"
+                  href="/call-for-abstracts"
+              
+                ></a>
+              </Button>
+              <Button
+                className="container mt-4 relative w-full"
+                white
+                arrowBefore
+              >
+                Register for Training
+                <a
+                  className="absolute w-full h-full"
+                  href="https://seqera.swoogo.com/nextflow-training"
+              target="_blank"
+                ></a>
+              </Button>
+              <Button
+                className="container mt-4 relative w-full"
+                white
+                arrowBefore
+              >
+               Register for Hackathon
+                <a
+                  className="absolute w-full h-full"
+                     href="https://seqera.swoogo.com/nfcore-hackathon"
+              target="_blank"
               
                 ></a>
               </Button>
