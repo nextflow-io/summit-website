@@ -7,7 +7,7 @@ export default {
           <p>To register for the nf-core Hackathon Barcelona 2025, click <a href="https://seqera.swoogo.com/nfcore-hackathon" target="_blank">here</a>.</p>`,
       },
       {
-        question: "How do I register for Nextflow Virtual Summit?",
+        question: "How do I register for Nextflow Summit?",
         answer:  
           `<p>Registration will open in August.</p>`
       },
