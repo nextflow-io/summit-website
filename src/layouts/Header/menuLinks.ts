@@ -54,6 +54,7 @@ const menuLinks = [
   {
     name: "Boston",
     url: "/2025/boston",
+    hide: true,
     dropdowns: [
       {
         name: "Overview",
