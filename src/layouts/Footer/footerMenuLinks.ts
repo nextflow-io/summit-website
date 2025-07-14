@@ -10,7 +10,7 @@ export default {
           url: "/2025/virtual",
         },
         {
-          name: "Call for Abstracts",
+          name: "Submissions",
           url: "/call-for-abstracts",
         },
       ],

@@ -1,7 +1,7 @@
 export default {
   main: [
     {
-      question: "Who is eligible to submit an abstract?",
+      question: "Who is eligible to submit a talk or poster?",
       answer: `Anyone is eligible to submit!`,
     },
     {
@@ -15,9 +15,9 @@ export default {
         `<p>There are no set themes—just great science. Whether it's pipelines, platforms, or bold new ideas, this is your chance to share the work you think the community needs to see.</p>`,
     },
     {
-      question: "What happens if my abstract is accepted?",
+      question: "What happens if my talk or poster is accepted?",
       answer:
-        "The final abstracts will be accepted and presenters notified by end of August.",
+        "Accepted speakers and posters will notified by end of August.",
     },
   ],
 };

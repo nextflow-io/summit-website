@@ -99,7 +99,7 @@ const menuLinks = [
     ],
   },
   {
-    name: "Call for Abstracts",
+    name: "Call for Speakers and Posters",
     url: "/call-for-abstracts",
   },
   {
