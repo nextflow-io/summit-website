@@ -57,7 +57,6 @@ const SEO: React.FC<Props> = ({
   let title = siteTitle;
   if (props.title) title = `${props.title} | ${siteTitle}`;
   if (bcn) title += " Training & Hackathon";
-  if (virtual) title += " Nextflow Summit";
   const tags = [
     {
       name: `description`,
