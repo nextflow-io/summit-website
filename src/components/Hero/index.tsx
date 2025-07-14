@@ -69,7 +69,7 @@ const Hero = ({
             )}
 
             {ctaText2 && (
-              <Button className="sm:ml-10 mt-6 sm:mt-10 relative" arrowBefore>
+              <Button className="ml-4 sm:ml-10 mt-6 sm:mt-10 relative" arrowBefore>
                 {ctaLink2 && (
                   <a className="absolute w-full h-full" href={ctaLink2} target={`${ctaExternal2 ? '_blank' : '_self'}`}></a>
                 )}{" "}

@@ -300,7 +300,7 @@ const LandingHero: React.FC<HeroProps> = (props) => {
 
                   {ctaText2 && (
                     <Button
-                      className="sm:ml-10 mt-6 sm:mt-10 relative"
+                      className="ml-4 sm:ml-10 mt-6 sm:mt-10 relative"
                       arrowBefore
                     >
                       {ctaLink2 && (
