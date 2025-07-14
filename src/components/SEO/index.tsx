@@ -3,6 +3,8 @@ const descDefault = `Join us at the Nextflow Summit 2025 for the latest developm
 import imgDefault from "./share-default.jpg";
 import imgBoston from "./share-boston.jpg";
 import imgBarcelona from "./share-barcelona.jpg";
+import imgVirtual from "./share-virtual.jpg";
+
 const images = [imgDefault, imgBoston, imgBarcelona];
 
 type Props = {
@@ -12,6 +14,7 @@ type Props = {
   imgUrl?: string;
   author?: string;
   bcn?: boolean;
+  virtual?: boolean;
   dynamicImage?: {
     title?: string;
     subtitle?: string;
@@ -28,6 +31,7 @@ const SEO: React.FC<Props> = ({
   author,
   dynamicImage,
   bcn,
+  virtual,
   ...props
 }) => {
   let shareImg: string;
@@ -37,6 +41,8 @@ const SEO: React.FC<Props> = ({
       shareImg = imgUrl;
   } else if (bcn) {
       shareImg = imgDefault.src;
+  } else if (virtual) {
+      shareImg = imgVirtual.src;
   } else {
       shareImg = imgDefault.src;
   }
@@ -54,7 +60,8 @@ const SEO: React.FC<Props> = ({
   const description = props.description || descDefault;
   let title = siteTitle;
   if (props.title) title = `${props.title} | ${siteTitle}`;
-  if (bcn) title += " Barcelona";
+  if (bcn) title += " Training & Hackathon";
+  if (virtual) title += " Nextflow Summit";
   const tags = [
     {
       name: `description`,
