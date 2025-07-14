@@ -1,6 +1,6 @@
 const menuLinks = [
   {
-    name: "Virtual",
+    name: "Summit",
     url: "/2025/virtual",
     // dropdowns: [
     //   {
@@ -26,7 +26,7 @@ const menuLinks = [
     // ],
   },
   {
-    name: "Barcelona",
+    name: "Training & Hackathon",
     url: "/2025/barcelona",
     dropdowns: [
       {

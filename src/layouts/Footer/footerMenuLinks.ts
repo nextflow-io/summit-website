@@ -2,16 +2,26 @@
 export default {
   main: [
     {
-      name: "Barcelona & Virtual",
+      name: "Virtual",
       url: "/2025/barcelona",
       dropdowns: [
         {
-          name: "Barcelona Overview",
-          url: "/2025/barcelona/overview",
-        },
-        {
           name: "Nextflow Summit",
           url: "/2025/virtual",
+        },
+        {
+          name: "Call for Abstracts",
+          url: "/call-for-abstracts",
+        },
+      ],
+    },
+    {
+      name: "Barcelona",
+      url: "/2025/barcelona",
+      dropdowns: [
+        {
+          name: "Overview",
+          url: "/2025/barcelona/overview",
         },
         {
           name: "Training",
@@ -22,12 +32,12 @@ export default {
           url: "/2025/barcelona/hackathon",
         },
         {
-          name: "Register Now",
-          url: "/2025/barcelona/register",
-        },
-        {
           name: "Travel Info",
           url: "/2025/barcelona/travel",
+        },
+        {
+          name: "Register Now",
+          url: "/2025/barcelona/register",
         },
       ],
     },
@@ -77,27 +87,23 @@ export default {
       },
     ],
   },
-  {
-    name: "Pages",
-    dropdowns: [
-      // {
-      //   name: "Register",
-      //   url: "/2025/boston/register",
-      // },
-      {
-        name: "Call for Abstracts",
-        url: "/call-for-abstracts",
-      },
-      {
-        name: "Why Attend",
-        url: "/why-attend",
-      },
-      {
-        name: "Past Events",
-        url: "/past-events",
-      },
-    ],
-  },
+  // {
+  //   name: "Pages",
+  //   dropdowns: [
+  //     {
+  //       name: "Call for Abstracts",
+  //       url: "/call-for-abstracts",
+  //     },
+  //     {
+  //       name: "Why Attend",
+  //       url: "/why-attend",
+  //     },
+  //     {
+  //       name: "Past Events",
+  //       url: "/past-events",
+  //     },
+  //   ],
+  // },
   {
     name: "Follow",
     dropdowns: [
@@ -120,6 +126,10 @@ export default {
       {
         name: "YouTube",
         url: "https://www.youtube.com/channel/UCBDzWsz3bDsxZblHbmGxsww",
+      },
+      {
+        name: "Past Events",
+        url: "/past-events",
       },
     ],
   },
