@@ -13,7 +13,6 @@ type Props = {
   img?: number;
   imgUrl?: string;
   author?: string;
-  bcn?: boolean;
   dynamicImage?: {
     title?: string;
     subtitle?: string;
@@ -29,7 +28,6 @@ const SEO: React.FC<Props> = ({
   imgUrl,
   author,
   dynamicImage,
-  bcn,
   ...props
 }) => {
   let shareImg: string;
@@ -37,8 +35,6 @@ const SEO: React.FC<Props> = ({
       shareImg = images[img].src;
   } else if (imgUrl) {
       shareImg = imgUrl;
-  } else if (bcn) {
-      shareImg = imgDefault.src;
   } else {
       shareImg = imgDefault.src;
   }
@@ -56,7 +52,6 @@ const SEO: React.FC<Props> = ({
   const description = props.description || descDefault;
   let title = siteTitle;
   if (props.title) title = `${props.title} | ${siteTitle}`;
-  if (bcn) title += " Training & Hackathon";
   const tags = [
     {
       name: `description`,
