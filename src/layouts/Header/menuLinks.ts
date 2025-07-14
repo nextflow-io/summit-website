@@ -5,7 +5,7 @@ const menuLinks = [
     dropdowns: [
       {
         name: "Overview",
-        url: "/2025/virtual",
+        url: "/2025/virtual/overview",
       },
       {
         name: "Submissions",

@@ -3,7 +3,7 @@ export default {
   main: [
     {
       name: "Virtual",
-      url: "/2025/barcelona",
+      url: "/2025/virtual",
       dropdowns: [
         {
           name: "Nextflow Summit",
