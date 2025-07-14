@@ -102,7 +102,7 @@ export default {
     name: "Follow",
     dropdowns: [
       {
-        name: "Linkedin",
+        name: "LinkedIn",
         url: "https://www.linkedin.com/company/14065390/",
       },
       {
@@ -114,11 +114,11 @@ export default {
         url: "https://twitter.com/nextflowio",
       },
       {
-        name: "Github",
+        name: "GitHub",
         url: "https://github.com/nextflow-io",
       },
       {
-        name: "Youtube",
+        name: "YouTube",
         url: "https://www.youtube.com/channel/UCBDzWsz3bDsxZblHbmGxsww",
       },
     ],
