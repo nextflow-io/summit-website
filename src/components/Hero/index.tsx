@@ -58,7 +58,7 @@ const Hero = ({
             dangerouslySetInnerHTML={{ __html: content }}
           />
 
-          <div className="inline flex-col sm:flex-row sm:items-center mr-8" >
+          <div className="inline-flex flex-col sm:flex-row sm:items-center mr-8" >
             {ctaText1 && (
               <Button className="mt-10 relative" white arrowAfter>
                 {ctaLink1 && (
@@ -69,7 +69,7 @@ const Hero = ({
             )}
 
             {ctaText2 && (
-              <Button className="ml-4 sm:ml-10 mt-6 sm:mt-10 relative" arrowBefore>
+              <Button className="sm:ml-10 mt-6 sm:mt-10 relative" arrowBefore>
                 {ctaLink2 && (
                   <a className="absolute w-full h-full" href={ctaLink2} target={`${ctaExternal2 ? '_blank' : '_self'}`}></a>
                 )}{" "}
