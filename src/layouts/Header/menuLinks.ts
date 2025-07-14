@@ -2,28 +2,16 @@ const menuLinks = [
   {
     name: "Summit",
     url: "/2025/virtual",
-    // dropdowns: [
-    //   {
-    //     name: "Overview",
-    //     url: "/2025/barcelona/overview",
-    //   },
-    //   {
-    //     name: "Register",
-    //     url: "/2025/barcelona/register",
-    //   },
-    //   {
-    //     name: "Hackathon",
-    //     url: "/2025/barcelona/hackathon",
-    //   },
-    //   {
-    //     name: "Training",
-    //     url: "/2025/barcelona/training",
-    //   },
-    //   {
-    //     name: "Travel",
-    //     url: "/2025/barcelona/travel",
-    //   },
-    // ],
+    dropdowns: [
+      {
+        name: "Overview",
+        url: "/2025/virtual",
+      },
+      {
+        name: "Submissions",
+        url: "/call-for-abstracts",
+      },
+    ],
   },
   {
     name: "Training & Hackathon",

@@ -7,10 +7,10 @@ export default {
       dropdowns: [
         {
           name: "Nextflow Summit",
-          url: "/2025/virtual",
+          url: "/2025/virtual/overview",
         },
         {
-          name: "Submissions",
+          name: "Call for Speakers and Posters",
           url: "/call-for-abstracts",
         },
       ],

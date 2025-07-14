@@ -38,7 +38,7 @@ const SecondaryMenu: React.FC<Props> = (props) => {
         }}
         className="rounded-sm relative mx-auto flex w-fit bg-nextflow-200 overflow-hidden"
       >
-        {menuLinks[location].dropdowns?.map(({ name, url }, i) => {
+        {menuLinks[location]?.dropdowns?.map(({ name, url }, i) => {
           return (
             <div key={i}>
               <Tab url={url} pathname={pathname} setPosition={setPosition}>
