@@ -10,7 +10,7 @@ export default {
           url: "/2025/virtual/overview",
         },
         {
-          name: "Call for Speakers and Posters",
+          name: "Call for Speakers & Posters",
           url: "/call-for-abstracts",
         },
       ],
