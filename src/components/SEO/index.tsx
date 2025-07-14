@@ -5,7 +5,7 @@ import imgBoston from "./share-boston.jpg";
 import imgBarcelona from "./share-barcelona.jpg";
 import imgVirtual from "./share-virtual.jpg";
 
-const images = [imgDefault, imgBoston, imgBarcelona];
+const images = [imgDefault, imgBoston, imgBarcelona, imgVirtual];
 
 type Props = {
   description?: string;
@@ -14,7 +14,6 @@ type Props = {
   imgUrl?: string;
   author?: string;
   bcn?: boolean;
-  virtual?: boolean;
   dynamicImage?: {
     title?: string;
     subtitle?: string;
@@ -31,7 +30,6 @@ const SEO: React.FC<Props> = ({
   author,
   dynamicImage,
   bcn,
-  virtual,
   ...props
 }) => {
   let shareImg: string;
@@ -41,8 +39,6 @@ const SEO: React.FC<Props> = ({
       shareImg = imgUrl;
   } else if (bcn) {
       shareImg = imgDefault.src;
-  } else if (virtual) {
-      shareImg = imgVirtual.src;
   } else {
       shareImg = imgDefault.src;
   }
