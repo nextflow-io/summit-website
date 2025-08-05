@@ -18,7 +18,8 @@ export default {
           <p>
           <span class="underline">Hackathon (Barcelona)</span><br/>
           Academic: <s>€120</s> €90<br/>
-          Corporate: <s>€120</s> €90<br/>
+          Corporate: <s>€120</s> €90<br/><br/>
+            <i>Price includes 21% VAT</i><br /><br />
           `
   },
   {
