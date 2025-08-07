@@ -3,7 +3,7 @@ slug: /speakers/francesco-strozzi/
 name: Francesco	Strozzi
 email:
 position: Head of Bioinformatics and Data Science at Enterome
-image: ../../../images/people/francescostrozzi.png
+image: ../../../images/people/empty.png
 github: https://github.com/fstrozzi
 twitter: https://twitter.com/fstrozzi
 linkedin: https://www.linkedin.com/in/francescostrozzi
