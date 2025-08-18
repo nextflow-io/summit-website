@@ -12,13 +12,13 @@ export default {
         `<p>Early-bird 25% discount available until August 15.</p>
         
         <p>   <span class="underline">Training (Barcelona)</span><br/>
-             Academic: <s>€120</s> €90  <br/>
-             Corporate: <s>€300</s> €225 
+             Academic: €120  <br/>
+             Corporate: €300 
           </p>
           <p>
           <span class="underline">Hackathon (Barcelona)</span><br/>
-          Academic: <s>€120</s> €90<br/>
-          Corporate: <s>€120</s> €90<br/><br/>
+          Academic: €120<br/>
+          Corporate: €120<br/><br/>
             <i>Price includes 21% VAT</i><br /><br />
           `
   },
