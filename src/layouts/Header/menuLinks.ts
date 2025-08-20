@@ -8,6 +8,10 @@ const menuLinks = [
         url: "/2025/virtual/overview",
       },
       {
+        name: "Register",
+        url: "/2025/virtual/register",
+      },
+      {
         name: "Submissions",
         url: "/call-for-abstracts",
       },

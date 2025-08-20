@@ -9,7 +9,7 @@ export default {
       {
         question: "How do I register for Nextflow Summit?",
         answer:  
-          `<p>Registration will open in August.</p>`
+          `<p>Register and attend for free by clicking <a href="https://seqera.registration.goldcast.io/events/dc611bf3-ddc4-4a20-9f2f-1a9e941cc68c" target="_blank">here</a>.</p>`
       },
       {
         question: "What is included in the registration fee for Training and Hackathon?",

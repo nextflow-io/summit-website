@@ -10,6 +10,10 @@ export default {
           url: "/2025/virtual/overview",
         },
         {
+          name: "Register Now",
+          url: "https://seqera.registration.goldcast.io/events/dc611bf3-ddc4-4a20-9f2f-1a9e941cc68c",
+        },
+        {
           name: "Call for Speakers & Posters",
           url: "/call-for-abstracts",
         },
