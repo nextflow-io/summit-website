@@ -8,18 +8,18 @@ const datesVirtual = [
     ],
   },
     {
-      date: "Aug",
-      content: [
-        {
-          info: "Registration for Nextflow Summit opens",
-        },
-      ],
-    },
-    {
       date: "Aug 15",
       content: [
         {
           info: "Call for Abstracts closes",
+        },
+      ],
+    },
+        {
+      date: "Aug 21",
+      content: [
+        {
+          info: "Registration for Nextflow Summit opens",
         },
       ],
     },

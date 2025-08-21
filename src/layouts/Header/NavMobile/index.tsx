@@ -40,11 +40,11 @@ const NavMobile: React.FC<Props> = ({ pathname, namespace, showNav }) => {
                 brand
                 arrowAfter
               >
-                Submit a Talk or Poster
+                Register for Summit
                 <a
                   className="absolute w-full h-full"
-                  href="/call-for-abstracts"
-              
+                  href="https://seqera.registration.goldcast.io/events/dc611bf3-ddc4-4a20-9f2f-1a9e941cc68c"
+                  target="_blank"
                 ></a>
               </Button>
               <Button
