@@ -383,7 +383,7 @@ export const barcelonaScheduleConfig: ScheduleConfig = {
       ],
     },
     {
-      date: "Friday, October 25",
+      date: "Friday, October 24",
       timezone: "CET",
       items: [
         { time: "TBA", name: "Nextflow Summit - Virtual", highlighted: true },
