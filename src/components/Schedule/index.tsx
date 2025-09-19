@@ -377,21 +377,21 @@ export const barcelonaScheduleConfig: ScheduleConfig = {
   days: [
     {
       date: "Thursday, October 23",
-      timezone: "CET",
+      timezone: "CEST (UTC+2)",
       items: [
-        { time: "TBA", name: "Nextflow Summit - Virtual", highlighted: true },
+        { time: "1PM-5:30PM", name: "Nextflow Summit - Virtual", highlighted: true },
       ],
     },
     {
       date: "Friday, October 24",
-      timezone: "CET",
+      timezone: "CEST (UTC+2)",
       items: [
-        { time: "TBA", name: "Nextflow Summit - Virtual", highlighted: true },
+        { time: "1PM-5:30PM", name: "Nextflow Summit - Virtual", highlighted: true },
       ],
     },
     {
       date: "Tuesday, October 28",
-      timezone: "CET",
+      timezone: "CEST (UTC+2)",
       items: [
         {
           time: "9:00am",
@@ -429,7 +429,7 @@ export const barcelonaScheduleConfig: ScheduleConfig = {
     },
     {
       date: "Wednesday, October 29",
-      timezone: "CET",
+      timezone: "CEST (UTC+2)",
       items: [
         {
           time: "9:00am",
@@ -456,53 +456,6 @@ export const barcelonaScheduleConfig: ScheduleConfig = {
         { time: "5:00pm", name: "Hackathon and Training: End" },
       ],
     },
-    // {
-    //   date: "Thursday, September 25",
-    //   timezone: "CEST",
-    //   items: [
-    //     { time: "8:30am", name: "Registration, coffee and breakfast", highlighted: true },
-    //     { time: "9:30am", name: "Welcome", category: "Welcome", speakers: "Evan Floden" },
-    //     { time: "9:40am", name: "Product Keynote: Seqera Platform Evolution", speakers: "Paolo Di Tommaso", category: "Enabling Science", url: "/2025/barcelona/agenda/seqera-platform-evolution" },
-    //     { time: "10:20am", name: "Scaling Genomic Analysis in European Healthcare", category: "Enabling Science", speakers: "Dr. Maria Gonzalez", url: "/2025/barcelona/agenda/scaling-genomic-analysis-european-healthcare" },
-    //     { time: "10:40am", name: "Multi-omics Integration for Precision Medicine", category: "Enabling Science", speakers: "Prof. Jean Dubois", url: "/2025/barcelona/agenda/multi-omics-integration-precision-medicine" },
-    //     { time: "11:00am", name: "Coffee break", highlighted: true },
-    //     { time: "11:30am", name: "Cloud-Native Workflows for European Research Infrastructure", speakers: "Dr. Klaus Weber", category: "Big Nextflow", url: "/2025/barcelona/agenda/cloud-native-workflows-european-research" },
-    //     { time: "11:50am", name: "GDPR-Compliant Genomic Data Processing", category: "Organizational Impact", speakers: "Laura Rossi", url: "/2025/barcelona/agenda/gdpr-compliant-genomic-data-processing" },
-    //     { time: "12:10pm", name: "Nextflow in Agricultural Genomics: From Lab to Field", category: "Enabling Science", speakers: "Dr. Antonio Silva", url: "/2025/barcelona/agenda/nextflow-agricultural-genomics" },
-    //     { time: "12:30pm", name: "Building Sustainable Bioinformatics Infrastructure in Academia", category: "Organizational Impact", speakers: "Prof. Elena Petrov", url: "/2025/barcelona/agenda/sustainable-bioinformatics-infrastructure" },
-    //     { time: "12:50pm", name: "Lightning Round", category: "Poster Pitches" },
-    //     { time: "1:00pm", name: "Lunch", highlighted: true },
-    //     { time: "2:00pm", name: "What's new in Nextflow: European Perspectives", speakers: "Paolo Di Tommaso", category: "Big Nextflow", url: "/2025/barcelona/agenda/nextflow-european-perspectives" },
-    //     { time: "2:30pm", name: "Federated Learning in Genomics with Nextflow", category: "Big Nextflow", speakers: "Dr. Mikhail Volkov", url: "/2025/barcelona/agenda/federated-learning-genomics-nextflow" },
-    //     { time: "3:00pm", name: "European Genomics Cloud Initiative", category: "Big Nextflow", speakers: "Dr. Sophie Martin", url: "/2025/barcelona/agenda/european-genomics-cloud-initiative" },
-    //     { time: "3:20pm", name: "Lightning Round", category: "Poster Pitches" },
-    //     { time: "3:30pm", name: "Coffee break", highlighted: true },
-    //     { time: "4:00pm", name: "Nextflow on European HPC Systems", speakers: "Dr. Anders Larsson", category: "Big Nextflow", url: "/2025/barcelona/agenda/nextflow-european-hpc-systems" },
-    //     { time: "4:20pm", name: "Reproducible Research in the Mediterranean: A Multi-Country Collaboration", category: "Organizational Impact", speakers: "Dr. Nikos Papadopoulos and Dr. Fatima Al-Rashid", url: "/2025/barcelona/agenda/reproducible-research-mediterranean" },
-    //     { time: "4:40pm", name: "Keynote: The Future of European Genomics Collaboration", category: "Big Nextflow", speakers: "Prof. Catherine Williams", url: "/2025/barcelona/agenda/future-european-genomics-collaboration" },
-    //     { time: "5:30pm", name: "Summit Reception at Casa Batlló", highlighted: true },
-    //     { time: "8:00pm", name: "Summit Reception: End" },
-    //   ]
-    // },
-    // {
-    //   date: "Friday, September 26",
-    //   timezone: "CEST",
-    //   items: [
-    //     { time: "7:00am", name: "Network: Morning Walk along Barcelona Beach", highlighted: true },
-    //     { time: "8:30am", name: "Coffee and breakfast", highlighted: true },
-    //     { time: "9:30am", name: "Seqera Platform: European Data Sovereignty", category: "Organizational Impact", speakers: "Rob Newman", url: "/2025/barcelona/agenda/seqera-platform-european-data-sovereignty" },
-    //     { time: "10:00am", name: "Regulatory Compliance for Genomic Workflows in Europe", category: "Organizational Impact", speakers: "Dr. Hans Mueller and Maria Santos", url: "/2025/barcelona/agenda/regulatory-compliance-genomic-workflows-europe" },
-    //     { time: "10:20am", name: "Building Cross-Border Research Collaborations", category: "Organizational Impact", speakers: "Dr. Anna Kowalski", url: "/2025/barcelona/agenda/building-cross-border-research-collaborations" },
-    //     { time: "10:40am", name: "Open Science and FAIR Data in European Genomics", category: "Organizational Impact", speakers: "Prof. Jan van der Berg", url: "/2025/barcelona/agenda/open-science-fair-data-european-genomics" },
-    //     { time: "11:00am", name: "Coffee break", highlighted: true },
-    //     { time: "11:30am", name: "Cost Optimization for European Cloud Computing", speakers: "Dr. Ingrid Olsen", category: "Organizational Impact", url: "/2025/barcelona/agenda/cost-optimization-european-cloud-computing" },
-    //     { time: "11:45am", name: "Nextflow Training Programs Across Europe", speakers: "Dr. Pierre Laurent", url: "/2025/barcelona/agenda/nextflow-training-programs-europe" },
-    //     { time: "12:00pm", name: "Diversity and Inclusion in European Bioinformatics", category: "Organizational Impact", speakers: "Dr. Amara Okafor", url: "/2025/barcelona/agenda/diversity-inclusion-european-bioinformatics" },
-    //     { time: "12:20pm", name: "Panel Discussion: Shaping the Future of European Computational Biology", speakers: "Multiple European Leaders", url: "/2025/barcelona/agenda/shaping-future-european-computational-biology" },
-    //     { time: "1:00pm", name: "Summit: Wrap-up", highlighted: true },
-    //     { time: "1:10pm", name: "Summit: End", highlighted: true },
-    //   ]
-    // }
   ],
 };
 
