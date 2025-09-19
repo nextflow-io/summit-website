@@ -1,0 +1,38 @@
+---
+import Layout from "@layouts/Base.astro";
+import KeyDates from "@components/KeyDates/index.astro";
+import Calendar from "@components/Calendar";
+import Schedule, { bostonScheduleConfig, barcelonaScheduleConfig } from "@components/Schedule";
+import SEO from "@components/SEO";
+import Box, { SubSection } from "@components/Box";
+---
+
+<Layout namespace="2025/barcelona" altBG>
+  <SEO slot="head" title="Agenda | Barcelona" img={0} />
+
+
+  <section class="pb-6 pt-16 md:pt-20 mb-20">
+      <div class="container">
+      <h1 class="h1 mb-4 md:mb-6">Agenda</h1>
+        <!-- <div class="monospace mt-6 text-brand-100 mb-10">
+        Subscribe to calendar:
+        <a
+          class="text-nextflow"
+          href="https://calendar.google.com/calendar/ical/c_6fcf2965db184555c52131dac98866739ec4536b396c440688d48392bf2d9f22%40group.calendar.google.com/public/basic.ics" target="blank">iCal</a
+        > |
+        <a
+          class="text-nextflow"
+          href="https://calendar.google.com/calendar/u/0?cid=Y182ZmNmMjk2NWRiMTg0NTU1YzUyMTMxZGFjOTg4NjY3MzllYzQ1MzZiMzk2YzQ0MDY4OGQ0ODM5MmJmMmQ5ZjIyQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20" target="_blank"
+          >Google Calendar</a
+        >
+      </div> -->
+
+     <Schedule config={barcelonaScheduleConfig} />
+
+    </div>
+
+  </section>
+
+  
+
+</Layout>

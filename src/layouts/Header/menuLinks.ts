@@ -30,6 +30,10 @@ const menuLinks = [
         url: "/2025/barcelona/register",
       },
       {
+        name: "Agenda",
+        url: "/2025/barcelona/agenda",
+      },
+      {
         name: "Hackathon",
         url: "/2025/barcelona/hackathon",
       },
