@@ -380,7 +380,7 @@ export const barcelonaScheduleConfig: ScheduleConfig = {
       timezone: "CEST (UTC+2)",
       items: [
         {
-          time: "1PM-2:20PM",
+          time: "1PM-2:40PM",
           name: "Keynote",
           speakers: "Evan Floden, CEO at Seqera",
           highlighted: true,
@@ -392,14 +392,14 @@ export const barcelonaScheduleConfig: ScheduleConfig = {
             "Melanie Nuesch, Head of the High Performance Computing Platform, DRFZ Berlin",
           category: "Infrastructure & Automation",
         },
-        // {
-        //   time: "2:40PM",
-        //   name: "Session 2: N/A",
-        //   speakers: "N/A",
-        //   category: "Microbiology & Ecology",
-        // },
         {
-          time: "2:40PM",
+          //   time: "2:40PM",
+          name: "Session 2: N/A",
+          speakers: "N/A",
+          category: "Microbiology & Ecology",
+        },
+        {
+          //  time: "2:40PM",
           name: "Session 3: Building bioinformatics skills with Nextflow/nf-core: a program for early–mid-career researchers",
           speakers:
             "Patricia Agudelo-Romero, Senior Research Fellow, The Kids Research Institute Australia | The University of Western Australia",
@@ -413,14 +413,14 @@ export const barcelonaScheduleConfig: ScheduleConfig = {
           category: "Infrastructure & Automation",
         },
         {
-          time: "3PM",
+          //  time: "3PM",
           name: "Session 5: Enabling reproducibility in Agri-Ecology and Evolutionary biology",
           speakers:
             "Christopher Wyatt, Bioinformatician, University College London",
           category: "Microbiology & Ecology",
         },
         {
-          time: "3PM",
+          //  time: "3PM",
           name: "Session 6: Collaborative Nextflow training for Australia’s dispersed research landscape",
           speakers:
             "Giorgia Mori, BioCloud Training and Communication Officer, Australian BioCommons",
@@ -444,14 +444,14 @@ export const barcelonaScheduleConfig: ScheduleConfig = {
           category: "Infrastructure & Automation",
         },
         {
-          time: "3:40PM",
+          //  time: "3:40PM",
           name: "Session 8: Nextflow v25 Broke Bactopia, So We Rewrote It",
           speakers:
             "Robert A Petit III, Senior Bioinformatics Scientist, Wyoming Public Health Laboratory",
           category: "Microbiology & Ecology",
         },
         {
-          time: "3:40PM",
+          //  time: "3:40PM",
           name: "Session 9: Updates from the Community Team",
           speakers:
             "Geraldine Van der Auwera, Lead Developer Advocate, Marcel Ribeiro-Dantas, Senior Developer Advocate, Seqera",
@@ -464,14 +464,14 @@ export const barcelonaScheduleConfig: ScheduleConfig = {
           category: "Infrastructure & Automation",
         },
         {
-          time: "4PM",
+          //  time: "4PM",
           name: "Session 11: WasteFlow 2.0: Multi-Pathogen Respiratory Virus Surveillance in Canada",
           speakers:
             "Zohaib Anwar, Bioinformatician, BC Centre for Disease Control, British Columbia, Canada",
           category: "Microbiology & Ecology",
         },
         {
-          time: "4PM",
+          //  time: "4PM",
           name: "Session 12: How I Built the Nextflow Community in Korea",
           speakers: "Jehee Lee, Nextflow Ambassador of Korea",
           category: "Community & Training",
@@ -484,14 +484,14 @@ export const barcelonaScheduleConfig: ScheduleConfig = {
           category: "Infrastructure & Automation",
         },
         {
-          time: "4:20PM",
+          // time: "4:20PM",
           name: "Session 14: Metagenome quality metrics and taxonomical annotation visualization through BIgMAG/MAGFlow",
           speakers:
             "Jeferyd Yepes-García, PhD Candidate, University of Fribourg",
           category: "Microbiology & Ecology",
         },
         {
-          time: "4:20PM",
+          // time: "4:20PM",
           name: "Session 15: From FASTQ to Kappa: My First Experience with nf-core/viralrecon",
           speakers:
             "Mariam Sulaiman, Graduate Research Intern, International Institute of Tropical Agriculture (IITA), Nigeria",
@@ -505,19 +505,18 @@ export const barcelonaScheduleConfig: ScheduleConfig = {
           category: "Infrastructure & Automation",
         },
         {
-          time: "4:40PM",
+          //  time: "4:40PM",
           name: "Session 17: Development of the ENSure Database and Pipeline for Rapid Microbial Testing in Biomanufacturing",
           speakers:
             "Tyler Laird, Bioinformatician, National Institute of Standards and Technology (NIST)",
           category: "Microbiology & Ecology",
         },
-        // {
-        //   time: "4:40PM",
-        //   name: "N/A",
-        //   speakers:
-        //     "N/A",
-        //   category: "Community & Training",
-        // },
+        {
+          //   time: "4:40PM",
+          name: "N/A",
+          speakers: "N/A",
+          category: "Community & Training",
+        },
         {
           time: "5PM",
           name: "Session 19: Benchmarking nf-core/scrnaseq for Mouse Prostate Single-cell RNA-seq: Practical Insights",
@@ -526,11 +525,17 @@ export const barcelonaScheduleConfig: ScheduleConfig = {
           category: "Infrastructure & Automation",
         },
         {
-          time: "5PM",
+          // time: "5PM",
           name: "Session 20: Earth Observation with Nextflow: A Use Case–Driven Introduction",
           speakers:
             "Felix Kummer, Research Associate, Humboldt-Universität zu Berlin",
           category: "Microbiology & Ecology",
+        },
+        {
+          // time: "5PM",
+          name: "N/A",
+          speakers: "N/A",
+          category: "Community & Training",
         },
         {
           time: "5:20PM",
@@ -544,8 +549,166 @@ export const barcelonaScheduleConfig: ScheduleConfig = {
       timezone: "CEST (UTC+2)",
       items: [
         {
-          time: "1PM-5:30PM",
-          name: "Nextflow Summit - Virtual",
+          time: "1PM",
+          name: "OSS and SciDev Demo",
+          highlighted: true,
+        },
+        {
+          time: "2-2:40PM",
+          name: "Keynote",
+          speakers: "Segun Fatumo",
+          highlighted: true,
+        },
+        {
+          time: "2:40PM",
+          name: "N/A",
+          speakers: "N/A",
+          category: "AI-Assisted Research",
+        },
+        {
+          //  time: "2:40PM",
+          name: "Session 23: nf-core/oncoanalyser: an accessible and portable pipeline to unify cancer DNA and RNA analysis",
+          speakers:
+            "Stephen Watts, Senior Bioinformatician, Collaborative Centre for Genomic Cancer Medicine",
+          category: "Translational Research",
+        },
+        {
+          // time: "2:40PM",
+          name: "Session 24: Updates from the nf-core community",
+          speakers: "TBD",
+          category: "Nextflow Ecosystem & nf-core",
+        },
+        {
+          time: "3PM",
+          name: "N/A",
+          speakers: "N/A",
+          category: "AI-Assisted Research",
+        },
+        {
+          // time: "3PM",
+          name: "N/A",
+          speakers: "N/A",
+          category: "Translational Research",
+        },
+        {
+          // time: "3PM",
+          name: "What's new from the nf-core infrastructure team in 2025",
+          speakers:
+            "Matthias Hörtenhuber, Systems Developer, SciLifeLab Data Centre",
+          category: "Nextflow Ecosystem & nf-core",
+        },
+        {
+          time: "3:20PM",
+          name: "Lighting Talks",
+          highlighted: true,
+        },
+        {
+          time: "3:30PM",
+          name: "Coffee break",
+          highlighted: true,
+        },
+        {
+          time: "3:40PM",
+          name: "Session 28: Reproducible LLM Driven Molecular Design with Nextflow and BioLM",
+          speakers: "Andrew Stewart, COO, BioLM",
+          category: "AI-Assisted Research",
+        },
+        {
+          // time: "3:40PM",
+          name: "Session 29: DelMoro : A Nextflow Pipeline for Variant Calling and  Streamlined Reporting in Clinical Genomics",
+          speakers: "Firas Zemzem, PhD Candidate",
+          category: "Translational Research",
+        },
+        {
+          // time: "3:40PM",
+          name: "Session 30: MetroFlow : Generating Interactive Metro-Maps from Workflow Code",
+          speakers: "George Marchment, Université Paris-Saclay",
+          category: "Nextflow Ecosystem & nf-core",
+        },
+        {
+          time: "4PM",
+          name: "Session 31: SPONSOR: Accelerating Cross-Assay Correlation with GenAI",
+          speakers:
+            "Kevin Moore, CEO, Quilt.bio, Vasisht Tadigotla, Head of Data and Engineering, Sail Biomedicines",
+          category: "AI-Assisted Research",
+        },
+        {
+          // time: "4PM",
+          name: "Session 32: GTEx Expression Data Processing Pipeline for Sex- and Age-Stratified Target Discovery",
+          speakers:
+            "Samantha Klasfeld, Web Developer, Boston Women in Bioinformatics",
+          category: "Translational Research",
+        },
+        {
+          // time: "4PM",
+          name: "Session 33: Contributing to nf-core within a translational project for personalized cancer medicine in Germany",
+          speakers:
+            "Barbara Novak, NASA GeneLab Data Processing Lead, Blue Marble Space Institute of Science",
+          category: "Nextflow Ecosystem & nf-core",
+        },
+        {
+          time: "4:20PM",
+          name: "Session 34: AI-Driven Spatial Transcriptomics for Predicting Drug Response in the Tumor Microenvironment",
+          speakers:
+            "Kayode Raheem, PhD Researcher, University of Nebraska Medical Center",
+          category: "AI-Assisted Research",
+        },
+        {
+          //  time: "4:20PM",
+          name: "Session 35: nf-core/differentialabundance: a unified framework for differential analysis",
+          speakers:
+            "Suzanne Jin, PhD Student, Centre for Genomic Regulation, Susanne Jodoin",
+          category: "Translational Research",
+        },
+        {
+          // time: "4:20PM",
+          name: "Session 36: Pipeline Hubs: A Concept for Live, Reproducible Method Comparison in Bioinformatics",
+          speakers: "Cedric Notredame, PI, CRG",
+          category: "Nextflow Ecosystem & nf-core",
+        },
+        {
+          time: "4:40PM",
+          name: "Session 37: Somatem: a modular and open source metagenomic analysis pipeline for long-reads with an LLM co-pilot",
+          speakers:
+            "Prashant Kalvapalle, Postdoctoral Researcher,  Rice University",
+          category: "AI-Assisted Research",
+        },
+        {
+          //  time: "4:40PM",
+          name: "Session 38: nf-core/proteinfamilies: A scalable pipeline for the generation of protein families",
+          speakers: "Evangelos Karatzas, Research Fellow, EMBL-EBI",
+          category: "Translational Research",
+        },
+        {
+          // time: "4:40PM",
+          name: "Session 39: Python ♡ Nextflow: How to use the nf-python plugin",
+          speakers: "Roy Jacobson, MSc Student, Weizmann Institute of Science",
+          category: "Nextflow Ecosystem & nf-core",
+        },
+        {
+          time: "5PM",
+          name: "Session 40:  SEQERA: 10 years of MultiQC",
+          speakers:
+            "Phil Ewels, Senior Product Manager for Open Source, Seqera",
+          category: "AI-Assisted Research",
+        },
+        {
+          //  time: "5PM",
+          name: "Session 41: Advancing the nf-core/sammyseq pipeline for 4f-SAMMY-seq toward its first release",
+          speakers:
+            "Ugo Maria Iannacchero, PhD Student, Institute of Biomedical Technologies, National Research Council (ITB-CNR), Margherita Mutarelli, Researcher, ISASI-CNR",
+          category: "Translational Research",
+        },
+        {
+          // time: "5PM",
+          name: "Session 42: Tracking the Carbon Footprint of Pipeline Runs with nf-co2footprint, a Nextflow Plugin",
+          speakers: "Josua Carl & Nadja Volkmann, Software Developer, QBiC",
+          category: "Nextflow Ecosystem & nf-core",
+        },
+        {
+          time: "5:20PM",
+          name: "Summit Wrap",
+          speakers: "Evan Floden",
           highlighted: true,
         },
       ],
