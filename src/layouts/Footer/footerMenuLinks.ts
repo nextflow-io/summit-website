@@ -13,6 +13,10 @@ export default {
           url: "https://seqera.registration.goldcast.io/events/dc611bf3-ddc4-4a20-9f2f-1a9e941cc68c",
         },
         {
+          name: "Agenda",
+          url: "/agenda",
+        },
+        {
           name: "Call for Speakers & Posters",
           url: "/call-for-abstracts",
         },

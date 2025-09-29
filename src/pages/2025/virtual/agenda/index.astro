@@ -2,13 +2,13 @@
 import Layout from "@layouts/Base.astro";
 import KeyDates from "@components/KeyDates/index.astro";
 import Calendar from "@components/Calendar";
-import Schedule, { bostonScheduleConfig, barcelonaScheduleConfig } from "@components/Schedule";
+import Schedule, { virtualScheduleConfig } from "@components/Schedule";
 import SEO from "@components/SEO";
 import Box, { SubSection } from "@components/Box";
 ---
 
-<Layout namespace="2025/barcelona" altBG>
-  <SEO slot="head" title="Agenda | Barcelona" img={2} />
+<Layout namespace="2025/virtual" altBG>
+  <SEO slot="head" title="Agenda | Virtual" img={3} />
 
 
   <section class="pb-6 pt-16 md:pt-20 mb-20">
@@ -27,7 +27,7 @@ import Box, { SubSection } from "@components/Box";
         >
       </div> -->
 
-     <Schedule config={barcelonaScheduleConfig} />
+     <Schedule config={virtualScheduleConfig} />
 
     </div>
 

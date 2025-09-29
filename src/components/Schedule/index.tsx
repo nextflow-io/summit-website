@@ -376,6 +376,81 @@ export const barcelonaScheduleConfig: ScheduleConfig = {
   year: "2025",
   days: [
     {
+      date: "Tuesday, October 28",
+      timezone: "CEST (UTC+2)",
+      items: [
+        {
+          time: "9:00am",
+          name: "Registration and Breakfast",
+          highlighted: true,
+        },
+        {
+          time: "10:00am",
+          name: "Hackathon Welcome",
+          name2: "Training Welcome",
+        },
+        {
+          time: "10:30am",
+          name: "Hackathon Session 1",
+          name2: "Training Session 1",
+        },
+        { time: "1:00pm", name: "Lunch", highlighted: true },
+        {
+          time: "2:00pm",
+          name: "Hackathon Session 2",
+          name2: "Training Session 2",
+        },
+        {
+          time: "4:45pm",
+          name: "Hackathon Wrap-up",
+          name2: "Training Wrap-up",
+        },
+        {
+          time: "5:30pm",
+          name: "Hackathon and Training: Social Event",
+          highlighted: true,
+        },
+        { time: "8:00pm", name: "Hackathon and Training: Social Event Ends" },
+      ],
+    },
+    {
+      date: "Wednesday, October 29",
+      timezone: "CEST (UTC+2)",
+      items: [
+        {
+          time: "9:00am",
+          name: "Registration and Breakfast",
+          highlighted: true,
+        },
+        {
+          time: "10:00am",
+          name: "Hackathon Session 3",
+          name2: "Training Session 3",
+        },
+        { time: "1:00pm", name: "Lunch", highlighted: true },
+        {
+          time: "2:00pm",
+          name: "Hackathon Session 4",
+          name2: "Training Session 4",
+        },
+        {
+          time: "4:45pm",
+          name: "Hackathon Wrap-up",
+          name2: "Training Wrap-up",
+          highlighted: true,
+        },
+        { time: "5:00pm", name: "Hackathon and Training: End" },
+      ],
+    },
+  ],
+};
+
+
+export const virtualScheduleConfig: ScheduleConfig = {
+  city: "virtual",
+  year: "2025",
+  days: [
+    {
       date: "Thursday, October 23",
       timezone: "CEST (UTC+2)",
       items: [
@@ -712,74 +787,7 @@ export const barcelonaScheduleConfig: ScheduleConfig = {
           highlighted: true,
         },
       ],
-    },
-    {
-      date: "Tuesday, October 28",
-      timezone: "CEST (UTC+2)",
-      items: [
-        {
-          time: "9:00am",
-          name: "Registration and Breakfast",
-          highlighted: true,
-        },
-        {
-          time: "10:00am",
-          name: "Hackathon Welcome",
-          name2: "Training Welcome",
-        },
-        {
-          time: "10:30am",
-          name: "Hackathon Session 1",
-          name2: "Training Session 1",
-        },
-        { time: "1:00pm", name: "Lunch", highlighted: true },
-        {
-          time: "2:00pm",
-          name: "Hackathon Session 2",
-          name2: "Training Session 2",
-        },
-        {
-          time: "4:45pm",
-          name: "Hackathon Wrap-up",
-          name2: "Training Wrap-up",
-        },
-        {
-          time: "5:30pm",
-          name: "Hackathon and Training: Social Event",
-          highlighted: true,
-        },
-        { time: "8:00pm", name: "Hackathon and Training: Social Event Ends" },
-      ],
-    },
-    {
-      date: "Wednesday, October 29",
-      timezone: "CEST (UTC+2)",
-      items: [
-        {
-          time: "9:00am",
-          name: "Registration and Breakfast",
-          highlighted: true,
-        },
-        {
-          time: "10:00am",
-          name: "Hackathon Session 3",
-          name2: "Training Session 3",
-        },
-        { time: "1:00pm", name: "Lunch", highlighted: true },
-        {
-          time: "2:00pm",
-          name: "Hackathon Session 4",
-          name2: "Training Session 4",
-        },
-        {
-          time: "4:45pm",
-          name: "Hackathon Wrap-up",
-          name2: "Training Wrap-up",
-          highlighted: true,
-        },
-        { time: "5:00pm", name: "Hackathon and Training: End" },
-      ],
-    },
+    }
   ],
 };
 
