@@ -379,14 +379,175 @@ export const barcelonaScheduleConfig: ScheduleConfig = {
       date: "Thursday, October 23",
       timezone: "CEST (UTC+2)",
       items: [
-        { time: "1PM-5:30PM", name: "Nextflow Summit - Virtual", highlighted: true },
+        {
+          time: "1PM-2:20PM",
+          name: "Keynote",
+          speakers: "Evan Floden, CEO at Seqera",
+          highlighted: true,
+        },
+        {
+          time: "2:40PM",
+          name: "Session 1: Elevating a Legacy Institute: A Hybrid HPC Strategy with Nextflow",
+          speakers:
+            "Melanie Nuesch, Head of the High Performance Computing Platform, DRFZ Berlin",
+          category: "Infrastructure & Automation",
+        },
+        // {
+        //   time: "2:40PM",
+        //   name: "Session 2: N/A",
+        //   speakers: "N/A",
+        //   category: "Microbiology & Ecology",
+        // },
+        {
+          time: "2:40PM",
+          name: "Session 3: Building bioinformatics skills with Nextflow/nf-core: a program for early–mid-career researchers",
+          speakers:
+            "Patricia Agudelo-Romero, Senior Research Fellow, The Kids Research Institute Australia | The University of Western Australia",
+          category: "Community & Training",
+        },
+        {
+          time: "3PM",
+          name: "Session 4: Integrating Seqera into Enhanced Process Automation to Fuel Nucleome's Discovery Engine",
+          speakers:
+            "Pauline Fourgoux, Senior Bioinformatician, Nucleome Therapeutics",
+          category: "Infrastructure & Automation",
+        },
+        {
+          time: "3PM",
+          name: "Session 5: Enabling reproducibility in Agri-Ecology and Evolutionary biology",
+          speakers:
+            "Christopher Wyatt, Bioinformatician, University College London",
+          category: "Microbiology & Ecology",
+        },
+        {
+          time: "3PM",
+          name: "Session 6: Collaborative Nextflow training for Australia’s dispersed research landscape",
+          speakers:
+            "Giorgia Mori, BioCloud Training and Communication Officer, Australian BioCommons",
+          category: "Community & Training",
+        },
+        {
+          time: "3:20PM",
+          name: "Lighting Talks",
+          highlighted: true,
+        },
+        {
+          time: "3:30PM",
+          name: "Coffee break",
+          highlighted: true,
+        },
+        {
+          time: "3:40PM",
+          name: "Session 7: Optimizing Genomics Workflows with Nextflow & Cloud Computing: Insights from a Research Institution",
+          speakers:
+            "Jacopo Tartaglia, Bioinformatician, CREA-GB Wolfgang De Salvador, Senior Product Manager, Azure Storage Microsoft",
+          category: "Infrastructure & Automation",
+        },
+        {
+          time: "3:40PM",
+          name: "Session 8: Nextflow v25 Broke Bactopia, So We Rewrote It",
+          speakers:
+            "Robert A Petit III, Senior Bioinformatics Scientist, Wyoming Public Health Laboratory",
+          category: "Microbiology & Ecology",
+        },
+        {
+          time: "3:40PM",
+          name: "Session 9: Updates from the Community Team",
+          speakers:
+            "Geraldine Van der Auwera, Lead Developer Advocate, Marcel Ribeiro-Dantas, Senior Developer Advocate, Seqera",
+          category: "Community & Training",
+        },
+        {
+          time: "4PM",
+          name: "Session 10: Reads to Results: Architecting Modern Genomics Pipelines with Nextflow and Seqera Platform",
+          speakers: "Vinay Vyas, Sr DevOps Engineer, Arcus Biosciences",
+          category: "Infrastructure & Automation",
+        },
+        {
+          time: "4PM",
+          name: "Session 11: WasteFlow 2.0: Multi-Pathogen Respiratory Virus Surveillance in Canada",
+          speakers:
+            "Zohaib Anwar, Bioinformatician, BC Centre for Disease Control, British Columbia, Canada",
+          category: "Microbiology & Ecology",
+        },
+        {
+          time: "4PM",
+          name: "Session 12: How I Built the Nextflow Community in Korea",
+          speakers: "Jehee Lee, Nextflow Ambassador of Korea",
+          category: "Community & Training",
+        },
+        {
+          time: "4:20PM",
+          name: "Session 13: Using Nextflow to Break Computational Barriers: NASA's Approach to Democratizing Space Omics Data",
+          speakers:
+            "Barbara Novak, NASA GeneLab Data Processing Lead, Blue Marble Space Institute of Science",
+          category: "Infrastructure & Automation",
+        },
+        {
+          time: "4:20PM",
+          name: "Session 14: Metagenome quality metrics and taxonomical annotation visualization through BIgMAG/MAGFlow",
+          speakers:
+            "Jeferyd Yepes-García, PhD Candidate, University of Fribourg",
+          category: "Microbiology & Ecology",
+        },
+        {
+          time: "4:20PM",
+          name: "Session 15: From FASTQ to Kappa: My First Experience with nf-core/viralrecon",
+          speakers:
+            "Mariam Sulaiman, Graduate Research Intern, International Institute of Tropical Agriculture (IITA), Nigeria",
+          category: "Community & Training",
+        },
+        {
+          time: "4:40PM",
+          name: "Session 16: OpenProblems.bio: Reproducible Benchmarks for Single-Cell Omics at Scale",
+          speakers:
+            "Robrecht Cannoodt, Data Science Consultant, Data Intuitive",
+          category: "Infrastructure & Automation",
+        },
+        {
+          time: "4:40PM",
+          name: "Session 17: Development of the ENSure Database and Pipeline for Rapid Microbial Testing in Biomanufacturing",
+          speakers:
+            "Tyler Laird, Bioinformatician, National Institute of Standards and Technology (NIST)",
+          category: "Microbiology & Ecology",
+        },
+        // {
+        //   time: "4:40PM",
+        //   name: "N/A",
+        //   speakers:
+        //     "N/A",
+        //   category: "Community & Training",
+        // },
+        {
+          time: "5PM",
+          name: "Session 19: Benchmarking nf-core/scrnaseq for Mouse Prostate Single-cell RNA-seq: Practical Insights",
+          speakers:
+            "Nikhila T Suresh, Post Doctoral Research Associate, Purdue University",
+          category: "Infrastructure & Automation",
+        },
+        {
+          time: "5PM",
+          name: "Session 20: Earth Observation with Nextflow: A Use Case–Driven Introduction",
+          speakers:
+            "Felix Kummer, Research Associate, Humboldt-Universität zu Berlin",
+          category: "Microbiology & Ecology",
+        },
+        {
+          time: "5:20PM",
+          name: "Summit End",
+          highlighted: true,
+        },
       ],
     },
     {
       date: "Friday, October 24",
       timezone: "CEST (UTC+2)",
       items: [
-        { time: "1PM-5:30PM", name: "Nextflow Summit - Virtual", highlighted: true },
+        {
+          time: "1PM-5:30PM",
+          name: "Nextflow Summit - Virtual",
+          highlighted: true,
+        },
       ],
     },
     {
