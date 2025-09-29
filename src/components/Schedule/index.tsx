@@ -387,7 +387,7 @@ export const barcelonaScheduleConfig: ScheduleConfig = {
         },
         {
           time: "2:40PM",
-          name: "Session 1: Elevating a Legacy Institute: A Hybrid HPC Strategy with Nextflow",
+          name: "Elevating a Legacy Institute: A Hybrid HPC Strategy with Nextflow",
           speakers:
             "Melanie Nuesch, Head of the High Performance Computing Platform, DRFZ Berlin",
           category: "Infrastructure & Automation",
