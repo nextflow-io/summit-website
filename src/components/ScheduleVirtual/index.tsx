@@ -468,4 +468,5 @@ const VirtualScheduleDemo = () => {
   return <ScheduleVirtual config={virtualScheduleConfig} />;
 };
 
+export { virtualScheduleConfig, ScheduleVirtual };
 export default VirtualScheduleDemo;
