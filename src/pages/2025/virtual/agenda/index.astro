@@ -2,7 +2,7 @@
 import Layout from "@layouts/Base.astro";
 import KeyDates from "@components/KeyDates/index.astro";
 import Calendar from "@components/Calendar";
-import Schedule, { virtualScheduleConfig } from "@components/Schedule";
+import ScheduleVirtual, { virtualScheduleConfig } from "@components/ScheduleVirtual";
 import SEO from "@components/SEO";
 import Box, { SubSection } from "@components/Box";
 ---
@@ -27,7 +27,7 @@ import Box, { SubSection } from "@components/Box";
         >
       </div> -->
 
-     <Schedule config={virtualScheduleConfig} />
+     <ScheduleVirtual config={virtualScheduleConfig} />
 
     </div>
 
