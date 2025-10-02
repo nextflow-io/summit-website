@@ -1,6 +1,5 @@
 import { sanityClient } from "sanity:client";
 
-
 const getAllEventPosts = await sanityClient.fetch(
   `*[_type == "eventPost"]{
    ...,
@@ -8,7 +7,45 @@ const getAllEventPosts = await sanityClient.fetch(
    body,
    youtube,
    projectLink,
-  poster {
+   poster {
+      asset->{
+        url,
+        originalFilename,
+        mimeType
+      }
+    },
+    mainImage{
+    ...,
+      asset-> {
+      url,
+      },
+    },
+   associatedPerson[]->{
+     ...,
+     name,
+     role,
+     keynote,
+     linkedin,
+     github,
+     twitter,
+     image{
+       asset-> {
+       url,
+       },
+     },
+     bio, 
+   },
+  }`
+);
+
+const getAllVirtualEventPosts = await sanityClient.fetch(
+  `*[_type == "eventPostVirtual"]{
+   ...,
+   title,
+   body,
+   youtube,
+   projectLink,
+   poster {
       asset->{
         url,
         originalFilename,
@@ -40,5 +77,4 @@ const getAllEventPosts = await sanityClient.fetch(
 );
 
 
-export default getAllEventPosts;
-
+export { getAllEventPosts, getAllVirtualEventPosts };

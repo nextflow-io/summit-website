@@ -83,12 +83,12 @@ const EventPosts: React.FC<Props> = ({ post }) => {
         </div>
       )}
 
-      {post.poster?.asset.url && (
+      {post.poster?.asset?.url && (
         <div className="my-10 border border-nextflow ">
           <div className="w-full h-full min-h-[600px]">
             <iframe
               className="min-h-[600px]"
-              src={`${post.poster.asset.url}#zoom=page-fit`}
+              src={`${post?.poster?.asset?.url}#zoom=page-fit`}
               width="100%"
               height="100%"
               style={{ border: "none" }}
@@ -101,7 +101,7 @@ const EventPosts: React.FC<Props> = ({ post }) => {
               white
               arrowAfter
               className="monospace"
-              href={`${post.poster.asset.url}`}
+              href={`${post?.poster?.asset?.url}`}
             >
               View Poster
             </Button>
@@ -116,10 +116,10 @@ const EventPosts: React.FC<Props> = ({ post }) => {
         >
           <div className="flex flex-col justify-center items-center w-full pt-2">
             <div className="speaker-card__image rounded-full w-[150px] h-[150px] object-cover overflow-hidden">
-              {person.image ? (
+              {person?.image ? (
                 <img
                   className="imageBlend  w-full h-full object-cover"
-                  src={person.image.asset.url}
+                  src={person?.image?.asset?.url}
                   alt={`image of ${person?.name}`}
                 />
               ) : (

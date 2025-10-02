@@ -28,9 +28,7 @@ type Props = {
   isOpen: boolean;
   onClick: () => void;
   pageUrl?: string;
-  virtualSpeaker?: boolean;
-  bostonSpeaker?: boolean;
-  barcelonaSpeaker?: booloean;
+  location?: string;
 };
 
 const SpeakerCard: React.FC<Props> = ({
@@ -48,9 +46,7 @@ const SpeakerCard: React.FC<Props> = ({
   isOpen,
   onClick,
   pageUrl,
-  virtualSpeaker,
-  bostonSpeaker,
-  barcelonaSpeaker,
+  location,
 }) => {
   const monthDate = date
     ? dayjs.utc(date).tz("America/New_York").format("MMMM D")
@@ -62,15 +58,21 @@ const SpeakerCard: React.FC<Props> = ({
     ? dayjs.utc(endTime).tz("America/New_York").format("h:mm A")
     : null;
 
-  // Determine the event path based on speaker type
   const getEventPath = () => {
-    if (virtualSpeaker) return "/2025/virtual/agenda";
-    if (bostonSpeaker) return "/2025/boston/agenda";
-    if (barcelonaSpeaker) return "/2025/barcelona/agenda";
-    return "/2025/boston/agenda"; // default fallback
+    // Prioritize location prop if provided
+    if (location) {
+      const locationLower = location.toLowerCase();
+      if (locationLower === "virtual") return "/2025/virtual/agenda";
+      if (locationLower === "boston") return "/2025/boston/agenda";
+      if (locationLower === "barcelona") return "/2025/barcelona/agenda";
+    }
+    
+    
+    // Default fallback
+    return "/2025/boston/agenda";
   };
 
-  const eventPath = getEventPath();
+ const eventPath = getEventPath();
 
   const renderSocialIcons = () => (
     <>

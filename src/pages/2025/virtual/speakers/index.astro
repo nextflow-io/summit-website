@@ -27,11 +27,12 @@ const sortedMembers = getAllVirtualSpeakers[0].speakers.sort((a, b) =>
   <div class="container mt-14">
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
       {
-        sortedMembers.map((name,index) => (
+        sortedMembers.map((name, index) => (
            <div>
            <SpeakersSection 
            person={name} 
            index={index}
+           location="virtual"
            client:only="react"/>
            </div>
         ))

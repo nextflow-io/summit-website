@@ -32,8 +32,9 @@ const sortedMembers = getAllPostersVirtual[0].posters.sort((a, b) =>
          <PostersSection 
          person={name} 
          index={index}
+         location="virtual"
          client:only="react"/>
-        
+           
       ))
     }
 
