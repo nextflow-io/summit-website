@@ -7,7 +7,7 @@ export type Sponsor = {
   slug: string;
   image?: string;
   rank?: string;
-  location?: string;
+  location?: "barcelona" | "virtual" | "boston";
   url?: string;
   description?: any;
 };

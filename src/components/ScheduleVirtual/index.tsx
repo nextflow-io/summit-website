@@ -40,20 +40,20 @@ const SessionItem: React.FC<SessionProps> = ({
   url,
 }) => {
   const content = (
-    <div className="w-full border-b border-gray-200 last:border-b-0 py-3">
+    <div className="w-full border-b border-gray-200 last:border-b-0 py-3 opacity-90 group transition-all duration-300">
       {category && (
-        <h4 className="monospace text-xs bg-nextflow-500 inline text-brand rounded-sm px-1 p-[.15rem] opacity-80">
+        <h4 className="monospace text-xs bg-nextflow-500 inline text-brand rounded-sm px-1 p-[.15rem">
           {category}
         </h4>
       )}
-      <h4 className="font-semibold display mb-1 text-[1.1rem] mt-1">{title}</h4>
+      <h4 className="font-semibold display mb-1 text-[1.1rem] mt-1 group-hover:text-nextflow transition-all duration-300">{title}</h4>
       {speaker && speaker !== "N/A" && (
         <>
-          <p className="font-semibold display text-sm text-gray-600">
+          <p className="font-semibold display text-sm text-gray-600  group-hover:text-nextflow transition-all duration-300">
             {speaker}
           </p>
           {speaker && (
-            <p className="font-semibold display text-sm text-gray-600">
+            <p className="font-semibold display text-sm text-gray-600  group-hover:text-nextflow transition-all duration-300">
               {speaker2}
             </p>
           )}
@@ -65,8 +65,8 @@ const SessionItem: React.FC<SessionProps> = ({
   if (url) {
     return (
       <a
-        href={`/2025/virtual/${url}`}
-        className="block hover:bg-gray-50 transition-colors px-4 -mx-4"
+        href={`/2025/virtual/agenda/${url}`}
+        className="blocktransition-colors px-4 -mx-4 "
       >
         {content}
       </a>
