@@ -46,7 +46,7 @@ const SessionItem: React.FC<SessionProps> = ({
           {category}
         </h4>
       )}
-      <h4 className="font-semibold display mb-1 text-[1.2rem] mt-1 group-hover:text-nextflow transition-all duration-300">{title}</h4>
+      <h4 className="font-semibold display mb-1 text-[1rem] md:text-[1.2rem] mt-1 group-hover:text-nextflow transition-all duration-300">{title}</h4>
       {speaker && speaker !== "N/A" && (
         <>
           <p className="font-semibold display text-sm text-gray-300  group-hover:text-nextflow transition-all duration-300">
@@ -86,7 +86,7 @@ if (highlighted) {
         {time}
       </div>
       <div className="basis-4/6 sm:basis-5/6 w-full z-10 pointer-events-none">
-        <h4 className="font-semibold  text-[1.2rem] display  transition-colors duration-300">
+        <h4 className="font-semibold  text-[1rem] md:text-[1.2rem] display  transition-colors duration-300">
           {sessions[0].title}
         </h4>
         {sessions[0].speaker && (
@@ -108,7 +108,7 @@ if (highlighted) {
 }
   return (
     <div className="relative w-full flex flex-row border border-nextflow transition-all duration-300 p-4 rounded-sm mb-2">
-      <div className="basis-2/6 sm:basis-1/6 sm:w-full uppercase self-start pt-5">
+      <div className="basis-2/6 sm:basis-1/6 sm:w-full uppercase self-start pt-6">
         {time}
       </div>
       <div className="basis-4/6 sm:basis-5/6 w-full">
@@ -141,11 +141,11 @@ const virtualScheduleConfig: ScheduleConfig = {
       timezone: "CEST (UTC+2)",
       slots: [
         {
-          time: "1PM-2:40PM",
+          time: "1PM",
           highlighted: true,
           sessions: [
             {
-              title: "Keynote",
+              title: "Opening Keynote",
               speaker: "Evan Floden, CEO & Co-Founder, Seqera",
               url: "opening-keynote"
             },
@@ -371,7 +371,7 @@ const virtualScheduleConfig: ScheduleConfig = {
           ],
         },
         {
-          time: "2-2:40PM",
+          time: "2PM",
           highlighted: true,
           sessions: [
             {
