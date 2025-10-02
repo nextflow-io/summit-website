@@ -52,11 +52,11 @@ const SessionItem: React.FC<SessionProps> = ({
           <p className="font-semibold display text-sm text-gray-600">
             {speaker}
           </p>
-          {speaker &&
-          <p className="font-semibold display text-sm text-gray-600">
-            {speaker2}
-          </p>
-}
+          {speaker && (
+            <p className="font-semibold display text-sm text-gray-600">
+              {speaker2}
+            </p>
+          )}
         </>
       )}
     </div>
@@ -65,7 +65,7 @@ const SessionItem: React.FC<SessionProps> = ({
   if (url) {
     return (
       <a
-        href={url}
+        href={`/2025/virtual/${url}`}
         className="block hover:bg-gray-50 transition-colors px-4 -mx-4"
       >
         {content}
@@ -149,6 +149,7 @@ const virtualScheduleConfig: ScheduleConfig = {
               speaker:
                 "Melanie Nuesch, Head of the High Performance Computing Platform, DRFZ Berlin",
               category: "Infrastructure & Automation",
+              url: "elevating-a-legacy-institute-a-hybrid-hpc-strategy-with-nextflow",
             },
             {
               title:
@@ -156,6 +157,7 @@ const virtualScheduleConfig: ScheduleConfig = {
               speaker:
                 "Patricia Agudelo-Romero, Senior Research Fellow, The Kids Research Institute Australia",
               category: "Community & Training",
+              url: "building-bioinformatics-skills-with-nextflow-nf-core-a-program-for-early-mid-career-researchers",
             },
           ],
         },
@@ -168,6 +170,7 @@ const virtualScheduleConfig: ScheduleConfig = {
               speaker:
                 "Pauline Fourgoux, Senior Bioinformatician, Nucleome Therapeutics",
               category: "Infrastructure & Automation",
+              url: "integrating-seqera-into-enhanced-process-automation-to-fuel-nucleomes-discovery-engine",
             },
             {
               title:
@@ -175,6 +178,7 @@ const virtualScheduleConfig: ScheduleConfig = {
               speaker:
                 "Christopher Wyatt, Bioinformatician, University College London",
               category: "Microbiology & Ecology",
+              url: "enabling-reproducibility-in-agri-ecology-and-evolutionary-biology",
             },
             {
               title:
@@ -182,6 +186,7 @@ const virtualScheduleConfig: ScheduleConfig = {
               speaker:
                 "Giorgia Mori, BioCloud Training and Communication Officer, Australian BioCommons",
               category: "Community & Training",
+              url: "collaborative-nextflow-training-for-australias-dispersed-research-landscape",
             },
           ],
         },
@@ -213,18 +218,21 @@ const virtualScheduleConfig: ScheduleConfig = {
               speaker2:
                 "Wolfgang De Salvador, Senior Product Manager, Azure Storage Microsoft",
               category: "Infrastructure & Automation",
+              url: "optimizing-genomics-workflows-with-nextflow-and-cloud-computing",
             },
             {
               title: "Nextflow v25 Broke Bactopia, So We Rewrote It",
               speaker:
                 "Robert A Petit III, Senior Bioinformatics Scientist, Wyoming Public Health Laboratory",
               category: "Microbiology & Ecology",
+              url: "nextflow-v25-broke-bactopia-so-we-rewrote-it",
             },
             {
               title: "Updates from the Community Team",
               speaker:
                 "Geraldine Van der Auwera, Lead Developer Advocate, Seqera",
               category: "Community & Training",
+              url: "updates-from-the-community-team",
             },
           ],
         },
@@ -236,6 +244,7 @@ const virtualScheduleConfig: ScheduleConfig = {
                 "Reads to Results: Architecting Modern Genomics Pipelines with Nextflow and Seqera Platform",
               speaker: "Vinay Vyas, Sr DevOps Engineer, Arcus Biosciences",
               category: "Infrastructure & Automation",
+              url: "reads-to-results-architecting-modern-genomics-pipelines-with-nextflow-and-seqera-platform",
             },
             {
               title:
@@ -243,11 +252,13 @@ const virtualScheduleConfig: ScheduleConfig = {
               speaker:
                 "Zohaib Anwar, Bioinformatician, BC Centre for Disease Control",
               category: "Microbiology & Ecology",
+              url: "wasteflow-multi-pathogen-respiratory-virus-surveillance-in-canada",
             },
             {
               title: "How I Built the Nextflow Community in Korea",
               speaker: "Jehee Lee, Nextflow Ambassador of Korea",
               category: "Community & Training",
+              url: "how-i-built-the-nextflow-community-in-korea",
             },
           ],
         },
@@ -260,6 +271,7 @@ const virtualScheduleConfig: ScheduleConfig = {
               speaker:
                 "Barbara Novak, NASA GeneLab Data Processing Lead, Blue Marble Space Institute of Science",
               category: "Infrastructure & Automation",
+              url: "using-nextflow-to-break-computational-barriers-nasas-approach-to-democratizing-space-omics-data",
             },
             {
               title:
@@ -267,6 +279,7 @@ const virtualScheduleConfig: ScheduleConfig = {
               speaker:
                 "Jeferyd Yepes-García, PhD Candidate, University of Fribourg",
               category: "Microbiology & Ecology",
+              url: "metagenome-quality-metrics-and-taxonomical-annotation-visualization-through-bigmag-magflow",
             },
             {
               title:
@@ -274,6 +287,7 @@ const virtualScheduleConfig: ScheduleConfig = {
               speaker:
                 "Mariam Sulaiman, Graduate Research Intern, IITA Nigeria",
               category: "Community & Training",
+              url: "from-fastq-to-kappa-my-first-experience-with-nf-core-viralrecon",
             },
           ],
         },
@@ -286,12 +300,14 @@ const virtualScheduleConfig: ScheduleConfig = {
               speaker:
                 "Robrecht Cannoodt, Data Science Consultant, Data Intuitive",
               category: "Infrastructure & Automation",
+              url: "openproblems-bio-reproducible-benchmarks-for-single-cell-omics-at-scale",
             },
             {
               title:
                 "Development of the ENSure Database and Pipeline for Rapid Microbial Testing in Biomanufacturing",
               speaker: "Tyler Laird, Bioinformatician, NIST",
               category: "Microbiology & Ecology",
+              url: "development-of-the-ensure-database-and-pipeline-for-rapid-microbial-testing-in-biomanufacturing",
             },
           ],
         },
@@ -304,6 +320,7 @@ const virtualScheduleConfig: ScheduleConfig = {
               speaker:
                 "Nikhila T Suresh, Post Doctoral Research Associate, Purdue University",
               category: "Infrastructure & Automation",
+              url: "benchmarking-nf-core-scrnaseq-for-mouse-prostate-single-cell-rna-seq-practical-insights",
             },
             {
               title:
@@ -311,6 +328,7 @@ const virtualScheduleConfig: ScheduleConfig = {
               speaker:
                 "Felix Kummer, Research Associate, Humboldt-Universität zu Berlin",
               category: "Microbiology & Ecology",
+              url: "earth-observation-with-nextflow-a-use-case-driven-introduction",
             },
           ],
         },
@@ -337,6 +355,7 @@ const virtualScheduleConfig: ScheduleConfig = {
             {
               title: "What's New With Nextflow",
               speaker: "Ben Sherman, Senior Software Engineer, Seqera",
+              url: "whats-new-with-nextflow",
             },
           ],
         },
@@ -346,7 +365,9 @@ const virtualScheduleConfig: ScheduleConfig = {
           sessions: [
             {
               title: "Keynote",
-              speaker: "Segun Fatumo, Professor and Chair of Genomic Diversity, Queen Mary University of London",
+              speaker:
+                "Segun Fatumo, Professor and Chair of Genomic Diversity, Queen Mary University of London",
+              url: "keynote-segun-fatumo",
             },
           ],
         },
@@ -359,11 +380,13 @@ const virtualScheduleConfig: ScheduleConfig = {
               speaker:
                 "Stephen Watts, Senior Bioinformatician, Collaborative Centre for Genomic Cancer Medicine",
               category: "Translational Research",
+              url: "nf-core-oncoanalyser-an-accessible-and-portable-pipeline-to-unify-cancer-dna-and-rna-analysis",
             },
             {
               title: "Updates from the nf-core community",
-              speaker: "TBD",
+              speaker: "Phil Ewels, Senior Product Manager for Open Source, Seqera",
               category: "Nextflow Ecosystem & nf-core",
+              url: "updates-from-the-nf-core-community",
             },
           ],
         },
@@ -375,6 +398,7 @@ const virtualScheduleConfig: ScheduleConfig = {
               speaker:
                 "Matthias Hörtenhuber, Systems Developer, SciLifeLab Data Centre",
               category: "Nextflow Ecosystem & nf-core",
+              url: "whats-new-from-the-nf-core-infrastructure-team-in-2025",
             },
           ],
         },
@@ -404,18 +428,21 @@ const virtualScheduleConfig: ScheduleConfig = {
                 "Reproducible LLM Driven Molecular Design with Nextflow and BioLM",
               speaker: "Andrew Stewart, COO, BioLM",
               category: "AI-Assisted Research",
+              url: "reproducible-llm-driven-molecular-design-with-nextflow-and-biolm",
             },
             {
               title:
-                "DelMoro : A Nextflow Pipeline for Variant Calling and Streamlined Reporting in Clinical Genomics",
+                "DelMoro: A Nextflow Pipeline for Variant Calling and Streamlined Reporting in Clinical Genomics",
               speaker: "Firas Zemzem, PhD Candidate",
               category: "Translational Research",
+              url: "delmoro-a-nextflow-pipeline-for-variant-calling-and-streamlined-reporting-in-clinical-genomics",
             },
             {
               title:
                 "MetroFlow : Generating Interactive Metro-Maps from Workflow Code",
               speaker: "George Marchment, Université Paris-Saclay",
               category: "Nextflow Ecosystem & nf-core",
+              url: "metroflow-generating-interactive-metro-maps-from-workflow-code",
             },
           ],
         },
@@ -424,10 +451,11 @@ const virtualScheduleConfig: ScheduleConfig = {
           sessions: [
             {
               title: "Accelerating Cross-Assay Correlation with GenAI",
-              speaker:
-                "Kevin Moore, CEO, Quilt.bio",
-              speaker2: "Vasisht Tadigotla, Head of Data and Engineering, Sail Biomedicines",
+              speaker: "Kevin Moore, CEO, Quilt.bio",
+              speaker2:
+                "Vasisht Tadigotla, Head of Data and Engineering, Sail Biomedicines",
               category: "AI-Assisted Research",
+              url: "accelerating-cross-assay-correlation-with-genai",
             },
             {
               title:
@@ -435,6 +463,7 @@ const virtualScheduleConfig: ScheduleConfig = {
               speaker:
                 "Samantha Klasfeld, Web Developer, Boston Women in Bioinformatics",
               category: "Translational Research",
+              url: "gtex-expression-data-processing-pipeline-for-sex-and-age-stratified-target-discovery",
             },
             {
               title:
@@ -442,6 +471,7 @@ const virtualScheduleConfig: ScheduleConfig = {
               speaker:
                 "Barbara Novak, NASA GeneLab Data Processing Lead, Blue Marble Space Institute of Science",
               category: "Nextflow Ecosystem & nf-core",
+              url: "contributing-to-nf-core-within-a-translational-project-for-personalized-cancer-medicine",
             },
           ],
         },
@@ -454,19 +484,23 @@ const virtualScheduleConfig: ScheduleConfig = {
               speaker:
                 "Kayode Raheem, PhD Researcher, University of Nebraska Medical Center",
               category: "AI-Assisted Research",
+              url: "ai-driven-spatial-transcriptomics-for-predicting-drug-response-in-the-tumor-microenvironment",
             },
             {
               title:
                 "nf-core/differentialabundance: a unified framework for differential analysis",
               speaker:
                 "Suzanne Jin, PhD Student, Centre for Genomic Regulation",
+              speaker2: "Susanne Jodoin, Bioinformatician, QBiC",
               category: "Translational Research",
+              url: "nf-core-differentialabundance-a-unified-framework-for-differential-analysis",
             },
             {
               title:
                 "Pipeline Hubs: A Concept for Live, Reproducible Method Comparison in Bioinformatics",
               speaker: "Cedric Notredame, PI, CRG",
               category: "Nextflow Ecosystem & nf-core",
+              url: "pipeline-hubs-a-concept-for-live-reproducible-method-comparison-in-bioinformatics",
             },
           ],
         },
@@ -479,18 +513,21 @@ const virtualScheduleConfig: ScheduleConfig = {
               speaker:
                 "Prashant Kalvapalle, Postdoctoral Researcher, Rice University",
               category: "AI-Assisted Research",
+              url: "somatem-a-modular-and-open-source-metagenomic-analysis-pipeline",
             },
             {
               title:
                 "nf-core/proteinfamilies: A scalable pipeline for the generation of protein families",
               speaker: "Evangelos Karatzas, Research Fellow, EMBL-EBI",
               category: "Translational Research",
+              url: "nf-core-proteinfamilies-a-scalable-pipeline-for-the-generation-of-protein-families",
             },
             {
               title: "Python ♡ Nextflow: How to use the nf-python plugin",
               speaker:
                 "Roy Jacobson, MSc Student, Weizmann Institute of Science",
               category: "Nextflow Ecosystem & nf-core",
+              url: "python-nextflow-how-to-use-the-nf-python-plugin",
             },
           ],
         },
@@ -502,6 +539,7 @@ const virtualScheduleConfig: ScheduleConfig = {
               speaker:
                 "Phil Ewels, Senior Product Manager for Open Source, Seqera",
               category: "AI-Assisted Research",
+              url: "seqera-10-years-of-multiqc",
             },
             {
               title:
@@ -510,12 +548,15 @@ const virtualScheduleConfig: ScheduleConfig = {
                 "Ugo Maria Iannacchero, PhD Student, Institute of Biomedical Technologies, National Research Council",
               speaker2: "Margherita Mutarelli, Researcher, ISASI-CNR",
               category: "Translational Research",
+              url: "advancing-the-nf-core-sammyseq-pipeline-for-4f-sammy-seq-toward-its-first-release",
             },
             {
               title:
                 "Tracking the Carbon Footprint of Pipeline Runs with nf-co2footprint, a Nextflow Plugin",
-              speaker: "Josua Carl & Nadja Volkmann, Software Development, QBiC",
+              speaker:
+                "Josua Carl & Nadja Volkmann, Software Development, QBiC",
               category: "Nextflow Ecosystem & nf-core",
+              url: "tracking-the-carbon-footprint-of-pipeline-runs-with-nf-co2footprint-a-nextflow-plugin",
             },
           ],
         },
