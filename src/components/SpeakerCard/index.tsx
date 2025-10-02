@@ -28,6 +28,9 @@ type Props = {
   isOpen: boolean;
   onClick: () => void;
   pageUrl?: string;
+  virtualSpeaker?: boolean;
+  bostonSpeaker?: boolean;
+  barcelonaSpeaker?: booloean;
 };
 
 const SpeakerCard: React.FC<Props> = ({
@@ -45,6 +48,9 @@ const SpeakerCard: React.FC<Props> = ({
   isOpen,
   onClick,
   pageUrl,
+  virtualSpeaker,
+  bostonSpeaker,
+  barcelonaSpeaker,
 }) => {
   const monthDate = date
     ? dayjs.utc(date).tz("America/New_York").format("MMMM D")
@@ -55,6 +61,16 @@ const SpeakerCard: React.FC<Props> = ({
   const timeEnd = endTime
     ? dayjs.utc(endTime).tz("America/New_York").format("h:mm A")
     : null;
+
+  // Determine the event path based on speaker type
+  const getEventPath = () => {
+    if (virtualSpeaker) return "/2025/virtual/agenda";
+    if (bostonSpeaker) return "/2025/boston/agenda";
+    if (barcelonaSpeaker) return "/2025/barcelona/agenda";
+    return "/2025/boston/agenda"; // default fallback
+  };
+
+  const eventPath = getEventPath();
 
   const renderSocialIcons = () => (
     <>
@@ -87,7 +103,7 @@ const SpeakerCard: React.FC<Props> = ({
 
   const renderProfileImage = (size: "large" | "small") => {
     const dimensions =
-      size === "large" ? "w-[150px] h-[150px]" : "w-[150px] h-[150px]";
+      size === "large" ? "w-[150px] h-[150px]" : "w-[100px] h-[100px]";
 
     return (
       <div
@@ -128,14 +144,16 @@ const SpeakerCard: React.FC<Props> = ({
       <div className="text-center">
         <h5 className="text-[.9rem] leading-tight font-medium pb-3">
           {pageUrl ? (
-            <a
-              href={`/2025/boston/agenda/${pageUrl}`}
-              className="hover:text-nextflow-200 transition-all duration-300"
-            >
-              {submissionTitle}
-            </a>
-          ) : (
-            submissionTitle
+                <div className="pb-2 pt-1">
+                  <a
+                    href={`${eventPath}/${pageUrl}`}
+                    className="hover:text-nextflow-200 transition-all duration-300 text-[.9rem]"
+                  >
+                    {submissionTitle}
+                  </a>
+                </div>
+              ) : (
+                submissionTitle && <div className="text-[.9rem] py-2">{submissionTitle}</div>
           )}
         </h5>
       </div>
@@ -212,7 +230,9 @@ const SpeakerCard: React.FC<Props> = ({
               {renderProfileImage("small")}
 
               <div className="text-center mb-6 mt-6 w-full">
-                <h3 className="font-display text-[1.6rem] mb-1">{name}</h3>
+                <h3 className="font-display text-[1.3rem] md:text-[1.6rem] leading-tight mb-1">
+                  {name}
+                </h3>
                 <p className="monospace text-[.8rem]">{jobTitle}</p>
 
                 {keynote && (
@@ -243,12 +263,12 @@ const SpeakerCard: React.FC<Props> = ({
 
               {pageUrl ? (
                 <div className="pb-2 pt-1">
-                →  <a
+                  →{" "}
+                  <a
                     href={`/2025/boston/agenda/${pageUrl}`}
                     className="hover:text-nextflow-200 transition-all duration-300 text-[.8rem]"
                   >
                     {submissionTitle}{" "}
-
                   </a>
                 </div>
               ) : (
@@ -256,7 +276,7 @@ const SpeakerCard: React.FC<Props> = ({
                   <div className="text-[.8rem] py-2">{submissionTitle}</div>
                 )
               )}
-    
+
               {/* {pageUrl && (
                 <div className="border-t border-nextflow mb-2 hover:text-nextflow-200 transition-all duration-300 pt-2">
                   →{" "}
