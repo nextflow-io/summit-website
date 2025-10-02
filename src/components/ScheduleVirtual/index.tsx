@@ -40,20 +40,20 @@ const SessionItem: React.FC<SessionProps> = ({
   url,
 }) => {
   const content = (
-    <div className="w-full border-b border-gray-200 last:border-b-0 py-3 opacity-90 group transition-all duration-300">
+    <div className="w-full border-b border-gray-200 last:border-b-0 pb-3 opacity-90 group transition-all duration-300">
       {category && (
-        <h4 className="monospace text-xs bg-nextflow-500 inline text-brand rounded-sm px-1 p-[.15rem">
+        <h4 className="monospace text-xs bg-nextflow-500 inline text-brand rounded-sm px-2 p-[.15rem]">
           {category}
         </h4>
       )}
-      <h4 className="font-semibold display mb-1 text-[1.1rem] mt-1 group-hover:text-nextflow transition-all duration-300">{title}</h4>
+      <h4 className="font-semibold display mb-1 text-[1.2rem] mt-1 group-hover:text-nextflow transition-all duration-300">{title}</h4>
       {speaker && speaker !== "N/A" && (
         <>
-          <p className="font-semibold display text-sm text-gray-600  group-hover:text-nextflow transition-all duration-300">
+          <p className="font-semibold display text-sm text-gray-300  group-hover:text-nextflow transition-all duration-300">
             {speaker}
           </p>
           {speaker && (
-            <p className="font-semibold display text-sm text-gray-600  group-hover:text-nextflow transition-all duration-300">
+            <p className="font-semibold display text-sm text-gray-300  group-hover:text-nextflow transition-all duration-300">
               {speaker2}
             </p>
           )}
@@ -77,28 +77,38 @@ const SessionItem: React.FC<SessionProps> = ({
 };
 
 const TimeSlotItem: React.FC<TimeSlot> = ({ time, highlighted, sessions }) => {
-  if (highlighted) {
-    return (
-      <div className="relative w-full flex flex-row border border-nextflow transition-all duration-300 p-4 rounded-sm mb-2">
-        <div className="absolute bg-nextflow-100 w-full h-full z-0 top-0 right-0 left-0 opacity-25"></div>
-        <div className="basis-2/6 sm:basis-1/6 sm:w-full uppercase z-10">
-          {time}
-        </div>
-        <div className="basis-4/6 sm:basis-5/6 w-full z-10">
-          <h4 className="font-semibold display">{sessions[0].title}</h4>
-          {sessions[0].speaker && (
-            <p className="font-semibold display text-sm">
-              {sessions[0].speaker}
-            </p>
-          )}
-        </div>
+if (highlighted) {
+  return (
+    <div className={`relative w-full flex flex-row border border-nextflow ${sessions[0].url &&  "hover:border-nextflow-200  hover:text-white transition-all duration-300"} p-4 rounded-sm mb-2 group`}>
+      <div className={`absolute bg-nextflow-100 w-full h-full z-0 top-0 right-0 left-0 opacity-25 ${sessions[0].url && "group-hover:opacity-100 group-hover:bg-nextflow-800"} transition-opacity duration-300`}></div>
+          
+      <div className="basis-2/6 sm:basis-1/6 sm:w-full uppercase z-10 pointer-events-none">
+        {time}
       </div>
-    );
-  }
-
+      <div className="basis-4/6 sm:basis-5/6 w-full z-10 pointer-events-none">
+        <h4 className="font-semibold  text-[1.2rem] display  transition-colors duration-300">
+          {sessions[0].title}
+        </h4>
+        {sessions[0].speaker && (
+          <p className="font-semibold display text-sm text-white  transition-colors duration-300">
+            {sessions[0].speaker}
+          </p>
+        )}
+      </div>
+      
+      {sessions[0].url && (
+        
+          <a href={`/2025/virtual/agenda/${sessions[0].url}`}
+          className="absolute inset-0 z-20 cursor-pointer"
+          aria-label={`View ${sessions[0].title}`}
+        ></a>
+      )}
+    </div>
+  );
+}
   return (
     <div className="relative w-full flex flex-row border border-nextflow transition-all duration-300 p-4 rounded-sm mb-2">
-      <div className="basis-2/6 sm:basis-1/6 sm:w-full uppercase self-start">
+      <div className="basis-2/6 sm:basis-1/6 sm:w-full uppercase self-start pt-5">
         {time}
       </div>
       <div className="basis-4/6 sm:basis-5/6 w-full">
@@ -137,6 +147,7 @@ const virtualScheduleConfig: ScheduleConfig = {
             {
               title: "Keynote",
               speaker: "Evan Floden, CEO & Co-Founder, Seqera",
+              url: "opening-keynote"
             },
           ],
         },
