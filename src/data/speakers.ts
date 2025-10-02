@@ -11,12 +11,6 @@ const getAllSpeakers = await sanityClient.fetch(
     associatedPerson[] {
      name,
     },
-    associatedTalks[]-> {
-    title,
-   "slug": slug.current,
-    associatedPerson[] {
-     name,
-    },
     coauthors,
     associatedCategory,
     publishedAt,
@@ -51,12 +45,6 @@ const getAllVirtualSpeakers = await sanityClient.fetch(
     name,
     role,
     associatedEvent-> {
-    title,
-   "slug": slug.current,
-    associatedPerson[] {
-     name,
-    },
-    associatedTalks[]-> {
     title,
    "slug": slug.current,
     associatedPerson[] {
