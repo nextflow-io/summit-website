@@ -3,21 +3,21 @@ import Layout from "@layouts/Base.astro";
 import SEO from "@components/SEO";
 import SpeakersSection from "@modules/SpeakersSection";
 import Hero from "@components/Hero";
-import {getAllSpeakers} from "@data/speakers";
+import {getAllVirtualSpeakers} from "@data/speakers";
 
-const sortedMembers = getAllSpeakers[0].speakers.sort((a, b) =>
+const sortedMembers = getAllVirtualSpeakers[0].speakers.sort((a, b) =>
   a.name.localeCompare(b.name)
 );
 
 ---
 
-<Layout namespace="2025/boston">
-  <SEO slot="head" title="Speakers" img={1} />
+<Layout namespace="2025/virtual">
+  <SEO slot="head" title="Speakers" img={3} />
 
   <section class="py-8">
     <Hero
     title="Speakers"
-    content=" Meet the experts, partners, and community team members who are speaking at Nextflow Summit Boston 2025."
+    content=" Meet the experts, partners, and community team members who are speaking at Nextflow Summit Virtual 2025."
   
     client:load
   />
@@ -31,7 +31,7 @@ const sortedMembers = getAllSpeakers[0].speakers.sort((a, b) =>
            <div>
            <SpeakersSection 
            person={name} 
-           index="{index"
+           index={index}
            client:only="react"/>
            </div>
         ))

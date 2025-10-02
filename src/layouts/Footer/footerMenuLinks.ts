@@ -17,6 +17,14 @@ export default {
           url: "/agenda",
         },
         {
+        name: "Speakers",
+        url: "/2025/virtual/speakers",
+      },
+      {
+        name: "Posters",
+        url: "/2025/virtual/posters",
+      },
+        {
           name: "Call for Speakers & Posters",
           url: "/call-for-abstracts",
         },

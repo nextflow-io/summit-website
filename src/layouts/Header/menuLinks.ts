@@ -16,6 +16,14 @@ const menuLinks = [
         url: "/2025/virtual/agenda",
       },
       {
+        name: "Speakers",
+        url: "/2025/virtual/speakers",
+      },
+      {
+        name: "Posters",
+        url: "/2025/virtual/posters",
+      },
+      {
         name: "Submissions",
         url: "/call-for-abstracts",
       },

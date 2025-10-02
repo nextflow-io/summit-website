@@ -3,14 +3,15 @@ import Layout from "@layouts/Base.astro";
 import SEO from "@components/SEO";
 import PostersSection from "@modules/PostersSection";
 import Hero from "@components/Hero";
-import {getAllPosters} from "@data/posters";
+import {getAllPostersVirtual} from "@data/posters";
 
-const sortedMembers = getAllPosters[0].posters.sort((a, b) =>
+const sortedMembers = getAllPostersVirtual[0].posters.sort((a, b) =>
   a.name.localeCompare(b.name)
 );
+
 ---
 
-<Layout namespace="2025/boston">
+<Layout namespace="2025/virtual">
   <SEO slot="head" title="Posters" img={1} />
 
   <section class="py-8">
@@ -27,12 +28,12 @@ const sortedMembers = getAllPosters[0].posters.sort((a, b) =>
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
     {
       sortedMembers.map((name,index) => (
-         <div>
+       
          <PostersSection 
          person={name} 
-         index="{index"
+         index={index}
          client:only="react"/>
-         </div>
+        
       ))
     }
 
