@@ -6,6 +6,10 @@ const getAllPosters = await sanityClient.fetch(
     posters[]-> {
     name,
     role,
+    associatedTalks[]-> {
+    title,
+   "slug": slug.current,
+    },
     associatedEvent-> {
     title,
    "slug": slug.current,
@@ -46,6 +50,10 @@ const getAllPostersVirtual = await sanityClient.fetch(
     posters[]-> {
     name,
     role,
+    associatedTalks[]-> {
+    title,
+   "slug": slug.current,
+    },
     associatedEvent-> {
     title,
    "slug": slug.current,

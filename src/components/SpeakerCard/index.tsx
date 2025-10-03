@@ -29,6 +29,10 @@ type Props = {
   onClick: () => void;
   pageUrl?: string;
   location?: string;
+  associatedTalks?: Array<{
+    title: string;
+    slug: string;
+  }>;
 };
 
 const SpeakerCard: React.FC<Props> = ({
@@ -47,6 +51,7 @@ const SpeakerCard: React.FC<Props> = ({
   onClick,
   pageUrl,
   location,
+  associatedTalks,
 }) => {
   const monthDate = date
     ? dayjs.utc(date).tz("America/New_York").format("MMMM D")
@@ -66,13 +71,12 @@ const SpeakerCard: React.FC<Props> = ({
       if (locationLower === "boston") return "/2025/boston/agenda";
       if (locationLower === "barcelona") return "/2025/barcelona/agenda";
     }
-    
-    
+
     // Default fallback
     return "/2025/boston/agenda";
   };
 
- const eventPath = getEventPath();
+  const eventPath = getEventPath();
 
   const renderSocialIcons = () => (
     <>
@@ -129,7 +133,7 @@ const SpeakerCard: React.FC<Props> = ({
 
     return (
       <div
-        className={`flex flex-row justify-between w-full border-t ${date && "border-b border-nextflow pb-2"} border-nextflow pt-2 mb-2`}
+        className={`flex flex-row justify-between w-full border-t ${date && "border-b border-nextflow pb-2"} border-nextflow pt-2`}
       >
         <p className="monospace text-[.875rem]">{monthDate}</p>
         <p className="font-display text-[.875rem]">
@@ -143,21 +147,46 @@ const SpeakerCard: React.FC<Props> = ({
     if (!submissionTitle) return null;
 
     return (
-      <div className="text-center">
-        <h5 className="text-[.9rem] leading-tight font-medium pb-3">
+      <div className={`py-1 pb-2  ${!date && "border-t border-nextflow"} border-nextflow`}>
+        <h5 className="text-[.9rem] leading-tight font-medium">
           {pageUrl ? (
-                <div className="pb-2 pt-1">
-                  <a
-                    href={`${eventPath}/${pageUrl}`}
-                    className="hover:text-nextflow-200 transition-all duration-300 text-[1rem]"
-                  >
-                    {submissionTitle}
-                  </a>
-                </div>
-              ) : (
-                submissionTitle && <div className="text-[1rem] py-2">{submissionTitle}</div>
+            <div className="pt-1">
+              <a
+                href={`${eventPath}/${pageUrl}`}
+                className="hover:text-nextflow-200 transition-all duration-300 "
+              >
+                {submissionTitle}
+              </a>
+            </div>
+          ) : (
+            submissionTitle && (
+              <div className="text-[1rem]">{submissionTitle}</div>
+            )
           )}
         </h5>
+      </div>
+    );
+  };
+
+  const renderAssociatedTalks = () => {
+    if (!associatedTalks || associatedTalks.length === 0) return null;
+
+    return (
+      <div className="border-t border-nextflow pt-2">
+        <div className="space-y-2">
+          {associatedTalks.map((talk) => {
+            return (
+              <div key={talk.slug} className="text-[.8rem]">
+                <a
+                  href={`${eventPath}/${talk.slug}`}
+                  className="hover:text-nextflow-200 transition-all duration-300"
+                >
+                  {talk.title}
+                </a>
+              </div>
+            );
+          })}
+        </div>
       </div>
     );
   };
@@ -200,6 +229,7 @@ const SpeakerCard: React.FC<Props> = ({
         <div className="mt-auto">
           {renderDateTime()}
           {renderSubmissionTitle()}
+          {renderAssociatedTalks()}
         </div>
       </div>
 
@@ -264,8 +294,8 @@ const SpeakerCard: React.FC<Props> = ({
               </div>
 
               {pageUrl ? (
-                <div className="pb-2 pt-1">
-                  →{" "}
+                <div className="pb-1 pt-1">
+                  {" "}
                   <a
                     href={`/2025/boston/agenda/${pageUrl}`}
                     className="hover:text-nextflow-200 transition-all duration-300 text-[.8rem]"
@@ -278,18 +308,8 @@ const SpeakerCard: React.FC<Props> = ({
                   <div className="text-[.8rem] py-2">{submissionTitle}</div>
                 )
               )}
+              {renderAssociatedTalks()}
 
-              {/* {pageUrl && (
-                <div className="border-t border-nextflow mb-2 hover:text-nextflow-200 transition-all duration-300 pt-2">
-                  →{" "}
-                  <a
-                    href={`/2025/boston/agenda/${pageUrl}`}
-                    className="monospace text-[.8rem]"
-                  >
-                    View Abstract
-                  </a>
-                </div>
-              )} */}
             </div>
 
             {bio && (

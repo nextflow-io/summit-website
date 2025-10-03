@@ -5,6 +5,10 @@ const getAllSpeakers = await sanityClient.fetch(
     speakers[]-> {
     name,
     role,
+    associatedTalks[]-> {
+    title,
+   "slug": slug.current,
+    },
     associatedEvent-> {
     title,
    "slug": slug.current,
@@ -36,7 +40,7 @@ const getAllSpeakers = await sanityClient.fetch(
       },
     },
     },
-  }`
+  }`,
 );
 
 const getAllVirtualSpeakers = await sanityClient.fetch(
@@ -44,6 +48,10 @@ const getAllVirtualSpeakers = await sanityClient.fetch(
     speakers[]-> {
     name,
     role,
+    associatedTalks[]-> {
+    title,
+   "slug": slug.current,
+    },
     associatedEvent-> {
     title,
    "slug": slug.current,
@@ -75,7 +83,7 @@ const getAllVirtualSpeakers = await sanityClient.fetch(
       },
     },
     },
-  }`
+  }`,
 );
 
 export { getAllSpeakers, getAllVirtualSpeakers };

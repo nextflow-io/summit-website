@@ -25,6 +25,7 @@ const SpeakersSection = ({ person, index , location}) => {
       isOpen={activeIndex === index}
       onClick={() => handleItemClick(index)}
       location={location}
+      associatedTalks={person?.associatedTalks} 
     />
   );
 };
