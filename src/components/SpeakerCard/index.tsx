@@ -65,6 +65,15 @@ const SpeakerCard: React.FC<Props> = ({
 
   const getEventPath = () => {
     // Prioritize location prop if provided
+
+    if (typeof window !== 'undefined') {
+    const pathname = window.location.pathname;
+    
+    // Extract event location from current path
+    if (pathname.includes('/virtual/')) return "/2025/virtual/agenda";
+    if (pathname.includes('/boston/')) return "/2025/boston/agenda";
+    if (pathname.includes('/barcelona/')) return "/2025/barcelona/agenda";
+  }
     if (location) {
       const locationLower = location.toLowerCase();
       if (locationLower === "virtual") return "/2025/virtual/agenda";
@@ -297,7 +306,7 @@ const SpeakerCard: React.FC<Props> = ({
                 <div className="pb-1 pt-1">
                   {" "}
                   <a
-                    href={`/2025/boston/agenda/${pageUrl}`}
+                   href={`${eventPath}/${pageUrl}`}
                     className="hover:text-nextflow-200 transition-all duration-300 text-[.8rem]"
                   >
                     {submissionTitle}{" "}
