@@ -376,20 +376,6 @@ export const barcelonaScheduleConfig: ScheduleConfig = {
   year: "2025",
   days: [
     {
-      date: "Thursday, October 23",
-      timezone: "CEST (UTC+2)",
-      items: [
-        { time: "1PM-5:30PM", name: "Nextflow Summit - Virtual", highlighted: true },
-      ],
-    },
-    {
-      date: "Friday, October 24",
-      timezone: "CEST (UTC+2)",
-      items: [
-        { time: "1PM-5:30PM", name: "Nextflow Summit - Virtual", highlighted: true },
-      ],
-    },
-    {
       date: "Tuesday, October 28",
       timezone: "CEST (UTC+2)",
       items: [
@@ -458,6 +444,8 @@ export const barcelonaScheduleConfig: ScheduleConfig = {
     },
   ],
 };
+
+
 
 const Schedule: React.FC<Props> = ({ children, className, config }) => {
   return (

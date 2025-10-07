@@ -8,7 +8,7 @@ type Props = {
   title?: string;
 };
 
-const YouTubeEmbed = ({ id}) => {
+const YouTubeEmbed = ({ id }) => {
   if (!id) return null;
 
   const embedUrl = `https://www.youtube.com/embed/${id}`;
@@ -28,15 +28,33 @@ const YouTubeEmbed = ({ id}) => {
   );
 };
 
-const EventPosts: React.FC<Props> = ({ post }) => {
+const EventPosts: React.FC<Props> = ({ 
+  post, 
+}) => {
+  // Determine the agenda path based on location or speaker type flags
+  const getAgendaPath = () => {
+    // First, try to detect from current URL
+    if (typeof window !== 'undefined') {
+      const currentPath = window.location.pathname;
+      if (currentPath.includes('/virtual/')) return "/2025/virtual/agenda";
+      if (currentPath.includes('/boston/')) return "/2025/boston/agenda";
+      if (currentPath.includes('/barcelona/')) return "/2025/barcelona/agenda";
+    }
+    
+    // Default fallback
+    return "/2025/boston/agenda";
+  };
+
+  const agendaPath = getAgendaPath();
   
   return (
     <section className="flex flex-col h-full">
       <div className="border border-nextflow p-4">
         <div className="">
-          {/* <p className="text-nextflow-200">{post?.publishedAt}</p> */}
-          {post?.category}
-          <h1 className="h4 py-2"> {post?.title}</h1>
+          {post?.category && (
+            <p className="text-nextflow-200 text-sm mb-2">{post.category}</p>
+          )}
+          <h1 className="h4 py-2">{post?.title}</h1>
 
           <div className="pb-6 mt-6">
             <div className="inline-flex">
@@ -47,17 +65,18 @@ const EventPosts: React.FC<Props> = ({ post }) => {
                 </span>
               ))}
             </div>
-            <div className="mb-1">{post.associatedPerson.name}</div>
-            {post.coauthors && <div>Coauthors: {post.coauthors} </div>}
+            {post.coauthors && (
+              <div className="mt-2">Coauthors: {post.coauthors}</div>
+            )}
           </div>
 
           <div className="border-t border-nextflow py-2">
-            <p> {post?.category}</p>
             <PortableText
               className="mt-4 monospace text-sm"
               value={post?.body}
             />
           </div>
+          
           {post.projectLink && (
             <div className="mt-10">
               <Button
@@ -70,21 +89,19 @@ const EventPosts: React.FC<Props> = ({ post }) => {
               </Button>
             </div>
           )}
-
-          {post?.category}
         </div>
       </div>
 
       {post.youtube && (
-        <div className="w-full h-full my-10 border border-nextflow ">
+        <div className="w-full h-full my-10 border border-nextflow">
           <div className="w-full h-full">
-          <YouTubeEmbed id={post.youtube}/>
+            <YouTubeEmbed id={post.youtube} />
           </div>
         </div>
       )}
 
-      {post.poster?.asset.url && (
-        <div className="my-10 border border-nextflow ">
+      {post.poster?.asset?.url && (
+        <div className="my-10 border border-nextflow">
           <div className="w-full h-full min-h-[600px]">
             <iframe
               className="min-h-[600px]"
@@ -101,7 +118,7 @@ const EventPosts: React.FC<Props> = ({ post }) => {
               white
               arrowAfter
               className="monospace"
-              href={`${post.poster.asset.url}`}
+              href={post.poster.asset.url}
             >
               View Poster
             </Button>
@@ -116,11 +133,11 @@ const EventPosts: React.FC<Props> = ({ post }) => {
         >
           <div className="flex flex-col justify-center items-center w-full pt-2">
             <div className="speaker-card__image rounded-full w-[150px] h-[150px] object-cover overflow-hidden">
-              {person.image ? (
+              {person?.image ? (
                 <img
-                  className="imageBlend  w-full h-full object-cover"
+                  className="imageBlend w-full h-full object-cover"
                   src={person.image.asset.url}
-                  alt={`image of ${person?.name}`}
+                  alt={`image of ${person.name}`}
                 />
               ) : (
                 <div className="w-full h-full bg-nextflow"></div>
@@ -128,7 +145,7 @@ const EventPosts: React.FC<Props> = ({ post }) => {
             </div>
             <div className="text-center mt-6 w-full">
               <h3 className="font-display text-xl mb-1">{person.name}</h3>
-              <p className="monospace"> {person?.role}</p>
+              <p className="monospace">{person?.role}</p>
               {person?.keynote && (
                 <div className="text-nextflow mt-2 font-display font-medium text-[1.1rem]">
                   Keynote Speaker
@@ -140,7 +157,7 @@ const EventPosts: React.FC<Props> = ({ post }) => {
                   <SocialIcon
                     key={person.twitter}
                     href={person.twitter}
-                    type={"Twitter"}
+                    type="Twitter"
                     className="p-2 text-nextflow"
                   />
                 )}
@@ -148,7 +165,7 @@ const EventPosts: React.FC<Props> = ({ post }) => {
                   <SocialIcon
                     key={person.linkedin}
                     href={person.linkedin}
-                    type={"LinkedIn"}
+                    type="LinkedIn"
                     className="p-2 text-nextflow"
                   />
                 )}
@@ -156,7 +173,7 @@ const EventPosts: React.FC<Props> = ({ post }) => {
                   <SocialIcon
                     key={person.github}
                     href={person.github}
-                    type={"GitHub"}
+                    type="GitHub"
                     className="p-2 text-nextflow"
                   />
                 )}
@@ -169,7 +186,7 @@ const EventPosts: React.FC<Props> = ({ post }) => {
       <div className="relative border border-nextflow p-4 mt-8 hover:border-nextflow-200 transition-all duration-400">
         ← Back to agenda
         <a
-          href="/2025/boston/agenda"
+          href={agendaPath}
           className="absolute top-0 right-0 bottom-0 left-0 w-full h-full hover:text-nextflow-200 duration-400 transition-all"
         ></a>
       </div>

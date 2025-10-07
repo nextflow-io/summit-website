@@ -18,7 +18,7 @@ type Props = {
     subtitle?: string;
     abovetitle?: string;
     speaker?: string;
-    location?: string;
+     location?: "barcelona" | "virtual" | "boston";
   };
   sanityImage?: string;
 };
