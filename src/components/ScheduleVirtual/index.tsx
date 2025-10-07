@@ -53,18 +53,22 @@ const TIMEZONES = [
   { label: "Auckland (NZDT)", value: "Pacific/Auckland", offset: 13 },
 ];
 
-const convertTime = (time: string, sourceOffset: number, targetOffset: number): string => {
+const convertTime = (time: string, sourceOffset: number, targetOffset: number): { time: string; dayOffset: number } => {
   const hour24 = time.includes("PM") 
     ? (parseInt(time) === 12 ? 12 : parseInt(time) + 12)
     : (parseInt(time) === 12 ? 0 : parseInt(time));
   
   const convertedHour = hour24 + (targetOffset - sourceOffset);
   const normalizedHour = ((convertedHour % 24) + 24) % 24;
+  const dayOffset = Math.floor(convertedHour / 24);
   
-  if (normalizedHour === 0) return "12AM";
-  if (normalizedHour < 12) return `${normalizedHour}AM`;
-  if (normalizedHour === 12) return "12PM";
-  return `${normalizedHour - 12}PM`;
+  let timeStr = "";
+  if (normalizedHour === 0) timeStr = "12AM";
+  else if (normalizedHour < 12) timeStr = `${normalizedHour}AM`;
+  else if (normalizedHour === 12) timeStr = "12PM";
+  else timeStr = `${normalizedHour - 12}PM`;
+  
+  return { time: timeStr, dayOffset };
 };
 
 const SessionItem: React.FC<SessionProps> = ({
@@ -120,7 +124,10 @@ const TimeSlotItem: React.FC<TimeSlot & { sourceOffset: number; targetOffset: nu
   sourceOffset,
   targetOffset 
 }) => {
-  const convertedTime = convertTime(time, sourceOffset, targetOffset);
+  const converted = convertTime(time, sourceOffset, targetOffset);
+  const displayTime = converted.dayOffset !== 0 
+    ? `${converted.time} ${converted.dayOffset > 0 ? '+1 day' : '-1 day'}`
+    : converted.time;
   
   if (highlighted) {
     return (
@@ -132,7 +139,7 @@ const TimeSlotItem: React.FC<TimeSlot & { sourceOffset: number; targetOffset: nu
         ></div>
 
         <div className="basis-2/6 sm:basis-1/6 sm:w-full uppercase z-10 pointer-events-none">
-          {convertedTime}
+          {displayTime}
         </div>
         <div className="basis-4/6 sm:basis-5/6 w-full z-10 pointer-events-none">
           <h4 className="font-semibold  text-[1rem] md:text-[1.2rem] display  transition-colors duration-300">
@@ -158,7 +165,7 @@ const TimeSlotItem: React.FC<TimeSlot & { sourceOffset: number; targetOffset: nu
   return (
     <div className="relative w-full flex flex-row border border-nextflow transition-all duration-300 p-4 rounded-sm mb-2">
       <div className="basis-2/6 sm:basis-1/6 sm:w-full uppercase self-start pt-6">
-        {convertedTime}
+        {displayTime}
       </div>
       <div className="basis-4/6 sm:basis-5/6 w-full">
         {sessions
@@ -181,8 +188,10 @@ const ScheduleHeader: React.FC<{
   onTimezoneChange
 }) => {
   return (
-    <div className="monospace flex flex-col sm:flex-row w-full border-b border-white py-4 sm:px-4 mb-6 gap-4">
-      <div className="w-full ">Time:      <select
+    <div className="monospace flex flex-col sm:flex-row w-full border-b border-white p-4 mb-6 gap-4">
+      <div className="w-full sm:basis-1/6">Time: {selectedTimezone.label.split(' ')[1]}</div>
+      <div className="w-full sm:basis-5/6 flex justify-end">
+        <select
           value={selectedTimezone.value}
           onChange={(e) => {
             const tz = TIMEZONES.find(t => t.value === e.target.value);
@@ -195,8 +204,8 @@ const ScheduleHeader: React.FC<{
               {tz.label}
             </option>
           ))}
-        </select></div>
-
+        </select>
+      </div>
     </div>
   );
 };
