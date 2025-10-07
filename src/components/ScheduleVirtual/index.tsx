@@ -189,9 +189,7 @@ const ScheduleHeader: React.FC<{
 }) => {
   return (
     <div className="monospace flex flex-col sm:flex-row w-full border-b border-white p-4 mb-6 gap-4">
-      <div className="w-full sm:basis-1/6">Time: {selectedTimezone.label.split(' ')[1]}</div>
-      <div className="w-full sm:basis-5/6 flex justify-end">
-        <select
+      <div className="w-full ">Time:        <select
           value={selectedTimezone.value}
           onChange={(e) => {
             const tz = TIMEZONES.find(t => t.value === e.target.value);
@@ -204,8 +202,8 @@ const ScheduleHeader: React.FC<{
               {tz.label}
             </option>
           ))}
-        </select>
-      </div>
+        </select></div>
+  
     </div>
   );
 };
