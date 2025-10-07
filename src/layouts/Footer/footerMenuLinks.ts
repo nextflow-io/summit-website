@@ -14,7 +14,7 @@ export default {
         },
         {
           name: "Agenda",
-          url: "/agenda",
+          url: "/2025/virtual/agenda",
         },
         {
         name: "Speakers",
