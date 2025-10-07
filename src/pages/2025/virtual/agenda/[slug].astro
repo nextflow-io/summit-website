@@ -20,7 +20,7 @@ const { post } = Astro.props;
 ---
 
 <Layout namespace="2025/virtual">
-  <SEO img={3} slot="head" title={`${post.title} | ${post.associatedPerson[0].name} ${post.associatedPerson[1].name &&  `& ` + post.associatedPerson[1].name }`} imgUrl={post.mainImage?.asset.url && post.mainImage.asset.url }/>
+  <SEO img={3} slot="head" title={`${post.title} | ${post.associatedPerson[0]?.name} ${post.associatedPerson[1]?.name &&  `& ` + post.associatedPerson[1].name }`} imgUrl={post.mainImage?.asset.url && post.mainImage.asset.url }/>
   <section class="mt-10 md:mt-20 mb-24 container smaller mx-auto">
     <EventPost post={post}   client:only="react" />
   </section>
