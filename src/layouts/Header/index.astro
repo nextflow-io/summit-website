@@ -19,16 +19,16 @@ if (typeof Astro.props.showNav !== "undefined") showNav = Astro.props.showNav;
         <Logo namespace={namespace} />
         <Menu pathname={pathname} namespace={namespace} />
         <button
-          class={`${styles.registerCTA} bg-white text-brand h-full px-4 relative flex flex-row uppercase items-center justify-center`}
+          class={`${styles.registerCTA} hidden lg:flex bg-white text-brand h-full px-4 relative flex-row uppercase items-center justify-center`}
         >
-          Learn more
+          Register for Hackathon
           <div
             class={`${styles.registerBtn} arrowRight ml-4 bg-nextflow flex justify-center items-center p-2 rounded-sm`}
           >
             <ArrowRight />
           </div>
           <a
-            href="/2025/barcelona/overview"
+            href="/2025/barcelona/hackathon"
         
             class="absolute top-0 left-0 right-0 bottom-0 w-full h-full"></a>
         </button>

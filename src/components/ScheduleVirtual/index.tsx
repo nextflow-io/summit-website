@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 type SessionProps = {
   title: string;
@@ -32,6 +32,44 @@ type Props = {
   config: ScheduleConfig;
 };
 
+// Timezone conversion utility
+const TIMEZONES = [
+  { label: "Barcelona (CEST)", value: "Europe/Madrid", offset: 2 },
+  { label: "London (BST)", value: "Europe/London", offset: 1 },
+  { label: "New York (EDT)", value: "America/New_York", offset: -4 },
+  { label: "Chicago (CDT)", value: "America/Chicago", offset: -5 },
+  { label: "Denver (MDT)", value: "America/Denver", offset: -6 },
+  { label: "Los Angeles (PDT)", value: "America/Los_Angeles", offset: -7 },
+  { label: "São Paulo (BRT)", value: "America/Sao_Paulo", offset: -3 },
+  { label: "Paris (CEST)", value: "Europe/Paris", offset: 2 },
+  { label: "Berlin (CEST)", value: "Europe/Berlin", offset: 2 },
+  { label: "Dubai (GST)", value: "Asia/Dubai", offset: 4 },
+  { label: "Singapore (SGT)", value: "Asia/Singapore", offset: 8 },
+  { label: "Beijing (CST)", value: "Asia/Shanghai", offset: 8 },
+  { label: "Seoul (KST)", value: "Asia/Seoul", offset: 9 },
+  { label: "Tokyo (JST)", value: "Asia/Tokyo", offset: 9 },
+  { label: "Sydney (AEDT)", value: "Australia/Sydney", offset: 11 },
+  { label: "Auckland (NZDT)", value: "Pacific/Auckland", offset: 13 },
+];
+
+const convertTime = (time: string, sourceOffset: number, targetOffset: number): { time: string; dayOffset: number } => {
+  const hour24 = time.includes("PM") 
+    ? (parseInt(time) === 12 ? 12 : parseInt(time) + 12)
+    : (parseInt(time) === 12 ? 0 : parseInt(time));
+  
+  const convertedHour = hour24 + (targetOffset - sourceOffset);
+  const normalizedHour = ((convertedHour % 24) + 24) % 24;
+  const dayOffset = Math.floor(convertedHour / 24);
+  
+  let timeStr = "";
+  if (normalizedHour === 0) timeStr = "12AM";
+  else if (normalizedHour < 12) timeStr = `${normalizedHour}AM`;
+  else if (normalizedHour === 12) timeStr = "12PM";
+  else timeStr = `${normalizedHour - 12}PM`;
+  
+  return { time: timeStr, dayOffset };
+};
+
 const SessionItem: React.FC<SessionProps> = ({
   title,
   speaker,
@@ -54,7 +92,7 @@ const SessionItem: React.FC<SessionProps> = ({
           <p className="font-semibold display text-sm text-gray-300  group-hover:text-nextflow transition-all duration-300">
             {speaker}
           </p>
-          {speaker && (
+          {speaker2 && (
             <p className="font-semibold display text-sm text-gray-300  group-hover:text-nextflow transition-all duration-300">
               {speaker2}
             </p>
@@ -68,7 +106,7 @@ const SessionItem: React.FC<SessionProps> = ({
     return (
       <a
         href={`/2025/virtual/agenda/${url}`}
-        className="blocktransition-colors px-4 -mx-4 "
+        className="block transition-colors px-4 -mx-4 "
       >
         {content}
       </a>
@@ -78,7 +116,18 @@ const SessionItem: React.FC<SessionProps> = ({
   return <div className="px-4 -mx-4">{content}</div>;
 };
 
-const TimeSlotItem: React.FC<TimeSlot> = ({ time, highlighted, sessions }) => {
+const TimeSlotItem: React.FC<TimeSlot & { sourceOffset: number; targetOffset: number }> = ({ 
+  time, 
+  highlighted, 
+  sessions,
+  sourceOffset,
+  targetOffset 
+}) => {
+  const converted = convertTime(time, sourceOffset, targetOffset);
+  const displayTime = converted.dayOffset !== 0 
+    ? `${converted.time} ${converted.dayOffset > 0 ? '+1 day' : '-1 day'}`
+    : converted.time;
+  
   if (highlighted) {
     return (
       <div
@@ -89,7 +138,7 @@ const TimeSlotItem: React.FC<TimeSlot> = ({ time, highlighted, sessions }) => {
         ></div>
 
         <div className="basis-2/6 sm:basis-1/6 sm:w-full uppercase z-10 pointer-events-none">
-          {time}
+          {displayTime}
         </div>
         <div className="basis-4/6 sm:basis-5/6 w-full z-10 pointer-events-none">
           <h4 className="font-semibold  text-[1rem] md:text-[1.2rem] display  transition-colors duration-300">
@@ -115,7 +164,7 @@ const TimeSlotItem: React.FC<TimeSlot> = ({ time, highlighted, sessions }) => {
   return (
     <div className="relative w-full flex flex-row border border-nextflow transition-all duration-300 p-4 rounded-sm mb-2">
       <div className="basis-2/6 sm:basis-1/6 sm:w-full uppercase self-start pt-6">
-        {time}
+        {displayTime}
       </div>
       <div className="basis-4/6 sm:basis-5/6 w-full">
         {sessions
@@ -128,12 +177,32 @@ const TimeSlotItem: React.FC<TimeSlot> = ({ time, highlighted, sessions }) => {
   );
 };
 
-const ScheduleHeader: React.FC<{ timezone?: string }> = ({
-  timezone = "EDT",
+const ScheduleHeader: React.FC<{ 
+  timezone: string;
+  selectedTimezone: typeof TIMEZONES[0];
+  onTimezoneChange: (tz: typeof TIMEZONES[0]) => void;
+}> = ({
+  timezone,
+  selectedTimezone,
+  onTimezoneChange
 }) => {
   return (
-    <div className="monospace hidden sm:flex flex-row w-full border-b border-white p-4 mb-6">
-      <div className="w-full basis-1/6">Time: {timezone}</div>
+    <div className="monospace flex flex-col sm:flex-row w-full border-b border-white p-4 mb-6 gap-4">
+      <div className="w-full ">Time:        <select
+          value={selectedTimezone.value}
+          onChange={(e) => {
+            const tz = TIMEZONES.find(t => t.value === e.target.value);
+            if (tz) onTimezoneChange(tz);
+          }}
+          className="monospace bg-transparent border border-white px-3 py-1 rounded-sm cursor-pointer hover:bg-white hover:text-black transition-all duration-300"
+        >
+          {TIMEZONES.map((tz) => (
+            <option key={tz.value} value={tz.value} className="bg-black text-white">
+              {tz.label}
+            </option>
+          ))}
+        </select></div>
+  
     </div>
   );
 };
@@ -339,14 +408,6 @@ const virtualScheduleConfig: ScheduleConfig = {
         {
           time: "5PM",
           sessions: [
-            // {
-            //   title:
-            //     "Benchmarking nf-core/scrnaseq for Mouse Prostate Single-cell RNA-seq: Practical Insights",
-            //   speaker:
-            //     "Nikhila T Suresh, Post Doctoral Research Associate, Purdue University",
-            //   category: "Infrastructure & Automation",
-            //   url: "benchmarking-nf-core-scrnaseq-for-mouse-prostate-single-cell-rna-seq-practical-insights",
-            // },
             {
               title:
                 "OpenProblems.bio: Reproducible Benchmarks for Single-Cell Omics at Scale",
@@ -616,14 +677,25 @@ const virtualScheduleConfig: ScheduleConfig = {
 };
 
 const ScheduleVirtual: React.FC<Props> = ({ children, className, config }) => {
+  const [selectedTimezone, setSelectedTimezone] = useState(TIMEZONES[0]); // Barcelona CEST default
+  
   return (
     <div className={`w-full ${className || ""}`}>
       {config.days.map((day, dayIndex) => (
         <section key={dayIndex} className="mb-20">
           <h5 className="text-2xl mb-2">{day.date}</h5>
-          <ScheduleHeader timezone={day.timezone} />
+          <ScheduleHeader 
+            timezone={day.timezone} 
+            selectedTimezone={selectedTimezone}
+            onTimezoneChange={setSelectedTimezone}
+          />
           {day.slots.map((slot, slotIndex) => (
-            <TimeSlotItem key={slotIndex} {...slot} />
+            <TimeSlotItem 
+              key={slotIndex} 
+              {...slot} 
+              sourceOffset={2} // CEST is UTC+2
+              targetOffset={selectedTimezone.offset}
+            />
           ))}
         </section>
       ))}
