@@ -44,7 +44,6 @@ const TIMEZONES = [
   { label: "Paris (CEST)", value: "Europe/Paris", offset: 2 },
   { label: "Berlin (CEST)", value: "Europe/Berlin", offset: 2 },
   { label: "Dubai (GST)", value: "Asia/Dubai", offset: 4 },
-  { label: "Mumbai (IST)", value: "Asia/Kolkata", offset: 5.5 },
   { label: "Singapore (SGT)", value: "Asia/Singapore", offset: 8 },
   { label: "Beijing (CST)", value: "Asia/Shanghai", offset: 8 },
   { label: "Seoul (KST)", value: "Asia/Seoul", offset: 9 },
