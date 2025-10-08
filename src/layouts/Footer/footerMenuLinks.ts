@@ -17,16 +17,20 @@ export default {
           url: "/2025/virtual/agenda",
         },
         {
-        name: "Speakers",
-        url: "/2025/virtual/speakers",
-      },
-      {
-        name: "Posters",
-        url: "/2025/virtual/posters",
-      },
+          name: "Speakers",
+          url: "/2025/virtual/speakers",
+        },
+        {
+          name: "Posters",
+          url: "/2025/virtual/posters",
+        },
         {
           name: "Call for Speakers & Posters",
           url: "/call-for-abstracts",
+        },
+        {
+          name: "Sponsors",
+          url: "/2025/virtual/sponsors",
         },
       ],
     },
@@ -62,6 +66,10 @@ export default {
           name: "Register Now",
           url: "/2025/barcelona/register",
         },
+            {
+        name: "Sponsors",
+        url: "/2025/barcelona/sponsors",
+      },
       ],
     },
     {
