@@ -27,6 +27,10 @@ const menuLinks = [
         name: "Submissions",
         url: "/call-for-abstracts",
       },
+      {
+        name: "Sponsors",
+        url: "/2025/virtual/sponsors",
+      },
     ],
   },
   {
@@ -56,6 +60,10 @@ const menuLinks = [
       {
         name: "Travel",
         url: "/2025/barcelona/travel",
+      },
+          {
+        name: "Sponsors",
+        url: "/2025/barcelona/sponsors",
       },
     ],
   },
