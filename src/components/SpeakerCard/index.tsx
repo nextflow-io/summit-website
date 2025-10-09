@@ -144,9 +144,9 @@ const SpeakerCard: React.FC<Props> = ({
       <div
         className={`flex flex-row justify-between w-full border-t ${date && "border-b border-nextflow pb-2"} border-nextflow pt-2`}
       >
-        <p className="monospace text-[.875rem]">{monthDate}</p>
-        <p className="font-display text-[.875rem]">
-          {timeStart} - {timeEnd} {location == "virtual" ? 'CEST' : ''}
+        <p className="monospace text-[1rem]">{monthDate}</p>
+        <p className="font-display text-[1rem]">
+          {timeStart} - {timeEnd} {location == "virtual" ? 'CET' : ''}
         </p>
       </div>
     );
@@ -157,7 +157,7 @@ const SpeakerCard: React.FC<Props> = ({
 
     return (
       <div className={`py-1 pb-2  ${!date && "border-t border-nextflow"} border-nextflow`}>
-        <h5 className="text-[.9rem] leading-tight font-medium">
+        <h5 className="text-[1rem] leading-tight font-medium">
           {pageUrl ? (
             <div className="pt-1">
               <a
@@ -277,7 +277,7 @@ const SpeakerCard: React.FC<Props> = ({
                 <p className="monospace text-[.8rem]">{jobTitle}</p>
 
                 {keynote && (
-                  <div className="text-nextflow mt-2 font-display font-medium text-[.9rem]">
+                  <div className="text-nextflow mt-2 font-display font-medium text-[1rem]">
                     Keynote Speaker
                   </div>
                 )}
@@ -294,9 +294,9 @@ const SpeakerCard: React.FC<Props> = ({
               >
                 {date && (
                   <>
-                    <p className="monospace text-[.875rem]">{monthDate}</p>
-                    <p className="font-display text-[.875rem]">
-                      {timeStart} - {timeEnd}  {location == "virtual" ? 'CEST' : ''}
+                    <p className="monospace text-[1rem]">{monthDate}</p>
+                    <p className="font-display text-[1rem]">
+                      {timeStart} - {timeEnd}  {location == "virtual" ? 'CET' : ''}
                     </p>
                   </>
                 )}
@@ -307,14 +307,14 @@ const SpeakerCard: React.FC<Props> = ({
                   {" "}
                   <a
                    href={`${eventPath}/${pageUrl}`}
-                    className="hover:text-nextflow-200 transition-all duration-300 text-[.8rem]"
+                    className="hover:text-nextflow-200 transition-all duration-300 text-[1rem]"
                   >
                     {submissionTitle}{" "}
                   </a>
                 </div>
               ) : (
                 submissionTitle && (
-                  <div className="text-[.8rem] py-2">{submissionTitle}</div>
+                  <div className="text-[1rem] py-2">{submissionTitle}</div>
                 )
               )}
               {renderAssociatedTalks()}

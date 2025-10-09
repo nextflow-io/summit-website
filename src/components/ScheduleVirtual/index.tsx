@@ -34,15 +34,15 @@ type Props = {
 
 // Timezone conversion utility
 const TIMEZONES = [
-  { label: "Barcelona (CEST)", value: "Europe/Madrid", offset: 2 },
+  { label: "Barcelona (CET)", value: "Europe/Madrid", offset: 2 },
   { label: "London (BST)", value: "Europe/London", offset: 1 },
   { label: "New York (EDT)", value: "America/New_York", offset: -4 },
   { label: "Chicago (CDT)", value: "America/Chicago", offset: -5 },
   { label: "Denver (MDT)", value: "America/Denver", offset: -6 },
   { label: "Los Angeles (PDT)", value: "America/Los_Angeles", offset: -7 },
   { label: "São Paulo (BRT)", value: "America/Sao_Paulo", offset: -3 },
-  { label: "Paris (CEST)", value: "Europe/Paris", offset: 2 },
-  { label: "Berlin (CEST)", value: "Europe/Berlin", offset: 2 },
+  { label: "Paris (CET)", value: "Europe/Paris", offset: 2 },
+  { label: "Berlin (CET)", value: "Europe/Berlin", offset: 2 },
   { label: "Dubai (GST)", value: "Asia/Dubai", offset: 4 },
   { label: "Singapore (SGT)", value: "Asia/Singapore", offset: 8 },
   { label: "Beijing (CST)", value: "Asia/Shanghai", offset: 8 },
@@ -53,19 +53,43 @@ const TIMEZONES = [
 ];
 
 const convertTime = (time: string, sourceOffset: number, targetOffset: number): { time: string; dayOffset: number } => {
-  const hour24 = time.includes("PM") 
-    ? (parseInt(time) === 12 ? 12 : parseInt(time) + 12)
-    : (parseInt(time) === 12 ? 0 : parseInt(time));
+  // Extract hours and minutes
+  const timeMatch = time.match(/(\d+):?(\d+)?\s*(AM|PM)/i);
+  if (!timeMatch) return { time, dayOffset: 0 };
   
+  const [, hourStr, mins = "0", period] = timeMatch;
+  const hour12 = parseInt(hourStr);
+  const minutes = parseInt(mins);
+  
+  // Convert to 24-hour format
+  let hour24 = hour12;
+  if (period.toUpperCase() === "PM" && hour12 !== 12) {
+    hour24 = hour12 + 12;
+  } else if (period.toUpperCase() === "AM" && hour12 === 12) {
+    hour24 = 0;
+  }
+  
+  // Convert timezone
   const convertedHour = hour24 + (targetOffset - sourceOffset);
   const normalizedHour = ((convertedHour % 24) + 24) % 24;
   const dayOffset = Math.floor(convertedHour / 24);
   
-  let timeStr = "";
-  if (normalizedHour === 0) timeStr = "12AM";
-  else if (normalizedHour < 12) timeStr = `${normalizedHour}AM`;
-  else if (normalizedHour === 12) timeStr = "12PM";
-  else timeStr = `${normalizedHour - 12}PM`;
+  // Format output
+  let displayHour = normalizedHour;
+  let displayPeriod = "AM";
+  
+  if (normalizedHour === 0) {
+    displayHour = 12;
+  } else if (normalizedHour === 12) {
+    displayHour = 12;
+    displayPeriod = "PM";
+  } else if (normalizedHour > 12) {
+    displayHour = normalizedHour - 12;
+    displayPeriod = "PM";
+  }
+  
+  const minuteStr = minutes > 0 ? `:${minutes.toString().padStart(2, '0')}` : "";
+  const timeStr = `${displayHour}${minuteStr}${displayPeriod}`;
   
   return { time: timeStr, dayOffset };
 };
@@ -213,7 +237,7 @@ const virtualScheduleConfig: ScheduleConfig = {
   days: [
     {
       date: "Thursday, October 23",
-      timezone: "CEST (UTC+2)",
+      timezone: "CET (UTC+2)",
       slots: [
         {
           time: "1PM",
@@ -447,7 +471,7 @@ const virtualScheduleConfig: ScheduleConfig = {
     },
     {
       date: "Friday, October 24",
-      timezone: "CEST (UTC+2)",
+      timezone: "CET (UTC+2)",
       slots: [
         {
           time: "1PM",

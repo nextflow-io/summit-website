@@ -377,7 +377,7 @@ export const barcelonaScheduleConfig: ScheduleConfig = {
   days: [
     {
       date: "Tuesday, October 28",
-      timezone: "CEST (UTC+2)",
+      timezone: "CET (UTC+2)",
       items: [
         {
           time: "9:00am",
@@ -415,7 +415,7 @@ export const barcelonaScheduleConfig: ScheduleConfig = {
     },
     {
       date: "Wednesday, October 29",
-      timezone: "CEST (UTC+2)",
+      timezone: "CET (UTC+2)",
       items: [
         {
           time: "9:00am",
