@@ -185,7 +185,7 @@ const SpeakerCard: React.FC<Props> = ({
         <div className="space-y-2">
           {associatedTalks.map((talk) => {
             return (
-              <div key={talk.slug} className="text-[.8rem]">
+              <div key={talk.slug} className="text-[.875rem]">
                 <a
                   href={`${eventPath}/${talk.slug}`}
                   className="hover:text-nextflow-200 transition-all duration-300"
@@ -307,14 +307,14 @@ const SpeakerCard: React.FC<Props> = ({
                   {" "}
                   <a
                    href={`${eventPath}/${pageUrl}`}
-                    className="hover:text-nextflow-200 transition-all duration-300 text-[1rem]"
+                    className="hover:text-nextflow-200 transition-all duration-300 text-[.875rem]"
                   >
                     {submissionTitle}{" "}
                   </a>
                 </div>
               ) : (
                 submissionTitle && (
-                  <div className="text-[1rem] py-2">{submissionTitle}</div>
+                  <div className="text-[.875rem] py-2">{submissionTitle}</div>
                 )
               )}
               {renderAssociatedTalks()}
