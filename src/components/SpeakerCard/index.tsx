@@ -185,7 +185,7 @@ const SpeakerCard: React.FC<Props> = ({
         <div className="space-y-2">
           {associatedTalks.map((talk) => {
             return (
-              <div key={talk.slug} className="text-[.8rem]">
+              <div key={talk.slug} className="text-[.875rem]">
                 <a
                   href={`${eventPath}/${talk.slug}`}
                   className="hover:text-nextflow-200 transition-all duration-300"
