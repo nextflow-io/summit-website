@@ -34,15 +34,15 @@ type Props = {
 
 // Timezone conversion utility
 const TIMEZONES = [
-  { label: "Barcelona (CEST)", value: "Europe/Madrid", offset: 2 },
+  { label: "Barcelona (CET)", value: "Europe/Madrid", offset: 2 },
   { label: "London (BST)", value: "Europe/London", offset: 1 },
   { label: "New York (EDT)", value: "America/New_York", offset: -4 },
   { label: "Chicago (CDT)", value: "America/Chicago", offset: -5 },
   { label: "Denver (MDT)", value: "America/Denver", offset: -6 },
   { label: "Los Angeles (PDT)", value: "America/Los_Angeles", offset: -7 },
   { label: "São Paulo (BRT)", value: "America/Sao_Paulo", offset: -3 },
-  { label: "Paris (CEST)", value: "Europe/Paris", offset: 2 },
-  { label: "Berlin (CEST)", value: "Europe/Berlin", offset: 2 },
+  { label: "Paris (CET)", value: "Europe/Paris", offset: 2 },
+  { label: "Berlin (CET)", value: "Europe/Berlin", offset: 2 },
   { label: "Dubai (GST)", value: "Asia/Dubai", offset: 4 },
   { label: "Singapore (SGT)", value: "Asia/Singapore", offset: 8 },
   { label: "Beijing (CST)", value: "Asia/Shanghai", offset: 8 },
@@ -213,7 +213,7 @@ const virtualScheduleConfig: ScheduleConfig = {
   days: [
     {
       date: "Thursday, October 23",
-      timezone: "CEST (UTC+2)",
+      timezone: "CET (UTC+2)",
       slots: [
         {
           time: "1PM",
@@ -447,7 +447,7 @@ const virtualScheduleConfig: ScheduleConfig = {
     },
     {
       date: "Friday, October 24",
-      timezone: "CEST (UTC+2)",
+      timezone: "CET (UTC+2)",
       slots: [
         {
           time: "1PM",
