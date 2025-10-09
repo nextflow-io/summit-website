@@ -53,19 +53,43 @@ const TIMEZONES = [
 ];
 
 const convertTime = (time: string, sourceOffset: number, targetOffset: number): { time: string; dayOffset: number } => {
-  const hour24 = time.includes("PM") 
-    ? (parseInt(time) === 12 ? 12 : parseInt(time) + 12)
-    : (parseInt(time) === 12 ? 0 : parseInt(time));
+  // Extract hours and minutes
+  const timeMatch = time.match(/(\d+):?(\d+)?\s*(AM|PM)/i);
+  if (!timeMatch) return { time, dayOffset: 0 };
   
+  const [, hourStr, mins = "0", period] = timeMatch;
+  const hour12 = parseInt(hourStr);
+  const minutes = parseInt(mins);
+  
+  // Convert to 24-hour format
+  let hour24 = hour12;
+  if (period.toUpperCase() === "PM" && hour12 !== 12) {
+    hour24 = hour12 + 12;
+  } else if (period.toUpperCase() === "AM" && hour12 === 12) {
+    hour24 = 0;
+  }
+  
+  // Convert timezone
   const convertedHour = hour24 + (targetOffset - sourceOffset);
   const normalizedHour = ((convertedHour % 24) + 24) % 24;
   const dayOffset = Math.floor(convertedHour / 24);
   
-  let timeStr = "";
-  if (normalizedHour === 0) timeStr = "12AM";
-  else if (normalizedHour < 12) timeStr = `${normalizedHour}AM`;
-  else if (normalizedHour === 12) timeStr = "12PM";
-  else timeStr = `${normalizedHour - 12}PM`;
+  // Format output
+  let displayHour = normalizedHour;
+  let displayPeriod = "AM";
+  
+  if (normalizedHour === 0) {
+    displayHour = 12;
+  } else if (normalizedHour === 12) {
+    displayHour = 12;
+    displayPeriod = "PM";
+  } else if (normalizedHour > 12) {
+    displayHour = normalizedHour - 12;
+    displayPeriod = "PM";
+  }
+  
+  const minuteStr = minutes > 0 ? `:${minutes.toString().padStart(2, '0')}` : "";
+  const timeStr = `${displayHour}${minuteStr}${displayPeriod}`;
   
   return { time: timeStr, dayOffset };
 };
