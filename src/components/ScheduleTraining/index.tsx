@@ -199,7 +199,7 @@ const trainingScheduleConfig: ScheduleConfig = {
               time: "10AM",
               sessions: [
                 {
-                  title: "Hackathon Welcome",
+                  title: "Hackathon: Welcome",
                 },
               ],
             },
@@ -207,7 +207,7 @@ const trainingScheduleConfig: ScheduleConfig = {
               time: "10:30AM",
               sessions: [
                 {
-                  title: "Hackathon Session 1",
+                  title: "Hackathon: Session 1",
                 },
               ],
             },
@@ -225,7 +225,7 @@ const trainingScheduleConfig: ScheduleConfig = {
               time: "2PM",
               sessions: [
                 {
-                  title: "Hackathon Session 2",
+                  title: "Hackathon: Session 2",
                 },
               ],
             },
@@ -234,7 +234,7 @@ const trainingScheduleConfig: ScheduleConfig = {
 
               sessions: [
                 {
-                  title: "Hackathon Wrap-up",
+                  title: "Hackathon: Wrap-up",
                 },
               ],
             },
@@ -267,7 +267,7 @@ const trainingScheduleConfig: ScheduleConfig = {
               time: "10AM",
               sessions: [
                 {
-                  title: "Hackathon Session 3",
+                  title: "Hackathon: Session 3",
                 },
               ],
             },
@@ -285,7 +285,7 @@ const trainingScheduleConfig: ScheduleConfig = {
               time: "2PM",
               sessions: [
                 {
-                  title: "Hackathon Session 4",
+                  title: "Hackathon: Session 4",
                 },
               ],
             },
@@ -294,7 +294,7 @@ const trainingScheduleConfig: ScheduleConfig = {
 
               sessions: [
                 {
-                  title: "Hackathon Wrap-up",
+                  title: "Hackathon: Wrap-up",
                 },
               ],
             },
