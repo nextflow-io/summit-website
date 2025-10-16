@@ -47,18 +47,7 @@ const NavMobile: React.FC<Props> = ({ pathname, namespace, showNav }) => {
                   target="_blank"
                 ></a>
               </Button>
-              <Button
-                className="container mt-4 relative w-full"
-                white
-                arrowBefore
-              >
-                Register for Training
-                <a
-                  className="absolute w-full h-full"
-                  href="https://seqera.swoogo.com/nextflow-training"
-              target="_blank"
-                ></a>
-              </Button>
+  
               <Button
                 className="container mt-4 relative w-full"
                 white

@@ -2,7 +2,7 @@
 import Layout from "@layouts/Base.astro";
 import KeyDates from "@components/KeyDates/index.astro";
 import Calendar from "@components/Calendar";
-import Schedule, { bostonScheduleConfig, barcelonaScheduleConfig } from "@components/Schedule";
+import  { trainingScheduleConfig, TrainingSchedule } from "@components/ScheduleTraining";
 import SEO from "@components/SEO";
 import Box, { SubSection } from "@components/Box";
 ---
@@ -27,7 +27,7 @@ import Box, { SubSection } from "@components/Box";
         >
       </div> -->
 
-     <Schedule config={barcelonaScheduleConfig} />
+     <TrainingSchedule config={trainingScheduleConfig} client:only="react" />
 
     </div>
 

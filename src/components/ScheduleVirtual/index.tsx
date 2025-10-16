@@ -161,7 +161,7 @@ const TimeSlotItem: React.FC<TimeSlot & { sourceOffset: number; targetOffset: nu
           className={`absolute bg-nextflow-100 w-full h-full z-0 top-0 right-0 left-0 opacity-25 ${sessions[0].url && "group-hover:opacity-100 group-hover:bg-nextflow-800"} transition-opacity duration-300`}
         ></div>
 
-        <div className="basis-2/6 sm:basis-1/6 sm:w-full uppercase z-10 pointer-events-none">
+        <div className="basis-2/6 sm:basis-1/6 sm:w-full uppercase z-10 pointer-events-none text-[.8rem] md:text-[1rem] pt-1">
           {displayTime}
         </div>
         <div className="basis-4/6 sm:basis-5/6 w-full z-10 pointer-events-none">
@@ -187,7 +187,7 @@ const TimeSlotItem: React.FC<TimeSlot & { sourceOffset: number; targetOffset: nu
   }
   return (
     <div className="relative w-full flex flex-row border border-nextflow transition-all duration-300 p-4 rounded-sm mb-2">
-      <div className="basis-2/6 sm:basis-1/6 sm:w-full uppercase self-start pt-6">
+      <div className="basis-2/6 sm:basis-1/6 sm:w-full uppercase self-start pt-6 text-[.8rem] md:text-[1rem]">
         {displayTime}
       </div>
       <div className="basis-4/6 sm:basis-5/6 w-full">
