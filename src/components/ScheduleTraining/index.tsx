@@ -238,7 +238,7 @@ const trainingScheduleConfig: ScheduleConfig = {
                 },
               ],
             },
-                 {
+            {
               time: "5:30PM - 8PM",
               highlighted: true,
               sessions: [
@@ -382,7 +382,6 @@ const trainingScheduleConfig: ScheduleConfig = {
                 },
               ],
             },
-      
           ],
         },
         {
@@ -572,7 +571,7 @@ const trainingScheduleConfig: ScheduleConfig = {
                 },
               ],
             },
-                      {
+            {
               time: "5:30PM - 8PM",
               highlighted: true,
               sessions: [
@@ -658,6 +657,7 @@ const trainingScheduleConfig: ScheduleConfig = {
               sessions: [
                 {
                   title: "Lunch",
+                  category: "All Tracks",
                 },
               ],
             },
@@ -697,7 +697,7 @@ const trainingScheduleConfig: ScheduleConfig = {
                 },
               ],
             },
-             {
+            {
               time: "5PM",
               highlighted: true,
               sessions: [
