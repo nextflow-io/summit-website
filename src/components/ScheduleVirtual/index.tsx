@@ -507,6 +507,12 @@ const virtualScheduleConfig: ScheduleConfig = {
               category: "AI-Assisted Research",
               url: "accelerating-cross-assay-correlation-with-genai",
             },
+                 {
+              title: "Validated Infrastructure for Reproducible Science",
+              speaker: "Gisela Pattarone, Lead Bioinformatician, ZS",
+               category: "Translational Research",
+              url: "validated-infrastructure-for-reproducible-science",
+            },
             {
               title: "Updates from the nf-core community",
               speaker:
@@ -530,7 +536,7 @@ const virtualScheduleConfig: ScheduleConfig = {
               title:
                 "nf-core/oncoanalyser: an accessible and portable pipeline to unify cancer DNA and RNA analysis",
               speaker:
-                "Stephen Watts, Senior Bioinformatician, Collaborative Centre for Genomic Cancer Medicine",
+                "Oliver Hofmann, Head of Bioinformatics, Collaborative Centre for Genomic Cancer Medicine",
               category: "Translational Research",
               url: "nf-core-oncoanalyser-an-accessible-and-portable-pipeline-to-unify-cancer-dna-and-rna-analysis",
             },
