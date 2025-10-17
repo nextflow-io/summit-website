@@ -161,7 +161,7 @@ const TimeSlotItem: React.FC<TimeSlot & { sourceOffset: number; targetOffset: nu
           className={`absolute bg-nextflow-100 w-full h-full z-0 top-0 right-0 left-0 opacity-25 ${sessions[0].url && "group-hover:opacity-100 group-hover:bg-nextflow-800"} transition-opacity duration-300`}
         ></div>
 
-        <div className="basis-2/6 sm:basis-1/6 sm:w-full uppercase z-10 pointer-events-none">
+        <div className="basis-2/6 sm:basis-1/6 sm:w-full uppercase z-10 pointer-events-none text-[.8rem] md:text-[1rem] pt-1">
           {displayTime}
         </div>
         <div className="basis-4/6 sm:basis-5/6 w-full z-10 pointer-events-none">
@@ -187,7 +187,7 @@ const TimeSlotItem: React.FC<TimeSlot & { sourceOffset: number; targetOffset: nu
   }
   return (
     <div className="relative w-full flex flex-row border border-nextflow transition-all duration-300 p-4 rounded-sm mb-2">
-      <div className="basis-2/6 sm:basis-1/6 sm:w-full uppercase self-start pt-6">
+      <div className="basis-2/6 sm:basis-1/6 sm:w-full uppercase self-start pt-6 text-[.8rem] md:text-[1rem]">
         {displayTime}
       </div>
       <div className="basis-4/6 sm:basis-5/6 w-full">
@@ -380,8 +380,6 @@ const virtualScheduleConfig: ScheduleConfig = {
               title:
                 "Optimizing Genomics Workflows with Nextflow & Cloud Computing: Insights from a Research Institution",
               speaker: "Jacopo Tartaglia, Bioinformatician, CREA-GB",
-              speaker2:
-                "Wolfgang De Salvador, Senior Product Manager, Azure Storage Microsoft",
               category: "Infrastructure & Automation",
               url: "optimizing-genomics-workflows-with-nextflow-and-cloud-computing",
             },
@@ -507,6 +505,12 @@ const virtualScheduleConfig: ScheduleConfig = {
               category: "AI-Assisted Research",
               url: "accelerating-cross-assay-correlation-with-genai",
             },
+                 {
+              title: "Validated Infrastructure for Reproducible Science",
+              speaker: "Gisela Pattarone, Lead Bioinformatician, ZS",
+               category: "Translational Research",
+              url: "validated-infrastructure-for-reproducible-science",
+            },
             {
               title: "Updates from the nf-core community",
               speaker:
@@ -530,7 +534,7 @@ const virtualScheduleConfig: ScheduleConfig = {
               title:
                 "nf-core/oncoanalyser: an accessible and portable pipeline to unify cancer DNA and RNA analysis",
               speaker:
-                "Stephen Watts, Senior Bioinformatician, Collaborative Centre for Genomic Cancer Medicine",
+                "Oliver Hofmann, Head of Bioinformatics, Collaborative Centre for Genomic Cancer Medicine",
               category: "Translational Research",
               url: "nf-core-oncoanalyser-an-accessible-and-portable-pipeline-to-unify-cancer-dna-and-rna-analysis",
             },
@@ -577,7 +581,6 @@ const virtualScheduleConfig: ScheduleConfig = {
                 "nf-core/differentialabundance: a unified framework for differential analysis",
               speaker:
                 "Suzanne Jin, PhD Student, Centre for Genomic Regulation",
-              speaker2: "Susanne Jodoin, Bioinformatician, QBiC",
               category: "Translational Research",
               url: "nf-core-differentialabundance-a-unified-framework-for-differential-analysis",
             },
@@ -626,14 +629,6 @@ const virtualScheduleConfig: ScheduleConfig = {
                 "Phil Ewels, Senior Product Manager for Open Source, Seqera",
               category: "AI-Assisted Research",
               url: "seqera-10-years-of-multiqc",
-            },
-            {
-              title:
-                "GTEx Expression Data Processing Pipeline for Sex- and Age-Stratified Target Discovery",
-              speaker:
-                "Samantha Klasfeld, Web Developer, Boston Women in Bioinformatics",
-              category: "Translational Research",
-              url: "gtex-expression-data-processing-pipeline-for-sex-and-age-stratified-target-discovery",
             },
             {
               title:
