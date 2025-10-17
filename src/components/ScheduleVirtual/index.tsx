@@ -380,8 +380,6 @@ const virtualScheduleConfig: ScheduleConfig = {
               title:
                 "Optimizing Genomics Workflows with Nextflow & Cloud Computing: Insights from a Research Institution",
               speaker: "Jacopo Tartaglia, Bioinformatician, CREA-GB",
-              speaker2:
-                "Wolfgang De Salvador, Senior Product Manager, Azure Storage Microsoft",
               category: "Infrastructure & Automation",
               url: "optimizing-genomics-workflows-with-nextflow-and-cloud-computing",
             },
@@ -583,7 +581,6 @@ const virtualScheduleConfig: ScheduleConfig = {
                 "nf-core/differentialabundance: a unified framework for differential analysis",
               speaker:
                 "Suzanne Jin, PhD Student, Centre for Genomic Regulation",
-              speaker2: "Susanne Jodoin, Bioinformatician, QBiC",
               category: "Translational Research",
               url: "nf-core-differentialabundance-a-unified-framework-for-differential-analysis",
             },
@@ -632,14 +629,6 @@ const virtualScheduleConfig: ScheduleConfig = {
                 "Phil Ewels, Senior Product Manager for Open Source, Seqera",
               category: "AI-Assisted Research",
               url: "seqera-10-years-of-multiqc",
-            },
-            {
-              title:
-                "GTEx Expression Data Processing Pipeline for Sex- and Age-Stratified Target Discovery",
-              speaker:
-                "Samantha Klasfeld, Web Developer, Boston Women in Bioinformatics",
-              category: "Translational Research",
-              url: "gtex-expression-data-processing-pipeline-for-sex-and-age-stratified-target-discovery",
             },
             {
               title:
