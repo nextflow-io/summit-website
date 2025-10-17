@@ -9,7 +9,7 @@ export default {
           url: "/2025/virtual/overview",
         },
         {
-          name: "Register Now",
+          name: "Register",
           url: "https://seqera.registration.goldcast.io/events/dc611bf3-ddc4-4a20-9f2f-1a9e941cc68c",
         },
         {
@@ -24,10 +24,10 @@ export default {
           name: "Posters",
           url: "/2025/virtual/posters",
         },
-        {
-          name: "Call for Speakers & Posters",
-          url: "/call-for-abstracts",
-        },
+        // {
+        //   name: "Call for Speakers & Posters",
+        //   url: "/call-for-abstracts",
+        // },
         {
           name: "Sponsors",
           url: "/2025/virtual/sponsors",
@@ -59,11 +59,11 @@ export default {
           url: "/2025/barcelona/hackathon",
         },
         {
-          name: "Travel Info",
+          name: "Travel",
           url: "/2025/barcelona/travel",
         },
         {
-          name: "Register Now",
+          name: "Register",
           url: "/2025/barcelona/register",
         },
             {
