@@ -322,10 +322,11 @@ const virtualScheduleConfig: ScheduleConfig = {
           sessions: [
             {
               title:
-                "Reads to Results: Architecting Modern Genomics Pipelines with Nextflow and Seqera Platform",
+                "Orchestrating Large Scale Omics Workflows​ with Seqera at Arcus Biosciences",
               speaker: "Vinay Vyas, Sr DevOps Engineer, Arcus Biosciences",
+              speaker2: "Stav Grossfeld, Bioinformatics Engineer, Arcus Biosciences",
               category: "Infrastructure & Automation",
-              url: "reads-to-results-architecting-modern-genomics-pipelines-with-nextflow-and-seqera-platform",
+              url: "orchestrating-large-scale-omics-workflows-with-seqera-at-arcus-biosciences",
             },
             {
               title:
@@ -365,11 +366,11 @@ const virtualScheduleConfig: ScheduleConfig = {
             },
             {
               title:
-                "Nextflow Ambassadors",
+                "Act local, think global: The Nextflow Ambassador Journey",
               speaker:
                 "Marcel Ribeiro-Dantas, Senior Developer Advocate, Seqera",
               category: "Community & Training",
-              url: "nextflow-ambassadors",
+              url: "act-local-think-global-the-nextflow-ambassador-journey",
             },
           ],
         },

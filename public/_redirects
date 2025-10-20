@@ -5,6 +5,10 @@
 /2025/boston/agenda/product-keynote   /2025/boston/agenda/from-pipelines-to-platform
 /2025/boston/agenda/doing-ai-right    /2025/boston/agenda/responsible-ai-in-genomics
 /2025/boston/agenda/enabling-reproducible-science-and-african-represenation-in-science-through-nextflow-workshops   /2025/boston/agenda/enabling-reproducible-science-and-african-representation-in-science-through-nextflow-workshops
+/2025/virtual/agenda/nextflow-ambassadors   /2025/virtual/agenda/act-local-think-global-the-nextflow-ambassador-journey
+/2025/virtual/agenda/reads-to-results-architecting-modern-genomics-pipelines-with-nextflow-and-seqera-platform   /2025/virtual/agenda/orchestrating-large-scale-omics-workflows-with-seqera-at-arcus-biosciences
+
+
 
 # 2024 - archive site proxy
 /2024/*       https://nextflow-summit-2024.netlify.app/2024/:splat    200!
