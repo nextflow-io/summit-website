@@ -47,20 +47,7 @@ const NavMobile: React.FC<Props> = ({ pathname, namespace, showNav }) => {
                   target="_blank"
                 ></a>
               </Button>
-  
-              <Button
-                className="container mt-4 relative w-full"
-                white
-                arrowBefore
-              >
-               Register for Hackathon
-                <a
-                  className="absolute w-full h-full"
-                     href="https://seqera.swoogo.com/nfcore-hackathon"
-              target="_blank"
-              
-                ></a>
-              </Button>
+
             </div>
           </div>
         )}
