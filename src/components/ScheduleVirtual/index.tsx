@@ -515,7 +515,8 @@ const virtualScheduleConfig: ScheduleConfig = {
             {
               title: "Updates from the nf-core community",
               speaker:
-                "Phil Ewels, Senior Product Manager for Open Source, Seqera",
+                "Chris Hakaart, Education Engineer, Seqera",
+              speaker2: "Franziska Bonath, Bioinformatician at NGI Sweden",
               category: "Nextflow Ecosystem & nf-core",
               url: "updates-from-the-nf-core-community",
             },
