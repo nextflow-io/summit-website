@@ -625,11 +625,11 @@ const virtualScheduleConfig: ScheduleConfig = {
           time: "4:20PM",
           sessions: [
             {
-              title: "SEQERA: 10 years of MultiQC",
+              title: "10 years of MultiQC",
               speaker:
                 "Phil Ewels, Senior Product Manager for Open Source, Seqera",
               category: "AI-Assisted Research",
-              url: "seqera-10-years-of-multiqc",
+              url: "10-years-of-multiqc",
             },
             {
               title:
