@@ -35,7 +35,7 @@ const getAllEventPosts = await sanityClient.fetch(
      },
      bio, 
    },
-  }`
+  }`,
 );
 
 const getAllVirtualEventPosts = await sanityClient.fetch(
@@ -45,6 +45,8 @@ const getAllVirtualEventPosts = await sanityClient.fetch(
    body,
    youtube,
    projectLink,
+   publishedAt,
+   endTime,
    poster {
       asset->{
         url,
@@ -73,8 +75,7 @@ const getAllVirtualEventPosts = await sanityClient.fetch(
      },
      bio, 
    },
-  }`
+  }`,
 );
-
 
 export { getAllEventPosts, getAllVirtualEventPosts };
