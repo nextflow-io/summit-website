@@ -43,7 +43,7 @@ const Sponsor = ({ sponsor, location }) => {
           "relative mt-8 pt-4 border-t border-t-nextflow w-full flex flex-row justify-between items-center",
         )}
       >
-        <h5 className="h5">Find out more</h5>
+        <h5 className="h5">Learn more</h5>
         <ArrowUpRight />
         <a
           className="absolute top-0 left-0 right-0 bottom-0 w-full h-full"
