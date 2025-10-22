@@ -52,15 +52,19 @@ const TIMEZONES = [
   { label: "Auckland (NZDT)", value: "Pacific/Auckland", offset: 13 },
 ];
 
-const convertTime = (time: string, sourceOffset: number, targetOffset: number): { time: string; dayOffset: number } => {
+const convertTime = (
+  time: string,
+  sourceOffset: number,
+  targetOffset: number,
+): { time: string; dayOffset: number } => {
   // Extract hours and minutes
   const timeMatch = time.match(/(\d+):?(\d+)?\s*(AM|PM)/i);
   if (!timeMatch) return { time, dayOffset: 0 };
-  
+
   const [, hourStr, mins = "0", period] = timeMatch;
   const hour12 = parseInt(hourStr);
   const minutes = parseInt(mins);
-  
+
   // Convert to 24-hour format
   let hour24 = hour12;
   if (period.toUpperCase() === "PM" && hour12 !== 12) {
@@ -68,16 +72,16 @@ const convertTime = (time: string, sourceOffset: number, targetOffset: number): 
   } else if (period.toUpperCase() === "AM" && hour12 === 12) {
     hour24 = 0;
   }
-  
+
   // Convert timezone
   const convertedHour = hour24 + (targetOffset - sourceOffset);
   const normalizedHour = ((convertedHour % 24) + 24) % 24;
   const dayOffset = Math.floor(convertedHour / 24);
-  
+
   // Format output
   let displayHour = normalizedHour;
   let displayPeriod = "AM";
-  
+
   if (normalizedHour === 0) {
     displayHour = 12;
   } else if (normalizedHour === 12) {
@@ -87,10 +91,11 @@ const convertTime = (time: string, sourceOffset: number, targetOffset: number): 
     displayHour = normalizedHour - 12;
     displayPeriod = "PM";
   }
-  
-  const minuteStr = minutes > 0 ? `:${minutes.toString().padStart(2, '0')}` : "";
+
+  const minuteStr =
+    minutes > 0 ? `:${minutes.toString().padStart(2, "0")}` : "";
   const timeStr = `${displayHour}${minuteStr}${displayPeriod}`;
-  
+
   return { time: timeStr, dayOffset };
 };
 
@@ -140,18 +145,15 @@ const SessionItem: React.FC<SessionProps> = ({
   return <div className="px-4 -mx-4">{content}</div>;
 };
 
-const TimeSlotItem: React.FC<TimeSlot & { sourceOffset: number; targetOffset: number }> = ({ 
-  time, 
-  highlighted, 
-  sessions,
-  sourceOffset,
-  targetOffset 
-}) => {
+const TimeSlotItem: React.FC<
+  TimeSlot & { sourceOffset: number; targetOffset: number }
+> = ({ time, highlighted, sessions, sourceOffset, targetOffset }) => {
   const converted = convertTime(time, sourceOffset, targetOffset);
-  const displayTime = converted.dayOffset !== 0 
-    ? `${converted.time} ${converted.dayOffset > 0 ? '+1 day' : '-1 day'}`
-    : converted.time;
-  
+  const displayTime =
+    converted.dayOffset !== 0
+      ? `${converted.time} ${converted.dayOffset > 0 ? "+1 day" : "-1 day"}`
+      : converted.time;
+
   if (highlighted) {
     return (
       <div
@@ -201,32 +203,34 @@ const TimeSlotItem: React.FC<TimeSlot & { sourceOffset: number; targetOffset: nu
   );
 };
 
-const ScheduleHeader: React.FC<{ 
+const ScheduleHeader: React.FC<{
   timezone: string;
-  selectedTimezone: typeof TIMEZONES[0];
-  onTimezoneChange: (tz: typeof TIMEZONES[0]) => void;
-}> = ({
-  timezone,
-  selectedTimezone,
-  onTimezoneChange
-}) => {
+  selectedTimezone: (typeof TIMEZONES)[0];
+  onTimezoneChange: (tz: (typeof TIMEZONES)[0]) => void;
+}> = ({ timezone, selectedTimezone, onTimezoneChange }) => {
   return (
     <div className="monospace flex flex-col sm:flex-row w-full border-b border-white p-4 mb-6 gap-4">
-      <div className="w-full ">Time:        <select
+      <div className="w-full ">
+        Time:{" "}
+        <select
           value={selectedTimezone.value}
           onChange={(e) => {
-            const tz = TIMEZONES.find(t => t.value === e.target.value);
+            const tz = TIMEZONES.find((t) => t.value === e.target.value);
             if (tz) onTimezoneChange(tz);
           }}
           className="monospace bg-transparent border border-white px-3 py-1 rounded-sm cursor-pointer hover:bg-white hover:text-black transition-all duration-300"
         >
           {TIMEZONES.map((tz) => (
-            <option key={tz.value} value={tz.value} className="bg-black text-white">
+            <option
+              key={tz.value}
+              value={tz.value}
+              className="bg-black text-white"
+            >
               {tz.label}
             </option>
           ))}
-        </select></div>
-  
+        </select>
+      </div>
     </div>
   );
 };
@@ -253,11 +257,9 @@ const virtualScheduleConfig: ScheduleConfig = {
         {
           time: "2:40PM",
           sessions: [
-                  {
-              title:
-                "Happy Nextflow Summit",
-              speaker:
-                "Brendan Bouffler, HPC Engineering, AWS",
+            {
+              title: "Happy Nextflow Summit",
+              speaker: "Brendan Bouffler, HPC Engineering, AWS",
               category: "Infrastructure & Automation",
               url: "happy-nextflow-summit",
             },
@@ -332,7 +334,8 @@ const virtualScheduleConfig: ScheduleConfig = {
               title:
                 "Orchestrating Large Scale Omics Workflows​ with Seqera at Arcus Biosciences",
               speaker: "Vinay Vyas, Sr DevOps Engineer, Arcus Biosciences",
-              speaker2: "Stav Grossfeld, Bioinformatics Engineer, Arcus Biosciences",
+              speaker2:
+                "Stav Grossfeld, Bioinformatics Engineer, Arcus Biosciences",
               category: "Infrastructure & Automation",
               url: "orchestrating-large-scale-omics-workflows-with-seqera-at-arcus-biosciences",
             },
@@ -373,8 +376,7 @@ const virtualScheduleConfig: ScheduleConfig = {
               url: "metagenome-quality-metrics-and-taxonomical-annotation-visualization-through-bigmag-magflow",
             },
             {
-              title:
-                "Act local, think global: The Nextflow Ambassador Journey",
+              title: "Act local, think global: The Nextflow Ambassador Journey",
               speaker:
                 "Marcel Ribeiro-Dantas, Senior Developer Advocate, Seqera",
               category: "Community & Training",
@@ -395,7 +397,8 @@ const virtualScheduleConfig: ScheduleConfig = {
             {
               title:
                 "Development of the ENSure Database and Pipeline for Rapid Microbial Testing in Biomanufacturing",
-              speaker: "Tyler Laird, Bioinformatician, National Institute of Standards and Technology",
+              speaker:
+                "Tyler Laird, Bioinformatician, National Institute of Standards and Technology",
               category: "Microbiology & Ecology",
               url: "development-of-the-ensure-database-and-pipeline-for-rapid-microbial-testing-in-biomanufacturing",
             },
@@ -514,16 +517,15 @@ const virtualScheduleConfig: ScheduleConfig = {
               category: "AI-Assisted Research",
               url: "accelerating-cross-assay-correlation-with-genai",
             },
-                 {
+            {
               title: "Validated Infrastructure for Reproducible Science",
               speaker: "Gisela Pattarone, Lead Bioinformatician, ZS",
-               category: "Translational Research",
+              category: "Translational Research",
               url: "validated-infrastructure-for-reproducible-science",
             },
             {
               title: "Updates from the nf-core community",
-              speaker:
-                "Chris Hakaart, Education Engineer, Seqera",
+              speaker: "Chris Hakaart, Education Engineer, Seqera",
               speaker2: "Franziska Bonath, Bioinformatician at NGI Sweden",
               category: "Nextflow Ecosystem & nf-core",
               url: "updates-from-the-nf-core-community",
@@ -654,6 +656,14 @@ const virtualScheduleConfig: ScheduleConfig = {
           sessions: [
             {
               title:
+                "AI Workflows For Bioinformaticians",
+              speaker:
+                "Sasha Dagayev, Head of Growth and AI, Seqera",
+              category: "AI-Assisted Research",
+              url: "ai-workflows-for-bioinformaticians",
+            },
+            {
+              title:
                 "nf-core/proteinfamilies: A scalable pipeline for the generation of protein families",
               speaker: "Evangelos Karatzas, Research Fellow, EMBL-EBI",
               category: "Translational Research",
@@ -707,21 +717,21 @@ const virtualScheduleConfig: ScheduleConfig = {
 
 const ScheduleVirtual: React.FC<Props> = ({ children, className, config }) => {
   const [selectedTimezone, setSelectedTimezone] = useState(TIMEZONES[0]); // Barcelona CEST default
-  
+
   return (
     <div className={`w-full ${className || ""}`}>
       {config.days.map((day, dayIndex) => (
         <section key={dayIndex} className="mb-20">
           <h5 className="text-2xl mb-2">{day.date}</h5>
-          <ScheduleHeader 
-            timezone={day.timezone} 
+          <ScheduleHeader
+            timezone={day.timezone}
             selectedTimezone={selectedTimezone}
             onTimezoneChange={setSelectedTimezone}
           />
           {day.slots.map((slot, slotIndex) => (
-            <TimeSlotItem 
-              key={slotIndex} 
-              {...slot} 
+            <TimeSlotItem
+              key={slotIndex}
+              {...slot}
               sourceOffset={2} // CEST is UTC+2
               targetOffset={selectedTimezone.offset}
             />
