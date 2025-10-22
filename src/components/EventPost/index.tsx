@@ -83,7 +83,21 @@ const EventPosts: React.FC<Props> = ({ post }) => {
     return "/2025/boston/agenda";
   };
 
+  const timezonePrint = () => {
+    // First, try to detect from current URL
+    if (typeof window !== "undefined") {
+      const currentPath = window.location.pathname;
+      if (currentPath.includes("/virtual/")) return "CET";
+      if (currentPath.includes("/boston/")) return "EST";
+      if (currentPath.includes("/barcelona/")) return "CET";
+    }
+
+    // Default fallback
+    return "CET";
+  };
+
   const agendaPath = getAgendaPath();
+  const timezone = timezonePrint();
 
   return (
     <section className="flex flex-col h-full">
@@ -91,11 +105,11 @@ const EventPosts: React.FC<Props> = ({ post }) => {
         <div className="relative border border-nextflow p-4 mb-6 hover:border-nextflow-200 transition-all duration-400">
           ← {formatDateTime(post.publishedAt)}
           {post.endTime && ` - ${formatTime(post.endTime)}`}
-              
-        <a
-          href={agendaPath}
-          className="absolute top-0 right-0 bottom-0 left-0 w-full h-full hover:text-nextflow-200 duration-400 transition-all"
-        ></a>
+          {` `}{timezone}
+          <a
+            href={agendaPath}
+            className="absolute top-0 right-0 bottom-0 left-0 w-full h-full hover:text-nextflow-200 duration-400 transition-all"
+          ></a>
         </div>
       )}
       <div className="border border-nextflow p-4">
