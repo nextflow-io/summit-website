@@ -253,6 +253,14 @@ const virtualScheduleConfig: ScheduleConfig = {
         {
           time: "2:40PM",
           sessions: [
+                  {
+              title:
+                "Happy Nextflow Summit",
+              speaker:
+                "Brendan Bouffler, HPC Engineering, AWS",
+              category: "Infrastructure & Automation",
+              url: "happy-nextflow-summit",
+            },
             {
               title:
                 "Enabling reproducibility in Agri-Ecology and Evolutionary biology",
