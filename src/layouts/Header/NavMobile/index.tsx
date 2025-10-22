@@ -37,6 +37,18 @@ const NavMobile: React.FC<Props> = ({ pathname, namespace, showNav }) => {
             <div className="container">
               <Button
                 className="container mt-8 relative w-full"
+                white
+                arrowAfter
+              >
+                Virtual Summit Schedule
+                <a
+                  className="absolute w-full h-full"
+                  href="/2025/virtual/agenda"
+                  target="_blank"
+                ></a>
+              </Button>
+              <Button
+                className="container mt-4 relative w-full"
                 brand
                 arrowAfter
               >
@@ -47,7 +59,6 @@ const NavMobile: React.FC<Props> = ({ pathname, namespace, showNav }) => {
                   target="_blank"
                 ></a>
               </Button>
-
             </div>
           </div>
         )}
