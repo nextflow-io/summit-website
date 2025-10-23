@@ -258,7 +258,7 @@ const virtualScheduleConfig: ScheduleConfig = {
           time: "2:40PM",
           sessions: [
             {
-              title: "Happy Nextflow Summit",
+              title: "Happy Nextflow Summit from AWS",
               speaker: "Brendan Bouffler, HPC Engineering, AWS",
               category: "Infrastructure & Automation",
               url: "happy-nextflow-summit",
@@ -473,7 +473,7 @@ const virtualScheduleConfig: ScheduleConfig = {
           sessions: [
             {
               title: "Day One Wrap Up",
-              speaker: "Evan Floden, CEO & Co-Founder, Seqera",
+              speaker: "Leslie Denson, VP of Marketing, Seqera",
             },
           ],
         },
@@ -511,7 +511,7 @@ const virtualScheduleConfig: ScheduleConfig = {
           highlighted: true,
           sessions: [
             {
-              title: "Keynote",
+              title: "Keynote: Building a Truly Global Genomic Future: From Bioinformatics Pipelines to People",
               speaker:
                 "Segun Fatumo, Professor and Chair of Genomic Diversity, Queen Mary University of London",
               url: "keynote-segun-fatumo",
@@ -716,7 +716,7 @@ const virtualScheduleConfig: ScheduleConfig = {
           sessions: [
             {
               title: "Summit Wrap Up",
-              speaker: "Evan Floden, CEO & Co-Founder, Seqera",
+              speaker: "Drew DiPalma, VP of Product, Seqera",
             },
           ],
         },
