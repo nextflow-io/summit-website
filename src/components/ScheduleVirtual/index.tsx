@@ -396,11 +396,11 @@ const virtualScheduleConfig: ScheduleConfig = {
             },
             {
               title:
-                "Development of the ENSure Database and Pipeline for Rapid Microbial Testing in Biomanufacturing",
+                "Development of the VARITAS Database and Pipeline for Rapid Microbial Testing in Biomanufacturing",
               speaker:
                 "Tyler Laird, Bioinformatician, National Institute of Standards and Technology",
               category: "Microbiology & Ecology",
-              url: "development-of-the-ensure-database-and-pipeline-for-rapid-microbial-testing-in-biomanufacturing",
+              url: "development-of-the-varitas-database-and-pipeline-for-rapid-microbial-testing-in-biomanufacturing",
             },
             {
               title: "How I Built the Nextflow Community in Korea",
@@ -491,6 +491,17 @@ const virtualScheduleConfig: ScheduleConfig = {
               title: "What's New With Nextflow",
               speaker: "Ben Sherman, Senior Software Engineer, Seqera",
               url: "whats-new-with-nextflow",
+            },
+          ],
+        },
+           {
+          time: "1:40PM",
+          highlighted: true,
+          sessions: [
+            {
+              title: "Bioinformatics pipelines through the ages: From Bash to Workflows to Agents",
+              speaker: "Ken Brewer, Scientific Solutions Lead, Seqera",
+              url: "bioinformatics-pipelines-through-the-ages-from-bash-to-workflows-to-agents",
             },
           ],
         },

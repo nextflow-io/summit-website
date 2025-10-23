@@ -1,0 +1,9 @@
+.speakerBio {
+   & p {
+    margin-bottom: 1rem;
+
+   }
+   a {
+    color: var(--color-nextflow-200);
+   }
+}

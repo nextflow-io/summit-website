@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import PortableText from "@components/PortableText";
 import SocialIcon from "@components/SocialIcon";
 import Button from "@components/Button";
+import clsx from "clsx";
+import styles from "./styles.module.css";
 
 type Props = {
   post: any;
@@ -241,6 +243,16 @@ const EventPosts: React.FC<Props> = ({ post }) => {
                   />
                 )}
               </div>
+            {person.bio && (
+              <div className="mt-8 w-full border-t border-nextflow pt-4">
+           
+                <PortableText
+                  className={clsx(
+                  styles.speakerBio)}
+                  value={person.bio}
+                />
+              </div>
+            )}
             </div>
           </div>
         </div>
