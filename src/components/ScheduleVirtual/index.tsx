@@ -494,12 +494,13 @@ const virtualScheduleConfig: ScheduleConfig = {
             },
           ],
         },
-           {
+        {
           time: "1:40PM",
           highlighted: true,
           sessions: [
             {
-              title: "Bioinformatics pipelines through the ages: From Bash to Workflows to Agents",
+              title:
+                "Bioinformatics pipelines through the ages: From Bash to Workflows to Agents",
               speaker: "Ken Brewer, Scientific Solutions Lead, Seqera",
               url: "bioinformatics-pipelines-through-the-ages-from-bash-to-workflows-to-agents",
             },
@@ -601,11 +602,10 @@ const virtualScheduleConfig: ScheduleConfig = {
             },
             {
               title:
-                "nf-core/differentialabundance: a unified framework for differential analysis",
-              speaker:
-                "Suzanne Jin, PhD Student, Centre for Genomic Regulation",
+                "Pipeline Hubs: A Concept for Live, Reproducible Method Comparison in Bioinformatics",
+              speaker: "Cedric Notredame, PI, CRG",
               category: "Translational Research",
-              url: "nf-core-differentialabundance-a-unified-framework-for-differential-analysis",
+              url: "pipeline-hubs-a-concept-for-live-reproducible-method-comparison-in-bioinformatics",
             },
             {
               title:
@@ -655,10 +655,11 @@ const virtualScheduleConfig: ScheduleConfig = {
             },
             {
               title:
-                "Pipeline Hubs: A Concept for Live, Reproducible Method Comparison in Bioinformatics",
-              speaker: "Cedric Notredame, PI, CRG",
-              category: "Nextflow Ecosystem & nf-core",
-              url: "pipeline-hubs-a-concept-for-live-reproducible-method-comparison-in-bioinformatics",
+                "nf-core/differentialabundance: a unified framework for differential analysis",
+              speaker:
+                "Suzanne Jin, PhD Student, Centre for Genomic Regulation",
+              category: "Translational Research",
+              url: "nf-core-differentialabundance-a-unified-framework-for-differential-analysis",
             },
           ],
         },
@@ -666,10 +667,8 @@ const virtualScheduleConfig: ScheduleConfig = {
           time: "4:40PM",
           sessions: [
             {
-              title:
-                "AI Workflows For Bioinformaticians",
-              speaker:
-                "Sasha Dagayev, Head of Growth and AI, Seqera",
+              title: "AI Workflows For Bioinformaticians",
+              speaker: "Sasha Dagayev, Head of Growth and AI, Seqera",
               category: "AI-Assisted Research",
               url: "ai-workflows-for-bioinformaticians",
             },
