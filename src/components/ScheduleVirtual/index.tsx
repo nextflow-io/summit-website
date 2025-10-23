@@ -396,11 +396,11 @@ const virtualScheduleConfig: ScheduleConfig = {
             },
             {
               title:
-                "Development of the ENSure Database and Pipeline for Rapid Microbial Testing in Biomanufacturing",
+                "Development of the VARITAS Database and Pipeline for Rapid Microbial Testing in Biomanufacturing",
               speaker:
                 "Tyler Laird, Bioinformatician, National Institute of Standards and Technology",
               category: "Microbiology & Ecology",
-              url: "development-of-the-ensure-database-and-pipeline-for-rapid-microbial-testing-in-biomanufacturing",
+              url: "development-of-the-varitas-database-and-pipeline-for-rapid-microbial-testing-in-biomanufacturing",
             },
             {
               title: "How I Built the Nextflow Community in Korea",
