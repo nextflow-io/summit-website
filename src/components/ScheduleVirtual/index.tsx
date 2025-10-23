@@ -258,7 +258,7 @@ const virtualScheduleConfig: ScheduleConfig = {
           time: "2:40PM",
           sessions: [
             {
-              title: "Happy Nextflow Summit",
+              title: "Happy Nextflow Summit from AWS",
               speaker: "Brendan Bouffler, HPC Engineering, AWS",
               category: "Infrastructure & Automation",
               url: "happy-nextflow-summit",
@@ -473,7 +473,7 @@ const virtualScheduleConfig: ScheduleConfig = {
           sessions: [
             {
               title: "Day One Wrap Up",
-              speaker: "Evan Floden, CEO & Co-Founder, Seqera",
+              speaker: "Leslie Denson, VP of Marketing, Seqera",
             },
           ],
         },
@@ -494,12 +494,13 @@ const virtualScheduleConfig: ScheduleConfig = {
             },
           ],
         },
-           {
+        {
           time: "1:40PM",
           highlighted: true,
           sessions: [
             {
-              title: "Bioinformatics pipelines through the ages: From Bash to Workflows to Agents",
+              title:
+                "Bioinformatics pipelines through the ages: From Bash to Workflows to Agents",
               speaker: "Ken Brewer, Scientific Solutions Lead, Seqera",
               url: "bioinformatics-pipelines-through-the-ages-from-bash-to-workflows-to-agents",
             },
@@ -510,7 +511,7 @@ const virtualScheduleConfig: ScheduleConfig = {
           highlighted: true,
           sessions: [
             {
-              title: "Keynote",
+              title: "Keynote: Building a Truly Global Genomic Future: From Bioinformatics Pipelines to People",
               speaker:
                 "Segun Fatumo, Professor and Chair of Genomic Diversity, Queen Mary University of London",
               url: "keynote-segun-fatumo",
@@ -601,11 +602,10 @@ const virtualScheduleConfig: ScheduleConfig = {
             },
             {
               title:
-                "nf-core/differentialabundance: a unified framework for differential analysis",
-              speaker:
-                "Suzanne Jin, PhD Student, Centre for Genomic Regulation",
+                "Pipeline Hubs: A Concept for Live, Reproducible Method Comparison in Bioinformatics",
+              speaker: "Cedric Notredame, PI, CRG",
               category: "Translational Research",
-              url: "nf-core-differentialabundance-a-unified-framework-for-differential-analysis",
+              url: "pipeline-hubs-a-concept-for-live-reproducible-method-comparison-in-bioinformatics",
             },
             {
               title:
@@ -655,10 +655,11 @@ const virtualScheduleConfig: ScheduleConfig = {
             },
             {
               title:
-                "Pipeline Hubs: A Concept for Live, Reproducible Method Comparison in Bioinformatics",
-              speaker: "Cedric Notredame, PI, CRG",
-              category: "Nextflow Ecosystem & nf-core",
-              url: "pipeline-hubs-a-concept-for-live-reproducible-method-comparison-in-bioinformatics",
+                "nf-core/differentialabundance: a unified framework for differential analysis",
+              speaker:
+                "Suzanne Jin, PhD Student, Centre for Genomic Regulation",
+              category: "Translational Research",
+              url: "nf-core-differentialabundance-a-unified-framework-for-differential-analysis",
             },
           ],
         },
@@ -666,10 +667,8 @@ const virtualScheduleConfig: ScheduleConfig = {
           time: "4:40PM",
           sessions: [
             {
-              title:
-                "AI Workflows For Bioinformaticians",
-              speaker:
-                "Sasha Dagayev, Head of Growth and AI, Seqera",
+              title: "AI Workflows For Bioinformaticians",
+              speaker: "Sasha Dagayev, Head of Growth and AI, Seqera",
               category: "AI-Assisted Research",
               url: "ai-workflows-for-bioinformaticians",
             },
@@ -717,7 +716,7 @@ const virtualScheduleConfig: ScheduleConfig = {
           sessions: [
             {
               title: "Summit Wrap Up",
-              speaker: "Evan Floden, CEO & Co-Founder, Seqera",
+              speaker: "Drew DiPalma, VP of Product, Seqera",
             },
           ],
         },

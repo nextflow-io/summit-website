@@ -29,21 +29,25 @@ const YouTubeEmbed = ({ id }) => {
     </div>
   );
 };
-
 const formatDateTime = (dateString: string) => {
   if (!dateString) return "";
 
   const date = new Date(dateString);
-  const month = date.toLocaleDateString("en-US", { month: "long" });
-  const day = date.getDate();
-  const hours = date.getHours();
-  const minutes = date.getMinutes();
+  
+  // Convert UTC to EDT (UTC-4)
+  const edtDate = new Date(date.getTime() - 4 * 60 * 60 * 1000);
+  
+  const month = edtDate.toLocaleDateString("en-US", { 
+    month: "long",
+    timeZone: "UTC" 
+  });
+  const day = edtDate.getUTCDate();
+  const hours = edtDate.getUTCHours();
+  const minutes = edtDate.getUTCMinutes();
 
-  // Convert to 12-hour format
   const period = hours >= 12 ? "pm" : "am";
   const displayHours = hours % 12 || 12;
 
-  // Only show minutes if they're not :00
   const timeString =
     minutes === 0
       ? `${displayHours}:00${period}`
@@ -51,18 +55,21 @@ const formatDateTime = (dateString: string) => {
 
   return `${month} ${day}, ${timeString}`;
 };
+
 const formatTime = (dateString: string) => {
   if (!dateString) return "";
 
   const date = new Date(dateString);
-  const hours = date.getHours();
-  const minutes = date.getMinutes();
+  
+  // Convert UTC to EDT (UTC-4)
+  const edtDate = new Date(date.getTime() - 4 * 60 * 60 * 1000);
+  
+  const hours = edtDate.getUTCHours();
+  const minutes = edtDate.getUTCMinutes();
 
-  // Convert to 12-hour format
   const period = hours >= 12 ? "pm" : "am";
   const displayHours = hours % 12 || 12;
 
-  // Only show minutes if they're not :00
   const timeString =
     minutes === 0
       ? `${displayHours}:00${period}`
@@ -103,17 +110,17 @@ const EventPosts: React.FC<Props> = ({ post }) => {
 
   return (
     <section className="flex flex-col h-full">
-      {post.publishedAt && (
-        <div className="relative border border-nextflow p-4 mb-6 hover:border-nextflow-200 transition-all duration-400">
-          ← {formatDateTime(post.publishedAt)}
-          {post.endTime && ` - ${formatTime(post.endTime)}`}
-          {` `}{timezone}
-          <a
-            href={agendaPath}
-            className="absolute top-0 right-0 bottom-0 left-0 w-full h-full hover:text-nextflow-200 duration-400 transition-all"
-          ></a>
-        </div>
-      )}
+   {post.publishedAt && (
+  <div className="relative border border-nextflow p-4 mb-6 hover:border-nextflow-200 transition-all duration-400">
+    ← {formatDateTime(post.publishedAt)}
+    {post.endTime && ` - ${formatTime(post.endTime)}`}
+    {` `}{timezone}
+    
+     <a  href={agendaPath}
+      className="absolute top-0 right-0 bottom-0 left-0 w-full h-full hover:text-nextflow-200 duration-400 transition-all"
+    ></a>
+  </div>
+)}
       <div className="border border-nextflow p-4">
         <div className="">
           {post?.category && (
