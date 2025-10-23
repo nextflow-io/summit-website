@@ -494,6 +494,17 @@ const virtualScheduleConfig: ScheduleConfig = {
             },
           ],
         },
+           {
+          time: "1:40PM",
+          highlighted: true,
+          sessions: [
+            {
+              title: "Bioinformatics pipelines through the ages: From Bash to Workflows to Agents",
+              speaker: "Ken Brewer, Scientific Solutions Lead, Seqera",
+              url: "bioinformatics-pipelines-through-the-ages-from-bash-to-workflows-to-agents",
+            },
+          ],
+        },
         {
           time: "2PM",
           highlighted: true,
