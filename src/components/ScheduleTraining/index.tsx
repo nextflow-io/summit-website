@@ -751,7 +751,7 @@ const TrainingSchedule: React.FC<Props> = ({ children, className, config }) => {
         <section key={dayIndex} className="mb-20">
           <h5 className="h5 mb-4">{day.date}</h5>
           <div className="border-b border-white mb-3 pb-2">
-            Time: CET (UTC+2)
+            Time: CEST (UTC+2)
           </div>
           {day.slots.map((slot, slotIndex) => (
             <TimeSlotItem key={slotIndex} {...slot} />

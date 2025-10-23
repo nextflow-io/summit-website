@@ -146,7 +146,7 @@ const SpeakerCard: React.FC<Props> = ({
       >
         <p className="monospace text-[1rem]">{monthDate}</p>
         <p className="font-display text-[1rem]">
-          {timeStart} - {timeEnd} {location == "virtual" ? 'CET' : ''}
+          {timeStart} - {timeEnd} {location == "virtual" ? 'CEST' : ''}
         </p>
       </div>
     );
@@ -296,7 +296,7 @@ const SpeakerCard: React.FC<Props> = ({
                   <>
                     <p className="monospace text-[1rem]">{monthDate}</p>
                     <p className="font-display text-[1rem]">
-                      {timeStart} - {timeEnd}  {location == "virtual" ? 'CET' : ''}
+                      {timeStart} - {timeEnd}  {location == "virtual" ? 'CEST' : ''}
                     </p>
                   </>
                 )}
