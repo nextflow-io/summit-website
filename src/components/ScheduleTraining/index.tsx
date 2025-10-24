@@ -239,7 +239,7 @@ const trainingScheduleConfig: ScheduleConfig = {
               ],
             },
             {
-              time: "5:30PM - 8PM",
+              time: "6PM - 9PM",
               highlighted: true,
               sessions: [
                 {
@@ -373,7 +373,7 @@ const trainingScheduleConfig: ScheduleConfig = {
               ],
             },
             {
-              time: "5:30PM - 8PM",
+              time: "6PM - 9PM",
               highlighted: true,
               sessions: [
                 {
@@ -572,7 +572,7 @@ const trainingScheduleConfig: ScheduleConfig = {
               ],
             },
             {
-              time: "5:30PM - 8PM",
+              time: "6PM - 9PM",
               highlighted: true,
               sessions: [
                 {
