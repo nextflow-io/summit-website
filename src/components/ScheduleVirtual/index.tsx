@@ -314,15 +314,6 @@ const virtualScheduleConfig: ScheduleConfig = {
           highlighted: true,
           sessions: [
             {
-              title: "Lightning Talks",
-            },
-          ],
-        },
-        {
-          time: "3:30PM",
-          highlighted: true,
-          sessions: [
-            {
               title: "Coffee break",
             },
           ],
@@ -491,18 +482,6 @@ const virtualScheduleConfig: ScheduleConfig = {
               title: "What's New With Nextflow",
               speaker: "Ben Sherman, Senior Software Engineer, Seqera",
               url: "whats-new-with-nextflow",
-            },
-          ],
-        },
-        {
-          time: "1:40PM",
-          highlighted: true,
-          sessions: [
-            {
-              title:
-                "Bioinformatics pipelines through the ages: From Bash to Workflows to Agents",
-              speaker: "Ken Brewer, Scientific Solutions Lead, Seqera",
-              url: "bioinformatics-pipelines-through-the-ages-from-bash-to-workflows-to-agents",
             },
           ],
         },
@@ -691,6 +670,13 @@ const virtualScheduleConfig: ScheduleConfig = {
         {
           time: "5PM",
           sessions: [
+            {
+              title:
+                "Bioinformatics pipelines through the ages: From Bash to Workflows to Agents",
+              speaker: "Ken Brewer, Scientific Solutions Lead, Seqera",
+              category: "AI-Assisted Research",
+              url: "bioinformatics-pipelines-through-the-ages-from-bash-to-workflows-to-agents",
+            },
             {
               title:
                 "Advancing the nf-core/sammyseq pipeline for 4f-SAMMY-seq toward its first release",
