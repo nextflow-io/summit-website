@@ -40,14 +40,14 @@ const NavMobile: React.FC<Props> = ({ pathname, namespace, showNav }) => {
                 white
                 arrowAfter
               >
-                Virtual Summit Schedule
+                Virtual Summit Agenda
                 <a
                   className="absolute w-full h-full"
                   href="/2025/virtual/agenda"
                   target="_blank"
                 ></a>
               </Button>
-              <Button
+              {/* <Button
                 className="container mt-4 relative w-full"
                 brand
                 arrowAfter
@@ -58,7 +58,7 @@ const NavMobile: React.FC<Props> = ({ pathname, namespace, showNav }) => {
                   href="https://seqera.registration.goldcast.io/events/dc611bf3-ddc4-4a20-9f2f-1a9e941cc68c"
                   target="_blank"
                 ></a>
-              </Button>
+              </Button> */}
             </div>
           </div>
         )}

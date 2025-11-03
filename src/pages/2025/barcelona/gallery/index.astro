@@ -7,10 +7,10 @@ const photos = await Astro.glob("@images/photos/barcelona-2025/*");
 ---
 
 <Layout namespace="2025/barcelona" altBG>
-  <SEO slot="head" title="Gallery" img={1} />
+  <SEO slot="head" title="Gallery" img={2} />
   <section class="container text-center pt-10 md:pt-16">
     <Gallery
-      title="Barcelona Hackathon and Training 2025"
+      title="Barcelona Hackathon & Training 2025"
       images={photos}
       ctaURL="https://photos.app.goo.gl/YqaEbajDRA4moyyS9"
     />
