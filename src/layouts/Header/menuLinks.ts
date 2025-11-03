@@ -11,7 +11,7 @@ const menuLinks = [
         name: "Register",
         url: "/2025/virtual/register",
       },
-            {
+      {
         name: "Agenda",
         url: "/2025/virtual/agenda",
       },
@@ -61,9 +61,13 @@ const menuLinks = [
         name: "Travel",
         url: "/2025/barcelona/travel",
       },
-          {
+      {
         name: "Sponsors",
         url: "/2025/barcelona/sponsors",
+      },
+      {
+        name: "Gallery",
+        url: "/2025/barcelona/gallery",
       },
     ],
   },

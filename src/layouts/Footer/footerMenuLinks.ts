@@ -66,10 +66,14 @@ export default {
           name: "Register",
           url: "/2025/barcelona/register",
         },
-            {
-        name: "Sponsors",
-        url: "/2025/barcelona/sponsors",
-      },
+        {
+          name: "Sponsors",
+          url: "/2025/barcelona/sponsors",
+        },
+        {
+          name: "Gallery",
+          url: "/2025/barcelona/gallery",
+        },
       ],
     },
     {
