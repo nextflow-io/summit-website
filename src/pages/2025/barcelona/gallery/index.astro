@@ -6,13 +6,13 @@ import Gallery from "@components/Gallery/index.astro";
 const photos = await Astro.glob("@images/photos/barcelona-2025/*");
 ---
 
-<Layout namespace="2025/boston" altBG>
+<Layout namespace="2025/barcelona" altBG>
   <SEO slot="head" title="Gallery" img={1} />
   <section class="container text-center pt-10 md:pt-16">
     <Gallery
-      title="Boston Summit 2025"
+      title="Barcelona Hackathon and Training 2025"
       images={photos}
-      ctaURL="https://photos.google.com/share/AF1QipMXivU7WDJSQZRwH9-zbJN5GTTascOpF6SYuUD-fzc1CLmXBHg6Xa87T3w5jQ4hRA?key=VE81RlFVc2ZyT3pLajRFNzc5SXVOSWhWaUppUGx3"
+      ctaURL="https://photos.app.goo.gl/YqaEbajDRA4moyyS9"
     />
   </section>
 </Layout>
