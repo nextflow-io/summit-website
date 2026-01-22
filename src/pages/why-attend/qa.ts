@@ -66,7 +66,7 @@ export default {
   },
     {
       question: "Are there recommended hotels near the Training & Hackathon venue?",
-      answer: `<p>Please see the <a href="/2025/barcelona/travel">Travel</a> page for hotel recommendations near the Barcelona venue.</p>`,
+      answer: `<p>Please see the <a href="/2026/barcelona/travel">Travel</a> page for hotel recommendations near the Barcelona venue.</p>`,
     },
     // {
     //   question:

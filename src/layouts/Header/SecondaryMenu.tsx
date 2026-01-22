@@ -24,9 +24,9 @@ const SecondaryMenu: React.FC<Props> = (props) => {
   }
 
   let location;
-  if (namespace === "2025/barcelona") location = 1;
-  if (namespace === "2025/boston") location = 2;
-  if (namespace === "2025/virtual") location = 0;
+  if (namespace === "2026/barcelona") location = 1;
+  if (namespace === "2026/boston") location = 2;
+  if (namespace === "2026/virtual") location = 0;
   return (
     <nav>
       <ul
@@ -36,7 +36,7 @@ const SecondaryMenu: React.FC<Props> = (props) => {
             opacity: 0,
           }));
         }}
-        className="rounded-sm relative mx-auto flex w-fit bg-nextflow-200 overflow-hidden"
+        className="w-full flex bg-white overflow-hidden"
       >
         {menuLinks[location]?.dropdowns?.map(({ name, url }, i) => {
           return (
@@ -74,15 +74,9 @@ const Tab = ({ children, setPosition, url, pathname }) => {
       }}
       className="relative z-10 block cursor-pointer text-brand"
     >
-      {/* <a
-        href={url}
-        className={`navItem`}
-      >
+      <Link href={url} active={isActive(url)}>
         {children}
-      </a> */}
-           <Link href={url} active={isActive(url)}>
-           {children}
-          </Link>
+      </Link>
     </li>
   );
 };
@@ -93,7 +87,7 @@ const Cursor = ({ position }) => {
       animate={{
         ...position,
       }}
-      style={{...position}}
+      style={{ ...position }}
       initial={false}
       className="nav__highlight"
     />

@@ -13,8 +13,8 @@ import qa from "./qa";
 import SignUpForm from "@modules/SignUpForm";
 import Box, { SubSection } from "@components/Box";
 import ArrowUpRight from "@icons/ArrowUpRight";
-import imgVirtual from "@images/photos/2025/virtual.jpg";
-import imgBarcelona from "@images/photos/2025/barcelona/barcelona.jpg";
+import imgVirtual from "@images/photos/2026/virtual.jpg";
+import imgBarcelona from "@images/photos/2026/barcelona/barcelona.jpg";
 import Banner from '@components/Banner'
 ---
 
@@ -27,28 +27,28 @@ import Banner from '@components/Banner'
     content=`Step into the Future of Software-Driven Science.</br></br>Nextflow Summit, presented by Seqera, brings together scientists from around the world to shape the future of biotech R&D through community-driven innovation in data science and computational biology.``
     where="both"
     ctaText2="Training & Hackathon"
-    ctaLink2="/2025/barcelona/overview"
+    ctaLink2="/2026/barcelona/overview"
     ctaText1="Virtual Summit"
-    ctaLink1="/2025/virtual/overview"
+    ctaLink1="/2026/virtual/overview"
     virtual="October 23-24"
     barcelona="October 28-29"
     client:load
   />
 
-  <section class="mt-20 mb-24">
-    <div class="mt-10 mb-10 md:mt-20 md:mb-20 container smaller grid grid-cols-1 sm:grid-cols-2 gap-8">
-      <Box className="box__image sm:aspect-square	relative" href="/2025/virtual/overview">
+
+    <div class="mt-10 mb-10 md:mt-20 md:mb-20 container-lg grid grid-cols-1 sm:grid-cols-2 gap-8">
+      <Box className="box__image sm:aspect-square	relative" href="/2026/virtual/overview">
         <SubSection
           className="relative flex flex-col justify-between h-full z-10"
         >
           <div class="">
             <div
-              class="pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center"
+              class="pb-4 border-b border-b-white w-full flex flex-row justify-between items-center"
             >
-              <h5 class="h4">Nextflow Summit</h5>
+              <h5 class="text-lg monospace  font-normal">Nextflow Summit</h5>
               <ArrowUpRight />
             </div>
-            <div class=" py-2 monospace border-b border-b-nextflow md:flex md:flex-row md:justify-between">
+            <div class=" py-2 monospaceborder-b border-b-white md:flex md:flex-row md:justify-between">
               <p class="pr-4">October 23-24</p>
               <p>
                 Online
@@ -70,18 +70,18 @@ import Banner from '@components/Banner'
           </div>
         </SubSection>
       </Box>
-      <Box className="box__image sm:aspect-square	relative" href="/2025/barcelona">
+      <Box className="box__image sm:aspect-square	relative" href="/2026/barcelona">
         <SubSection
           className="relative flex flex-col justify-between h-full z-10"
         >
           <div class="">
             <div
-              class="pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center"
+              class="pb-4 border-b border-b-white w-full flex flex-row justify-between items-center"
             >
               <h5 class="h4">Training & Hackathon</h5>
               <ArrowUpRight />
             </div>
-            <div class=" py-2 monospace border-b border-b-nextflow md:flex md:flex-row md:justify-between">
+            <div class=" py-2 monospace border-b border-b-white md:flex md:flex-row md:justify-between">
               <p class="pr-4">October 28-29</p>
               <p>
                 Barcelona
@@ -104,46 +104,10 @@ import Banner from '@components/Banner'
       </Box>
     </div>
 
-    <!-- <section id="register" class="wrapper">
-      <div>
-        <div class="container pt-10">
-          <div class="flex flex-col sm:flex-row sm:justify-between">
-            <div class="w-full pr-10 pt-10">
-              <h1 class="h2 mb-10">Join us at Nextflow Summit 2025</h1>
-              <p class="monospace">
-                Discover the ticket prices, discount dates, and refund policy
-              </p>
-            </div>
-            <div>
-              <div class="w-full">
-                <SignUpForm client:load />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
-    <NextflowNumbers client:load className="my-20 md:my-40"/>
+    <NextflowNumbers client:load className=""/>
     <PastEvents />
-    <Faq className="mt-20 md:mt-40 mb-20" client:load data={qa} />
-    <section id="register" class="wrapper">
-      <div>
-        <div class="container pt-10">
-          <div class="flex flex-col sm:flex-row sm:justify-between">
-            <div class="w-full pr-10 pt-10">
-              <h1 class="h1 mb-10">Sign up for updates</h1>
-              <!-- <p class="monospace">
-                Discover the ticket prices, discount dates, and refund policy
-              </p> -->
-            </div>
-            <div>
-              <div class="w-full">
-                <SignUpForm client:load />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </section>
+    <Faq className="" client:load data={qa} />
+    <SignUpForm client:load />
+  
+  
 </Layout>

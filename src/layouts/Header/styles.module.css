@@ -4,7 +4,7 @@
   }
   &:hover {
     g, path {
-      fill: var(--color-nextflow);
+      fill: black;
     }
   }
 }
@@ -21,9 +21,8 @@
   right: 0;
 }
 .headerTop {
-  height: 60px;
-  border-bottom: 1px solid #ffffff;
-  background: var(--color-brand);
+  height: 48px;
+  background: var(--color-nextflow-600);
   & nav {
     & ul {
       list-style: none;
@@ -32,21 +31,21 @@
       & li {
         & a:global(.navItem) {
           display: block;
-          padding: 12px 12px;
+          padding: 6px 12px;
           margin: 0 4px;
           line-height: 1;
-          font-family: "Inter", sans-serif;
+          font-family: "PT Mono", courier, monospace;
           font-weight: 400;
-          font-size: 16px;
+          font-size: 14px;
           white-space: nowrap;
           position: relative;
-          color: var(--color-brand-200);
+          color: black;
           transition: all 0.3s;
           &[data-active],
           &:hover {
             opacity: 80%;
             transition: all 0.25s;
-            color: var(--color-nextflow);
+            color: white;
           }
         }
       }
@@ -62,14 +61,12 @@
   z-index: 100;
   position: sticky;
   left: 0;
-  top: 40px;
+  top: 30px;
   right: 0;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  width: 100%;
+  background:  white;
   & nav {
-    height: 40px;
-    background: var(--color-nextflow-200);
-    border-radius: 4px;
+    height: 30px;
     & ul {
       list-style: none;
       display: flex;
@@ -77,9 +74,9 @@
       & li {
         & a:global(.navItem) {
           display: block;
-          padding: 0 10px;
-          line-height: 40px;
-          font-size: 16px;
+          padding: 0 16px;
+          line-height: 30px;
+          font-size: 12px;
           font-weight: 400;
           position: relative;
           color: var(--color-brand);
@@ -89,9 +86,7 @@
           &[data-active] {
             position: relative;
             color: white;
-            background: var(--color-brand);
-            border-radius: 4px;
-            box-shadow: inset 0px 0px 0px 1px var(--color-nextflow-200);
+            background: black;
             &:before {
               position: absolute;
               top: 0;
@@ -106,9 +101,7 @@
     }
   }
 }
-.registerBtn {
-  /* transition: all 0.3s; */
-}
+
 .registerCTA {
   transition: all 0.3s;
   &:hover {
@@ -122,10 +115,5 @@
     svg path {
       stroke: var(--color-nextflow);
     }
-    /* 
-    .registerBtn,
-    .svg {
-      transform: translateX(3px);
-    } */
   }
 }

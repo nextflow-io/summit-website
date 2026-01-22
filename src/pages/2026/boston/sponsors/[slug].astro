@@ -1,0 +1,44 @@
+---
+import clsx from "clsx";
+import Layout from "@layouts/Base.astro";
+import sponsors from "@data/sponsors";
+import SEO from "@components/SEO";
+import PortableText from "@components/PortableText";
+import Button from "@components/Button";
+import ContentBox from "@components/ContentBox/index.astro";
+
+export function getStaticPaths() {
+  return sponsors.boston?.map((sponsor) => ({
+    params: { slug: sponsor.slug },
+  }));
+}
+
+const sponsor = sponsors.boston?.find(
+  (sponsor) => sponsor.slug === Astro.params.slug,
+);
+---
+
+<Layout namespace="2026/boston" altBG>
+  <SEO slot="head" title={sponsor.name} img={1} />
+  <section class="pb-6 pt-16 md:pt-20">
+    <div class="container smallest pb-10 md:pb-20">
+      <!-- <ContentBox
+        backLink={{ href: "/2026/boston/sponsors", label: "Back to sponsors" }}
+      >
+        <h1 class="mb-4 opacity-90">
+          <img src={sponsor.image} title={sponsor.name} />
+        </h1>
+        <div class="text-nextflow text-lg font-semibold mb-6">
+          <span class="capitalize">{sponsor.rank}</span> sponsor of Nextflow Summit
+          2025
+        </div>
+        <PortableText
+          defaultStyle
+          className="font-light text-brand-300 mb-8"
+          value={sponsor.description}
+        />
+        <Button large blue href={sponsor.url}>Find out more</Button>
+      </ContentBox> -->
+    </div>
+  </section>
+</Layout>

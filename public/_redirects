@@ -1,17 +1,17 @@
 # 2025 - Goldcast event registration
-/2025/virtual/register/   https://seqera.registration.goldcast.io/events/dc611bf3-ddc4-4a20-9f2f-1a9e941cc68c    200!
+/2026/virtual/register/   https://seqera.registration.goldcast.io/events/dc611bf3-ddc4-4a20-9f2f-1a9e941cc68c    200!
 
 # 2025 - Update provisional talk title URLs
-/2025/boston/agenda/product-keynote   /2025/boston/agenda/from-pipelines-to-platform
-/2025/boston/agenda/doing-ai-right    /2025/boston/agenda/responsible-ai-in-genomics
-/2025/boston/agenda/enabling-reproducible-science-and-african-represenation-in-science-through-nextflow-workshops   /2025/boston/agenda/enabling-reproducible-science-and-african-representation-in-science-through-nextflow-workshops
-/2025/virtual/agenda/nextflow-ambassadors   /2025/virtual/agenda/act-local-think-global-the-nextflow-ambassador-journey
-/2025/virtual/agenda/reads-to-results-architecting-modern-genomics-pipelines-with-nextflow-and-seqera-platform   /2025/virtual/agenda/orchestrating-large-scale-omics-workflows-with-seqera-at-arcus-biosciences
-/2025/virtual/agenda/seqera-10-years-of-multiqc   /2025/virtual/agenda/10-years-of-multiqc
-/2025/virtual/agenda/development-of-the-ensure-database-and-pipeline-for-rapid-microbial-testing-in-biomanufacturing   /2025/virtual/agenda/development-of-the-varitas-database-and-pipeline-for-rapid-microbial-testing-in-biomanufacturing 
+/2026/boston/agenda/product-keynote   /2026/boston/agenda/from-pipelines-to-platform
+/2026/boston/agenda/doing-ai-right    /2026/boston/agenda/responsible-ai-in-genomics
+/2026/boston/agenda/enabling-reproducible-science-and-african-represenation-in-science-through-nextflow-workshops   /2026/boston/agenda/enabling-reproducible-science-and-african-representation-in-science-through-nextflow-workshops
+/2026/virtual/agenda/nextflow-ambassadors   /2026/virtual/agenda/act-local-think-global-the-nextflow-ambassador-journey
+/2026/virtual/agenda/reads-to-results-architecting-modern-genomics-pipelines-with-nextflow-and-seqera-platform   /2026/virtual/agenda/orchestrating-large-scale-omics-workflows-with-seqera-at-arcus-biosciences
+/2026/virtual/agenda/seqera-10-years-of-multiqc   /2026/virtual/agenda/10-years-of-multiqc
+/2026/virtual/agenda/development-of-the-ensure-database-and-pipeline-for-rapid-microbial-testing-in-biomanufacturing   /2026/virtual/agenda/development-of-the-varitas-database-and-pipeline-for-rapid-microbial-testing-in-biomanufacturing 
 
 # 2025 - archive site proxy
-/2025/*       https://nextflow-summit-2025.netlify.app/2025/:splat    200!
+/2026/*       https://nextflow-summit-2025.netlify.app/2026/:splat    200!
 
 # 2024 - archive site proxy
 /2024/*       https://nextflow-summit-2024.netlify.app/2024/:splat    200!

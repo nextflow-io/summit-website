@@ -1,0 +1,44 @@
+---
+import Layout from "@layouts/Base.astro";
+import SEO from "@components/SEO";
+import PostersSection from "@modules/PostersSection";
+import Hero from "@components/Hero";
+import {getAllPostersVirtual} from "@data/posters";
+
+const sortedMembers = getAllPostersVirtual[0].posters.sort((a, b) =>
+  a.name.localeCompare(b.name)
+);
+
+---
+
+<Layout namespace="2026/virtual">
+  <SEO slot="head" title="Posters" img={1} />
+
+  <section class="py-8">
+    <Hero
+    title="Posters"
+    content=" Explore posters from the community and learn about their work. Posters will be presented during lightning rounds during the event. "
+
+    ctaExternal1
+    client:load
+  />
+ </section>
+
+ <div class="container mt-14">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+    {
+      sortedMembers.map((name,index) => (
+       
+         <PostersSection 
+         person={name} 
+         index={index}
+         location="virtual"
+         client:only="react"/>
+           
+      ))
+    }
+
+  </div>
+</div>
+
+</Layout>

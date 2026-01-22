@@ -212,11 +212,11 @@ export default {
       container: {
         center: true,
         screens: {
-          // xxs: "340px",
-          // xs: "800px",
-          // sm: "1000px",
-          // md: "1200px",
-          // lg: "1400px",
+          xxs: "340px",
+          xs: "800px",
+          sm: "1000px",
+          md: "1200px",
+          lg: "1400px",
           xl: "1600px",
         },
       },

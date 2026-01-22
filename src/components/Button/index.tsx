@@ -9,17 +9,9 @@ type Props = {
   href?: string;
   to?: string;
   className?: string;
+  light?: boolean;
+  dark?: boolean;
   small?: boolean;
-  large?: boolean;
-  wide?: boolean;
-  wider?: boolean;
-  white?: boolean;
-  brand?: boolean;
-  secondary?: boolean;
-  arrow?: boolean;
-  arrowBefore?: boolean;
-  arrowAfter?: boolean;
-  cta?: boolean;
 };
 
 const Button: React.FC<Props> = ({
@@ -28,61 +20,54 @@ const Button: React.FC<Props> = ({
   href,
   to,
   className,
-  ...attributes
+  light,
+  dark,
+  small,
 }) => {
-  const cn = clsx("button", styles.button, className, {
-    [styles.small]: attributes.small,
-    [styles.large]: attributes.large,
-    [styles.wide]: attributes.wide,
-    [styles.wider]: attributes.wider,
-    [styles.white]: attributes.white,
-    [styles.brand]: attributes.brand,
-    [styles.secondary]: attributes.secondary,
-    [styles.cta]: attributes.cta,
+  const cn = clsx(
+    "button monospace flex items-center justify-center",
+    styles.button,
+    className,
+    {
+      [styles.light]: light,
+      [styles.dark]: dark,
+      [styles.small]: small,
+    }
+  );
+
+  const contentCn = clsx(styles.content, {
+    "text-xs py-1 px-2": small,
+    "text-sm py-1 px-2": !small,
   });
 
-  let arrowBefore = null;
-  let arrowAfter = null;
-
-  if (attributes.arrowBefore) {
-    arrowBefore = <ArrowRight key="arrow" className={styles.arrowBefore} />;
-  }
-  if (attributes.arrowAfter) {
-    arrowAfter = <ArrowRight key="arrow" className={styles.arrowAfter} />;
-  }
-
   const url = to || href;
+  const isOutLink = url?.startsWith("http");
 
   const btnContent = (
     <Fragment>
       <div className={styles.hoverBG} />
-      <div className={styles.content}>
-        {arrowBefore && (<div className="mr-2">{arrowBefore}</div>)}
+      <div className={contentCn}>
         {children}
-        {arrowAfter && (<div className="ml-6">{arrowAfter}</div>)}
+        <div className="ml-6">
+          <ArrowRight className={styles.arrowAfter} />
+        </div>
       </div>
     </Fragment>
   );
 
   if (url) {
-    const isOutLink = url.startsWith("http");
-    if (isOutLink) {
-      return (
-        <a href={url} className={cn} target="_blank" rel="noreferrer">
-          {btnContent} 
-        </a>
-      );
-    } else {
-      return (
-        <a href={url} className={cn}>
-          {btnContent}
-        </a>
-      );
-    }
+    return (   
+      <a href={url}
+        className={cn}
+        {...(isOutLink && { target: "_blank", rel: "noreferrer" })}
+      >
+        {btnContent}
+      </a>
+    );
   }
 
   return (
-    <button type="button" onClick={onClick} className={`monospace flex items-center justify-center ${cn}`}>
+    <button type="button" onClick={onClick} className={cn}>
       {btnContent}
     </button>
   );

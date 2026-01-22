@@ -2,14 +2,13 @@ import * as React from "react"
 export default (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={23}
-    height={23}
+    viewBox="0 0 23 23"
     fill="none"
-    className="arrow-up-right"
+   className="arrow-up-right w-4 h-4"
     {...props}
   >
     <path
-      stroke="#fff"
+      stroke="#000"
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={2}
@@ -17,4 +16,3 @@ export default (props) => (
     />
   </svg>
 );
-

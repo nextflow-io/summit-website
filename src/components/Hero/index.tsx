@@ -60,7 +60,7 @@ const Hero = ({
 
           <div className="inline-flex flex-col sm:flex-row sm:items-center mr-8" >
             {ctaText1 && (
-              <Button className="mt-10 relative" white arrowAfter>
+              <Button className="mt-10 relative">
                 {ctaLink1 && (
                   <a className="absolute w-full h-full" href={ctaLink1} target={`${ctaExternal1 ? '_blank' : '_self'}`} ></a>
                 )}{" "}
@@ -69,7 +69,7 @@ const Hero = ({
             )}
 
             {ctaText2 && (
-              <Button className="sm:ml-10 mt-6 sm:mt-10 relative" arrowBefore>
+              <Button light className="sm:ml-10 mt-6 sm:mt-10 relative">
                 {ctaLink2 && (
                   <a className="absolute w-full h-full" href={ctaLink2} target={`${ctaExternal2 ? '_blank' : '_self'}`}></a>
                 )}{" "}

@@ -1,27 +1,74 @@
 const menuLinks = [
-  {
+   {
     name: "Summit",
-    url: "/2025/virtual",
+    url: "/2026/boston",
     dropdowns: [
       {
         name: "Overview",
-        url: "/2025/virtual/overview",
+        url: "/2026/boston/overview",
       },
       {
         name: "Register",
-        url: "/2025/virtual/register",
+        url: "/2026/boston/register",
       },
       {
         name: "Agenda",
-        url: "/2025/virtual/agenda",
+        url: "/2026/boston/agenda",
       },
       {
         name: "Speakers",
-        url: "/2025/virtual/speakers",
+        url: "/2026/boston/speakers",
       },
       {
         name: "Posters",
-        url: "/2025/virtual/posters",
+        url: "/2026/boston/posters",
+      },
+      {
+        name: "Hackathon",
+        url: "/2026/boston/hackathon",
+      },
+      {
+        name: "Training",
+        url: "/2026/boston/training",
+      },
+      {
+        name: "Travel",
+        url: "/2026/boston/travel",
+      },
+      {
+        name: "Sponsors",
+        url: "/2026/boston/sponsors",
+      },
+      {
+        name: "Gallery",
+        url: "/2026/boston/gallery",
+      },
+    ],
+  },
+  {
+    name: "Virtual",
+    url: "/2026/virtual",
+    hide: true,
+    dropdowns: [
+      {
+        name: "Overview",
+        url: "/2026/virtual/overview",
+      },
+      {
+        name: "Register",
+        url: "/2026/virtual/register",
+      },
+      {
+        name: "Agenda",
+        url: "/2026/virtual/agenda",
+      },
+      {
+        name: "Speakers",
+        url: "/2026/virtual/speakers",
+      },
+      {
+        name: "Posters",
+        url: "/2026/virtual/posters",
       },
       {
         name: "Submissions",
@@ -29,102 +76,64 @@ const menuLinks = [
       },
       {
         name: "Sponsors",
-        url: "/2025/virtual/sponsors",
+        url: "/2026/virtual/sponsors",
       },
     ],
   },
   {
-    name: "Training & Hackathon",
-    url: "/2025/barcelona",
-    dropdowns: [
-      {
-        name: "Overview",
-        url: "/2025/barcelona/overview",
-      },
-      {
-        name: "Register",
-        url: "/2025/barcelona/register",
-      },
-      {
-        name: "Agenda",
-        url: "/2025/barcelona/agenda",
-      },
-      {
-        name: "Hackathon",
-        url: "/2025/barcelona/hackathon",
-      },
-      {
-        name: "Training",
-        url: "/2025/barcelona/training",
-      },
-      {
-        name: "Travel",
-        url: "/2025/barcelona/travel",
-      },
-      {
-        name: "Sponsors",
-        url: "/2025/barcelona/sponsors",
-      },
-      {
-        name: "Gallery",
-        url: "/2025/barcelona/gallery",
-      },
-    ],
+    name: "Training",
+    url: "/2026/boston/training",
   },
   {
-    name: "Boston",
-    url: "/2025/boston",
-    hide: true,
-    dropdowns: [
-      {
-        name: "Overview",
-        url: "/2025/boston/overview",
-      },
-      {
-        name: "Register",
-        url: "/2025/boston/register",
-      },
-      {
-        name: "Agenda",
-        url: "/2025/boston/agenda",
-      },
-      {
-        name: "Speakers",
-        url: "/2025/boston/speakers",
-      },
-      {
-        name: "Posters",
-        url: "/2025/boston/posters",
-      },
-      {
-        name: "Hackathon",
-        url: "/2025/boston/hackathon",
-      },
-      {
-        name: "Training",
-        url: "/2025/boston/training",
-      },
-      {
-        name: "Travel",
-        url: "/2025/boston/travel",
-      },
-      {
-        name: "Sponsors",
-        url: "/2025/boston/sponsors",
-      },
-      {
-        name: "Gallery",
-        url: "/2025/boston/gallery",
-      },
-    ],
+    name: "Hackathon",
+    url: "/2026/boston/hackathon",
   },
+  // {
+  //   name: "Training & Hackathon",
+  //   url: "/2026/boston",
+  //   dropdowns: [
+  //     {
+  //       name: "Overview",
+  //       url: "/2026/boston/overview",
+  //     },
+  //     {
+  //       name: "Register",
+  //       url: "/2026/boston/register",
+  //     },
+  //     {
+  //       name: "Agenda",
+  //       url: "/2026/boston/agenda",
+  //     },
+  //     {
+  //       name: "Hackathon",
+  //       url: "/2026/boston/hackathon",
+  //     },
+  //     {
+  //       name: "Training",
+  //       url: "/2026/boston/training",
+  //     },
+  //     {
+  //       name: "Travel",
+  //       url: "/2026/boston/travel",
+  //     },
+  //     {
+  //       name: "Sponsors",
+  //       url: "/2026/boston/sponsors",
+  //     },
+  //     {
+  //       name: "Gallery",
+  //       url: "/2026/boston/gallery",
+  //     },
+  //   ],
+  // },
+ 
   {
     name: "Call for Speakers & Posters",
     url: "/call-for-abstracts",
   },
   {
-    name: "Why Attend",
-    url: "/why-attend",
+    name: "FAQ",
+    url: "/faq",
   },
   // {
   //   name: "Past Events",

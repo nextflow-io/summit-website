@@ -4,16 +4,16 @@
 
 
 [[redirects]]
-  from = "https://summit.nextflow.io/2025/boston/agenda/product-keynote"
-  to = "/2025/boston/agenda/from-pipelines-to-platform"
+  from = "https://summit.nextflow.io/2026/boston/agenda/product-keynote"
+  to = "/2026/boston/agenda/from-pipelines-to-platform"
   status = 301
 
 [[redirects]]
-  from = "https://summit.nextflow.io/2025/boston/agenda/doing-ai-right"
-  to = "/2025/agenda/responsible-ai-in-genomics"
+  from = "https://summit.nextflow.io/2026/boston/agenda/doing-ai-right"
+  to = "/2026/agenda/responsible-ai-in-genomics"
   status = 301
 
   [[redirects]]
-  from = "https://summit.nextflow.io/2025/boston/agenda/enabling-reproducible-science-and-african-represenation-in-science-through-nextflow-workshops"
-  to = "https://summit.nextflow.io/2025/agenda/enabling-reproducible-science-and-african-representation-in-science-through-nextflow-workshops"
+  from = "https://summit.nextflow.io/2026/boston/agenda/enabling-reproducible-science-and-african-represenation-in-science-through-nextflow-workshops"
+  to = "https://summit.nextflow.io/2026/agenda/enabling-reproducible-science-and-african-representation-in-science-through-nextflow-workshops"
   status = 301

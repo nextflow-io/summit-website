@@ -1,8 +1,0 @@
-.card {
-  transition: all 0.2s;
-  &[href] {
-    &:hover {
-      transform: scale(1.02);
-    }
-  }
-}

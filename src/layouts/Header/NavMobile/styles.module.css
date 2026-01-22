@@ -1,9 +1,8 @@
 .navMobile {
-  height: 76px;
+  height: 60px;
   /* padding: 0 16px; */
   transition: all .4s ease-in-out;
-  background: var(--color-brand);
-  border-bottom: 1px solid white;
+  background: var(--color-nextflow-600);
   z-index: 100;
   position: fixed;
   left: 0;

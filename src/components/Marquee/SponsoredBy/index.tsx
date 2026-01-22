@@ -15,7 +15,7 @@ const SponsoredBy: React.FC<Props> = ({ className, location = "boston" }) => (
     <Marquee
       speed={50}
       className={className}
-      href={`/2025/${location}/sponsors/`}
+      href={`/2026/${location}/sponsors/`}
     >
       <div className={styles.container}>
         {sponsors[location]?.map((sponsor, i) => (

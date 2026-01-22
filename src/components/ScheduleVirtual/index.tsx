@@ -134,7 +134,7 @@ const SessionItem: React.FC<SessionProps> = ({
   if (url) {
     return (
       <a
-        href={`/2025/virtual/agenda/${url}`}
+        href={`/2026/virtual/agenda/${url}`}
         className="block transition-colors px-4 -mx-4 "
       >
         {content}
@@ -179,7 +179,7 @@ const TimeSlotItem: React.FC<
 
         {sessions[0].url && (
           <a
-            href={`/2025/virtual/agenda/${sessions[0].url}`}
+            href={`/2026/virtual/agenda/${sessions[0].url}`}
             className="absolute inset-0 z-20 cursor-pointer"
             aria-label={`View ${sessions[0].title}`}
           ></a>

@@ -37,13 +37,13 @@ const NavMobile: React.FC<Props> = ({ pathname, namespace, showNav }) => {
             <div className="container">
               <Button
                 className="container mt-8 relative w-full"
-                white
+                light
                 arrowAfter
               >
                 Virtual Summit Agenda
                 <a
                   className="absolute w-full h-full"
-                  href="/2025/virtual/agenda"
+                  href="/2026/virtual/agenda"
                   target="_blank"
                 ></a>
               </Button>

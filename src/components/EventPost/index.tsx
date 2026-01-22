@@ -83,13 +83,13 @@ const EventPosts: React.FC<Props> = ({ post }) => {
     // First, try to detect from current URL
     if (typeof window !== "undefined") {
       const currentPath = window.location.pathname;
-      if (currentPath.includes("/virtual/")) return "/2025/virtual/agenda";
-      if (currentPath.includes("/boston/")) return "/2025/boston/agenda";
-      if (currentPath.includes("/barcelona/")) return "/2025/barcelona/agenda";
+      if (currentPath.includes("/virtual/")) return "/2026/virtual/agenda";
+      if (currentPath.includes("/boston/")) return "/2026/boston/agenda";
+      if (currentPath.includes("/barcelona/")) return "/2026/barcelona/agenda";
     }
 
     // Default fallback
-    return "/2025/boston/agenda";
+    return "/2026/boston/agenda";
   };
 
   const timezonePrint = () => {

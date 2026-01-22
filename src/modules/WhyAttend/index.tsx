@@ -1,8 +1,8 @@
 import React from "react";
 import Box, { SubSection } from "@components/Box";
-import img1 from "@images/photos/2025/barcelona/why-attend-bcn-2.jpg";
-import img2 from "@images/photos/2025/boston/why-attend.jpg";
-import img3 from "@images/photos/2025/barcelona/why-attend-bcn-3.jpg";
+import img1 from "@images/photos/2026/barcelona/why-attend-bcn-2.jpg";
+import img2 from "@images/photos/2026/boston/why-attend.jpg";
+import img3 from "@images/photos/2026/barcelona/why-attend-bcn-3.jpg";
 import Training from "@icons/Training";
 import NextflowExperts from "@icons/NextflowExperts";
 import NextflowLearning from "@icons/NextflowLearning";

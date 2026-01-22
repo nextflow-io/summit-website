@@ -11,50 +11,6 @@ type ItemProps = {
   smaller?: boolean;
 };
 
-const Item: React.FC<ItemProps> = ({
-  children,
-  value,
-  ready,
-  plus,
-  percent,
-  smaller,
-}) => {
-  const durations = {
-    1: 500,
-    1.5: 1000,
-    2: 10000,
-  };
-  let duration = 0.5;
-  Object.entries(durations).forEach(([key, length]) => {
-    if (value > length) {
-      duration = Number(key);
-    }
-  });
-  let cn = "w-full xs:w-1/2 flex-auto min-w-[100px]  py-4 px-4";
-  if (smaller)
-    cn = "w-full xs:w-1/2 md:w-full flex-auto min-w-[100px]  py-4 px-4";
-  return (
-    <CountUp
-      start={ready ? 0 : null}
-      end={value}
-      duration={duration}
-      separator=","
-      enableScrollSpy
-    >
-      {({ countUpRef }) => (
-        <div className={cn}>
-          <div className="text-4xl mb-2">
-            <span ref={countUpRef} className="font-display" />
-            {percent && "%"}
-            {plus && "+"}
-          </div>
-          <div className="text-sm sm:text-base">{children}</div>
-        </div>
-      )}
-    </CountUp>
-  );
-};
-
 type Props = {
   className?: string;
   location?: "boston" | "barcelona";
@@ -64,79 +20,51 @@ const Numbers: React.FC<Props> = (props = {}) => {
   const [ready, setReady] = useState(false);
   const { className, location = "boston" } = props;
   return (
-    <section className={className}>
-      <div className="container">
-        <div className="flex flex-wrap">
-          <div className="mb-4 md:mb-10 w-full lg:w-1/3 lg:pr-12">
-            <h3 className="h3">
-            Nextflow Training and nf-core Hackathon by the numbers
+    <section className={`${className} bg-nextflow text-black`}>
+      <div className="container-xl py-10 md:py-20">
+        <div className="flex flex-col md:flex-row">
+          <div className="mb-4 md:mb-10 w-full md:w-1/2 md:pr-12">
+            <h3 className="text-2xl md:text-3xl mb-4 md:mb-0">
+              Nextflow Training
+              <br /> and nf-core Hackathon
+              <br /> by the numbers
             </h3>
           </div>
-          <div className="w-full lg:w-2/3 flex flex-wrap">
-            <div className="md:border-r border-1 border-brand-900 w-full md:w-2/6 md:pr-6">
-              <div className="h-full w-full flex items-start flex-wrap -m-4">
-                <Item
-                  ready={ready}
-                  value={data[location]["pharma_biotech"].value}
-                  percent
-                  smaller
-                >
-                  {data[location]["pharma_biotech"].label}
-                </Item>
-                <Item
-                  ready={ready}
-                  value={data[location]["research_academia"].value}
-                  percent
-                  smaller
-                >
-                  {data[location]["research_academia"].label}
-                </Item>
+          <div className="w-full md:w-1/2 flex flex-col">
+            <div className="w-full flex flex-row">
+              <div className="px-4 py-2 bg-black w-full text-white flex flex-row items-center">
+                <h3 className="font-display text-[3.5rem] mr-4 leading-none">
+                  70%
+                </h3>
+                <p className="max-w-[100px] text-[.8rem] leading-tight">
+                  Pharma & Biotech
+                </p>
+              </div>
+              <div className="px-4 py-2 bg-white w-full flex flex-row items-center">
+                <h3 className="font-display text-3xl mr-4 leading-none">30%</h3>
+                <p className="max-w-[100px] text-[.8rem] leading-tight">
+                  Research & Academia
+                </p>
               </div>
             </div>
-            <div className="md:w-4/6 md:pl-12 pt-8 md:pt-0">
-              <div className="h-full w-full flex items-start flex-wrap -m-4">
-                <Item
-                  ready={ready}
-                  value={
-                    data[location]["summit_in_person_attendees_prev_year"].value
-                  }
-                >
-                  {data[location]["summit_in_person_attendees_prev_year"].label}
-                </Item>
-                <Item
-                  ready={ready}
-                  value={
-                    data[location]["summit_in_person_attendees_expected"].value
-                  }
-                  plus
-                >
-                  {data[location]["summit_in_person_attendees_expected"].label}
-                </Item>
-                <Item
-                  ready={ready}
-                  value={
-                    data[location]["hackathon_in_person_attendees_prev_year"]
-                      .value
-                  }
-                >
-                  {
-                    data[location]["hackathon_in_person_attendees_prev_year"]
-                      .label
-                  }
-                </Item>
-                <Item
-                  ready={ready}
-                  value={
-                    data[location]["hackathon_in_person_attendees_expected"]
-                      .value
-                  }
-                  plus
-                >
-                  {
-                    data[location]["hackathon_in_person_attendees_expected"]
-                      .label
-                  }
-                </Item>
+            <div className="border-b border-black py-2">
+              <div className=" flex flex-row items-center">
+                <h4 className="text-[3.75rem] font-display mr-4 leading-none">
+                  64
+                </h4>
+                <p className="text-md md:text-lg leading-tight">
+                  Nextflow Training in-person attendees in 2025
+                </p>
+              </div>
+            </div>
+            <div className="border-b border-black py-2">
+              <div className=" flex flex-row items-center">
+                <h4 className="text-[3.75rem] font-display mr-4 leading-none">
+                  137
+                </h4>
+                <p className="text-md md:text-lg leading-tight">
+                  Hackathon in-person attendees in 2025
+                </p>
               </div>
             </div>
           </div>

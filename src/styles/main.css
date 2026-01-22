@@ -1,9 +1,8 @@
 :root {
-  --sl-blue: #4256e7;
 }
 html,
 body {
-  background-color: var(--color-brand) !important;
+  background-color: black;
   color: white;
   scroll-behavior: smooth;
   /* scroll-padding-top: 104px; */
@@ -11,14 +10,7 @@ body {
 body {
   min-height: 100vh;
 }
-/* header#header,
-header#headerMobile,
-main#body,
-footer#footer {
-  min-width: 320px;
-  width: 100vw;
-  overflow-x: hidden;
-} */
+
 footer#footer {
   position: relative;
   z-index: 10;
@@ -27,30 +19,41 @@ main#body {
   position: relative;
 }
 .container {
+  max-width: none;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.container-sm {
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
   padding-left: 1rem;
   padding-right: 1rem;
-  @media (--sm) {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-  &.island {
-    width: fit-content;
-    max-width: 840px;
-  }
-  &.smaller {
-    max-width: 1000px;
-  }
-  &.smallest {
-    max-width: 824px;
-  }
 }
-/* .wrapper {
-  padding: 0 1.5rem;
-  @media (--md) {
-    padding: 0 2.5rem;
-  }
-} */
 
+.container-md {
+  max-width: 996px; 
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.container-lg {
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.container-xl {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
 .js-hide-nav {
   opacity: 0;
   transition: all 0.25s;
@@ -73,32 +76,6 @@ main#body {
       stroke: var(--color-nextflow);
     }
   }
-}
-
-.toggleLocation {
-  position: relative;
-  display: inline-block;
-  width: auto;
-  height: 30px;
-  line-height: 30px;
-  background: var(--color-nextflow-200);
-  border-radius: 5px;
-  color: var(--color-brand);
-  .toggleLink {
-    &.active {
-      color: white;
-      background: var(--color-brand);
-      border-radius: 4px;
-      box-shadow: inset 0px 0px 0px 1px var(--color-nextflow-200);
-    }
-  }
-}
-
-.imageBlend {
-  width: 100%;
-  height: 100%;
-  background: #d9d9d9;
-  mix-blend-mode: exclusion;
 }
 
 .box-hover {
@@ -133,7 +110,6 @@ main#body {
   }
 }
 
-
 .swoogo-form {
   height: calc(100svh - 6rem);
 }
@@ -149,23 +125,21 @@ main#body {
   position: absolute;
   z-index: 0;
   height: 100%;
-  color: white!important;
-  background: var(--color-brand);
-  border-radius: 4px;
-  box-shadow: inset 0px 0px 0px 1px var(--color-nextflow-200);
+  color: white !important;
+  background: black;
 }
 
 .crossed-out {
   position: relative;
   &:after {
-    content: ''; 
+    content: "";
     height: 1px;
     width: 141.421%;
     background-color: var(--color-nextflow);
     position: absolute;
     left: -1px;
-    top: 0px; 
+    top: 0px;
     transform: rotate(45deg);
     transform-origin: 1px 1px;
-}
+  }
 }

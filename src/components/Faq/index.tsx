@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-import GreenBar from "@images/svgs/GreenBar";
 import clsx from "clsx";
 import styles from "./faq.module.css";
 
@@ -17,7 +16,7 @@ type FaqProps = {
 const DropDownItem = ({ question, answer, isOpen, onClick }) => {
   const contentHeight = useRef(null);
   return (
-    <div className={`border-b first:border-t py-6 md:py-10`}>
+    <div className={`border-white border-b first:border-t py-6 md:py-8`}>
       <button
         className={`flex flex-row justify-between items-start w-full hover:text-nextflow transition-all duration-500 ease-in-out ${isOpen ? "active text-nextflow" : ""}`}
         onClick={onClick}
@@ -46,7 +45,7 @@ const DropDownItem = ({ question, answer, isOpen, onClick }) => {
         }
       >
         <div
-          className={clsx(styles.faqAnswer, `bodycopy monospace`)}
+          className={clsx(styles.faqAnswer, `bodycopy monospace text-nextflow`)}
           dangerouslySetInnerHTML={{ __html: answer }}
         />
       </div>
@@ -61,17 +60,12 @@ const Faq = ({ className, data, title, question, answer }: FaqProps) => {
   };
 
   return (
-    <section className={`${className} container`}>
-      <div className="relative w-full flex flex-col sm:flex-row">
+    <section className={`${className}  bg-black py-20`}>
+      <div className="container-xl relative w-full flex flex-col sm:flex-row">
         <div className="w-full mb-6 sm:mb-0 sm:sticky sm:top-40 self-start">
           <h2 className="h1 max-w-[200px] sm:max-w-[500px] relative z-20">
-            More Information
+            FAQ
           </h2>
-          <div className="mt-[-25px] ml-[-25px] sm:mt-[-50px] sm:ml-[-50px] z-0 w-full max-w-[542px] overflow-hidden">
-            <div className={clsx(styles.greenBarWrapper, ``)}>
-              <div className={clsx(styles.greenBar, ``)}></div>
-            </div>
-          </div>
         </div>
         <div className="w-full">
           {data.main.map(({ question, answer }, index) => {

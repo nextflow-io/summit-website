@@ -12,7 +12,7 @@ const RegistrationNowOpen: React.FC<Props> = ({ className, href }) => {
     <Marquee
       speed={50}
       className={className}
-      href={href || "/2025/boston/register/"}
+      href={href || "/2026/boston/register/"}
     >
       <img className="ml-8" src={registration_now_open.src} />
       <img className="ml-8" src={registration_now_open.src} />

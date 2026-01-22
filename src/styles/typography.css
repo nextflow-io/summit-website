@@ -19,10 +19,10 @@ h6,
   font-size: 70px;
   line-height: 1;
   @media (--sm) {
-    font-size: 120px;
+    font-size: 80px;
   }
   @media (--md) {
-    font-size: 140px;
+    font-size: 120px;
   }
 }
 
@@ -73,7 +73,7 @@ h6,
   font-size: 26px;
   line-height: 1.2;
   @media (--md) {
-    font-size: 35px;
+    font-size: 28px;
   }
 }
 
@@ -103,9 +103,9 @@ svg[data-icon] {
 p, .bodycopy {
   font-size: 1rem;
   line-height: 1.6;
-  font-family: "PT Mono", monospace;
+  font-family: 'Inter', sans-serif;
   @media (--sm) {
-    font-size: 1rem;
+    font-size: .9rem;
     line-height: 1.5;
   }
 }

@@ -25,122 +25,51 @@ interface HeroProps {
   namespace?: string;
   pathname?: string;
   isBoston?: boolean;
-  isBarcelona?:boolean;
-  isBoth?:boolean;
+  isBarcelona?: boolean;
+  isBoth?: boolean;
 }
 
-const LandingHero: React.FC<HeroProps> = (props) => {
-  const {
-    title,
-    subtitle,
-    content,
-    ctaText1,
-    ctaLink1,
-    ctaText2,
-    ctaLink2,
-    ctaExternal1,
-    ctaExternal2,
-    when,
-    where,
-    price,
-    pathname,
-    namespace,
-    boston,
-    barcelona,
-    virtual,
-    isBoston,
-    isBarcelona,
-    isBoth
-  } = props;
+const fadeIn = {
+  initial: { opacity: 0 },
+  whileInView: { opacity: 1 },
+  viewport: { once: true },
+};
 
-  function getURL(path, root = false) {
-    if (root) return path;
-    if (!namespace) return path;
-    return `/${namespace}${path}`;
-  }
+const fadeInUp = {
+  initial: { opacity: 0, y: 5 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+};
 
-  function isActive(path) {
-    return pathname?.includes(path);
-  }
-
+const LandingHero: React.FC<HeroProps> = ({
+  title,
+  subtitle,
+  content,
+  ctaText1,
+  ctaLink1,
+  ctaText2,
+  ctaLink2,
+  ctaExternal1,
+  ctaExternal2,
+  when,
+  where,
+  boston,
+  barcelona,
+  virtual,
+}) => {
   return (
     <motion.div
-      initial={{
-        opacity: 0,
-      }}
-      whileInView={{
-        opacity: 1,
-      }}
-      viewport={{
-        once: true,
-      }}
-      transition={{
-        duration: 0.25,
-        ease: "linear",
-      }}
-      className="md:min-h-[750px] relative w-full h-full"
+      {...fadeIn}
+      transition={{ duration: 0.25, ease: "linear" }}
+      className="py-30 relative w-full h-full flex flex-row justify-between items-center container-xl"
     >
-      <div className={clsx(styles.colorBarWrapper, "top-[0%] right-[15%]")}>
-        <div
-          className={clsx(
-            styles.colorBar,
-            styles[`${isBarcelona && "blue"}`],
-            styles[`${isBoston && "red"}`],
-            styles[`${isBoth && "red"}`],
-            ``,
-          )}
-        >
-          <div></div>
-        </div>
-      </div>
-
-      <div className={clsx(styles.colorBarWrapper, "top-[20%] left-[0%]")}>
-        <div className={clsx(styles.colorBar, styles[`green`], "colorBar")}>
-          <div></div>
-        </div>
-      </div>
-
-      <div className={clsx(styles.colorBarWrapper, "top-[50%] right-[20%]")}>
-        <div className={clsx(styles.colorBar, styles["green"], "colorBar")}>
-          <div></div>
-        </div>
-      </div>
-
-      <div className={clsx(styles.colorBarWrapper, "bottom-[5%] right-[00%]")}>
-        <div
-          className={clsx(
-            styles.colorBar,
-            styles[`${isBarcelona && "blue"}`],
-            styles[`${isBoston && "red"}`],
-            styles[`${isBoth && "blue"}`],
-          )}
-        >
-          <div></div>
-        </div>
-      </div>
-
-      <section
-        className={clsx(styles.landingHero, "container h-full relative")}
-      >
-        <div className="flex flex-col sm:flex-row sm:justify-between h-full relative z-10">
-          <div className="w-full h-full mt-10 sm:mt-0 sm:pr-10 max-w-[750px]">
+      <section className={clsx(styles.landingHero, "h-full relative w-full")}>
+        <div className="w-full flex flex-col sm:flex-row h-full relative z-10">
+          {/* Left Column */}
+          <div className="w-full h-full sm:pr-10">
             <motion.div
-              initial={{
-                opacity: 0,
-                y: 5,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              viewport={{
-                once: true,
-              }}
-              transition={{
-                duration: 0.4,
-                delay: 0.7,
-                ease: "linear",
-              }}
+              {...fadeInUp}
+              transition={{ duration: 0.4, delay: 0.7, ease: "linear" }}
             >
               <h1 className="h0 mb-4 max-w-[250px] sm:max-w-[800px]">
                 {title}
@@ -148,176 +77,83 @@ const LandingHero: React.FC<HeroProps> = (props) => {
               <h1 className="h1 mb-4 max-w-[250px] sm:max-w-[500px]">
                 {subtitle}
               </h1>
-              <div
-                className={clsx(
-                  styles.landingLogo,
-                  "flex flex-row items-center mb-8 md:mb-16",
-                )}
-              >
-                <p className="h5 mr-4">by</p>{" "}
-                <SeqeraLogo className="w-full" alt="Seqera Logo" />
-              </div>
             </motion.div>
 
             <motion.div
-              initial={{
-                opacity: 0,
-              }}
-              whileInView={{
-                opacity: 1,
-              }}
-              viewport={{
-                once: true,
-              }}
-              transition={{
-                duration: 0.4,
-                delay: 1,
-                ease: "linear",
-              }}
-              className="hidden sm:flex sm:flex-col"
+              {...fadeIn}
+              transition={{ duration: 0.4, delay: 1, ease: "linear" }}
+              className="flex flex-col"
             >
               <p
-                className="monospace sm:max-w-[580px] md:max-w-[550px]"
+                className="m:max-w-[580px] md:max-w-[550px]"
                 dangerouslySetInnerHTML={{ __html: content }}
               />
 
               <div className="inline-flex flex-col sm:flex-row sm:items-center">
                 {ctaText1 && (
-                  <Button className="mt-10 relative" white arrowAfter>
-                    {ctaLink1 && (
-                      <a className="absolute w-full h-full" href={ctaLink1} target={`${ctaExternal1 ? '_blank' : '_self'}`}></a>
-                    )}{" "}
+                  <Button className="mt-10" href={ctaLink1} target={ctaExternal1 ? "_blank" : "_self"}>
                     {ctaText1}
                   </Button>
                 )}
 
                 {ctaText2 && (
                   <Button
-                    className="sm:ml-10 mt-6 sm:mt-10 relative"
-                    arrowBefore
+                    light
+                    className="sm:ml-4 mt-6 sm:mt-10"
+                    href={ctaLink2}
+                    target={ctaExternal2 ? "_blank" : "_self"}
                   >
-                    {ctaLink2 && (
-                      <a className="absolute w-full h-full" href={ctaLink2} target={`${ctaExternal2 ? '_blank' : '_self'}`}></a>
-                    )}{" "}
                     {ctaText2}
                   </Button>
                 )}
               </div>
             </motion.div>
           </div>
+
+          {/* Right Column */}
           <motion.div
-            initial={{
-              opacity: 0,
-            }}
-            whileInView={{
-              opacity: 1,
-            }}
-            viewport={{
-              once: true,
-            }}
-            transition={{
-              duration: 0.6,
-              delay: 1.3,
-              ease: "linear",
-            }}
-            className={clsx(
-              styles.rightWrapper,
-              "h-full flex flex-col justify-between sm:text-right",
-            )}
+            {...fadeIn}
+            transition={{ duration: 0.6, delay: 1.3, ease: "linear" }}
+            className="h-full flex flex-col sm:text-right w-full"
           >
-            <div className="sm:mt-20">
+            <div>
               {when && (
                 <div className="mb-10">
                   <p className="h6 text-nextflow monospace mb-2">When</p>
                   <h3 className="h3">{when}</h3>
                 </div>
               )}
+
               {where && where !== "both" && (
                 <div className="mb-10">
-                  <p className="h6 text-nextflow monospace mb-2">Where</p>
+                  <p className="h5 text-nextflow monospace mb-2">Where</p>
                   <h3 className="h3">{where}</h3>
                 </div>
               )}
+
               {boston && (
                 <div className="mb-10">
-                  <p className="h6 text-nextflow monospace mb-2">Boston</p>
+                  <p className="h5 text-nextflow monospace mb-2">Boston</p>
                   <h3 className="h3">{boston}</h3>
                 </div>
               )}
+
               {virtual && (
                 <div className="mb-10">
-                  <h3 className="h3 mb-2">Nextflow Summit</h3>
+                  <h3 className="h5 mb-2">Nextflow Summit</h3>
                   <p className="h6 text-nextflow monospace mb-2">Virtual</p>
                   <p className="h6 text-nextflow monospace mb-2">{virtual}</p>
                 </div>
               )}
+
               {barcelona && (
                 <div className="mb-10">
-                   <h3 className="h3 mb-2">Training & Hackathon</h3>
-                   <p className="h6 text-nextflow monospace mb-2">Barcelona</p>
+                  <h3 className="h5 mb-2">Training & Hackathon</h3>
+                  <p className="h6 text-nextflow monospace mb-2">Barcelona</p>
                   <p className="h6 text-nextflow monospace mb-2">{barcelona}</p>
-                  
                 </div>
               )}
-
-              <div className="sm:hidden">
-                
-                {/* <div className="toggleLocation relative monospace">
-                  <div className="flex flex-row">
-     
-                    <Link href="/2025/boston" active={isActive("2025/boston")}>
-                      {" "}
-                      <div className={`${isBoth && 'border-r border-r-brand'} px-4`}>Boston</div>
-                    </Link>
-              
-                    <Link
-                      href="/2025/barcelona"
-                      active={isActive("2025/barcelona")}
-                    >
-                      {" "}
-                      <div className="px-4">Barcelona</div>
-                    </Link>
-                  </div>
-                </div> */}
-                
-
-                <p
-                  className="monospace max-w-[580px] mt-10"
-                  dangerouslySetInnerHTML={{ __html: content }}
-                />
-                <div className="inline-flex flex-col sm:flex-row sm:items-center">
-                  {ctaText1 && (
-                    <Button className="mt-10 relative" white arrowAfter>
-                      {ctaLink1 && (
-                        <a
-                          className="absolute w-full h-full"
-                          href={ctaLink1}
-                        ></a>
-                      )}{" "}
-                      {ctaText1}
-                    </Button>
-                  )}
-
-                  {ctaText2 && (
-                    <Button
-                      className="sm:ml-10 mt-6 sm:mt-10 relative"
-                      arrowBefore
-                    >
-                      {ctaLink2 && (
-                        <a
-                          className="absolute w-full h-full"
-                          href={ctaLink2}
-                        ></a>
-                      )}{" "}
-                      {ctaText2}
-                    </Button>
-                  )}
-                </div>
-              </div>
             </div>
-            <h1 className="hidden sm:block absolute top-80 right-0 sm:top-auto sm:right-auto sm:relative h0">
-              2025
-            </h1>
           </motion.div>
         </div>
       </section>

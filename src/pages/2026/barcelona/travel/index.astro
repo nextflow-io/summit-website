@@ -1,0 +1,147 @@
+---
+import Layout from "@layouts/Base.astro";
+import Hero from "@components/Hero";
+import SEO from "@components/SEO";
+import Faq from "@components/Faq";
+import Box, { SubSection } from "@components/Box";
+import img1 from "@images/photos/2026/barcelona/hotel-sb-glow.jpg";
+import qa from "./qa";
+import ArrowUpRight from "@icons/ArrowUpRight";
+---
+
+<Layout namespace="2026/barcelona">
+  <SEO slot="head" title="Travel | Barcelona" img={2} />
+   <section class="">
+    <Hero
+      title="Join us at SB Glow in Barcelona"
+      content=`Barcelona is a city where creativity and innovation thrive against a backdrop of rich cultural heritage. From Gaudí’s architectural masterpieces to its growing tech scene, the city offers a unique blend of tradition and forward-thinking energy. Its vibrant streets foster a dynamic environment where art, design, and technology come together — making it an inspiring destination for curious minds.<br><br>This year’s event will be held at the SB Glow Hotel in Poblenou, Barcelona.`
+      href={img1.src}
+      alt="View of SB Glow Hotel building"
+      ctaText1="Venue Information"
+      ctaLink1="https://www.sb-hotels.com/en/hotels/barcelona/glow/"
+      ctaExternal1={true}
+      client:load
+    />
+  </section>
+
+  <section class="mt-20 mb-24 container">
+    <h1 id="hotels" class="h1 mb-4 md:mb-8">Hotels</h1>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+
+      <Box externalLink={true} className="aspect-square	relative" href="https://www.sb-hotels.com/en/hotels/barcelona/glow/">
+        <SubSection className="flex flex-col justify-between h-full">
+          <div class="">
+            <div class="pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center">
+              <h5 class="h5 pr-4">SB Glow</h5>
+              <div class="flex-none"><ArrowUpRight/></div>
+            </div>
+            <div class=" py-2 monospace border-b border-b-nextflow flex flex-row justify-between">
+              <p>Training and Hackathon venue</p>
+            </div>
+          </div>
+          <div class="">
+            <p class=" monospace min-h-[120px]">
+              Modern 4-star hotel in the 22@ district with rooftop pool and city views. About 25 minutes by taxi from Barcelona El Prat Airport.
+            </p>
+          </div>
+        </SubSection>
+      </Box>
+
+      <Box externalLink={true} className="aspect-square	relative" href="https://all.accor.com/hotel/5560/index.en.shtml">
+        <SubSection className="flex flex-col justify-between h-full">
+          <div class="">
+            <div class="pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center">
+              <h5 class="h5 pr-4">Novotel Barcelona City</h5>
+              <div class="flex-none"><ArrowUpRight/></div>
+            </div>
+            <div class=" py-2 monospace border-b border-b-nextflow flex flex-row justify-between">
+              <p>3 min walk</p>
+            </div>
+          </div>
+          <div class="">
+            <p class=" monospace min-h-[120px]">
+              Contemporary hotel on Avenida Diagonal with rooftop pool and terrace. Steps from Torre Glòries and easy metro access.
+            </p>
+          </div>
+        </SubSection>
+      </Box>
+
+      <Box externalLink={true} className="aspect-square	relative" href="https://thehoxton.com/es/poblenou/">
+        <SubSection className="flex flex-col justify-between h-full">
+          <div class="">
+            <div class="pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center">
+              <h5 class="h5 pr-4">The Hoxton, Poblenou</h5>
+              <div class="flex-none"><ArrowUpRight/></div>
+            </div>
+            <div class=" py-2 monospace border-b border-b-nextflow flex flex-row justify-between">
+              <p>3 min walk</p>
+            </div>
+          </div>
+          <div class="">
+            <p class=" monospace min-h-[120px]">
+              Trendy 4-star hotel with rooftop pool, taqueria, and creative design in the heart of Poblenou.
+            </p>
+          </div>
+        </SubSection>
+      </Box>
+
+      <Box externalLink={true} className="aspect-square	relative" href="https://goldenbarcelona.zthotels.com/">
+        <SubSection className="flex flex-col justify-between h-full">
+          <div class="">
+            <div class="pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center">
+              <h5 class="h5 pr-4">ZT The Golden Barcelona Hotel</h5>
+              <div class="flex-none"><ArrowUpRight/></div>
+            </div>
+            <div class=" py-2 monospace border-b border-b-nextflow flex flex-row justify-between">
+              <p>4 min walk</p>
+            </div>
+          </div>
+          <div class="">
+            <p class=" monospace min-h-[120px]">
+              Eco-friendly hotel near Sagrada Familia with rooftop pool and restaurant. Great location for business and leisure stays.
+            </p>
+          </div>
+        </SubSection>
+      </Box>
+      <Box externalLink={true} className="aspect-square	relative" href="https://all.accor.com/hotel/5944/index.es.shtml">
+        <SubSection className="flex flex-col justify-between h-full">
+          <div class="">
+            <div class="pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center">
+              <h5 class="h5 pr-4">ibis Barcelona Plaza Glòries 22</h5>
+              <div class="flex-none"><ArrowUpRight/></div>
+            </div>
+            <div class=" py-2 monospace border-b border-b-nextflow flex flex-row justify-between">
+              <p>6 min walk</p>
+            </div>
+          </div>
+          <div class="">
+            <p class=" monospace min-h-[120px]">
+              Smart, simple, and well-connected — this hotel puts you in the center of the 22@ tech district. Enjoy practical comforts, a bright modern design, and easy access to public transport and major sights.
+            </p>
+          </div>
+        </SubSection>
+      </Box>
+      <Box externalLink={true} className="aspect-square	relative" href="https://www.marriott.com/es/hotels/bcnfp-four-points-barcelona-diagonal/overview/">
+        <SubSection className="flex flex-col justify-between h-full">
+          <div class="">
+            <div class="pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center">
+              <h5 class="h5 pr-4">Four Points by Sheraton Barcelona Diagonal
+              </h5>
+              <div class="flex-none"><ArrowUpRight/></div>
+            </div>
+            <div class=" py-2 monospace border-b border-b-nextflow flex flex-row justify-between">
+              <p>8 min walk</p>
+            </div>
+          </div>
+          <div class="">
+            <p class=" monospace min-h-[120px]">
+              Bright and contemporary, this hotel offers spacious rooms and relaxed Mediterranean dining. Located just minutes from the beach, it’s a great base for both exploring the city and unwinding after a busy day.
+            </p>
+          </div>
+        </SubSection>
+      </Box>
+  </section>
+
+  <Faq className="mt-20 md:mt-40 mb-20" client:load data={qa} />
+
+</Layout>

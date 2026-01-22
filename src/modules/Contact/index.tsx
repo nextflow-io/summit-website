@@ -1,16 +1,16 @@
 import React from "react";
 import clsx from "clsx";
 import Icon from "./Icon";
-import Box from "@components/Box";
-
-import styles from "./styles.module.css";
 
 const SectionBox = ({ children, href }) => {
   return (
-    <Box href={href} className={styles.box}>
-      <span>{children}</span>
-      <Icon />
-    </Box>
+    <div className={"bg-black p-8 relative w-full"}>
+      <div className="flex flex-row justify-between items-start">
+        <div>{children}</div>
+        <Icon className="w-full max-w-[40px]" />
+      </div>
+      <a href={href} className="absolute w-full h-full top-0 left-0 "></a>
+    </div>
   );
 };
 
@@ -20,20 +20,17 @@ type Props = {
 
 const SectionContact: React.FC<Props> = ({ className }) => {
   return (
-    <section className={clsx("mt-20 md:mt-40 container smaller", className)} id="footer">
-      <div className="flex -m-2 sm:-m-4 flex flex-wrap">
-        <div className="w-full md:w-1/2 p-2 sm:p-4">
-          <SectionBox href="mailto:help.summit@nextflow.io">
-            <p className="text-lg font-semibold font-display mb-2">Ticketing questions</p>
-            <div className="monospace text-nextflow">help.summit@nextflow.io</div>
-          </SectionBox>
-        </div>
-        <div className="w-full md:w-1/2 p-2 sm:p-4">
-          <SectionBox href="mailto:summit@nextflow.io">
-            <h5 className="text-lg font-semibold font-display mb-2">Program questions</h5>
-            <div className="monospace text-nextflow">summit@nextflow.io</div>
-          </SectionBox>
-        </div>
+    <section className={clsx("w-full p-8 lg:p-24 bg-nextflow", className)} id="footer">
+      <div className="container-xl w-full bg-nextflow flex flex-col md:flex-row justify-center gap-6 lg:gap-10">
+        <SectionBox href="mailto:help.summit@nextflow.io">
+          <h5 className="text-xl mb-2">Ticketing questions</h5>
+          <div className="monospace text-nextflow">help.summit@nextflow.io</div>
+        </SectionBox>
+
+        <SectionBox href="mailto:summit@nextflow.io">
+          <h5 className="text-xl mb-2">Program questions</h5>
+          <div className="monospace text-nextflow">summit@nextflow.io</div>
+        </SectionBox>
       </div>
     </section>
   );

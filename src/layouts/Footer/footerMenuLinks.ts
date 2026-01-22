@@ -2,11 +2,11 @@ export default {
   main: [
     {
       name: "Virtual",
-      url: "/2025/virtual",
+      url: "/2026/virtual",
       dropdowns: [
         {
           name: "Nextflow Summit",
-          url: "/2025/virtual/overview",
+          url: "/2026/virtual/overview",
         },
         {
           name: "Register",
@@ -14,15 +14,15 @@ export default {
         },
         {
           name: "Agenda",
-          url: "/2025/virtual/agenda",
+          url: "/2026/virtual/agenda",
         },
         {
           name: "Speakers",
-          url: "/2025/virtual/speakers",
+          url: "/2026/virtual/speakers",
         },
         {
           name: "Posters",
-          url: "/2025/virtual/posters",
+          url: "/2026/virtual/posters",
         },
         // {
         //   name: "Call for Speakers & Posters",
@@ -30,95 +30,95 @@ export default {
         // },
         {
           name: "Sponsors",
-          url: "/2025/virtual/sponsors",
+          url: "/2026/virtual/sponsors",
         },
       ],
     },
     {
       name: "Barcelona",
-      url: "/2025/barcelona",
+      url: "/2026/barcelona",
       dropdowns: [
         {
           name: "Overview",
-          url: "/2025/barcelona/overview",
+          url: "/2026/barcelona/overview",
         },
         {
           name: "Register",
-          url: "/2025/barcelona/register",
+          url: "/2026/barcelona/register",
         },
         {
           name: "Agenda",
-          url: "/2025/barcelona/agenda",
+          url: "/2026/barcelona/agenda",
         },
         {
           name: "Training",
-          url: "/2025/barcelona/training",
+          url: "/2026/barcelona/training",
         },
         {
           name: "Hackathon",
-          url: "/2025/barcelona/hackathon",
+          url: "/2026/barcelona/hackathon",
         },
         {
           name: "Travel",
-          url: "/2025/barcelona/travel",
+          url: "/2026/barcelona/travel",
         },
         {
           name: "Register",
-          url: "/2025/barcelona/register",
+          url: "/2026/barcelona/register",
         },
         {
           name: "Sponsors",
-          url: "/2025/barcelona/sponsors",
+          url: "/2026/barcelona/sponsors",
         },
         {
           name: "Gallery",
-          url: "/2025/barcelona/gallery",
+          url: "/2026/barcelona/gallery",
         },
       ],
     },
     {
       name: "Boston",
-      url: "/2025/boston",
+      url: "/2026/boston",
       dropdowns: [
         {
           name: "Overview",
-          url: "/2025/boston/overview",
+          url: "/2026/boston/overview",
         },
         {
           name: "Register",
-          url: "/2025/boston/register",
+          url: "/2026/boston/register",
         },
         {
           name: "Agenda",
-          url: "/2025/boston/agenda",
+          url: "/2026/boston/agenda",
         },
         {
           name: "Speakers",
-          url: "/2025/boston/speakers",
+          url: "/2026/boston/speakers",
         },
         {
           name: "Posters",
-          url: "/2025/boston/posters",
+          url: "/2026/boston/posters",
         },
         {
           name: "Hackathon",
-          url: "/2025/boston/hackathon",
+          url: "/2026/boston/hackathon",
         },
         {
           name: "Training",
-          url: "/2025/boston/training",
+          url: "/2026/boston/training",
         },
         {
           name: "Travel",
-          url: "/2025/boston/travel",
+          url: "/2026/boston/travel",
         },
         {
           name: "Sponsors",
-          url: "/2025/boston/sponsors",
+          url: "/2026/boston/sponsors",
         },
         {
           name: "Gallery",
-          url: "/2025/boston/gallery",
+          url: "/2026/boston/gallery",
         },
       ],
     },

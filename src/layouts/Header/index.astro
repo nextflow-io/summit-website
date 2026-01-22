@@ -7,38 +7,31 @@ import NavMobile from "./NavMobile";
 import Menu from "./Menu";
 import SecondaryMenu from "./SecondaryMenu";
 import Logo from "./Logo";
-import ArrowRight from "@icons/ArrowRight";
+import Button from "@components/Button";
 let showNav = true;
 if (typeof Astro.props.showNav !== "undefined") showNav = Astro.props.showNav;
 ---
 
-<header id="header" class={`${styles.header}`}>
-  <div class={`${styles.headerWrapper} border-b-white flex flex-col w-full`}>
-    <div class={`${styles.headerTop} flex justify-center items-center`}>
-      <div class="container flex items-center justify-between monospace h-full">
+<header id="header" class={`${styles.header} `}>
+  <div class={`${styles.headerWrapper} flex flex-col w-full`}>
+     <div class="bg-nextflow">
+    <div class={`${styles.headerTop} container-xl w-full flex justify-center items-center`}>
+      <div class="w-full flex items-center justify-between monospace h-full">
         <Logo namespace={namespace} />
         <Menu pathname={pathname} namespace={namespace} />
-        <button
-          class={`${styles.registerCTA} hidden lg:flex bg-white text-brand h-full px-4 relative flex-row uppercase items-center justify-center`}
-        >
-          Summit Agenda
-          <div
-            class={`${styles.registerBtn} arrowRight ml-4 bg-nextflow flex justify-center items-center p-2 rounded-sm`}
-          >
-            <ArrowRight />
-          </div>
-          <a
-            href="/2025/virtual/agenda"
-        
-            class="absolute top-0 left-0 right-0 bottom-0 w-full h-full"></a>
-        </button>
+        <div>
+            <Button small light className="">
+               Test
+            </Button>
+        </div>
       </div>
     </div>
+     </div>
     <div
       class={`${styles.navigation} js-secondary-nav transition-all duration-300`}
     >
       <div
-        class="container flex items-center justify-center monospace text-xxs"
+        class="w-full flex items-center justify-center monospace text-xxs"
       >
         {
           namespace && (
@@ -51,6 +44,7 @@ if (typeof Astro.props.showNav !== "undefined") showNav = Astro.props.showNav;
         }
       </div>
     </div>
+ 
   </div>
 </header>
 

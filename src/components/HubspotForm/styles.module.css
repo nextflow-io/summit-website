@@ -3,12 +3,30 @@
   & li label {
     max-width: 20px;
   }
+  input[type="email"],
+  input[type="text"] {
+    border: 1px solid #868686;
+    margin-bottom: 0.5rem !important;
+  }
+  ul[role="checkbox"] {
+    margin-top: 10px;
+  }
+  div:not([class]) > div {
+    color: #868686;
+    font-size: 12px;
+  }
+  div.hs_submit {
+    margin-top: 0;
+  }
   input[type="submit"] {
     background: var(--color-nextflow);
-    transition: all .24s;
+    color: black;
+    transition: all 0.24s;
+    border: none;
+    margin-bottom: 0;
     &:hover {
-      background: #4256E7;
-    
+      background: black;
+      color: white;
     }
   }
 }
