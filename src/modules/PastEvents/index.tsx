@@ -1,6 +1,5 @@
-import Box, { SubSection } from "@components/Box";
+import Box from "@components/Box";
 import img1 from "@images/photos/2026/past-events.jpg";
-import ArrowUpRight from "@icons/ArrowUpRight";
 import e2019_nf_camp from "@images/photos/past-events/e2019_nf_camp.jpg";
 import e2017_nf from "@images/photos/past-events/e2017_nf.jpg";
 import e2018_nf from "@images/photos/past-events/e2018_nf.jpg";
@@ -26,63 +25,20 @@ const SectionPastEvents: React.FC<Props> = ({ title }) => {
         <h1 className="h2 mb-10">See our past events</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           <Box
-            externalLink={true}
-            href="https://summit.nextflow.io/2026/boston/"
-            className="aspect-square"
-          >
-            <SubSection className="flex flex-col justify-between">
-              <div className="border-b border-b-white w-full flex flex-row justify-between items-center pb-4">
-                <h5 className="text-[1.3rem] monospace">Boston 2025</h5>
-                <ArrowUpRight />
-              </div>
-              <div className=" mt-6 mb-8 relative h-0 w-full overflow-hidden pb-[80%]">
-                <img
-                  className="max-w-none w-full h-full absolute top-0 bottom-0 left-0 right-0 object-cover"
-                  src={e2025_boston.src}
-                  alt="Boston 2025 Nextflow Summit"
-                />
-              </div>
-            </SubSection>
-          </Box>
+            title="Barcelona 2025"
+            href="https://summit.nextflow.io/2025/boston/"
+            image={e2025_boston.src}
+          />
           <Box
-            externalLink={true}
-            href="https://summit.nextflow.io/2024/barcelona/"
-            className="aspect-square"
-          >
-            <SubSection className="flex flex-col justify-between">
-              <div className="border-b border-b-white w-full flex flex-row justify-between items-center pb-4">
-                <h5 className="text-[1.3rem] monospace">Barcelona 2024</h5>
-                <ArrowUpRight />
-              </div>
-              <div className="mt-6 mb-8 relative h-0 w-full overflow-hidden pb-[80%]">
-                <img
-                  className="max-w-none w-full h-full absolute top-0 bottom-0 left-0 right-0 object-cover"
-                  src={e2024_bcn.src}
-                  alt="Barcelona 2024 Nextflow Summit"
-                />
-              </div>
-            </SubSection>
-          </Box>
-
+            title="Boston 2025"
+            href="https://summit.nextflow.io/2025/boston/"
+            image={e2025_boston.src}
+          />
           <Box
-            externalLink={true}
+            title="Boston 2024"
             href="https://summit.nextflow.io/2024/boston/"
-            className="aspect-square"
-          >
-            <SubSection className="flex flex-col justify-between">
-              <div className="border-b border-b-white w-full flex flex-row justify-between items-center pb-4">
-                <h5 className="text-[1.3rem] monospace">Boston 2024</h5>
-                <ArrowUpRight />
-              </div>
-              <div className="mt-6 mb-8 relative h-0 w-full overflow-hidden pb-[80%]">
-                <img
-                  className="max-w-none w-full h-full absolute top-0 bottom-0 left-0 right-0 object-cover"
-                  src={e2024_boston.src}
-                  alt="Boston 2024 Nextflow Summit"
-                />
-              </div>
-            </SubSection>
-          </Box>
+            image={e2024_boston.src}
+          />
         </div>
         <div className="text-center">
           <Button className="mt-10 relative" dark>

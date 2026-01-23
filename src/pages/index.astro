@@ -1,30 +1,32 @@
 ---
-import Layout from "@layouts/Base.astro";
-import EventSelector from "@modules/EventSelector/index.astro";
-import { CallForAbstracts } from "@components/Marquee";
-import NextflowNumbers from "@modules/NextflowNumbers";
-import ImageSection from "@modules/ImageSection";
-import PastEvents from "@modules/PastEvents";
-import Subscribe from "@modules/Subscribe";
-import SEO from "@components/SEO";
-import LandingHero from "@components/LandingHero";
-import Faq from "@components/Faq";
-import qa from "./qa";
-import SignUpForm from "@modules/SignUpForm";
-import Box, { SubSection } from "@components/Box";
-import ArrowUpRight from "@icons/ArrowUpRight";
-import imgVirtual from "@images/photos/2026/virtual.jpg";
-import imgBarcelona from "@images/photos/2026/barcelona/barcelona.jpg";
-import Banner from '@components/Banner'
+import Layout from '@layouts/Base.astro';
+import EventSelector from '@modules/EventSelector/index.astro';
+import { CallForAbstracts } from '@components/Marquee';
+import NextflowNumbers from '@modules/NextflowNumbers';
+import ImageSection from '@modules/ImageSection';
+import PastEvents from '@modules/PastEvents';
+import Subscribe from '@modules/Subscribe';
+import SEO from '@components/SEO';
+import LandingHero from '@components/LandingHero';
+import Faq from '@components/Faq';
+import qa from './qa';
+import SignUpForm from '@modules/SignUpForm';
+import FeatureBlocks from '@modules/FeatureBlocks';
+import Box from '@components/Box';
+import ArrowUpRight from '@icons/ArrowUpRight';
+import imgVirtual from '@images/photos/2026/virtual.jpg';
+import imgBarcelona from '@images/photos/2026/barcelona/barcelona.jpg';
+import Banner from '@components/Banner';
 ---
 
 <Layout showHeader={false}>
-  <SEO slot="head" title="Home"/>
+  <SEO slot="head" title="Home" />
   <!-- <Banner title="Register to access the event recordings" ctaText="Register Now" ctaLink="https://seqera.swoogo.com/nextflow-summit-boston-2025" client:load />  -->
   <LandingHero
     isBoth
     title="Nextflow Summit"
-    content=`Step into the Future of Software-Driven Science.</br></br>Nextflow Summit, presented by Seqera, brings together scientists from around the world to shape the future of biotech R&D through community-driven innovation in data science and computational biology.``
+    content=`Step into the Future of Software-Driven Science.</br></br>Nextflow Summit, presented by Seqera, brings together scientists from around the world to shape the future of biotech R&D through community-driven innovation in data science and computational biology.`
+    `
     where="both"
     ctaText2="Training & Hackathon"
     ctaLink2="/2026/barcelona/overview"
@@ -35,79 +37,34 @@ import Banner from '@components/Banner'
     client:load
   />
 
+  <FeatureBlocks
+    client:load
+    boxes={[
+      {
+        title: 'Conference 2025',
+        subtitleLeft: 'March 15-16',
+        subtitleRight: 'New York',
+        imageAlt: 'Conference venue',
+        bottomSubtitleLeft: 'Early bird pricing available',
+        bottomSubtitleRight: 'Price: $299',
+        href: '/register',
+        externalLink: false,
+      },
+      {
+        title: 'Workshop Series',
+        subtitleLeft: 'April 5-7',
+        subtitleRight: 'Online',
 
-    <div class="mt-10 mb-10 md:mt-20 md:mb-20 container-lg grid grid-cols-1 sm:grid-cols-2 gap-8">
-      <Box className="box__image sm:aspect-square	relative" href="/2026/virtual/overview">
-        <SubSection
-          className="relative flex flex-col justify-between h-full z-10"
-        >
-          <div class="">
-            <div
-              class="pb-4 border-b border-b-white w-full flex flex-row justify-between items-center"
-            >
-              <h5 class="text-lg monospace  font-normal">Nextflow Summit</h5>
-              <ArrowUpRight />
-            </div>
-            <div class=" py-2 monospaceborder-b border-b-white md:flex md:flex-row md:justify-between">
-              <p class="pr-4">October 23-24</p>
-              <p>
-                Online
-              </p>
-            </div>
-          </div>
-          <div
-          class="mt-6 relative imageBlend w-full h-0 pb-[40%] overflow-hidden "
-        >
-          <img
-            class="absolute top-0 left-0 right-0 bottom-0 w-full h-full z-0 object-cover"
-            src={imgVirtual.src}
-            alt="Image of Person using computer"
-          />
-        </div>
-          <div class="pt-2 mt-4 border-t border-t-nextflow">
-            <p class="monospace">Register to view the recordings.</p>
-            <p class="monospace">Price: Free</p>
-          </div>
-        </SubSection>
-      </Box>
-      <Box className="box__image sm:aspect-square	relative" href="/2026/barcelona">
-        <SubSection
-          className="relative flex flex-col justify-between h-full z-10"
-        >
-          <div class="">
-            <div
-              class="pb-4 border-b border-b-white w-full flex flex-row justify-between items-center"
-            >
-              <h5 class="h4">Training & Hackathon</h5>
-              <ArrowUpRight />
-            </div>
-            <div class=" py-2 monospace border-b border-b-white md:flex md:flex-row md:justify-between">
-              <p class="pr-4">October 28-29</p>
-              <p>
-                Barcelona
-            </div>
-          </div>
-          <div
-          class="mt-6 relative imageBlend w-full h-0 pb-[40%] overflow-hidden "
-        >
-          <img
-            class="absolute top-0 left-0 right-0 bottom-0 w-full h-full z-0 object-cover"
-            src={imgBarcelona.src}
-            alt="Image of Boston cityscape"
-          />
-        </div>
-        <div class="pt-2 mt-4 border-t border-t-nextflow">
-          <p class="monospace">Registration open until October 17</p>
-          <p class="monospace">Price: €120 - €300 </p>
-        </div>
-        </SubSection>
-      </Box>
-    </div>
-
-    <NextflowNumbers client:load className=""/>
-    <PastEvents />
-    <Faq className="" client:load data={qa} />
-    <SignUpForm client:load />
-  
-  
+        imageAlt: 'Workshop',
+        bottomSubtitleLeft: 'Limited spots available',
+        bottomSubtitleRight: 'Price: Free',
+        href: 'https://external-site.com',
+        externalLink: true,
+      },
+    ]}
+  />
+  <NextflowNumbers client:load className="" />
+  <PastEvents client:load />
+  <Faq className="" client:load data={qa} />
+  <SignUpForm client:load />
 </Layout>

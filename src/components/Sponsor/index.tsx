@@ -1,6 +1,6 @@
 import React from "react";
 import clsx from "clsx";
-import Box, { SubSection } from "@components/Box";
+import Box from "@components/Box";
 import PortableText from "@components/PortableText";
 import ArrowUpRight from "@icons/ArrowUpRight";
 import styles from "./styles.module.css";

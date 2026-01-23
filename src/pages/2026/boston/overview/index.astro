@@ -1,13 +1,13 @@
 ---
-import Layout from "@layouts/Base.astro";
-import LandingHero from "@components/LandingHero";
-import KeyDates from "@components/KeyDates/index.astro";
-import Box, { SubSection } from "@components/Box";
-import ArrowUpRight from "@icons/ArrowUpRight";
-import Faq from "@components/Faq";
-import SEO from "@components/SEO";
-import qa from "./qa";
-
+import Layout from '@layouts/Base.astro';
+import LandingHero from '@components/LandingHero';
+import KeyDates from '@components/KeyDates/index.astro';
+import Box from '@components/Box';
+import ArrowUpRight from '@icons/ArrowUpRight';
+import FeatureBlocks from '@modules/FeatureBlocks';
+import Faq from '@components/Faq';
+import SEO from '@components/SEO';
+import qa from './qa';
 ---
 
 <Layout namespace="2026/boston">
@@ -27,9 +27,42 @@ import qa from "./qa";
     client:load
   />
 
+  <FeatureBlocks
+    boxes={[
+      {
+        title: 'Conference 2025',
+        subtitleLeft: 'March 15-16',
+        subtitleRight: 'New York',
+        imageAlt: 'Conference venue',
+        bottomSubtitleLeft: 'Early bird pricing available',
+        bottomSubtitleRight: 'Price: $299',
+        href: '/register',
+        externalLink: false,
+      },
+      {
+        title: 'Workshop Series',
+        subtitleLeft: 'April 5-7',
+        subtitleRight: 'Online',
+  
+        imageAlt: 'Workshop',
+        bottomSubtitleLeft: 'Limited spots available',
+        bottomSubtitleRight: 'Price: Free',
+        href: 'https://external-site.com',
+        externalLink: true,
+      },
+    ]}
+  />
+
   <section class="pt-20 md:pt-40 mb-24 container">
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-      <Box href="/2026/boston/register" className=" 	relative">
+      <Box
+        title="Training"
+        subtitleLeft="May 13-14"
+        subtitleRight="Training"
+        headline="2 days / 50 people"
+        bottomSubtitleLeft="Academic $120 • Corporate $300"
+      />
+      <!-- <Box href="/2026/boston/register" className=" 	relative">
         <SubSection className="flex flex-col justify-between h-full">
           <div class="">
             <div class="pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center">
@@ -52,9 +85,9 @@ import qa from "./qa";
             Academic $120 • Corporate $300 
           </div>
         </SubSection>
-      </Box>
+      </Box> -->
 
-      <Box href="/2026/boston/register" className=" 	">
+      <!-- <Box href="/2026/boston/register" className=" 	">
         <SubSection className="flex flex-col justify-between h-full">
           <div class="">
             <div class="pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center">
@@ -78,8 +111,8 @@ import qa from "./qa";
             Academic $120 • Corporate $120 
           </div>
         </SubSection>
-      </Box>
-      <Box href="/2026/boston/register" className=" 	">
+      </Box> -->
+      <!-- <Box href="/2026/boston/register" className=" 	">
         <SubSection className="flex flex-col justify-between h-full">
           <div class="">
             <div class="pb-4 border-b border-b-nextflow w-full flex flex-row justify-between items-center">
@@ -103,7 +136,7 @@ import qa from "./qa";
             Academic $300 • Corporate $600<br/> 
           </div>
         </SubSection>
-      </Box>
+      </Box> -->
     </div>
   </section>
   <section class="container relative z-10 mb-4 sm:mb-8 lg:mb-20">
@@ -111,5 +144,4 @@ import qa from "./qa";
   </section>
 
   <Faq className="mt-20 md:mt-40 mb-20" client:load data={qa} />
-
 </Layout>
