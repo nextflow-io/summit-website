@@ -1,12 +1,11 @@
 ---
 import Layout from '@layouts/Base.astro';
 import SEO from '@components/SEO';
-import SignUpForm from '@modules/SignUpForm';
 import Banner from '@components/Banner';
 import Homepage from "@modules/Homepage"
 import {fetchHomepage} from "@data/homepage";
 
-const home= await fetchHomepage();
+const home = await fetchHomepage();
 ---
 
 <Layout showHeader={false}>

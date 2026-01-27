@@ -1,0 +1,41 @@
+---
+import Layout from "@layouts/Base.astro";
+import Hero from "@components/Hero";
+import SEO from "@components/SEO";
+import Box from "@components/Box";
+import img1 from "@images/photos/2026/past-events.jpg";
+import ArrowUpRight from "@icons/ArrowUpRight";
+import e2019_nf_camp from "@images/photos/past-events/e2019_nf_camp.jpg";
+import e2017_nf from "@images/photos/past-events/e2017_nf.jpg";
+import e2018_nf from "@images/photos/past-events/e2018_nf.jpg";
+import e2022_summit from "@images/photos/past-events/e2022_summit.jpg";
+import e2022_bcn from "@images/photos/past-events/e2022_bcn.jpg";
+import e2022_hack from "@images/photos/past-events/e2022_hack.jpg";
+import e2023_boston from "@images/photos/past-events/e2023_boston.jpg";
+import e2023_bcn from "@images/photos/past-events/e2023_bcn.jpg";
+import e2024_bcn from "@images/photos/past-events/e2024_bcn.jpg";
+import e2024_boston from "@images/photos/past-events/e2024_boston.jpg";
+import e2025_boston from "@images/photos/past-events/e25_boston_summit.jpg";
+import { fade } from "astro:transitions";
+
+
+---
+
+<Layout>
+  <SEO slot="head" title="Past Events" />
+  <section class="">
+    <Hero
+      title="Past Events"
+      content="Past events have provided insights into Nexflow’s origins, development, and its applications in various domains, highting its potential and impact on scientific research, data analysis, and workflow management."
+      href={img1.src}
+      alt="Nextflow Summit attendees"
+  
+      client:load
+    />
+  </section>
+
+  <section class="mt-20 mb-24 container">
+   
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,113 @@
+import { sanityClient } from "sanity:client";
+
+export interface Button {
+  buttonText: string;
+  buttonUrl?: string;
+  buttonLink?: string;
+  isExternal?: boolean;
+  externalLink?: boolean;
+}
+
+export interface Hero {
+  headline: string;
+  headlineSize?: 'small' | 'medium' | 'large';
+  bodycopy: any; 
+  button1?: Button;
+  button2?: Button;
+  image?: string; 
+}
+
+export interface ContentBox {
+  title?: string;
+  subtitleLeft?: string;
+  subtitleRight?: string;
+  image?: {
+    asset: {
+      _id: string;
+      url: string;
+    };
+  };
+  imageAlt?: string;
+  bottomSubtitleLeft?: string;
+  bottomSubtitleRight?: string;
+  href?: string;
+  externalLink?: boolean;
+  [key: string]: any; 
+}
+
+export interface FAQItem {
+  question: string;
+  answer: any;
+}
+
+export interface FAQSection {
+  faqTitle: string;
+  faqs: FAQItem[];
+}
+
+export interface PageData {
+  _id: string;
+  _type: string;
+  hero: Hero;
+  faqSection?: FAQSection[];
+}
+
+export async function fetchFaq(): Promise<PageData> {
+  const data = await sanityClient.fetch(`*[_type == "faqPage"][0]{
+    _id,
+    _type,
+    hero {
+      headline,
+      headlineSize,
+      bodycopy[]{
+        ...,
+        _type,
+        style,
+        children[]{
+          ...,
+          _type,
+          text,
+          marks
+        },
+        markDefs[]{
+          ...,
+          _type
+        }
+      },
+      button1 {
+        buttonText,
+        buttonUrl,
+        isExternal
+      },
+      button2 {
+        buttonText,
+        buttonUrl,
+        isExternal
+      },
+      "image": image.asset->url
+    },
+    faqSection[]{
+      faqTitle,
+      faqs[]{
+        question,
+        answer[]{
+          ...,
+          _type,
+          style,
+          children[]{
+            ...,
+            _type,
+            text,
+            marks
+          },
+          markDefs[]{
+            ...,
+            _type
+          }
+        }
+      }
+    }
+  }`);
+  
+  return data;
+}
