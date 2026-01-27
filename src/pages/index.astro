@@ -1,10 +1,5 @@
 ---
 import Layout from '@layouts/Base.astro';
-import EventSelector from '@modules/EventSelector/index.astro';
-import { CallForAbstracts } from '@components/Marquee';
-import ImageSection from '@modules/ImageSection';
-import PastEvents from '@modules/PastEvents';
-import Subscribe from '@modules/Subscribe';
 import SEO from '@components/SEO';
 import SignUpForm from '@modules/SignUpForm';
 import Banner from '@components/Banner';
@@ -17,6 +12,5 @@ const home= await fetchHomepage();
 <Layout showHeader={false}>
   <SEO slot="head" title="Home" />
   <!-- <Banner title="Register to access the event recordings" ctaText="Register Now" ctaLink="https://seqera.swoogo.com/nextflow-summit-boston-2025" client:load />  -->
-    <Homepage home={home}  client:load/>
-  <!-- <SignUpForm client:load /> -->
+  <Homepage home={home}  client:load/>
 </Layout>

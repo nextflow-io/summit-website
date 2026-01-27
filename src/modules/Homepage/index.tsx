@@ -4,7 +4,7 @@ import FeatureBlocks from '@modules/FeatureBlocks';
 import Faq from '@components/Faq';
 import NextflowNumbers from '@modules/NextflowNumbers';
 import PastEvents from '@modules/PastEvents';
-
+import SignUpForm from '@modules/SignUpForm';
 type Props = {
   home: any;
 };
@@ -76,6 +76,8 @@ const Homepage: React.FC<Props> = ({ home }) => {
       {home.faqSection && home.faqSection.length > 0 && (
         <Faq data={home.faqSection} />
       )}
+
+       <SignUpForm  />
     </>
   );
 };

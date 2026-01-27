@@ -1,4 +1,3 @@
-import { useState } from "react";
 
 type FeaturedStatsProps = {
   featuredStatLeft?: string;
@@ -28,9 +27,6 @@ const NextflowNumbers: React.FC<Props> = ({
   if (!featuredStats && stats.length === 0) {
     return null;
   }
-
-    console.log('NextflowNumbers - stats:', stats);
-  console.log('NextflowNumbers - stats length:', stats?.length);
 
   return (
     <section className={`${className} bg-nextflow text-black`}>
