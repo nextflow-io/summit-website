@@ -22,7 +22,7 @@ import Banner from '@components/Banner';
 <Layout showHeader={false}>
   <SEO slot="head" title="Home" />
   <!-- <Banner title="Register to access the event recordings" ctaText="Register Now" ctaLink="https://seqera.swoogo.com/nextflow-summit-boston-2025" client:load />  -->
-  <LandingHero
+  <!-- <LandingHero
     isBoth
     title="Nextflow Summit"
     content=`Step into the Future of Software-Driven Science.</br></br>Nextflow Summit, presented by Seqera, brings together scientists from around the world to shape the future of biotech R&D through community-driven innovation in data science and computational biology.`
@@ -37,34 +37,9 @@ import Banner from '@components/Banner';
     client:load
   />
 
-  <FeatureBlocks
-    client:load
-    boxes={[
-      {
-        title: 'Conference 2025',
-        subtitleLeft: 'March 15-16',
-        subtitleRight: 'New York',
-        imageAlt: 'Conference venue',
-        bottomSubtitleLeft: 'Early bird pricing available',
-        bottomSubtitleRight: 'Price: $299',
-        href: '/register',
-        externalLink: false,
-      },
-      {
-        title: 'Workshop Series',
-        subtitleLeft: 'April 5-7',
-        subtitleRight: 'Online',
-
-        imageAlt: 'Workshop',
-        bottomSubtitleLeft: 'Limited spots available',
-        bottomSubtitleRight: 'Price: Free',
-        href: 'https://external-site.com',
-        externalLink: true,
-      },
-    ]}
-  />
+ 
   <NextflowNumbers client:load className="" />
   <PastEvents client:load />
   <Faq className="" client:load data={qa} />
-  <SignUpForm client:load />
+  <SignUpForm client:load /> -->
 </Layout>

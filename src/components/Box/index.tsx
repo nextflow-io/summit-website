@@ -48,9 +48,9 @@ const Box: React.FC<Props> = ({
       <div className="relative flex flex-col justify-between h-full z-10">
         <div className="relative">
           {title && (
-            <div className="pb-4 border-b border-b-white w-full flex flex-row justify-between items-center">
-              <h5 className="text-lg monospace  font-normal">{title}</h5>
-              <ArrowUpRight />
+            <div className="pb-2 border-b border-b-white w-full flex flex-row justify-between items-center">
+              <h5 className="text-lg monospace font-normal">{title}</h5>
+              {href && <ArrowUpRight />}
             </div>
           )}
           {subtitleLeft && (
@@ -60,36 +60,58 @@ const Box: React.FC<Props> = ({
             </div>
           )}
 
-          <a href={href} className={`absolute w-full h-full top-0 left-0 z-10`}>
-            {children}
-          </a>
+          {href && (
+            <a
+              href={href}
+              target={externalLink ? '_blank' : '_self'}
+              rel={externalLink ? 'noopener noreferrer' : undefined}
+              className={`absolute w-full h-full top-0 left-0 z-10`}
+            >
+              {children}
+            </a>
+          )}
         </div>
+
         {headline && (
           <div>
             <h3>{headline}</h3>
+          </div>
+        )}
+
+        {/* Only render PortableText if bodycopy is an array */}
+        {Array.isArray(bodycopy) && bodycopy.length > 0 && (
+          <div className="my-2">
             <PortableText value={bodycopy} />
           </div>
         )}
+        {/* If bodycopy is a ReactNode, render it directly */}
+
+        {!Array.isArray(bodycopy) && bodycopy && (
+          <div className="my-2">{bodycopy}</div>
+        )}
+
         {image && (
           <div className="mt-6 relative w-full h-0 pb-[75%] overflow-hidden">
             <img
               className="absolute top-0 left-0 right-0 bottom-0 w-full h-full z-0 object-cover"
               src={image}
-              alt="Image of Person using computer"
+              alt={imageAlt || 'Image'}
             />
           </div>
         )}
+
         {bottomSubtitleLeft && (
           <div className="pt-2 mt-4 border-t border-t-nextflow">
             <p className="monospace">{bottomSubtitleLeft}</p>
-            <p className="monospace">{bottomSubtitleRight}</p>
+            {bottomSubtitleRight && (
+              <p className="monospace">{bottomSubtitleRight}</p>
+            )}
           </div>
         )}
 
         {buttonText && (
           <div className="border-t border-white">
-            <Button className="mt-10 relative" dark>
-              <a className="absolute w-full h-full" href={buttonUrl}></a>
+            <Button className="mt-10 relative" dark href={buttonUrl}>
               {buttonText}
             </Button>
           </div>

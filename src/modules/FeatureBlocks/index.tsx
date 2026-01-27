@@ -6,6 +6,7 @@ import imgVirtual from "@images/photos/2026/virtual.jpg";
 import imgBarcelona from "@images/photos/2026/barcelona/barcelona.jpg";
 
 type BoxData = {
+  headline?: string;
   title?: string;
   subtitleLeft?: string;
   subtitleRight?: string;
@@ -15,20 +16,41 @@ type BoxData = {
   bottomSubtitleRight?: string;
   href?: string;
   externalLink?: boolean;
+  bodycopy?: any;
 };
 
 type Props = {
+  headline?: string;
   boxes?: BoxData[];
 };
 
-import styles from "./styles.module.css";
+const FeatureBlocks: React.FC<Props> = ({ boxes, headline  }) => {
+
+  if (!boxes || boxes.length === 0) {
+    return null;
+  }
+
+  const getGridCols = (count: number) => {
+    switch (count) {
+      case 1:
+        return 'grid-cols-1';
+      case 2:
+        return 'grid-cols-1 sm:grid-cols-2';
+      case 3:
+        return 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3';
+      case 4:
+        return 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4';
+      default:
+        return 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3';
+    }
+  };
+    const gridCols = getGridCols(boxes.length);
 
 
-
-const FeatureBlocks: React.FC<Props> = ({ boxes  }) => {
   return (
-    <section className="bg-white text-black py-6 md:py-10">
-      <div className="mt-10 mb-10 md:mt-20 md:mb-20 container-lg grid grid-cols-1 sm:grid-cols-2 gap-8">
+    <section className="bg-white text-black py-6 md:pt-16 md:pb-20">
+      <div className="container-xl"><h3 className="h3 mb-4">{headline}</h3></div>
+      <div className={`container-xl grid gap-6 md:gap-8 ${gridCols}`}>
         {boxes.map((box, index) => (
           <Box
             key={index}
@@ -40,6 +62,7 @@ const FeatureBlocks: React.FC<Props> = ({ boxes  }) => {
             bottomSubtitleLeft={box.bottomSubtitleLeft}
             bottomSubtitleRight={box.bottomSubtitleRight}
             href={box.href}
+            bodycopy={box.bodycopy}
             externalLink={box.externalLink}
           />
         ))}
