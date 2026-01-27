@@ -17,7 +17,7 @@ const Sponsor = ({ sponsor, location }) => {
   if (location === "barcelona") rank = ranks[sponsor.rankBarcelona];
   return (
     <Box className="flex flex-col justify-between min-h-[350px]">
-      <SubSection className="">
+
         <div className="mb-4 pb-4 border-b border-b-nextflow w-full flex flex-row justify-between">
           <div className={clsx(styles.rank, styles[rank], "monospace")}>
             {rank} {rank !== "Organizer" && 'Sponsor ' } of Nextflow Summit 2025
@@ -36,7 +36,7 @@ const Sponsor = ({ sponsor, location }) => {
             value={sponsor.description}
           />
         </div>
-      </SubSection>
+  
       <div
         className={clsx(
           styles.ctaLink,

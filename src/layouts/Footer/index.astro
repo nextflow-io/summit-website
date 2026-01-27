@@ -1,11 +1,9 @@
 ---
-
 import FooterLogo from "@icons/FooterLogo";
-import SeqeraLogo from "@icons/SeqeraLogo";
 import Subscribe from "@modules/Subscribe";
-import styles from "./footer.module.css";
-import footerMenuLinks from "./footerMenuLinks";
+import { fetchMenus } from "@data/menus";
 
+const menus = await fetchMenus();
 const currentYear = new Date().getFullYear();
 ---
 
@@ -22,27 +20,31 @@ const currentYear = new Date().getFullYear();
           class="sm:whitespace-nowrap grid grid-cols-2 gap-x-8 md:gap-x-0 md:flex md:flex-row"
         >
           {
-            footerMenuLinks?.main?.map(({ name, dropdowns }, i) => {
-              let setTarget = false;
-              if (name == "Follow") setTarget = true;
-              const linkProps = setTarget
-                ? { target: "_blank", rel: "noopener noreferrer" }
-                : {};
-
+            menus?.footerMenu?.map((group) => {
               return (
                 <ul class="mb-16 md:mb-0 md:ml-12 lg:ml-20">
-                  <p class="mb-2 border-b border-white pb-1">{name}</p>
-                  {dropdowns && dropdowns?.map(({ name, url }, i) => (
-                    <li class="leading-[30px]">
-                      <a
-                        href={url}
-                        {...linkProps}
-                        class=" transition-all duration-300 ease-in-out hover:transition-all hover:text-nextflow"
-                      >
-                        {name}
-                      </a>
-                    </li>
-                  ))}
+                  <p class="mb-2 border-b border-white pb-1">{group.footerTitle}</p>
+                  {group.footerLinks?.map((item) => {
+                    const isExternal = item.link?.isExternal;
+                    const href = isExternal 
+                      ? item.link?.externalUrl 
+                      : item.link?.internalLink;
+                    const linkProps = isExternal
+                      ? { target: "_blank", rel: "noopener noreferrer" }
+                      : {};
+
+                    return (
+                      <li class="leading-[30px]">
+                        <a 
+                          href={href}
+                          {...linkProps}
+                          class="transition-all duration-300 ease-in-out hover:transition-all hover:text-nextflow"
+                        >
+                          {item.linkTitle}
+                        </a>
+                      </li>
+                    );
+                  })}
                 </ul>
               );
             })
@@ -57,13 +59,6 @@ const currentYear = new Date().getFullYear();
     </div>
     <div class="flex flex-row justify-between">
       <div class="monospace mb-6">{`© ${currentYear} Seqera`}</div>
-      <!-- <div class="flex flex-row">
-        <small>by</small>
-        <div class="pl-2 max-w-[150px]">
-          <SeqeraLogo className="w-full" alt="Seqera Logo"/>
-        </div>
-      </div> -->
-      <!-- <div class="monospace ">{`© ${currentYear} Seqera`}</div> -->
     </div>
   </div>
 </footer>
