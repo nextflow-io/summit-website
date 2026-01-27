@@ -1,48 +1,14 @@
 ---
 import Layout from "@layouts/Base.astro";
-import Hero from "@components/Hero";
 import SEO from "@components/SEO";
-import img1 from "@images/photos/2026/barcelona/cfa-bcn.jpg";
 import {fetchCFA} from "@data/cfa";
 import CFA from "@modules/CFA"
-import FeatureBlocks from '@modules/FeatureBlocks';
-
 
 const cfa = await fetchCFA();
-
-  console.log('Full CFA data:', cfa);
-
-
 ---
 
 <Layout>
   <SEO slot="head" title="Call for Speakers and Posters" img={3} />
 
   <CFA cfa={cfa}  client:load/>
-
-
-  <!-- <section class="">
-    <Hero
-      preTitle="Call for speakers and posters"
-      title={``}`
-      content="Submissions are now closed. Accepted speakers and posters will notified by end of August."
-      href={img1.src}
-      alt="Image of Nextflow Summit presenter"
-      ctaText1="Sign In / Dashboard"
-      ctaExternal1={true}
-      ctaLink1="https://seqera.swoogo.com/nfcore-hackathon/call-for-abstracts/8033231"
-      client:load
-    />
-  </section>
-
-  <section id="learn" class="mt-20 mb-24 container">
-    <h1 class="h1 mb-4 md:mb-8">Key Info</h1>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-     
-    </div>
-  </section> -->
-
-
-
-  <!-- <Faq className="mt-20 mb-20" data={qa} client:load /> -->
 </Layout>

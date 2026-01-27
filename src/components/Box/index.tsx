@@ -35,6 +35,7 @@ const Box: React.FC<Props> = ({
   headline,
   bodycopy,
   image,
+  imageAlt,
   bottomSubtitleLeft,
   bottomSubtitleRight,
   bottomSubtitleLine,

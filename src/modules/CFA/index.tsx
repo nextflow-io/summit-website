@@ -1,6 +1,5 @@
 import React from 'react';
 import LandingHero from '@components/LandingHero';
-import PortableText from '@components/PortableText';
 import FeatureBlocks from '@modules/FeatureBlocks';
 import Faq from '@components/Faq';
 
@@ -10,7 +9,6 @@ type Props = {
 
 const CFA: React.FC<Props> = ({ cfa }) => {
   // console.log('Raw box data:', cfa.featureSection?.boxes);
-
   return (
     <>
       <LandingHero

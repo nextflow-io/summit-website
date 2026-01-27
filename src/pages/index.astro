@@ -2,44 +2,21 @@
 import Layout from '@layouts/Base.astro';
 import EventSelector from '@modules/EventSelector/index.astro';
 import { CallForAbstracts } from '@components/Marquee';
-import NextflowNumbers from '@modules/NextflowNumbers';
 import ImageSection from '@modules/ImageSection';
 import PastEvents from '@modules/PastEvents';
 import Subscribe from '@modules/Subscribe';
 import SEO from '@components/SEO';
-import LandingHero from '@components/LandingHero';
-import Faq from '@components/Faq';
-import qa from './qa';
 import SignUpForm from '@modules/SignUpForm';
-import FeatureBlocks from '@modules/FeatureBlocks';
-import Box from '@components/Box';
-import ArrowUpRight from '@icons/ArrowUpRight';
-import imgVirtual from '@images/photos/2026/virtual.jpg';
-import imgBarcelona from '@images/photos/2026/barcelona/barcelona.jpg';
 import Banner from '@components/Banner';
+import Homepage from "@modules/Homepage"
+import {fetchHomepage} from "@data/homepage";
+
+const home= await fetchHomepage();
 ---
 
 <Layout showHeader={false}>
   <SEO slot="head" title="Home" />
   <!-- <Banner title="Register to access the event recordings" ctaText="Register Now" ctaLink="https://seqera.swoogo.com/nextflow-summit-boston-2025" client:load />  -->
-  <!-- <LandingHero
-    isBoth
-    title="Nextflow Summit"
-    content=`Step into the Future of Software-Driven Science.</br></br>Nextflow Summit, presented by Seqera, brings together scientists from around the world to shape the future of biotech R&D through community-driven innovation in data science and computational biology.`
-    `
-    where="both"
-    ctaText2="Training & Hackathon"
-    ctaLink2="/2026/barcelona/overview"
-    ctaText1="Virtual Summit"
-    ctaLink1="/2026/virtual/overview"
-    virtual="October 23-24"
-    barcelona="October 28-29"
-    client:load
-  />
-
- 
-  <NextflowNumbers client:load className="" />
-  <PastEvents client:load />
-  <Faq className="" client:load data={qa} />
-  <SignUpForm client:load /> -->
+    <Homepage home={home}  client:load/>
+  <!-- <SignUpForm client:load /> -->
 </Layout>
