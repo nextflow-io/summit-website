@@ -2,9 +2,13 @@
 import Layout from '@layouts/Base.astro';
 import SEO from '@components/SEO';
 import Hackathon from "@modules/Hackathon"
-import {fetchBostonHackathon} from "@data/hackathon";
 
-const hackathon = await fetchBostonHackathon();
+
+import { fetchBostonHackathon} from '@data/fetchers';
+import type { PageData } from '@data/types';
+
+const hackathon: PageData = await fetchBostonHackathon();
+
 ---
 
 <Layout>

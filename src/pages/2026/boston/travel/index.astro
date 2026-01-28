@@ -2,9 +2,12 @@
 import Layout from '@layouts/Base.astro';
 import SEO from '@components/SEO';
 import Travel from "@modules/Travel"
-import {fetchBostonTravel} from "@data/travel";
+import { fetchBostonTravel} from '@data/fetchers';
+import type { PageData } from '@data/types';
 
-const travel = await fetchBostonTravel();
+const travel: PageData = await fetchBostonTravel();
+
+
 ---
 
 <Layout>

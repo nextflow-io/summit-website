@@ -2,9 +2,12 @@
 import Layout from '@layouts/Base.astro';
 import SEO from '@components/SEO';
 import Overview from "@modules/Overview"
-import {fetchBostonOverview} from "@data/overview";
 
-const overview = await fetchBostonOverview();
+import { fetchBostonOverview} from '@data/fetchers';
+import type { PageData } from '@data/types';
+
+const overview: PageData = await fetchBostonOverview();
+
 ---
 
 <Layout showHeader={false}>

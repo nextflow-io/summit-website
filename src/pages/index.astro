@@ -3,9 +3,10 @@ import Layout from '@layouts/Base.astro';
 import SEO from '@components/SEO';
 import Banner from '@components/Banner';
 import Homepage from "@modules/Homepage"
-import {fetchHomepage} from "@data/homepage";
+import { fetchHomepage } from '@data/fetchers';
+import type { HomepageData } from '@data/types';
 
-const home = await fetchHomepage();
+const home: HomepageData = await fetchHomepage();
 ---
 
 <Layout>

@@ -1,10 +1,12 @@
 ---
 import Layout from "@layouts/Base.astro";
 import SEO from "@components/SEO";
-import {fetchCFA} from "@data/cfa";
 import CFA from "@modules/CFA"
+import { fetchCFA} from '@data/fetchers';
+import type { PageData } from '@data/types';
 
-const cfa = await fetchCFA();
+const cfa: PageData = await fetchCFA();
+
 ---
 
 <Layout>

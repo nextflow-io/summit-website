@@ -2,9 +2,11 @@
 import Layout from '@layouts/Base.astro';
 import SEO from '@components/SEO';
 import PastEventsPage from "@modules/PastEvents"
-import {fetchPastEvents} from "@data/pastEvents";
+import { fetchPastEvents } from '@data/fetchers';
+import type { PageData } from '@data/types';
 
-const past = await fetchPastEvents();
+const past: PageData = await fetchPastEvents();
+
 ---
 
 <Layout>

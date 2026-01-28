@@ -2,9 +2,11 @@
 import Layout from '@layouts/Base.astro';
 import SEO from '@components/SEO';
 import WhyAttendPage from "@modules/WhyAttend"
-import {fetchWhyAttend} from "@data/whyAttend";
+import { fetchWhyAttend } from '@data/fetchers';
+import type { PageData } from '@data/types';
 
-const attend = await fetchWhyAttend();
+const attend: PageData = await fetchWhyAttend();
+
 ---
 
 <Layout>

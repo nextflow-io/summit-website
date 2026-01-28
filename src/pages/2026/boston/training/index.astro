@@ -2,9 +2,12 @@
 import Layout from '@layouts/Base.astro';
 import SEO from '@components/SEO';
 import Training from "@modules/Training"
-import {fetchBostonTraining} from "@data/training";
 
-const training = await fetchBostonTraining();
+import { fetchBostonTraining} from '@data/fetchers';
+import type { PageData } from '@data/types';
+
+const training: PageData = await fetchBostonTraining();
+
 ---
 
 <Layout>
