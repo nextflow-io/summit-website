@@ -16,19 +16,19 @@
     font-weight: 600;
   }
   & h1 {
-    @apply text-2xl md:text-4xl lg:text-5xl;
+    @apply text-xxl md:text-4xl lg:text-5xl;
     @apply mb-4 md:mb-6 lg:mb-8;
   }
   & h2 {
-    @apply text-2xl md:text-3xl lg:text-4xl;
+    @apply text-xxl md:text-3xl lg:text-4xl;
     @apply mb-3 md:mb-4 lg:mb-5;
   }
   & h3 {
-    @apply text-2xl md:text-3xl;
+    @apply text-xxl md:text-3xl;
     @apply mb-3 md:mb-4;
   }
   & h4 {
-    @apply text-xl md:text-2xl;
+    @apply text-xl md:text-xxl;
     @apply mb-2 md:mb-3;
   }
   & h5 {

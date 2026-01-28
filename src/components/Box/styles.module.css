@@ -1,5 +1,4 @@
 .box {
-  height: 100%;
   color: black;
   border: 1px solid var(--color-nextflow);
   background: var(--color-nextflow);

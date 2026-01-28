@@ -718,7 +718,7 @@ const ScheduleVirtual: React.FC<Props> = ({ children, className, config }) => {
     <div className={`w-full ${className || ""}`}>
       {config.days.map((day, dayIndex) => (
         <section key={dayIndex} className="mb-20">
-          <h5 className="text-2xl mb-2">{day.date}</h5>
+          <h5 className="text-xxl mb-2">{day.date}</h5>
           <ScheduleHeader
             timezone={day.timezone}
             selectedTimezone={selectedTimezone}

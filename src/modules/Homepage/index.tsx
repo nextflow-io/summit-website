@@ -5,6 +5,7 @@ import Faq from '@components/Faq';
 import NextflowNumbers from '@modules/NextflowNumbers';
 import KeyDates from '@modules/KeyDates';
 import SignUpForm from '@modules/SignUpForm';
+import { urlFor } from '@data/sanity-image'
 
 type Props = {
   home: any;
@@ -23,26 +24,34 @@ const Homepage: React.FC<Props> = ({ home }) => {
         headlineSize={home.hero?.headlineSize}
       />
 
-      {home.featureSection?.boxes && home.featureSection.boxes.length > 0 && (
-        <FeatureBlocks
-          headline={home.featureSection.headline}
-          boxes={home.featureSection.boxes.map((box) => ({
-            title: box?.title?.title,
-            href: box?.title?.href?.url || box?.title?.href?.href,
-            externalLink: box?.title?.href?.external,
-            subtitleLeft: box?.subtitle?.subtitleLeft,
-            subtitleRight: box?.subtitle?.subtitleRight,
-            image: box?.image?.asset?.url,
-            imageAlt: box?.image?.alt,
-            bottomSubtitleLeft: box?.lowerSubtitle?.lowerSubtitleLeft,
-            bottomSubtitleRight: box?.lowerSubtitle?.lowerSubtitleRight,
-            headline: box?.headline,
-            bodycopy: box?.bodycopy,
-            buttonText: box?.cta?.buttonText,
-            buttonUrl: box?.cta?.buttonLink || box?.cta?.buttonUrl,
-          }))}
-        />
-      )}
+      {home.featureSection?.map((section, index) => (
+        section?.boxes && section.boxes.length > 0 && (
+          <FeatureBlocks
+            key={index}
+            headline={section.headline}
+            boxes={section.boxes.map((box) => {
+              const link = box?.title?.href;
+              const href = link?.isExternal ? link?.externalUrl : link?.internalLink;
+              
+              return {
+                title: box?.title?.title,
+                href: href || null,
+                externalLink: link?.isExternal || false,
+                subtitleLeft: box?.subtitle?.subtitleLeft,
+                subtitleRight: box?.subtitle?.subtitleRight,
+                image: box?.image?.image ? urlFor(box.image.image).url() : null,
+                imageAlt: box?.image?.imageAlt || box?.image?.alt,
+                bottomSubtitleLeft: box?.lowerSubtitle?.lowerSubtitleLeft,
+                bottomSubtitleRight: box?.lowerSubtitle?.lowerSubtitleRight,
+                headline: box?.headline,
+                bodycopy: box?.bodycopy,
+                buttonText: box?.cta?.buttonText,
+                buttonUrl: box?.cta?.buttonLink || box?.cta?.buttonUrl?.url || null,
+              };
+            })}
+          />
+        )
+      ))}
 
       {home.nextflowNumbers && (
         <NextflowNumbers
@@ -62,21 +71,26 @@ const Homepage: React.FC<Props> = ({ home }) => {
       {home.pastEvents?.boxes && home.pastEvents.boxes.length > 0 && (
         <FeatureBlocks
           headline={home.pastEvents.headline}
-          boxes={home.pastEvents.boxes.map((box) => ({
-            title: box?.title?.title,
-            href: box?.title?.href?.url || box?.title?.href?.href,
-            externalLink: box?.title?.href?.external,
-            subtitleLeft: box?.subtitle?.subtitleLeft,
-            subtitleRight: box?.subtitle?.subtitleRight,
-            image: box?.image?.asset?.url,
-            imageAlt: box?.image?.alt,
-            bottomSubtitleLeft: box?.lowerSubtitle?.lowerSubtitleLeft,
-            bottomSubtitleRight: box?.lowerSubtitle?.lowerSubtitleRight,
-            headline: box?.headline,
-            bodycopy: box?.bodycopy,
-            buttonText: box?.cta?.buttonText,
-            buttonUrl: box?.cta?.buttonLink || box?.cta?.buttonUrl,
-          }))}
+          boxes={home.pastEvents.boxes.map((box) => {
+            const link = box?.title?.href;
+            const href = link?.isExternal ? link?.externalUrl : link?.internalLink;
+            
+            return {
+              title: box?.title?.title,
+              href: href || null,
+              externalLink: link?.isExternal || false,
+              subtitleLeft: box?.subtitle?.subtitleLeft,
+              subtitleRight: box?.subtitle?.subtitleRight,
+              image: box?.image?.image ? urlFor(box.image.image).url() : null,
+              imageAlt: box?.image?.imageAlt || box?.image?.alt,
+              bottomSubtitleLeft: box?.lowerSubtitle?.lowerSubtitleLeft,
+              bottomSubtitleRight: box?.lowerSubtitle?.lowerSubtitleRight,
+              headline: box?.headline,
+              bodycopy: box?.bodycopy,
+              buttonText: box?.cta?.buttonText,
+              buttonUrl: box?.cta?.buttonLink || box?.cta?.buttonUrl?.url || null,
+            };
+          })}
         />
       )}
 

@@ -40,9 +40,9 @@ export const singleFeaturedSectionFragment = `
       title {
         title,
         href {
-          url,
-          href,
-          external
+          isExternal,
+          internalLink,
+          externalUrl
         }
       },
       subtitle {
@@ -50,10 +50,14 @@ export const singleFeaturedSectionFragment = `
         subtitleRight
       },
       image {
-        asset->{
-          _id,
-          url
+        ...,
+        image {
+          asset->{
+            _id,
+            url
+          }
         },
+        imageAlt,
         alt
       },
       headline,
@@ -87,9 +91,9 @@ export const featureSectionsArrayFragment = `
       title {
         title,
         href {
-          url,
-          href,
-          external
+          isExternal,
+          internalLink,
+          externalUrl
         }
       },
       subtitle {
@@ -97,10 +101,14 @@ export const featureSectionsArrayFragment = `
         subtitleRight
       },
       image {
-        asset->{
-          _id,
-          url
+        ...,
+        image {
+          asset->{
+            _id,
+            url
+          }
         },
+        imageAlt,
         alt
       },
       headline,

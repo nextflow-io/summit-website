@@ -46,7 +46,7 @@ const Box: React.FC<Props> = ({
 
   return (
     <div className={cn}>
-      <div className="relative flex flex-col justify-between h-full z-10">
+      <div className="relative flex flex-col z-10">
         <div className="relative">
           {title && (
             <div className="pb-2 border-b border-b-white w-full flex flex-row justify-between items-center">
