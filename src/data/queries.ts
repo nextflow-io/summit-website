@@ -83,11 +83,13 @@ export const singleFeaturedSectionFragment = `
   }
 `;
 
-
 // featured sections as an array
 export const featureSectionsArrayFragment = `
   featureSection[]{
     headline,
+    bodycopy[]{
+    ...,
+    },
     boxes[]{
       title {
         title,
@@ -116,18 +118,6 @@ export const featureSectionsArrayFragment = `
       headline,
       bodycopy[]{
         ...,
-        _type,
-        style,
-        children[]{
-          ...,
-          _type,
-          text,
-          marks
-        },
-        markDefs[]{
-          ...,
-          _type
-        }
       },
       lowerSubtitle {
         lowerSubtitleLeft,
@@ -166,7 +156,6 @@ export const nextflowNumbersFragment = `
   }
 `;
 
-
 // key dates
 export const keyDatesSectionFragment = `
   keyDatesSection {
@@ -182,7 +171,6 @@ export const keyDatesSectionFragment = `
     }
   }
 `;
-
 
 // faq module
 export const faqSectionFragment = `

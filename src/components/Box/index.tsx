@@ -48,10 +48,12 @@ const Box: React.FC<Props> = ({
 
   return (
     <div className={`${cn} ${imageCover ? '' : 'p-6'}`}>
-      <div className="relative flex flex-col z-10">
+      <div className="relative flex flex-col justify-between h-full z-10">
         <div className="relative">
           {title && (
-            <div className="pb-2 border-b border-b-white w-full flex flex-row justify-between items-center">
+            <div
+              className={` pb-2 border-b border-b-white w-full flex flex-row justify-between items-center`}
+            >
               <h5 className="text-lg monospace font-normal">{title}</h5>
               {href && <ArrowUpRight />}
             </div>
@@ -74,44 +76,47 @@ const Box: React.FC<Props> = ({
             </a>
           )}
         </div>
+        <div className="h-full flex flex-col justify-between">
+          {headline && (
+            <div>
+              <h3 className="h6">{headline}</h3>
+            </div>
+          )}
 
-        {headline && (
-          <div>
-            <h3 className="h6">{headline}</h3>
-          </div>
-        )}
+          {/* Only render PortableText if bodycopy is an array */}
+          {Array.isArray(bodycopy) && bodycopy.length > 0 && (
+            <div className="my-2">
+              <PortableText value={bodycopy} />
+            </div>
+          )}
+          {/* If bodycopy is a ReactNode, render it directly */}
 
-        {/* Only render PortableText if bodycopy is an array */}
-        {Array.isArray(bodycopy) && bodycopy.length > 0 && (
-          <div className="my-2">
-            <PortableText value={bodycopy} />
-          </div>
-        )}
-        {/* If bodycopy is a ReactNode, render it directly */}
+          {!Array.isArray(bodycopy) && bodycopy && (
+            <div className="my-2">{bodycopy}</div>
+          )}
 
-        {!Array.isArray(bodycopy) && bodycopy && (
-          <div className="my-2">{bodycopy}</div>
-        )}
-
-        {image && (
-          <div className={`relative w-full h-0 overflow-hidden ${imageCover ? 'pb-[100%]' : 'pb-[75%]'}`}>
-            <img
-              className="absolute top-0 left-0 right-0 bottom-0 w-full h-full z-0 object-cover"
-              src={image}
-              alt={imageAlt || 'Image'}
-            />
-            {href && (
-              <a
-                href={href}
-                target={externalLink ? '_blank' : '_self'}
-                rel={externalLink ? 'noopener noreferrer' : undefined}
-                className={`absolute w-full h-full top-0 left-0 z-10`}
-              >
-                {children}
-              </a>
-            )}
-          </div>
-        )}
+          {image && (
+            <div
+              className={`relative w-full h-0 overflow-hidden ${imageCover ? 'pb-[100%]' : 'pb-[75%] mt-6'}`}
+            >
+              <img
+                className="absolute top-0 left-0 right-0 bottom-0 w-full h-full z-0 object-cover"
+                src={image}
+                alt={imageAlt || 'Image'}
+              />
+              {href && (
+                <a
+                  href={href}
+                  target={externalLink ? '_blank' : '_self'}
+                  rel={externalLink ? 'noopener noreferrer' : undefined}
+                  className={`absolute w-full h-full top-0 left-0 z-10`}
+                >
+                  {children}
+                </a>
+              )}
+            </div>
+          )}
+        </div>
 
         {bottomSubtitleLeft && (
           <div className="pt-2 mt-4 border-t border-t-nextflow">
@@ -123,8 +128,8 @@ const Box: React.FC<Props> = ({
         )}
 
         {buttonText && (
-          <div className="border-t border-white">
-            <Button className="mt-10 relative" dark href={buttonUrl}>
+          <div className="border-t border-white w-full">
+            <Button className="mt-10 relative w-full" dark href={buttonUrl}>
               {buttonText}
             </Button>
           </div>

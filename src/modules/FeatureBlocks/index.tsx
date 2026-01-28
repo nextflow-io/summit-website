@@ -1,9 +1,6 @@
 import React from "react";
-import clsx from "clsx";
-import Button from "@components/Button";
 import Box from "@components/Box";
-import imgVirtual from "@images/photos/2026/virtual.jpg";
-import imgBarcelona from "@images/photos/2026/barcelona/barcelona.jpg";
+import PortableText from '@components/PortableText';
 
 type BoxData = {
   headline?: string;
@@ -18,14 +15,17 @@ type BoxData = {
   externalLink?: boolean;
   bodycopy?: any;
   imageCover?: boolean;
+  buttonText?: string;
+  buttonUrl?: any;
 };
 
 type Props = {
   headline?: string;
   boxes?: BoxData[];
+  bodycopy?: any;
 };
 
-const FeatureBlocks: React.FC<Props> = ({ boxes, headline  }) => {
+const FeatureBlocks: React.FC<Props> = ({ boxes, headline, bodycopy }) => {
 
   if (!boxes || boxes.length === 0) {
     return null;
@@ -50,7 +50,10 @@ const FeatureBlocks: React.FC<Props> = ({ boxes, headline  }) => {
 
   return (
     <section className="bg-white text-black py-6 md:pt-16 md:pb-20">
-      <div className="container-xl"><h3 className="h4 mb-4">{headline}</h3></div>
+      <div className="container-xl">
+        <h3 className="h4 mb-4 max-w-[60%]">{headline}</h3>
+        <div className="max-w-[60%] text-balance">  <PortableText value={bodycopy} /></div>
+        </div>
       <div className={`container-xl grid items-self gap-6 md:gap-8 ${gridCols}`}>
         {boxes.map((box, index) => (
           <Box
@@ -67,6 +70,9 @@ const FeatureBlocks: React.FC<Props> = ({ boxes, headline  }) => {
             headline={box.headline}
             bodycopy={box.bodycopy}
             externalLink={box.externalLink}
+            buttonText={box.buttonText}
+            buttonUrl={box.buttonUrl}
+            
           />
         ))}
       </div>

@@ -29,9 +29,16 @@ const Homepage: React.FC<Props> = ({ home }) => {
           <FeatureBlocks
             key={index}
             headline={section.headline}
+            bodycopy={section.bodycopy}
             boxes={section.boxes.map((box) => {
               const link = box?.title?.href;
               const href = link?.isExternal ? link?.externalUrl : link?.internalLink;
+              
+              // Extract button URL the same way as title href
+              const buttonLink = box?.cta?.buttonUrl;
+              const buttonUrl = buttonLink?.isExternal 
+                ? buttonLink?.externalUrl 
+                : buttonLink?.internalLink;
               
               return {
                 title: box?.title?.title,
@@ -46,7 +53,7 @@ const Homepage: React.FC<Props> = ({ home }) => {
                 headline: box?.headline,
                 bodycopy: box?.bodycopy,
                 buttonText: box?.cta?.buttonText,
-                buttonUrl: box?.cta?.buttonLink || box?.cta?.buttonUrl?.url || null,
+                buttonUrl: buttonUrl || null,
               };
             })}
           />
@@ -75,6 +82,12 @@ const Homepage: React.FC<Props> = ({ home }) => {
             const link = box?.title?.href;
             const href = link?.isExternal ? link?.externalUrl : link?.internalLink;
             
+            // Extract button URL the same way as title href
+            const buttonLink = box?.cta?.buttonUrl;
+            const buttonUrl = buttonLink?.isExternal 
+              ? buttonLink?.externalUrl 
+              : buttonLink?.internalLink;
+            
             return {
               title: box?.title?.title,
               href: href || null,
@@ -88,7 +101,7 @@ const Homepage: React.FC<Props> = ({ home }) => {
               headline: box?.headline,
               bodycopy: box?.bodycopy,
               buttonText: box?.cta?.buttonText,
-              buttonUrl: box?.cta?.buttonLink || box?.cta?.buttonUrl?.url || null,
+              buttonUrl: buttonUrl || null,
             };
           })}
         />

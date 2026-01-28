@@ -44,7 +44,7 @@ const PastEventsPage: React.FC<Props> = ({ past }) => {
                     ? urlFor(box.image.image).url()
                     : null,
                   imageAlt: box?.image?.imageAlt || box?.image?.alt,
-                  imageCover?: box?.imageCover,
+                  imageCover: box?.imageCover,
                   bottomSubtitleLeft: box?.lowerSubtitle?.lowerSubtitleLeft,
                   bottomSubtitleRight: box?.lowerSubtitle?.lowerSubtitleRight,
                   headline: box?.headline,
