@@ -15,6 +15,8 @@ const menus = await fetchMenus();
 
 let showNav = true;
 if (typeof Astro.props.showNav !== 'undefined') showNav = Astro.props.showNav;
+
+const shouldShowSecondaryMenu = menus?.secondaryPath && pathname.includes(menus.secondaryPath);
 ---
 
 <header id="header" class={`${styles.header} `}>
@@ -37,13 +39,8 @@ if (typeof Astro.props.showNav !== 'undefined') showNav = Astro.props.showNav;
                   small
                   light
                   className=""
-                  href={
-                    menus.headerBtn.buttonUrl.externalUrl ||
-                    menus.headerBtn.buttonUrl.internalLink
-                  }
-                  target={
-                    menus.headerBtn.buttonUrl.isExternal ? '_blank' : '_self'
-                  }
+                  href={menus.headerBtn.buttonLink || menus.headerBtn.buttonUrl}
+                  target={menus.headerBtn.externalLink ? '_blank' : '_self'}
                 >
                   {menus.headerBtn.buttonText}
                 </Button>
@@ -53,22 +50,21 @@ if (typeof Astro.props.showNav !== 'undefined') showNav = Astro.props.showNav;
         </div>
       </div>
     </div>
-    <div
-      class={`${styles.navigation} js-secondary-nav transition-all duration-300`}
-    >
-      <div class="w-full flex items-center justify-center monospace text-xxs">
-        {
-          menus.secondaryMenu && (
-            <SecondaryMenu
-              pathname={pathname}
-              namespace={namespace}
-              menuItems={menus?.secondaryMenu}
-              client:load
-            />
-          )
-        }
+    
+    {shouldShowSecondaryMenu && menus?.secondaryMenu && menus.secondaryMenu.length > 0 && (
+      <div
+        class={`${styles.navigation} js-secondary-nav transition-all duration-300`}
+      >
+        <div class="w-full flex items-center justify-center monospace text-xxs">
+          <SecondaryMenu
+            pathname={pathname}
+            namespace={namespace}
+            menuItems={menus.secondaryMenu}
+            client:load
+          />
+        </div>
       </div>
-    </div>
+    )}
   </div>
 </header>
 
@@ -85,25 +81,25 @@ if (typeof Astro.props.showNav !== 'undefined') showNav = Astro.props.showNav;
 <script>
   document.addEventListener('astro:page-load', () => {
     let secondaryNav = document.querySelector('.js-secondary-nav');
+    if (!secondaryNav) return;
+    
     let prevScrollTop = window.scrollY || document.documentElement.scrollTop;
     let prevScrollDirection = '';
 
-    if (secondaryNav) {
-      window.addEventListener(
-        'scroll',
-        function () {
-          const st = window.scrollY || document.documentElement.scrollTop;
-          if (st > prevScrollTop && prevScrollDirection !== 'down') {
-            prevScrollDirection = 'down';
-            secondaryNav.classList.add('js-hide-nav');
-          } else if (st < prevScrollTop && prevScrollDirection !== 'up') {
-            secondaryNav.classList.remove('js-hide-nav');
-            prevScrollDirection = 'up';
-          }
-          prevScrollTop = st <= 0 ? 0 : st;
-        },
-        false
-      );
-    }
+    window.addEventListener(
+      'scroll',
+      function () {
+        const st = window.scrollY || document.documentElement.scrollTop;
+        if (st > prevScrollTop && prevScrollDirection !== 'down') {
+          prevScrollDirection = 'down';
+          secondaryNav.classList.add('js-hide-nav');
+        } else if (st < prevScrollTop && prevScrollDirection !== 'up') {
+          secondaryNav.classList.remove('js-hide-nav');
+          prevScrollDirection = 'up';
+        }
+        prevScrollTop = st <= 0 ? 0 : st;
+      },
+      false
+    );
   });
 </script>

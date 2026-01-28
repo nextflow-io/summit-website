@@ -26,7 +26,7 @@ const SecondaryMenu: React.FC<Props> = (props) => {
     opacity: 0,
   });
 
-  const { pathname, namespace, desktop, menuItems } = props;
+  const { pathname, menuItems } = props;
 
   function isActive(path: string) {
     return String(pathname) === String(path);

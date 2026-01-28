@@ -53,6 +53,7 @@ export interface MenusData {
   _type: string;
   headerMenu?: MenuItem[];
   headerBtn?: Button;
+  secondaryPath?: string;
   secondaryMenu?: MenuItem[];
   mobileMenu?: MobileMenuItem[];
   footerMenu?: FooterGroup[];
@@ -80,6 +81,7 @@ export async function fetchMenus(): Promise<MenusData> {
       },
       externalLink,
     },
+    secondaryPath,
     secondaryMenu[]{
       linkTitle,
       link {
