@@ -8,7 +8,7 @@ import {fetchHomepage} from "@data/homepage";
 const home = await fetchHomepage();
 ---
 
-<Layout showHeader={false}>
+<Layout>
   <SEO slot="head" title="Home" />
   <!-- <Banner title="Register to access the event recordings" ctaText="Register Now" ctaLink="https://seqera.swoogo.com/nextflow-summit-boston-2025" client:load />  -->
   <Homepage home={home}  client:load/>

@@ -51,10 +51,10 @@ const Homepage: React.FC<Props> = ({ home }) => {
         />
       )}
 
-      {home.pastEvents?.boxes && home.pastEvents.boxes.length > 0 && (
-        <PastEvents
+       {home.pastEvents?.boxes && home.pastEvents.boxes.length > 0 && (
+        <FeatureBlocks
           headline={home.pastEvents.headline}
-          events={home.pastEvents.boxes.map((box) => ({
+          boxes={home.pastEvents.boxes.map((box) => ({
             title: box?.title?.title,
             href: box?.title?.href?.url || box?.title?.href?.href,
             externalLink: box?.title?.href?.external,
@@ -69,7 +69,6 @@ const Homepage: React.FC<Props> = ({ home }) => {
             buttonText: box?.cta?.buttonText,
             buttonUrl: box?.cta?.buttonLink || box?.cta?.buttonUrl,
           }))}
-          button={home.pastEvents.button}
         />
       )}
 

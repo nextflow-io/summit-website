@@ -1,7 +1,7 @@
 ---
-import FooterLogo from "@icons/FooterLogo";
-import Subscribe from "@modules/Subscribe";
-import { fetchMenus } from "@data/menus";
+import FooterLogo from '@icons/FooterLogo';
+import Subscribe from '@modules/Subscribe';
+import { fetchMenus } from '@data/menus';
 
 const menus = await fetchMenus();
 const currentYear = new Date().getFullYear();
@@ -23,21 +23,28 @@ const currentYear = new Date().getFullYear();
             menus?.footerMenu?.map((group) => {
               return (
                 <ul class="mb-16 md:mb-0 md:ml-12 lg:ml-20">
-                  <p class="mb-2 border-b border-white pb-1">{group.footerTitle}</p>
+                  <p class="mb-2 border-b border-white pb-1">
+                    {group.footerTitle}
+                  </p>
                   {group.footerLinks?.map((item) => {
-                    const isExternal = item.link?.isExternal;
-                    const href = isExternal 
-                      ? item.link?.externalUrl 
+                    const href = item.link?.isExternal
+                      ? item.link?.externalUrl
                       : item.link?.internalLink;
-                    const linkProps = isExternal
-                      ? { target: "_blank", rel: "noopener noreferrer" }
-                      : {};
+
+                    // Add leading slash if not present and not external
+                    const url =
+                      href && !item.link?.isExternal && !href.startsWith('/')
+                        ? `/${href}`
+                        : href || '#';
+
+                    const isExternal = item.link?.isExternal;
 
                     return (
                       <li class="leading-[30px]">
-                        <a 
-                          href={href}
-                          {...linkProps}
+                        <a
+                          href={url}
+                          target={isExternal ? '_blank' : '_self'}
+                          rel={isExternal ? 'noopener noreferrer' : undefined}
                           class="transition-all duration-300 ease-in-out hover:transition-all hover:text-nextflow"
                         >
                           {item.linkTitle}
@@ -55,7 +62,7 @@ const currentYear = new Date().getFullYear();
   </div>
   <div class="px-6">
     <div class="mt-10 mb-6">
-      <FooterLogo alt="Nextflow Summit Logo" className="w-full"/>
+      <FooterLogo alt="Nextflow Summit Logo" className="w-full" />
     </div>
     <div class="flex flex-row justify-between">
       <div class="monospace mb-6">{`© ${currentYear} Seqera`}</div>
