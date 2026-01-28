@@ -76,9 +76,9 @@ const LandingHero: React.FC<HeroProps> = ({
             >
               <h1
                 className={` mb-4 max-w-[250px] sm:max-w-[800px]
-                   ${headlineSize === 'large' ? 'h0' : ''} 
-                  ${headlineSize === 'medium' ? 'h2' : ''} 
-                  ${headlineSize === 'small' ? 'h5' : ''} 
+                  ${headlineSize === 'large' ? 'h0' : 'text-2xl md:text-4xl'} 
+                  ${headlineSize === 'medium' ? 'text-2xl md:text-4xl' : 'text-2xl md:text-4xl'} 
+                  ${headlineSize === 'small' ? 'text-2xl md:text-3xl' : 'text-2xl md:text-3xl'} 
                 `}
               >
                 {title}
