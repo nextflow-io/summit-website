@@ -16,7 +16,8 @@ const menus = await fetchMenus();
 let showNav = true;
 if (typeof Astro.props.showNav !== 'undefined') showNav = Astro.props.showNav;
 
-const shouldShowSecondaryMenu = menus?.secondaryPath && pathname.includes(menus.secondaryPath);
+const shouldShowSecondaryMenu =
+  menus?.secondaryPath && pathname.includes(menus.secondaryPath);
 ---
 
 <header id="header" class={`${styles.header} `}>
@@ -50,21 +51,25 @@ const shouldShowSecondaryMenu = menus?.secondaryPath && pathname.includes(menus.
         </div>
       </div>
     </div>
-    
-    {shouldShowSecondaryMenu && menus?.secondaryMenu && menus.secondaryMenu.length > 0 && (
-      <div
-        class={`${styles.navigation} js-secondary-nav transition-all duration-300`}
-      >
-        <div class="w-full flex items-center justify-center monospace text-xxs">
-          <SecondaryMenu
-            pathname={pathname}
-            namespace={namespace}
-            menuItems={menus.secondaryMenu}
-            client:load
-          />
-        </div>
-      </div>
-    )}
+
+    {
+      shouldShowSecondaryMenu &&
+        menus?.secondaryMenu &&
+        menus.secondaryMenu.length > 0 && (
+          <div
+            class={`${styles.navigation} js-secondary-nav transition-all duration-300`}
+          >
+            <div class="w-full flex items-center justify-center monospace text-xxs">
+              <SecondaryMenu
+                pathname={pathname}
+                namespace={namespace}
+                menuItems={menus.secondaryMenu}
+                client:load
+              />
+            </div>
+          </div>
+        )
+    }
   </div>
 </header>
 
@@ -82,7 +87,7 @@ const shouldShowSecondaryMenu = menus?.secondaryPath && pathname.includes(menus.
   document.addEventListener('astro:page-load', () => {
     let secondaryNav = document.querySelector('.js-secondary-nav');
     if (!secondaryNav) return;
-    
+
     let prevScrollTop = window.scrollY || document.documentElement.scrollTop;
     let prevScrollDirection = '';
 

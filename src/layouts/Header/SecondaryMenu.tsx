@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import Link from "./Link";
 
 type MenuItem = {
   linkTitle: string;
@@ -12,8 +11,8 @@ type MenuItem = {
 };
 
 type Props = {
-  namespace: string;
-  pathname: string;
+  namespace?: string;
+  pathname?: string;
   menuItems?: MenuItem[];
   second?: boolean;
   desktop?: boolean;
@@ -27,10 +26,6 @@ const SecondaryMenu: React.FC<Props> = (props) => {
   });
 
   const { pathname, menuItems } = props;
-
-  function isActive(path: string) {
-    return String(pathname) === String(path);
-  }
 
   // If no menu items from Sanity, return null
   if (!menuItems || menuItems.length === 0) {
@@ -53,17 +48,21 @@ const SecondaryMenu: React.FC<Props> = (props) => {
             ? item.link?.externalUrl 
             : item.link?.internalLink;
           
+          // Add leading slash if not present and not external
+          const url = href && !item.link?.isExternal && !href.startsWith('/') 
+            ? `/${href}` 
+            : href || '#';
+          
           return (
-            <div key={index}>
-              <Tab 
-                url={href || '#'} 
-                pathname={pathname} 
-                setPosition={setPosition}
-                isExternal={item.link?.isExternal}
-              >
-                {item.linkTitle}
-              </Tab>
-            </div>
+            <Tab 
+              key={index}
+              url={url} 
+              pathname={pathname || ''}
+              setPosition={setPosition}
+              isExternal={item.link?.isExternal}
+            >
+              {item.linkTitle}
+            </Tab>
           );
         })}
         <Cursor position={position} />
@@ -101,14 +100,15 @@ const Tab: React.FC<TabProps> = ({ children, setPosition, url, pathname, isExter
       }}
       className="relative z-10 block cursor-pointer text-brand"
     >
-      <Link 
-        href={url} 
-        active={isActive(url)}
+      <a 
+        href={url}
+        className={`navItem ${isActive(url) ? 'active' : ''}`}
+        data-active={isActive(url) ? true : undefined}
         target={isExternal ? '_blank' : '_self'}
         rel={isExternal ? 'noopener noreferrer' : undefined}
       >
         {children}
-      </Link>
+      </a>
     </li>
   );
 };
