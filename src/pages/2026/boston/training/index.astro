@@ -1,20 +1,13 @@
 ---
-import { Image } from "astro:assets";
-import Layout from "@layouts/Base.astro";
-import Hero from "@components/Hero";
-import Faq from "@components/Faq";
-import Box from "@components/Box";
-import img from "@photos/2026/boston/training.jpg";
-import SEO from "@components/SEO";
-import ArrowUpRight from "@icons/ArrowUpRight";
-import Training from "@icons/Training";
-import Exercises from "@icons/Exercises";
-import Laptop from "@icons/Laptop";
-import qa from "./qa";
+import Layout from '@layouts/Base.astro';
+import SEO from '@components/SEO';
+import Training from "@modules/Training"
+import {fetchBostonTraining} from "@data/training";
+
+const training = await fetchBostonTraining();
 ---
 
-<Layout namespace="2026/boston">
-  <SEO slot="head" title="Training | Boston" img={1} />
-
-
+<Layout>
+  <SEO slot="head" title="Training | Boston" />
+  <Training training={training}  client:load/>
 </Layout>

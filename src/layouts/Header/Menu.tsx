@@ -11,25 +11,18 @@ type MenuItem = {
 };
 
 type Props = {
-  namespace?: string;
   pathname?: string;
   menuItems?: MenuItem[];
 };
 
 const Menu: React.FC<Props> = (props) => {
-  const { pathname, namespace, menuItems } = props;
+  const { pathname, menuItems } = props;
 
   function isActive(path: string) {
     return pathname?.includes(path);
   }
-
-  function getURL(path: string, root = false) {
-    if (root) return path;
-    if (!namespace) return path;
-    return `/${namespace}${path}`;
-  }
-
-  // If no menu items from Sanity, return null or show a fallback
+  
+  // If no menu items from Sanity, return null
   if (!menuItems || menuItems.length === 0) {
     return null;
   }
@@ -42,7 +35,11 @@ const Menu: React.FC<Props> = (props) => {
             ? item.link?.externalUrl 
             : item.link?.internalLink;
           
-          const url = href ? getURL(href, item.link?.isExternal) : '#';
+          // Add leading slash if not present and not external
+          const url = href && !item.link?.isExternal && !href.startsWith('/') 
+            ? `/${href}` 
+            : href || '#';
+          
           const isExternal = item.link?.isExternal;
 
           return (

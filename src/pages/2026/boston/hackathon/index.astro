@@ -1,14 +1,13 @@
 ---
-import Layout from "@layouts/Base.astro";
-import SEO from "@components/SEO";
-import Hero from "@components/Hero";
-import Box from "@components/Box";
-import ArrowUpRight from "@icons/ArrowUpRight";
-import img from "@images/photos/2026/boston/hackathon-2.jpg";
-import img2 from "@images/photos/2026/boston/hackathon-3.jpg";
+import Layout from '@layouts/Base.astro';
+import SEO from '@components/SEO';
+import Hackathon from "@modules/Hackathon"
+import {fetchBostonHackathon} from "@data/hackathon";
+
+const hackathon = await fetchBostonHackathon();
 ---
 
-<Layout namespace="2026/boston">
-  <SEO slot="head" title="Hackathon" img={1} />
-
+<Layout>
+  <SEO slot="head" title="Hackathon | Boston" />
+  <Hackathon hackathon={hackathon}  client:load/>
 </Layout>

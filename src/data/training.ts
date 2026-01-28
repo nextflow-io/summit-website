@@ -55,8 +55,8 @@ export interface PageData {
   faqSection?: FAQItem[];
 }
 
-export async function fetchBostonTravel(): Promise<PageData> {
-  const data = await sanityClient.fetch(`*[_type == "bostonTravel"][0]{
+export async function fetchBostonTraining(): Promise<PageData> {
+  const data = await sanityClient.fetch(`*[_type == "bostonTraining"][0]{
     _id,
     _type,
     hero {
@@ -77,7 +77,7 @@ export async function fetchBostonTravel(): Promise<PageData> {
       },
       "image": image.asset->url
     },
-      featureSection[]{
+    featureSection[]{
       headline,
       boxes[]{
         title { title, href { ... } },

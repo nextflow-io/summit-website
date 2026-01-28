@@ -18,26 +18,30 @@ const Travel: React.FC<Props> = ({ travel }) => {
         ctaLink2={travel.hero?.button2?.buttonLink}
         headlineSize={travel.hero?.headlineSize}
       />
-
-      {travel.featureSection?.boxes && travel.featureSection.boxes.length > 0 && (
-        <FeatureBlocks
-          headline={travel.featureSection.headline}
-          boxes={travel.featureSection.boxes.map((box) => ({
-            title: box?.title?.title,
-            href: box?.title?.href?.url || box?.title?.href?.href,
-            externalLink: box?.title?.href?.external,
-            subtitleLeft: box?.subtitle?.subtitleLeft,
-            subtitleRight: box?.subtitle?.subtitleRight,
-            image: box?.image?.asset?.url,
-            imageAlt: box?.image?.alt,
-            bottomSubtitleLeft: box?.lowerSubtitle?.lowerSubtitleLeft,
-            bottomSubtitleRight: box?.lowerSubtitle?.lowerSubtitleRight,
-            headline: box?.headline,
-            bodycopy: box?.bodycopy,
-            buttonText: box?.cta?.buttonText,
-            buttonUrl: box?.cta?.buttonLink || box?.cta?.buttonUrl,
-          }))}
-        />
+      {travel.featureSection?.map(
+        (section, index) =>
+          section?.boxes &&
+          section.boxes.length > 0 && (
+            <FeatureBlocks
+              key={index}
+              headline={section.headline}
+              boxes={section.boxes.map((box) => ({
+                title: box?.title?.title,
+                href: box?.title?.href?.url || box?.title?.href?.href,
+                externalLink: box?.title?.href?.external,
+                subtitleLeft: box?.subtitle?.subtitleLeft,
+                subtitleRight: box?.subtitle?.subtitleRight,
+                image: box?.image?.asset?.url,
+                imageAlt: box?.image?.alt,
+                bottomSubtitleLeft: box?.lowerSubtitle?.lowerSubtitleLeft,
+                bottomSubtitleRight: box?.lowerSubtitle?.lowerSubtitleRight,
+                headline: box?.headline,
+                bodycopy: box?.bodycopy,
+                buttonText: box?.cta?.buttonText,
+                buttonUrl: box?.cta?.buttonLink || box?.cta?.buttonUrl,
+              }))}
+            />
+          )
       )}
 
       {travel.faqSection && travel.faqSection.length > 0 && (
