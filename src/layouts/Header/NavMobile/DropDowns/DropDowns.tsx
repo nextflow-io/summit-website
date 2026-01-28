@@ -53,7 +53,7 @@ const DropDownItem: React.FC<DropDownItemProps> = ({
   return (
     <div className={`border-b py-4 overflow-hidden`}>
       <button
-        className={`dropdownBtn flex flex-row justify-between items-center w-full transition-all duration-400 hover:text-black ${isOpen ? "active text-black" : ""}`}
+        className={`dropdownBtn flex flex-row justify-between items-center w-full transition-all duration-400 hover:opacity-80 ${isOpen ? "active " : ""}`}
         onClick={hasDropdown ? onClick : undefined}
       >
         {hasDropdown ? (
@@ -93,7 +93,7 @@ const DropDownItem: React.FC<DropDownItemProps> = ({
               : { height: "0px", overflow: "hidden" }
           }
         >
-          <ul className="dropdown__links">
+          <ul className="dropdown__links ">
             {menuLinks?.map((item, index) => {
               const href = item.link?.isExternal 
                 ? item.link?.externalUrl 
@@ -102,7 +102,7 @@ const DropDownItem: React.FC<DropDownItemProps> = ({
               return (
                 <li key={index}>
                   <a 
-                    className="h3 transition-all duration-400 hover:text-black"
+                    className="h3 transition-all duration-400 hover:opacity-80"
                     href={href}
                     target={item.link?.isExternal ? '_blank' : '_self'}
                     rel={item.link?.isExternal ? 'noopener noreferrer' : undefined}

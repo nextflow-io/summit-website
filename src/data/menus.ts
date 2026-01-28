@@ -56,6 +56,8 @@ export interface MenusData {
   secondaryMenu?: MenuItem[];
   mobileMenu?: MobileMenuItem[];
   footerMenu?: FooterGroup[];
+  mobileBtn?: Button;
+  mobileBtn2?: Button;
 }
 
 export async function fetchMenus(): Promise<MenusData> {
@@ -103,6 +105,22 @@ export async function fetchMenus(): Promise<MenusData> {
           externalUrl
         }
       }
+    },
+    mobileBtn {
+      buttonText,
+      buttonLink,
+      buttonUrl {
+      ...,
+      },
+      externalLink,
+    },
+    mobileBtn2 {
+      buttonText,
+      buttonLink,
+      buttonUrl {
+      ...,
+      },
+      externalLink,
     },
     footerMenu[]{
       footerTitle,

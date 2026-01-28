@@ -32,7 +32,7 @@ main#body {
 }
 
 .container-md {
-  max-width: 996px; 
+  max-width: 996px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1rem;
@@ -60,29 +60,11 @@ main#body {
   pointer-events: none;
 }
 
-.dropdownBtn {
-  &:hover {
-    svg path {
-      transition: all 0.3s;
-      fill: var(--color-nextflow);
-      stroke: var(--color-nextflow);
-    }
-  }
-}
-.caret {
-  &.active {
-    & > svg path {
-      fill: var(--color-nextflow);
-      stroke: var(--color-nextflow);
-    }
-  }
-}
-
 .box-hover {
   position: relative;
   transition: all 0.3s ease-in-out;
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -132,7 +114,7 @@ main#body {
 .crossed-out {
   position: relative;
   &:after {
-    content: "";
+    content: '';
     height: 1px;
     width: 141.421%;
     background-color: var(--color-nextflow);

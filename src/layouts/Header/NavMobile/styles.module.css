@@ -2,7 +2,7 @@
   height: 60px;
   /* padding: 0 16px; */
   transition: all .4s ease-in-out;
-  background: var(--color-nextflow-600);
+  background:  black;
   z-index: 100;
   position: fixed;
   left: 0;
@@ -61,10 +61,7 @@
           transform: scaleX(1);
           transition: transform 0.3s;
         }
-        &[data-active],
-        &:hover {
-          color: var(--color-nextflow);
-        }
+  
         & span {
           padding: 0 !important;
         }

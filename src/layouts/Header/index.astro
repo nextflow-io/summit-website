@@ -37,8 +37,13 @@ if (typeof Astro.props.showNav !== 'undefined') showNav = Astro.props.showNav;
                   small
                   light
                   className=""
-                  href={menus.headerBtn.buttonUrl.externalUrl || menus.headerBtn.buttonUrl.internalLink}
-                  target={menus.headerBtn.buttonUrl.isExternal ? '_blank' : '_self'}
+                  href={
+                    menus.headerBtn.buttonUrl.externalUrl ||
+                    menus.headerBtn.buttonUrl.internalLink
+                  }
+                  target={
+                    menus.headerBtn.buttonUrl.isExternal ? '_blank' : '_self'
+                  }
                 >
                   {menus.headerBtn.buttonText}
                 </Button>
@@ -72,6 +77,8 @@ if (typeof Astro.props.showNav !== 'undefined') showNav = Astro.props.showNav;
   namespace={namespace}
   showNav={showNav}
   mobileMenu={menus?.mobileMenu}
+  mobileButton={menus?.mobileBtn}
+  mobileButton2={menus?.mobileBtn2}
   client:only="react"
 />
 
