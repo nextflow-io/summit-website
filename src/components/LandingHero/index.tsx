@@ -28,7 +28,7 @@ interface HeroProps {
   isBoston?: boolean;
   isBarcelona?: boolean;
   isBoth?: boolean;
-  headlineSize?: 'small' | 'medium' | 'large';
+  headlineSize?: 'small' | 'medium' | 'large' | 'xl';
 }
 
 const fadeIn = {
@@ -58,7 +58,7 @@ const LandingHero: React.FC<HeroProps> = ({
   boston,
   barcelona,
   virtual,
-  headlineSize='medium',
+  headlineSize ='medium',
 }) => {
   return (
     <motion.div
@@ -76,9 +76,11 @@ const LandingHero: React.FC<HeroProps> = ({
             >
               <h1
                 className={` mb-4 max-w-[250px] sm:max-w-[800px]
-                  ${headlineSize === 'large' ? 'h0' : 'text-2xl md:text-4xl'} 
-                  ${headlineSize === 'medium' ? 'text-2xl md:text-4xl' : 'text-2xl md:text-4xl'} 
-                  ${headlineSize === 'small' ? 'text-2xl md:text-3xl' : 'text-2xl md:text-3xl'} 
+                  ${!headlineSize && 'h3'}
+                  ${headlineSize === 'xl' ? 'h1' : ''} 
+                  ${headlineSize === 'large' ? 'h2' : ''} 
+                  ${headlineSize === 'medium' ? 'h3' : ''} 
+                  ${headlineSize === 'small' ? 'h4' : ''} 
                 `}
               >
                 {title}

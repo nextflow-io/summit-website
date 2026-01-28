@@ -49,7 +49,7 @@ const FeatureBlocks: React.FC<Props> = ({ boxes, headline  }) => {
 
   return (
     <section className="bg-white text-black py-6 md:pt-16 md:pb-20">
-      <div className="container-xl"><h3 className="h3 mb-4">{headline}</h3></div>
+      <div className="container-xl"><h3 className="h4 mb-4">{headline}</h3></div>
       <div className={`container-xl grid gap-6 md:gap-8 ${gridCols}`}>
         {boxes.map((box, index) => (
           <Box

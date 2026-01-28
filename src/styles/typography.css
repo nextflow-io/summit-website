@@ -4,7 +4,6 @@ h3,
 h4,
 h5,
 h6,
-.h0,
 .h1,
 .h2,
 .h3,
@@ -14,74 +13,63 @@ h6,
   font-weight: 400;
 }
 
-/* biggest headline used on landing page  */
-.h0 {
-  font-size: 70px;
+/* 120px */
+.h1 {
+  font-size: 80px;
   line-height: 1;
   @media (--sm) {
     font-size: 80px;
   }
   @media (--md) {
-    font-size: 120px;
+    font-size: 7.5rem;
   }
 }
 
-/* main headline  */
-.h1 {
+/* 100px */
+.h2 {
   font-size: 60px;
   line-height: 1;
   @media (--sm) {
     font-size: 80px;
   }
   @media (--lg) {
-    font-size: 100px;
+    font-size: 6.25rem;
   }
 }
 
-/* secondary headline  */
-.h2 {
-  font-size: 45px;
-  line-height: 1;
-  @media (--sm) {
-    font-size: 60px;
-  }
-  /* @media (--md) {
-    font-size: 80px;
-  } */
-  @media (--lg) {
-    font-size: 80px;
-  }
-}
-
+/* 80px */
 .h3 {
-  font-size: 26px;
+  font-size: 60px;
   line-height: 1;
-  @media (--md) {
-    font-size: 50px;
+  @media (--lg) {
+    font-size: 5rem;
   }
 }
 
+/* 60px */
 .h4 {
-  font-size: 32px;
+  font-size: 50px;
   line-height: 1;
   @media (--md) {
-    font-size: 40px;
+    font-size: 3.75rem;
   }
 }
 
+/* 50px */
 .h5 {
+  font-size: 35px;
+  line-height: 1;
+  @media (--md) {
+    font-size: 3.125rem;
+  }
+}
+
+/* 30px */
+.h6 {
   font-size: 26px;
   line-height: 1.2;
   @media (--md) {
-    font-size: 28px;
-  }
-}
-
-.h6 {
-  font-size: 20px;
-  line-height: 1.2;
-  @media (--md) {
-    font-size: 24px;
+    font-size: 1.875rem;
   }
 }
 
@@ -100,12 +88,9 @@ svg[data-icon] {
   display: inline-block;
 }
 
-p, .bodycopy {
-  font-size: 1rem;
+p,
+.bodycopy {
+  font-size: 0.9rem;
   line-height: 1.6;
   font-family: 'Inter', sans-serif;
-  @media (--sm) {
-    font-size: .9rem;
-    line-height: 1.5;
-  }
 }

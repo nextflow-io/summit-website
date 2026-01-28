@@ -10,7 +10,7 @@ const SignUpForm = () => {
       <div className="container-xl">
         <div className="flex flex-col sm:flex-row sm:justify-between">
           <div className="w-full pr-10">
-            <h2 className="h2 mb-10">
+            <h2 className="h4 mb-10">
               Sign up
               <br /> for updates
             </h2>

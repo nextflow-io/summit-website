@@ -19,7 +19,7 @@ const DropDownItem: React.FC<FaqItemProps> = ({ question, answer, isOpen, onClic
         className={`flex flex-row justify-between items-start w-full hover:text-nextflow transition-all duration-500 ease-in-out ${isOpen ? "active text-nextflow" : ""}`}
         onClick={onClick}
       >
-        <h5 className="h5 text-left pr-8">{question}</h5>
+        <h5 className="h6 text-left pr-8">{question}</h5>
 
         <div
           className={`h5 leading-none transition-transform duration-600 ease-in-out ${isOpen ? "h2 active origin-center rotate-45" : "origin-center"}`}
@@ -78,7 +78,7 @@ const Faq: React.FC<FaqProps> = ({ className, data, title = "FAQ" }) => {
     <section className={`${className} bg-black py-20`}>
       <div className="container-xl relative w-full flex flex-col sm:flex-row">
         <div className="w-full mb-6 sm:mb-0 sm:sticky sm:top-40 self-start">
-          <h2 className="text-2xl md:text-3xl max-w-[200px] sm:max-w-[500px] relative z-20">
+          <h2 className="h4 max-w-[200px] sm:max-w-[500px] relative z-20">
             {title}
           </h2>
         </div>
