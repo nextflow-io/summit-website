@@ -1,16 +1,42 @@
-// lib/sanity/menus.ts
-import { sanityClient } from "sanity:client";
+// data/menus.ts or lib/sanity/menus.ts
+import { sanityClient } from 'sanity:client';
 
 export interface Link {
+  isExternal?: boolean;
   internalLink?: string;
   externalUrl?: string;
-  isExternal?: boolean;
 }
 
 export interface MenuItem {
   linkTitle: string;
   link: Link;
 }
+
+export interface Button {
+  buttonText?: string;
+  buttonLink?: string;
+  buttonUrl?: string;
+  externalLink?: boolean;
+}
+
+export interface SingleLink {
+  _type: 'singleLink';
+  linkTitle: string;
+  link: Link;
+}
+
+export interface MenuLink {
+  linkTitle: string;
+  link: Link;
+}
+
+export interface MenuGroup {
+  _type: 'menuGroup';
+  menuTitle: string;
+  menuLinks: MenuLink[];
+}
+
+export type MobileMenuItem = SingleLink | MenuGroup;
 
 export interface FooterLink {
   linkTitle: string;
@@ -22,19 +48,14 @@ export interface FooterGroup {
   footerLinks: FooterLink[];
 }
 
-export interface Button {
-  buttonText: string;
-  buttonLink?: string;
-  buttonUrl?: string;
-  externalLink?: boolean;
-}
-
 export interface MenusData {
   _id: string;
   _type: string;
-  headerMenu: MenuItem[];
+  headerMenu?: MenuItem[];
   headerBtn?: Button;
-  footerMenu: FooterGroup[];
+  secondaryMenu?: MenuItem[];
+  mobileMenu?: MobileMenuItem[];
+  footerMenu?: FooterGroup[];
 }
 
 export async function fetchMenus(): Promise<MenusData> {
@@ -44,16 +65,44 @@ export async function fetchMenus(): Promise<MenusData> {
     headerMenu[]{
       linkTitle,
       link {
-        url,
-        href,
-        external
+        isExternal,
+        internalLink,
+        externalUrl
       }
     },
     headerBtn {
       buttonText,
       buttonLink,
-      buttonUrl,
-      externalLink
+      buttonUrl {
+      ...,
+      },
+      externalLink,
+    },
+    secondaryMenu[]{
+      linkTitle,
+      link {
+        isExternal,
+        internalLink,
+        externalUrl
+      }
+    },
+    mobileMenu[]{
+      _type,
+      linkTitle,
+      link {
+        isExternal,
+        internalLink,
+        externalUrl
+      },
+      menuTitle,
+      menuLinks[]{
+        linkTitle,
+        link {
+          isExternal,
+          internalLink,
+          externalUrl
+        }
+      }
     },
     footerMenu[]{
       footerTitle,
@@ -61,12 +110,12 @@ export async function fetchMenus(): Promise<MenusData> {
         linkTitle,
         link {
           isExternal,
-          externalUrl,
           internalLink,
+          externalUrl
         }
       }
     }
   }`);
-  
+
   return data;
 }

@@ -63,7 +63,7 @@
         }
         &[data-active],
         &:hover {
-          color: var(--color-nextflow)
+          color: var(--color-nextflow);
         }
         & span {
           padding: 0 !important;

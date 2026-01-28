@@ -12,6 +12,8 @@ type Props = {
   light?: boolean;
   dark?: boolean;
   small?: boolean;
+  target?: '_blank' | '_self';
+  rel?: string;
 };
 
 const Button: React.FC<Props> = ({
@@ -23,6 +25,8 @@ const Button: React.FC<Props> = ({
   light,
   dark,
   small,
+  target,
+  rel,
 }) => {
   const cn = clsx(
     "button monospace flex items-center justify-center",
@@ -41,7 +45,12 @@ const Button: React.FC<Props> = ({
   });
 
   const url = to || href;
-  const isOutLink = url?.startsWith("http");
+  
+  // Safe check for external links
+  const isOutLink = url && typeof url === 'string' && (
+    url.startsWith('http://') || 
+    url.startsWith('https://')
+  );
 
   const btnContent = (
     <Fragment>
@@ -57,9 +66,11 @@ const Button: React.FC<Props> = ({
 
   if (url) {
     return (   
-      <a href={url}
+      <a 
+        href={url}
         className={cn}
-        {...(isOutLink && { target: "_blank", rel: "noreferrer" })}
+        target={target || (isOutLink ? "_blank" : "_self")}
+        rel={rel || (isOutLink ? "noreferrer noopener" : undefined)}
       >
         {btnContent}
       </a>

@@ -6,18 +6,57 @@ import Hamburger from "./Hamburger";
 import DropDowns from "./DropDowns/DropDowns";
 import useMediaQuery from "@utils/useMediaQuery";
 import Logo from "../Logo";
-import Menu from "../Menu";
+
+type Link = {
+  isExternal?: boolean;
+  internalLink?: string;
+  externalUrl?: string;
+};
+
+type MenuLink = {
+  linkTitle: string;
+  link?: Link;
+};
+
+type SingleLink = {
+  _type: 'singleLink';
+  linkTitle: string;
+  link?: Link;
+};
+
+type MenuGroup = {
+  _type: 'menuGroup';
+  menuTitle: string;
+  menuLinks?: MenuLink[];
+};
+
+type MobileMenuItem = SingleLink | MenuGroup;
 
 type Props = {
   namespace: string;
   pathname: string;
   showNav?: boolean;
+  mobileMenu?: MobileMenuItem[];
+  mobileButton?: {
+    buttonText?: string;
+    buttonLink?: string;
+    buttonUrl?: string;
+    externalLink?: boolean;
+  };
 };
 
-const NavMobile: React.FC<Props> = ({ pathname, namespace, showNav }) => {
+const NavMobile: React.FC<Props> = ({ 
+  pathname, 
+  namespace, 
+  showNav, 
+  mobileMenu,
+  mobileButton 
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const isMobile = useMediaQuery({ maxWidth: "sm" });
+  
   if (!isMobile) return null;
+  
   return (
     <div>
       <header
@@ -32,34 +71,24 @@ const NavMobile: React.FC<Props> = ({ pathname, namespace, showNav }) => {
           <div
             className={clsx(styles.navDropdown, { [styles.openDD]: isOpen })}
           >
-            <DropDowns />
+            <DropDowns 
+              pathname={pathname}
+              namespace={namespace}
+              mobileMenu={mobileMenu}
+            />
 
-            <div className="container">
-              <Button
-                className="container mt-8 relative w-full"
-                light
-                arrowAfter
-              >
-                Virtual Summit Agenda
-                <a
-                  className="absolute w-full h-full"
-                  href="/2026/virtual/agenda"
-                  target="_blank"
-                ></a>
-              </Button>
-              {/* <Button
-                className="container mt-4 relative w-full"
-                brand
-                arrowAfter
-              >
-                Register for Summit
-                <a
-                  className="absolute w-full h-full"
-                  href="https://seqera.registration.goldcast.io/events/dc611bf3-ddc4-4a20-9f2f-1a9e941cc68c"
-                  target="_blank"
-                ></a>
-              </Button> */}
-            </div>
+            {mobileButton && (
+              <div className="container">
+                <Button
+                  className="container mt-8 relative w-full"
+                  light
+                  href={mobileButton.buttonLink || mobileButton.buttonUrl}
+                  target={mobileButton.externalLink ? '_blank' : '_self'}
+                >
+                  {mobileButton.buttonText}
+                </Button>
+              </div>
+            )}
           </div>
         )}
       </header>

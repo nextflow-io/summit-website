@@ -2,49 +2,68 @@
 const { namespace, showHeader } = Astro.props;
 const pathname = new URL(Astro.request.url).pathname;
 
-import styles from "./styles.module.css";
-import NavMobile from "./NavMobile";
-import Menu from "./Menu";
-import SecondaryMenu from "./SecondaryMenu";
-import Logo from "./Logo";
-import Button from "@components/Button";
+import styles from './styles.module.css';
+import NavMobile from './NavMobile';
+import Menu from './Menu';
+import SecondaryMenu from './SecondaryMenu';
+import Logo from './Logo';
+import Button from '@components/Button';
+
+import { fetchMenus } from '@data/menus';
+
+const menus = await fetchMenus();
+
 let showNav = true;
-if (typeof Astro.props.showNav !== "undefined") showNav = Astro.props.showNav;
+if (typeof Astro.props.showNav !== 'undefined') showNav = Astro.props.showNav;
 ---
 
 <header id="header" class={`${styles.header} `}>
   <div class={`${styles.headerWrapper} flex flex-col w-full`}>
-     <div class="bg-nextflow">
-    <div class={`${styles.headerTop} container-xl w-full flex justify-center items-center`}>
-      <div class="w-full flex items-center justify-between monospace h-full">
-        <Logo namespace={namespace} />
-        <Menu pathname={pathname} namespace={namespace} />
-        <div>
-            <Button small light className="">
-               Test
-            </Button>
+    <div class="bg-nextflow">
+      <div
+        class={`${styles.headerTop} container-xl w-full flex justify-center items-center`}
+      >
+        <div class="w-full flex items-center justify-between monospace h-full">
+          <Logo namespace={namespace} />
+          <Menu
+            pathname={pathname}
+            namespace={namespace}
+            menuItems={menus?.headerMenu}
+          />
+          <div>
+            {
+              menus?.headerBtn && (
+                <Button
+                  small
+                  light
+                  className=""
+                  href={menus.headerBtn.buttonUrl.externalUrl || menus.headerBtn.buttonUrl.internalLink}
+                  target={menus.headerBtn.buttonUrl.isExternal ? '_blank' : '_self'}
+                >
+                  {menus.headerBtn.buttonText}
+                </Button>
+              )
+            }
+          </div>
         </div>
       </div>
     </div>
-     </div>
     <div
       class={`${styles.navigation} js-secondary-nav transition-all duration-300`}
     >
-      <div
-        class="w-full flex items-center justify-center monospace text-xxs"
-      >
+      <div class="w-full flex items-center justify-center monospace text-xxs">
         {
           namespace && (
             <SecondaryMenu
               pathname={pathname}
               namespace={namespace}
+              menuItems={menus?.secondaryMenu}
               client:load
             />
           )
         }
       </div>
     </div>
- 
   </div>
 </header>
 
@@ -52,30 +71,31 @@ if (typeof Astro.props.showNav !== "undefined") showNav = Astro.props.showNav;
   pathname={pathname}
   namespace={namespace}
   showNav={showNav}
+  mobileMenu={menus?.mobileMenu}
   client:only="react"
 />
 
 <script>
-  document.addEventListener("astro:page-load", () => {
-    let secondaryNav = document.querySelector(".js-secondary-nav");
+  document.addEventListener('astro:page-load', () => {
+    let secondaryNav = document.querySelector('.js-secondary-nav');
     let prevScrollTop = window.scrollY || document.documentElement.scrollTop;
-    let prevScrollDirection = "";
+    let prevScrollDirection = '';
 
     if (secondaryNav) {
       window.addEventListener(
-        "scroll",
+        'scroll',
         function () {
           const st = window.scrollY || document.documentElement.scrollTop;
-          if (st > prevScrollTop && prevScrollDirection !== "down") {
-            prevScrollDirection = "down";
-            secondaryNav.classList.add("js-hide-nav");
-          } else if (st < prevScrollTop && prevScrollDirection !== "up") {
-            secondaryNav.classList.remove("js-hide-nav");
-            prevScrollDirection = "up";
+          if (st > prevScrollTop && prevScrollDirection !== 'down') {
+            prevScrollDirection = 'down';
+            secondaryNav.classList.add('js-hide-nav');
+          } else if (st < prevScrollTop && prevScrollDirection !== 'up') {
+            secondaryNav.classList.remove('js-hide-nav');
+            prevScrollDirection = 'up';
           }
           prevScrollTop = st <= 0 ? 0 : st;
         },
-        false,
+        false
       );
     }
   });

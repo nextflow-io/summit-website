@@ -1,11 +1,20 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import menuLinks from "./menuLinks";
 import Link from "./Link";
+
+type MenuItem = {
+  linkTitle: string;
+  link?: {
+    isExternal?: boolean;
+    internalLink?: string;
+    externalUrl?: string;
+  };
+};
 
 type Props = {
   namespace: string;
   pathname: string;
+  menuItems?: MenuItem[];
   second?: boolean;
   desktop?: boolean;
 };
@@ -17,16 +26,17 @@ const SecondaryMenu: React.FC<Props> = (props) => {
     opacity: 0,
   });
 
-  const { pathname, namespace, desktop } = props;
+  const { pathname, namespace, desktop, menuItems } = props;
 
-  function isActive(path) {
-    return String(pathname) == String(path);
+  function isActive(path: string) {
+    return String(pathname) === String(path);
   }
 
-  let location;
-  if (namespace === "2026/barcelona") location = 1;
-  if (namespace === "2026/boston") location = 2;
-  if (namespace === "2026/virtual") location = 0;
+  // If no menu items from Sanity, return null
+  if (!menuItems || menuItems.length === 0) {
+    return null;
+  }
+
   return (
     <nav>
       <ul
@@ -38,11 +48,20 @@ const SecondaryMenu: React.FC<Props> = (props) => {
         }}
         className="w-full flex bg-white overflow-hidden"
       >
-        {menuLinks[location]?.dropdowns?.map(({ name, url }, i) => {
+        {menuItems.map((item, index) => {
+          const href = item.link?.isExternal 
+            ? item.link?.externalUrl 
+            : item.link?.internalLink;
+          
           return (
-            <div key={i}>
-              <Tab url={url} pathname={pathname} setPosition={setPosition}>
-                {name}
+            <div key={index}>
+              <Tab 
+                url={href || '#'} 
+                pathname={pathname} 
+                setPosition={setPosition}
+                isExternal={item.link?.isExternal}
+              >
+                {item.linkTitle}
               </Tab>
             </div>
           );
@@ -53,11 +72,19 @@ const SecondaryMenu: React.FC<Props> = (props) => {
   );
 };
 
-const Tab = ({ children, setPosition, url, pathname }) => {
-  const ref = useRef(null);
-  function isActive(path) {
+type TabProps = {
+  children: React.ReactNode;
+  setPosition: (position: any) => void;
+  url: string;
+  pathname: string;
+  isExternal?: boolean;
+};
+
+const Tab: React.FC<TabProps> = ({ children, setPosition, url, pathname, isExternal }) => {
+  const ref = useRef<HTMLLIElement>(null);
+  
+  function isActive(path: string) {
     return pathname?.includes(path);
-    // return pathname.toString() == path.toString()
   }
 
   return (
@@ -74,14 +101,27 @@ const Tab = ({ children, setPosition, url, pathname }) => {
       }}
       className="relative z-10 block cursor-pointer text-brand"
     >
-      <Link href={url} active={isActive(url)}>
+      <Link 
+        href={url} 
+        active={isActive(url)}
+        target={isExternal ? '_blank' : '_self'}
+        rel={isExternal ? 'noopener noreferrer' : undefined}
+      >
         {children}
       </Link>
     </li>
   );
 };
 
-const Cursor = ({ position }) => {
+type CursorProps = {
+  position: {
+    left: number | undefined;
+    width: number;
+    opacity: number;
+  };
+};
+
+const Cursor: React.FC<CursorProps> = ({ position }) => {
   return (
     <motion.li
       animate={{
