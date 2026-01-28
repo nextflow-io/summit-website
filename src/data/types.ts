@@ -26,6 +26,7 @@ export interface ContentBox {
     };
   };
   imageAlt?: string;
+  imageCover?: boolean;
   bottomSubtitleLeft?: string;
   bottomSubtitleRight?: string;
   href?: string;

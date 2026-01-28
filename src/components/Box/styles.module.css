@@ -3,7 +3,6 @@
   border: 1px solid var(--color-nextflow);
   background: var(--color-nextflow);
   transition: border-color 0.3s;
-  padding: 20px;
   position: relative;
   overflow: hidden;
   &[href] {

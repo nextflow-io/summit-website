@@ -60,6 +60,7 @@ export const singleFeaturedSectionFragment = `
         imageAlt,
         alt
       },
+      imageCover,
       headline,
       bodycopy[]{...},
       lowerSubtitle {
@@ -111,6 +112,7 @@ export const featureSectionsArrayFragment = `
         imageAlt,
         alt
       },
+      imageCover,
       headline,
       bodycopy[]{
         ...,

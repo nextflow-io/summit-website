@@ -22,6 +22,7 @@ type Props = {
   bottomSubtitleLine?: boolean;
   buttonText?: string;
   buttonUrl?: string;
+  imageCover?: boolean;
 };
 
 const Box: React.FC<Props> = ({
@@ -41,11 +42,12 @@ const Box: React.FC<Props> = ({
   bottomSubtitleLine,
   buttonText,
   buttonUrl,
+  imageCover,
 }) => {
   const cn = clsx(styles.box, className, {});
 
   return (
-    <div className={cn}>
+    <div className={`${cn} ${imageCover ? '' : 'p-6'}`}>
       <div className="relative flex flex-col z-10">
         <div className="relative">
           {title && (
@@ -75,7 +77,7 @@ const Box: React.FC<Props> = ({
 
         {headline && (
           <div>
-            <h3>{headline}</h3>
+            <h3 className="h6">{headline}</h3>
           </div>
         )}
 
@@ -92,12 +94,22 @@ const Box: React.FC<Props> = ({
         )}
 
         {image && (
-          <div className="mt-6 relative w-full h-0 pb-[75%] overflow-hidden">
+          <div className={`relative w-full h-0 overflow-hidden ${imageCover ? 'pb-[100%]' : 'pb-[75%]'}`}>
             <img
               className="absolute top-0 left-0 right-0 bottom-0 w-full h-full z-0 object-cover"
               src={image}
               alt={imageAlt || 'Image'}
             />
+            {href && (
+              <a
+                href={href}
+                target={externalLink ? '_blank' : '_self'}
+                rel={externalLink ? 'noopener noreferrer' : undefined}
+                className={`absolute w-full h-full top-0 left-0 z-10`}
+              >
+                {children}
+              </a>
+            )}
           </div>
         )}
 
