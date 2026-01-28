@@ -5,24 +5,17 @@ body {
   background-color: black;
   color: white;
   scroll-behavior: smooth;
-  /* scroll-padding-top: 104px; */
 }
 body {
   min-height: 100vh;
 }
 
-footer#footer {
-  position: relative;
-  z-index: 10;
-}
-main#body {
-  position: relative;
-}
 .container {
   max-width: none;
   margin: 0 auto;
   padding: 0 1rem;
 }
+
 .container-sm {
   max-width: 640px;
   margin-left: auto;
@@ -32,7 +25,7 @@ main#body {
 }
 
 .container-md {
-  max-width: 996px;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1rem;
@@ -40,7 +33,7 @@ main#body {
 }
 
 .container-lg {
-  max-width: 1024px;
+  max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1rem;
@@ -48,12 +41,17 @@ main#body {
 }
 
 .container-xl {
-  max-width: 1280px;
+  max-width: 1580px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1rem;
   padding-right: 1rem;
+  @media (--md) {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
 }
+
 .js-hide-nav {
   opacity: 0;
   transition: all 0.25s;
