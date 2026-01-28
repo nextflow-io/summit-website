@@ -3,8 +3,9 @@ import LandingHero from '@components/LandingHero';
 import FeatureBlocks from '@modules/FeatureBlocks';
 import Faq from '@components/Faq';
 import NextflowNumbers from '@modules/NextflowNumbers';
-import PastEvents from '@modules/PastEvents';
+import KeyDates from '@modules/KeyDates';
 import SignUpForm from '@modules/SignUpForm';
+
 type Props = {
   home: any;
 };
@@ -51,7 +52,14 @@ const Homepage: React.FC<Props> = ({ home }) => {
         />
       )}
 
-       {home.pastEvents?.boxes && home.pastEvents.boxes.length > 0 && (
+      {home.keyDatesSection && (
+        <KeyDates
+          dates={home.keyDatesSection.dates}
+          images={home.keyDatesSection.images}
+        />
+      )}
+
+      {home.pastEvents?.boxes && home.pastEvents.boxes.length > 0 && (
         <FeatureBlocks
           headline={home.pastEvents.headline}
           boxes={home.pastEvents.boxes.map((box) => ({
@@ -76,7 +84,7 @@ const Homepage: React.FC<Props> = ({ home }) => {
         <Faq data={home.faqSection} />
       )}
 
-       <SignUpForm  />
+      <SignUpForm />
     </>
   );
 };

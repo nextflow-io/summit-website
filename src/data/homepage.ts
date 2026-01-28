@@ -227,6 +227,18 @@ export async function fetchHomepage(): Promise<PageData> {
         externalLink
       }
     },
+    keyDatesSection {
+      dates[] {
+        date,
+        dateInfo[]
+      },
+      images[] {
+        asset->{
+          _id,
+          url
+        }
+      }
+    },
     faqSection[]{
       question,
       answer[]{
