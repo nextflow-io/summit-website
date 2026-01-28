@@ -118,7 +118,7 @@ const NavMobile: React.FC<Props> = ({
           </div>
         )}
       </header>
-      <div className="h-[76px]"></div>
+      <div className="md:h-[76px]"></div>
     </div>
   );
 };

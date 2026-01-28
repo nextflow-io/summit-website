@@ -1,6 +1,5 @@
 .navMobile {
   height: 60px;
-  /* padding: 0 16px; */
   transition: all .4s ease-in-out;
   background:  black;
   z-index: 100;
@@ -11,12 +10,12 @@
   bottom: 0;
   display: flex;
   flex-direction: column;
+  background: var(--color-nextflow-600);
 
   & > .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 76px;
     position: absolute;
     width: 100%;
     padding: 0 16px;
@@ -27,9 +26,9 @@
     height: 100dvh;
     border-bottom: none;
     transition: all .4s ease-in-out;
+    background:  black;
   }
-
-
+  
   @media (--sm) {
     display: none;
   }

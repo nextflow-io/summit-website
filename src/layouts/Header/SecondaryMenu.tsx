@@ -46,7 +46,7 @@ const SecondaryMenu: React.FC<Props> = (props) => {
             opacity: 0,
           }));
         }}
-        className="w-full flex bg-white overflow-hidden"
+        className="w-full flex bg-white text-black overflow-hidden"
       >
         {menuItems.map((item, index) => {
           const href = item.link?.isExternal 

@@ -58,7 +58,7 @@ if (typeof Astro.props.showNav !== 'undefined') showNav = Astro.props.showNav;
     >
       <div class="w-full flex items-center justify-center monospace text-xxs">
         {
-          namespace && (
+          menus.secondaryMenu && (
             <SecondaryMenu
               pathname={pathname}
               namespace={namespace}

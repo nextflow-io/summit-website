@@ -101,19 +101,3 @@
     }
   }
 }
-
-.registerCTA {
-  transition: all 0.3s;
-  &:hover {
-    transition: all 0.3s;
-    background: var(--color-nextflow);
-    color: white;
-    div {
-      background: white;
-    }
-
-    svg path {
-      stroke: var(--color-nextflow);
-    }
-  }
-}
