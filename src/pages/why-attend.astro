@@ -1,33 +1,13 @@
 ---
-import Layout from "@layouts/Base.astro";
-import Hero from "@components/Hero";
-import SEO from "@components/SEO";
-import Faq from "@components/Faq";
-import WhyAttend from "@modules/WhyAttend";
-import img2 from "@images/photos/2026/barcelona/why-attend-bcn.jpg";
+import Layout from '@layouts/Base.astro';
+import SEO from '@components/SEO';
+import WhyAttendPage from "@modules/WhyAttend"
+import {fetchWhyAttend} from "@data/whyAttend";
 
-
+const attend = await fetchWhyAttend();
 ---
 
-<Layout namespace="">
-  <SEO slot="head" title="Why Attend | Nextflow Summit" />
-  <section class="">
-    <Hero
-      title="Why Attend"
-      content=`The Nextflow Summit, presented by Seqera, is the premier community-driven event advancing open science software. With high-quality programming—including scientific talks, poster sessions, and networking opportunities—it brings together a vibrant community to showcase the latest developments and innovations in the Nextflow ecosystem.<br/><br/>
-      This year, Nextflow Summit goes fully virtual—making it easier than ever for anyone, anywhere to tune in and take part in the community. <br/><br/>
-
-Nextflow Training and nf-core Hackathon will take place in-person in Barcelona for those ready to roll up their sleeves and collaborate face-to-face.`
-      href={img2.src}
-      alt="Image of person viewing booth at Nextflow Summit"
-
-      client:load
-    />
-  </section>
-
-  <section class="mt-20 mb-24 container">
-    <WhyAttend/>
-
-    <!-- <Faq className="mt-20 md:mt-40 mb-20" client:load data={qa} /> -->
-  </section>
+<Layout>
+  <SEO slot="head" title="Why Attend" />
+  <WhyAttendPage attend={attend} client:load/>
 </Layout>
