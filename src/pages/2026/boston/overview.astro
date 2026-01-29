@@ -1,8 +1,7 @@
 ---
 import Layout from '@layouts/Base.astro';
 import SEO from '@components/SEO';
-import OverviewPage from "@modules/Overview"
-
+import StandardPage from "@modules/StandardPage"
 import { fetchBostonOverview} from '@data/fetchers';
 import type { PageData } from '@data/types';
 
@@ -12,5 +11,5 @@ const overview: PageData = await fetchBostonOverview();
 
 <Layout showHeader={false}>
   <SEO slot="head" title="Home" />
-  <OverviewPage data={overview}  client:load/>
+  <StandardPage data={overview}  client:load/>
 </Layout>

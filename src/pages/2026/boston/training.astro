@@ -1,16 +1,15 @@
 ---
 import Layout from '@layouts/Base.astro';
 import SEO from '@components/SEO';
-import Training from "@modules/Training"
+import StandardPage from "@modules/StandardPage"
 
 import { fetchBostonTraining} from '@data/fetchers';
 import type { PageData } from '@data/types';
 
 const training: PageData = await fetchBostonTraining();
-
 ---
 
 <Layout>
   <SEO slot="head" title="Training | Boston" />
-  <Training data={training}  client:load/>
+   <StandardPage data={training}  client:load/>
 </Layout>

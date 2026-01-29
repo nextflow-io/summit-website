@@ -1,8 +1,7 @@
 ---
 import Layout from '@layouts/Base.astro';
 import SEO from '@components/SEO';
-import Hackathon from "@modules/Hackathon"
-
+import StandardPage from "@modules/StandardPage"
 
 import { fetchBostonHackathon} from '@data/fetchers';
 import type { PageData } from '@data/types';
@@ -13,5 +12,5 @@ const hackathon: PageData = await fetchBostonHackathon();
 
 <Layout>
   <SEO slot="head" title="Hackathon | Boston" />
-  <Hackathon data={hackathon}  client:load/>
+  <StandardPage data={hackathon}  client:load/>
 </Layout>

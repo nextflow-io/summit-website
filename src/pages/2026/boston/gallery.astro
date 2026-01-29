@@ -1,17 +1,15 @@
 ---
 import Layout from "@layouts/Base.astro";
 import SEO from "@components/SEO";
-import OverviewPage from "@modules/Overview"
+import StandardPage from "@modules/StandardPage"
 import { fetchBostonGallery} from '@data/fetchers';
 import type { PageData } from '@data/types';
 
-
 const gallery: PageData = await fetchBostonGallery();
-
 ---
 
 <Layout namespace="2026/boston" altBG>
   <SEO slot="head" title="Gallery" img={1} />
-    <OverviewPage data={gallery}  client:load/>
+    <StandardPage data={gallery}  client:load/>
 </Layout>
 

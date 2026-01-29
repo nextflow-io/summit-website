@@ -7,6 +7,7 @@ import KeyDates from '@modules/KeyDates';
 import SignUpForm from '@modules/SignUpForm';
 import { formatLink, getButtonUrl } from '@utils/linkFormatter';
 import { transformFeatureBox } from '@utils/boxTransformer';
+import { urlFor } from '@data/sanity-image';
 
 type Props = {
   data: any;
@@ -23,6 +24,8 @@ const Homepage: React.FC<Props> = ({ data }) => {
         ctaText2={data.hero?.button2?.buttonText}
         ctaLink2={formatLink(data.hero?.button2?.buttonUrl)}
         headlineSize={data.hero?.headlineSize}
+        image={data.image?.image ? urlFor(data.image.image).url() : null}
+        imageAlt={data.image?.imageAlt || data.image?.alt}
       />
 
       {data.featureSection?.map((section, index) => {
@@ -61,6 +64,7 @@ const Homepage: React.FC<Props> = ({ data }) => {
         <FeatureBlocks
           headline={data.pastEvents.headline}
           buttonText={data.pastEvents.button?.buttonText}
+          bodycopy={data.pastEvents.bodycopy}
           buttonUrl={getButtonUrl(data.pastEvents?.button)}
           boxes={data.pastEvents.boxes.map(transformFeatureBox)}
         />

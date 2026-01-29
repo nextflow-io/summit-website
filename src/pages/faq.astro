@@ -2,16 +2,14 @@
 import Layout from '@layouts/Base.astro';
 import SEO from '@components/SEO';
 import FaqPage from "@modules/FaqPage"
-
 import { fetchFaq } from '@data/fetchers';
 import type { FAQPageData } from '@data/types';
 
 const faq: FAQPageData = await fetchFaq();
 
-
 ---
 
 <Layout showHeader={false}>
   <SEO slot="head" title="FAQ" />
-  <FaqPage faq={faq}  client:load/>
+  <FaqPage data={faq}  client:load/>
 </Layout>

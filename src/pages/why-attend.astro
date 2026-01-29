@@ -1,7 +1,7 @@
 ---
 import Layout from '@layouts/Base.astro';
 import SEO from '@components/SEO';
-import WhyAttendPage from "@modules/WhyAttend"
+import StandardPage from "@modules/StandardPage"
 import { fetchWhyAttend } from '@data/fetchers';
 import type { PageData } from '@data/types';
 
@@ -11,5 +11,5 @@ const attend: PageData = await fetchWhyAttend();
 
 <Layout>
   <SEO slot="head" title="Why Attend" />
-  <WhyAttendPage data={attend} client:load/>
+  <StandardPage data={attend} client:load/>
 </Layout>
