@@ -40,10 +40,10 @@ const NavMobile: React.FC<Props> = ({ pathname, namespace, showNav }) => {
                 white
                 arrowAfter
               >
-                Virtual Summit Agenda
+                View the recordings
                 <a
                   className="absolute w-full h-full"
-                  href="/2025/virtual/agenda"
+                  href="https://www.youtube.com/watch?v=yThPs3KOSak&list=PLPZ8WHdZGxmV92E9hZx4KZiC27ILX6YFF"
                   target="_blank"
                 ></a>
               </Button>
