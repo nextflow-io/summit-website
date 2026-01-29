@@ -7,25 +7,25 @@ import { formatLink, getButtonUrl } from '@utils/linkFormatter';
 import { transformFeatureBox } from '@utils/boxTransformer';
 
 type Props = {
-  attend: any;
+ data: any;
 };
 
-const WhyAttendPage: React.FC<Props> = ({ attend }) => {
+const WhyAttendPage: React.FC<Props> = ({ data }) => {
   return (
     <div className="bg-black text-white">
       <LandingHero
-        title={attend.hero?.headline}
-        content={attend.hero?.bodycopy}
-        ctaText1={attend.hero?.button1?.buttonText}
-        ctaLink1={formatLink(attend.hero?.button1?.buttonUrl)}
-        ctaText2={attend.hero?.button2?.buttonText}
-        ctaLink2={formatLink(attend.hero?.button2?.buttonUrl)}
-        headlineSize={attend.hero?.headlineSize}
-        image={attend.hero?.image?.image ? urlFor(attend.hero.image.image).url() : null}
-        imageAlt={attend.hero?.image?.imageAlt || attend.hero?.image?.alt}
+        title={data.hero?.headline}
+        content={data.hero?.bodycopy}
+        ctaText1={data.hero?.button1?.buttonText}
+        ctaLink1={formatLink(data.hero?.button1?.buttonUrl)}
+        ctaText2={data.hero?.button2?.buttonText}
+        ctaLink2={formatLink(data.hero?.button2?.buttonUrl)}
+        headlineSize={data.hero?.headlineSize}
+        image={data.hero?.image?.image ? urlFor(data.hero.image.image).url() : null}
+        imageAlt={data.hero?.image?.imageAlt || data.hero?.image?.alt}
       />
 
-      {attend.featureSection?.map((section, index) => {
+      {data.featureSection?.map((section, index) => {
         const sectionButtonUrl = getButtonUrl(section?.button);
         return (
           section?.boxes &&
@@ -42,8 +42,8 @@ const WhyAttendPage: React.FC<Props> = ({ attend }) => {
         );
       })}
 
-      {attend.faqSection && attend.faqSection.length > 0 && (
-        <Faq data={attend.faqSection} />
+      {data.faqSection && data.faqSection.length > 0 && (
+        <Faq data={data.faqSection} />
       )}
     </div>
   );

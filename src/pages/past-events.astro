@@ -11,5 +11,5 @@ const past: PageData = await fetchPastEvents();
 
 <Layout>
   <SEO slot="head" title="Past Events" />
-  <PastEventsPage past={past} client:load/>
+  <PastEventsPage data={past} client:load/>
 </Layout>

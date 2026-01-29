@@ -6,23 +6,23 @@ import { formatLink, getButtonUrl } from '@utils/linkFormatter';
 import { transformFeatureBox } from '@utils/boxTransformer';
 
 type Props = {
-  overview: any;
+  data: any;
 };
 
-const OverviewPage: React.FC<Props> = ({ overview }) => {
+const OverviewPage: React.FC<Props> = ({ data }) => {
   return (
     <div className="bg-black text-white">
       <LandingHero
-        title={overview.hero?.headline}
-        content={overview.hero?.bodycopy}
-        ctaText1={overview.hero?.button1?.buttonText}
-        ctaLink1={formatLink(overview.hero?.button1?.buttonUrl)}
-        ctaText2={overview.hero?.button2?.buttonText}
-        ctaLink2={formatLink(overview.hero?.button2?.buttonUrl)}
-        headlineSize={overview.hero?.headlineSize}
+        title={data.hero?.headline}
+        content={data.hero?.bodycopy}
+        ctaText1={data.hero?.button1?.buttonText}
+        ctaLink1={formatLink(data.hero?.button1?.buttonUrl)}
+        ctaText2={data.hero?.button2?.buttonText}
+        ctaLink2={formatLink(data.hero?.button2?.buttonUrl)}
+        headlineSize={data.hero?.headlineSize}
       />
 
-      {overview.featureSection?.map((section, index) => {
+      {data.featureSection?.map((section, index) => {
         const sectionButtonUrl = getButtonUrl(section?.button);
         return (
           section?.boxes &&
@@ -39,8 +39,8 @@ const OverviewPage: React.FC<Props> = ({ overview }) => {
         );
       })}
 
-      {overview.faqSection && overview.faqSection.length > 0 && (
-        <Faq data={overview.faqSection} />
+      {data.faqSection && data.faqSection.length > 0 && (
+        <Faq data={data.faqSection} />
       )}
     </div>
   );

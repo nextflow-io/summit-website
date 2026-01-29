@@ -7,23 +7,23 @@ import { formatLink, getButtonUrl } from '@utils/linkFormatter';
 import { transformFeatureBox } from '@utils/boxTransformer';
 
 type Props = {
-  past: any;
+  data: any;
 };
 
-const PastEventsPage: React.FC<Props> = ({ past }) => {
+const PastEventsPage: React.FC<Props> = ({ data }) => {
   return (
      <div className="bg-black text-white">
         <LandingHero
-        title={past.hero?.headline}
-        content={past.hero?.bodycopy}
-        ctaText1={past.hero?.button1?.buttonText}
-        ctaLink1={formatLink(past.hero?.button1?.buttonUrl)}
-        ctaText2={past.hero?.button2?.buttonText}
-        ctaLink2={formatLink(past.hero?.button2?.buttonUrl)}
-        headlineSize={past.hero?.headlineSize}
+        title={data.hero?.headline}
+        content={data.hero?.bodycopy}
+        ctaText1={data.hero?.button1?.buttonText}
+        ctaLink1={formatLink(data.hero?.button1?.buttonUrl)}
+        ctaText2={data.hero?.button2?.buttonText}
+        ctaLink2={formatLink(data.hero?.button2?.buttonUrl)}
+        headlineSize={data.hero?.headlineSize}
       />
 
-      {past.featureSection?.map((section, index) => {
+      {data.featureSection?.map((section, index) => {
         const sectionButtonUrl = getButtonUrl(section?.button);
         return (
           section?.boxes &&
@@ -40,8 +40,8 @@ const PastEventsPage: React.FC<Props> = ({ past }) => {
         );
       })}
 
-      {past.faqSection && past.faqSection.length > 0 && (
-        <Faq data={past.faqSection} />
+      {data.faqSection && data.faqSection.length > 0 && (
+        <Faq data={data.faqSection} />
       )}
     </div>
   );

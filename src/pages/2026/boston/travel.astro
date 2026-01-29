@@ -7,10 +7,9 @@ import type { PageData } from '@data/types';
 
 const travel: PageData = await fetchBostonTravel();
 
-
 ---
 
 <Layout>
   <SEO slot="head" title="Travel | Boston" />
-  <TravelPage travel={travel} client:load/>
+  <TravelPage data={travel} client:load/>
 </Layout>

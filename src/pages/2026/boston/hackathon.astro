@@ -13,5 +13,5 @@ const hackathon: PageData = await fetchBostonHackathon();
 
 <Layout>
   <SEO slot="head" title="Hackathon | Boston" />
-  <Hackathon hackathon={hackathon}  client:load/>
+  <Hackathon data={hackathon}  client:load/>
 </Layout>

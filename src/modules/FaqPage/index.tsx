@@ -3,25 +3,25 @@ import LandingHero from '@components/LandingHero';
 import Faq from '@components/Faq';
 
 type Props = {
-  faq: any;
+  data: any;
 };
 
-const FaqPage: React.FC<Props> = ({ faq }) => {
+const FaqPage: React.FC<Props> = ({ data }) => {
   return (
     <div className="bg-black text-white">
       <LandingHero
-        title={faq.hero?.headline}
-        content={faq.hero?.bodycopy}
-        ctaText1={faq.hero?.button1?.buttonText}
-        ctaLink1={faq.hero?.button1?.buttonUrl}
-        ctaText2={faq.hero?.button2?.buttonText}
-        ctaLink2={faq.hero?.button2?.buttonUrl}
-        headlineSize={faq.hero?.headlineSize}
+        title={data.hero?.headline}
+        content={data.hero?.bodycopy}
+        ctaText1={data.hero?.button1?.buttonText}
+        ctaLink1={data.hero?.button1?.buttonUrl}
+        ctaText2={data.hero?.button2?.buttonText}
+        ctaLink2={data.hero?.button2?.buttonUrl}
+        headlineSize={data.hero?.headlineSize}
       />
 
-      {faq.faqSection && faq.faqSection.length > 0 && (
+      {data.faqSection && data.faqSection.length > 0 && (
         <>
-          {faq.faqSection.map((section, index) => (
+          {data.faqSection.map((section, index) => (
             <Faq 
               key={index}
               title={section.faqTitle}

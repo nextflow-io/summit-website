@@ -7,23 +7,23 @@ import { transformFeatureBox } from '@utils/boxTransformer';
 
 
 type Props = {
-  hackathon: any;
+  data: any;
 };
 
-const Hackathon: React.FC<Props> = ({ hackathon }) => {
+const Hackathon: React.FC<Props> = ({ data }) => {
   return (
      <div className="bg-black text-white">
       <LandingHero
-        title={hackathon.hero?.headline}
-        content={hackathon.hero?.bodycopy}
-        ctaText1={hackathon.hero?.button1?.buttonText}
-        ctaLink1={formatLink(hackathon.hero?.button1?.buttonUrl)}
-        ctaText2={hackathon.hero?.button2?.buttonText}
-        ctaLink2={formatLink(hackathon.hero?.button2?.buttonUrl)}
-        headlineSize={hackathon.hero?.headlineSize}
+        title={data.hero?.headline}
+        content={data.hero?.bodycopy}
+        ctaText1={data.hero?.button1?.buttonText}
+        ctaLink1={formatLink(data.hero?.button1?.buttonUrl)}
+        ctaText2={data.hero?.button2?.buttonText}
+        ctaLink2={formatLink(data.hero?.button2?.buttonUrl)}
+        headlineSize={data.hero?.headlineSize}
       />
 
-      {hackathon.featureSection?.map((section, index) => {
+      {data.featureSection?.map((section, index) => {
         const sectionButtonUrl = getButtonUrl(section?.button);
         return (
           section?.boxes &&
@@ -40,8 +40,8 @@ const Hackathon: React.FC<Props> = ({ hackathon }) => {
         );
       })}
 
-      {hackathon.faqSection && hackathon.faqSection.length > 0 && (
-        <Faq data={hackathon.faqSection} />
+      {data.faqSection && data.faqSection.length > 0 && (
+        <Faq data={data.faqSection} />
       )}
     </div>
   );

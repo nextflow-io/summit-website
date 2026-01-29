@@ -12,6 +12,6 @@ const gallery: PageData = await fetchBostonGallery();
 
 <Layout namespace="2026/boston" altBG>
   <SEO slot="head" title="Gallery" img={1} />
-    <OverviewPage overview={gallery}  client:load/>
+    <OverviewPage data={gallery}  client:load/>
 </Layout>
 

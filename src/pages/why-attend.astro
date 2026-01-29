@@ -11,5 +11,5 @@ const attend: PageData = await fetchWhyAttend();
 
 <Layout>
   <SEO slot="head" title="Why Attend" />
-  <WhyAttendPage attend={attend} client:load/>
+  <WhyAttendPage data={attend} client:load/>
 </Layout>

@@ -12,5 +12,5 @@ const home: HomepageData = await fetchHomepage();
 <Layout>
   <SEO slot="head" title="Home" />
   <!-- <Banner title="Register to access the event recordings" ctaText="Register Now" ctaLink="https://seqera.swoogo.com/nextflow-summit-boston-2025" client:load />  -->
-  <Homepage home={home}  client:load/>
+  <Homepage data={home}  client:load/>
 </Layout>

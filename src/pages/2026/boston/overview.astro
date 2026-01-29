@@ -12,5 +12,5 @@ const overview: PageData = await fetchBostonOverview();
 
 <Layout showHeader={false}>
   <SEO slot="head" title="Home" />
-  <OverviewPage overview={overview}  client:load/>
+  <OverviewPage data={overview}  client:load/>
 </Layout>

@@ -9,23 +9,23 @@ import { formatLink, getButtonUrl } from '@utils/linkFormatter';
 import { transformFeatureBox } from '@utils/boxTransformer';
 
 type Props = {
-  home: any;
+  data: any;
 };
 
-const Homepage: React.FC<Props> = ({ home }) => {
+const Homepage: React.FC<Props> = ({ data }) => {
   return (
     <div className="bg-black text-white">
       <LandingHero
-        title={home.hero?.headline}
-        content={home.hero?.bodycopy}
-        ctaText1={home.hero?.button1?.buttonText}
-        ctaLink1={formatLink(home.hero?.button1?.buttonUrl)}
-        ctaText2={home.hero?.button2?.buttonText}
-        ctaLink2={formatLink(home.hero?.button2?.buttonUrl)}
-        headlineSize={home.hero?.headlineSize}
+        title={data.hero?.headline}
+        content={data.hero?.bodycopy}
+        ctaText1={data.hero?.button1?.buttonText}
+        ctaLink1={formatLink(data.hero?.button1?.buttonUrl)}
+        ctaText2={data.hero?.button2?.buttonText}
+        ctaLink2={formatLink(data.hero?.button2?.buttonUrl)}
+        headlineSize={data.hero?.headlineSize}
       />
 
-      {home.featureSection?.map((section, index) => {
+      {data.featureSection?.map((section, index) => {
         const sectionButtonUrl = getButtonUrl(section?.button);
         return (
           section?.boxes &&
@@ -42,32 +42,32 @@ const Homepage: React.FC<Props> = ({ home }) => {
         );
       })}
 
-      {home.nextflowNumbers && (
+      {data.nextflowNumbers && (
         <NextflowNumbers
-          headline={home.nextflowNumbers.headline}
-          featuredStats={home.nextflowNumbers.featuredStats}
-          stats={home.nextflowNumbers.statsSection}
+          headline={data.nextflowNumbers.headline}
+          featuredStats={data.nextflowNumbers.featuredStats}
+          stats={data.nextflowNumbers.statsSection}
         />
       )}
 
-      {home.keyDatesSection && (
+      {data.keyDatesSection && (
         <KeyDates
-          dates={home.keyDatesSection.dates}
-          images={home.keyDatesSection.images}
+          dates={data.keyDatesSection.dates}
+          images={data.keyDatesSection.images}
         />
       )}
 
-      {home.pastEvents?.boxes && home.pastEvents.boxes.length > 0 && (
+      {data.pastEvents?.boxes && data.pastEvents.boxes.length > 0 && (
         <FeatureBlocks
-          headline={home.pastEvents.headline}
-          buttonText={home.pastEvents.button?.buttonText}
-          buttonUrl={getButtonUrl(home.pastEvents?.button)}
-          boxes={home.pastEvents.boxes.map(transformFeatureBox)}
+          headline={data.pastEvents.headline}
+          buttonText={data.pastEvents.button?.buttonText}
+          buttonUrl={getButtonUrl(data.pastEvents?.button)}
+          boxes={data.pastEvents.boxes.map(transformFeatureBox)}
         />
       )}
 
-      {home.faqSection && home.faqSection.length > 0 && (
-        <Faq data={home.faqSection} />
+      {data.faqSection && data.faqSection.length > 0 && (
+        <Faq data={data.faqSection} />
       )}
 
       <SignUpForm />

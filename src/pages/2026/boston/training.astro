@@ -12,5 +12,5 @@ const training: PageData = await fetchBostonTraining();
 
 <Layout>
   <SEO slot="head" title="Training | Boston" />
-  <Training training={training}  client:load/>
+  <Training data={training}  client:load/>
 </Layout>

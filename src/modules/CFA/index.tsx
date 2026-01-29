@@ -7,24 +7,24 @@ import { formatLink, getButtonUrl } from '@utils/linkFormatter';
 import { transformFeatureBox } from '@utils/boxTransformer';
 
 type Props = {
-  cfa: any;
+  data: any;
 };
 
-const CFA: React.FC<Props> = ({ cfa }) => {
+const CFA: React.FC<Props> = ({ data }) => {
 
   return (
      <div className="bg-black text-white">
         <LandingHero
-        title={cfa.hero?.headline}
-        content={cfa.hero?.bodycopy}
-        ctaText1={cfa.hero?.button1?.buttonText}
-        ctaLink1={formatLink(cfa.hero?.button1?.buttonUrl)}
-        ctaText2={cfa.hero?.button2?.buttonText}
-        ctaLink2={formatLink(cfa.hero?.button2?.buttonUrl)}
-        headlineSize={cfa.hero?.headlineSize}
+        title={data.hero?.headline}
+        content={data.hero?.bodycopy}
+        ctaText1={data.hero?.button1?.buttonText}
+        ctaLink1={formatLink(data.hero?.button1?.buttonUrl)}
+        ctaText2={data.hero?.button2?.buttonText}
+        ctaLink2={formatLink(data.hero?.button2?.buttonUrl)}
+        headlineSize={data.hero?.headlineSize}
       />
 
-      {cfa.featureSection?.map((section, index) => {
+      {data.featureSection?.map((section, index) => {
         const sectionButtonUrl = getButtonUrl(section?.button);
         return (
           section?.boxes &&
@@ -41,8 +41,8 @@ const CFA: React.FC<Props> = ({ cfa }) => {
         );
       })}
   
-      {cfa.faqSection && cfa.faqSection.length > 0 && (
-        <Faq data={cfa.faqSection} />
+      {data.faqSection && data.faqSection.length > 0 && (
+        <Faq data={data.faqSection} />
       )}
 
     </div>
