@@ -12,17 +12,17 @@ const currentYear = new Date().getFullYear();
     <nav
       class="container-xl flex flex-col sm:flex-row md:justify-between sm:flex-wrap md:flex-nowrap"
     >
-      <div class="w-full max-w-[500px] lg:pr-10 mb-10 md:mb-0">
+      <div class="w-full md:max-w-[500px] lg:pr-10 mb-10 md:mb-0">
         <Subscribe client:visible />
       </div>
       <nav class="w-full flex md:justify-center">
         <div
-          class="sm:whitespace-nowrap grid grid-cols-2 gap-x-8 md:gap-x-0 md:flex md:flex-row"
+          class="sm:whitespace-nowrap grid grid-cols-2 gap-x-8 xs:grid-cols-5  md:gap-x-0 md:flex md:flex-row"
         >
           {
             menus?.footerMenu?.map((group) => {
               return (
-                <ul class="mb-16 md:mb-0 md:ml-12 lg:ml-20">
+                <ul class="mb-10 md:mb-0 md:ml-12 lg:ml-20">
                   <p class="mb-2 border-b border-white pb-1">
                     {group.footerTitle}
                   </p>

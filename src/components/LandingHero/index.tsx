@@ -76,7 +76,7 @@ const LandingHero: React.FC<HeroProps> = ({
               transition={{ duration: 0.4, delay: 0.7, ease: 'linear' }}
             >
               <h1
-                className={` mb-4 max-w-[250px] sm:max-w-[800px]
+                className={` mb-4 md:max-w-[800px]
                   ${!headlineSize && 'h3'}
                   ${headlineSize === 'xl' ? 'h1' : ''} 
                   ${headlineSize === 'large' ? 'h2' : ''} 
@@ -86,7 +86,7 @@ const LandingHero: React.FC<HeroProps> = ({
               >
                 {title}
               </h1>
-              <h1 className="h1 mb-4 max-w-[250px] sm:max-w-[500px]">
+              <h1 className="h1 mb-4 sm:max-w-[500px]">
                 {subtitle}
               </h1>
             </motion.div>

@@ -4,7 +4,7 @@
   max-width: 300px;
   & form {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     & :global(.hs-form-field),
     & :global(.hs_submit) {
       flex: 1 1 auto;
@@ -14,9 +14,10 @@
     }
     & :global(.hs_email) {
       & input {
-        padding-left: 15px;
-        margin-bottom: 0 !important;
-        border: 1px solid transparent;
+        border-radius: 4px 0 0 4px;
+        width: 200px;
+        margin-bottom: 0;
+        height: 40px;
       }
     }
     & :global(.hs_submit) {
@@ -28,10 +29,6 @@
         padding: 0 16px;
         transition: all 0.3s;
         background: var(--color-nextflow);
-        @media (--sm) {
-          border-top-left-radius: 0px;
-          border-bottom-left-radius: 0px;
-        }
         &:hover {
           background: var(--color-nextflow-700);
           color: white;

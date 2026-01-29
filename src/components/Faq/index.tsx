@@ -78,7 +78,7 @@ const Faq: React.FC<FaqProps> = ({ className, data, title = "FAQ" }) => {
     <section className={`${className} bg-black py-20`}>
       <div className="container-xl relative w-full flex flex-col sm:flex-row">
         <div className="w-full mb-6 sm:mb-0 sm:sticky sm:top-40 self-start">
-          <h2 className="h4 max-w-[200px] sm:max-w-[500px] relative z-20">
+          <h2 className="h4 relative z-20">
             {title}
           </h2>
         </div>
