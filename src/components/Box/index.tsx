@@ -76,7 +76,7 @@ const Box: React.FC<Props> = ({
             </a>
           )}
         </div>
-        <div className="mt-2 h-full flex flex-col justify-between">
+        <div className={`${imageCover ? '' : 'mt-2'} h-full flex flex-col justify-between`}>
           {headline && (
             <div>
               <h3 className="h6">{headline}</h3>

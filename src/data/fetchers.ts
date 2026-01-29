@@ -29,14 +29,6 @@ export async function fetchCFA(): Promise<PageData> {
   return fetchPage("cfa");
 }
 
-export async function fetchBostonOverview(): Promise<PageData> {
-  return fetchPage("bostonOverview");
-}
-
-export async function fetchBostonTravel(): Promise<PageData> {
-  return fetchPage("bostonTravel");
-}
-
 export async function fetchWhyAttend(): Promise<PageData> {
   return fetchPage("whyAttend");
 }
@@ -45,15 +37,29 @@ export async function fetchPastEvents(): Promise<PageData> {
   return fetchPage("pastEvents");
 }
 
+export async function fetchFAQ(): Promise<PageData> {
+  return fetchPage("faqPage");
+}
+
+
+// boston pages
+export async function fetchBostonOverview(): Promise<PageData> {
+  return fetchPage("bostonOverview");
+}
+
+export async function fetchBostonTravel(): Promise<PageData> {
+  return fetchPage("bostonTravel");
+}
+
+export async function fetchBostonGallery(): Promise<PageData> {
+  return fetchPage("bostonGallery");
+}
+
 export async function fetchBostonHackathon(): Promise<PageData> {
   return fetchPage("bostonHackathon");
 }
 
 export async function fetchBostonTraining(): Promise<PageData> {
   return fetchPage("bostonTraining");
-}
-
-export async function fetchFAQ(): Promise<PageData> {
-  return fetchPage("faqPage");
 }
 
