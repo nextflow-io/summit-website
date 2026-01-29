@@ -1,11 +1,12 @@
 import { sanityClient } from "sanity:client";
+import { useSanityClient } from '@sanity/astro';
 import { buildPageQuery, buildHomepageQuery, buildFaqPageQuery } from "./queries";
 import type { PageData, HomepageData, FAQPageData } from "./types";
 
 // Helper to get the right client based on preview mode
 function getClient(previewMode: boolean = false) {
   if (previewMode) {
-    return sanityClient({ 
+    return useSanityClient({ 
       perspective: 'previewDrafts',
       useCdn: false 
     });
