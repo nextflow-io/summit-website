@@ -11,9 +11,6 @@ const host = "https://summit.nextflow.io";
 
 export default defineConfig({
   site: host,
-  build: {
-    assetsPrefix: 'https://nextflow-summit-2026.netlify.app'
-  },
   integrations: [
     react(),
     tailwind(),
@@ -21,6 +18,9 @@ export default defineConfig({
       projectId: "o2y1bt2g",
       dataset: "summit",
       useCdn: false,
+      token: import.meta.env.SANITY_READ_TOKEN, 
+      apiVersion: '2024-01-01', 
+      studioBasePath: '/studio',
     }),
     icon(),
     sitemap({

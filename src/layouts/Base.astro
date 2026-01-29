@@ -15,6 +15,7 @@ import Footer from "./footer.astro";
 import CookieHandler from "./CookieHandler";
 import CookieNotice from "./CookieNotice";
 import Contact from "@modules/Contact";
+import PreviewBanner from "./PreviewBanner.astro"
 
 
 ---
@@ -38,6 +39,8 @@ import Contact from "@modules/Contact";
   <body>
     <CookieHandler client:only="react" />
       <Header namespace={namespace} showNav={showNav}/>
+      <PreviewBanner />
+
       <main id="body" >
         <slot />
       </main>
