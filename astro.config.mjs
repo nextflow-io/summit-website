@@ -12,7 +12,7 @@ const host = "https://summit.nextflow.io";
 export default defineConfig({
   site: host,
   build: {
-    assetsPrefix: 'https://nextflow-summit-2026.netlify.app'
+    assetsPrefix: 'https://nextflow-summit-2025.netlify.app'
   },
   integrations: [
     react(),
@@ -24,7 +24,7 @@ export default defineConfig({
     }),
     icon(),
     sitemap({
-      filter: (page) => page !== `${host}/2026/`,
+      filter: (page) => page !== `${host}/2025/`,
     }),
   ],
   vite: {
