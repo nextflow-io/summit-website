@@ -64,21 +64,7 @@ const LandingHero: React.FC<HeroProps> = (props) => {
   }
 
   return (
-    <motion.div
-      initial={{
-        opacity: 0,
-      }}
-      whileInView={{
-        opacity: 1,
-      }}
-      viewport={{
-        once: true,
-      }}
-      transition={{
-        duration: 0.25,
-        ease: "linear",
-      }}
-      className="md:min-h-[750px] relative w-full h-full"
+    <div
     >
       <div className={clsx(styles.colorBarWrapper, "top-[0%] right-[15%]")}>
         <div
@@ -124,7 +110,7 @@ const LandingHero: React.FC<HeroProps> = (props) => {
       >
         <div className="flex flex-col sm:flex-row sm:justify-between h-full relative z-10">
           <div className="w-full h-full mt-10 sm:mt-0 sm:pr-10 max-w-[750px]">
-            <motion.div
+            <div
               initial={{
                 opacity: 0,
                 y: 5,
@@ -157,23 +143,9 @@ const LandingHero: React.FC<HeroProps> = (props) => {
                 <p className="h5 mr-4">by</p>{" "}
                 <SeqeraLogo className="w-full" alt="Seqera Logo" />
               </div>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{
-                opacity: 0,
-              }}
-              whileInView={{
-                opacity: 1,
-              }}
-              viewport={{
-                once: true,
-              }}
-              transition={{
-                duration: 0.4,
-                delay: 1,
-                ease: "linear",
-              }}
+            <div
               className="hidden sm:flex sm:flex-col"
             >
               <p
@@ -203,23 +175,9 @@ const LandingHero: React.FC<HeroProps> = (props) => {
                   </Button>
                 )}
               </div>
-            </motion.div>
+            </div>
           </div>
-          <motion.div
-            initial={{
-              opacity: 0,
-            }}
-            whileInView={{
-              opacity: 1,
-            }}
-            viewport={{
-              once: true,
-            }}
-            transition={{
-              duration: 0.6,
-              delay: 1.3,
-              ease: "linear",
-            }}
+          <div
             className={clsx(
               styles.rightWrapper,
               "h-full flex flex-col justify-between sm:text-right",
@@ -261,26 +219,6 @@ const LandingHero: React.FC<HeroProps> = (props) => {
               )}
 
               <div className="sm:hidden">
-                
-                {/* <div className="toggleLocation relative monospace">
-                  <div className="flex flex-row">
-     
-                    <Link href="/2025/boston" active={isActive("2025/boston")}>
-                      {" "}
-                      <div className={`${isBoth && 'border-r border-r-brand'} px-4`}>Boston</div>
-                    </Link>
-              
-                    <Link
-                      href="/2025/barcelona"
-                      active={isActive("2025/barcelona")}
-                    >
-                      {" "}
-                      <div className="px-4">Barcelona</div>
-                    </Link>
-                  </div>
-                </div> */}
-                
-
                 <p
                   className="monospace max-w-[580px] mt-10"
                   dangerouslySetInnerHTML={{ __html: content }}
@@ -318,10 +256,10 @@ const LandingHero: React.FC<HeroProps> = (props) => {
             <h1 className="hidden sm:block absolute top-80 right-0 sm:top-auto sm:right-auto sm:relative h0">
               2025
             </h1>
-          </motion.div>
+          </div>
         </div>
       </section>
-    </motion.div>
+    </div>
   );
 };
 

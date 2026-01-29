@@ -30,21 +30,8 @@ const Hero = ({
   ctaExternal2,
 }: HeroProps) => {
   return (
-    <motion.div 
-    initial={{
-      opacity: 0,
-    }}
-    whileInView={{
-      opacity: 1,
-    }}
-    viewport={{
-      once: true,
-    }}
-    transition={{
-      duration: 0.25,
-      ease: "linear",
-      delay: .7,
-    }}
+    <div 
+
     
     className={"container pt-10"}>
       <div className="flex flex-col sm:flex-row sm:justify-between">
@@ -88,7 +75,7 @@ const Hero = ({
         </div>
         }
       </div>
-    </motion.div>
+    </div>
   );
 };
 
