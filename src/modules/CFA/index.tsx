@@ -2,13 +2,14 @@ import React from 'react';
 import LandingHero from '@components/LandingHero';
 import FeatureBlocks from '@modules/FeatureBlocks';
 import Faq from '@components/Faq';
+import { urlFor } from '@data/sanity-image';
 
 type Props = {
   cfa: any;
 };
 
 const CFA: React.FC<Props> = ({ cfa }) => {
-  // console.log('Raw box data:', cfa.featureSection?.boxes);
+
   return (
     <>
       <LandingHero
@@ -21,27 +22,56 @@ const CFA: React.FC<Props> = ({ cfa }) => {
         headlineSize={cfa.hero?.headlineSize}
       />
 
-      {cfa.featureSection?.boxes && cfa.featureSection.boxes.length > 0 && (
-        <FeatureBlocks
-          headline={cfa.featureSection.headline}
-          boxes={cfa.featureSection.boxes.map((box) => ({
-            title: box?.title?.title,
-            href: box?.title?.href?.url || box?.title?.href?.href,
-            externalLink: box?.title?.href?.external,
-            subtitleLeft: box?.subtitle?.subtitleLeft,
-            subtitleRight: box?.subtitle?.subtitleRight,
-            image: box?.image?.asset?.url,
-            imageAlt: box?.image?.alt,
-            bottomSubtitleLeft: box?.lowerSubtitle?.lowerSubtitleLeft,
-            bottomSubtitleRight: box?.lowerSubtitle?.lowerSubtitleRight,
-            headline: box?.headline,
-            bodycopy: box?.bodycopy,
-            buttonText: box?.cta?.buttonText,
-            buttonUrl: box?.cta?.buttonLink || box?.cta?.buttonUrl,
-          }))}
-        />
-      )}
+        {cfa.featureSection?.map((section, index) => {
+        const sectionButtonLink = section?.button?.buttonUrl;
+        const sectionButtonUrl = sectionButtonLink?.isExternal
+          ? sectionButtonLink?.externalUrl
+          : sectionButtonLink?.internalLink;
 
+        return (
+          section?.boxes &&
+          section.boxes.length > 0 && (
+            <FeatureBlocks
+              key={index}
+              headline={section.headline}
+              bodycopy={section.bodycopy}
+              buttonText={section.button?.buttonText}
+              buttonUrl={sectionButtonUrl || null}
+              boxes={section.boxes.map((box) => {
+                const link = box?.title?.href;
+                const href = link?.isExternal
+                  ? link?.externalUrl
+                  : link?.internalLink;
+
+                const buttonLink = box?.cta?.buttonUrl;
+                const buttonUrl = buttonLink?.isExternal
+                  ? buttonLink?.externalUrl
+                  : buttonLink?.internalLink;
+
+                return {
+                  title: box?.title?.title,
+                  href: href || null,
+                  externalLink: link?.isExternal || false,
+                  subtitleLeft: box?.subtitle?.subtitleLeft,
+                  subtitleRight: box?.subtitle?.subtitleRight,
+                  image: box?.image?.image
+                    ? urlFor(box.image.image).url()
+                    : null,
+                  imageAlt: box?.image?.imageAlt || box?.image?.alt,
+                  imageCover: box?.imageCover,
+                  bottomSubtitleLeft: box?.lowerSubtitle?.lowerSubtitleLeft,
+                  bottomSubtitleRight: box?.lowerSubtitle?.lowerSubtitleRight,
+                  headline: box?.headline,
+                  bodycopy: box?.bodycopy,
+                  buttonText: box?.cta?.buttonText,
+                  buttonUrl: buttonUrl || null,
+                };
+              })}
+            />
+          )
+        );
+      })}
+  
       {cfa.faqSection && cfa.faqSection.length > 0 && (
         <Faq data={cfa.faqSection} />
       )}

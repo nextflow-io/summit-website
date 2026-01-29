@@ -56,7 +56,7 @@ const ImageSlider: React.FC<Props> = ({ title, children }) => {
         }}
       >
         {children.map((node, index) => (
-          <SwiperSlide key={index} className="imageBlend w-full h-0 pb-[100%] overflow-hidden relative">{node}</SwiperSlide>
+          <SwiperSlide key={index} className="w-full h-0 pb-[100%] overflow-hidden relative">{node}</SwiperSlide>
         ))}
       </Swiper>
       <nav className={clsx(styles.nav, "")}>

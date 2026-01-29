@@ -28,7 +28,7 @@ export default function KeyDates({
           {dates?.map((item, i) => (
             <div key={i} className="flex flex-wrap border-b">
               <div className="w-full flex flex-row items-center">
-                <h4 className="h6 pt-6 pb-6 w-full max-w-[130px] sm:max-w-[175px]">
+                <h4 className="h6 pt-6 pb-6 w-full max-w-[130px] sm:max-w-[175px] text-balance">
                   {item.date}
                 </h4>
 
