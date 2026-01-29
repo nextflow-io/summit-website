@@ -1,72 +1,59 @@
 import { sanityClient } from "sanity:client";
-import { useSanityClient } from '@sanity/astro';
-import { buildPageQuery, buildHomepageQuery, buildFaqPageQuery } from "./queries";
-import type { PageData, HomepageData, FAQPageData } from "./types";
+import { buildPageQuery, buildHomepageQuery,  buildFaqPageQuery } from "./queries";
+import type { PageData, HomepageData,  FAQPageData  } from "./types";
 
-// Helper to get the right client based on preview mode
-function getClient(previewMode: boolean = false) {
-  if (previewMode) {
-    return useSanityClient({ 
-      perspective: 'previewDrafts',
-      useCdn: false 
-    });
-  }
-  return sanityClient;
-}
-
-// Generic page fetcher with preview support
-async function fetchPage(contentType: string, previewMode: boolean = false): Promise<PageData> {
+// Generic page fetcher
+async function fetchPage(contentType: string): Promise<PageData> {
   const query = buildPageQuery(contentType);
-  const client = getClient(previewMode);
-  const data = await client.fetch(query);
+  const data = await sanityClient.fetch(query);
   return data;
 }
 
-// Homepage fetcher with preview support
-export async function fetchHomepage(previewMode: boolean = false): Promise<HomepageData> {
+// Homepage fetcher 
+export async function fetchHomepage(): Promise<HomepageData> {
   const query = buildHomepageQuery();
-  const client = getClient(previewMode);
-  const data = await client.fetch(query);
+  const data = await sanityClient.fetch(query);
   return data;
 }
 
-// FAQ page fetcher with preview support
-export async function fetchFaq(previewMode: boolean = false): Promise<FAQPageData> {
+// FAQ page fetcher 
+export async function fetchFaq(): Promise<FAQPageData> {
   const query = buildFaqPageQuery();
-  const client = getClient(previewMode);
-  const data = await client.fetch(query);
+  const data = await sanityClient.fetch(query);
   return data;
 }
 
-// Specific page fetchers with preview support
-export async function fetchCFA(previewMode: boolean = false): Promise<PageData> {
-  return fetchPage("cfa", previewMode);
+
+// Specific page fetchers
+export async function fetchCFA(): Promise<PageData> {
+  return fetchPage("cfa");
 }
 
-export async function fetchBostonOverview(previewMode: boolean = false): Promise<PageData> {
-  return fetchPage("bostonOverview", previewMode);
+export async function fetchBostonOverview(): Promise<PageData> {
+  return fetchPage("bostonOverview");
 }
 
-export async function fetchBostonTravel(previewMode: boolean = false): Promise<PageData> {
-  return fetchPage("bostonTravel", previewMode);
+export async function fetchBostonTravel(): Promise<PageData> {
+  return fetchPage("bostonTravel");
 }
 
-export async function fetchWhyAttend(previewMode: boolean = false): Promise<PageData> {
-  return fetchPage("whyAttend", previewMode);
+export async function fetchWhyAttend(): Promise<PageData> {
+  return fetchPage("whyAttend");
 }
 
-export async function fetchPastEvents(previewMode: boolean = false): Promise<PageData> {
-  return fetchPage("pastEvents", previewMode);
+export async function fetchPastEvents(): Promise<PageData> {
+  return fetchPage("pastEvents");
 }
 
-export async function fetchBostonHackathon(previewMode: boolean = false): Promise<PageData> {
-  return fetchPage("bostonHackathon", previewMode);
+export async function fetchBostonHackathon(): Promise<PageData> {
+  return fetchPage("bostonHackathon");
 }
 
-export async function fetchBostonTraining(previewMode: boolean = false): Promise<PageData> {
-  return fetchPage("bostonTraining", previewMode);
+export async function fetchBostonTraining(): Promise<PageData> {
+  return fetchPage("bostonTraining");
 }
 
-export async function fetchFAQ(previewMode: boolean = false): Promise<PageData> {
-  return fetchPage("faqPage", previewMode);
+export async function fetchFAQ(): Promise<PageData> {
+  return fetchPage("faqPage");
 }
+

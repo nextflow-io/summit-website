@@ -6,9 +6,6 @@ import Homepage from "@modules/Homepage"
 import { fetchHomepage } from '@data/fetchers';
 import type { HomepageData } from '@data/types';
 
-const previewMode = Astro.cookies.get('sanity-preview')?.value === 'true';
-console.log('Preview mode:', previewMode); // Check this in terminal
-
 const home: HomepageData = await fetchHomepage();
 ---
 
