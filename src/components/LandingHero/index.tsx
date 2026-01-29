@@ -60,6 +60,7 @@ const LandingHero: React.FC<HeroProps> = ({
   virtual,
   headlineSize ='medium',
 }) => {
+
   return (
     <motion.div
       {...fadeIn}

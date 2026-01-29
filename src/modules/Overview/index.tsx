@@ -2,43 +2,42 @@ import React from 'react';
 import LandingHero from '@components/LandingHero';
 import FeatureBlocks from '@modules/FeatureBlocks';
 import Faq from '@components/Faq';
+import { formatLink, getButtonUrl } from '@utils/linkFormatter';
+import { transformFeatureBox } from '@utils/boxTransformer';
+
 type Props = {
   overview: any;
 };
 
 const OverviewPage: React.FC<Props> = ({ overview }) => {
   return (
-     <div className="bg-black text-white">
+    <div className="bg-black text-white">
       <LandingHero
         title={overview.hero?.headline}
         content={overview.hero?.bodycopy}
         ctaText1={overview.hero?.button1?.buttonText}
-        ctaLink1={overview.hero?.button1?.buttonLink}
+        ctaLink1={formatLink(overview.hero?.button1?.buttonUrl)}
         ctaText2={overview.hero?.button2?.buttonText}
-        ctaLink2={overview.hero?.button2?.buttonLink}
+        ctaLink2={formatLink(overview.hero?.button2?.buttonUrl)}
         headlineSize={overview.hero?.headlineSize}
       />
 
-      {overview.featureSection?.boxes && overview.featureSection.boxes.length > 0 && (
-        <FeatureBlocks
-          headline={overview.featureSection.headline}
-          boxes={overview.featureSection.boxes.map((box) => ({
-            title: box?.title?.title,
-            href: box?.title?.href?.url || box?.title?.href?.href,
-            externalLink: box?.title?.href?.external,
-            subtitleLeft: box?.subtitle?.subtitleLeft,
-            subtitleRight: box?.subtitle?.subtitleRight,
-            image: box?.image?.asset?.url,
-            imageAlt: box?.image?.alt,
-            bottomSubtitleLeft: box?.lowerSubtitle?.lowerSubtitleLeft,
-            bottomSubtitleRight: box?.lowerSubtitle?.lowerSubtitleRight,
-            headline: box?.headline,
-            bodycopy: box?.bodycopy,
-            buttonText: box?.cta?.buttonText,
-            buttonUrl: box?.cta?.buttonLink || box?.cta?.buttonUrl,
-          }))}
-        />
-      )}
+      {overview.featureSection?.map((section, index) => {
+        const sectionButtonUrl = getButtonUrl(section?.button);
+        return (
+          section?.boxes &&
+          section.boxes.length > 0 && (
+            <FeatureBlocks
+              key={index}
+              headline={section.headline}
+              bodycopy={section.bodycopy}
+              buttonText={section.button?.buttonText}
+              buttonUrl={sectionButtonUrl}
+              boxes={section.boxes.map(transformFeatureBox)}
+            />
+          )
+        );
+      })}
 
       {overview.faqSection && overview.faqSection.length > 0 && (
         <Faq data={overview.faqSection} />
