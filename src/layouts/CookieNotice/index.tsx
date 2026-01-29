@@ -66,17 +66,17 @@ const CookieBanner = () => {
       once: true,
     }}
       className={classnames(
-        "bg-nextflow text-brand text-xs fixed bottom-0 w-full z-[2147483648] py-4 border-t border-nextflow-900",
+        "bg-nextflow-200 text-black text-xs fixed bottom-0 w-full z-[2147483648] py-4 border-t border-nextflow-300 px-2",
         {
           hidden: !isVisible,
         },
       )}
     >
-      <div className="container">
+      <div className="container-xl">
         <div className="flex items-center justify-between flex-wrap -my-2 sm:-mx-4 lg:mx-0">
           <div className="flex items-center py-2 md:pr-4 opacity-90">
             <div className="mr-4 hidden sm:block">
-              <CookieSVG className="h-8 w-8" />
+              <CookieSVG className="h-6 w-6" />
             </div>
             <div className="flex-auto">
               This website uses cookies to offer you a better browsing
@@ -92,12 +92,12 @@ const CookieBanner = () => {
           <div className="py-2">
             <div className="flex flex-wrap -mx-2 -my-1">
               <div className="px-2 py-1">
-                <Button secondary small onClick={denyAll}>
+                <Button light small onClick={denyAll}>
                   Essential only
                 </Button>
               </div>
               <div className="px-2 py-1">
-                <Button brand small onClick={acceptAll}>
+                <Button light small onClick={acceptAll}>
                   Accept all cookies
                 </Button>
               </div>
