@@ -1,145 +1,119 @@
-// hero
+// Reusable sub-fragments
+const portableTextFragment = `
+  ...,
+  _type,
+  style,
+  children[]{
+    ...,
+    _type,
+    text,
+    marks
+  },
+  markDefs[]{
+    ...,
+    _type
+  }
+`;
+
+const linkFragment = `
+  isExternal,
+  internalLink,
+  externalUrl
+`;
+
+const imageObjectFragment = `
+  ...,
+  image {
+    asset->{
+      _id,
+      url
+    }
+  },
+  imageAlt,
+  alt
+`;
+
+const buttonFragment = `
+  buttonText,
+  buttonUrl {
+    ${linkFragment}
+  }
+`;
+
+const contentBoxFragment = `
+  title {
+    title,
+    href {
+      ${linkFragment}
+    }
+  },
+  subtitle {
+    subtitleLeft,
+    subtitleRight
+  },
+  image {
+    ${imageObjectFragment}
+  },
+  imageCover,
+  headline,
+  bodycopy[]{
+    ${portableTextFragment}
+  },
+  lowerSubtitle {
+    lowerSubtitleLeft,
+    lowerSubtitleRight
+  },
+  cta {
+    ${buttonFragment}
+  }
+`;
+
+const featureSectionBaseFragment = `
+  headline,
+  bodycopy[]{
+    ${portableTextFragment}
+  },
+  boxes[]{
+    ${contentBoxFragment}
+  },
+  button {
+    ${buttonFragment}
+  }
+`;
+
+// Hero fragment
 export const heroFragment = `
   hero {
     headline,
     headlineSize,
     bodycopy[]{
-      ...,
-      _type,
-      style,
-      children[]{
-        ...,
-        _type,
-        text,
-        marks
-      },
-      markDefs[]{
-        ...,
-        _type
-      }
+      ${portableTextFragment}
     },
     button1 {
-      buttonText,
-      buttonUrl,
-      isExternal
+      ${buttonFragment}
     },
     button2 {
-      buttonText,
-      buttonUrl,
-      isExternal
+      ${buttonFragment}
     },
     "image": image.asset->url
   }
 `;
 
-// single featured section
-export const singleFeaturedSectionFragment = `
-  pastEvents {
-    headline,
-    boxes[]{
-      title {
-        title,
-        href {
-          isExternal,
-          internalLink,
-          externalUrl
-        }
-      },
-      subtitle {
-        subtitleLeft,
-        subtitleRight
-      },
-      image {
-        ...,
-        image {
-          asset->{
-            _id,
-            url
-          }
-        },
-        imageAlt,
-        alt
-      },
-      imageCover,
-      headline,
-      bodycopy[]{...},
-      lowerSubtitle {
-        lowerSubtitleLeft,
-        lowerSubtitleRight
-      },
-      cta {
-        buttonText,
-        buttonLink,
-        buttonUrl,
-        externalLink
-      }
-    },
-    bodycopy[]{...},
-    button {
-      buttonText,
-      buttonLink,
-      externalLink
-    }
-  }
-`;
-
-// featured sections as an array
+// Featured sections as an array
 export const featureSectionsArrayFragment = `
   featureSection[]{
-    headline,
-    bodycopy[]{
-    ...,
-    },
-    boxes[]{
-      title {
-        title,
-        href {
-          isExternal,
-          internalLink,
-          externalUrl
-        }
-      },
-      subtitle {
-        subtitleLeft,
-        subtitleRight
-      },
-      image {
-        ...,
-        image {
-          asset->{
-            _id,
-            url
-          }
-        },
-        imageAlt,
-        alt
-      },
-      imageCover,
-      headline,
-      bodycopy[]{
-        ...,
-      },
-      lowerSubtitle {
-        lowerSubtitleLeft,
-        lowerSubtitleRight
-      },
-      cta {
-        buttonText,
-        buttonLink,
-        buttonUrl,
-        externalLink
-      }
-    },
-    bodycopy[]{...},
-    button {
-      buttonText,
-      buttonLink,
-      externalLink
-    }
+    ${featureSectionBaseFragment}
   }
 `;
 
-// nextflow numbers
+// Past events (single featured section)
+export const pastEventsFragment = `
+  pastEvents {
+    ${featureSectionBaseFragment}
+  }
+`;
+
+// Nextflow numbers
 export const nextflowNumbersFragment = `
   nextflowNumbers {
     headline,
@@ -156,7 +130,7 @@ export const nextflowNumbersFragment = `
   }
 `;
 
-// key dates
+// Key dates
 export const keyDatesSectionFragment = `
   keyDatesSection {
     dates[] {
@@ -172,24 +146,12 @@ export const keyDatesSectionFragment = `
   }
 `;
 
-// faq module
+// FAQ module
 export const faqSectionFragment = `
   faqSection[]{
     question,
     answer[]{
-      ...,
-      _type,
-      style,
-      children[]{
-        ...,
-        _type,
-        text,
-        marks
-      },
-      markDefs[]{
-        ...,
-        _type
-      }
+      ${portableTextFragment}
     }
   }
 `;
@@ -201,25 +163,13 @@ export const faqPageSectionFragment = `
     faqs[]{
       question,
       answer[]{
-        ...,
-        _type,
-        style,
-        children[]{
-          ...,
-          _type,
-          text,
-          marks
-        },
-        markDefs[]{
-          ...,
-          _type
-        }
+        ${portableTextFragment}
       }
     }
   }
 `;
 
-// Add FAQ page query builder
+// Query builders
 export const buildFaqPageQuery = () => `
   *[_type == "faqPage"][0]{
     _id,
@@ -229,7 +179,6 @@ export const buildFaqPageQuery = () => `
   }
 `;
 
-// Base query builder, used on common page
 export const buildPageQuery = (contentType: string) => `
   *[_type == "${contentType}"][0]{
     _id,
@@ -240,7 +189,6 @@ export const buildPageQuery = (contentType: string) => `
   }
 `;
 
-// Homepage-specific query
 export const buildHomepageQuery = () => `
   *[_type == "homepage"][0]{
     _id,
@@ -249,7 +197,7 @@ export const buildHomepageQuery = () => `
     ${featureSectionsArrayFragment},
     ${nextflowNumbersFragment},
     ${keyDatesSectionFragment},
-    ${singleFeaturedSectionFragment},
+    ${pastEventsFragment},
     ${faqSectionFragment}
   }
 `;

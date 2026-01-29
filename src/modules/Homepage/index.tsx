@@ -24,41 +24,52 @@ const Homepage: React.FC<Props> = ({ home }) => {
         headlineSize={home.hero?.headlineSize}
       />
 
-      {home.featureSection?.map((section, index) => (
-        section?.boxes && section.boxes.length > 0 && (
-          <FeatureBlocks
-            key={index}
-            headline={section.headline}
-            bodycopy={section.bodycopy}
-            boxes={section.boxes.map((box) => {
-              const link = box?.title?.href;
-              const href = link?.isExternal ? link?.externalUrl : link?.internalLink;
-              
-              // Extract button URL the same way as title href
-              const buttonLink = box?.cta?.buttonUrl;
-              const buttonUrl = buttonLink?.isExternal 
-                ? buttonLink?.externalUrl 
-                : buttonLink?.internalLink;
-              
-              return {
-                title: box?.title?.title,
-                href: href || null,
-                externalLink: link?.isExternal || false,
-                subtitleLeft: box?.subtitle?.subtitleLeft,
-                subtitleRight: box?.subtitle?.subtitleRight,
-                image: box?.image?.image ? urlFor(box.image.image).url() : null,
-                imageAlt: box?.image?.imageAlt || box?.image?.alt,
-                bottomSubtitleLeft: box?.lowerSubtitle?.lowerSubtitleLeft,
-                bottomSubtitleRight: box?.lowerSubtitle?.lowerSubtitleRight,
-                headline: box?.headline,
-                bodycopy: box?.bodycopy,
-                buttonText: box?.cta?.buttonText,
-                buttonUrl: buttonUrl || null,
-              };
-            })}
-          />
-        )
-      ))}
+      {home.featureSection?.map((section, index) => {
+        // Extract section-level button URL
+        const sectionButtonLink = section?.button?.buttonUrl;
+        const sectionButtonUrl = sectionButtonLink?.isExternal 
+          ? sectionButtonLink?.externalUrl 
+          : sectionButtonLink?.internalLink;
+        
+        return (
+          section?.boxes && section.boxes.length > 0 && (
+            <FeatureBlocks
+              key={index}
+              headline={section.headline}
+              bodycopy={section.bodycopy}
+              buttonText={section.button?.buttonText}
+              buttonUrl={sectionButtonUrl || null}
+              boxes={section.boxes.map((box) => {
+                const link = box?.title?.href;
+                const href = link?.isExternal ? link?.externalUrl : link?.internalLink;
+                
+                // Extract button URL the same way as title href
+                const buttonLink = box?.cta?.buttonUrl;
+                const buttonUrl = buttonLink?.isExternal 
+                  ? buttonLink?.externalUrl 
+                  : buttonLink?.internalLink;
+                
+                return {
+                  title: box?.title?.title,
+                  href: href || null,
+                  externalLink: link?.isExternal || false,
+                  subtitleLeft: box?.subtitle?.subtitleLeft,
+                  subtitleRight: box?.subtitle?.subtitleRight,
+                  image: box?.image?.image ? urlFor(box.image.image).url() : null,
+                  imageAlt: box?.image?.imageAlt || box?.image?.alt,
+                  bottomSubtitleLeft: box?.lowerSubtitle?.lowerSubtitleLeft,
+                  bottomSubtitleRight: box?.lowerSubtitle?.lowerSubtitleRight,
+                  headline: box?.headline,
+                  bodycopy: box?.bodycopy,
+                  buttonText: box?.cta?.buttonText,
+                  buttonUrl: buttonUrl || null,
+                  imageCover: box?.imageCover,
+                };
+              })}
+            />
+          )
+        );
+      })}
 
       {home.nextflowNumbers && (
         <NextflowNumbers
@@ -75,37 +86,49 @@ const Homepage: React.FC<Props> = ({ home }) => {
         />
       )}
 
-      {home.pastEvents?.boxes && home.pastEvents.boxes.length > 0 && (
-        <FeatureBlocks
-          headline={home.pastEvents.headline}
-          boxes={home.pastEvents.boxes.map((box) => {
-            const link = box?.title?.href;
-            const href = link?.isExternal ? link?.externalUrl : link?.internalLink;
-            
-            // Extract button URL the same way as title href
-            const buttonLink = box?.cta?.buttonUrl;
-            const buttonUrl = buttonLink?.isExternal 
-              ? buttonLink?.externalUrl 
-              : buttonLink?.internalLink;
-            
-            return {
-              title: box?.title?.title,
-              href: href || null,
-              externalLink: link?.isExternal || false,
-              subtitleLeft: box?.subtitle?.subtitleLeft,
-              subtitleRight: box?.subtitle?.subtitleRight,
-              image: box?.image?.image ? urlFor(box.image.image).url() : null,
-              imageAlt: box?.image?.imageAlt || box?.image?.alt,
-              bottomSubtitleLeft: box?.lowerSubtitle?.lowerSubtitleLeft,
-              bottomSubtitleRight: box?.lowerSubtitle?.lowerSubtitleRight,
-              headline: box?.headline,
-              bodycopy: box?.bodycopy,
-              buttonText: box?.cta?.buttonText,
-              buttonUrl: buttonUrl || null,
-            };
-          })}
-        />
-      )}
+ {home.pastEvents?.boxes && home.pastEvents.boxes.length > 0 && (
+  (() => {
+    // Extract pastEvents button URL
+    const pastEventsButtonLink = home.pastEvents?.button?.buttonUrl;
+    const pastEventsButtonUrl = pastEventsButtonLink?.isExternal 
+      ? pastEventsButtonLink?.externalUrl 
+      : pastEventsButtonLink?.internalLink;
+    
+    return (
+      <FeatureBlocks
+        headline={home.pastEvents.headline}
+        buttonText={home.pastEvents.button?.buttonText}
+        buttonUrl={pastEventsButtonUrl || null}
+        boxes={home.pastEvents.boxes.map((box) => {
+          const link = box?.title?.href;
+          const href = link?.isExternal ? link?.externalUrl : link?.internalLink;
+          
+          const buttonLink = box?.cta?.buttonUrl;
+          const buttonUrl = buttonLink?.isExternal 
+            ? buttonLink?.externalUrl 
+            : buttonLink?.internalLink;
+          
+          return {
+            title: box?.title?.title,
+            href: href || null,
+            externalLink: link?.isExternal || false,
+            subtitleLeft: box?.subtitle?.subtitleLeft,
+            subtitleRight: box?.subtitle?.subtitleRight,
+            image: box?.image?.image ? urlFor(box.image.image).url() : null,
+            imageAlt: box?.image?.imageAlt || box?.image?.alt,
+            bottomSubtitleLeft: box?.lowerSubtitle?.lowerSubtitleLeft,
+            bottomSubtitleRight: box?.lowerSubtitle?.lowerSubtitleRight,
+            headline: box?.headline,
+            bodycopy: box?.bodycopy,
+            buttonText: box?.cta?.buttonText,
+            buttonUrl: buttonUrl || null,
+            imageCover: box?.imageCover,
+          };
+        })}
+      />
+    );
+  })()
+)}
 
       {home.faqSection && home.faqSection.length > 0 && (
         <Faq data={home.faqSection} />

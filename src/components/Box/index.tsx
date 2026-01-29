@@ -47,12 +47,12 @@ const Box: React.FC<Props> = ({
   const cn = clsx(styles.box, className, {});
 
   return (
-    <div className={`${cn} ${imageCover ? '' : 'p-6'}`}>
+    <div className={`${cn} ${imageCover ? '' : 'px-6 pb-6'}`}>
       <div className="relative flex flex-col justify-between h-full z-10">
         <div className="relative">
           {title && (
             <div
-              className={` pb-2 border-b border-b-white w-full flex flex-row justify-between items-center`}
+              className={` pt-4 pb-2 border-b border-b-white w-full flex flex-row justify-between items-center`}
             >
               <h5 className="text-lg monospace font-normal">{title}</h5>
               {href && <ArrowUpRight />}
@@ -76,7 +76,7 @@ const Box: React.FC<Props> = ({
             </a>
           )}
         </div>
-        <div className="h-full flex flex-col justify-between">
+        <div className="mt-2 h-full flex flex-col justify-between">
           {headline && (
             <div>
               <h3 className="h6">{headline}</h3>
@@ -128,8 +128,8 @@ const Box: React.FC<Props> = ({
         )}
 
         {buttonText && (
-          <div className="border-t border-white w-full">
-            <Button className="mt-10 relative w-full" dark href={buttonUrl}>
+          <div className={` w-full ${image ? '' : 'border-t border-white'}`}>
+            <Button className="mt-6 relative w-full" dark href={buttonUrl}>
               {buttonText}
             </Button>
           </div>

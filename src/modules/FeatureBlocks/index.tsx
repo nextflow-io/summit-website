@@ -1,6 +1,7 @@
-import React from "react";
-import Box from "@components/Box";
+import React from 'react';
+import Box from '@components/Box';
 import PortableText from '@components/PortableText';
+import Button from '@components/Button';
 
 type BoxData = {
   headline?: string;
@@ -16,17 +17,24 @@ type BoxData = {
   bodycopy?: any;
   imageCover?: boolean;
   buttonText?: string;
-  buttonUrl?: any;
+  buttonUrl?: string;
 };
 
 type Props = {
   headline?: string;
   boxes?: BoxData[];
   bodycopy?: any;
+  buttonText?: string;
+  buttonUrl?: string;
 };
 
-const FeatureBlocks: React.FC<Props> = ({ boxes, headline, bodycopy }) => {
-
+const FeatureBlocks: React.FC<Props> = ({
+  boxes,
+  headline,
+  bodycopy,
+  buttonText,
+  buttonUrl,
+}) => {
   if (!boxes || boxes.length === 0) {
     return null;
   }
@@ -45,16 +53,19 @@ const FeatureBlocks: React.FC<Props> = ({ boxes, headline, bodycopy }) => {
         return 'grid-cols-1 md:grid-cols-3';
     }
   };
-    const gridCols = getGridCols(boxes.length);
-
+  const gridCols = getGridCols(boxes.length);
 
   return (
     <section className="bg-white text-black py-6 md:pt-16 md:pb-20">
       <div className="container-xl">
-        <h3 className="h4 mb-4 max-w-[60%]">{headline}</h3>
-        <div className="max-w-[60%] text-balance">  <PortableText value={bodycopy} /></div>
+        <h3 className="h4 mb-4 max-w-[60%] text-balance">{headline}</h3>
+        <div className="max-w-[60%] text-balance mb-6">
+          <PortableText value={bodycopy} />
         </div>
-      <div className={`container-xl grid items-self gap-6 md:gap-8 ${gridCols}`}>
+      </div>
+      <div
+        className={`container-xl grid items-self gap-6 md:gap-8 ${gridCols}`}
+      >
         {boxes.map((box, index) => (
           <Box
             key={index}
@@ -72,10 +83,17 @@ const FeatureBlocks: React.FC<Props> = ({ boxes, headline, bodycopy }) => {
             externalLink={box.externalLink}
             buttonText={box.buttonText}
             buttonUrl={box.buttonUrl}
-            
           />
         ))}
       </div>
+
+      {buttonText && buttonUrl && (
+        <div className="container-xl text-center mt-8">
+          <Button dark href={buttonUrl}>
+            {buttonText}
+          </Button>
+        </div>
+      )}
     </section>
   );
 };
