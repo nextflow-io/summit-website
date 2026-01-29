@@ -27,7 +27,7 @@ h6,
 
 /* 100px */
 .h2 {
-  font-size: 40px;
+  font-size: 50px;
   line-height: 1;
   @media (--sm) {
     font-size: 80px;
@@ -39,7 +39,7 @@ h6,
 
 /* 80px */
 .h3 {
-  font-size: 40px;
+  font-size: 50px;
   line-height: 1;
   @media (--sm) {
     font-size: 4.5rem;
@@ -51,7 +51,7 @@ h6,
 
 /* 60px */
 .h4 {
-  font-size: 30px;
+  font-size: 50px;
   line-height: 1;
   @media (--md) {
     font-size: 3.75rem;

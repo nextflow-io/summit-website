@@ -95,7 +95,9 @@ export const heroFragment = `
     button2 {
       ${buttonFragment}
     },
-    "image": image.asset->url
+    image {
+    ${imageObjectFragment}
+    },
   }
 `;
 

@@ -22,7 +22,7 @@ const DropDownItem: React.FC<FaqItemProps> = ({ question, answer, isOpen, onClic
         <h5 className="h6 text-left pr-8">{question}</h5>
 
         <div
-          className={`h5 leading-none transition-transform duration-600 ease-in-out ${isOpen ? "h2 active origin-center rotate-45" : "origin-center"}`}
+          className={`h6 leading-none transition-transform duration-600 ease-in-out ${isOpen ? "h2 active origin-center rotate-45" : "origin-center"}`}
         >
           +
         </div>

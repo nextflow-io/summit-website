@@ -20,7 +20,7 @@ export default function KeyDates({
   return (
     <section className="bg-black container-xl py-20">
       <div className="mb-10">
-        <h5 className="h4 mb-4 md:mb-0">Key dates </h5>
+        <h5 className="h4 mb-4 md:mb-0">Key Dates </h5>
       </div>
 
       <div className="w-full relative flex flex-col sm:flex-row h-full">
@@ -28,7 +28,7 @@ export default function KeyDates({
           {dates?.map((item, i) => (
             <div key={i} className="flex flex-wrap border-b">
               <div className="w-full flex flex-row items-center">
-                <h4 className="h6 pt-6 pb-6 w-full max-w-[130px] sm:max-w-[175px] text-balance">
+                <h4 className="font-semibold md:font-medium h6 pt-6 pb-6 w-full max-w-[110px] sm:max-w-[175px] text-balance">
                   {item.date}
                 </h4>
 
@@ -36,7 +36,7 @@ export default function KeyDates({
                   {item?.dateInfo?.map((info, i) => (
                     <div
                       key={i}
-                      className="border-b last:border-b-0 py-6 bodycopy"
+                      className="border-b last:border-b-0 py-6 leading-tight font-sans text-sm md:text-base"
                     >
                       {info}
                     </div>

@@ -21,6 +21,8 @@ const WhyAttendPage: React.FC<Props> = ({ attend }) => {
         ctaText2={attend.hero?.button2?.buttonText}
         ctaLink2={formatLink(attend.hero?.button2?.buttonUrl)}
         headlineSize={attend.hero?.headlineSize}
+        image={attend.hero?.image?.image ? urlFor(attend.hero.image.image).url() : null}
+        imageAlt={attend.hero?.image?.imageAlt || attend.hero?.image?.alt}
       />
 
       {attend.featureSection?.map((section, index) => {
