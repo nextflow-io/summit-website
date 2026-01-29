@@ -6,7 +6,7 @@ type Props = {
   overview: any;
 };
 
-const Overview: React.FC<Props> = ({ overview }) => {
+const OverviewPage: React.FC<Props> = ({ overview }) => {
   return (
     <>
       <LandingHero
@@ -47,4 +47,4 @@ const Overview: React.FC<Props> = ({ overview }) => {
   );
 };
 
-export default Overview;
+export default OverviewPage;
