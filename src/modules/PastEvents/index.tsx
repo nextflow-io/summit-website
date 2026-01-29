@@ -10,7 +10,7 @@ type Props = {
 
 const PastEventsPage: React.FC<Props> = ({ past }) => {
   return (
-    <>
+     <div className="bg-black text-white">
       <LandingHero
         title={past.hero?.headline}
         content={past.hero?.bodycopy}
@@ -61,7 +61,7 @@ const PastEventsPage: React.FC<Props> = ({ past }) => {
       {past.faqSection && past.faqSection.length > 0 && (
         <Faq data={past.faqSection} />
       )}
-    </>
+    </div>
   );
 };
 

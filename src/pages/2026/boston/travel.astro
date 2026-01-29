@@ -1,7 +1,7 @@
 ---
 import Layout from '@layouts/Base.astro';
 import SEO from '@components/SEO';
-import Travel from "@modules/Travel"
+import TravelPage from "@modules/Travel"
 import { fetchBostonTravel} from '@data/fetchers';
 import type { PageData } from '@data/types';
 
@@ -12,5 +12,5 @@ const travel: PageData = await fetchBostonTravel();
 
 <Layout>
   <SEO slot="head" title="Travel | Boston" />
-  <Travel travel={travel} client:load/>
+  <TravelPage travel={travel} client:load/>
 </Layout>

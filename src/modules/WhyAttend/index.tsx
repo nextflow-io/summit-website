@@ -11,7 +11,7 @@ type Props = {
 const WhyAttendPage: React.FC<Props> = ({ attend }) => {
   
   return (
-    <>
+    <div className="bg-black text-white">
       <LandingHero
         title={attend.hero?.headline}
         content={attend.hero?.bodycopy}
@@ -62,7 +62,7 @@ const WhyAttendPage: React.FC<Props> = ({ attend }) => {
       {attend.faqSection && attend.faqSection.length > 0 && (
         <Faq data={attend.faqSection} />
       )}
-    </>
+    </div>
   );
 };
 

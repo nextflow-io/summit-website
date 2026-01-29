@@ -13,7 +13,7 @@ type Props = {
 
 const Homepage: React.FC<Props> = ({ home }) => {
   return (
-    <>
+    <div className="bg-black text-white">
       <LandingHero
         title={home.hero?.headline}
         content={home.hero?.bodycopy}
@@ -141,7 +141,7 @@ const Homepage: React.FC<Props> = ({ home }) => {
       )}
 
       <SignUpForm />
-    </>
+    </div>
   );
 };
 

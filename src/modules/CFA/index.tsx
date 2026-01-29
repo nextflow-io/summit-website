@@ -11,7 +11,7 @@ type Props = {
 const CFA: React.FC<Props> = ({ cfa }) => {
 
   return (
-    <>
+     <div className="bg-black text-white">
       <LandingHero
         title={cfa.hero?.headline}
         content={cfa.hero?.bodycopy}
@@ -78,7 +78,7 @@ const CFA: React.FC<Props> = ({ cfa }) => {
       {/* <section>
         <iframe src="https://seqera.swoogo.com/summit-boston-2026/call-for-abstracts"/>
       </section> */}
-    </>
+    </div>
   );
 };
 

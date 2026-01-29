@@ -6,9 +6,9 @@ type Props = {
   travel: any;
 };
 
-const Travel: React.FC<Props> = ({ travel }) => {
+const TravelPage: React.FC<Props> = ({ travel }) => {
   return (
-    <>
+    <div className="bg-black text-white">
       <LandingHero
         title={travel.hero?.headline}
         content={travel.hero?.bodycopy}
@@ -47,8 +47,8 @@ const Travel: React.FC<Props> = ({ travel }) => {
       {travel.faqSection && travel.faqSection.length > 0 && (
         <Faq data={travel.faqSection} />
       )}
-    </>
+    </div>
   );
 };
 
-export default Travel;
+export default TravelPage;

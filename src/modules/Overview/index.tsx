@@ -8,7 +8,7 @@ type Props = {
 
 const OverviewPage: React.FC<Props> = ({ overview }) => {
   return (
-    <>
+     <div className="bg-black text-white">
       <LandingHero
         title={overview.hero?.headline}
         content={overview.hero?.bodycopy}
@@ -43,7 +43,7 @@ const OverviewPage: React.FC<Props> = ({ overview }) => {
       {overview.faqSection && overview.faqSection.length > 0 && (
         <Faq data={overview.faqSection} />
       )}
-    </>
+    </div>
   );
 };
 

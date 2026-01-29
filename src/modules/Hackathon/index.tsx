@@ -9,7 +9,7 @@ type Props = {
 
 const Hackathon: React.FC<Props> = ({ hackathon }) => {
   return (
-    <>
+     <div className="bg-black text-white">
       <LandingHero
         title={hackathon.hero?.headline}
         content={hackathon.hero?.bodycopy}
@@ -47,7 +47,7 @@ const Hackathon: React.FC<Props> = ({ hackathon }) => {
       {hackathon.faqSection && hackathon.faqSection.length > 0 && (
         <Faq data={hackathon.faqSection} />
       )}
-    </>
+    </div>
   );
 };
 

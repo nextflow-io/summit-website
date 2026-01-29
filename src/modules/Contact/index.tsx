@@ -4,7 +4,7 @@ import Icon from "./Icon";
 
 const SectionBox = ({ children, href }) => {
   return (
-    <div className={"bg-black p-8 relative w-full"}>
+    <div className={"bg-black p-8 relative w-full text-white"}>
       <div className="flex flex-row justify-between items-start">
         <div>{children}</div>
         <Icon className="w-full max-w-[40px]" />

@@ -9,7 +9,7 @@ type Props = {
 
 const Training: React.FC<Props> = ({ training }) => {
   return (
-    <>
+     <div className="bg-black text-white">
       <LandingHero
         title={training.hero?.headline}
         content={training.hero?.bodycopy}
@@ -47,7 +47,7 @@ const Training: React.FC<Props> = ({ training }) => {
       {training.faqSection && training.faqSection.length > 0 && (
         <Faq data={training.faqSection} />
       )}
-    </>
+    </div>
   );
 };
 

@@ -8,7 +8,7 @@ type Props = {
 
 const FaqPage: React.FC<Props> = ({ faq }) => {
   return (
-    <>
+    <div className="bg-black text-white">
       <LandingHero
         title={faq.hero?.headline}
         content={faq.hero?.bodycopy}
@@ -30,7 +30,7 @@ const FaqPage: React.FC<Props> = ({ faq }) => {
           ))}
         </>
       )}
-    </>
+   </div>
   );
 };
 
