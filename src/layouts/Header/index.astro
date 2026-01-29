@@ -20,7 +20,10 @@ const shouldShowSecondaryMenu =
   menus?.secondaryPath && pathname.includes(menus.secondaryPath);
 ---
 
-<header id="header" class={`${styles.header} transition-shadow duration-300 shadow-sm`}>
+<header
+  id="header"
+  class={`${styles.header} transition-shadow duration-300 shadow-sm`}
+>
   <div class={`${styles.headerWrapper} flex flex-col w-full`}>
     <div class="bg-nextflow">
       <div
@@ -28,10 +31,7 @@ const shouldShowSecondaryMenu =
       >
         <div class="w-full flex items-center justify-between monospace h-full">
           <Logo namespace={namespace} />
-          <Menu
-            menuItems={menus?.headerMenu}
-            pathname={pathname}
-          />
+          <Menu menuItems={menus?.headerMenu} pathname={pathname} />
           <div>
             {
               menus?.headerBtn && (
@@ -82,28 +82,28 @@ const shouldShowSecondaryMenu =
   client:only="react"
 />
 
-<script>
-  // document.addEventListener('astro:page-load', () => {
-  //   let secondaryNav = document.querySelector('.js-secondary-nav');
-  //   if (!secondaryNav) return;
+<!-- <script>
+  document.addEventListener('astro:page-load', () => {
+    let secondaryNav = document.querySelector('.js-secondary-nav');
+    if (!secondaryNav) return;
 
-  //   let prevScrollTop = window.scrollY || document.documentElement.scrollTop;
-  //   let prevScrollDirection = '';
+    let prevScrollTop = window.scrollY || document.documentElement.scrollTop;
+    let prevScrollDirection = '';
 
-  //   window.addEventListener(
-  //     'scroll',
-  //     function () {
-  //       const st = window.scrollY || document.documentElement.scrollTop;
-  //       if (st > prevScrollTop && prevScrollDirection !== 'down') {
-  //         prevScrollDirection = 'down';
-  //         secondaryNav.classList.add('js-hide-nav');
-  //       } else if (st < prevScrollTop && prevScrollDirection !== 'up') {
-  //         secondaryNav.classList.remove('js-hide-nav');
-  //         prevScrollDirection = 'up';
-  //       }
-  //       prevScrollTop = st <= 0 ? 0 : st;
-  //     },
-  //     false
-  //   );
-  // });
-</script>
+    window.addEventListener(
+      'scroll',
+      function () {
+        const st = window.scrollY || document.documentElement.scrollTop;
+        if (st > prevScrollTop && prevScrollDirection !== 'down') {
+          prevScrollDirection = 'down';
+          secondaryNav.classList.add('js-hide-nav');
+        } else if (st < prevScrollTop && prevScrollDirection !== 'up') {
+          secondaryNav.classList.remove('js-hide-nav');
+          prevScrollDirection = 'up';
+        }
+        prevScrollTop = st <= 0 ? 0 : st;
+      },
+      false
+    );
+  });
+</script> -->

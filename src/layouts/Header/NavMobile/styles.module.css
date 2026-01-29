@@ -20,6 +20,7 @@
     width: 100%;
     padding: 0 16px;
     z-index: 999;
+
   }
   &.open {
     height: 100vh;
@@ -27,6 +28,7 @@
     border-bottom: none;
     transition: all .4s ease-in-out;
     background:  black;
+    color: white;
   }
   
   @media (--sm) {

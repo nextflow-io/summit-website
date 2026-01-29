@@ -51,16 +51,16 @@ const DropDownItem: React.FC<DropDownItemProps> = ({
   const hasDropdown = menuLinks && menuLinks.length > 0;
 
   return (
-    <div className={`border-b py-4 overflow-hidden`}>
+    <div className={`border-b py-2 overflow-hidden`}>
       <button
-        className={`dropdownBtn flex flex-row justify-between items-center w-full transition-all duration-400 hover:opacity-80 ${isOpen ? "active " : ""}`}
+        className={`dropdownBtn flex flex-row justify-between items-center text-left w-full transition-all duration-400 hover:opacity-80 ${isOpen ? "active " : ""}`}
         onClick={hasDropdown ? onClick : undefined}
       >
         {hasDropdown ? (
-          <h3 className="h3">{name}</h3>
+          <h3 className="text-[1.6rem] leading-tight">{name}</h3>
         ) : (
           <div className="relative w-full h-full flex flex-row">
-            <h3 className="h3">{name}</h3>
+            <h3 className="text-[1.6rem] leading-tight">{name}</h3>
             {url && (
               <a 
                 className="absolute top-0 left-0 right-0 bottom-0 w-full h-full" 
@@ -87,8 +87,8 @@ const DropDownItem: React.FC<DropDownItemProps> = ({
             isOpen
               ? {
                   height: contentHeight?.current?.scrollHeight,
-                  marginTop: "2rem",
-                  marginBottom: "2rem",
+                  marginTop: "1.5rem",
+                  marginBottom: "1.5rem",
                 }
               : { height: "0px", overflow: "hidden" }
           }
@@ -102,7 +102,7 @@ const DropDownItem: React.FC<DropDownItemProps> = ({
               return (
                 <li key={index}>
                   <a 
-                    className="h3 transition-all duration-400 hover:opacity-80"
+                    className="text-[1.6rem] leading-tight font-normal font-display transition-all duration-400 hover:opacity-80"
                     href={href}
                     target={item.link?.isExternal ? '_blank' : '_self'}
                     rel={item.link?.isExternal ? 'noopener noreferrer' : undefined}

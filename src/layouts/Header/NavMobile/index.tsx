@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import clsx from 'clsx';
 import Button from '@components/Button';
 import styles from './styles.module.css';
@@ -62,6 +62,20 @@ const NavMobile: React.FC<Props> = ({
   const [isOpen, setIsOpen] = useState(false);
   const isMobile = useMediaQuery({ maxWidth: 'sm' });
 
+  // Lock/unlock body scroll when menu opens/closes (mobile only)
+  useEffect(() => {
+    if (isMobile && isOpen) {
+      document.body.classList.add('mobile-menu-open');
+    } else {
+      document.body.classList.remove('mobile-menu-open');
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.classList.remove('mobile-menu-open');
+    };
+  }, [isOpen, isMobile]);
+
   if (!isMobile) return null;
 
   return (
@@ -90,8 +104,8 @@ const NavMobile: React.FC<Props> = ({
                   className="relative w-full mt-5"
                   light
                   href={
-                    mobileButton.buttonUrl.externalUrl ||
-                    mobileButton.buttonUrl.internalLink
+                    mobileButton.buttonUrl?.externalUrl ||
+                    mobileButton.buttonUrl?.internalLink
                   }
                   target={mobileButton.isExternal ? '_blank' : '_self'}
                 >
@@ -106,8 +120,8 @@ const NavMobile: React.FC<Props> = ({
                   className="relative w-full mt-3"
                   light
                   href={
-                    mobileButton2.buttonUrl.externalUrl ||
-                    mobileButton2.buttonUrl.internalLink
+                    mobileButton2.buttonUrl?.externalUrl ||
+                    mobileButton2.buttonUrl?.internalLink
                   }
                   target={mobileButton2.isExternal ? '_blank' : '_self'}
                 >

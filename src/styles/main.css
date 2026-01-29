@@ -9,6 +9,14 @@ body {
 body {
   min-height: 100vh;
 }
+/* Lock body scroll on mobile when menu is open */
+@media (max-width: 768px) {
+  body.mobile-menu-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+  }
+}
 
 .container {
   max-width: none;
