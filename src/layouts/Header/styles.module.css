@@ -35,12 +35,15 @@
           margin: 0 4px;
           line-height: 1;
           /* font-family: "PT Mono", courier, monospace; */
-          font-weight: 400;
+          /* font-weight: 400; */
           font-size: 13px;
           white-space: nowrap;
           position: relative;
           color: black;
           transition: all 0.3s;
+          &[data-active] {
+            color: white;
+          }
           &[data-active],
           &:hover {
             opacity: 80%;
@@ -72,30 +75,21 @@
       display: flex;
       align-items: center;
       & li {
+        margin: 0 9px;
         & a:global(.navItem) {
           display: block;
-          padding: 0 16px;
+          /* padding: 0 16px; */
           line-height: 30px;
           font-size: 11px;
           letter-spacing: 0.25px;
           font-weight: 400;
           position: relative;
           color: black;
-          &:hover {
-            color: white;
-          }
+ 
           &[data-active] {
             position: relative;
-            color: white;
-            background: black;
-            &:before {
-              position: absolute;
-              top: 0;
-              left: 0;
-              bottom: 0;
-              left: 0;
-              background: black;
-            }
+        
+
           }
         }
       }

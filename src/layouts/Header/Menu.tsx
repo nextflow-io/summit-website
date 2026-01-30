@@ -1,5 +1,5 @@
-import React from "react";
-import Link from "./Link";
+import React from 'react';
+import Link from './Link';
 
 type MenuItem = {
   linkTitle: string;
@@ -21,35 +21,35 @@ const Menu: React.FC<Props> = (props) => {
   function isActive(path: string) {
     return pathname?.includes(path);
   }
-  
-  // If no menu items from Sanity, return null
+
   if (!menuItems || menuItems.length === 0) {
     return null;
   }
 
   return (
     <nav className="main-nav">
-      <ul>
+      <ul className="inline">
         {menuItems.map((item, index) => {
-          const href = item.link?.isExternal 
-            ? item.link?.externalUrl 
+          const href = item.link?.isExternal
+            ? item.link?.externalUrl
             : item.link?.internalLink;
-          
-          // Add leading slash if not present and not external
-          const url = href && !item.link?.isExternal && !href.startsWith('/') 
-            ? `/${href}` 
-            : href || '#';
-          
+
+          const url =
+            href && !item.link?.isExternal && !href.startsWith('/')
+              ? `/${href}`
+              : href || '#';
+
           const isExternal = item.link?.isExternal;
 
           return (
-            <li key={index}>
-              <Link 
-                href={url} 
+            <li key={index} className="relative group gap-2 ">
+              <Link
+                href={url}
                 active={isActive(url)}
                 target={isExternal ? '_blank' : '_self'}
                 rel={isExternal ? 'noopener noreferrer' : undefined}
               >
+     
                 {item.linkTitle}
               </Link>
             </li>

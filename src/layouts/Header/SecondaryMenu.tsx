@@ -1,5 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import React, { useRef, useState, useEffect } from 'react';
 import { formatLink } from '@utils/linkFormatter';
 
 type MenuItem = {
@@ -20,30 +19,18 @@ type Props = {
 };
 
 const SecondaryMenu: React.FC<Props> = (props) => {
-  const [position, setPosition] = useState({
-    left: 0,
-    width: 0,
-    opacity: 0,
-  });
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const [canShowCursor, setCanShowCursor] = useState(true);
+  const [isAnyHovered, setIsAnyHovered] = useState(false);
+  const [isNavigating, setIsNavigating] = useState(false);
+  const [clickedIndex, setClickedIndex] = useState<number | null>(null);
 
   const { pathname, menuItems } = props;
 
   useEffect(() => {
-    setCanShowCursor(false);
-    setPosition({
-      left: 0,
-      width: 0,
-      opacity: 0,
-    });
     setHoveredIndex(null);
-    
-    const timer = setTimeout(() => {
-      setCanShowCursor(true);
-    }, 200);
-    
-    return () => clearTimeout(timer);
+    setIsAnyHovered(false);
+    setIsNavigating(false);
+    setClickedIndex(null);
   }, [pathname]);
 
   if (!menuItems || menuItems.length === 0) {
@@ -53,35 +40,41 @@ const SecondaryMenu: React.FC<Props> = (props) => {
   return (
     <nav className="">
       <ul
+        onMouseEnter={() => {
+          if (!isNavigating) {
+            setIsAnyHovered(true);
+          }
+        }}
         onMouseLeave={() => {
-          setPosition((pv) => ({
-            ...pv,
-            opacity: 0,
-          }));
-          setHoveredIndex(null);
+          if (!isNavigating) {
+            setHoveredIndex(null);
+            setIsAnyHovered(false);
+          }
         }}
         className="relative w-full flex bg-nextflow-100 text-black overflow-hidden"
       >
         {menuItems.map((item, index) => {
           const url = formatLink(item.link) || '#';
-          
+
           return (
-            <Tab 
+            <Tab
               key={index}
               index={index}
-              url={url} 
+              url={url}
               pathname={pathname || ''}
-              setPosition={setPosition}
               isExternal={item.link?.isExternal}
               isHovered={hoveredIndex === index}
+              isAnyHovered={isAnyHovered}
               setHoveredIndex={setHoveredIndex}
-              canShowCursor={canShowCursor}
+              isNavigating={isNavigating}
+              setIsNavigating={setIsNavigating}
+              clickedIndex={clickedIndex}
+              setClickedIndex={setClickedIndex}
             >
               {item.linkTitle}
             </Tab>
           );
         })}
-        <Cursor position={position} pathname={pathname} />
       </ul>
     </nav>
   );
@@ -90,87 +83,78 @@ const SecondaryMenu: React.FC<Props> = (props) => {
 type TabProps = {
   children: React.ReactNode;
   index: number;
-  setPosition: (position: any) => void;
   url: string;
   pathname: string;
   isExternal?: boolean;
   isHovered: boolean;
+  isAnyHovered: boolean;
   setHoveredIndex: (index: number | null) => void;
-  canShowCursor: boolean;
+  isNavigating: boolean;
+  setIsNavigating: (value: boolean) => void;
+  clickedIndex: number | null;
+  setClickedIndex: (index: number | null) => void;
 };
 
-const Tab: React.FC<TabProps> = ({ 
-  children, 
+const Tab: React.FC<TabProps> = ({
+  children,
   index,
-  setPosition, 
-  url, 
-  pathname, 
-  isExternal, 
+  url,
+  pathname,
+  isExternal,
   isHovered,
+  isAnyHovered,
   setHoveredIndex,
-  canShowCursor
+  isNavigating,
+  setIsNavigating,
+  clickedIndex,
+  setClickedIndex,
 }) => {
   const ref = useRef<HTMLLIElement>(null);
-  
+
   function isActive(path: string) {
     return pathname?.includes(path);
   }
+
+  const active = isActive(url);
+
+  const showSquare = 
+    (!isNavigating && isHovered) || 
+    (isNavigating && clickedIndex === index) ||
+    (active && !isAnyHovered && !isNavigating);
+
+  const handleClick = (e: React.MouseEvent) => {
+    if (!isExternal) {
+      setIsNavigating(true);
+      setClickedIndex(index);
+    }
+  };
 
   return (
     <li
       ref={ref}
       onMouseEnter={() => {
-        setHoveredIndex(index);
-        
-        if (!ref?.current || !canShowCursor) return;
-        
-        const { width } = ref.current.getBoundingClientRect();
-        setPosition({
-          left: ref.current.offsetLeft,
-          width,
-          opacity: 1,
-        });
+        if (!isNavigating) {
+          setHoveredIndex(index);
+        }
       }}
-      className="relative z-10 block cursor-pointer text-black "
+      className="relative z-10 flex items-center gap-2 cursor-pointer text-black"
     >
-      <a 
+      <span 
+        className={`w-2 h-2 bg-black flex-shrink-0 transition-opacity duration-300 mr-[-6px] mt-[-1px] ${
+          showSquare ? 'opacity-100' : 'opacity-0'
+        }`}
+      />
+      <a
         href={url}
-        className={`navItem uppercase transition-none ${isActive(url) ? 'active' : ''} ${isHovered ? '!text-white' : ''}`}
-        data-active={isActive(url) ? true : undefined}
+        onClick={handleClick}
+        className={`navItem uppercase transition-none ${active ? 'active' : ''}`}
+        data-active={active ? true : undefined}
         target={isExternal ? '_blank' : '_self'}
         rel={isExternal ? 'noopener noreferrer' : undefined}
       >
         {children}
       </a>
     </li>
-  );
-};
-
-type CursorProps = {
-  position: {
-    left: number;
-    width: number;
-    opacity: number;
-  };
-  pathname?: string;
-};
-
-const Cursor: React.FC<CursorProps> = ({ position, pathname }) => {
-  return (
-    <motion.li
-      key={pathname}
-      initial={{ opacity: 0 }}
-      animate={{
-        left: position.left,
-        width: position.width,
-        opacity: position.opacity,
-      }}
-      transition={{
-        duration: 0.4,
-        ease: "easeInOut"
-      }}
-      className="nav__highlight absolute top-0 z-0 h-full"
-    />
   );
 };
 

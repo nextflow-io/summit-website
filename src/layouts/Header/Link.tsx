@@ -17,7 +17,7 @@ const Link: React.FC<Props> = ({ children, href, active, target, rel, className 
     <a 
       {...attr} 
       href={href} 
-      className={`navItem ${className || ''}`}
+      className={`navItem relative inline  ${className || ''}`}
       target={target}
       rel={rel}
     >
