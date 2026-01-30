@@ -1,14 +1,22 @@
 ---
-import Layout from "@layouts/Base.astro";
-import KeyDates from "@components/KeyDates/index.astro";
-import Calendar from "@components/Calendar";
-import Schedule, { bostonScheduleConfig, barcelonaScheduleConfig } from "@components/Schedule";
-import SEO from "@components/SEO";
-import Box from "@components/Box";
+import Layout from '@layouts/Base.astro';
+import SEO from '@components/SEO';
+import StandardPage from '@modules/StandardPage';
+import { fetchBostonTravel } from '@data/fetchers';
+import type { PageData } from '@data/types';
+import LandingHero from '@components/LandingHero';
+
+const travel: PageData = await fetchBostonTravel();
 ---
 
-<Layout namespace="2026/boston" altBG>
-  <SEO slot="head" title="Agenda | Boston" img={1} />
-
-
+<Layout>
+  <SEO slot="head" title="Agenda | Boston" />
+  <div class="bg-black text-white">
+    <section class="bg-black text-white w-full">
+    <div class="container-xl py-10">
+        <h1 class="h3 mb-4 md:mb-8 max-w-[800px]">Agenda</h1>
+        <p>Check back for an update schedule of events. </p>
+    </div>
+  </section>
+  </div>
 </Layout>
