@@ -25,7 +25,7 @@
   & .arrowAfter {
     background: white;
     height: 100%;
-    border-radius: 2px;
+    /* border-radius: 2px; */
     padding: 4px 3px;
     transition: all 0.3s;
     color: var(--color-nextflow); 
