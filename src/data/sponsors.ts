@@ -10,6 +10,7 @@ export type Sponsor = {
   location?: "barcelona" | "virtual" | "boston";
   url?: string;
   description?: any;
+  about?: string;
 };
 
 const sponsors = await sanityClient.fetch(
