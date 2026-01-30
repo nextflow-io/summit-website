@@ -93,7 +93,7 @@ const FeatureBlocks: React.FC<Props> = ({
 
       {buttonText && buttonUrl && (
         <div className="container-xl text-center mt-8">
-          <Button dark href={buttonUrl}>
+          <Button dark2 arrow href={buttonUrl}>
             {buttonText}
           </Button>
         </div>

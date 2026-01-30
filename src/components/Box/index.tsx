@@ -49,7 +49,7 @@ const Box: React.FC<Props> = ({
   const cn = clsx(styles.box, className, {});
 
   return (
-    <div className={`${cn} ${imageCover ? '' : 'px-6 pb-6'}`}>
+    <div className={`${cn} ${imageCover ? '' : 'px-4 pb-4 md:px-6 md:pb-6'}`}>
       <div className="relative flex flex-col justify-between h-full z-10">
         <div className="relative">
           {/* {tag && (
@@ -58,7 +58,7 @@ const Box: React.FC<Props> = ({
 
           {/* Multiple tags display */}
           {tags && tags.length > 0 && (
-            <div className="pt-3">
+            <div className="pt-4 md:pt-6">
             <div className="flex flex-wrap gap-2 mb-2">
               {tags.map((tagItem, index) => (
                 <div
@@ -73,10 +73,10 @@ const Box: React.FC<Props> = ({
           )}
           {title && (
             <div
-              className={` pt-3 pb-2w-full flex flex-row justify-between items-center`}
+              className={` pt-4 pb-2w-full flex flex-row justify-between items-center]`}
             >
-              <h5 className="text-[2rem] font-display leading-tight">{title}</h5>
-              {href && <ArrowUpRight />}
+              <h5 className="text-[2rem] font-display leading-none">{title}</h5>
+              {href && <div className="mt-2"><ArrowUpRight /></div>}
             </div>
           )}
           {/* {subtitleLeft && (
@@ -119,8 +119,9 @@ const Box: React.FC<Props> = ({
           )}
 
           {image && (
+            <div className={`relative ${imageCover ? 'min-h-[320px]  w-full h-full' : ''} `}>
             <div
-              className={`relative w-full h-0 overflow-hidden ${imageCover ? 'pb-[100%]' : 'pb-[75%] '}`}
+              className={`r ${imageCover ? 'absolute top-0 left-0 right-0 bottom-0 w-full h-full z-0 object-cover' : 'relative w-full h-0 overflow-hidden pb-[75%] '}`}
             >
               <img
                 className="absolute top-0 left-0 right-0 bottom-0 w-full h-full z-0 object-cover"
@@ -137,6 +138,7 @@ const Box: React.FC<Props> = ({
                   {children}
                 </a>
               )}
+            </div>
             </div>
           )}
         </div>
