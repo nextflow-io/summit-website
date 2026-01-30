@@ -95,7 +95,7 @@ const LandingHero: React.FC<HeroProps> = ({
             <motion.div
               {...fadeIn}
               transition={{ duration: 0.4, delay: 1, ease: 'linear' }}
-              className="flex flex-col max-w-[550px]"
+              className="flex flex-col sm:max-w-[550px]"
             >
               <PortableText value={content} />
 

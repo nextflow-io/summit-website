@@ -11,6 +11,7 @@
   color: black;
   font-size: .75rem;
   padding: 5px 15px;
+  min-width: 150px;
 
   & .content {
     z-index: 1;
