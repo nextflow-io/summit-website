@@ -100,3 +100,18 @@
     }
   }
 }
+
+.outline {
+  border: 1px solid #F0F0F0;
+  &:hover {
+    background: black;
+    color: white;
+  }
+}
+
+.dark.outline {
+   &:hover {
+    background: white;
+    color: black;
+  }
+}
