@@ -11,7 +11,7 @@ const register: PageData = await fetchBostonRegister();
 ---
 
 <NoFooter showNav={false} namespace="2026/boston">
-  <SEO slot="head" title="Register Form" img={1} />
+  <SEO slot="head" title="Registration Form" img={1} />
   <section class="wrapper">
     <!-- swoogo form -->
     <section class="relative">
@@ -25,9 +25,9 @@ const register: PageData = await fetchBostonRegister();
         <div class="max-w-2xl mx-auto my-12 p-8 bg-gray-100 border border-gray-600 rounded-sm">
           <div class="flex items-start gap-4">
             <div>
-              <h3 class="h6 text-lg font-semibold mb-2">Unable to Load Registration Form</h3>
+              <h3 class="h6 text-lg font-semibold mb-2">Unable to Load Form</h3>
               <p class="mb-4">
-                We're having trouble loading the registration form. This could be due to browser settings, ad blockers, or network issues.
+                We're having trouble loading the form. This could be due to browser settings, ad blockers, or network issues.
               </p>
               <div class="space-y-2 text-sm mb-8">
                 <p>Please try:</p>
@@ -44,7 +44,7 @@ const register: PageData = await fetchBostonRegister();
                 rel="noopener noreferrer"
                 class="inline-flex items-center gap-2 px-4 py-2 bg-nextflow-500 text-black rounded hover:bg-nextflow-700 transition-colors text-sm monospace"
               >
-                Open Registration Form in New Tab
+                Open Form in New Tab
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
                 </svg>
@@ -56,7 +56,7 @@ const register: PageData = await fetchBostonRegister();
     </section>
   </section>
   <div class="container-xl p-4 text-center text-xs fixed bottom-0 left-0 right-0 border-t border-t-black/10 bg-white">
-    If you are having trouble viewing the registration form, please <a class="underline" href={register.swoogoUrl} target="_blank">click here</a> to open the form in a new window.
+    If you are having trouble viewing the form, please <a class="underline" href={register.swoogoUrl} target="_blank">click here</a> to open the form in a new window.
   </div>
 </NoFooter>
 
