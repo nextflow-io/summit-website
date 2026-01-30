@@ -111,6 +111,7 @@ export interface PageData {
   hero: Hero;
   featureSection?: FeatureSection[];
   faqSection?: FAQItem[];
+  swoogoUrl?: string;
 }
 
 export interface HomepageData extends PageData {

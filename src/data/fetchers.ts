@@ -23,7 +23,6 @@ export async function fetchFaq(): Promise<FAQPageData> {
   return data;
 }
 
-
 // Specific page fetchers
 export async function fetchCFA(): Promise<PageData> {
   return fetchPage("cfa");
@@ -40,7 +39,6 @@ export async function fetchPastEvents(): Promise<PageData> {
 export async function fetchFAQ(): Promise<PageData> {
   return fetchPage("faqPage");
 }
-
 
 // boston pages
 export async function fetchBostonOverview(): Promise<PageData> {

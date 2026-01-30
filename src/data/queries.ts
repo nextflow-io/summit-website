@@ -187,7 +187,8 @@ export const buildPageQuery = (contentType: string) => `
     _type,
     ${heroFragment},
     ${featureSectionsArrayFragment},
-    ${faqSectionFragment}
+    ${faqSectionFragment},
+    swoogoUrl,
   }
 `;
 
