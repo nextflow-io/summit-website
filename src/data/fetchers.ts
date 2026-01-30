@@ -61,3 +61,6 @@ export async function fetchBostonTraining(): Promise<PageData> {
   return fetchPage("bostonTraining");
 }
 
+export async function fetchBostonRegister(): Promise<PageData> {
+  return fetchPage("bostonRegister");
+}

@@ -1,8 +1,14 @@
 ---
 import Layout from "@layouts/Base.astro";
 import SEO from "@components/SEO";
+import StandardPage from "@modules/StandardPage"
+import { fetchBostonRegister} from '@data/fetchers';
+import type { PageData } from '@data/types';
+
+const register: PageData = await fetchBostonRegister();
 ---
 
-<Layout showNav={false} namespace="2026/boston">
-  <SEO slot="head" title="Register | Boston" img={1} />
+<Layout showNav={false} redirect="/2026/boston/register">
+  <SEO slot="head" title="Register" img={1} />
+    <StandardPage data={register}  client:load/>
 </Layout>

@@ -2,6 +2,12 @@
 import Layout from "@layouts/Base.astro";
 import NoFooter from "@layouts/NoFooter.astro";
 import SEO from "@components/SEO";
+
+import { fetchBostonRegister} from '@data/fetchers';
+import type { PageData } from '@data/types';
+
+const register: PageData = await fetchBostonRegister();
+
 ---
 
 <NoFooter showNav={false} namespace="2026/boston">
@@ -11,7 +17,7 @@ import SEO from "@components/SEO";
     <section class="relative">
       <iframe
         id="swoogo-form"
-        src="https://seqera.swoogo.com/summit-boston-2026"
+        src={register.swoogoUrl}
         class="swoogo-form w-full"></iframe>
       
       <!-- Error message (hidden by default) -->
@@ -33,7 +39,7 @@ import SEO from "@components/SEO";
                 </ul>
               </div>
               <a 
-                href="https://seqera.swoogo.com/summit-boston-2026" 
+                href={register.swoogoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 class="inline-flex items-center gap-2 px-4 py-2 bg-nextflow-500 text-black rounded hover:bg-nextflow-700 transition-colors text-sm monospace"
@@ -50,7 +56,7 @@ import SEO from "@components/SEO";
     </section>
   </section>
   <div class="container-xl p-4 text-center text-xs fixed bottom-0 left-0 right-0 border-t border-t-black/10 bg-white">
-    If you are having trouble viewing the registration form, please <a class="underline" href="https://seqera.swoogo.com/summit-boston-2026" target"_blank">click here</a> to open the form in a new window.
+    If you are having trouble viewing the registration form, please <a class="underline" href={register.swoogoUrl} target"_blank">click here</a> to open the form in a new window.
   </div>
 </NoFooter>
 
