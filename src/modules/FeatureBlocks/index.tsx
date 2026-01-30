@@ -59,7 +59,7 @@ const FeatureBlocks: React.FC<Props> = ({
     <section className="bg-white text-black py-10 md:pt-16 md:pb-20">
       <div className="container-xl">
         <h3 className="h4 mb-4 md:max-w-[60%] text-balance">{headline}</h3>
-        <div className="md:max-w-[60%] text-balance mb-6">
+        <div className="md:max-w-[550px] mb-6">
           <PortableText value={bodycopy} />
         </div>
       </div>

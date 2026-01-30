@@ -1,5 +1,6 @@
-import { useRef, useState } from "react";
-import DownCaret from "@images/icons/DownCaret";
+import { useRef, useState } from 'react';
+import DownCaret from '@images/icons/DownCaret';
+import { formatLink } from '@utils/linkFormatter';
 
 type Link = {
   isExternal?: boolean;
@@ -40,12 +41,12 @@ type DropDownItemProps = {
   onClick?: () => void;
 };
 
-const DropDownItem: React.FC<DropDownItemProps> = ({ 
-  name, 
-  url, 
-  menuLinks, 
-  isOpen, 
-  onClick 
+const DropDownItem: React.FC<DropDownItemProps> = ({
+  name,
+  url,
+  menuLinks,
+  isOpen,
+  onClick,
 }) => {
   const contentHeight = useRef<HTMLDivElement>(null);
   const hasDropdown = menuLinks && menuLinks.length > 0;
@@ -53,7 +54,7 @@ const DropDownItem: React.FC<DropDownItemProps> = ({
   return (
     <div className={`border-b py-2 overflow-hidden`}>
       <button
-        className={`dropdownBtn flex flex-row justify-between items-center text-left w-full transition-all duration-400 hover:opacity-80 ${isOpen ? "active " : ""}`}
+        className={`dropdownBtn flex flex-row justify-between items-center text-left w-full transition-all duration-400 hover:opacity-80 ${isOpen ? 'active ' : ''}`}
         onClick={hasDropdown ? onClick : undefined}
       >
         {hasDropdown ? (
@@ -62,8 +63,8 @@ const DropDownItem: React.FC<DropDownItemProps> = ({
           <div className="relative w-full h-full flex flex-row">
             <h3 className="text-[1.6rem] leading-tight">{name}</h3>
             {url && (
-              <a 
-                className="absolute top-0 left-0 right-0 bottom-0 w-full h-full" 
+              <a
+                className="absolute top-0 left-0 right-0 bottom-0 w-full h-full"
                 href={url}
               />
             )}
@@ -72,7 +73,7 @@ const DropDownItem: React.FC<DropDownItemProps> = ({
 
         {hasDropdown && (
           <div
-            className={`caret transition-all duration-500 ease-in-out ${isOpen ? "active rotate-180" : ""}`}
+            className={`caret transition-all duration-500 ease-in-out ${isOpen ? 'active rotate-180' : ''}`}
           >
             <DownCaret />
           </div>
@@ -87,25 +88,25 @@ const DropDownItem: React.FC<DropDownItemProps> = ({
             isOpen
               ? {
                   height: contentHeight?.current?.scrollHeight,
-                  marginTop: "1.5rem",
-                  marginBottom: "1.5rem",
+                  marginTop: '1.5rem',
+                  marginBottom: '1.5rem',
                 }
-              : { height: "0px", overflow: "hidden" }
+              : { height: '0px', overflow: 'hidden' }
           }
         >
           <ul className="dropdown__links ">
             {menuLinks?.map((item, index) => {
-              const href = item.link?.isExternal 
-                ? item.link?.externalUrl 
-                : item.link?.internalLink;
-              
+              const href = formatLink(item.link);
+
               return (
                 <li key={index}>
-                  <a 
+                  <a
                     className="text-[1.6rem] leading-tight font-normal font-display transition-all duration-400 hover:opacity-80"
                     href={href}
                     target={item.link?.isExternal ? '_blank' : '_self'}
-                    rel={item.link?.isExternal ? 'noopener noreferrer' : undefined}
+                    rel={
+                      item.link?.isExternal ? 'noopener noreferrer' : undefined
+                    }
                   >
                     {item.linkTitle}
                   </a>
@@ -136,10 +137,8 @@ const DropDowns: React.FC<Props> = ({ mobileMenu }) => {
       {mobileMenu.map((item, index) => {
         // Single Link
         if (item._type === 'singleLink') {
-          const href = item.link?.isExternal 
-            ? item.link?.externalUrl 
-            : item.link?.internalLink;
-          
+          const href = formatLink(item.link);
+
           return (
             <DropDownItem
               key={index}
@@ -150,7 +149,7 @@ const DropDowns: React.FC<Props> = ({ mobileMenu }) => {
             />
           );
         }
-        
+
         // Menu Group with Dropdown
         if (item._type === 'menuGroup') {
           return (

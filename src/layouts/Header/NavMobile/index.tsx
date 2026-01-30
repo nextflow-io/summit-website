@@ -6,6 +6,7 @@ import Hamburger from './Hamburger';
 import DropDowns from './DropDowns/DropDowns';
 import useMediaQuery from '@utils/useMediaQuery';
 import Logo from '../Logo';
+import { formatLink } from '@utils/linkFormatter';
 
 type Link = {
   isExternal?: boolean;
@@ -39,15 +40,19 @@ type Props = {
   mobileMenu?: MobileMenuItem[];
   mobileButton?: {
     buttonText?: string;
-    buttonLink?: string;
-    buttonUrl?: string;
-    externalLink?: boolean;
+    buttonUrl?: {
+      isExternal?: boolean;
+      externalUrl?: string;
+      internalLink?: string;
+    };
   };
   mobileButton2?: {
     buttonText?: string;
-    buttonLink?: string;
-    buttonUrl?: string;
-    externalLink?: boolean;
+    buttonUrl?: {
+      isExternal?: boolean;
+      externalUrl?: string;
+      internalLink?: string;
+    };
   };
 };
 
@@ -103,11 +108,8 @@ const NavMobile: React.FC<Props> = ({
                 <Button
                   className="relative w-full mt-5"
                   light
-                  href={
-                    mobileButton.buttonUrl?.externalUrl ||
-                    mobileButton.buttonUrl?.internalLink
-                  }
-                  target={mobileButton.isExternal ? '_blank' : '_self'}
+                  href={formatLink(mobileButton.buttonUrl)}
+                  target={mobileButton.buttonUrl?.isExternal ? '_blank' : '_self'}
                 >
                   {mobileButton.buttonText}
                 </Button>
@@ -119,11 +121,8 @@ const NavMobile: React.FC<Props> = ({
                 <Button
                   className="relative w-full mt-3"
                   light
-                  href={
-                    mobileButton2.buttonUrl?.externalUrl ||
-                    mobileButton2.buttonUrl?.internalLink
-                  }
-                  target={mobileButton2.isExternal ? '_blank' : '_self'}
+                  href={formatLink(mobileButton2.buttonUrl)}
+                  target={mobileButton2.buttonUrl?.isExternal ? '_blank' : '_self'}
                 >
                   {mobileButton2.buttonText}
                 </Button>
