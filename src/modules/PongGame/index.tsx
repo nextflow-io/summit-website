@@ -45,18 +45,18 @@ export default function PongGame({ width, height }: PongGameProps) {
     const isMobile = window.innerWidth < 640;
     const sizeFactor = isMobile ? 0.7 : 1;
 
-    // Game state
+    // Game state 
     const ball = {
       x: gameWidth / 2,
       y: gameHeight / 2,
-      size: 32 * sizeFactor,
+      size: 32 * sizeFactor, 
       velocityX: 5 * sizeFactor,
       velocityY: 5 * sizeFactor,
-      speed: 5 * sizeFactor,
+      speed: 6 * sizeFactor,
       rotation: 0,
     };
 
-    const paddleHeight = 80 * sizeFactor;
+    const paddleHeight = 50 * sizeFactor; 
     const paddleWidth = 10 * sizeFactor;
 
     const leftPaddle = {
@@ -117,34 +117,28 @@ export default function PongGame({ width, height }: PongGameProps) {
       ctx!.fillRect(x, y, w, h);
     }
 
-    // Draw Nextflow logo (exact SVG paths)
+    // Draw Nextflow logo 
     function drawNextflowLogo(x: number, y: number, size: number, rotation: number) {
       ctx!.save();
       ctx!.translate(x, y);
       ctx!.rotate(rotation);
       
-      // Scale factor based on original viewBox (17x16) to desired size
       const scale = size / 17;
       
-      // Center the logo
       ctx!.translate(-8.5 * scale, -8 * scale);
       ctx!.scale(scale, scale);
       
       ctx!.fillStyle = '#0DC09D';
       
-      // Top-left quadrant
       const path1 = new Path2D('M1.72466e-06 2.94912C2.61628 3.1168 4.71262 5.14496 4.87709 7.67232H7.93241C7.76263 3.51488 4.30609 0.1728 1.72466e-06 0V2.94912Z');
       ctx!.fill(path1);
       
-      // Bottom-left quadrant
       const path2 = new Path2D('M4.89433 8.34496C4.72058 10.8698 2.61893 12.8928 0 13.0515V16C4.30808 15.8362 7.77125 12.5005 7.95031 8.34496H4.89433Z');
       ctx!.fill(path2);
       
-      // Top-right quadrant
       const path3 = new Path2D('M11.6854 7.65504C11.8591 5.13024 13.9608 3.1072 16.5797 2.94848V0C12.2716 0.16384 8.80848 3.49952 8.62941 7.65504H11.6854Z');
       ctx!.fill(path3);
       
-      // Bottom-right quadrant
       const path4 = new Path2D('M16.5797 13.0509C13.9634 12.8832 11.8671 10.855 11.7026 8.32768H8.64732C8.8171 12.4851 12.2736 15.8272 16.5797 16V13.0509Z');
       ctx!.fill(path4);
       
@@ -163,7 +157,6 @@ export default function PongGame({ width, height }: PongGameProps) {
       }
     }
 
-    // Collision detection
     function collision(b: typeof ball, p: typeof leftPaddle) {
       const halfSize = b.size / 2;
       const bTop = b.y - halfSize;
@@ -189,7 +182,7 @@ export default function PongGame({ width, height }: PongGameProps) {
       ball.x = gameWidth / 2;
       ball.y = gameHeight / 2;
       ball.velocityX = -ball.velocityX;
-      ball.speed = 5 * sizeFactor;
+      ball.speed = 5 * sizeFactor; 
       ball.rotation = 0;
     }
 
@@ -209,13 +202,13 @@ export default function PongGame({ width, height }: PongGameProps) {
         leftPaddle.y = Math.max(0, Math.min(gameHeight - leftPaddle.height, leftPaddle.y));
       }
 
-      // Move ball and rotate it
+      // Move ball and rotate it faster
       ball.x += ball.velocityX;
       ball.y += ball.velocityY;
       ball.rotation += 0.05;
 
-      // AI for right paddle (opponent)
-      const computerLevel = 0.1;
+      // AI for right paddle (opponent) - SMARTER AI
+      const computerLevel = 0.15; // Faster AI (was 0.1)
       rightPaddle.y += (ball.y - (rightPaddle.y + rightPaddle.height / 2)) * computerLevel;
 
       rightPaddle.y = Math.max(0, Math.min(gameHeight - rightPaddle.height, rightPaddle.y));
@@ -239,7 +232,7 @@ export default function PongGame({ width, height }: PongGameProps) {
         ball.velocityX = direction * ball.speed * Math.cos(angleRad);
         ball.velocityY = ball.speed * Math.sin(angleRad);
 
-        ball.speed += 0.2 * sizeFactor;
+        ball.speed += 0.3 * sizeFactor; // Faster speed increase (was 0.2)
       }
 
       // Update score
@@ -307,7 +300,7 @@ export default function PongGame({ width, height }: PongGameProps) {
       />
       <div className="text-nextflow-600 font-mono text-xs sm:text-sm text-center">
         <p className="text-[10px] sm:text-xs">
-          Use your mouse, finger or keyboard {' '}
+          Use mouse, finger or keyboard {' '}
           <kbd className="px-1 sm:px-2 sm:py-1 mx-1 bg-nextflow-200 text-black text-[10px] sm:text-xs">W</kbd>
           {' / '}
           <kbd className="px-1 sm:px-2 sm:py-1 mx-1 bg-nextflow-200 text-black text-[10px] sm:text-xs">S</kbd>
