@@ -23,13 +23,13 @@ const SectionContact: React.FC<Props> = ({ className }) => {
     <section className={clsx("w-full py-8 lg:py-24 bg-nextflow-100", className)} id="footer">
       <div className="container-xl w-full bg-nextflow-100 flex flex-col md:flex-row justify-center gap-6 lg:gap-10">
         <SectionBox href="mailto:help.summit@nextflow.io">
-          <h5 className="text-xl mb-2">Ticketing questions</h5>
-          <div className="monospace text-nextflow">help.summit@nextflow.io</div>
+          <h5 className="monospace tracking-wider text-xs mb-2 uppercase">Ticketing questions</h5>
+          <div className=" text-md text-nextflow">help.summit@nextflow.io</div>
         </SectionBox>
 
         <SectionBox href="mailto:summit@nextflow.io">
-          <h5 className="text-xl mb-2">Program questions</h5>
-          <div className="monospace text-nextflow">summit@nextflow.io</div>
+          <h5 className="monospace tracking-wider text-xs mb-2 uppercase">Program questions</h5>
+          <div className="text-md text-nextflow">summit@nextflow.io</div>
         </SectionBox>
       </div>
     </section>

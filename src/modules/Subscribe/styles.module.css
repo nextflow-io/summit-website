@@ -5,6 +5,7 @@
   & form {
     display: flex;
     flex-direction: row;
+    font-family: 'PT Mono', monospace;
     & :global(.hs-form-field),
     & :global(.hs_submit) {
       flex: 1 1 auto;
@@ -19,6 +20,7 @@
         width: 200px;
         margin-bottom: 0;
         height: 40px;
+        font-size: 12px !important;
       }
     }
     & :global(.hs_submit) {
@@ -28,6 +30,7 @@
         border: none;
         padding: 0 16px;
         transition: all 0.3s;
+        font-size: 12px !important;
         background: var(--color-nextflow);
         &:hover {
           background: var(--color-nextflow-700);

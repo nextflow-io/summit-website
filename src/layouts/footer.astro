@@ -8,11 +8,11 @@ const currentYear = new Date().getFullYear();
 ---
 
 <footer id="footer" class="bg-black text-white">
-  <div class={`pt-16 mb-6 text-white monospace`}>
+  <div class={`pt-16 mb-6 text-white`}>
     <nav
       class="container-xl flex flex-col sm:flex-row md:justify-between sm:flex-wrap md:flex-nowrap"
     >
-      <div class="w-full md:max-w-[500px] lg:pr-10 mb-10 md:mb-0">
+      <div class="w-full md:max-w-[500px] lg:pr-10 mb-10 md:mb-0 ">
         <Subscribe client:visible />
       </div>
       <nav class="w-full flex md:justify-center">
@@ -65,7 +65,7 @@ const currentYear = new Date().getFullYear();
       <FooterLogo alt="Nextflow Summit Logo" className="w-full" />
     </div>
     <div class="flex flex-row justify-between">
-      <div class="monospace mb-6">{`© ${currentYear} Seqera`}</div>
+      <div class="monospace mb-6 text-sm"><a href="https://seqera.io" target="_blank">{`© ${currentYear}`} Seqera</a></div>
     </div>
   </div>
 </footer>
