@@ -1,5 +1,6 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { formatLink } from '@utils/linkFormatter';
 
 type MenuItem = {
   linkTitle: string;
@@ -20,14 +21,31 @@ type Props = {
 
 const SecondaryMenu: React.FC<Props> = (props) => {
   const [position, setPosition] = useState({
-    left: undefined,
+    left: 0,
     width: 0,
     opacity: 0,
   });
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [canShowCursor, setCanShowCursor] = useState(true);
 
   const { pathname, menuItems } = props;
 
-  // If no menu items from Sanity, return null
+  useEffect(() => {
+    setCanShowCursor(false);
+    setPosition({
+      left: 0,
+      width: 0,
+      opacity: 0,
+    });
+    setHoveredIndex(null);
+    
+    const timer = setTimeout(() => {
+      setCanShowCursor(true);
+    }, 200);
+    
+    return () => clearTimeout(timer);
+  }, [pathname]);
+
   if (!menuItems || menuItems.length === 0) {
     return null;
   }
@@ -40,32 +58,30 @@ const SecondaryMenu: React.FC<Props> = (props) => {
             ...pv,
             opacity: 0,
           }));
+          setHoveredIndex(null);
         }}
-        className="w-full flex bg-white text-black overflow-hidden"
+        className="relative w-full flex bg-white text-black overflow-hidden"
       >
         {menuItems.map((item, index) => {
-          const href = item.link?.isExternal 
-            ? item.link?.externalUrl 
-            : item.link?.internalLink;
-          
-          // Add leading slash if not present and not external
-          const url = href && !item.link?.isExternal && !href.startsWith('/') 
-            ? `/${href}` 
-            : href || '#';
+          const url = formatLink(item.link) || '#';
           
           return (
             <Tab 
               key={index}
+              index={index}
               url={url} 
               pathname={pathname || ''}
               setPosition={setPosition}
               isExternal={item.link?.isExternal}
+              isHovered={hoveredIndex === index}
+              setHoveredIndex={setHoveredIndex}
+              canShowCursor={canShowCursor}
             >
               {item.linkTitle}
             </Tab>
           );
         })}
-        <Cursor position={position} />
+        <Cursor position={position} pathname={pathname} />
       </ul>
     </nav>
   );
@@ -73,13 +89,27 @@ const SecondaryMenu: React.FC<Props> = (props) => {
 
 type TabProps = {
   children: React.ReactNode;
+  index: number;
   setPosition: (position: any) => void;
   url: string;
   pathname: string;
   isExternal?: boolean;
+  isHovered: boolean;
+  setHoveredIndex: (index: number | null) => void;
+  canShowCursor: boolean;
 };
 
-const Tab: React.FC<TabProps> = ({ children, setPosition, url, pathname, isExternal }) => {
+const Tab: React.FC<TabProps> = ({ 
+  children, 
+  index,
+  setPosition, 
+  url, 
+  pathname, 
+  isExternal, 
+  isHovered,
+  setHoveredIndex,
+  canShowCursor
+}) => {
   const ref = useRef<HTMLLIElement>(null);
   
   function isActive(path: string) {
@@ -90,7 +120,10 @@ const Tab: React.FC<TabProps> = ({ children, setPosition, url, pathname, isExter
     <li
       ref={ref}
       onMouseEnter={() => {
-        if (!ref?.current) return;
+        setHoveredIndex(index);
+        
+        if (!ref?.current || !canShowCursor) return;
+        
         const { width } = ref.current.getBoundingClientRect();
         setPosition({
           left: ref.current.offsetLeft,
@@ -98,11 +131,11 @@ const Tab: React.FC<TabProps> = ({ children, setPosition, url, pathname, isExter
           opacity: 1,
         });
       }}
-      className="relative z-10 block cursor-pointer text-brand"
+      className="relative z-10 block cursor-pointer text-black"
     >
       <a 
         href={url}
-        className={`navItem ${isActive(url) ? 'active' : ''}`}
+        className={`navItem transition-none ${isActive(url) ? 'active' : ''} ${isHovered ? '!text-white' : ''}`}
         data-active={isActive(url) ? true : undefined}
         target={isExternal ? '_blank' : '_self'}
         rel={isExternal ? 'noopener noreferrer' : undefined}
@@ -115,21 +148,28 @@ const Tab: React.FC<TabProps> = ({ children, setPosition, url, pathname, isExter
 
 type CursorProps = {
   position: {
-    left: number | undefined;
+    left: number;
     width: number;
     opacity: number;
   };
+  pathname?: string;
 };
 
-const Cursor: React.FC<CursorProps> = ({ position }) => {
+const Cursor: React.FC<CursorProps> = ({ position, pathname }) => {
   return (
     <motion.li
+      key={pathname}
+      initial={{ opacity: 0 }}
       animate={{
-        ...position,
+        left: position.left,
+        width: position.width,
+        opacity: position.opacity,
       }}
-      style={{ ...position }}
-      initial={false}
-      className="nav__highlight"
+      transition={{
+        duration: 0.4,
+        ease: "easeInOut"
+      }}
+      className="nav__highlight absolute top-0 z-0 h-full"
     />
   );
 };
