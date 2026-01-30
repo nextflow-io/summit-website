@@ -1,11 +1,12 @@
 .summitLogo {
+  width: 100%;
+  max-width: 150px;
+      transition: all 0.3s;
   path {
     transition: all 0.3s;
   }
   &:hover {
-    g, path {
-      fill: black;
-    }
+    filter: invert(100%)
   }
 }
 
