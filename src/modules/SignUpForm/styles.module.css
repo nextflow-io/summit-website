@@ -1,9 +1,16 @@
 .form {
   text-align: left;
+  width: 100%;
+  @media (min-width: 768px) {
+  min-width: 600px;
+  }
   & input {
     width: 100%;
     margin-bottom: 1rem;
     border-radius: none!important;
+  }
+  & button {
+    font-weight: normal!important;
   }
   & :global(.hs-form-checkbox-display) {
     display: inline-flex;
@@ -16,6 +23,8 @@
   & :global(.hs_submit) {
     margin-top: 2rem;
     border-radius: none!important;
+        font-weight: normal!important;
+        
   }
   & :global(.hs_nextflow_summit_city) {
     margin-bottom: 2rem;

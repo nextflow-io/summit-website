@@ -18,7 +18,7 @@ const SignUpForm = () => {
           <div>
             <div className="w-full">
               <HubspotForm
-                formID="7cad6141-f2cd-4e52-ad1f-9c6638faacc0"
+                formID="2247618a-a67e-42c6-afd4-6e3a9d5042b6"
                 className={styles.form}
               />
             </div>
