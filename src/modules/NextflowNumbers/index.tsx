@@ -29,7 +29,7 @@ const NextflowNumbers: React.FC<Props> = ({
   }
 
   return (
-    <section className={`${className} bg-nextflow text-black`}>
+    <section className={`${className} bg-nextflow-200 text-black`}>
       <div className="container-xl py-10 md:py-20">
         <div className="flex flex-col md:flex-row">
           <div className="mb-4 md:mb-10 w-full md:w-1/2 md:pr-12">

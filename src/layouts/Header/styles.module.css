@@ -34,9 +34,9 @@
           padding: 6px 12px;
           margin: 0 4px;
           line-height: 1;
-          font-family: "PT Mono", courier, monospace;
+          /* font-family: "PT Mono", courier, monospace; */
           font-weight: 400;
-          font-size: 14px;
+          font-size: 13px;
           white-space: nowrap;
           position: relative;
           color: black;
@@ -57,6 +57,7 @@
   display: none;
   @media (--sm) {
     display: block;
+    
   }
   z-index: 100;
   position: sticky;
@@ -64,7 +65,7 @@
   top: 30px;
   right: 0;
   width: 100%;
-  background:  white;
+  background:  var(--color-nextflow-100);
   & nav {
     height: 30px;
     & ul {
@@ -76,10 +77,11 @@
           display: block;
           padding: 0 16px;
           line-height: 30px;
-          font-size: 12px;
+          font-size: 11px;
+          letter-spacing: .25px;
           font-weight: 400;
           position: relative;
-          color: var(--color-brand);
+          color: black;
           &:hover {
             color: white;
           }
@@ -93,7 +95,7 @@
               left: 0;
               bottom: 0;
               left: 0;
-              background: var(--color-brand);
+              background: black;
             }
           }
         }

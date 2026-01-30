@@ -1,7 +1,7 @@
 import React from "react";
 import type { PortableTextReactComponents } from "@portabletext/react";
 
-const components: Partial<PortableTextReactComponents> = {
+const componentsBox: Partial<PortableTextReactComponents> = {
   marks: {
     link: ({ value, children }) => {
       const { blank, href } = value;
@@ -17,7 +17,7 @@ const components: Partial<PortableTextReactComponents> = {
     strong: ({ children }) => <strong className="font-bold">{children}</strong>,
     em: ({ children }) => <em className="italic">{children}</em>,
     code: ({ children }) => (
-      <code className="bg-gray-100 text-gray-800 px-1.5 py-0.5 rounded text-sm font-mono">
+      <code className="bg-gray-100 text-gray-800 px-1.5 py-0.5 rounded text-[.85rem] font-mono">
         {children}
       </code>
     ),
@@ -35,18 +35,18 @@ const components: Partial<PortableTextReactComponents> = {
   },
   listItem: {
     bullet: ({ children }: any) => (
-      <li className="text-sm flex items-start gap-2 mb-2">
+      <li className="text-[.85rem] flex items-start gap-2 mb-2">
         <span className="font-medium flex-shrink-0 text-[.8rem]">→</span>
         <span className="flex-1">{children}</span>
       </li>
     ),
     number: ({ children }: any) => (
-      <li className="text-sm leading-tight mb-2">{children}</li>
+      <li className="text-[.85rem] leading-tight mb-2">{children}</li>
     ),
   },
   block: {
-    normal: ({ children }) => <p className="mb-2 text-[.9rem]">{children}</p>,
+    normal: ({ children }) => <p className="mb-2 text-[.85rem]">{children}</p>,
   },
 };
 
-export default components;
+export default componentsBox;

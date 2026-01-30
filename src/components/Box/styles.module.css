@@ -1,7 +1,9 @@
 .box {
   color: black;
-  border: 1px solid var(--color-nextflow);
-  background: var(--color-nextflow);
+  border: 1px solid var(--color-nextflow-400);
+  /* background: var(--color-nextflow-100); */
+  background: var(--color-nextflow-600);
+
   transition: border-color 0.3s;
   position: relative;
   overflow: hidden;

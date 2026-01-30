@@ -62,7 +62,7 @@ const Sponsor = ({ sponsor, location }) => {
     //   externalLink={true}
     // />
 
-    <div className="relative border border-black hover:border-nextflow transition-all duration-300 flex flex-col justify-center items-center h-full">
+    <div className="relative border border-black/30 hover:border-nextflow transition-all duration-300 flex flex-col justify-center items-center h-full">
       <div className="uppercase text-xs monospace h-[50px] w-full flex justify-center items-center px-4">
         [{sponsor.rank} Sponsor]
       </div>

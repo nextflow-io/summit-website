@@ -1,42 +1,17 @@
-import React from "react";
-import {
-  PortableText,
-  type PortableTextReactComponents,
-} from "@portabletext/react";
-import classNames from "classnames";
-
-import styles from "./styles.module.css";
-import defaultComponents from "./components";
+import React from 'react';
+import { PortableText as SanityPortableText } from '@portabletext/react';
+import components from './components';
+import componentsBox from './components-box';
 
 type Props = {
-  components?: Partial<PortableTextReactComponents>;
-  className?: string;
   value: any;
-  defaultStyle?: boolean;
-  light?: boolean;
+  variant?: 'default' | 'box';
 };
 
-const PortableTextComponent: React.FC<Props> = ({
-  value,
-  className,
-  components = {},
-  defaultStyle,
-  light,
-}) => {
-  const usedComponents = {
-    ...defaultComponents,
-    ...components,
-  };
-  return (
-    <div
-      className={classNames(className, {
-        [styles.defaultStyle]: defaultStyle,
-        [styles.light]: light,
-      })}
-    >
-      <PortableText value={value} components={usedComponents} />
-    </div>
-  );
+const PortableText: React.FC<Props> = ({ value, variant = 'default' }) => {
+  const selectedComponents = variant === 'box' ? componentsBox : components;
+  
+  return <SanityPortableText value={value} components={selectedComponents} />;
 };
 
-export default PortableTextComponent;
+export default PortableText;

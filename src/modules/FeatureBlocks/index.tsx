@@ -18,6 +18,8 @@ type BoxData = {
   imageCover?: boolean;
   buttonText?: string;
   buttonUrl?: string;
+  tag?: string;
+  tags?: string;
 };
 
 type Props = {
@@ -83,6 +85,8 @@ const FeatureBlocks: React.FC<Props> = ({
             externalLink={box.externalLink}
             buttonText={box.buttonText}
             buttonUrl={box.buttonUrl}
+            tag={box.tag}
+            tags={box.tags}
           />
         ))}
       </div>

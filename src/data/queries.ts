@@ -47,6 +47,8 @@ const contentBoxFragment = `
       ${linkFragment}
     }
   },
+  tag,
+  tags[],
   subtitle {
     subtitleLeft,
     subtitleRight

@@ -51,7 +51,7 @@ const SecondaryMenu: React.FC<Props> = (props) => {
   }
 
   return (
-    <nav>
+    <nav className="">
       <ul
         onMouseLeave={() => {
           setPosition((pv) => ({
@@ -60,7 +60,7 @@ const SecondaryMenu: React.FC<Props> = (props) => {
           }));
           setHoveredIndex(null);
         }}
-        className="relative w-full flex bg-white text-black overflow-hidden"
+        className="relative w-full flex bg-nextflow-100 text-black overflow-hidden"
       >
         {menuItems.map((item, index) => {
           const url = formatLink(item.link) || '#';
@@ -131,11 +131,11 @@ const Tab: React.FC<TabProps> = ({
           opacity: 1,
         });
       }}
-      className="relative z-10 block cursor-pointer text-black"
+      className="relative z-10 block cursor-pointer text-black "
     >
       <a 
         href={url}
-        className={`navItem transition-none ${isActive(url) ? 'active' : ''} ${isHovered ? '!text-white' : ''}`}
+        className={`navItem uppercase transition-none ${isActive(url) ? 'active' : ''} ${isHovered ? '!text-white' : ''}`}
         data-active={isActive(url) ? true : undefined}
         target={isExternal ? '_blank' : '_self'}
         rel={isExternal ? 'noopener noreferrer' : undefined}

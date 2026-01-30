@@ -21,5 +21,6 @@ export const transformFeatureBox = (box: any) => {
     bodycopy: box?.bodycopy,
     buttonText: box?.cta?.buttonText,
     buttonUrl: buttonUrl || null,
+    tags: box?.tags
   };
 };

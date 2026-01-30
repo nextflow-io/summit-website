@@ -21,7 +21,7 @@ type Props = {
   // small?: boolean;
   target?: '_blank' | '_self';
   rel?: string;
-  noArrow?: boolean;
+  arrow?: boolean;
 };
 
 const Button: React.FC<Props> = ({
@@ -38,7 +38,7 @@ const Button: React.FC<Props> = ({
   // small,
   target,
   rel,
-  noArrow,
+  arrow,
 }) => {
   const cn = clsx(
     'button monospace flex items-center justify-center',
@@ -72,7 +72,7 @@ const Button: React.FC<Props> = ({
       <div className={styles.hoverBG} />
       <div className={contentCn}>
         {children}
-        {!noArrow && (
+        {arrow && (
         <div className="ml-4">
           <ArrowRight className={`${styles.arrowAfter} w-[18px] h-[18px]`} />
         </div>

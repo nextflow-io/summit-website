@@ -107,12 +107,12 @@ const CookieBanner = () => {
           <div className="py-2">
             <div className="flex flex-wrap -mx-2 -my-1">
               <div className="px-2 py-1">
-                <Button light outline noArrow onClick={denyAll}>
+                <Button light outline onClick={denyAll}>
                   Essential only
                 </Button>
               </div>
               <div className="px-2 py-1">
-                <Button light outline noArrow onClick={acceptAll}>
+                <Button light outline onClick={acceptAll}>
                   Accept all cookies
                 </Button>
               </div>

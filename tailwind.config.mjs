@@ -47,6 +47,7 @@ export default {
     },
     extend: {
       colors: {
+        darkGray: '#343434',
         nextflow: {
           100: "#E2F7F3",
           200: "#B6ECE2",
