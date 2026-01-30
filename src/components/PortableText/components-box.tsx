@@ -16,6 +16,7 @@ const componentsBox: Partial<PortableTextReactComponents> = {
     },
     strong: ({ children }) => <strong className="font-bold">{children}</strong>,
     em: ({ children }) => <em className="italic">{children}</em>,
+    underline: ({ children }) => <u className="underline">{children}</u>,
     code: ({ children }) => (
       <code className="bg-gray-100 text-gray-800 px-1.5 py-0.5 rounded text-[.85rem] font-mono">
         {children}

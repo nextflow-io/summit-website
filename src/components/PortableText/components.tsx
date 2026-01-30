@@ -1,5 +1,5 @@
-import React from "react";
-import type { PortableTextReactComponents } from "@portabletext/react";
+import React from 'react';
+import type { PortableTextReactComponents } from '@portabletext/react';
 
 const components: Partial<PortableTextReactComponents> = {
   marks: {
@@ -7,21 +7,26 @@ const components: Partial<PortableTextReactComponents> = {
       const { blank, href } = value;
       let linkAttributes = {};
       if (blank)
-        linkAttributes = { target: "_blank", rel: "noopener noreferrer" };
+        linkAttributes = { target: '_blank', rel: 'noopener noreferrer' };
       return (
-        <a href={href} {...linkAttributes} className="underline hover:opacity-60 transition-all duration-300">
+        <a
+          href={href}
+          {...linkAttributes}
+          className="underline hover:opacity-60 transition-all duration-300"
+        >
           {children}
         </a>
       );
     },
     strong: ({ children }) => <strong className="font-bold">{children}</strong>,
     em: ({ children }) => <em className="italic">{children}</em>,
+    underline: ({ children }) => <u className="underline">{children}</u>,
     code: ({ children }) => (
       <code className="bg-gray-100 text-gray-800 px-1.5 py-0.5 rounded text-sm font-mono">
         {children}
       </code>
     ),
-    "strike-through": ({ children }) => (
+    'strike-through': ({ children }) => (
       <s className="line-through">{children}</s>
     ),
   },

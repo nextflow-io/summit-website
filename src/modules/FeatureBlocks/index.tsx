@@ -4,22 +4,17 @@ import PortableText from '@components/PortableText';
 import Button from '@components/Button';
 
 type BoxData = {
-  headline?: string;
+  boxStyle?: string;
   title?: string;
-  subtitleLeft?: string;
-  subtitleRight?: string;
+  href?: string;
+  tags?: string[];
   image?: string;
   imageAlt?: string;
-  bottomSubtitleLeft?: string;
-  bottomSubtitleRight?: string;
-  href?: string;
+  imageCover?: boolean;
   externalLink?: boolean;
   bodycopy?: any;
-  imageCover?: boolean;
   buttonText?: string;
   buttonUrl?: string;
-  tag?: string;
-  tags?: string;
 };
 
 type Props = {
@@ -28,6 +23,7 @@ type Props = {
   bodycopy?: any;
   buttonText?: string;
   buttonUrl?: string;
+  bgStyle?: string;
 };
 
 const FeatureBlocks: React.FC<Props> = ({
@@ -36,6 +32,7 @@ const FeatureBlocks: React.FC<Props> = ({
   bodycopy,
   buttonText,
   buttonUrl,
+  bgStyle,
 }) => {
   if (!boxes || boxes.length === 0) {
     return null;
@@ -72,21 +69,16 @@ const FeatureBlocks: React.FC<Props> = ({
           <Box
             key={index}
             title={box.title}
-            subtitleLeft={box.subtitleLeft}
-            subtitleRight={box.subtitleRight}
             image={box.image}
             imageAlt={box.imageAlt}
             imageCover={box.imageCover}
-            bottomSubtitleLeft={box.bottomSubtitleLeft}
-            bottomSubtitleRight={box.bottomSubtitleRight}
             href={box.href}
-            headline={box.headline}
             bodycopy={box.bodycopy}
             externalLink={box.externalLink}
             buttonText={box.buttonText}
             buttonUrl={box.buttonUrl}
-            tag={box.tag}
             tags={box.tags}
+            boxStyle={box.boxStyle}
           />
         ))}
       </div>

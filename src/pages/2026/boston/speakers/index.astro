@@ -1,39 +1,34 @@
 ---
-import Layout from "@layouts/Base.astro";
-import SEO from "@components/SEO";
-import SpeakersSection from "@modules/SpeakersSection";
+import Layout from '@layouts/Base.astro';
+import SEO from '@components/SEO';
+import SpeakersSection from '@modules/SpeakersSection';
 
-import {getAllSpeakers} from "@data/speakers";
+import { getAllSpeakers } from '@data/speakers';
 
 const sortedMembers = getAllSpeakers[0].speakers.sort((a, b) =>
   a.name.localeCompare(b.name)
 );
-
 ---
 
 <Layout namespace="2026/boston">
   <SEO slot="head" title="Speakers" img={1} />
 
-  <section class="py-8">
- 
- </section>
+  <section class="py-8"></section>
 
-
-  <div class="container mt-14">
+  <div class="container-xl">
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
       {
-        sortedMembers.map((name,index) => (
-           <div>
-           <SpeakersSection 
-           person={name} 
-           index={index}
-             location="boston"
-           client:only="react"/>
-           </div>
+        sortedMembers.map((name, index) => (
+          <div>
+            <SpeakersSection
+              person={name}
+              index={index}
+              location="boston"
+              client:only="react"
+            />
+          </div>
         ))
       }
-
     </div>
   </div>
-
 </Layout>

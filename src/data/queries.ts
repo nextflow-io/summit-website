@@ -47,23 +47,14 @@ const contentBoxFragment = `
       ${linkFragment}
     }
   },
-  tag,
+  boxStyle,
   tags[],
-  subtitle {
-    subtitleLeft,
-    subtitleRight
-  },
   image {
     ${imageObjectFragment}
   },
   imageCover,
-  headline,
   bodycopy[]{
     ${portableTextFragment}
-  },
-  lowerSubtitle {
-    lowerSubtitleLeft,
-    lowerSubtitleRight
   },
   cta {
     ${buttonFragment}
@@ -71,6 +62,7 @@ const contentBoxFragment = `
 `;
 
 const featureSectionBaseFragment = `
+  bgStyle,
   headline,
   bodycopy[]{
     ${portableTextFragment}
