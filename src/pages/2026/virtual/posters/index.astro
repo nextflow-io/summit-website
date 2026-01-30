@@ -14,23 +14,27 @@ const sortedMembers = getAllPostersVirtual[0].posters.sort((a, b) =>
   <SEO slot="head" title="Posters" img={1} />
 
 
- </section>
+   <section class="py-20 bg-black text-white">
+      <div class="container-lg">
+        <h1 class="h3">Posters</h1>
+        <p>
+          Check back soon to see this year's posters.
+        </p>
+      </div>
+    </section>
 
- <div class="container mt-14">
+ <!-- <div class="container mt-14">
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
     {
       sortedMembers.map((name,index) => (
-       
          <PostersSection 
          person={name} 
          index={index}
          location="virtual"
          client:only="react"/>
-           
       ))
     }
-
   </div>
-</div>
+</div> -->
 
 </Layout>

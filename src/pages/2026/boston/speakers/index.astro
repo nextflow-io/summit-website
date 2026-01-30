@@ -13,9 +13,14 @@ const sortedMembers = getAllSpeakers[0].speakers.sort((a, b) =>
 <Layout namespace="2026/boston">
   <SEO slot="head" title="Speakers" img={1} />
 
-  <section class="py-8"></section>
+  <section class="py-20 bg-black text-white">
+    <div class="container-lg">
+      <h1 class="h3">Speakers</h1>
+      <p>Check back soon for a list of this year's speakers and presenters.</p>
+    </div>
+  </section>
 
-  <div class="container-xl">
+  <!-- <div class="container-xl">
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
       {
         sortedMembers.map((name, index) => (
@@ -30,5 +35,5 @@ const sortedMembers = getAllSpeakers[0].speakers.sort((a, b) =>
         ))
       }
     </div>
-  </div>
+  </div> -->
 </Layout>
