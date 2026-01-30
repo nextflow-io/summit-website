@@ -51,13 +51,14 @@ const Box: React.FC<Props> = ({
   return (
     <div className={`${cn} ${imageCover ? '' : 'px-6 pb-6'}`}>
       <div className="relative flex flex-col justify-between h-full z-10">
-        <div className="relative pt-4">
+        <div className="relative">
           {/* {tag && (
             <div className="uppercase monospace bg-white px-2 text-[.65rem] inline-flex justify-center items-center">{tag}</div>
           )} */}
 
           {/* Multiple tags display */}
           {tags && tags.length > 0 && (
+            <div className="pt-3">
             <div className="flex flex-wrap gap-2 mb-2">
               {tags.map((tagItem, index) => (
                 <div
@@ -68,12 +69,13 @@ const Box: React.FC<Props> = ({
                 </div>
               ))}
             </div>
+            </div>
           )}
           {title && (
             <div
-              className={` pt-2 pb-2w-full flex flex-row justify-between items-center`}
+              className={` pt-3 pb-2w-full flex flex-row justify-between items-center`}
             >
-              <h5 className="text-[2rem] font-display">{title}</h5>
+              <h5 className="text-[2rem] font-display leading-tight">{title}</h5>
               {href && <ArrowUpRight />}
             </div>
           )}
