@@ -40,6 +40,8 @@ const Homepage: React.FC<Props> = ({ data }) => {
               buttonText={section.button?.buttonText}
               buttonUrl={sectionButtonUrl}
               boxes={section.boxes.map(transformFeatureBox)}
+              bgStyle={section.bgStyle}
+              hideSection={section.hideStyle}
             />
           )
         );

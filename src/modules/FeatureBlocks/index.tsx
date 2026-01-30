@@ -24,6 +24,7 @@ type Props = {
   buttonText?: string;
   buttonUrl?: string;
   bgStyle?: string;
+  hideSection?: boolean;
 };
 
 const FeatureBlocks: React.FC<Props> = ({
@@ -33,6 +34,7 @@ const FeatureBlocks: React.FC<Props> = ({
   buttonText,
   buttonUrl,
   bgStyle,
+  hideSection,
 }) => {
   if (!boxes || boxes.length === 0) {
     return null;
@@ -55,7 +57,7 @@ const FeatureBlocks: React.FC<Props> = ({
   const gridCols = getGridCols(boxes.length);
 
   return (
-    <section className="bg-white text-black py-10 md:pt-16 md:pb-20">
+    <section className={`bg-white text-black py-10 md:pt-16 md:pb-20 ${hideSection ? 'hidden' : ''}`}>
       <div className="container-xl">
         <h3 className="h4 mb-4 sm:max-w-[60%] text-balance">{headline}</h3>
         <div className="sm:max-w-[550px] mb-6">

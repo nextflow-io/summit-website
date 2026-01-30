@@ -1,12 +1,9 @@
 .summitLogo {
   width: 100%;
   max-width: 150px;
-      transition: all 0.3s;
-  path {
-    transition: all 0.3s;
-  }
+  transition: all 0.3s;
   &:hover {
-    filter: invert(100%)
+    filter: invert(100%);
   }
 }
 
@@ -58,7 +55,6 @@
   display: none;
   @media (--sm) {
     display: block;
-    
   }
   z-index: 100;
   position: sticky;
@@ -66,7 +62,7 @@
   top: 30px;
   right: 0;
   width: 100%;
-  background:  var(--color-nextflow-100);
+  background: var(--color-nextflow-100);
   & nav {
     height: 30px;
     & ul {
@@ -79,7 +75,7 @@
           padding: 0 16px;
           line-height: 30px;
           font-size: 11px;
-          letter-spacing: .25px;
+          letter-spacing: 0.25px;
           font-weight: 400;
           position: relative;
           color: black;

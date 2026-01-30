@@ -63,6 +63,7 @@ const contentBoxFragment = `
 
 const featureSectionBaseFragment = `
   bgStyle,
+  hideSection,
   headline,
   bodycopy[]{
     ${portableTextFragment}

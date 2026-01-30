@@ -64,6 +64,8 @@ const PageLayout: React.FC<PageLayoutProps> = ({
               buttonText={section.button?.buttonText}
               buttonUrl={sectionButtonUrl}
               boxes={section.boxes.map(transformFeatureBox)}
+              bgStyle={section.bgStyle}
+              hideSection={section.hideSection}
             />
           )
         );
