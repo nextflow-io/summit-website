@@ -9,6 +9,8 @@
   position: relative;
   background: var(--color-nextflow-600);
   color: black;
+  font-size: .75rem;
+  padding: 5px 5px;
 
   & .content {
     z-index: 1;
@@ -22,13 +24,10 @@
   & .arrowAfter {
     background: white;
     height: 100%;
-    border-radius: 4px;
-    padding: 0.35rem;
+    border-radius: 2px;
+    padding: 4px 3px;
     transition: all 0.3s;
-
-    svg path {
-      stroke: var(--color-nextflow);
-    }
+    color: var(--color-nextflow); 
   }
 
   transition: all 0.3s;
@@ -36,10 +35,7 @@
   &:hover {
     & .arrowAfter {
       background: black;
-
-      svg path {
-        stroke: white;
-      }
+      color: white; 
     }
   }
 }
@@ -50,9 +46,23 @@
 
   & .arrowAfter {
     background: var(--color-nextflow);
+    color: white; 
+  }
+}
 
-    svg path {
-      stroke: white;
+.light2 {
+  color: black;
+  background: white;
+
+  & .arrowAfter {
+    background: black;
+    color: white; 
+  }
+  
+  &:hover {
+    & .arrowAfter {
+      background: var(--color-nextflow);
+      color: white; 
     }
   }
 }
@@ -60,21 +70,33 @@
 .dark {
   background: black;
   color: white;
-    & .arrowAfter {
-          background: var(--color-nextflow);
-
-
-    svg path {
-      stroke: white;
-    }
+  
+  & .arrowAfter {
+    background: var(--color-nextflow);
+    color: white; 
   }
-    &:hover {
+  
+  &:hover {
     & .arrowAfter {
       background: white;
+      color: black; 
+    }
+  }
+}
 
-      svg path {
-        stroke:  black;
-      }
+.dark2 {
+  background: black;
+  color: white;
+  
+  & .arrowAfter {
+    background: white;
+    color: black; 
+  }
+  
+  &:hover {
+    & .arrowAfter {
+      background: var(--color-nextflow);
+      color: white; 
     }
   }
 }

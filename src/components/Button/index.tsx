@@ -1,7 +1,7 @@
-import { Fragment } from "react";
-import clsx from "clsx";
-import ArrowRight from "@icons/ArrowRight";
-import styles from "./styles.module.css";
+import { Fragment } from 'react';
+import clsx from 'clsx';
+import ArrowRight from '@icons/ArrowRight';
+import styles from './styles.module.css';
 
 type Props = {
   children: React.ReactNode;
@@ -9,9 +9,15 @@ type Props = {
   href?: string;
   to?: string;
   className?: string;
+  // white button with green arrow
   light?: boolean;
+  // white button with black arrow
+  light2?: boolean;
+  // black arrow with green arrow
   dark?: boolean;
-  small?: boolean;
+  //black button with white arrow
+  dark2?: boolean;
+  // small?: boolean;
   target?: '_blank' | '_self';
   rel?: string;
 };
@@ -23,34 +29,38 @@ const Button: React.FC<Props> = ({
   to,
   className,
   light,
+  light2,
   dark,
-  small,
+  dark2,
+  // small,
   target,
   rel,
 }) => {
   const cn = clsx(
-    "button monospace flex items-center justify-center",
+    'button monospace flex items-center justify-center',
     styles.button,
     className,
     {
       [styles.light]: light,
       [styles.dark]: dark,
-      [styles.small]: small,
+      [styles.dark2]: dark2,
+      [styles.light2]: light2,
+      // [styles.small]: small,
     }
   );
 
   const contentCn = clsx(styles.content, {
-    "text-xs py-1 px-2": small,
-    "text-sm py-1 px-2": !small,
+    // 'text-xs py-1 px-2': small,
+    // 'text-sm py-1 px-2': !small,
   });
 
   const url = to || href;
-  
+
   // Safe check for external links
-  const isOutLink = url && typeof url === 'string' && (
-    url.startsWith('http://') || 
-    url.startsWith('https://')
-  );
+  const isOutLink =
+    url &&
+    typeof url === 'string' &&
+    (url.startsWith('http://') || url.startsWith('https://'));
 
   const btnContent = (
     <Fragment>
@@ -58,19 +68,19 @@ const Button: React.FC<Props> = ({
       <div className={contentCn}>
         {children}
         <div className="ml-6">
-          <ArrowRight className={styles.arrowAfter} />
+          <ArrowRight className={`${styles.arrowAfter} w-[18px] h-[18px]`} />
         </div>
       </div>
     </Fragment>
   );
 
   if (url) {
-    return (   
-      <a 
+    return (
+      <a
         href={url}
         className={cn}
-        target={target || (isOutLink ? "_blank" : "_self")}
-        rel={rel || (isOutLink ? "noreferrer noopener" : undefined)}
+        target={target || (isOutLink ? '_blank' : '_self')}
+        rel={rel || (isOutLink ? 'noreferrer noopener' : undefined)}
       >
         {btnContent}
       </a>
