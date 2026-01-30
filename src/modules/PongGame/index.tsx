@@ -307,14 +307,14 @@ export default function PongGame({ width, height }: PongGameProps) {
       />
       <div className="text-nextflow-600 font-mono text-xs sm:text-sm text-center">
         <p className="text-[10px] sm:text-xs">
-          Use your mouse or keyboard keys{' '}
-          <kbd className="px-1 sm:px-2 py-1 mx-1 bg-nextflow-200 text-black text-[10px] sm:text-xs">W</kbd>
+          Use your mouse, finger or keyboard {' '}
+          <kbd className="px-1 sm:px-2 sm:py-1 mx-1 bg-nextflow-200 text-black text-[10px] sm:text-xs">W</kbd>
           {' / '}
-          <kbd className="px-1 sm:px-2 py-1 mx-1 bg-nextflow-200 text-black text-[10px] sm:text-xs">S</kbd>
+          <kbd className="px-1 sm:px-2 sm:py-1 mx-1 bg-nextflow-200 text-black text-[10px] sm:text-xs">S</kbd>
           {' or '}
-          <kbd className="px-1 sm:px-2 py-1 mx-1 bg-nextflow-200 text-black text-[10px] sm:text-xs">↑</kbd>
+          <kbd className="px-1 sm:px-2 sm:py-1 mx-1 bg-nextflow-200 text-black text-[10px] sm:text-xs">↑</kbd>
           {' / '}
-          <kbd className="px-1 sm:px-2 py-1 mx-1 bg-nextflow-200 text-black text-[10px] sm:text-xs">↓</kbd>
+          <kbd className="px-1 sm:px-2 sm:py-1 mx-1 bg-nextflow-200 text-black text-[10px] sm:text-xs">↓</kbd>
           {' to play.'}
         </p>
       </div>
