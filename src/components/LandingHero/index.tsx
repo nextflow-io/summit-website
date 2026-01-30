@@ -68,12 +68,12 @@ const LandingHero: React.FC<HeroProps> = ({
     <motion.div
       {...fadeIn}
       transition={{ duration: 0.25, ease: 'linear' }}
-      className="py-20 md:py-30 relative w-full h-full flex flex-row justify-between items-center container-xl"
+      className="py-20 md:py-20 relative w-full h-full flex flex-row justify-between items-center container-xl"
     >
       <section className={clsx(styles.landingHero, 'h-full relative w-full')}>
         <div className="w-full flex flex-col-reverse sm:flex-row h-full relative z-10">
           {/* Left Column */}
-          <div className="w-full h-full sm:pr-10 md:mt-20">
+          <div className="w-full h-full sm:pr-10 md:mt-10 md:pb-15">
             <motion.div
               {...fadeInUp}
               transition={{ duration: 0.4, delay: 0.7, ease: 'linear' }}

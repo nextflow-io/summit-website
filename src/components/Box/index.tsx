@@ -129,7 +129,7 @@ const Box: React.FC<Props> = ({
 
         {buttonText && (
           <div className={` w-full ${image ? '' : 'border-t border-white'}`}>
-            <Button className="mt-6 relative w-full"  dark href={buttonUrl}>
+            <Button className="mt-6 relative w-full"  light href={buttonUrl}>
               {buttonText}
             </Button>
           </div>

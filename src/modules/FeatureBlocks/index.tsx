@@ -46,11 +46,11 @@ const FeatureBlocks: React.FC<Props> = ({
       case 2:
         return 'grid-cols-1 sm:grid-cols-2';
       case 3:
-        return 'grid-cols-1 md:grid-cols-3';
+        return 'grid-cols-1 sm:grid-cols-3';
       case 4:
         return 'grid-cols-1 sm:grid-cols-2';
       default:
-        return 'grid-cols-1 md:grid-cols-3';
+        return 'grid-cols-1 sm:grid-cols-3';
     }
   };
   const gridCols = getGridCols(boxes.length);
@@ -58,8 +58,8 @@ const FeatureBlocks: React.FC<Props> = ({
   return (
     <section className="bg-white text-black py-10 md:pt-16 md:pb-20">
       <div className="container-xl">
-        <h3 className="h4 mb-4 md:max-w-[60%] text-balance">{headline}</h3>
-        <div className="md:max-w-[550px] mb-6">
+        <h3 className="h4 mb-4 sm:max-w-[60%] text-balance">{headline}</h3>
+        <div className="sm:max-w-[550px] mb-6">
           <PortableText value={bodycopy} />
         </div>
       </div>

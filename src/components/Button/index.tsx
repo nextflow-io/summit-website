@@ -73,7 +73,7 @@ const Button: React.FC<Props> = ({
       <div className={contentCn}>
         {children}
         {!noArrow && (
-        <div className="ml-6">
+        <div className="ml-4">
           <ArrowRight className={`${styles.arrowAfter} w-[18px] h-[18px]`} />
         </div>
         )}
