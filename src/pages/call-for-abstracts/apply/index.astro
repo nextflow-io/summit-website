@@ -18,74 +18,9 @@ const cfa: PageData = await fetchCFA();
         id="swoogo-form"
         src={cfa.swoogoUrl}
         class="swoogo-form w-full"></iframe>
-      
-      <!-- Error message (hidden by default) -->
-      <div id="iframe-error" class="px-4 py-10">
-        <div class="max-w-2xl mx-auto my-12 p-8 bg-gray-100 border border-gray-600 rounded-sm">
-          <div class="flex items-start gap-4">
-            <div>
-              <h3 class="h6 text-lg font-semibold mb-2">Unable to Load Form</h3>
-              <p class="mb-4">
-                We're having trouble loading the form. This could be due to browser settings, ad blockers, or network issues.
-              </p>
-              <div class="space-y-2 text-sm mb-8">
-                <p>Please try:</p>
-                <ul class="list-disc list-inside space-y-1 ml-2">
-                  <li>Refreshing the page</li>
-                  <li>Disabling browser extensions or ad blockers</li>
-                  <li>Using a different browser</li>
-                  <li>Clicking the button below to open the form in a new window.</li>
-                </ul>
-              </div>
-              <a 
-                href={cfa.swoogoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center gap-2 px-4 py-2 bg-nextflow-500 text-black rounded hover:bg-nextflow-700 transition-colors text-sm monospace"
-              >
-                Open Form in New Tab
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
   </section>
   <div class="container-xl p-4 text-center text-xs fixed bottom-0 left-0 right-0 border-t border-t-black/10 bg-white">
     If you are having trouble viewing the form, please <a class="underline" href={cfa.swoogoUrl} target="_blank">click here</a> to open the form in a new window.
   </div>
 </NoFooter>
-
-<script>
-  const iframe = document.getElementById('swoogo-form') as HTMLIFrameElement;
-  const errorDiv = document.getElementById('iframe-error');
-  let hasLoaded = false;
-
-  iframe.addEventListener('load', () => {
-    hasLoaded = true;
-    try {
-      if (iframe.contentWindow) {
-        errorDiv?.classList.add('hidden');
-        iframe.classList.remove('hidden');
-      }
-    } catch (e) {
-      errorDiv?.classList.add('hidden');
-      iframe.classList.remove('hidden');
-    }
-  });
-
-  iframe.addEventListener('error', () => {
-    iframe.classList.add('hidden');
-    errorDiv?.classList.remove('hidden');
-  });
-
-  setTimeout(() => {
-    if (!hasLoaded) {
-      iframe.classList.add('hidden');
-      errorDiv?.classList.remove('hidden');
-    }
-  }, 10000);
-</script>
