@@ -290,7 +290,7 @@ export default function PongGame({ width, height }: PongGameProps) {
   }, [canvasSize, controlMode]);
 
   return (
-    <div ref={containerRef} className="flex flex-col items-center gap-2 sm:gap-4 w-full max-w-2xl mx-auto px-4">
+    <div ref={containerRef} className="flex flex-col items-center gap-2 sm:gap-4 w-full max-w-2xl mx-auto px-12 sm:px-4">
       <canvas
         ref={canvasRef}
         width={canvasSize.width}
@@ -299,7 +299,7 @@ export default function PongGame({ width, height }: PongGameProps) {
         style={{ touchAction: 'none' }}
       />
       <div className="text-nextflow-600 font-mono text-xs sm:text-sm text-center">
-        <p className="text-[10px] sm:text-xs">
+        <p className="text-[10px] sm:text-xs px-6 sm:px-0">
           Use mouse, finger or keyboard {' '}
           <kbd className="px-1 sm:px-2 sm:py-1 mx-1 bg-nextflow-200 text-black text-[10px] sm:text-xs">W</kbd>
           {' / '}
