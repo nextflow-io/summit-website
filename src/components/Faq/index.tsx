@@ -2,6 +2,8 @@ import React, { useRef, useState } from 'react';
 import clsx from 'clsx';
 import styles from './faq.module.css';
 import PortableText from '@components/PortableText';
+import pattern from './pattern.svg';
+import { SquarePixel } from '@components/SquarePixel';
 
 type FaqItemProps = {
   question: string;
@@ -82,7 +84,29 @@ const Faq: React.FC<FaqProps> = ({ className, data, title = 'FAQ' }) => {
   }
 
   return (
-    <section className={`${className} bg-black py-20`}>
+    <section className={`${className} relative bg-black py-20`}>
+      <img
+        src={pattern.src}
+        alt=""
+        className="hidden md:block  pointer-events-none absolute top-40 left-0"
+      />
+      <SquarePixel className="absolute top-6 right-0" />
+      <SquarePixel
+        initialColor="#B6ECE2"
+        className="absolute bottom-0 right-0"
+      />
+      <SquarePixel
+        initialColor="#fff"
+        className="absolute bottom-[18px] right-[18px]"
+      />
+      <SquarePixel
+        initialColor="#56D3BA"
+        className="absolute bottom-[0px] left-[18px]"
+      />
+      <SquarePixel
+        initialColor="#fff"
+        className="absolute bottom-[18px] left-[36px]"
+      />
       <div className="container-xl relative w-full flex flex-col sm:flex-row">
         <div className="w-full mb-6 sm:mb-0 sm:sticky sm:top-40 self-start">
           <h2 className="h4 relative z-20">{title}</h2>
