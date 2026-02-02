@@ -2,9 +2,22 @@
   width: 100%;
   max-width: 150px;
   transition: all 0.3s;
-
 }
 
+.summitLogo path {
+  transition: fill 0.3s ease;
+}
+
+.menuOpen path {
+  fill: white;
+}
+
+.menuOpen {
+  fill: white; 
+    @media (--sm) {
+   fill: black;
+  }
+}
 .header {
   display: none;
   @media (--sm) {

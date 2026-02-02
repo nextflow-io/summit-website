@@ -26,7 +26,6 @@ const Homepage: React.FC<Props> = ({ data }) => {
         headlineSize={data.hero?.headlineSize}
         image={data.image?.image ? urlFor(data.image.image).url() : null}
         imageAlt={data.image?.imageAlt || data.image?.alt}
-        showYear={true}
       />
 
       {data.featureSection?.map((section, index) => {

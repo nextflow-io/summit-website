@@ -22,7 +22,6 @@ interface HeroProps {
   headlineSize?: 'small' | 'medium' | 'large' | 'xl';
   image?: any;
   imageAlt?: string;
-  showYear?: boolean;
 }
 
 const fadeIn = {
@@ -82,11 +81,6 @@ const LandingHero: React.FC<HeroProps> = ({
                 >
                   {title}
                 </h1>
-                {showYear && (
-                <div className="ml-8 p-6 z-50 bg-nextflow-100  w-[40px] md:w-[80px] h-[40px] md:h-[80px] flex justify-center items-center font-display text-black text-[20px] md:text-[40px] font-medium">
-                  '26
-                </div>
-                )}
               </div>
               <h1 className="h1 mb-4 sm:max-w-[500px] bg-black ">{subtitle}</h1>
             </div>

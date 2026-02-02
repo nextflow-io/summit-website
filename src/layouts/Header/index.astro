@@ -31,13 +31,14 @@ const shouldShowSecondaryMenu =
         class={`${styles.headerTop} container-xl w-full flex justify-center items-center`}
       >
         <div class="w-full flex items-center justify-between h-full">
-          <div class="flex flex-row items-center">
+          <div class="relative flex flex-row items-center">
             <Logo namespace={namespace} />
             <div
-              class="ml-2 p-4 z-50 w-[40px] md:w-[16px] h-[20px] md:h-[16px] flex justify-center items-center font-display text-black text-[14px] md:text-[33px] font-semibold"
+              class="ml-2 p-[12px] w-[16px] h-[16px] flex justify-center items-center font-display bg-black text-white  text-[15px] font-semibold"
             >
-              '26
+              26
             </div>
+            <a class="absolute top-0 left-0 w-full h-full z-10" href="/"></a>
           </div>
           <Menu menuItems={menus?.headerMenu} pathname={pathname} />
           <div>
