@@ -59,7 +59,7 @@ const LandingHero: React.FC<HeroProps> = ({
       <Pixels
         initialCellSize={18}
         initialSpeed={100}
-        initialDensity={0.0035}
+        initialDensity={0.0015}
         colorScheme="green"
       />
 
@@ -82,13 +82,16 @@ const LandingHero: React.FC<HeroProps> = ({
               <h1 className="h1 mb-4 sm:max-w-[500px] bg-black ">{subtitle}</h1>
             </div>
 
-            <div className="flex flex-col sm:max-w-[550px] bg-black z-50 relative ">
-              <PortableText value={content} />
+            <div className="flex flex-col sm:max-w-[550px] relative ">
+              <div className="z-50 bg-black">
+              <PortableText value={content}  />
+              </div>
 
               <div className="inline-flex flex-col sm:flex-row sm:items-center">
                 {ctaText1 && (
                   <Button
-                    className="mt-10"
+                    arrow
+                    className="mt-10 z-50 relative"
                     href={ctaLink1}
                     target={ctaExternal1 ? '_blank' : '_self'}
                   >
@@ -99,7 +102,8 @@ const LandingHero: React.FC<HeroProps> = ({
                 {ctaText2 && (
                   <Button
                     light
-                    className="sm:ml-4 mt-3 sm:mt-10"
+                    arrow
+                    className="sm:ml-4 mt-3 sm:mt-10 z-50 relative" 
                     href={ctaLink2}
                     target={ctaExternal2 ? '_blank' : '_self'}
                   >

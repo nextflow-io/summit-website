@@ -2,11 +2,7 @@
   width: 100%;
   max-width: 150px;
   transition: all 0.3s;
-  @media (--sm) {
-    &:hover {
-      filter: invert(100%);
-    }
-  }
+
 }
 
 .header {

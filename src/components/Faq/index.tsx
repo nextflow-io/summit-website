@@ -2,7 +2,6 @@ import React, { useRef, useState } from 'react';
 import clsx from 'clsx';
 import styles from './faq.module.css';
 import PortableText from '@components/PortableText';
-import pattern from './pattern.svg';
 import { SquarePixel } from '@components/SquarePixel';
 
 type FaqItemProps = {
@@ -85,11 +84,14 @@ const Faq: React.FC<FaqProps> = ({ className, data, title = 'FAQ' }) => {
 
   return (
     <section className={`${className} relative bg-black py-20`}>
-      <img
-        src={pattern.src}
-        alt=""
-        className="hidden md:block  pointer-events-none absolute top-40 left-0"
-      />
+      <div className="hidden md:block absolute top-40 left-0 z-10">
+          <SquarePixel className="absolute top-0 left-0" initialColor="#31C9AC" />
+          <SquarePixel className="absolute top-[18px] left-[18px]" />
+          <SquarePixel className="absolute top-[36px] left-[36px]"  initialColor="#B6ECE2"/>
+          <SquarePixel className="absolute top-[54px] left-[18px]" initialColor="#31C9AC" />
+          <SquarePixel className="absolute top-[72px] left-0" initialColor="#31C9AC"/>
+      </div>
+      
       <SquarePixel className="absolute top-6 right-0" />
       <SquarePixel
         initialColor="#B6ECE2"

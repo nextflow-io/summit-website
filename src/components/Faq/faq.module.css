@@ -10,7 +10,7 @@
   ul {
     margin-top: .75rem;
     list-style-type: disc;
-    padding-left: 1.25rem;
+    /* padding-left: 1.25rem; */
     li {
       margin-bottom: .75rem;
     }

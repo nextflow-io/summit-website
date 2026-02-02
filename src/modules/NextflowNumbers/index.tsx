@@ -1,3 +1,5 @@
+import { SquarePixel } from '@components/SquarePixel';
+
 type FeaturedStatsProps = {
   featuredStatLeft?: string;
   featuredDescriptionLeft?: string;
@@ -28,7 +30,34 @@ const NextflowNumbers: React.FC<Props> = ({
   }
 
   return (
-    <section className={`${className} bg-nextflow-200 text-black`}>
+    <section className={`${className} bg-nextflow-200 text-black relative`}>
+      <div className="hidden md:block ">
+        <SquarePixel
+          className="absolute bottom-0 left-0"
+          initialColor="#56D3BA"
+        />
+        <SquarePixel
+          className="absolute bottom-[18px] left-[18px]"
+          initialColor="#fff"
+        />
+        <SquarePixel
+          className="absolute bottom-[36px] left-[36px]"
+          initialColor="#000"
+        />
+        <SquarePixel
+          className="absolute top-[36px] right-[36px]"
+          initialColor="#fff"
+        />
+        <SquarePixel
+          className="absolute top-[18px] right-[18px]"
+          initialColor="#56D3BA"
+        />
+        <SquarePixel
+          className="absolute bottom-[18px] right-[18px]"
+          initialColor="#56D3BA"
+        />
+      </div>
+
       <div className="container-xl py-10 md:py-20">
         <div className="flex flex-col md:flex-row">
           <div className="mb-4 md:mb-10 w-full md:w-1/2 md:pr-12">
@@ -65,7 +94,9 @@ const NextflowNumbers: React.FC<Props> = ({
             {stats.map((stat, index) => (
               <div key={index} className="border-b border-black py-2">
                 <div className="flex flex-row items-center">
-                  <h4 className="text-[2rem] md:text-[4rem] mr-4 leading-none w-[80px]">{stat.statNumber}</h4>
+                  <h4 className="text-[2rem] md:text-[4rem] mr-4 leading-none w-[80px]">
+                    {stat.statNumber}
+                  </h4>
                   <p className="text-[.65rem] md:text-lg leading-tight mb-0 w-full">
                     {stat.statDescription}
                   </p>
