@@ -82,11 +82,11 @@ const LandingHero: React.FC<HeroProps> = ({
                   {title}
                 </h1>
               </div>
-              <h1 className="h1 mb-4 sm:max-w-[500px] bg-black ">{subtitle}</h1>
+              <h1 className="h1 mb-4 sm:max-w-[500px]  ">{subtitle}</h1>
             </div>
 
-            <div className="flex flex-col sm:max-w-[550px] relative ">
-              <div className="z-50 bg-black">
+            <div className="flex flex-col sm:max-w-[550px] relative">
+              <div className="z-50 pointer-events-none">
                 <PortableText value={content} />
               </div>
 

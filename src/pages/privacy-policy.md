@@ -3,9 +3,9 @@ title: Privacy Policy
 layout: ../layouts/TextPage.astro
 ---
 
-# Privacy policy
+# Privacy Policy
 
-_Updated: 27th February 2021_
+Updated: 27th February 2021
 
 This GDPR-compliant privacy policy will explain how Seqera uses the personal data we collect from you when you use our website and services.
 
@@ -49,7 +49,7 @@ Seqera collects your data so that we can:
 - Manage your account.
 - Optimise application resources.
 
-**Seqera will never share your data with any partner companies.**
+Seqera will never share your data with any partner companies.**
 <br><br>
 
 ### How do we store your data?

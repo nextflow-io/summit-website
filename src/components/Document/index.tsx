@@ -7,7 +7,8 @@ type Props = {
 };
 
 const Document: React.FC<Props> = ({ children }) => {
-  return <div className={styles.document}>{children}</div>;
+  return <div className={`${styles.document} container-xl`}>
+    <div className="py-20">{children}</div></div>;
 };
 
 export default Document;
