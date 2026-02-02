@@ -57,7 +57,11 @@ const FeatureBlocks: React.FC<Props> = ({
   const gridCols = getGridCols(boxes.length);
 
   return (
-    <section className={`bg-white text-black py-10 md:pt-16 md:pb-20 ${hideSection ? 'hidden' : ''}`}>
+    <section className={`
+    ${bgStyle === 'lightGreen' ? 'bg-nextflow-100' : ''}
+    ${bgStyle=== 'white' ? 'bg-white' : ''}
+    ${!bgStyle ? 'bg-white' : ''}
+     text-black py-10 md:pt-16 md:pb-20 ${hideSection ? 'hidden' : ''}`}>
       <div className="container-xl">
         <h3 className="h4 mb-4 sm:max-w-[60%] text-balance">{headline}</h3>
         <div className="sm:max-w-[550px] mb-6">

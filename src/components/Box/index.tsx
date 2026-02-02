@@ -39,7 +39,15 @@ const Box: React.FC<Props> = ({
   const cn = clsx(styles.box, className, {});
 
   return (
-    <div className={`${cn} ${imageCover ? '' : 'px-4 pb-4 md:px-6 md:pb-6'}`}>
+    <div
+      className={`
+      ${boxStyle === 'green' || !boxStyle ? 'bg-nextflow-500 text-black border border-nextflow-400' : ''}
+      ${boxStyle === 'lightGreen' ? 'bg-nextflow-200 text-black border border-nextflow-200' : ''}
+      ${boxStyle === 'outline' ? 'bg-white text-black border border-black' : ''}
+      ${cn} ${imageCover ? '' : 'px-4 pb-4 md:px-6 md:pb-6'}
+      
+      `}
+    >
       <div className="relative flex flex-col justify-between h-full z-10">
         <div className="relative">
           {tags && tags.length > 0 && (
@@ -48,7 +56,9 @@ const Box: React.FC<Props> = ({
                 {tags.map((tagItem, index) => (
                   <div
                     key={index}
-                    className="uppercase monospace bg-[#F8F8F8] px-3 py-1 text-[.6rem] inline-flex justify-center items-center"
+                    className={`uppercase monospace  px-3 py-1 text-[.6rem] inline-flex justify-center items-center
+                       bg-[#F2F2F2]
+                      `}
                   >
                     {tagItem}
                   </div>
@@ -119,7 +129,8 @@ const Box: React.FC<Props> = ({
           <div className={` w-full ${image ? '' : ''}`}>
             <Button
               className="mt-6 relative w-full"
-              light
+              light={boxStyle !== 'outline'}
+              dark={boxStyle === 'outline'}
               arrow
               href={buttonUrl}
             >
