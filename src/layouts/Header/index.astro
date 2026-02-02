@@ -31,7 +31,14 @@ const shouldShowSecondaryMenu =
         class={`${styles.headerTop} container-xl w-full flex justify-center items-center`}
       >
         <div class="w-full flex items-center justify-between h-full">
-          <Logo namespace={namespace} />
+          <div class="flex flex-row items-center">
+            <Logo namespace={namespace} />
+            <div
+              class="ml-2 p-4 z-50 w-[40px] md:w-[16px] h-[20px] md:h-[16px] flex justify-center items-center font-display text-black text-[14px] md:text-[33px] font-semibold"
+            >
+              '26
+            </div>
+          </div>
           <Menu menuItems={menus?.headerMenu} pathname={pathname} />
           <div>
             {
@@ -41,7 +48,9 @@ const shouldShowSecondaryMenu =
                   arrow
                   className=""
                   href={formatLink(menus.headerBtn.buttonUrl)}
-                  target={menus.headerBtn.buttonUrl?.isExternal ? '_blank' : '_self'}
+                  target={
+                    menus.headerBtn.buttonUrl?.isExternal ? '_blank' : '_self'
+                  }
                 >
                   {menus.headerBtn.buttonText}
                 </Button>

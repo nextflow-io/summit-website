@@ -22,6 +22,7 @@ interface HeroProps {
   headlineSize?: 'small' | 'medium' | 'large' | 'xl';
   image?: any;
   imageAlt?: string;
+  showYear?: boolean;
 }
 
 const fadeIn = {
@@ -49,6 +50,7 @@ const LandingHero: React.FC<HeroProps> = ({
   headlineSize = 'medium',
   image,
   imageAlt,
+  showYear,
 }) => {
   return (
     <motion.div
@@ -68,23 +70,30 @@ const LandingHero: React.FC<HeroProps> = ({
           {/* Left Column */}
           <div className="w-full h-full sm:pr-10 md:mt-10 md:pb-15">
             <div className="pointer-events-none">
-              <h1
-                className={` mb-4 md:max-w-[800px]   z-30 relative
+              <div className="relative inline-flex">
+                <h1
+                  className={` mb-4 md:max-w-[800px]   z-30 relative
                   ${!headlineSize && 'h3'}
                   ${headlineSize === 'xl' ? 'h1' : ''} 
                   ${headlineSize === 'large' ? 'h2' : ''} 
                   ${headlineSize === 'medium' ? 'h3' : ''} 
                   ${headlineSize === 'small' ? 'h4' : ''} 
                 `}
-              >
-                {title}
-              </h1>
+                >
+                  {title}
+                </h1>
+                {showYear && (
+                <div className="ml-8 p-6 z-50 bg-nextflow-100  w-[40px] md:w-[80px] h-[40px] md:h-[80px] flex justify-center items-center font-display text-black text-[20px] md:text-[40px] font-medium">
+                  '26
+                </div>
+                )}
+              </div>
               <h1 className="h1 mb-4 sm:max-w-[500px] bg-black ">{subtitle}</h1>
             </div>
 
             <div className="flex flex-col sm:max-w-[550px] relative ">
               <div className="z-50 bg-black">
-              <PortableText value={content}  />
+                <PortableText value={content} />
               </div>
 
               <div className="inline-flex flex-col sm:flex-row sm:items-center">
@@ -103,7 +112,7 @@ const LandingHero: React.FC<HeroProps> = ({
                   <Button
                     light
                     arrow
-                    className="sm:ml-4 mt-3 sm:mt-10 z-50 relative" 
+                    className="sm:ml-4 mt-3 sm:mt-10 z-50 relative"
                     href={ctaLink2}
                     target={ctaExternal2 ? '_blank' : '_self'}
                   >
