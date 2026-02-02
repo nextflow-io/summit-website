@@ -8,7 +8,7 @@ import type { PageData } from '@data/types';
 const register: PageData = await fetchBostonRegister();
 ---
 
-<Layout showNav={false} redirect="/2026/boston/register">
+<Layout showNav={false} redirect="/2026/boston/register/form">
   <SEO slot="head" title="Register" img={1} />
     <StandardPage data={register}  client:load/>
 </Layout>
