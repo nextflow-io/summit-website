@@ -89,7 +89,7 @@ const NavMobile: React.FC<Props> = ({
         id="headerMobile"
         className={clsx(styles.navMobile, { [styles.open]: isOpen })}
       >
-        <div className={`${styles.header} border-b border-white`}>
+        <div className={`${styles.header} `}>
              <div className="relative flex flex-row items-center">
             <Logo namespace={namespace} isMenuOpen={isOpen} />
             <div
