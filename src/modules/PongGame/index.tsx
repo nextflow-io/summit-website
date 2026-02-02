@@ -290,7 +290,7 @@ export default function PongGame({ width, height }: PongGameProps) {
   }, [canvasSize, controlMode]);
 
   return (
-    <div ref={containerRef} className="flex flex-col items-center gap-2 sm:gap-4 w-full max-w-2xl mx-auto px-12 sm:px-4">
+    <div ref={containerRef} className="flex flex-col items-center gap-2 sm:gap-4 w-full max-w-2xl mx-auto px-8 sm:px-4">
       <canvas
         ref={canvasRef}
         width={canvasSize.width}

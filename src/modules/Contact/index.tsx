@@ -28,24 +28,24 @@ const SectionContact: React.FC<Props> = ({ className }) => {
       )}
       id="footer"
     >
-        <SquarePixel
-        className="absolute top-[-72px] left-[36px] z-20"
+      <SquarePixel
+        className="hidden md:block  absolute top-[-72px] left-[36px] z-20"
         initialColor="#000"
       />
       <SquarePixel
-        className="absolute top-[72px] left-0 z-20"
+        className="hidden md:block absolute top-[72px] left-0 z-20"
         initialColor="#000"
       />
       <SquarePixel
-        className="absolute top-[90px] left-[18px] z-20"
+        className="hidden md:block absolute top-[90px] left-[18px] z-20"
         initialColor="#56D3BA"
       />
       <SquarePixel
-        className="absolute top-[108px] left-0 z-20"
+        className="absolute bottom-[-18px] md:bottom-auto md:top-[108px] left-0 z-20"
         initialColor="#56D3BA"
       />
       <SquarePixel
-        className="absolute top-[50%] right-0 z-20"
+        className="absolute top-[-36px] md:top-[50%] right-0 z-20"
         initialColor="#56D3BA"
       />
 
