@@ -153,7 +153,7 @@ export default function PongGame({ width, height }: PongGameProps) {
 
     function drawNet() {
       for (let i = 0; i <= gameHeight; i += 15) {
-        drawRect(gameWidth / 2 - 1, i, 2, 10, '#0DC09D');
+        drawRect(gameWidth / 2 - 1, i, 3, 8, '#0DC09D');
       }
     }
 
@@ -299,7 +299,7 @@ export default function PongGame({ width, height }: PongGameProps) {
         style={{ touchAction: 'none' }}
       />
       <div className="text-nextflow-600 font-mono text-xs sm:text-sm text-center">
-        <p className="text-[10px] sm:text-xs px-6 sm:px-0">
+        <p className="text-[10px] sm:text-xs px-10 sm:px-0">
           Use mouse, finger or keyboard {' '}
           <kbd className="px-1 sm:px-2 sm:py-1 mx-1 bg-nextflow-200 text-black text-[10px] sm:text-xs">W</kbd>
           {' / '}

@@ -28,7 +28,7 @@ const FaqPage: React.FC<Props> = ({ data }) => {
       {data.faqSection && data.faqSection.length > 0 && (
         <>
           {data.faqSection.map((section, index) => (
-            <Faq key={index} title={section.faqTitle} data={section.faqs} />
+            <Faq key={index} title={section.faqTitle} data={section.faqs} noSticky noPixels />
           ))}
         </>
       )}

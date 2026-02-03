@@ -69,9 +69,11 @@ type FaqProps = {
     answer: any;
   }>;
   title?: string;
+  noSticky?: boolean;
+  noPixels?: boolean;
 };
 
-const Faq: React.FC<FaqProps> = ({ className, data, title = 'FAQ' }) => {
+const Faq: React.FC<FaqProps> = ({ className, data, title = 'FAQ', noSticky, noPixels }) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const handleItemClick = (index: number) => {
@@ -84,7 +86,7 @@ const Faq: React.FC<FaqProps> = ({ className, data, title = 'FAQ' }) => {
 
   return (
     <section className={`${className} relative bg-black py-20`}>
-      <div className="hidden md:block absolute top-40 left-0 z-10">
+      <div className={`hidden ${noPixels ? 'hidden': 'md:block'} absolute top-40 left-0 z-10`}>
           <SquarePixel className="absolute top-0 left-0" initialColor="#31C9AC" />
           <SquarePixel className="absolute top-[18px] left-[18px]" />
           <SquarePixel className="absolute top-[36px] left-[36px]"  initialColor="#B6ECE2"/>
@@ -92,6 +94,7 @@ const Faq: React.FC<FaqProps> = ({ className, data, title = 'FAQ' }) => {
           <SquarePixel className="absolute top-[72px] left-0" initialColor="#31C9AC"/>
       </div>
       
+      <div className={`${noPixels ? 'hidden': 'md:block'}`}>
       <SquarePixel className="absolute top-6 right-0" />
       <SquarePixel
         initialColor="#B6ECE2"
@@ -109,8 +112,9 @@ const Faq: React.FC<FaqProps> = ({ className, data, title = 'FAQ' }) => {
         initialColor="#fff"
         className="absolute bottom-[18px] left-[36px]"
       />
+      </div>
       <div className="container-xl relative w-full flex flex-col sm:flex-row">
-        <div className="w-full mb-6 sm:mb-0 sm:sticky sm:top-40 self-start">
+        <div className={`w-full mb-6 sm:mb-0 ${noSticky ? '' : 'sm:sticky'} sm:top-40 self-start`}>
           <h2 className="h4 relative z-20">{title}</h2>
         </div>
         <div className="w-full">
