@@ -272,7 +272,7 @@ const Pixels = ({
         width={dimensions.width}
         height={dimensions.height}
         onClick={handleCanvasClick}
-        className="cursor-pointer w-full h-full"
+        className="w-full h-full cursor-cell"
         style={{ imageRendering: 'pixelated' }}
       />
     </div>
