@@ -49,7 +49,6 @@ const LandingHero: React.FC<HeroProps> = ({
   headlineSize = 'medium',
   image,
   imageAlt,
-  showYear,
 }) => {
   return (
     <motion.div
@@ -60,7 +59,7 @@ const LandingHero: React.FC<HeroProps> = ({
       <Pixels
         initialCellSize={18}
         initialSpeed={100}
-        initialDensity={0.0015}
+        initialDensity={0.002}
         colorScheme="green"
       />
 

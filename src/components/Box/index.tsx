@@ -56,7 +56,7 @@ const Box: React.FC<Props> = ({
                 {tags.map((tagItem, index) => (
                   <div
                     key={index}
-                    className={`uppercase monospace  px-3 py-1 text-[.6rem] inline-flex justify-center items-center
+                    className={`uppercase monospace px-3 py-1 text-[.7rem] inline-flex justify-center items-center
                        bg-[#F2F2F2]
                       `}
                   >

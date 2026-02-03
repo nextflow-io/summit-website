@@ -23,7 +23,7 @@ const Pixels = ({
   // Color schemes
   const colors = {
     green: {
-      alive: ['#B6ECE2', '#56D3BA', '#0CAE8E'],
+      alive: ['#B6ECE2', '#56D3BA', '#0CAE8E', '#000000'],
       dead: 'rgba(0, 0, 0, 0)',
       bg: 'rgba(0, 0, 0, 0)',
     },
@@ -133,11 +133,13 @@ const Pixels = ({
             const age = ageGridRef.current?.[i]?.[j] || 0;
             let colorIndex;
             if (age < 3) {
-              colorIndex = 0; // Color 1
+              colorIndex = 0; // Color 1: #B6ECE2
             } else if (age < 6) {
-              colorIndex = 1; // Color 2
+              colorIndex = 1; // Color 2: #56D3BA
+            } else if (age < 9) {
+              colorIndex = 2; // Color 3: #0CAE8E
             } else {
-              colorIndex = 2; // Color 3
+              colorIndex = 3; // Color 4: #000000 
             }
             ctx.fillStyle = currentColors.alive[colorIndex];
             ctx.fillRect(x, y, cellSize, cellSize);
@@ -246,8 +248,11 @@ const Pixels = ({
       } else if (currentAge < 6) {
         // Color 2 -> Color 3 (age 6-8)
         ageGridRef.current[x][y] = 6;
+      } else if (currentAge < 9) {
+        // Color 3 -> Color 4 (age 9+)
+        ageGridRef.current[x][y] = 9;
       } else {
-        // Color 3 -> Dead
+        // Color 4 -> Dead
         gridRef.current[x][y] = 0;
         ageGridRef.current[x][y] = 0;
       }

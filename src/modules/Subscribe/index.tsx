@@ -8,7 +8,7 @@ import styles from "./styles.module.css";
 const SectionSubscribe: React.FC<Props> = () => {
   return (
     <section className="">
-      <p className="mb-4 max-w-[340px] ">
+      <p className="text-[.9rem] mb-4 max-w-[340px] ">
         Sign up to receive the latest updates on Nextflow, Seqera, and the
         nf-core community.
       </p>

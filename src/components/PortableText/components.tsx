@@ -22,7 +22,7 @@ const components: Partial<PortableTextReactComponents> = {
     em: ({ children }) => <em className="italic">{children}</em>,
     underline: ({ children }) => <u className="underline">{children}</u>,
     code: ({ children }) => (
-      <code className="bg-gray-100 text-gray-800 px-1.5 py-0.5 rounded text-sm font-mono">
+      <code className="bg-gray-100 text-gray-800 px-1.5 py-0.5 rounded text-[1rem] font-mono">
         {children}
       </code>
     ),
@@ -40,17 +40,17 @@ const components: Partial<PortableTextReactComponents> = {
   },
   listItem: {
     bullet: ({ children }: any) => (
-      <li className="text-sm flex items-start gap-2 mb-2">
-        <span className="font-medium flex-shrink-0 text-[.8rem]">→</span>
+      <li className="text-[1rem] flex items-start gap-2 mb-2">
+        <span className="font-medium flex-shrink-0 text-[.9rem]">→</span>
         <span className="flex-1">{children}</span>
       </li>
     ),
     number: ({ children }: any) => (
-      <li className="text-sm leading-tight mb-2">{children}</li>
+      <li className="text-[1rem] leading-tight mb-2">{children}</li>
     ),
   },
   block: {
-    normal: ({ children }) => <p className="mb-2 text-[.9rem]">{children}</p>,
+    normal: ({ children }) => <p className="mb-2 text-[1rem]">{children}</p>,
   },
 };
 
