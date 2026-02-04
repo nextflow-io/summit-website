@@ -26,7 +26,7 @@ export function SquarePixel({ initialColor = COLORS[0], className = '' }: Square
     <button
       onClick={handleClick}
       style={{ backgroundColor: color }}
-      className={`w-[18px] h-[18px] transition-colors duration-200 ${className}`}
+      className={`cursor-cell w-[18px] h-[18px] transition-colors duration-200 ${className}`}
       aria-label="Change color"
     />
   );

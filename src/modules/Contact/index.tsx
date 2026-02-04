@@ -64,11 +64,11 @@ const SectionContact: React.FC<Props> = ({ className }) => {
           <div className="text-md text-nextflow">summit@nextflow.io</div>
         </SectionBox>
 
-        <SectionBox href="mailto:summit@nextflow.io">
+        <SectionBox href="mailto:sponsorships@seqera.io">
           <h5 className="monospace tracking-wider text-sm mb-2 uppercase">
-            Sponsorship
+            Sponsorships
           </h5>
-          <div className="text-md text-nextflow">summit@nextflow.io</div>
+          <div className="text-md text-nextflow">sponsorships@seqera.io</div>
         </SectionBox>
       </div>
     </section>
