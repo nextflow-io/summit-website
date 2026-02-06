@@ -49,7 +49,7 @@ const DropDownItem: React.FC<FaqItemProps> = ({
         }
       >
         <div
-          className={clsx(styles.faqAnswer, `bodycopy monospace text-nextflow`)}
+          className={clsx(styles.faqAnswer, `bodycopy text-nextflow`)}
         >
           {answer && Array.isArray(answer) && answer.length > 0 ? (
             <PortableText value={answer} />
