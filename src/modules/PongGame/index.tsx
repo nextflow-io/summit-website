@@ -9,7 +9,7 @@ export default function PongGame({ width, height }: PongGameProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [controlMode, setControlMode] = useState<'keyboard' | 'mouse'>('keyboard');
-  const [canvasSize, setCanvasSize] = useState({ width: 600, height: 400 });
+  const [canvasSize, setCanvasSize] = useState({ width: 400, height: 400 });
 
   // Calculate responsive canvas size
   useEffect(() => {
@@ -207,9 +207,20 @@ export default function PongGame({ width, height }: PongGameProps) {
       ball.y += ball.velocityY;
       ball.rotation += 0.05;
 
-      // AI for right paddle (opponent) - SMARTER AI
-      const computerLevel = 0.15; // Faster AI (was 0.1)
-      rightPaddle.y += (ball.y - (rightPaddle.y + rightPaddle.height / 2)) * computerLevel;
+      // AI for right paddle (opponent) - Limited AI
+      const computerLevel = 0.06; // Slower reaction
+      const computerSpeed = 3 * sizeFactor; // Max speed per frame
+      
+      // Only move AI when ball is moving towards it
+      if (ball.velocityX > 0) {
+        const targetY = ball.y - rightPaddle.height / 2;
+        const diff = targetY - rightPaddle.y;
+        const moveAmount = diff * computerLevel;
+        
+        // Clamp movement speed
+        const clampedMove = Math.max(-computerSpeed, Math.min(computerSpeed, moveAmount));
+        rightPaddle.y += clampedMove;
+      }
 
       rightPaddle.y = Math.max(0, Math.min(gameHeight - rightPaddle.height, rightPaddle.y));
 
@@ -219,20 +230,29 @@ export default function PongGame({ width, height }: PongGameProps) {
         ball.velocityY = -ball.velocityY;
       }
 
-      // Check which paddle is hit
-      const player = ball.x < gameWidth / 2 ? leftPaddle : rightPaddle;
-
-      if (collision(ball, player)) {
-        let collidePoint = ball.y - (player.y + player.height / 2);
-        collidePoint = collidePoint / (player.height / 2);
+      // Check collision with both paddles
+      if (collision(ball, leftPaddle)) {
+        let collidePoint = ball.y - (leftPaddle.y + leftPaddle.height / 2);
+        collidePoint = collidePoint / (leftPaddle.height / 2);
 
         const angleRad = (Math.PI / 4) * collidePoint;
 
-        const direction = ball.x < gameWidth / 2 ? 1 : -1;
-        ball.velocityX = direction * ball.speed * Math.cos(angleRad);
+        ball.velocityX = ball.speed * Math.cos(angleRad);
         ball.velocityY = ball.speed * Math.sin(angleRad);
 
-        ball.speed += 0.3 * sizeFactor; // Faster speed increase (was 0.2)
+        ball.speed += 0.3 * sizeFactor;
+        ball.x = leftPaddle.x + leftPaddle.width + halfSize; // Prevent sticking
+      } else if (collision(ball, rightPaddle)) {
+        let collidePoint = ball.y - (rightPaddle.y + rightPaddle.height / 2);
+        collidePoint = collidePoint / (rightPaddle.height / 2);
+
+        const angleRad = (Math.PI / 4) * collidePoint;
+
+        ball.velocityX = -ball.speed * Math.cos(angleRad);
+        ball.velocityY = ball.speed * Math.sin(angleRad);
+
+        ball.speed += 0.3 * sizeFactor;
+        ball.x = rightPaddle.x - halfSize; // Prevent sticking
       }
 
       // Update score

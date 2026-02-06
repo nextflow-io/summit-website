@@ -10,7 +10,7 @@
   background: var(--color-nextflow-600);
   color: black;
   font-size: .8rem;
-  padding: 5px 15px;
+  padding: 7px 15px;
   min-width: 150px;
 
   & .content {
