@@ -76,7 +76,7 @@ const Homepage: React.FC<Props> = ({ data }) => {
         <Faq data={data.faqSection} />
       )}
 
-      <SignUpForm />
+      {/* <SignUpForm /> */}
     </div>
   );
 };
