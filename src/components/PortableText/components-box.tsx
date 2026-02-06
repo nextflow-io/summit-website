@@ -1,15 +1,26 @@
-import React from "react";
-import type { PortableTextReactComponents } from "@portabletext/react";
+import React from 'react';
+import type { PortableTextReactComponents } from '@portabletext/react';
 
 const componentsBox: Partial<PortableTextReactComponents> = {
   marks: {
     link: ({ value, children }) => {
       const { blank, href } = value;
+
+      // Check if URL is external (starts with http:// or https://)
+      const isExternal =
+        href && (href.startsWith('https://') || href.startsWith('http://'));
+
       let linkAttributes = {};
-      if (blank)
-        linkAttributes = { target: "_blank", rel: "noopener noreferrer" };
+      if (blank || isExternal) {
+        linkAttributes = { target: '_blank', rel: 'noopener noreferrer' };
+      }
+
       return (
-        <a href={href} {...linkAttributes} className="underline hover:opacity-60 transition-all duration-300">
+        <a
+          href={href}
+          {...linkAttributes}
+          className="underline hover:opacity-60 transition-all duration-300"
+        >
           {children}
         </a>
       );
@@ -22,7 +33,7 @@ const componentsBox: Partial<PortableTextReactComponents> = {
         {children}
       </code>
     ),
-    "strike-through": ({ children }) => (
+    'strike-through': ({ children }) => (
       <s className="line-through">{children}</s>
     ),
   },

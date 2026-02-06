@@ -5,9 +5,16 @@ const components: Partial<PortableTextReactComponents> = {
   marks: {
     link: ({ value, children }) => {
       const { blank, href } = value;
+
+      // Check if URL is external (starts with http:// or https://)
+      const isExternal =
+        href && (href.startsWith('https://') || href.startsWith('http://'));
+
       let linkAttributes = {};
-      if (blank)
+      if (blank || isExternal) {
         linkAttributes = { target: '_blank', rel: 'noopener noreferrer' };
+      }
+
       return (
         <a
           href={href}
