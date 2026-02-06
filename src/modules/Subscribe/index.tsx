@@ -22,7 +22,7 @@ const SectionSubscribe: React.FC<Props> = () => {
       </div>
       <p className="mt-4 text-xs">
         By submitting this form, you agree to our{" "}
-        <a className="underline" href="/privacy-policy/">
+        <a className="underline" href="https://seqera.io/privacy-policy" target="_blank">
           privacy policy
         </a>
         .
