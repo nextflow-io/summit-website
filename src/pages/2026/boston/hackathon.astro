@@ -5,12 +5,19 @@ import StandardPage from "@modules/StandardPage"
 
 import { fetchBostonHackathon} from '@data/fetchers';
 import type { PageData } from '@data/types';
+import { fetchSettings, type SettingsData } from '@data/settings'; 
+import Meta from '@components/Meta/Meta.astro';
 
+const settings: SettingsData = await fetchSettings();
 const hackathon: PageData = await fetchBostonHackathon();
 
 ---
 
 <Layout>
-  <SEO slot="head" title="Hackathon | Boston" />
+   <Meta 
+    title={hackathon?.seo?.title} 
+    settings={settings}
+    imgUrl={hackathon?.seo?.shareImage?.asset?.url}
+  />
   <StandardPage data={hackathon}  client:load/>
 </Layout>

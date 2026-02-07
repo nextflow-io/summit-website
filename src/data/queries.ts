@@ -180,6 +180,17 @@ export const buildPageQuery = (contentType: string) => `
   *[_type == "${contentType}"][0]{
     _id,
     _type,
+    seo {
+      title,
+      description,
+      noIndex,
+      shareImage {
+      asset-> {
+        url
+      }
+    },
+    },
+    
     ${heroFragment},
     ${featureSectionsArrayFragment},
     ${faqSectionFragment},

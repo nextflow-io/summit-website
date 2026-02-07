@@ -1,0 +1,112 @@
+---
+import type { SettingsData } from '../../data/settings';
+
+interface Props {
+  description?: string;
+  title?: string;
+  imgUrl?: string;
+  author?: string;
+  dynamicImage?: {
+    title?: string;
+    subtitle?: string;
+    abovetitle?: string;
+    speaker?: string;
+    location?: "barcelona" | "virtual" | "boston";
+  };
+  sanityImage?: "default" | "boston" | "barcelona" | "virtual";
+  settings?: SettingsData;
+}
+
+const {
+  imgUrl,
+  author,
+  dynamicImage,
+  sanityImage,
+  settings,
+  ...props
+} = Astro.props;
+
+// Use Sanity settings or fallback to defaults
+const siteTitle = settings?.title || "Nextflow Summit";
+const descDefault = settings?.description || `Join us at Nextflow Summit for the latest developments and innovations from the Nextflow world.`;
+
+let shareImg: string = "";
+
+// Priority order: imgUrl > dynamicImage > sanityImage > settings.mainImage
+if (imgUrl) {
+  // First priority: custom imgUrl (like from CFA page)
+  shareImg = imgUrl;
+} else if (sanityImage && settings) {
+  // Third priority: specific Sanity image variant
+  switch (sanityImage) {
+    case "boston":
+      shareImg = settings.imageBoston?.asset?.url || "";
+      break;
+    case "barcelona":
+      shareImg = settings.imageBarcelona?.asset?.url || "";
+      break;
+    case "virtual":
+      shareImg = settings.imageVirtual?.asset?.url || "";
+      break;
+    case "default":
+    default:
+      shareImg = settings.mainImage?.asset?.url || "";
+      break;
+  }
+} else if (settings?.mainImage?.asset?.url) {
+  // Fourth priority: default main image from settings
+  shareImg = settings.mainImage.asset.url;
+}
+
+const description = props.description || descDefault;
+let title = siteTitle;
+if (props.title) title = `${props.title} | ${siteTitle}`;
+
+const tags = [
+  {
+    name: `description`,
+    content: description,
+  },
+  {
+    property: `og:title`,
+    content: title,
+  },
+  {
+    property: `og:description`,
+    content: description,
+  },
+  {
+    property: `og:image`,
+    content: shareImg,
+  },
+  {
+    property: `og:type`,
+    content: `website`,
+  },
+  {
+    name: `twitter:card`,
+    content: `summary_large_image`,
+  },
+  {
+    name: `twitter:creator`,
+    content: author || ``,
+  },
+  {
+    name: `twitter:title`,
+    content: title,
+  },
+  {
+    name: `twitter:description`,
+    content: description,
+  },
+  {
+    property: `twitter:image`,
+    content: shareImg,
+  },
+];
+---
+
+<title>{title}</title>
+{tags.map((tag) => (
+  <meta {...tag} />
+))}

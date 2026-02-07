@@ -1,16 +1,20 @@
 ---
 import Layout from '@layouts/Base.astro';
-import SEO from '@components/SEO';
+
 import Banner from '@components/Banner';
 import Homepage from "@modules/Homepage"
 import { fetchHomepage } from '@data/fetchers';
 import type { HomepageData } from '@data/types';
+import { fetchSettings, type SettingsData } from '../data/settings'; 
+import Meta from '../components/Meta/Meta.astro';
 
 const home: HomepageData = await fetchHomepage();
+const settings: SettingsData = await fetchSettings();
 ---
 
 <Layout>
-  <SEO slot="head" title="Home" />
+    <Meta title="Home" settings={settings} />
+
   <!-- <Banner title="Register to access the event recordings" ctaText="Register Now" ctaLink="https://seqera.swoogo.com/nextflow-summit-boston-2025" client:load />  -->
   <Homepage data={home}  client:load/>
 </Layout>

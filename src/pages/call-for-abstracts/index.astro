@@ -1,14 +1,21 @@
 ---
 import Layout from "@layouts/Base.astro";
-import SEO from "@components/SEO";
 import StandardPage from "@modules/StandardPage"
 import { fetchCFA} from '@data/fetchers';
 import type { PageData } from '@data/types';
+import { fetchSettings, type SettingsData } from '../../data/settings'; 
+import Meta from '../../components/Meta/Meta.astro';
 
 const cfa: PageData = await fetchCFA();
+const settings: SettingsData = await fetchSettings();
+
 ---
 
 <Layout>
-  <SEO slot="head" title="Call for Speakers and Posters" img={3} />
-  <StandardPage data={cfa}  client:load/>
+  <Meta 
+    title="Call for Speakers and Posters" 
+    settings={settings}
+    imgUrl={cfa?.seo?.shareImage?.asset?.url}
+  />
+  <StandardPage data={cfa} client:load/>
 </Layout>

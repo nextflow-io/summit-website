@@ -1,11 +1,7 @@
-const siteTitle = "Nextflow Summit 2026";
-const descDefault = `Join us at the Nextflow Summit 2026 for the latest developments and innovations from the Nextflow world.`;
-import imgDefault from "./share-default.jpg";
-import imgBoston from "./share-boston.jpg";
-import imgBarcelona from "./share-barcelona.jpg";
-import imgVirtual from "./share-virtual.jpg";
+import { fetchSettings, type SettingsData } from '../../data/settings'; 
 
-const images = [imgDefault, imgBoston, imgBarcelona, imgVirtual];
+const siteTitle = "Nextflow Summit";
+const descDefault = `Join us at Nextflow Summit for the latest developments and innovations from the Nextflow world.`;
 
 type Props = {
   description?: string;
@@ -18,9 +14,10 @@ type Props = {
     subtitle?: string;
     abovetitle?: string;
     speaker?: string;
-     location?: "barcelona" | "virtual" | "boston";
+    location?: "barcelona" | "virtual" | "boston";
   };
-  sanityImage?: string;
+  sanityImage?: "default" | "boston" | "barcelona" | "virtual";
+  settings?: SettingsData; // Pass settings from parent component
 };
 
 const SEO: React.FC<Props> = ({
@@ -28,15 +25,37 @@ const SEO: React.FC<Props> = ({
   imgUrl,
   author,
   dynamicImage,
+  sanityImage,
+  settings,
   ...props
 }) => {
   let shareImg: string;
-  if (img) {
-      shareImg = images[img].src;
+
+  // Use Sanity image if specified and settings are available
+  if (sanityImage && settings) {
+    switch (sanityImage) {
+      case "boston":
+        shareImg = settings.imageBoston?.asset?.url || "";
+        break;
+      case "barcelona":
+        shareImg = settings.imageBarcelona?.asset?.url || "";
+        break;
+      case "virtual":
+        shareImg = settings.imageVirtual?.asset?.url || "";
+        break;
+      case "default":
+      default:
+        shareImg = settings.mainImage?.asset?.url || "";
+        break;
+    }
   } else if (imgUrl) {
-      shareImg = imgUrl;
+    shareImg = imgUrl;
+  } else if (settings?.mainImage?.asset?.url) {
+    // Fallback to main image from settings
+    shareImg = settings.mainImage.asset.url;
   } else {
-      shareImg = imgDefault.src;
+    // Final fallback
+    shareImg = "";
   }
 
   if (dynamicImage) {
@@ -52,6 +71,7 @@ const SEO: React.FC<Props> = ({
   const description = props.description || descDefault;
   let title = siteTitle;
   if (props.title) title = `${props.title} | ${siteTitle}`;
+  
   const tags = [
     {
       name: `description`,
@@ -94,6 +114,7 @@ const SEO: React.FC<Props> = ({
       content: shareImg,
     },
   ];
+  
   return (
     <>
       <title>{title}</title>
