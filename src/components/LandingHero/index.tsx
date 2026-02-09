@@ -4,7 +4,7 @@ import styles from './styles.module.css';
 import clsx from 'clsx';
 import SeqeraLogo from '@icons/SeqeraLogo';
 import Link from './Link';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import PortableText from '@components/PortableText';
 import Pixels from '@modules/Pixels';
 
@@ -50,6 +50,26 @@ const LandingHero: React.FC<HeroProps> = ({
   image,
   imageAlt,
 }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Close modal on Escape key
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsModalOpen(false);
+    };
+    
+    if (isModalOpen) {
+      document.addEventListener('keydown', handleEscape);
+      // Prevent body scroll when modal is open
+      document.body.style.overflow = 'hidden';
+    }
+    
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'unset';
+    };
+  }, [isModalOpen]);
+
   return (
     <motion.div
       {...fadeIn}
@@ -138,6 +158,55 @@ const LandingHero: React.FC<HeroProps> = ({
           )}
         </div>
       </section>
+
+      {/* Help Button */}
+      <button
+        onClick={() => setIsModalOpen(true)}
+        className="z-50 cursor-pointer absolute bottom-4 right-4 bg-gray-100 text-black w-[18px] h-[18px] flex justify-center items-center  hover:bg-gray-300 transition-colors "
+        aria-label="Help"
+      >
+        ?
+      </button>
+
+      {/* Modal */}
+      <AnimatePresence>
+        {isModalOpen && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsModalOpen(false)}
+              className="absolute inset-0 bg-black/50 z-[100] backdrop-blur-sm"
+            />
+
+            {/* Modal Content */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              transition={{ duration: 0.2 }}
+              className="absolute bottom-6 right-6 2 z-[100]  bg-white shadow-xl max-w-[300px] w-full mx-4 text-black"
+            >
+              <div className="p-4">           
+                <div className="text-black">
+                  <p className=" text-sm">Share your pixel art online using the hashtag <span className="text-nextflow-800">#NextflowSummit2026</span></p>
+                </div>
+
+                <div className="mt-4 flex justify-start">
+                  <button
+                    onClick={() => setIsModalOpen(false)}
+                    className="px-4 py-1 bg-nextflow-600 monospace uppercase text-xs text-black  hover:bg-nextflow-800 transition-colors"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </motion.div>
   );
 };
