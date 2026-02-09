@@ -178,7 +178,7 @@ const LandingHero: React.FC<HeroProps> = ({
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsModalOpen(false)}
-              className="absolute inset-0 bg-black/50 z-[100] backdrop-blur-sm"
+              className="absolute inset-0 z-[100] "
             />
 
             {/* Modal Content */}
