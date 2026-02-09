@@ -5,7 +5,9 @@ body {
   /* background-color: black;
   color: white; */
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
+
 body {
   min-height: 100vh;
 }

@@ -113,7 +113,7 @@ const Faq: React.FC<FaqProps> = ({ className, data, title = 'FAQ', noSticky, noP
         className="absolute bottom-[18px] left-[36px]"
       />
       </div>
-      <div className="container-xl relative w-full flex flex-col sm:flex-row">
+      <div id={title} className="container-xl relative w-full flex flex-col sm:flex-row">
         <div className={`w-full mb-6 sm:mb-0 ${noSticky ? '' : 'sm:sticky'} sm:top-40 self-start`}>
           <h2 className="h4 relative z-20">{title}</h2>
         </div>
