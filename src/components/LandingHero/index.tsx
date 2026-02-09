@@ -117,7 +117,7 @@ const LandingHero: React.FC<HeroProps> = ({
       />
 
       <section className={clsx(styles.landingHero, 'h-full relative w-full')}>
-        <div className="flex flex-col-reverse sm:flex-row h-full relative">
+        <div className="flex flex-col-reverse sm:flex-row h-full items-center relative">
           {/* Left Column */}
           <div className="w-full h-full sm:pr-10 md:mt-10 md:pb-15">
             <div className="pointer-events-none">
@@ -224,7 +224,7 @@ const LandingHero: React.FC<HeroProps> = ({
             >
               <div className="p-4">           
                 <div className="text-black">
-                  <p className="text-sm">Share your pixel art online using the hashtag <span className="text-nextflow-800">#NextflowSummit2026</span></p>
+                  <p className="text-[.8rem]">Share your pixel art. <span className="text-nextflow-800">#NextflowSummit2026</span></p>
                 </div>
 
                 <div className="mt-4 flex justify-start gap-2">
