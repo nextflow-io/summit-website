@@ -4,7 +4,7 @@ import SEO from '@components/SEO';
 import StandardPage from "@modules/StandardPage"
 import { fetchBostonOverview} from '@data/fetchers';
 import type { PageData } from '@data/types';
-
+import SignUpForm from '@modules/SignUpForm';
 const overview: PageData = await fetchBostonOverview();
 
 ---
@@ -12,4 +12,5 @@ const overview: PageData = await fetchBostonOverview();
 <Layout showHeader={false}>
   <SEO slot="head" title="Home" />
   <StandardPage data={overview}  client:load/>
+  <SignUpForm client:load />
 </Layout>

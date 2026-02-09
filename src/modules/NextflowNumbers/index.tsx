@@ -72,7 +72,7 @@ const NextflowNumbers: React.FC<Props> = ({
                     <h3 className="text-[1.75rem] md:text-[4rem] mr-4 leading-none">
                       {featuredStats.featuredStatLeft}
                     </h3>
-                    <p className="text-[.65rem] md:text-lg  leading-tight">
+                    <p className="text-[.7rem] md:text-lg  leading-tight max-w-[40%]" >
                       {featuredStats.featuredDescriptionLeft}
                     </p>
                   </div>
@@ -82,7 +82,7 @@ const NextflowNumbers: React.FC<Props> = ({
                     <h3 className="text-[1.75rem] md:text-[4rem] mr-4 leading-none">
                       {featuredStats.featuredStatRight}
                     </h3>
-                    <p className="text-[.65rem]  md:text-lg  leading-tight">
+                    <p className="text-[.7rem]  md:text-lg  leading-tight">
                       {featuredStats.featuredDescriptionRight}
                     </p>
                   </div>
@@ -94,10 +94,10 @@ const NextflowNumbers: React.FC<Props> = ({
             {stats.map((stat, index) => (
               <div key={index} className="border-b border-black py-2">
                 <div className="flex flex-row items-center">
-                  <h4 className="text-[2rem] md:text-[4rem] mr-4 leading-none w-[80px]">
+                  <h4 className="text-[2rem] md:text-[3rem] mr-4 leading-none w-[80px] md:w-[120px]">
                     {stat.statNumber}
                   </h4>
-                  <p className="text-[.65rem] md:text-lg leading-tight mb-0 w-full">
+                  <p className="text-[.7rem] md:text-[1rem] leading-tight mb-0 w-full text-pretty">
                     {stat.statDescription}
                   </p>
                 </div>
