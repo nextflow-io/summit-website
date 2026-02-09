@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Button from '@components/Button';
 import styles from './styles.module.css';
 import clsx from 'clsx';
@@ -51,6 +51,7 @@ const LandingHero: React.FC<HeroProps> = ({
   imageAlt,
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const pixelsRef = useRef<{ getCanvas: () => HTMLCanvasElement | null }>(null);
 
   // Close modal on Escape key
   useEffect(() => {
@@ -70,6 +71,37 @@ const LandingHero: React.FC<HeroProps> = ({
     };
   }, [isModalOpen]);
 
+  const handleDownload = () => {
+    const canvas = pixelsRef.current?.getCanvas();
+    if (!canvas) return;
+
+    // Create a new canvas with black background
+    const downloadCanvas = document.createElement('canvas');
+    downloadCanvas.width = canvas.width;
+    downloadCanvas.height = canvas.height;
+    const ctx = downloadCanvas.getContext('2d');
+    
+    if (!ctx) return;
+
+    // Fill with black background
+    ctx.fillStyle = '#000000';
+    ctx.fillRect(0, 0, downloadCanvas.width, downloadCanvas.height);
+
+    // Draw the original canvas on top
+    ctx.drawImage(canvas, 0, 0);
+
+    // Download
+    downloadCanvas.toBlob((blob) => {
+      if (!blob) return;
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.download = `nextflow-summit-2026-${Date.now()}.png`;
+      link.href = url;
+      link.click();
+      URL.revokeObjectURL(url);
+    });
+  };
+
   return (
     <motion.div
       {...fadeIn}
@@ -77,6 +109,7 @@ const LandingHero: React.FC<HeroProps> = ({
       className="py-20 md:py-20 relative w-full h-full flex flex-row justify-between items-center container-xl"
     >
       <Pixels
+        ref={pixelsRef}
         initialCellSize={18}
         initialSpeed={100}
         initialDensity={0.002}
@@ -187,17 +220,23 @@ const LandingHero: React.FC<HeroProps> = ({
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ duration: 0.2 }}
-              className="absolute bottom-6 right-6 2 z-[100]  bg-white shadow-xl max-w-[300px] w-full mx-4 text-black"
+              className="absolute bottom-6 right-6 z-[100] bg-white shadow-xl max-w-[300px] w-full mx-4 text-black"
             >
               <div className="p-4">           
                 <div className="text-black">
-                  <p className=" text-sm">Share your pixel art online using the hashtag <span className="text-nextflow-800">#NextflowSummit2026</span></p>
+                  <p className="text-sm">Share your pixel art online using the hashtag <span className="text-nextflow-800">#NextflowSummit2026</span></p>
                 </div>
 
-                <div className="mt-4 flex justify-start">
+                <div className="mt-4 flex justify-start gap-2">
+                  <button
+                    onClick={handleDownload}
+                    className="px-4 py-1 bg-nextflow-600 monospace uppercase text-xs text-black hover:bg-nextflow-800 transition-colors"
+                  >
+                    Download Artwork
+                  </button>
                   <button
                     onClick={() => setIsModalOpen(false)}
-                    className="px-4 py-1 bg-nextflow-600 monospace uppercase text-xs text-black  hover:bg-nextflow-800 transition-colors"
+                    className="px-4 py-1 bg-gray-200 monospace uppercase text-xs text-black hover:bg-gray-300 transition-colors"
                   >
                     Close
                   </button>

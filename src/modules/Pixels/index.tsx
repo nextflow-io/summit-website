@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef, useCallback ,useImperativeHandle  ,  forwardRef} from 'react';
 
-const Pixels = ({
+const Pixels = forwardRef(({
   initialCellSize = 20,
   initialSpeed = 100,
   initialDensity = 0.3,
   colorScheme = 'green',
-}) => {
+}, ref) => {
   const canvasRef = useRef(null);
   const containerRef = useRef(null);
   const [isRunning, setIsRunning] = useState(false);
@@ -30,6 +30,11 @@ const Pixels = ({
   };
 
   const currentColors = colors[colorScheme] || colors.green;
+
+    // Expose canvas to parent component
+  useImperativeHandle(ref, () => ({
+    getCanvas: () => canvasRef.current,
+  }));
 
   // Handle resize
   useEffect(() => {
@@ -277,6 +282,6 @@ const Pixels = ({
       />
     </div>
   );
-};
-
+});
+Pixels.displayName = 'Pixels';
 export default Pixels;
