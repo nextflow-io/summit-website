@@ -70,7 +70,7 @@ const Box: React.FC<Props> = ({
             <div
               className={` pt-4 pb-2 w-full flex flex-row justify-between items-center]`}
             >
-              <h5 className="text-[2.25rem] font-display leading-none">{title}</h5>
+              <h5 className="text-[2rem] xl:text-[2.25rem] font-display leading-none">{title}</h5>
               {href && (
                 <div className="mt-2">
                   <ArrowUpRight />

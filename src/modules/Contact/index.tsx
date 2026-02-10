@@ -23,33 +23,33 @@ const SectionContact: React.FC<Props> = ({ className }) => {
   return (
     <section
       className={clsx(
-        'w-full py-8 lg:py-24 bg-nextflow-100 relative z-10',
+        'w-full py-8 lg:py-24 bg-nextflow relative z-10',
         className
       )}
       id="footer"
     >
       <SquarePixel
         className="hidden md:block  absolute top-[-72px] left-[36px] z-20"
-        initialColor="#000"
+        initialColor="#B6ECE2"
       />
       <SquarePixel
         className="hidden md:block absolute top-[72px] left-0 z-20"
-        initialColor="#000"
+        initialColor="#B6ECE2"
       />
       <SquarePixel
         className="hidden md:block absolute top-[90px] left-[18px] z-20"
-        initialColor="#56D3BA"
+        initialColor="#000"
       />
       <SquarePixel
         className="absolute bottom-[-18px] md:bottom-auto md:top-[108px] left-0 z-20"
-        initialColor="#56D3BA"
+        initialColor="#000"
       />
       <SquarePixel
         className="absolute top-[-36px] md:top-[50%] right-0 z-20"
-        initialColor="#56D3BA"
+        initialColor="#000"
       />
 
-      <div className="container-xl w-full bg-nextflow-100 flex flex-col md:flex-row justify-center gap-6 lg:gap-10">
+      <div className="container-xl w-full bg-nextflow flex flex-col md:flex-row justify-center gap-6 lg:gap-10">
         <SectionBox href="mailto:help.summit@nextflow.io">
           <h5 className="monospace tracking-wider text-sm mb-2 uppercase">
             Ticketing questions

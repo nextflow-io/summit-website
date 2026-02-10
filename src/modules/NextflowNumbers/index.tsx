@@ -30,7 +30,7 @@ const NextflowNumbers: React.FC<Props> = ({
   }
 
   return (
-    <section className={`${className} bg-nextflow-200 text-black relative`}>
+    <section className={`${className} bg-nextflow text-black relative`}>
       <div className="hidden md:block ">
         <SquarePixel
           className="absolute bottom-0 left-0"

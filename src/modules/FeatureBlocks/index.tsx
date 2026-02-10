@@ -69,7 +69,7 @@ const FeatureBlocks: React.FC<Props> = ({
         </div>
       </div>
       <div
-        className={`container-xl grid items-self gap-6 md:gap-8 ${gridCols}`}
+        className={`container-xl grid items-self gap-6 xl:gap-8 ${gridCols}`}
       >
         {boxes.map((box, index) => (
           <Box
