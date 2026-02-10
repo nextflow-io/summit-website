@@ -34,7 +34,7 @@ const NextflowNumbers: React.FC<Props> = ({
       <div className="hidden md:block ">
         <SquarePixel
           className="absolute bottom-0 left-0"
-          initialColor="#56D3BA"
+          initialColor="#B6ECE2"
         />
         <SquarePixel
           className="absolute bottom-[18px] left-[18px]"
@@ -50,11 +50,11 @@ const NextflowNumbers: React.FC<Props> = ({
         />
         <SquarePixel
           className="absolute top-[18px] right-[18px]"
-          initialColor="#56D3BA"
+          initialColor="#B6ECE2"
         />
         <SquarePixel
           className="absolute bottom-[18px] right-[18px]"
-          initialColor="#56D3BA"
+          initialColor="#B6ECE2"
         />
       </div>
 

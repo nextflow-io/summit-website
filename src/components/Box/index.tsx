@@ -61,8 +61,8 @@ const Box: React.FC<Props> = ({
                        ] text-white bg-black px-3
                       `}
                   >
-                    <div className="w-1 h-1 bg-white mt-[-1px]"></div>
-                    <div className="ml-[4px]">{tagItem}</div>
+                    <div className="w-[4px] h-[4px] bg-white mt-[-1px]"></div>
+                    <div className="ml-[5px]">{tagItem}</div>
                   </div>
                 ))}
               </div>

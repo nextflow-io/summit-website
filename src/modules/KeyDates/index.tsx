@@ -1,4 +1,6 @@
 import Slideshow from "./Slideshow";
+import { SquarePixel } from '@components/SquarePixel';
+
 
 interface Props {
   dates?: Array<{
@@ -18,10 +20,50 @@ export default function KeyDates({
   images = [],
 }: Props) {
   return (
-    <section className="bg-black container-xl py-20">
+    <section className="bg-black container-xl py-20 relative">
       <div className="mb-10">
         <h5 className="h4 mb-4 md:mb-0">Key Dates </h5>
       </div>
+
+      
+              <SquarePixel
+                className="absolute bottom-0 left-0"
+                initialColor="#B6ECE2"
+              />
+              <SquarePixel
+                className="absolute bottom-[18px] left-[18px]"
+                initialColor="#fff"
+              />
+              <SquarePixel
+                className="absolute bottom-[36px] left-[36px]"
+                initialColor="#000"
+              />
+              <SquarePixel
+                className="absolute top-[36px] right-[36px]"
+                initialColor="#fff"
+              />
+              <SquarePixel
+                className="absolute top-[36px] right-[0px]"
+                initialColor="#fff"
+              />
+              <SquarePixel
+                className="absolute top-[18px] right-[18px]"
+                initialColor="#0DC09D"
+              />
+                 <SquarePixel
+                className="absolute top-[54px] right-[18px]"
+                initialColor="#B6ECE2"
+              />
+              <SquarePixel
+                className="absolute bottom-[18px] right-[18px]"
+                initialColor="#B6ECE2"
+              />
+                    <SquarePixel
+                className="absolute top-[18px] left-[18px]"
+                initialColor="#0DC09D"
+              />
+              
+           
 
       <div className="w-full relative flex flex-col sm:flex-row h-full">
         <div className="relative w-full border-t">
