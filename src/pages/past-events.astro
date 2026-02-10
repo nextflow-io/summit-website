@@ -1,15 +1,15 @@
 ---
 import Layout from '@layouts/Base.astro';
-import SEO from '@components/SEO';
 import StandardPage from "@modules/StandardPage"
 import { fetchPastEvents } from '@data/fetchers';
 import type { PageData } from '@data/types';
+import Meta from '@components/Meta/Meta.astro';
 
 const past: PageData = await fetchPastEvents();
 
 ---
 
 <Layout>
-  <SEO slot="head" title="Past Events" />
+  <Meta title="Past Events" />
   <StandardPage data={past}  client:load/>
 </Layout>

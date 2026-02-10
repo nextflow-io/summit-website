@@ -1,19 +1,14 @@
 ---
 import Layout from "@layouts/Base.astro";
-import KeyDates from "@components/KeyDates/index.astro";
-import Calendar from "@components/Calendar";
-import { virtualScheduleConfig, ScheduleVirtual } from 'src/components/ScheduleVirtual/index.tsx';
-
-import SEO from "@components/SEO";
-import Box from "@components/Box";
+import Meta from '@components/Meta/Meta.astro';
 ---
 
 <Layout namespace="2026/virtual" altBG>
-  <SEO slot="head" title="Agenda | Virtual" img={3} />
+  <Meta title="Agenda" />
  <div class="bg-black text-white">
       <section class="py-20 bg-black text-white">
       <div class="container-lg">
-        <h1 class="h3">Agenda</h1>
+        <h1 class="h3 mb-4">Agenda</h1>
         <p>
           Check back soon to view the schedule for Nextflow Summit Virtual 2026.
         </p>

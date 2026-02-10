@@ -1,16 +1,23 @@
 ---
 import Layout from "@layouts/Base.astro";
 import NoFooter from "@layouts/NoFooter.astro";
-import SEO from "@components/SEO";
-
 import { fetchCFA} from '@data/fetchers';
 import type { PageData } from '@data/types';
+import { fetchSettings, type SettingsData } from '@data/settings'; 
+import Meta from '@components/Meta/Meta.astro';
 
 const cfa: PageData = await fetchCFA();
+const settings: SettingsData = await fetchSettings();
+
 ---
 
 <NoFooter showNav={false} namespace="2026/boston">
-  <SEO slot="head" title="Call for Abstracts Form" img={1} />
+    <Meta 
+    title="Call for Speakers and Posters" 
+    settings={settings}
+    imgUrl={cfa?.seo?.shareImage?.asset?.url}
+  />
+    <Meta title="Newsletter" />
   <section class="wrapper">
     <!-- swoogo form -->
     <section class="relative">

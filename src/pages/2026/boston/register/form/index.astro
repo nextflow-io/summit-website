@@ -1,8 +1,7 @@
 ---
 import Layout from "@layouts/Base.astro";
 import NoFooter from "@layouts/NoFooter.astro";
-import SEO from "@components/SEO";
-
+import Meta from '@components/Meta/Meta.astro';
 import { fetchBostonRegister} from '@data/fetchers';
 import type { PageData } from '@data/types';
 
@@ -11,7 +10,7 @@ const register: PageData = await fetchBostonRegister();
 ---
 
 <NoFooter showNav={false} namespace="2026/boston">
-  <SEO slot="head" title="Registration Form" img={1} />
+    <Meta title="Register"/>
   <section class="wrapper">
     <!-- swoogo form -->
     <section class="relative">

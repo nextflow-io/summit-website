@@ -1,16 +1,13 @@
 ---
 import Layout from '@layouts/Base.astro';
-import SEO from '@components/SEO';
-import StandardPage from "@modules/StandardPage"
+import Meta from '@components/Meta/Meta.astro';
 import SignUpForm from '@modules/SignUpForm';
-
-
 
 ---
 
 <Layout>
-  <SEO slot="head" title="Past Events" />
+  <Meta title="Newsletter" />
   <div class="py-10">
-  <SignUpForm client:load/>
+    <SignUpForm client:load/>
   </div>
 </Layout>

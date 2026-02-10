@@ -1,15 +1,8 @@
 ---
 import Layout from "@layouts/Base.astro";
-import LandingHero from "@components/LandingHero";
-import KeyDates from "@components/KeyDates/index.astro";
-import WhyAttend from "@modules/WhyAttend";
-import Box from "@components/Box";
-import ArrowUpRight from "@icons/ArrowUpRight";
-import SignUpForm from "@modules/SignUpForm";
-import Faq from "@components/Faq";
-import SEO from "@components/SEO";
+import Meta from '@components/Meta/Meta.astro';
 ---
 
 <Layout namespace="2026/barcelona" redirect="/2026/barcelona/overview">
-  <SEO slot="head" title="Overview | Barcelona" img={2} />
+  <Meta title="Overview" />
 </Layout>

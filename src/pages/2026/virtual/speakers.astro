@@ -1,8 +1,6 @@
 ---
 import Layout from "@layouts/Base.astro";
-import SEO from "@components/SEO";
-import SpeakersSection from "@modules/SpeakersSection";
-
+import Meta from '@components/Meta/Meta.astro';
 import {getAllVirtualSpeakers} from "@data/speakers";
 
 const sortedMembers = getAllVirtualSpeakers[0].speakers.sort((a, b) =>
@@ -12,11 +10,11 @@ const sortedMembers = getAllVirtualSpeakers[0].speakers.sort((a, b) =>
 ---
 
 <Layout namespace="2026/virtual">
-  <SEO slot="head" title="Speakers" img={3} />
+  <Meta title="Speakers" />
 
   <section class="py-20 bg-black text-white">
     <div class="container-lg">
-      <h1 class="h3">Speakers</h1>
+      <h1 class="h3 mb-4">Speakers</h1>
       <p>Check back soon for a list of this year's speakers and presenters.</p>
     </div>
   </section>

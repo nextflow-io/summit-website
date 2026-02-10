@@ -1,14 +1,19 @@
 ---
 import Layout from '@layouts/Base.astro';
-import SEO from '@components/SEO';
 import sponsors from '@data/sponsors';
 import Sponsor from '@components/Sponsor';
+import Meta from '@components/Meta/Meta.astro';
+
 ---
 
 <Layout namespace="2026/boston">
-  <SEO slot="head" title="Sponsors" img={1} />
+  <Meta title="Sponsors" />
   <section class="container-xl py-16">
-    <h1 class="h3 mb-4 md:mb-8 max-w-[600px]">Thanks to our Sponsors</h1>
+    <h1 class="h3 mb-4 md:mb-8 max-w-[600px]">
+      {sponsors.boston?.length > 0 ? (<>Thanks to our Sponsors</>) : (
+        <>Coming soon.</>
+      )}
+    </h1>
     <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
       {
         sponsors.boston?.map((sponsor) => (

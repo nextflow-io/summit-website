@@ -2,10 +2,9 @@
 import clsx from "clsx";
 import Layout from "@layouts/Base.astro";
 import sponsors from "@data/sponsors";
-import SEO from "@components/SEO";
+import Meta from '@components/Meta/Meta.astro';
 import PortableText from "@components/PortableText";
-import Button from "@components/Button";
-import ContentBox from "@components/ContentBox/index.astro";
+import Button from "@components/Button";;
 
 export function getStaticPaths() {
   return sponsors.boston?.map((sponsor) => ({
@@ -19,7 +18,7 @@ const sponsor = sponsors.boston?.find(
 ---
 
 <Layout namespace="2026/boston" altBG>
-  <SEO slot="head" title={sponsor.name} img={1} />
+  <Meta title="Sponsors" />
   <section class="pb-6 pt-16 md:pt-20">
     <div class="container smallest pb-10 md:pb-20">
       <!-- <ContentBox

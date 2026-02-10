@@ -1,6 +1,6 @@
 ---
 import Layout from '@layouts/Base.astro';
-import SEO from '@components/SEO';
+import Meta from '@components/Meta/Meta.astro';
 import StandardPage from "@modules/StandardPage"
 import { fetchBostonTravel} from '@data/fetchers';
 import type { PageData } from '@data/types';
@@ -10,6 +10,6 @@ const travel: PageData = await fetchBostonTravel();
 ---
 
 <Layout>
-  <SEO slot="head" title="Travel | Boston" />
+  <Meta title="Travel" />
   <StandardPage data={travel} client:load/>
 </Layout>
