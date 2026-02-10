@@ -54,6 +54,8 @@ const LandingHero: React.FC<HeroProps> = ({
   const [isModalOpen, setIsModalOpen] = useState(false);
   const pixelsRef = useRef<{ getCanvas: () => HTMLCanvasElement | null }>(null);
 
+  const [hashtagCopied, setHashtagCopied] = useState(false);
+
   // Close modal on Escape key
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -262,14 +264,56 @@ const LandingHero: React.FC<HeroProps> = ({
               className="absolute bottom-6 right-6 z-[100] bg-white shadow-xl max-w-[300px] w-full mx-4 text-black"
             >
               <div className="p-4">
-                <div className="text-black">
-                  <p className="text-[.8rem]">
-                    Share your pixel art.{' '}
-                    <span className="text-nextflow-800">
-                      #NextflowSummit2026
-                    </span>
-                  </p>
-                </div>
+                <p className="text-[.8rem]">
+                  Share your pixel art!{' '}
+                  <span
+                    className="text-nextflow-800 monospace text-[.9rem] cursor-pointer hover:underline inline-flex items-center gap-1"
+                    onClick={() => {
+                      navigator.clipboard.writeText(
+                        'Check out my pixel art! #NextflowSummit2026\n\nNextflow Summit, presented by Seqera, brings together scientists from around the world to shape the future of biotech R&D through community-driven innovation in data science and computational biology.'
+                      );
+                      setHashtagCopied(true);
+                      setTimeout(() => setHashtagCopied(false), 2000);
+                    }}
+                  >
+                    {hashtagCopied ? 'Hashtag copied!' : '#NextflowSummit2026'}
+                    {hashtagCopied ? (
+                      <svg
+                        width="12"
+                        height="12"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                    ) : (
+                      <svg
+                        width="12"
+                        height="12"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <rect
+                          x="9"
+                          y="9"
+                          width="13"
+                          height="13"
+                          rx="2"
+                          ry="2"
+                        />
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                      </svg>
+                    )}
+                  </span>
+                </p>
 
                 <div className="mt-4 flex justify-start gap-2">
                   <button
