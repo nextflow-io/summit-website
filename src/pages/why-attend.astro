@@ -4,11 +4,13 @@ import StandardPage from "@modules/StandardPage"
 import { fetchWhyAttend } from '@data/fetchers';
 import type { PageData } from '@data/types';
 import Meta from '@components/Meta/Meta.astro';
-const attend: PageData = await fetchWhyAttend();
+import { fetchSettings, type SettingsData } from '@data/settings'; 
 
+const attend: PageData = await fetchWhyAttend();
+const settings: SettingsData = await fetchSettings();
 ---
 
 <Layout>
-  <Meta title="Why Attend" sanityImage="default"/>
+  <Meta title="Why Attend" sanityImage="default" settings={settings}/>
   <StandardPage data={attend} client:load/>
 </Layout>
