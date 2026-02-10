@@ -4,13 +4,14 @@ import NoFooter from "@layouts/NoFooter.astro";
 import Meta from '@components/Meta/Meta.astro';
 import { fetchBostonRegister} from '@data/fetchers';
 import type { PageData } from '@data/types';
-
+import { fetchSettings, type SettingsData } from '@data/settings'; 
 const register: PageData = await fetchBostonRegister();
+const settings: SettingsData = await fetchSettings();
 
 ---
 
 <NoFooter showNav={false} namespace="2026/boston">
-    <Meta title="Register"/>
+  <Meta title="Register" sanityImage="default"  settings={settings}/>
   <section class="wrapper">
     <!-- swoogo form -->
     <section class="relative">

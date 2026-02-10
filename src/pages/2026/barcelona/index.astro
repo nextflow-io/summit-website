@@ -1,8 +1,10 @@
 ---
 import Layout from "@layouts/Base.astro";
 import Meta from '@components/Meta/Meta.astro';
+import { fetchSettings, type SettingsData } from '@data/settings';
+const settings: SettingsData = await fetchSettings();
 ---
 
 <Layout namespace="2026/barcelona" redirect="/2026/barcelona/overview">
-  <Meta title="Overview" />
+  <Meta title="Overview"  sanityImage="default"   settings={settings}/>
 </Layout>

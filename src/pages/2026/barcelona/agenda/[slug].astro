@@ -8,11 +8,11 @@ export function getStaticPaths() {
     props: {post},
   }));
 }
-
+import { fetchSettings, type SettingsData } from '@data/settings'; 
 const { post } = Astro.props;
-
+const settings: SettingsData = await fetchSettings();
 ---
 
 <Layout namespace="2026/barcelona">
-   <Meta title="Agenda" />
+   <Meta title="Agenda" sanityImage="default" settings={settings}/>
 </Layout>

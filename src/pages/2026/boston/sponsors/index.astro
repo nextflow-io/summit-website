@@ -3,11 +3,12 @@ import Layout from '@layouts/Base.astro';
 import sponsors from '@data/sponsors';
 import Sponsor from '@components/Sponsor';
 import Meta from '@components/Meta/Meta.astro';
-
+import { fetchSettings, type SettingsData } from '@data/settings'; 
+const settings: SettingsData = await fetchSettings();
 ---
 
 <Layout namespace="2026/boston">
-  <Meta title="Sponsors" />
+  <Meta title="Sponsors" sanityImage="default"  settings={settings}/>
   <section class="container-xl py-16">
     <h1 class="h3 mb-4 md:mb-8 max-w-[600px]">
       {sponsors.boston?.length > 0 ? (<>Thanks to our Sponsors</>) : (

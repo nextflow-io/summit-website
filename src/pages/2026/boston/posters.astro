@@ -3,14 +3,17 @@ import Layout from '@layouts/Base.astro';
 import Meta from '@components/Meta/Meta.astro';
 import PostersSection from '@modules/PostersSection';
 import { getAllPosters } from '@data/posters';
-
+import { fetchSettings, type SettingsData } from '@data/settings'; 
 const sortedMembers = getAllPosters[0].posters.sort((a, b) =>
   a.name.localeCompare(b.name)
 );
+
+const settings: SettingsData = await fetchSettings();
+
 ---
 
 <Layout namespace="2026/boston">
-  <Meta title="Posters" />
+  <Meta title="Posters" sanityImage="default"  settings={settings}/>
 
   <div class="">
     <section class="py-20 bg-black text-white">
