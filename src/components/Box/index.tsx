@@ -53,14 +53,16 @@ const Box: React.FC<Props> = ({
           {tags && tags.length > 0 && (
             <div className="pt-4 md:pt-6">
               <div className="flex flex-wrap gap-2 mb-2">
+                 
                 {tags.map((tagItem, index) => (
                   <div
                     key={index}
-                    className={`uppercase monospace px-3 py-[3px] text-[.65rem] tracking-wider inline-flex justify-center items-center
-                       bg-[#000] text-white
+                    className={`uppercase monospace py-[3px] text-[.6rem] tracking-widest flex justify-center items-center
+                       ] text-white bg-black px-3
                       `}
                   >
-                    {tagItem}
+                    <div className="w-1 h-1 bg-white mt-[-1px]"></div>
+                    <div className="ml-[4px]">{tagItem}</div>
                   </div>
                 ))}
               </div>
