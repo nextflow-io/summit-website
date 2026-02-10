@@ -58,13 +58,13 @@ const LandingHero: React.FC<HeroProps> = ({
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') setIsModalOpen(false);
     };
-    
+
     if (isModalOpen) {
       document.addEventListener('keydown', handleEscape);
       // Prevent body scroll when modal is open
       document.body.style.overflow = 'hidden';
     }
-    
+
     return () => {
       document.removeEventListener('keydown', handleEscape);
       document.body.style.overflow = 'unset';
@@ -80,7 +80,7 @@ const LandingHero: React.FC<HeroProps> = ({
     downloadCanvas.width = canvas.width;
     downloadCanvas.height = canvas.height;
     const ctx = downloadCanvas.getContext('2d');
-    
+
     if (!ctx) return;
 
     // Fill with black background
@@ -138,7 +138,7 @@ const LandingHero: React.FC<HeroProps> = ({
             </div>
 
             <div className="flex flex-col sm:max-w-[550px] relative">
-              <div className="z-50 pointer-events-none">
+              <div className="z-50 pointer-events-auto">
                 <PortableText value={content} />
               </div>
 
@@ -222,9 +222,14 @@ const LandingHero: React.FC<HeroProps> = ({
               transition={{ duration: 0.2 }}
               className="absolute bottom-6 right-6 z-[100] bg-white shadow-xl max-w-[300px] w-full mx-4 text-black"
             >
-              <div className="p-4">           
+              <div className="p-4">
                 <div className="text-black">
-                  <p className="text-[.8rem]">Share your pixel art. <span className="text-nextflow-800">#NextflowSummit2026</span></p>
+                  <p className="text-[.8rem]">
+                    Share your pixel art.{' '}
+                    <span className="text-nextflow-800">
+                      #NextflowSummit2026
+                    </span>
+                  </p>
                 </div>
 
                 <div className="mt-4 flex justify-start gap-2">
