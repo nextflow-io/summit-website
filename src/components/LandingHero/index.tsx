@@ -7,6 +7,7 @@ import Link from './Link';
 import { motion, AnimatePresence } from 'framer-motion';
 import PortableText from '@components/PortableText';
 import Pixels from '@modules/Pixels';
+import shareOverlay from '@images/pixel-share-overlay.svg';
 
 interface HeroProps {
   title?: string;
@@ -58,13 +59,13 @@ const LandingHero: React.FC<HeroProps> = ({
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') setIsModalOpen(false);
     };
-    
+
     if (isModalOpen) {
       document.addEventListener('keydown', handleEscape);
       // Prevent body scroll when modal is open
       document.body.style.overflow = 'hidden';
     }
-    
+
     return () => {
       document.removeEventListener('keydown', handleEscape);
       document.body.style.overflow = 'unset';
@@ -75,31 +76,52 @@ const LandingHero: React.FC<HeroProps> = ({
     const canvas = pixelsRef.current?.getCanvas();
     if (!canvas) return;
 
-    // Create a new canvas with black background
+    const sourceWidth = canvas.width;
+    const sourceHeight = canvas.height;
+
+    // Target 1.91:1 aspect ratio for social sharing
+    let targetWidth = sourceWidth;
+    let targetHeight = Math.round(sourceWidth / 1.91);
+
+    // If source is already wider than 1.91:1, pad sides instead
+    if (targetHeight < sourceHeight) {
+      targetHeight = sourceHeight;
+      targetWidth = Math.round(sourceHeight * 1.91);
+    }
+
+    // Artwork position: bottom-aligned, horizontally centered
+    const xOffset = Math.round((targetWidth - sourceWidth) / 2);
+    const yOffset = targetHeight - sourceHeight;
+
     const downloadCanvas = document.createElement('canvas');
-    downloadCanvas.width = canvas.width;
-    downloadCanvas.height = canvas.height;
+    downloadCanvas.width = targetWidth;
+    downloadCanvas.height = targetHeight;
     const ctx = downloadCanvas.getContext('2d');
-    
     if (!ctx) return;
 
     // Fill with black background
     ctx.fillStyle = '#000000';
-    ctx.fillRect(0, 0, downloadCanvas.width, downloadCanvas.height);
+    ctx.fillRect(0, 0, targetWidth, targetHeight);
 
-    // Draw the original canvas on top
-    ctx.drawImage(canvas, 0, 0);
+    // Draw pixel art (bottom-aligned, horizontally centered)
+    ctx.drawImage(canvas, xOffset, yOffset);
 
-    // Download
-    downloadCanvas.toBlob((blob) => {
-      if (!blob) return;
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.download = `nextflow-summit-2026-${Date.now()}.png`;
-      link.href = url;
-      link.click();
-      URL.revokeObjectURL(url);
-    });
+    // Load and draw the share overlay, then export
+    const overlay = new Image();
+    overlay.onload = () => {
+      ctx.drawImage(overlay, 0, 0, targetWidth, targetHeight);
+
+      downloadCanvas.toBlob((blob) => {
+        if (!blob) return;
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.download = `nextflow-summit-2026-${Date.now()}.png`;
+        link.href = url;
+        link.click();
+        URL.revokeObjectURL(url);
+      });
+    };
+    overlay.src = shareOverlay.src;
   };
 
   return (
@@ -222,9 +244,14 @@ const LandingHero: React.FC<HeroProps> = ({
               transition={{ duration: 0.2 }}
               className="absolute bottom-6 right-6 z-[100] bg-white shadow-xl max-w-[300px] w-full mx-4 text-black"
             >
-              <div className="p-4">           
+              <div className="p-4">
                 <div className="text-black">
-                  <p className="text-[.8rem]">Share your pixel art. <span className="text-nextflow-800">#NextflowSummit2026</span></p>
+                  <p className="text-[.8rem]">
+                    Share your pixel art.{' '}
+                    <span className="text-nextflow-800">
+                      #NextflowSummit2026
+                    </span>
+                  </p>
                 </div>
 
                 <div className="mt-4 flex justify-start gap-2">
