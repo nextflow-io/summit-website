@@ -51,6 +51,7 @@ const LandingHero: React.FC<HeroProps> = ({
   imageAlt,
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [pacmanMode, setPacmanMode] = useState(false);
   const pixelsRef = useRef<{ getCanvas: () => HTMLCanvasElement | null }>(null);
 
   // Close modal on Escape key
@@ -58,18 +59,28 @@ const LandingHero: React.FC<HeroProps> = ({
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') setIsModalOpen(false);
     };
-    
+
     if (isModalOpen) {
       document.addEventListener('keydown', handleEscape);
       // Prevent body scroll when modal is open
       document.body.style.overflow = 'hidden';
     }
-    
+
     return () => {
       document.removeEventListener('keydown', handleEscape);
       document.body.style.overflow = 'unset';
     };
   }, [isModalOpen]);
+
+  // Exit pacman mode on Escape key
+  useEffect(() => {
+    if (!pacmanMode) return;
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setPacmanMode(false);
+    };
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [pacmanMode]);
 
   const handleDownload = () => {
     const canvas = pixelsRef.current?.getCanvas();
@@ -80,7 +91,7 @@ const LandingHero: React.FC<HeroProps> = ({
     downloadCanvas.width = canvas.width;
     downloadCanvas.height = canvas.height;
     const ctx = downloadCanvas.getContext('2d');
-    
+
     if (!ctx) return;
 
     // Fill with black background
@@ -114,6 +125,7 @@ const LandingHero: React.FC<HeroProps> = ({
         initialSpeed={100}
         initialDensity={0.002}
         colorScheme="green"
+        pacmanMode={pacmanMode}
       />
 
       <section className={clsx(styles.landingHero, 'h-full relative w-full')}>
@@ -192,6 +204,20 @@ const LandingHero: React.FC<HeroProps> = ({
         </div>
       </section>
 
+      {/* Pacman Button */}
+      <button
+        onClick={() => setPacmanMode((v) => !v)}
+        className={`z-50 cursor-pointer absolute top-4 right-8 w-[18px] h-[18px] flex justify-center items-center transition-colors monospace text-[10px] leading-none ${
+          pacmanMode
+            ? 'bg-nextflow-600 text-black hover:bg-nextflow-800'
+            : 'bg-gray-100 text-black hover:bg-gray-300'
+        }`}
+        aria-label={pacmanMode ? 'Exit Pacman' : 'Play Pacman'}
+        title={pacmanMode ? 'Exit Pacman (Esc)' : 'Play Pacman'}
+      >
+        {pacmanMode ? 'x' : '\u25CF'}
+      </button>
+
       {/* Help Button */}
       <button
         onClick={() => setIsModalOpen(true)}
@@ -222,9 +248,14 @@ const LandingHero: React.FC<HeroProps> = ({
               transition={{ duration: 0.2 }}
               className="absolute bottom-6 right-6 z-[100] bg-white shadow-xl max-w-[300px] w-full mx-4 text-black"
             >
-              <div className="p-4">           
+              <div className="p-4">
                 <div className="text-black">
-                  <p className="text-[.8rem]">Share your pixel art. <span className="text-nextflow-800">#NextflowSummit2026</span></p>
+                  <p className="text-[.8rem]">
+                    Share your pixel art.{' '}
+                    <span className="text-nextflow-800">
+                      #NextflowSummit2026
+                    </span>
+                  </p>
                 </div>
 
                 <div className="mt-4 flex justify-start gap-2">

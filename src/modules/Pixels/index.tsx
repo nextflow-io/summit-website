@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef, useCallback ,useImperativeHandle  ,  forwardRef} from 'react';
+import { usePacmanGame } from './pacman/usePacmanGame';
 
 const Pixels = forwardRef(({
   initialCellSize = 20,
   initialSpeed = 100,
   initialDensity = 0.3,
   colorScheme = 'green',
+  pacmanMode = false,
 }, ref) => {
   const canvasRef = useRef(null);
   const containerRef = useRef(null);
@@ -20,6 +22,13 @@ const Pixels = forwardRef(({
   const animationRef = useRef(null);
   const lastUpdateRef = useRef(0);
 
+  const savedGridRef = useRef(null);
+  const savedAgeGridRef = useRef(null);
+  const prevPacmanModeRef = useRef(false);
+
+  const gridCols = Math.floor(dimensions.width / cellSize);
+  const gridRows = Math.floor(dimensions.height / cellSize);
+  const { toggleTile } = usePacmanGame(canvasRef, cellSize, gridCols, gridRows, pacmanMode, gridRef.current, ageGridRef.current);
   // Color schemes
   const colors = {
     green: {
@@ -127,6 +136,7 @@ const Pixels = forwardRef(({
   const draw = useCallback(
     (canvas, ctx, grid, cols, rows) => {
       ctx.fillStyle = currentColors.bg;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       for (let i = 0; i < cols; i++) {
@@ -162,10 +172,35 @@ const Pixels = forwardRef(({
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-
     const ctx = canvas.getContext('2d');
     const cols = Math.floor(canvas.width / cellSize);
     const rows = Math.floor(canvas.height / cellSize);
+
+    // Entering pacman mode: save current artwork
+    if (pacmanMode && !prevPacmanModeRef.current) {
+      if (gridRef.current) {
+        savedGridRef.current = gridRef.current.map(col => [...col]);
+        savedAgeGridRef.current = ageGridRef.current?.map(col => [...col]) || null;
+      }
+    }
+
+    // Exiting pacman mode: restore saved artwork
+    if (!pacmanMode && prevPacmanModeRef.current) {
+      if (savedGridRef.current) {
+        gridRef.current = savedGridRef.current;
+        ageGridRef.current = savedAgeGridRef.current;
+        savedGridRef.current = null;
+        savedAgeGridRef.current = null;
+      } else {
+        gridRef.current = createRandomGrid(cols, rows, density);
+      }
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      draw(canvas, ctx, gridRef.current, cols, rows);
+      prevPacmanModeRef.current = false;
+      return;
+    }
+
+    prevPacmanModeRef.current = pacmanMode;
 
     // Recreate grid if dimensions changed or grid doesn't exist
     if (
@@ -177,7 +212,7 @@ const Pixels = forwardRef(({
     }
 
     draw(canvas, ctx, gridRef.current, cols, rows);
-  }, [cellSize, createRandomGrid, draw, density, dimensions]);
+  }, [cellSize, createRandomGrid, draw, density, dimensions, pacmanMode]);
 
   // Animation loop
   useEffect(() => {
@@ -228,6 +263,12 @@ const Pixels = forwardRef(({
     const rect = canvas.getBoundingClientRect();
     const x = Math.floor((e.clientX - rect.left) / cellSize);
     const y = Math.floor((e.clientY - rect.top) / cellSize);
+
+    // During pacman mode, all clicks toggle game tiles
+    if (pacmanMode) {
+      toggleTile(x, y);
+      return;
+    }
 
     const cols = Math.floor(canvas.width / cellSize);
     const rows = Math.floor(canvas.height / cellSize);
