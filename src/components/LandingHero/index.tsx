@@ -214,13 +214,30 @@ const LandingHero: React.FC<HeroProps> = ({
         </div>
       </section>
 
-      {/* Help Button */}
+      {/* Download Button */}
       <button
         onClick={() => setIsModalOpen(true)}
-        className="z-50 cursor-pointer absolute bottom-4 right-4 bg-gray-100 text-black w-[18px] h-[18px] flex justify-center items-center  hover:bg-gray-300 transition-colors "
-        aria-label="Help"
+        className={clsx(
+          'z-50 cursor-pointer absolute bottom-4 right-4 bg-gray-100 text-black w-[18px] h-[18px] flex justify-center items-center hover:bg-gray-300 transition-colors',
+          styles.downloadButton
+        )}
+        aria-label="Download artwork"
       >
-        ?
+        <svg
+          width="10"
+          height="10"
+          viewBox="0 0 10 10"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M5 1v5.5M2.5 4.5 5 7l2.5-2.5M1.5 8.5h7"
+            stroke="currentColor"
+            strokeWidth="1.2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
       </button>
 
       {/* Modal */}
