@@ -17,6 +17,8 @@ const Pixels = forwardRef(({
 
   const gridRef = useRef(null);
   const ageGridRef = useRef(null);
+  const fullGridRef = useRef(null);
+  const fullAgeGridRef = useRef(null);
   const animationRef = useRef(null);
   const lastUpdateRef = useRef(0);
 
@@ -73,6 +75,35 @@ const Pixels = forwardRef(({
         Array(rows)
           .fill(null)
           .map((_, j) => (grid[i][j] ? Math.floor(Math.random() * 9) : 0))
+      );
+
+    return grid;
+  }, []);
+
+  const resizeGrid = useCallback((newCols, newRows, density) => {
+    const oldCols = fullGridRef.current?.length || 0;
+    const oldRows = fullGridRef.current?.[0]?.length || 0;
+
+    const grid = Array(newCols)
+      .fill(null)
+      .map((_, i) =>
+        Array(newRows)
+          .fill(null)
+          .map((_, j) => {
+            if (i < oldCols && j < oldRows) return fullGridRef.current[i][j];
+            return Math.random() < density ? 1 : 0;
+          })
+      );
+
+    ageGridRef.current = Array(newCols)
+      .fill(null)
+      .map((_, i) =>
+        Array(newRows)
+          .fill(null)
+          .map((_, j) => {
+            if (i < oldCols && j < oldRows) return fullAgeGridRef.current?.[i]?.[j] || 0;
+            return grid[i][j] ? Math.floor(Math.random() * 9) : 0;
+          })
       );
 
     return grid;
@@ -167,17 +198,38 @@ const Pixels = forwardRef(({
     const cols = Math.floor(canvas.width / cellSize);
     const rows = Math.floor(canvas.height / cellSize);
 
-    // Recreate grid if dimensions changed or grid doesn't exist
-    if (
-      !gridRef.current ||
+    if (!gridRef.current) {
+      gridRef.current = createRandomGrid(cols, rows, density);
+    } else if (
       gridRef.current.length !== cols ||
       (gridRef.current[0] && gridRef.current[0].length !== rows)
     ) {
-      gridRef.current = createRandomGrid(cols, rows, density);
+      gridRef.current = resizeGrid(cols, rows, density);
+    }
+
+    // Merge visible grid into full-size memory grid
+    const fc = fullGridRef.current;
+    const fa = fullAgeGridRef.current;
+    if (!fc || cols > fc.length || rows > (fc[0]?.length || 0)) {
+      // Expand full grid to fit
+      const fCols = Math.max(cols, fc?.length || 0);
+      const fRows = Math.max(rows, fc?.[0]?.length || 0);
+      fullGridRef.current = Array(fCols).fill(null).map((_, i) =>
+        Array(fRows).fill(null).map((_, j) => fc?.[i]?.[j] || 0)
+      );
+      fullAgeGridRef.current = Array(fCols).fill(null).map((_, i) =>
+        Array(fRows).fill(null).map((_, j) => fa?.[i]?.[j] || 0)
+      );
+    }
+    for (let i = 0; i < cols; i++) {
+      for (let j = 0; j < rows; j++) {
+        fullGridRef.current[i][j] = gridRef.current[i][j];
+        fullAgeGridRef.current[i][j] = ageGridRef.current[i][j];
+      }
     }
 
     draw(canvas, ctx, gridRef.current, cols, rows);
-  }, [cellSize, createRandomGrid, draw, density, dimensions]);
+  }, [cellSize, createRandomGrid, resizeGrid, draw, density, dimensions]);
 
   // Animation loop
   useEffect(() => {
