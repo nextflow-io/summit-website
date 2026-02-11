@@ -3,14 +3,14 @@ import clsx from 'clsx';
 import Icon from './Icon';
 import { SquarePixel } from '@components/SquarePixel';
 
-const SectionBox = ({ children, href }) => {
+const SectionBox = ({ children, href, ariaLabel }) => {
   return (
     <div className={'bg-black p-8 relative w-full text-white'}>
       <div className="flex flex-row justify-between items-start">
         <div>{children}</div>
         <Icon className="w-full max-w-[30px]" />
       </div>
-      <a href={href} className="absolute w-full h-full top-0 left-0 "></a>
+      <a href={href} className="absolute w-full h-full top-0 left-0 "  aria-label={ariaLabel}></a>
     </div>
   );
 };
@@ -50,21 +50,21 @@ const SectionContact: React.FC<Props> = ({ className }) => {
       />
 
       <div className="container-xl w-full bg-nextflow flex flex-col md:flex-row justify-center gap-6 lg:gap-10">
-        <SectionBox href="mailto:help.summit@nextflow.io">
+        <SectionBox href="mailto:help.summit@nextflow.io" ariaLabel={'mailto:help.summit@nextflow.io'}>
           <h5 className="monospace tracking-wider text-sm mb-2 uppercase">
             Ticketing questions
           </h5>
           <div className=" text-md text-nextflow">help.summit@nextflow.io</div>
         </SectionBox>
 
-        <SectionBox href="mailto:summit@nextflow.io">
+        <SectionBox href="mailto:summit@nextflow.io" ariaLabel={'mailto:summit@nextflow.io'}>
           <h5 className="monospace tracking-wider text-sm mb-2 uppercase">
             Program questions
           </h5>
           <div className="text-md text-nextflow">summit@nextflow.io</div>
         </SectionBox>
 
-        <SectionBox href="mailto:sponsorships@seqera.io">
+        <SectionBox href="mailto:sponsorships@seqera.io" ariaLabel={'mailto:sponsorships@seqera.io'}>
           <h5 className="monospace tracking-wider text-sm mb-2 uppercase">
             Sponsorships
           </h5>

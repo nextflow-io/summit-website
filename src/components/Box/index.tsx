@@ -87,6 +87,8 @@ const Box: React.FC<Props> = ({
               target={externalLink ? '_blank' : '_self'}
               rel={externalLink ? 'noopener noreferrer' : undefined}
               className={`absolute w-full h-full top-0 left-0 z-10`}
+               aria-label={`Open link for ${title}`}
+
             >
               {children}
             </a>
@@ -118,6 +120,7 @@ const Box: React.FC<Props> = ({
                     target={externalLink ? '_blank' : '_self'}
                     rel={externalLink ? 'noopener noreferrer' : undefined}
                     className={`absolute w-full h-full top-0 left-0 z-10`}
+                     aria-label={`Open link for ${title}`}
                   >
                     {children}
                   </a>
