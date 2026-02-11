@@ -17,3 +17,8 @@
   from = "https://summit.nextflow.io/2025/boston/agenda/enabling-reproducible-science-and-african-represenation-in-science-through-nextflow-workshops"
   to = "https://summit.nextflow.io/2025/agenda/enabling-reproducible-science-and-african-representation-in-science-through-nextflow-workshops"
   status = 301
+
+  [[headers]]
+  for = "/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
