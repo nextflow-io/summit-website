@@ -319,7 +319,7 @@ export default function PongGame({ width, height }: PongGameProps) {
         style={{ touchAction: 'none' }}
       />
       <div className="text-nextflow-600 font-mono text-xs sm:text-sm text-center max-w-[380px]">
-        <p className="text-[10px] sm:text-[.8rem] px-10 sm:px-0  leading-[30px]">
+        <p className="text-[10px] sm:text-[.8rem] px-10 sm:px-0  leadig-[20px] md:leading-[30px]">
           Use mouse, finger or keyboard {' '}
           <kbd className="px-1 sm:px-1  mx-1 bg-nextflow-200 text-black text-[10px] sm:text-xs">W</kbd>
           {' / '}
@@ -328,7 +328,7 @@ export default function PongGame({ width, height }: PongGameProps) {
           <kbd className="px-1 sm:px-1  mx-1 bg-nextflow-200 text-black text-[10px] sm:text-xs">↑</kbd>
           {' / '}
           <kbd className="px-1 sm:px-1  mx-1 bg-nextflow-200 text-black text-[10px] sm:text-xs">↓</kbd>
-          {' to play.'} Click anywhere outside the game or  <kbd className="px-1   mx-1 bg-nextflow-200 text-black text-[10px] sm:text-xs">ESC</kbd> 
+          {' to play.'} Click outside or  <kbd className="px-1   mx-1 bg-nextflow-200 text-black text-[10px] sm:text-xs">ESC</kbd> 
           {' to exit.'}
         </p>
       </div>
