@@ -132,7 +132,7 @@ const LandingHero: React.FC<HeroProps> = ({
                 `}
                 >
                   <span
-                    className="bg-black/80 box-decoration-clone"
+                    className="bg-black box-decoration-clone"
                     style={{
                       boxDecorationBreak: 'clone',
                       WebkitBoxDecorationBreak: 'clone',
