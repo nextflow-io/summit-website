@@ -1,144 +1,108 @@
-import { useState } from "react";
-import CountUp from "@components/CountUp";
-import data from "./data";
+import { SquarePixel } from '@components/SquarePixel';
 
-type ItemProps = {
-  children: string;
-  value: number;
-  ready: boolean;
-  plus?: boolean;
-  percent?: boolean;
-  smaller?: boolean;
+type FeaturedStatsProps = {
+  featuredStatLeft?: string;
+  featuredDescriptionLeft?: string;
+  featuredStatRight?: string;
+  featuredDescriptionRight?: string;
 };
 
-const Item: React.FC<ItemProps> = ({
-  children,
-  value,
-  ready,
-  plus,
-  percent,
-  smaller,
-}) => {
-  const durations = {
-    1: 500,
-    1.5: 1000,
-    2: 10000,
-  };
-  let duration = 0.5;
-  Object.entries(durations).forEach(([key, length]) => {
-    if (value > length) {
-      duration = Number(key);
-    }
-  });
-  let cn = "w-full xs:w-1/2 flex-auto min-w-[100px]  py-4 px-4";
-  if (smaller)
-    cn = "w-full xs:w-1/2 md:w-full flex-auto min-w-[100px]  py-4 px-4";
-  return (
-    <CountUp
-      start={ready ? 0 : null}
-      end={value}
-      duration={duration}
-      separator=","
-      enableScrollSpy
-    >
-      {({ countUpRef }) => (
-        <div className={cn}>
-          <div className="text-4xl mb-2">
-            <span ref={countUpRef} className="font-display" />
-            {percent && "%"}
-            {plus && "+"}
-          </div>
-          <div className="text-sm sm:text-base">{children}</div>
-        </div>
-      )}
-    </CountUp>
-  );
+type Stat = {
+  statNumber: string;
+  statDescription: string;
 };
 
 type Props = {
   className?: string;
-  location?: "boston" | "barcelona";
+  headline?: string;
+  featuredStats?: FeaturedStatsProps;
+  stats?: Stat[];
 };
 
-const Numbers: React.FC<Props> = (props = {}) => {
-  const [ready, setReady] = useState(false);
-  const { className, location = "boston" } = props;
+const NextflowNumbers: React.FC<Props> = ({
+  className,
+  headline = 'Nextflow Training and nf-core Hackathon by the numbers',
+  featuredStats,
+  stats = [],
+}) => {
+  if (!featuredStats && stats.length === 0) {
+    return null;
+  }
+
   return (
-    <section className={className}>
-      <div className="container">
-        <div className="flex flex-wrap">
-          <div className="mb-4 md:mb-10 w-full lg:w-1/3 lg:pr-12">
-            <h3 className="h3">
-            Nextflow Training and nf-core Hackathon by the numbers
-            </h3>
+    <section className={`${className} bg-nextflow text-black relative`}>
+      <div className="hidden md:block ">
+        <SquarePixel
+          className="absolute bottom-0 left-0"
+          initialColor="#B6ECE2"
+        />
+        <SquarePixel
+          className="absolute bottom-[18px] left-[18px]"
+          initialColor="#fff"
+        />
+        <SquarePixel
+          className="absolute bottom-[36px] left-[36px]"
+          initialColor="#000"
+        />
+        <SquarePixel
+          className="absolute top-[36px] right-[36px]"
+          initialColor="#fff"
+        />
+        <SquarePixel
+          className="absolute top-[18px] right-[18px]"
+          initialColor="#B6ECE2"
+        />
+        <SquarePixel
+          className="absolute bottom-[18px] right-[18px]"
+          initialColor="#B6ECE2"
+        />
+      </div>
+
+      <div className="container-xl py-10 md:py-20">
+        <div className="flex flex-col md:flex-row">
+          <div className="mb-4 md:mb-10 w-full md:w-1/2 md:pr-12">
+            <h3 className="h5 mb-4 md:mb-0">{headline}</h3>
           </div>
-          <div className="w-full lg:w-2/3 flex flex-wrap">
-            <div className="md:border-r border-1 border-brand-900 w-full md:w-2/6 md:pr-6">
-              <div className="h-full w-full flex items-start flex-wrap -m-4">
-                <Item
-                  ready={ready}
-                  value={data[location]["pharma_biotech"].value}
-                  percent
-                  smaller
-                >
-                  {data[location]["pharma_biotech"].label}
-                </Item>
-                <Item
-                  ready={ready}
-                  value={data[location]["research_academia"].value}
-                  percent
-                  smaller
-                >
-                  {data[location]["research_academia"].label}
-                </Item>
+          <div className="w-full md:w-1/2 flex flex-col">
+            {/* Featured Stats */}
+            {featuredStats && (
+              <div className="w-full flex flex-row">
+                {featuredStats.featuredStatLeft && (
+                  <div className="px-4 py-2 bg-black w-full text-white flex flex-row items-center">
+                    <h3 className="text-[1.75rem] md:text-[4rem] mr-4 leading-none">
+                      {featuredStats.featuredStatLeft}
+                    </h3>
+                    <p className="text-[.7rem] md:text-lg  leading-tight max-w-[40%]" >
+                      {featuredStats.featuredDescriptionLeft}
+                    </p>
+                  </div>
+                )}
+                {featuredStats.featuredStatRight && (
+                  <div className="px-4 py-2 bg-white w-full flex flex-row items-center">
+                    <h3 className="text-[1.75rem] md:text-[4rem] mr-4 leading-none">
+                      {featuredStats.featuredStatRight}
+                    </h3>
+                    <p className="text-[.7rem]  md:text-lg  leading-tight">
+                      {featuredStats.featuredDescriptionRight}
+                    </p>
+                  </div>
+                )}
               </div>
-            </div>
-            <div className="md:w-4/6 md:pl-12 pt-8 md:pt-0">
-              <div className="h-full w-full flex items-start flex-wrap -m-4">
-                <Item
-                  ready={ready}
-                  value={
-                    data[location]["summit_in_person_attendees_prev_year"].value
-                  }
-                >
-                  {data[location]["summit_in_person_attendees_prev_year"].label}
-                </Item>
-                <Item
-                  ready={ready}
-                  value={
-                    data[location]["summit_in_person_attendees_expected"].value
-                  }
-                  plus
-                >
-                  {data[location]["summit_in_person_attendees_expected"].label}
-                </Item>
-                <Item
-                  ready={ready}
-                  value={
-                    data[location]["hackathon_in_person_attendees_prev_year"]
-                      .value
-                  }
-                >
-                  {
-                    data[location]["hackathon_in_person_attendees_prev_year"]
-                      .label
-                  }
-                </Item>
-                <Item
-                  ready={ready}
-                  value={
-                    data[location]["hackathon_in_person_attendees_expected"]
-                      .value
-                  }
-                  plus
-                >
-                  {
-                    data[location]["hackathon_in_person_attendees_expected"]
-                      .label
-                  }
-                </Item>
+            )}
+
+            {/* Regular Stats */}
+            {stats.map((stat, index) => (
+              <div key={index} className="border-b border-black py-2">
+                <div className="flex flex-row items-center">
+                  <h4 className="text-[2rem] md:text-[3rem] mr-4 leading-none w-[80px] md:w-[120px]">
+                    {stat.statNumber}
+                  </h4>
+                  <p className="text-[.7rem] md:text-[1rem] leading-tight mb-0 w-full text-pretty">
+                    {stat.statDescription}
+                  </p>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
@@ -146,4 +110,4 @@ const Numbers: React.FC<Props> = (props = {}) => {
   );
 };
 
-export default Numbers;
+export default NextflowNumbers;

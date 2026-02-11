@@ -1,0 +1,73 @@
+---
+import FooterLogo from '@icons/FooterLogo';
+import Subscribe from '@modules/Subscribe';
+import { fetchMenus } from '@data/menus';
+
+const menus = await fetchMenus();
+const currentYear = new Date().getFullYear();
+---
+
+<footer id="footer" class="bg-black text-white">
+  <div class={`pt-16 mb-6 text-white`}>
+    <nav
+      class="container-xl flex flex-col sm:flex-row md:justify-between sm:flex-wrap md:flex-nowrap"
+    >
+      <div class="w-full md:max-w-[500px] lg:pr-10 mb-10 md:mb-0 ">
+        <Subscribe client:visible />
+      </div>
+      <nav class="w-full flex md:justify-end md:items-end">
+        <div
+          class="sm:whitespace-nowrap grid grid-cols-2 gap-x-8 xs:grid-cols-5  md:gap-x-0 md:flex md:flex-row"
+        >
+          {
+            menus?.footerMenu?.map((group) => {
+              return (
+                <div class="mb-10 md:mb-0 md:ml-12 lg:ml-20">
+                  <p class="mb-2 bg-white  text-[#343434] uppercase monospace text-[.7rem] inline-flex justify-center items-center px-2">
+                    {group.footerTitle}
+                  </p>
+                  <ul>
+                  {group.footerLinks?.map((item) => {
+                    const href = item.link?.isExternal
+                      ? item.link?.externalUrl
+                      : item.link?.internalLink;
+
+                    // Add leading slash if not present and not external
+                    const url =
+                      href && !item.link?.isExternal && !href.startsWith('/')
+                        ? `/${href}`
+                        : href || '#';
+
+                    const isExternal = item.link?.isExternal;
+
+                    return (
+                      <li class="leading-[30px]">
+                        <a
+                          href={url}
+                          target={isExternal ? '_blank' : '_self'}
+                          rel={isExternal ? 'noopener noreferrer' : undefined}
+                          class="text-sm transition-all duration-300 ease-in-out hover:transition-all hover:text-nextflow"
+                        >
+                          {item.linkTitle}
+                        </a>
+                      </li>
+                    );
+                  })}
+                  </ul>
+                </div>
+              );
+            })
+          }
+        </div>
+      </nav>
+    </nav>
+  </div>
+  <div class="container-xl">
+    <div class="mt-10 mb-6">
+      <FooterLogo alt="Nextflow Summit Logo" className="w-full" />
+    </div>
+    <div class="flex flex-row justify-between">
+      <div class="monospace mb-6 text-sm"><a href="https://seqera.io" target="_blank">{`© ${currentYear}`} Seqera</a></div>
+    </div>
+  </div>
+</footer>

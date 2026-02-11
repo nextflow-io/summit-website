@@ -121,7 +121,7 @@ const TimeSlotItem: React.FC<TimeSlot> = ({
 
         {sessions[0].url && (
           <a
-            href={`/2025/virtual/agenda/${sessions[0].url}`}
+            href={`/2026/virtual/agenda/${sessions[0].url}`}
             target="_blank"
             className="absolute inset-0 z-20 cursor-pointer"
             aria-label={`View ${sessions[0].title}`}

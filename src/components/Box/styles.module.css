@@ -1,26 +1,14 @@
 .box {
-  height: 100%;
-  color: var(--color-brand-100);
-  border: 1px solid var(--color-nextflow);
+  /* color: black;
+  border: 1px solid var(--color-nextflow-400);
+  background: var(--color-nextflow-600); */
+
   transition: border-color 0.3s;
-  padding: 20px;
   position: relative;
   overflow: hidden;
-  &[href] {
+  /* &[href] {
     &:hover {
       border-color: var(--color-nextflow);
     }
-  }
-}
-.subsection {
-  & a {
-    color: var(--color-nextflow);
-  }
-  ul {
-    list-style-type:disc;
-    padding-left: 1.25rem;
-    li {
-      margin-bottom: 1rem;
-    }
-  }
+  } */
 }

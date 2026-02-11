@@ -56,12 +56,12 @@ const ImageSlider: React.FC<Props> = ({ title, children }) => {
         }}
       >
         {children.map((node, index) => (
-          <SwiperSlide key={index} className="imageBlend w-full h-0 pb-[100%] overflow-hidden relative">{node}</SwiperSlide>
+          <SwiperSlide key={index} className="w-full h-0 pb-[100%] overflow-hidden relative">{node}</SwiperSlide>
         ))}
       </Swiper>
       <nav className={clsx(styles.nav, "")}>
-        <button onClick={handlePrev} ><SliderLeft/></button>
-        <button onClick={handleNext} ><SliderRight/></button>
+        <button onClick={handlePrev} aria-label="Previous slide"><SliderLeft/></button>
+        <button onClick={handleNext} aria-label="Next slide"><SliderRight/></button>
       </nav>
     </>
   );

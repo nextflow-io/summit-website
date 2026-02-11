@@ -134,7 +134,7 @@ const SessionItem: React.FC<SessionProps> = ({
   if (url) {
     return (
       <a
-        href={`/2025/virtual/agenda/${url}`}
+        href={`/2026/virtual/agenda/${url}`}
         className="block transition-colors px-4 -mx-4 "
       >
         {content}
@@ -179,7 +179,7 @@ const TimeSlotItem: React.FC<
 
         {sessions[0].url && (
           <a
-            href={`/2025/virtual/agenda/${sessions[0].url}`}
+            href={`/2026/virtual/agenda/${sessions[0].url}`}
             className="absolute inset-0 z-20 cursor-pointer"
             aria-label={`View ${sessions[0].title}`}
           ></a>
@@ -718,7 +718,7 @@ const ScheduleVirtual: React.FC<Props> = ({ children, className, config }) => {
     <div className={`w-full ${className || ""}`}>
       {config.days.map((day, dayIndex) => (
         <section key={dayIndex} className="mb-20">
-          <h5 className="text-2xl mb-2">{day.date}</h5>
+          <h5 className="text-xxl mb-2">{day.date}</h5>
           <ScheduleHeader
             timezone={day.timezone}
             selectedTimezone={selectedTimezone}

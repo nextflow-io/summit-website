@@ -1,0 +1,18 @@
+---
+import Layout from "@layouts/Base.astro";
+import{getAllEventPosts} from "@data/events";
+import Meta from '@components/Meta/Meta.astro';
+export function getStaticPaths() {
+  return getAllEventPosts?.map((post) => ({
+    params: { slug: post.slug.current },
+    props: {post},
+  }));
+}
+import { fetchSettings, type SettingsData } from '@data/settings'; 
+const { post } = Astro.props;
+const settings: SettingsData = await fetchSettings();
+---
+
+<Layout namespace="2026/barcelona">
+   <Meta title="Agenda" sanityImage="default" settings={settings}/>
+</Layout>

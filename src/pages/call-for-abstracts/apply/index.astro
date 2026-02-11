@@ -1,0 +1,33 @@
+---
+import Layout from "@layouts/Base.astro";
+import NoFooter from "@layouts/NoFooter.astro";
+import { fetchCFA} from '@data/fetchers';
+import type { PageData } from '@data/types';
+import { fetchSettings, type SettingsData } from '@data/settings'; 
+import Meta from '@components/Meta/Meta.astro';
+
+const cfa: PageData = await fetchCFA();
+const settings: SettingsData = await fetchSettings();
+
+---
+
+<NoFooter showNav={false} namespace="2026/boston">
+    <Meta 
+    title="Call for Speakers and Posters" 
+    settings={settings}
+    imgUrl={cfa?.seo?.shareImage?.asset?.url}
+  />
+    <Meta title="Newsletter" />
+  <section class="wrapper">
+    <!-- swoogo form -->
+    <section class="relative">
+      <iframe
+        id="swoogo-form"
+        src={cfa.swoogoUrl}
+        class="swoogo-form w-full"></iframe>
+    </section>
+  </section>
+  <div class="container-xl p-4 text-center text-xs fixed bottom-0 left-0 right-0 border-t border-t-black/10 bg-white">
+    If you are having trouble viewing the page, please <a class="underline" href={cfa.swoogoUrl} target="_blank">click here</a> to open in a new window.
+  </div>
+</NoFooter>

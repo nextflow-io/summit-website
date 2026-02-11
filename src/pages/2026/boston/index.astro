@@ -1,0 +1,18 @@
+---
+import Layout from "@layouts/Base.astro";
+import { fetchBostonHackathon} from '@data/fetchers';
+import type { PageData } from '@data/types';
+import { fetchSettings, type SettingsData } from '@data/settings'; 
+import Meta from '@components/Meta/Meta.astro';
+
+const settings: SettingsData = await fetchSettings();
+
+---
+
+<Layout namespace="2026/boston" redirect="/2026/boston/overview">
+  <Meta 
+    title="Boston" 
+    settings={settings}
+    sanityImage="boston"
+  />
+</Layout>

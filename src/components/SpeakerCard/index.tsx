@@ -70,19 +70,19 @@ const SpeakerCard: React.FC<Props> = ({
     const pathname = window.location.pathname;
     
     // Extract event location from current path
-    if (pathname.includes('/virtual/')) return "/2025/virtual/agenda";
-    if (pathname.includes('/boston/')) return "/2025/boston/agenda";
-    if (pathname.includes('/barcelona/')) return "/2025/barcelona/agenda";
+    if (pathname.includes('/virtual/')) return "/2026/virtual/agenda";
+    if (pathname.includes('/boston/')) return "/2026/boston/agenda";
+    if (pathname.includes('/barcelona/')) return "/2026/barcelona/agenda";
   }
     if (location) {
       const locationLower = location.toLowerCase();
-      if (locationLower === "virtual") return "/2025/virtual/agenda";
-      if (locationLower === "boston") return "/2025/boston/agenda";
-      if (locationLower === "barcelona") return "/2025/barcelona/agenda";
+      if (locationLower === "virtual") return "/2026/virtual/agenda";
+      if (locationLower === "boston") return "/2026/boston/agenda";
+      if (locationLower === "barcelona") return "/2026/barcelona/agenda";
     }
 
     // Default fallback
-    return "/2025/boston/agenda";
+    return "/2026/boston/agenda";
   };
 
   const eventPath = getEventPath();

@@ -1,0 +1,15 @@
+---
+import Layout from '@layouts/Base.astro';
+import FaqPage from "@modules/FaqPage"
+import { fetchFaq } from '@data/fetchers';
+import type { FAQPageData } from '@data/types';
+import Meta from '../components/Meta/Meta.astro';
+import { fetchSettings, type SettingsData } from '@data/settings'; 
+const faq: FAQPageData = await fetchFaq();
+const settings: SettingsData = await fetchSettings();
+---
+
+<Layout showHeader={false}>
+  <Meta title="FAQ" sanityImage="default" settings={settings}/>
+  <FaqPage data={faq}  client:load/>
+</Layout>

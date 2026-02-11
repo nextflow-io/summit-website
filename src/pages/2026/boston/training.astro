@@ -1,0 +1,21 @@
+---
+import Layout from '@layouts/Base.astro';
+import StandardPage from "@modules/StandardPage"
+
+import { fetchBostonTraining} from '@data/fetchers';
+import type { PageData } from '@data/types';
+import { fetchSettings, type SettingsData } from '@data/settings'; 
+import Meta from '@components/Meta/Meta.astro';
+
+const training: PageData = await fetchBostonTraining();
+const settings: SettingsData = await fetchSettings();
+---
+
+<Layout>
+    <Meta 
+    title="Training" 
+    settings={settings}
+    imgUrl={training?.seo?.shareImage?.asset?.url}
+  />
+   <StandardPage data={training}  client:load/>
+</Layout>

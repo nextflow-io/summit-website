@@ -1,102 +1,160 @@
-import React, { useRef, useState } from "react";
-import { motion } from "framer-motion";
-import menuLinks from "./menuLinks";
-import Link from "./Link";
+import React, { useRef, useState, useEffect } from 'react';
+import { formatLink } from '@utils/linkFormatter';
+
+type MenuItem = {
+  linkTitle: string;
+  link?: {
+    isExternal?: boolean;
+    internalLink?: string;
+    externalUrl?: string;
+  };
+};
 
 type Props = {
-  namespace: string;
-  pathname: string;
+  namespace?: string;
+  pathname?: string;
+  menuItems?: MenuItem[];
   second?: boolean;
   desktop?: boolean;
 };
 
 const SecondaryMenu: React.FC<Props> = (props) => {
-  const [position, setPosition] = useState({
-    left: undefined,
-    width: 0,
-    opacity: 0,
-  });
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [isAnyHovered, setIsAnyHovered] = useState(false);
+  const [isNavigating, setIsNavigating] = useState(false);
+  const [clickedIndex, setClickedIndex] = useState<number | null>(null);
 
-  const { pathname, namespace, desktop } = props;
+  const { pathname, menuItems } = props;
 
-  function isActive(path) {
-    return String(pathname) == String(path);
+  useEffect(() => {
+    setHoveredIndex(null);
+    setIsAnyHovered(false);
+    setIsNavigating(false);
+    setClickedIndex(null);
+  }, [pathname]);
+
+  if (!menuItems || menuItems.length === 0) {
+    return null;
   }
 
-  let location;
-  if (namespace === "2025/barcelona") location = 1;
-  if (namespace === "2025/boston") location = 2;
-  if (namespace === "2025/virtual") location = 0;
   return (
-    <nav>
+    <nav className="">
       <ul
-        onMouseLeave={() => {
-          setPosition((pv) => ({
-            ...pv,
-            opacity: 0,
-          }));
+        onMouseEnter={() => {
+          if (!isNavigating) {
+            setIsAnyHovered(true);
+          }
         }}
-        className="rounded-sm relative mx-auto flex w-fit bg-nextflow-200 overflow-hidden"
+        onMouseLeave={() => {
+          if (!isNavigating) {
+            setHoveredIndex(null);
+            setIsAnyHovered(false);
+          }
+        }}
+        className="relative w-full flex bg-white text-black overflow-hidden"
       >
-        {menuLinks[location]?.dropdowns?.map(({ name, url }, i) => {
+        {menuItems.map((item, index) => {
+          const url = formatLink(item.link) || '#';
+
           return (
-            <div key={i}>
-              <Tab url={url} pathname={pathname} setPosition={setPosition}>
-                {name}
-              </Tab>
-            </div>
+            <Tab
+              key={index}
+              index={index}
+              url={url}
+              pathname={pathname || ''}
+              isExternal={item.link?.isExternal}
+              isHovered={hoveredIndex === index}
+              isAnyHovered={isAnyHovered}
+              setHoveredIndex={setHoveredIndex}
+              isNavigating={isNavigating}
+              setIsNavigating={setIsNavigating}
+              clickedIndex={clickedIndex}
+              setClickedIndex={setClickedIndex}
+            >
+              {item.linkTitle}
+            </Tab>
           );
         })}
-        <Cursor position={position} />
       </ul>
     </nav>
   );
 };
 
-const Tab = ({ children, setPosition, url, pathname }) => {
-  const ref = useRef(null);
-  function isActive(path) {
+type TabProps = {
+  children: React.ReactNode;
+  index: number;
+  url: string;
+  pathname: string;
+  isExternal?: boolean;
+  isHovered: boolean;
+  isAnyHovered: boolean;
+  setHoveredIndex: (index: number | null) => void;
+  isNavigating: boolean;
+  setIsNavigating: (value: boolean) => void;
+  clickedIndex: number | null;
+  setClickedIndex: (index: number | null) => void;
+};
+
+const Tab: React.FC<TabProps> = ({
+  children,
+  index,
+  url,
+  pathname,
+  isExternal,
+  isHovered,
+  isAnyHovered,
+  setHoveredIndex,
+  isNavigating,
+  setIsNavigating,
+  clickedIndex,
+  setClickedIndex,
+}) => {
+  const ref = useRef<HTMLLIElement>(null);
+
+  function isActive(path: string) {
     return pathname?.includes(path);
-    // return pathname.toString() == path.toString()
   }
+
+  const active = isActive(url);
+
+  const showSquare = 
+    (!isNavigating && isHovered) || 
+    (isNavigating && clickedIndex === index) ||
+    (active && !isAnyHovered && !isNavigating);
+
+  const handleClick = (e: React.MouseEvent) => {
+    if (!isExternal) {
+      setIsNavigating(true);
+      setClickedIndex(index);
+    }
+  };
 
   return (
     <li
       ref={ref}
       onMouseEnter={() => {
-        if (!ref?.current) return;
-        const { width } = ref.current.getBoundingClientRect();
-        setPosition({
-          left: ref.current.offsetLeft,
-          width,
-          opacity: 1,
-        });
+        if (!isNavigating) {
+          setHoveredIndex(index);
+        }
       }}
-      className="relative z-10 block cursor-pointer text-brand"
+      className="relative z-10 flex items-center gap-2 cursor-pointer text-black"
     >
-      {/* <a
+      <span 
+        className={`w-2 h-2 bg-black flex-shrink-0 transition-opacity duration-300 mr-[-6px] mt-[-1px] ${
+          showSquare ? 'opacity-100' : 'opacity-0'
+        }`}
+      />
+      <a
         href={url}
-        className={`navItem`}
+        onClick={handleClick}
+        className={`navItem uppercase transition-none ${active ? 'active' : ''}`}
+        data-active={active ? true : undefined}
+        target={isExternal ? '_blank' : '_self'}
+        rel={isExternal ? 'noopener noreferrer' : undefined}
       >
         {children}
-      </a> */}
-           <Link href={url} active={isActive(url)}>
-           {children}
-          </Link>
+      </a>
     </li>
-  );
-};
-
-const Cursor = ({ position }) => {
-  return (
-    <motion.li
-      animate={{
-        ...position,
-      }}
-      style={{...position}}
-      initial={false}
-      className="nav__highlight"
-    />
   );
 };
 

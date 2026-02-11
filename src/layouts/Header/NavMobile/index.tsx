@@ -1,69 +1,145 @@
-import { useState } from "react";
-import clsx from "clsx";
-import Button from "@components/Button";
-import styles from "./styles.module.css";
-import Hamburger from "./Hamburger";
-import DropDowns from "./DropDowns/DropDowns";
-import useMediaQuery from "@utils/useMediaQuery";
-import Logo from "../Logo";
-import Menu from "../Menu";
+import { useState, useEffect } from 'react';
+import clsx from 'clsx';
+import Button from '@components/Button';
+import styles from './styles.module.css';
+import Hamburger from './Hamburger';
+import DropDowns from './DropDowns/DropDowns';
+import useMediaQuery from '@utils/useMediaQuery';
+import Logo from '../Logo';
+import { formatLink } from '@utils/linkFormatter';
+
+type Link = {
+  isExternal?: boolean;
+  internalLink?: string;
+  externalUrl?: string;
+};
+
+type MenuLink = {
+  linkTitle: string;
+  link?: Link;
+};
+
+type SingleLink = {
+  _type: 'singleLink';
+  linkTitle: string;
+  link?: Link;
+};
+
+type MenuGroup = {
+  _type: 'menuGroup';
+  menuTitle: string;
+  menuLinks?: MenuLink[];
+};
+
+type MobileMenuItem = SingleLink | MenuGroup;
 
 type Props = {
   namespace: string;
   pathname: string;
   showNav?: boolean;
+  mobileMenu?: MobileMenuItem[];
+  mobileButton?: {
+    buttonText?: string;
+    buttonUrl?: {
+      isExternal?: boolean;
+      externalUrl?: string;
+      internalLink?: string;
+    };
+  };
+  mobileButton2?: {
+    buttonText?: string;
+    buttonUrl?: {
+      isExternal?: boolean;
+      externalUrl?: string;
+      internalLink?: string;
+    };
+  };
 };
 
-const NavMobile: React.FC<Props> = ({ pathname, namespace, showNav }) => {
+const NavMobile: React.FC<Props> = ({
+  pathname,
+  namespace,
+  showNav,
+  mobileMenu,
+  mobileButton,
+  mobileButton2,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
-  const isMobile = useMediaQuery({ maxWidth: "sm" });
+  const isMobile = useMediaQuery({ maxWidth: 'sm' });
+
+  // Lock/unlock body scroll when menu opens/closes (mobile only)
+  useEffect(() => {
+    if (isMobile && isOpen) {
+      document.body.classList.add('mobile-menu-open');
+    } else {
+      document.body.classList.remove('mobile-menu-open');
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.classList.remove('mobile-menu-open');
+    };
+  }, [isOpen, isMobile]);
+
   if (!isMobile) return null;
+
   return (
     <div>
       <header
         id="headerMobile"
         className={clsx(styles.navMobile, { [styles.open]: isOpen })}
       >
-        <div className={styles.header}>
-          <Logo namespace={namespace} />
+        <div className={`${styles.header} `}>
+             <div className="relative flex flex-row items-center">
+            <Logo namespace={namespace} isMenuOpen={isOpen} />
+            <div
+              className={`ml-2 p-[11px] w-[16px] h-[16px] flex justify-center items-center font-display text-[14px] md:text-[15px] font-semibold ${isOpen ? 'bg-white text-black' : 'bg-black text-white '}`}
+            >
+              26
+            </div>
+            <a className="absolute top-0 left-0 w-full h-full z-10" href="/" arial-label="Navigate to home"></a>
+          </div>
           <Hamburger setIsOpen={setIsOpen} isOpen={isOpen} />
         </div>
         {isOpen && (
           <div
             className={clsx(styles.navDropdown, { [styles.openDD]: isOpen })}
           >
-            <DropDowns />
+            <DropDowns
+              pathname={pathname}
+              namespace={namespace}
+              mobileMenu={mobileMenu}
+            />
 
-            <div className="container">
-              <Button
-                className="container mt-8 relative w-full"
-                white
-                arrowAfter
-              >
-                View the recordings
-                <a
-                  className="absolute w-full h-full"
-                  href="https://www.youtube.com/watch?v=yThPs3KOSak&list=PLPZ8WHdZGxmV92E9hZx4KZiC27ILX6YFF"
-                  target="_blank"
-                ></a>
-              </Button>
-              {/* <Button
-                className="container mt-4 relative w-full"
-                brand
-                arrowAfter
-              >
-                Register for Summit
-                <a
-                  className="absolute w-full h-full"
-                  href="https://seqera.registration.goldcast.io/events/dc611bf3-ddc4-4a20-9f2f-1a9e941cc68c"
-                  target="_blank"
-                ></a>
-              </Button> */}
-            </div>
+            {mobileButton && (
+              <div className="container">
+                <Button
+                  className="relative w-full mt-5"
+                  light
+                  href={formatLink(mobileButton.buttonUrl)}
+                  target={mobileButton.buttonUrl?.isExternal ? '_blank' : '_self'}
+                >
+                  {mobileButton.buttonText}
+                </Button>
+              </div>
+            )}
+
+            {mobileButton2 && (
+              <div className="container">
+                <Button
+                  className="relative w-full mt-3"
+                  light
+                  href={formatLink(mobileButton2.buttonUrl)}
+                  target={mobileButton2.buttonUrl?.isExternal ? '_blank' : '_self'}
+                >
+                  {mobileButton2.buttonText}
+                </Button>
+              </div>
+            )}
           </div>
         )}
       </header>
-      <div className="h-[76px]"></div>
+      <div className="md:h-[76px]"></div>
     </div>
   );
 };

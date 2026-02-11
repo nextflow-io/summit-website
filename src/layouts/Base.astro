@@ -11,11 +11,11 @@ import "../styles/fonts/inter/main.css";
 import "../styles/fonts/pt-mono/main.css";
 import Header from "./Header/index.astro";
 import Scripts from "./Scripts.astro";
-import Footer from "./Footer/index.astro";
+import Footer from "./footer.astro";
 import CookieHandler from "./CookieHandler";
 import CookieNotice from "./CookieNotice";
 import Contact from "@modules/Contact";
-
+import IdleState from "@components/IdleState";
 
 ---
 
@@ -44,6 +44,7 @@ import Contact from "@modules/Contact";
       <Contact />
       <Footer />
     <CookieNotice client:only="react" />
+    <IdleState client:only="react" idleTimeout={340000} />
   </body>
 </html>
 

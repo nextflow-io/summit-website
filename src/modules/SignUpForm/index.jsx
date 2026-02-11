@@ -6,16 +6,26 @@ import img from "./photo.jpg";
 
 const SignUpForm = () => {
   return (
-    <div className="sm:px-10 py-8">
-      <div className="text-center w-full sm:px-8">
+    <section className="bg-white text-black py-10 md:py-20">
+      <div className="container-xl">
+        <div className="flex flex-col sm:flex-row sm:justify-between">
+          <div className="w-full pr-10">
+            <h2 className="h4 mb-10">
+              Sign up
+              <br /> for updates
+            </h2>
+          </div>
+          <div>
+            <div className="w-full">
+              <HubspotForm
+                formID="2247618a-a67e-42c6-afd4-6e3a9d5042b6"
+                className={styles.form}
+              />
+            </div>
+          </div>
+        </div>
       </div>
-      <div className="w-full">
-        <HubspotForm
-          formID="7cad6141-f2cd-4e52-ad1f-9c6638faacc0"
-          className={styles.form}
-        />
-      </div>
-    </div>
+    </section>
   );
 };
 

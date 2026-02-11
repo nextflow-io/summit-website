@@ -1,0 +1,14 @@
+---
+import Layout from '@layouts/Base.astro';
+import Meta from '@components/Meta/Meta.astro';
+import SignUpForm from '@modules/SignUpForm';
+import { fetchSettings, type SettingsData } from '@data/settings'; 
+const settings: SettingsData = await fetchSettings();
+---
+
+<Layout>
+  <Meta title="Newsletter" sanityImage="default" settings={settings} />
+  <div class="py-10">
+    <SignUpForm client:load/>
+  </div>
+</Layout>

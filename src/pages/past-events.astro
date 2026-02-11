@@ -1,0 +1,15 @@
+---
+import Layout from '@layouts/Base.astro';
+import StandardPage from "@modules/StandardPage"
+import { fetchPastEvents } from '@data/fetchers';
+import type { PageData } from '@data/types';
+import Meta from '@components/Meta/Meta.astro';
+import { fetchSettings, type SettingsData } from '@data/settings'; 
+const past: PageData = await fetchPastEvents();
+const settings: SettingsData = await fetchSettings();
+---
+
+<Layout>
+  <Meta title="Past Events" sanityImage="default" settings={settings}/>
+  <StandardPage data={past}  client:load/>
+</Layout>

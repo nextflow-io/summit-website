@@ -1,0 +1,22 @@
+---
+import Layout from '@layouts/Base.astro';
+import Meta from '@components/Meta/Meta.astro';
+import StandardPage from "@modules/StandardPage"
+import { fetchBostonOverview} from '@data/fetchers';
+import type { PageData } from '@data/types';
+import SignUpForm from '@modules/SignUpForm';
+import { fetchSettings, type SettingsData } from '@data/settings'; 
+
+const overview: PageData = await fetchBostonOverview();
+const settings: SettingsData = await fetchSettings();
+---
+
+<Layout showHeader={false}>
+    <Meta 
+    title="Overview" 
+    settings={settings}
+    sanityImage="boston"
+  />
+  <StandardPage data={overview}  client:load/>
+  <SignUpForm client:load />
+</Layout>

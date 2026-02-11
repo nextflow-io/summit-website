@@ -2,55 +2,84 @@
 const { namespace, showHeader } = Astro.props;
 const pathname = new URL(Astro.request.url).pathname;
 
-import styles from "./styles.module.css";
-import NavMobile from "./NavMobile";
-import Menu from "./Menu";
-import SecondaryMenu from "./SecondaryMenu";
-import Logo from "./Logo";
-import ArrowRight from "@icons/ArrowRight";
+import styles from './styles.module.css';
+import NavMobile from './NavMobile';
+import Menu from './Menu';
+import SecondaryMenu from './SecondaryMenu';
+import Logo from './Logo';
+import Button from '@components/Button';
+
+import { fetchMenus } from '@data/menus';
+import { formatLink } from '@utils/linkFormatter';
+
+const menus = await fetchMenus();
+
 let showNav = true;
-if (typeof Astro.props.showNav !== "undefined") showNav = Astro.props.showNav;
+if (typeof Astro.props.showNav !== 'undefined') showNav = Astro.props.showNav;
+
+const shouldShowSecondaryMenu =
+  menus?.secondaryPath && pathname.includes(menus.secondaryPath);
 ---
 
-<header id="header" class={`${styles.header}`}>
-  <div class={`${styles.headerWrapper} border-b-white flex flex-col w-full`}>
-    <div class={`${styles.headerTop} flex justify-center items-center`}>
-      <div class="container flex items-center justify-between monospace h-full">
-        <Logo namespace={namespace} />
-        <Menu pathname={pathname} namespace={namespace} />
-        <button
-          class={`${styles.registerCTA} hidden lg:flex bg-white text-brand h-full px-4 relative flex-row uppercase items-center justify-center`}
-        >
-          View the recordings
-          <div
-            class={`${styles.registerBtn} arrowRight ml-4 bg-nextflow flex justify-center items-center p-2 rounded-sm`}
-          >
-            <ArrowRight />
-          </div>
-          <a
-            href="https://www.youtube.com/watch?v=yThPs3KOSak&list=PLPZ8WHdZGxmV92E9hZx4KZiC27ILX6YFF"
-        
-            class="absolute top-0 left-0 right-0 bottom-0 w-full h-full"></a>
-        </button>
-      </div>
-    </div>
-    <div
-      class={`${styles.navigation} js-secondary-nav transition-all duration-300`}
-    >
+<header
+  id="header"
+  class={`${styles.header} transition-shadow duration-300 shadow-sm`}
+>
+  <div class={`${styles.headerWrapper} flex flex-col w-full`}>
+    <div class="bg-nextflow">
       <div
-        class="container flex items-center justify-center monospace text-xxs"
+        class={`${styles.headerTop} container-xl w-full flex justify-center items-center`}
       >
-        {
-          namespace && (
-            <SecondaryMenu
-              pathname={pathname}
-              namespace={namespace}
-              client:load
-            />
-          )
-        }
+        <div class="w-full flex items-center justify-between h-full">
+          <div class="relative flex flex-row items-center">
+            <Logo namespace={namespace} />
+            <div
+              class="ml-2 p-[12px] w-[16px] h-[16px] flex justify-center items-center font-display bg-black text-white  text-[15px] font-semibold"
+            >
+              26
+            </div>
+            <a class="absolute top-0 left-0 w-full h-full z-10" href="/" aria-label="Navigate to home"></a>
+          </div>
+          <Menu menuItems={menus?.headerMenu} pathname={pathname} />
+          <div>
+            {
+              menus?.headerBtn && (
+                <Button
+                  light
+                  arrow
+                  className=""
+                  href={formatLink(menus.headerBtn.buttonUrl)}
+                  target={
+                    menus.headerBtn.buttonUrl?.isExternal ? '_blank' : '_self'
+                  }
+                >
+                  {menus.headerBtn.buttonText}
+                </Button>
+              )
+            }
+          </div>
+        </div>
       </div>
     </div>
+
+    {
+      shouldShowSecondaryMenu &&
+        menus?.secondaryMenu &&
+        menus.secondaryMenu.length > 0 && (
+          <div
+            class={`${styles.navigation} js-secondary-nav transition-all duration-300`}
+          >
+            <div class="w-full flex items-center justify-center monospace text-xxs">
+              <SecondaryMenu
+                pathname={pathname}
+                namespace={namespace}
+                menuItems={menus.secondaryMenu}
+                client:load
+              />
+            </div>
+          </div>
+        )
+    }
   </div>
 </header>
 
@@ -58,31 +87,8 @@ if (typeof Astro.props.showNav !== "undefined") showNav = Astro.props.showNav;
   pathname={pathname}
   namespace={namespace}
   showNav={showNav}
+  mobileMenu={menus?.mobileMenu}
+  mobileButton={menus?.mobileBtn}
+  mobileButton2={menus?.mobileBtn2}
   client:only="react"
 />
-
-<script>
-  document.addEventListener("astro:page-load", () => {
-    let secondaryNav = document.querySelector(".js-secondary-nav");
-    let prevScrollTop = window.scrollY || document.documentElement.scrollTop;
-    let prevScrollDirection = "";
-
-    if (secondaryNav) {
-      window.addEventListener(
-        "scroll",
-        function () {
-          const st = window.scrollY || document.documentElement.scrollTop;
-          if (st > prevScrollTop && prevScrollDirection !== "down") {
-            prevScrollDirection = "down";
-            secondaryNav.classList.add("js-hide-nav");
-          } else if (st < prevScrollTop && prevScrollDirection !== "up") {
-            secondaryNav.classList.remove("js-hide-nav");
-            prevScrollDirection = "up";
-          }
-          prevScrollTop = st <= 0 ? 0 : st;
-        },
-        false,
-      );
-    }
-  });
-</script>

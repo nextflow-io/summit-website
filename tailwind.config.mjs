@@ -33,20 +33,21 @@ export default {
     fontSize: {
       xxs: [".625rem"], // 10px
       xs: [".75rem"], // 12px
-      sm: ["14px"], // 14px
+      sm: [".875rem"], // 14px
+      body: [".9375rem"], // 15px
       base: ["1rem"], // 16px
-      body: ["1.0625rem"], // 17px
       lg: ["1.125rem"], // 18px
       xl: ["1.5rem"], // 24px
-      xxl: ["2.1875rem"], // 35px
-      "2xl": ["2.5rem", "1"], // 40px
-      "3xl": ["3.125rem", "1"], // 50px
+      xxl: ["2.1875rem"], // 30px
+      "3xl": ["2.5rem", "1"], // 40px
+      "3xl": ["3.75rem", "1"], // 60px
       "4xl": ["5rem", "1"], // 80px
-      "5xl": ["7.5rem", "1"], // 120px
-      "6xl": ["8.75rem", "1"], // 140px
+      "5xl": ["6.25rem", "1"], // 100px
+      "6xl": ["7.5rem", "1"], // 120px
     },
     extend: {
       colors: {
+        darkGray: '#343434',
         nextflow: {
           100: "#E2F7F3",
           200: "#B6ECE2",
@@ -212,11 +213,11 @@ export default {
       container: {
         center: true,
         screens: {
-          // xxs: "340px",
-          // xs: "800px",
-          // sm: "1000px",
-          // md: "1200px",
-          // lg: "1400px",
+          xxs: "340px",
+          xs: "800px",
+          sm: "1000px",
+          md: "1200px",
+          lg: "1400px",
           xl: "1600px",
         },
       },

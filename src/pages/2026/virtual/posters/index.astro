@@ -1,0 +1,37 @@
+---
+import Layout from "@layouts/Base.astro";
+import Meta from '@components/Meta/Meta.astro';
+import {getAllPostersVirtual} from "@data/posters";
+import { fetchSettings, type SettingsData } from '@data/settings'; 
+const sortedMembers = getAllPostersVirtual[0].posters.sort((a, b) =>
+  a.name.localeCompare(b.name)
+);
+const settings: SettingsData = await fetchSettings();
+---
+
+<Layout namespace="2026/virtual">
+    <Meta title="Posters" sanityImage="default"  settings={settings}/>
+   <section class="py-20 bg-black text-white">
+      <div class="container-lg">
+        <h1 class="h3 mb-4">Posters</h1>
+        <p>
+          Check back soon to see this year's posters.
+        </p>
+      </div>
+    </section>
+
+ <!-- <div class="container mt-14">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+    {
+      sortedMembers.map((name,index) => (
+         <PostersSection 
+         person={name} 
+         index={index}
+         location="virtual"
+         client:only="react"/>
+      ))
+    }
+  </div>
+</div> -->
+
+</Layout>

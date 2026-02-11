@@ -1,0 +1,13 @@
+---
+import Layout from '@layouts/Base.astro';
+import Meta from '@components/Meta/Meta.astro';
+import { fetchSettings, type SettingsData } from '@data/settings'; 
+const settings: SettingsData = await fetchSettings();
+---
+
+<Layout namespace="2026/barcelona">
+  <Meta title="Sponsors" sanityImage="default"  settings={settings}/>
+  <section class="mt-10 md:mt-20 mb-24 container">
+    <h1 class="h1 mb-4 md:mb-8">Sponsors</h1>
+  </section>
+</Layout>

@@ -1,0 +1,28 @@
+---
+import Layout from "@layouts/Base.astro";
+import NoFooter from "@layouts/NoFooter.astro";
+import Meta from '@components/Meta/Meta.astro';
+import { fetchBostonRegister} from '@data/fetchers';
+import type { PageData } from '@data/types';
+import { fetchSettings, type SettingsData } from '@data/settings'; 
+const register: PageData = await fetchBostonRegister();
+const settings: SettingsData = await fetchSettings();
+
+---
+
+<NoFooter showNav={false} namespace="2026/boston">
+  <Meta title="Register" sanityImage="default"  settings={settings}/>
+  <section class="wrapper">
+    <!-- swoogo form -->
+    <section class="relative">
+      <iframe
+        id="swoogo-form"
+        src={register.swoogoUrl}
+        class="swoogo-form w-full"></iframe>
+    </section>
+  </section>
+  <div class="container-xl p-4 text-center text-xs fixed bottom-0 left-0 right-0 border-t border-t-black/10 bg-white">
+    If you are having trouble viewing the page, please <a class="underline" href={register.swoogoUrl} target="_blank">click here</a> to open in a new window.
+  </div>
+</NoFooter>
+
