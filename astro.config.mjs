@@ -11,6 +11,7 @@ const host = "https://summit.nextflow.io";
 
 export default defineConfig({
   site: host,
+  base: '/2025', 
   build: {
     assetsPrefix: 'https://nextflow-summit-2025.netlify.app'
   },
