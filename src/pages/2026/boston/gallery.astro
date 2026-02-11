@@ -1,15 +1,16 @@
 ---
 import Layout from "@layouts/Base.astro";
-import SEO from "@components/SEO";
+import Meta from '@components/Meta/Meta.astro';
 import StandardPage from "@modules/StandardPage"
 import { fetchBostonGallery} from '@data/fetchers';
 import type { PageData } from '@data/types';
-
+import { fetchSettings, type SettingsData } from '@data/settings'; 
 const gallery: PageData = await fetchBostonGallery();
+const settings: SettingsData = await fetchSettings();
 ---
 
-<Layout namespace="2026/boston" altBG>
-  <SEO slot="head" title="Gallery" img={1} />
+<Layout namespace="2026/boston" >
+     <Meta title="Gallery" sanityImage="default"  settings={settings}/>
     <StandardPage data={gallery}  client:load/>
 </Layout>
 

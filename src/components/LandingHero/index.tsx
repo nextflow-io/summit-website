@@ -155,14 +155,24 @@ const LandingHero: React.FC<HeroProps> = ({
                   ${headlineSize === 'small' ? 'h4' : ''} 
                 `}
                 >
-                  {title}
+                  <span
+                    className="bg-black box-decoration-clone"
+                    style={{
+                      boxDecorationBreak: 'clone',
+                      WebkitBoxDecorationBreak: 'clone',
+                    }}
+                  >
+                    {title}
+                  </span>
                 </h1>
               </div>
               <h1 className="h1 mb-4 sm:max-w-[500px]  ">{subtitle}</h1>
             </div>
 
             <div className="flex flex-col sm:max-w-[550px] relative">
-              <div className="z-50 pointer-events-none">
+              <div
+                className={clsx('z-50 pointer-events-auto', styles.heroText)}
+              >
                 <PortableText value={content} />
               </div>
 

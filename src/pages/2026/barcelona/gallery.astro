@@ -1,13 +1,10 @@
 ---
 import Layout from "@layouts/Base.astro";
-import SEO from "@components/SEO";
-
-
+import Meta from '@components/Meta/Meta.astro';
+import { fetchSettings, type SettingsData } from '@data/settings';
+const settings: SettingsData = await fetchSettings();
 ---
 
-<Layout namespace="2026/barcelona" altBG>
-  <SEO slot="head" title="Gallery" img={2} />
-  <section class="container text-center pt-10 md:pt-16">
-  
-  </section>
+<Layout namespace="2026/barcelona">
+   <Meta title="Gallery" sanityImage="default"  settings={settings}/>
 </Layout>

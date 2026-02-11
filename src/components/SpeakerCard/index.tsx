@@ -201,12 +201,8 @@ const SpeakerCard: React.FC<Props> = ({
   };
 
   return (
-    <motion.div
-      className="hover:cursor-pointer h-full"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.25, delay: 0.4, ease: "linear" }}
+    <div
+
     >
       {/* Speaker Card */}
       <div className="speaker-card border border-nextflow hover:border-nextflow-200 transition-all duration-300 p-2 flex flex-col h-full">
@@ -338,7 +334,7 @@ const SpeakerCard: React.FC<Props> = ({
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

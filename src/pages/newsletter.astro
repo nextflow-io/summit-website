@@ -1,16 +1,14 @@
 ---
 import Layout from '@layouts/Base.astro';
-import SEO from '@components/SEO';
-import StandardPage from "@modules/StandardPage"
+import Meta from '@components/Meta/Meta.astro';
 import SignUpForm from '@modules/SignUpForm';
-
-
-
+import { fetchSettings, type SettingsData } from '@data/settings'; 
+const settings: SettingsData = await fetchSettings();
 ---
 
 <Layout>
-  <SEO slot="head" title="Past Events" />
+  <Meta title="Newsletter" sanityImage="default" settings={settings} />
   <div class="py-10">
-  <SignUpForm client:load/>
+    <SignUpForm client:load/>
   </div>
 </Layout>

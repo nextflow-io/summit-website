@@ -1,20 +1,21 @@
 ---
 import Layout from '@layouts/Base.astro';
-import SEO from '@components/SEO';
+import Meta from '@components/Meta/Meta.astro';
 import StandardPage from '@modules/StandardPage';
 import { fetchBostonTravel } from '@data/fetchers';
 import type { PageData } from '@data/types';
 import LandingHero from '@components/LandingHero';
-
+import { fetchSettings, type SettingsData } from '@data/settings'; 
 const travel: PageData = await fetchBostonTravel();
+const settings: SettingsData = await fetchSettings();
 ---
 
 <Layout>
-  <SEO slot="head" title="Agenda | Boston" />
+  <Meta title="Agenda" sanityImage="default"  settings={settings}/>
   <div class="bg-black text-white">
       <section class="py-20 bg-black text-white">
       <div class="container-lg">
-        <h1 class="h3">Agenda</h1>
+        <h1 class="h3 mb-4">Agenda</h1>
         <p>
           Check back soon to view the schedule for Nextflow Summit Boston 2026.
         </p>
