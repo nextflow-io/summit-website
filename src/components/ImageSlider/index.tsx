@@ -60,8 +60,8 @@ const ImageSlider: React.FC<Props> = ({ title, children }) => {
         ))}
       </Swiper>
       <nav className={clsx(styles.nav, "")}>
-        <button onClick={handlePrev} ><SliderLeft/></button>
-        <button onClick={handleNext} ><SliderRight/></button>
+        <button onClick={handlePrev} aria-label="Previous slide"><SliderLeft/></button>
+        <button onClick={handleNext} aria-label="Next slide"><SliderRight/></button>
       </nav>
     </>
   );

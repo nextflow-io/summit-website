@@ -53,14 +53,16 @@ const Box: React.FC<Props> = ({
           {tags && tags.length > 0 && (
             <div className="pt-4 md:pt-6">
               <div className="flex flex-wrap gap-2 mb-2">
+                 
                 {tags.map((tagItem, index) => (
                   <div
                     key={index}
-                    className={`uppercase monospace px-3 py-[3px] text-[.65rem] tracking-wider inline-flex justify-center items-center
-                       bg-[#000] text-white
+                    className={`uppercase monospace py-[3px] text-[.6rem] tracking-widest flex justify-center items-center
+                       ] text-white bg-black px-3
                       `}
                   >
-                    {tagItem}
+                    <div className="w-[4px] h-[4px] bg-white mt-[-1px]"></div>
+                    <div className="ml-[5px]">{tagItem}</div>
                   </div>
                 ))}
               </div>
@@ -70,7 +72,7 @@ const Box: React.FC<Props> = ({
             <div
               className={` pt-4 pb-2 w-full flex flex-row justify-between items-center]`}
             >
-              <h5 className="text-[2.25rem] font-display leading-none">{title}</h5>
+              <h5 className="text-[2rem] xl:text-[2.25rem] font-display leading-none">{title}</h5>
               {href && (
                 <div className="mt-2">
                   <ArrowUpRight />
@@ -85,6 +87,8 @@ const Box: React.FC<Props> = ({
               target={externalLink ? '_blank' : '_self'}
               rel={externalLink ? 'noopener noreferrer' : undefined}
               className={`absolute w-full h-full top-0 left-0 z-10`}
+               aria-label={`Open link for ${title}`}
+
             >
               {children}
             </a>
@@ -116,6 +120,7 @@ const Box: React.FC<Props> = ({
                     target={externalLink ? '_blank' : '_self'}
                     rel={externalLink ? 'noopener noreferrer' : undefined}
                     className={`absolute w-full h-full top-0 left-0 z-10`}
+                     aria-label={`Open link for ${title}`}
                   >
                     {children}
                   </a>

@@ -3,8 +3,8 @@ import Layout from "@layouts/Base.astro";
 import StandardPage from "@modules/StandardPage"
 import { fetchCFA} from '@data/fetchers';
 import type { PageData } from '@data/types';
-import { fetchSettings, type SettingsData } from '../../data/settings'; 
-import Meta from '../../components/Meta/Meta.astro';
+import { fetchSettings, type SettingsData } from '@data/settings'; 
+import Meta from '@components/Meta/Meta.astro';
 
 const cfa: PageData = await fetchCFA();
 const settings: SettingsData = await fetchSettings();

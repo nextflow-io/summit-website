@@ -1,15 +1,16 @@
 ---
 import Layout from '@layouts/Base.astro';
-import SEO from '@components/SEO';
 import StandardPage from "@modules/StandardPage"
 import { fetchWhyAttend } from '@data/fetchers';
 import type { PageData } from '@data/types';
+import Meta from '@components/Meta/Meta.astro';
+import { fetchSettings, type SettingsData } from '@data/settings'; 
 
 const attend: PageData = await fetchWhyAttend();
-
+const settings: SettingsData = await fetchSettings();
 ---
 
 <Layout>
-  <SEO slot="head" title="Why Attend" />
+  <Meta title="Why Attend" sanityImage="default" settings={settings}/>
   <StandardPage data={attend} client:load/>
 </Layout>

@@ -97,7 +97,7 @@ const NavMobile: React.FC<Props> = ({
             >
               26
             </div>
-            <a className="absolute top-0 left-0 w-full h-full z-10" href="/"></a>
+            <a className="absolute top-0 left-0 w-full h-full z-10" href="/" arial-label="Navigate to home"></a>
           </div>
           <Hamburger setIsOpen={setIsOpen} isOpen={isOpen} />
         </div>

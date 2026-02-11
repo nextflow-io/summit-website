@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './styles.module.css';
-import SummitLogo from '@images/icons/SummitLogo';
 
 type Props = {
   namespace: string;

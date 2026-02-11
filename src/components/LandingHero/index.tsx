@@ -7,6 +7,7 @@ import Link from './Link';
 import { motion, AnimatePresence } from 'framer-motion';
 import PortableText from '@components/PortableText';
 import Pixels from '@modules/Pixels';
+import shareOverlay from '@images/pixel-share-overlay.svg';
 
 interface HeroProps {
   title?: string;
@@ -54,6 +55,8 @@ const LandingHero: React.FC<HeroProps> = ({
   const [pacmanMode, setPacmanMode] = useState(false);
   const pixelsRef = useRef<{ getCanvas: () => HTMLCanvasElement | null }>(null);
 
+  const [hashtagCopied, setHashtagCopied] = useState(false);
+
   // Close modal on Escape key
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -86,31 +89,52 @@ const LandingHero: React.FC<HeroProps> = ({
     const canvas = pixelsRef.current?.getCanvas();
     if (!canvas) return;
 
-    // Create a new canvas with black background
-    const downloadCanvas = document.createElement('canvas');
-    downloadCanvas.width = canvas.width;
-    downloadCanvas.height = canvas.height;
-    const ctx = downloadCanvas.getContext('2d');
+    const sourceWidth = canvas.width;
+    const sourceHeight = canvas.height;
 
+    // Target 1.91:1 aspect ratio for social sharing
+    let targetWidth = sourceWidth;
+    let targetHeight = Math.round(sourceWidth / 1.91);
+
+    // If source is already wider than 1.91:1, pad sides instead
+    if (targetHeight < sourceHeight) {
+      targetHeight = sourceHeight;
+      targetWidth = Math.round(sourceHeight * 1.91);
+    }
+
+    // Artwork position: bottom-aligned, horizontally centered
+    const xOffset = Math.round((targetWidth - sourceWidth) / 2);
+    const yOffset = targetHeight - sourceHeight;
+
+    const downloadCanvas = document.createElement('canvas');
+    downloadCanvas.width = targetWidth;
+    downloadCanvas.height = targetHeight;
+    const ctx = downloadCanvas.getContext('2d');
     if (!ctx) return;
 
     // Fill with black background
     ctx.fillStyle = '#000000';
-    ctx.fillRect(0, 0, downloadCanvas.width, downloadCanvas.height);
+    ctx.fillRect(0, 0, targetWidth, targetHeight);
 
-    // Draw the original canvas on top
-    ctx.drawImage(canvas, 0, 0);
+    // Draw pixel art (bottom-aligned, horizontally centered)
+    ctx.drawImage(canvas, xOffset, yOffset);
 
-    // Download
-    downloadCanvas.toBlob((blob) => {
-      if (!blob) return;
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.download = `nextflow-summit-2026-${Date.now()}.png`;
-      link.href = url;
-      link.click();
-      URL.revokeObjectURL(url);
-    });
+    // Load and draw the share overlay, then export
+    const overlay = new Image();
+    overlay.onload = () => {
+      ctx.drawImage(overlay, 0, 0, targetWidth, targetHeight);
+
+      downloadCanvas.toBlob((blob) => {
+        if (!blob) return;
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.download = `nextflow-summit-2026-${Date.now()}.png`;
+        link.href = url;
+        link.click();
+        URL.revokeObjectURL(url);
+      });
+    };
+    overlay.src = shareOverlay.src;
   };
 
   return (
@@ -143,14 +167,24 @@ const LandingHero: React.FC<HeroProps> = ({
                   ${headlineSize === 'small' ? 'h4' : ''} 
                 `}
                 >
-                  {title}
+                  <span
+                    className="bg-black box-decoration-clone"
+                    style={{
+                      boxDecorationBreak: 'clone',
+                      WebkitBoxDecorationBreak: 'clone',
+                    }}
+                  >
+                    {title}
+                  </span>
                 </h1>
               </div>
               <h1 className="h1 mb-4 sm:max-w-[500px]  ">{subtitle}</h1>
             </div>
 
             <div className="flex flex-col sm:max-w-[550px] relative">
-              <div className="z-50 pointer-events-none">
+              <div
+                className={clsx('z-50 pointer-events-auto', styles.heroText)}
+              >
                 <PortableText value={content} />
               </div>
 
@@ -249,14 +283,56 @@ const LandingHero: React.FC<HeroProps> = ({
               className="absolute bottom-6 right-6 z-[100] bg-white shadow-xl max-w-[300px] w-full mx-4 text-black"
             >
               <div className="p-4">
-                <div className="text-black">
-                  <p className="text-[.8rem]">
-                    Share your pixel art.{' '}
-                    <span className="text-nextflow-800">
-                      #NextflowSummit2026
-                    </span>
-                  </p>
-                </div>
+                <p className="text-[.8rem]">
+                  Share your pixel art!{' '}
+                  <span
+                    className="text-nextflow-800 monospace text-[.9rem] cursor-pointer hover:underline inline-flex items-center gap-1"
+                    onClick={() => {
+                      navigator.clipboard.writeText(
+                        'Check out my pixel art! #NextflowSummit2026\n\nNextflow Summit, presented by Seqera, brings together scientists from around the world to shape the future of biotech R&D through community-driven innovation in data science and computational biology.'
+                      );
+                      setHashtagCopied(true);
+                      setTimeout(() => setHashtagCopied(false), 2000);
+                    }}
+                  >
+                    {hashtagCopied ? 'Hashtag copied!' : '#NextflowSummit2026'}
+                    {hashtagCopied ? (
+                      <svg
+                        width="12"
+                        height="12"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                    ) : (
+                      <svg
+                        width="12"
+                        height="12"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <rect
+                          x="9"
+                          y="9"
+                          width="13"
+                          height="13"
+                          rx="2"
+                          ry="2"
+                        />
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                      </svg>
+                    )}
+                  </span>
+                </p>
 
                 <div className="mt-4 flex justify-start gap-2">
                   <button

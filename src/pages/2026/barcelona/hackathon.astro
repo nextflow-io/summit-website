@@ -1,9 +1,11 @@
 ---
 import Layout from "@layouts/Base.astro";
-import SEO from "@components/SEO";
+import Meta from '@components/Meta/Meta.astro';
+import { fetchSettings, type SettingsData } from '@data/settings'; 
+
+const settings: SettingsData = await fetchSettings();
 ---
 
 <Layout namespace="2026/barcelona">
-  <SEO slot="head" title="Hackathon" img={2} />
-
+   <Meta title="Hackathon" sanityImage="default" settings={settings}/>
 </Layout>

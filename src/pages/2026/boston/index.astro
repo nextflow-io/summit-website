@@ -1,9 +1,18 @@
 ---
 import Layout from "@layouts/Base.astro";
-import SEO from "@components/SEO";
+import { fetchBostonHackathon} from '@data/fetchers';
+import type { PageData } from '@data/types';
+import { fetchSettings, type SettingsData } from '@data/settings'; 
+import Meta from '@components/Meta/Meta.astro';
+
+const settings: SettingsData = await fetchSettings();
 
 ---
 
 <Layout namespace="2026/boston" redirect="/2026/boston/overview">
-  <SEO slot="head" title="Overview | Boston" img={1} />
+  <Meta 
+    title="Boston" 
+    settings={settings}
+    sanityImage="boston"
+  />
 </Layout>

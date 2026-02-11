@@ -51,7 +51,7 @@ const SecondaryMenu: React.FC<Props> = (props) => {
             setIsAnyHovered(false);
           }
         }}
-        className="relative w-full flex bg-nextflow-100 text-black overflow-hidden"
+        className="relative w-full flex bg-white text-black overflow-hidden"
       >
         {menuItems.map((item, index) => {
           const url = formatLink(item.link) || '#';
