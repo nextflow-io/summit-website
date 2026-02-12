@@ -171,7 +171,7 @@ const LandingHero: React.FC<HeroProps> = ({
 
             <div className="flex flex-col sm:max-w-[550px] relative">
               <div
-                className={clsx('z-50 pointer-events-auto', styles.heroText)}
+                className={clsx('z-50 pointer-events-auto bg-black')}
               >
                 <PortableText value={content} />
               </div>
@@ -258,18 +258,20 @@ const LandingHero: React.FC<HeroProps> = ({
             >
               <div className="p-4">
                 <p className="text-[.8rem]">
-                  Share your pixel art!{' '}
+                    This year's design is inspired by <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life" target="_blank" className="text-nextflow-800">John Conway's Game of Life.</a>
+                      <br />
+                      <br /> Share your pixel art.{' '}
                   <span
-                    className="text-nextflow-800 monospace text-[.9rem] cursor-pointer hover:underline inline-flex items-center gap-1"
+                    className="text-nextflow-800 monospace text-[.825rem] cursor-pointer hover:underline inline-flex items-center gap-1"
                     onClick={() => {
                       navigator.clipboard.writeText(
-                        'Check out my pixel art! #NextflowSummit2026\n\nNextflow Summit, presented by Seqera, brings together scientists from around the world to shape the future of biotech R&D through community-driven innovation in data science and computational biology.'
+                        '#NextflowSummit'
                       );
                       setHashtagCopied(true);
                       setTimeout(() => setHashtagCopied(false), 2000);
                     }}
                   >
-                    {hashtagCopied ? 'Hashtag copied!' : '#NextflowSummit2026'}
+                    {hashtagCopied ? 'Hashtag copied!' : '#NextflowSummit'}
                     {hashtagCopied ? (
                       <svg
                         width="12"
