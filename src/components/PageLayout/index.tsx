@@ -37,7 +37,7 @@ const PageLayout: React.FC<PageLayoutProps> = ({
   children 
 }) => {
   return (
-    <div className="bg-black text-white">
+    <div className=" text-white">
       {hero && (
         <LandingHero
           title={hero.headline}

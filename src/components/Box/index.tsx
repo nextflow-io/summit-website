@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import styles from './styles.module.css';
 import ArrowUpRight from '@icons/ArrowUpRight';
 import type { ReactNode } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import PortableText from '@components/PortableText';
 import Button from '@components/Button';
 
@@ -36,7 +37,16 @@ const Box: React.FC<Props> = ({
   tags,
   boxStyle,
 }) => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const imgRef = useRef<HTMLImageElement>(null);
   const cn = clsx(styles.box, className, {});
+
+  useEffect(() => {
+    // Check if image is already loaded (cached)
+    if (imgRef.current?.complete) {
+      setImageLoaded(true);
+    }
+  }, [image]);
 
   return (
     <div
@@ -45,7 +55,6 @@ const Box: React.FC<Props> = ({
       ${boxStyle === 'lightGreen' ? 'bg-nextflow-200 text-black border border-nextflow-200' : ''}
       ${boxStyle === 'outline' ? 'bg-white text-black border border-black' : ''}
       ${cn} ${imageCover ? '' : 'px-4 pb-4 md:px-6 md:pb-6'}
-      
       `}
     >
       <div className="relative flex flex-col justify-between h-full z-10">
@@ -53,13 +62,10 @@ const Box: React.FC<Props> = ({
           {tags && tags.length > 0 && (
             <div className="pt-4 md:pt-6">
               <div className="flex flex-wrap gap-2 mb-2">
-                 
                 {tags.map((tagItem, index) => (
                   <div
                     key={index}
-                    className={`uppercase monospace py-[3px] text-[.6rem] tracking-widest flex justify-center items-center
-                       ] text-white bg-black px-3
-                      `}
+                    className={`uppercase monospace py-[3px] text-[.6rem] tracking-widest flex justify-center items-center text-white bg-black px-3`}
                   >
                     <div className="w-[4px] h-[4px] bg-white mt-[-1px]"></div>
                     <div className="ml-[5px]">{tagItem}</div>
@@ -69,9 +75,7 @@ const Box: React.FC<Props> = ({
             </div>
           )}
           {title && (
-            <div
-              className={` pt-4 pb-2 w-full flex flex-row justify-between items-center]`}
-            >
+            <div className="pt-4 pb-2 w-full flex flex-row justify-between items-center">
               <h5 className="text-[2rem] xl:text-[2.25rem] font-display leading-none">{title}</h5>
               {href && (
                 <div className="mt-2">
@@ -86,41 +90,41 @@ const Box: React.FC<Props> = ({
               href={href}
               target={externalLink ? '_blank' : '_self'}
               rel={externalLink ? 'noopener noreferrer' : undefined}
-              className={`absolute w-full h-full top-0 left-0 z-10`}
-               aria-label={`Open link for ${title}`}
-
+              className="absolute w-full h-full top-0 left-0 z-10"
+              aria-label={`Open link for ${title}`}
             >
               {children}
             </a>
           )}
         </div>
-        <div
-          className={`${imageCover ? '' : 'mt-2'} h-full flex flex-col justify-between`}
-        >
+        <div className={`${imageCover ? '' : 'mt-2'} h-full flex flex-col justify-between`}>
           {Array.isArray(bodycopy) && bodycopy.length > 0 && (
             <div className="my-2">
               <PortableText value={bodycopy} variant="box" />
             </div>
           )}
           {image && (
-            <div
-              className={`relative ${imageCover ? 'min-h-[320px]  w-full h-full' : ''} `}
-            >
+            <div className={`relative ${imageCover ? 'min-h-[320px] w-full h-full' : ''}`}>
               <div
-                className={`r ${imageCover ? 'absolute top-0 left-0 right-0 bottom-0 w-full h-full z-0 object-cover' : 'relative w-full h-0 overflow-hidden pb-[75%] '}`}
+                className={`${imageCover ? 'absolute top-0 left-0 right-0 bottom-0 w-full h-full z-0 object-cover' : 'relative w-full h-0 overflow-hidden pb-[75%]'} bg-black`}
               >
                 <img
-                  className="absolute top-0 left-0 right-0 bottom-0 w-full h-full z-0 object-cover"
+                  ref={imgRef}
+                  className={`absolute top-0 left-0 right-0 bottom-0 w-full h-full z-0 object-cover transition-opacity duration-500 ${
+                    imageLoaded ? 'opacity-100' : 'opacity-0'
+                  }`}
                   src={image}
                   alt={imageAlt || 'Image'}
+                  loading="lazy"
+                  onLoad={() => setImageLoaded(true)}
                 />
                 {href && (
                   <a
                     href={href}
                     target={externalLink ? '_blank' : '_self'}
                     rel={externalLink ? 'noopener noreferrer' : undefined}
-                    className={`absolute w-full h-full top-0 left-0 z-10`}
-                     aria-label={`Open link for ${title}`}
+                    className="absolute w-full h-full top-0 left-0 z-10"
+                    aria-label={`Open link for ${title}`}
                   >
                     {children}
                   </a>
@@ -131,7 +135,7 @@ const Box: React.FC<Props> = ({
         </div>
 
         {buttonText && (
-          <div className={` w-full ${image ? '' : ''}`}>
+          <div className={`w-full ${image ? '' : ''}`}>
             <Button
               className="mt-6 relative w-full"
               light={boxStyle !== 'outline'}

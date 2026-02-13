@@ -2,6 +2,7 @@ import React from 'react';
 import Box from '@components/Box';
 import PortableText from '@components/PortableText';
 import Button from '@components/Button';
+import { motion, AnimatePresence } from 'framer-motion';
 
 type BoxData = {
   boxStyle?: string;
@@ -56,9 +57,18 @@ const FeatureBlocks: React.FC<Props> = ({
   };
   const gridCols = getGridCols(boxes.length);
 
+  const fadeIn = {
+  initial: { opacity: 0 },
+  whileInView: { opacity: 1 },
+  viewport: { once: true },
+};
+
   return (
-    <section className={`
-    ${bgStyle === 'lightGreen' ? 'bg-nextflow-100' : ''}
+      <motion.section
+          {...fadeIn}
+          transition={{ duration: 0.4, delay: 0, ease: 'linear' }}
+         className={`
+    ${bgStyle === 'lightGreen' ? 'bg-nextflow' : ''}
     ${bgStyle=== 'white' ? 'bg-white' : ''}
     ${!bgStyle ? 'bg-white' : ''}
      text-black py-10 md:pt-16 md:pb-20 ${hideSection ? 'hidden' : ''}`}>
@@ -96,7 +106,8 @@ const FeatureBlocks: React.FC<Props> = ({
           </Button>
         </div>
       )}
-    </section>
+  
+    </motion.section>
   );
 };
 
