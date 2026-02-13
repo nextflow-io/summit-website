@@ -17,6 +17,7 @@ const Homepage: React.FC<Props> = ({ data }) => {
   return (
     <div className="bg-black text-white">
       <LandingHero
+      isHome
         title={data.hero?.headline}
         content={data.hero?.bodycopy}
         ctaText1={data.hero?.button1?.buttonText}

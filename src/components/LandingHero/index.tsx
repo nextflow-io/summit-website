@@ -23,6 +23,7 @@ interface HeroProps {
   headlineSize?: 'small' | 'medium' | 'large' | 'xl';
   image?: any;
   imageAlt?: string;
+  isHome?: boolean;
 }
 
 const fadeIn = {
@@ -50,6 +51,7 @@ const LandingHero: React.FC<HeroProps> = ({
   headlineSize = 'medium',
   image,
   imageAlt,
+  isHome,
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const pixelsRef = useRef<{ getCanvas: () => HTMLCanvasElement | null }>(null);
@@ -127,10 +129,10 @@ const LandingHero: React.FC<HeroProps> = ({
   };
 
   return (
-    <motion.div
-      {...fadeIn}
-      transition={{ duration: 0.4, delay: 0.6, ease: 'linear' }}
-      className="py-20 md:py-20 relative w-full h-full flex flex-row justify-between items-center container-xl"
+    <section
+
+      className={`bg-black py-20 md:py-20 relative w-full  flex flex-row justify-between items-center container-xl
+        ${isHome ? 'min-h-[95vh]' : 'h-full'}`}
     >
       <Pixels
         ref={pixelsRef}
@@ -140,10 +142,13 @@ const LandingHero: React.FC<HeroProps> = ({
         colorScheme="green"
       />
 
-      <section className={clsx(styles.landingHero, 'h-full relative w-full')}>
+      <div className={clsx(styles.landingHero, 'h-full relative w-full')}>
         <div className="flex flex-col-reverse sm:flex-row h-full items-center relative">
           {/* Left Column */}
-          <div className="w-full h-full sm:pr-10 md:mt-10 md:pb-15">
+          <motion.div
+      {...fadeInUp}
+      transition={{ duration: 0.4, delay: 0.3, ease: 'linear' }}
+      className="w-full h-full sm:pr-10 md:mt-10 md:pb-15">
             <div className="pointer-events-none">
               <div className="relative inline-flex">
                 <h1
@@ -201,13 +206,13 @@ const LandingHero: React.FC<HeroProps> = ({
                 )}
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Column */}
           {image && (
             <motion.div
               {...fadeIn}
-              transition={{ duration: 0.3, delay: 0.5, ease: 'linear' }}
+              transition={{ duration: 0.3, delay: 0.3, ease: 'linear' }}
               className="h-full flex flex-col w-full "
             >
               <div>
@@ -224,7 +229,7 @@ const LandingHero: React.FC<HeroProps> = ({
             </motion.div>
           )}
         </div>
-      </section>
+      </div>
 
       {/* Help Button */}
       <button
@@ -329,7 +334,7 @@ const LandingHero: React.FC<HeroProps> = ({
           </>
         )}
       </AnimatePresence>
-    </motion.div>
+    </section>
   );
 };
 
