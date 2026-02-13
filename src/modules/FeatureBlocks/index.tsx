@@ -66,7 +66,7 @@ const FeatureBlocks: React.FC<Props> = ({
   return (
       <motion.section
           {...fadeIn}
-          transition={{ duration: 0.4, delay: 0.6, ease: 'linear' }}
+          transition={{ duration: 0.4, delay: 0, ease: 'linear' }}
          className={`
     ${bgStyle === 'lightGreen' ? 'bg-nextflow' : ''}
     ${bgStyle=== 'white' ? 'bg-white' : ''}

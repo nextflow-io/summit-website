@@ -15,7 +15,7 @@ type Props = {
 
 const Homepage: React.FC<Props> = ({ data }) => {
   return (
-    <div className="bg-black text-white">
+    <div>
       <LandingHero
       isHome
         title={data.hero?.headline}

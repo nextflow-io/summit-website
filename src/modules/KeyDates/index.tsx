@@ -20,7 +20,7 @@ export default function KeyDates({
   images = [],
 }: Props) {
   return (
-    <section className="bg-black container-xl py-20 relative">
+    <section className="bg-black text-white container-xl py-20 relative">
       <div className="mb-10">
         <h5 className="h4 mb-4 md:mb-0">Key Dates </h5>
       </div>

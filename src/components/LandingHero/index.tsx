@@ -131,7 +131,7 @@ const LandingHero: React.FC<HeroProps> = ({
   return (
     <section
 
-      className={`bg-black py-20 md:py-20 relative w-full  flex flex-row justify-between items-center container-xl
+      className={`bg-black  text-white py-20 md:py-20 relative w-full  flex flex-row justify-between items-center container-xl
         ${isHome ? 'min-h-[95vh]' : 'h-full'}`}
     >
       <Pixels
@@ -146,7 +146,7 @@ const LandingHero: React.FC<HeroProps> = ({
         <div className="flex flex-col-reverse sm:flex-row h-full items-center relative">
           {/* Left Column */}
           <motion.div
-      {...fadeInUp}
+      {...fadeIn}
       transition={{ duration: 0.4, delay: 0.3, ease: 'linear' }}
       className="w-full h-full sm:pr-10 md:mt-10 md:pb-15">
             <div className="pointer-events-none">
