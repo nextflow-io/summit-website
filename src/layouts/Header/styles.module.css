@@ -8,16 +8,6 @@
   transition: fill 0.3s ease;
 }
 
-.menuOpen path {
-  fill: white;
-}
-
-.menuOpen {
-  fill: white; 
-    @media (--sm) {
-   fill: black;
-  }
-}
 .header {
   display: none;
   @media (--sm) {
@@ -31,7 +21,7 @@
 }
 .headerTop {
   height: 48px;
-  background: var(--color-nextflow-600);
+  background: black;
   & nav {
     & ul {
       list-style: none;
@@ -48,16 +38,16 @@
           font-size: 14px;
           white-space: nowrap;
           position: relative;
-          color: black;
+          color: white;
           transition: all 0.3s;
           &[data-active] {
-            color: white;
+            color: var(--color-nextflow-600);
           }
           &[data-active],
           &:hover {
             opacity: 80%;
             transition: all 0.25s;
-            color: white;
+            color: var(--color-nextflow-600);
           }
         }
       }
@@ -94,11 +84,9 @@
           font-weight: 400;
           position: relative;
           color: black;
- 
+
           &[data-active] {
             position: relative;
-        
-
           }
         }
       }

@@ -92,11 +92,6 @@ const NavMobile: React.FC<Props> = ({
         <div className={`${styles.header} `}>
              <div className="relative flex flex-row items-center">
             <Logo namespace={namespace} isMenuOpen={isOpen} />
-            <div
-              className={`ml-2 p-[11px] w-[16px] h-[16px] flex justify-center items-center font-display text-[14px] md:text-[15px] font-semibold ${isOpen ? 'bg-white text-black' : 'bg-black text-white '}`}
-            >
-              26
-            </div>
             <a className="absolute top-0 left-0 w-full h-full z-10" href="/" arial-label="Navigate to home"></a>
           </div>
           <Hamburger setIsOpen={setIsOpen} isOpen={isOpen} />
