@@ -142,7 +142,7 @@ const LandingHero: React.FC<HeroProps> = ({
         colorScheme="green"
       />
 
-      <div className={clsx(styles.landingHero, 'h-full relative w-full')}>
+      <div className={clsx(styles.landingHero, 'w-full h-full relative')}>
         <div className="flex flex-col-reverse sm:flex-row h-full items-center relative">
           {/* Left Column */}
           <motion.div
@@ -150,37 +150,37 @@ const LandingHero: React.FC<HeroProps> = ({
             transition={{ duration: 0.4, delay: 0.3, ease: 'linear' }}
             className="w-full h-full sm:pr-10 md:mt-10 md:pb-15"
           >
-            <div className="">
-              <div className="flex flex-col">
-                <h1
-                  className={` mb-4 md:max-w-[800px] z-30 relative
+            <div className="flex flex-col">
+              <h1
+                className={`w-full mb-4 md:max-w-[800px]  relative
                   ${!headlineSize && 'h3'}
                   ${headlineSize === 'xl' ? 'h1' : ''} 
                   ${headlineSize === 'large' ? 'h2' : ''} 
                   ${headlineSize === 'medium' ? 'h3' : ''} 
                   ${headlineSize === 'small' ? 'h4' : ''} 
                 `}
+              >
+                <span
+                  className="bg-black box-decoration-clone w-fit relative z-30"
+                  style={{
+                    boxDecorationBreak: 'clone',
+                    WebkitBoxDecorationBreak: 'clone',
+                  }}
                 >
-                  <span
-                    className="bg-black box-decoration-clone"
-                    style={{
-                      boxDecorationBreak: 'clone',
-                      WebkitBoxDecorationBreak: 'clone',
-                    }}
-                  >
-                    {title}
-                  </span>
-                </h1>
-                <div className={`${isHome ? 'flex flex-row' : 'hidden'} items-center py-2 mb-6 bg-black box-decoration-clone`}>
-                  by{' '}
-                  <img
-                    className=" ml-3 w-full max-w-[90px] md:max-w-[140px]"
-                    src={SeqeraLogoDarkmode.src}
-                  />
-                </div>
+                  {title}
+                </span>
+              </h1>
+              <div
+                className={`${isHome ? 'inline-flex flex-row' : 'hidden'} w-fit items-center py-2 mb-6 z-30 bg-black box-decoration-clone`}
+              >
+                by{' '}
+                <img
+                  className=" ml-3 w-full max-w-[90px] md:max-w-[140px] inline"
+                  src={SeqeraLogoDarkmode.src}
+                />
               </div>
-              <h1 className="h1 mb-4 sm:max-w-[500px]  ">{subtitle}</h1>
             </div>
+            <h1 className="h1 mb-4 sm:max-w-[500px]  ">{subtitle}</h1>
 
             <div className="flex flex-col sm:max-w-[550px] relative">
               <div className={clsx('z-50 pointer-events-auto bg-black')}>
