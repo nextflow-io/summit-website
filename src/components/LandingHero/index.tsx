@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import PortableText from '@components/PortableText';
 import Pixels from '@modules/Pixels';
 import shareOverlay from '@images/pixel-share-overlay.svg';
-import SeqeraLogoLight from './seqera-logo.svg';
+import SeqeraLogoDarkmode from '@icons/seqera-logo-darkmode.svg';
 
 interface HeroProps {
   title?: string;
@@ -174,8 +174,8 @@ const LandingHero: React.FC<HeroProps> = ({
                 <div className={`${isHome ? 'flex flex-row' : 'hidden'} items-center py-2 mb-6 bg-black box-decoration-clone`}>
                   by{' '}
                   <img
-                    className=" ml-3 max-w-[90px] md:max-w-[120px]"
-                    src={SeqeraLogoLight.src}
+                    className=" ml-3 w-full max-w-[90px] md:max-w-[140px]"
+                    src={SeqeraLogoDarkmode.src}
                   />
                 </div>
               </div>
