@@ -152,7 +152,7 @@ const LandingHero: React.FC<HeroProps> = ({
           >
             <div className="flex flex-col">
               <h1
-                className={`w-full mb-4 md:max-w-[800px]  relative
+                className={`w-full md:max-w-[800px]  relative
                   ${!headlineSize && 'h3'}
                   ${headlineSize === 'xl' ? 'h1' : ''} 
                   ${headlineSize === 'large' ? 'h2' : ''} 
@@ -171,7 +171,7 @@ const LandingHero: React.FC<HeroProps> = ({
                 </span>
               </h1>
               <div
-                className={`${isHome ? 'inline-flex flex-row' : 'hidden'} w-fit items-center py-2 mb-6 z-30 bg-black box-decoration-clone`}
+                className={`mt-[-5px] ${isHome ? 'inline-flex flex-row' : 'hidden'} w-fit items-center py-2 mb-6 z-30 bg-black box-decoration-clone`}
               >
                 by{' '}
                 <img
@@ -180,7 +180,7 @@ const LandingHero: React.FC<HeroProps> = ({
                 />
               </div>
             </div>
-            <h1 className="h1 mb-4 sm:max-w-[500px]  ">{subtitle}</h1>
+            <h1 className="h1 my-4 sm:max-w-[500px]  ">{subtitle}</h1>
 
             <div className="flex flex-col sm:max-w-[550px] relative">
               <div className={clsx('z-50 pointer-events-auto bg-black')}>
