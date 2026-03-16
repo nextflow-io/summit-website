@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import PortableText from '@components/PortableText';
 import Pixels from '@modules/Pixels';
 import shareOverlay from '@images/pixel-share-overlay.svg';
+import SeqeraLogoDarkmode from '@icons/seqera-logo-darkmode.svg';
 
 interface HeroProps {
   title?: string;
@@ -130,7 +131,6 @@ const LandingHero: React.FC<HeroProps> = ({
 
   return (
     <section
-
       className={`bg-black  text-white py-20 md:py-20 relative w-full  flex flex-row justify-between items-center container-xl
         ${isHome ? 'min-h-[95vh]' : 'h-full'}`}
     >
@@ -142,42 +142,48 @@ const LandingHero: React.FC<HeroProps> = ({
         colorScheme="green"
       />
 
-      <div className={clsx(styles.landingHero, 'h-full relative w-full')}>
+      <div className={clsx(styles.landingHero, 'w-full h-full relative')}>
         <div className="flex flex-col-reverse sm:flex-row h-full items-center relative">
           {/* Left Column */}
           <motion.div
-      {...fadeIn}
-      transition={{ duration: 0.4, delay: 0.3, ease: 'linear' }}
-      className="w-full h-full sm:pr-10 md:mt-10 md:pb-15">
-            <div className="pointer-events-none">
-              <div className="relative inline-flex">
-                <h1
-                  className={` mb-4 md:max-w-[800px]   z-30 relative
+            {...fadeIn}
+            transition={{ duration: 0.4, delay: 0.3, ease: 'linear' }}
+            className="w-full h-full sm:pr-10 md:mt-10 md:pb-15"
+          >
+            <div className="flex flex-col">
+              <h1
+                className={`w-full md:max-w-[800px]  relative
                   ${!headlineSize && 'h3'}
                   ${headlineSize === 'xl' ? 'h1' : ''} 
                   ${headlineSize === 'large' ? 'h2' : ''} 
                   ${headlineSize === 'medium' ? 'h3' : ''} 
                   ${headlineSize === 'small' ? 'h4' : ''} 
                 `}
+              >
+                <span
+                  className="bg-black box-decoration-clone w-fit relative z-30"
+                  style={{
+                    boxDecorationBreak: 'clone',
+                    WebkitBoxDecorationBreak: 'clone',
+                  }}
                 >
-                  <span
-                    className="bg-black box-decoration-clone"
-                    style={{
-                      boxDecorationBreak: 'clone',
-                      WebkitBoxDecorationBreak: 'clone',
-                    }}
-                  >
-                    {title}
-                  </span>
-                </h1>
+                  {title}
+                </span>
+              </h1>
+              <div
+                className={`mt-[-5px] ${isHome ? 'inline-flex flex-row' : 'hidden'} w-fit items-center py-2 mb-6 z-30 bg-black box-decoration-clone`}
+              >
+                by{' '}
+                <img
+                  className=" ml-3 w-full max-w-[90px] md:max-w-[140px] inline"
+                  src={SeqeraLogoDarkmode.src}
+                />
               </div>
-              <h1 className="h1 mb-4 sm:max-w-[500px]  ">{subtitle}</h1>
             </div>
+            <h1 className="h1 my-4 sm:max-w-[500px]  ">{subtitle}</h1>
 
             <div className="flex flex-col sm:max-w-[550px] relative">
-              <div
-                className={clsx('z-50 pointer-events-auto bg-black')}
-              >
+              <div className={clsx('z-50 pointer-events-auto bg-black')}>
                 <PortableText value={content} />
               </div>
 
@@ -263,15 +269,20 @@ const LandingHero: React.FC<HeroProps> = ({
             >
               <div className="p-4">
                 <p className="text-[.8rem]">
-                    This year's design is inspired by <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life" target="_blank" className="text-nextflow-800">John Conway's Game of Life.</a>
-                      <br />
-                      <br /> Share your pixel art.{' '}
+                  This year's design is inspired by{' '}
+                  <a
+                    href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life"
+                    target="_blank"
+                    className="text-nextflow-800"
+                  >
+                    John Conway's Game of Life.
+                  </a>
+                  <br />
+                  <br /> Share your pixel art.{' '}
                   <span
                     className="text-nextflow-800 monospace text-[.825rem] cursor-pointer hover:underline inline-flex items-center gap-1"
                     onClick={() => {
-                      navigator.clipboard.writeText(
-                        '#NextflowSummit'
-                      );
+                      navigator.clipboard.writeText('#NextflowSummit');
                       setHashtagCopied(true);
                       setTimeout(() => setHashtagCopied(false), 2000);
                     }}
