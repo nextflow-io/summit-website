@@ -119,3 +119,47 @@ export interface HomepageData extends PageData {
   keyDatesSection?: KeyDatesSection;
   pastEvents?: FeatureSection;
 }
+
+export interface AgendaItemSpeaker {
+  _id: string;
+  name?: string;
+  role?: string;
+  keynote?: boolean;
+  linkedin?: string;
+  github?: string;
+  twitter?: string;
+  image?: {
+    asset?: {
+      url: string;
+    };
+  };
+  bio?: string;
+}
+
+export interface AgendaItem {
+  _id: string;
+  tags?: string[];
+  title: string;
+  location?: string;
+  startTime?: string;
+  endTime?: string;
+  keynote?: boolean;
+  associatedEvents?: {
+    _id: string;
+    title?: string;
+  };
+  associatedSpeakers?: AgendaItemSpeaker[];
+}
+
+export interface AgendaSection {
+  date?: string;
+  timezone?: string;
+  agendaItems?: AgendaItem[];
+}
+
+export interface AgendaData extends PageData {
+  summitAgenda?: AgendaSection[];
+  hackathonAgenda?: AgendaSection[];
+  beginnerTrainingAgenda?: AgendaSection[];
+  advancedTrainingAgenda?: AgendaSection[];
+}
