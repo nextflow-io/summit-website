@@ -125,12 +125,12 @@ const ScheduleHeader: React.FC<{
 }> = ({ categories, selectedCategoryId, onCategoryChange }) => (
   <div className="pb-10 bg-black text-white monospace flex flex-col sm:flex-row w-full mb-16 gap-4">
     <div className="container-lg w-full">
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-col md:flex-row flex-wrap gap-2">
         {categories.map((cat) => (
           <button
             key={cat.id}
             onClick={() => onCategoryChange(cat.id)}
-            className={`monospace px-4 py-2 border transition-all duration-300 ${
+            className={`monospace px-4 py-1 md:py-2 border transition-all duration-300 ${
               selectedCategoryId === cat.id
                 ? 'bg-nextflow border-nextflow text-white'
                 : 'bg-transparent border-white hover:bg-white hover:text-black'
@@ -195,7 +195,7 @@ const AllSchedules: React.FC<Props> = ({ children, className, agenda }) => {
             ${slot.isHighlighted ? 'bg-nextflow-600' : 'bg-nextflow-200'}
             `}
             >
-              <div className="basis-2/6 sm:basis-1/6 sm:w-full uppercase items-start text-[.8rem] md:text-[1rem]">
+              <div className="basis-2/6 sm:basis-1/6 sm:w-full uppercase items-start text-[.7rem] md:text-[1rem]">
                 {slot.time}
               </div>
               <div className="basis-4/6 sm:basis-5/6 w-full">
@@ -211,7 +211,7 @@ const AllSchedules: React.FC<Props> = ({ children, className, agenda }) => {
                   ))}
                 </div>
                )}
-                <div className="font-medium mb-1">{slot.title}</div>
+                <div className="font-medium mb-1 text-xs md:text-base">{slot.title}</div>
                 <div>
                   {slot?.associatedSpeakers.map((speaker) => (
                     <p
