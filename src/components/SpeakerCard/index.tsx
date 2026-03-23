@@ -92,7 +92,7 @@ const SpeakerCard: React.FC<Props> = ({
           key={twitter}
           href={twitter}
           type="Twitter"
-          className="p-2 text-brand"
+          className="pr-2 text-brand"
         />
       )}
       {linkedin && (
@@ -100,7 +100,7 @@ const SpeakerCard: React.FC<Props> = ({
           key={linkedin}
           href={linkedin}
           type="LinkedIn"
-          className="p-2 text-brand"
+          className="pr-2 text-brand"
         />
       )}
       {github && (
@@ -108,7 +108,7 @@ const SpeakerCard: React.FC<Props> = ({
           key={github}
           href={github}
           type="GitHub"
-          className="p-2 text-brand"
+          className="pr-2 text-brand"
         />
       )}
     </>
@@ -134,10 +134,10 @@ const SpeakerCard: React.FC<Props> = ({
     if (!date) return null;
 
     return (
-      <div className={`flex flex-row`}>
+      <div className={`flex flex-row uppercase`}>
         <p className="text-xs  monospace">{monthDate},</p>
         <p className="text-xs monospace">
-          {timeStart} {timeEnd} {location == 'virtual' ? 'CEST' : ''}
+          {timeStart} {location == 'virtual' ? 'CEST' : ''}
         </p>
       </div>
     );
@@ -148,7 +148,7 @@ const SpeakerCard: React.FC<Props> = ({
 
     return (
       <div className={``}>
-        <h5 className="text-[1.4rem] leading-tight font-medium">
+        <h5 className=" leading-tight font-medium">
           {pageUrl ? (
             <div className="">
               <a
@@ -195,32 +195,36 @@ const SpeakerCard: React.FC<Props> = ({
     <div>
       {/* Speaker Card */}
       <div className="speaker-card bg-nextflow text-brand transition-all duration-300 p-4 flex flex-col h-full">
-        <div className="flex-1 flex flex-col">
-                <div className="mb-2 w-full">
-            {keynote && (
-              <div className="text-nextflow mt-2 font-medium text-[1rem] h-8">
-                Keynote Speaker
-              </div>
-            )}
-          </div>
-          {renderDateTime()}
-          {renderSubmissionTitle()}
-          {renderAssociatedTalks()}
+        <div className="flex-1 flex flex-row">
+          <div className="w-full">
+            <div className="w-full mb-2">{renderProfileImage()}</div>
+            <h3 className=" text-[1.75rem] font-display mb-0 leading-tight">
+              {name}
+            </h3>
+            <p className="monospace flex items-center  text-[.8rem] leading-tight">
+              {jobTitle}
+            </p>
+              <div className=" flex mt-2">{renderSocialIcons()}</div>
+   
 
-    
-          <div className="flex flex-col  w-full mt-2">
-            {renderProfileImage()}
+            <div className="mb-2 w-full">
+              {keynote && (
+                <div className="text-nextflow mt-2 font-medium text-[1rem] h-8">
+                  Keynote Speaker
+                </div>
+              )}
+            </div>
+            <div className="mt-4 py-4">
+              {renderDateTime()}
+              {renderSubmissionTitle()}
+              {renderAssociatedTalks()}
+            
+          
+            </div>
+          
           </div>
-        </div>
 
-        <div className="mt-2">
-          <h3 className=" text-[2rem] xl:text-[2.25rem] font-display mb-0 leading-tight">
-            {name}
-          </h3>
-          <p className="monospace flex items-center  text-[.8rem] leading-tight">
-            {jobTitle}
-          </p>
-          <div className=" flex ">{renderSocialIcons()}</div>
+          
         </div>
       </div>
     </div>
