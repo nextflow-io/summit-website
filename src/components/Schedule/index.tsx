@@ -191,14 +191,14 @@ const AllSchedules: React.FC<Props> = ({ children, className, agenda }) => {
           )}
           {day.slots.map((slot, slotIndex) => (
             <div
-              className={` text-black container-lg relative w-full flex flex-row transition-all duration-300 p-4 mb-2
+              className={` text-black container-lg relative w-full flex flex-row transition-all duration-300 p-2 md:p-4 mb-2
             ${slot.isHighlighted ? 'bg-nextflow-600' : 'bg-nextflow-200'}
             `}
             >
-              <div className="basis-2/6 sm:basis-1/6 sm:w-full uppercase items-start text-[.7rem] md:text-[1rem]">
+              <div className="mt-[3px] basis-2/6 sm:basis-1/6 sm:w-full uppercase items-start text-[.7rem] md:text-[1rem]">
                 {slot.time}
               </div>
-              <div className="basis-4/6 sm:basis-5/6 w-full">
+              <div className="pl-2 md:pl-0 basis-4/6 sm:basis-5/6 w-full">
                {slot?.tags.length > 0 && (
                 <div className="mb-2">
                   {slot?.tags.map((tag) => (
