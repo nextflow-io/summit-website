@@ -5,11 +5,12 @@ import Twitter from "@icons/Twitter";
 import Linkedin from "@icons/Linkedin";
 import Github from "@icons/Github";
 import Link from "@icons/Link";
+import Bluesky from "@icons/Bluesky";
 
 import styles from "./styles.module.css";
 
 type Props = {
-  type: "Twitter" | "LinkedIn" | "Company_Website" | "GitHub" | "Blog";
+  type: "Twitter" | "LinkedIn" | "Company_Website" | "GitHub" | "Blog" | "Bluesky";
   className?: string;
   href: string;
 };
@@ -25,6 +26,9 @@ const SocialIcon: React.FC<Props> = ({ type, href, className }) => {
       break;
     case "GitHub":
       Icon = Github;
+      break;
+    case "Bluesky":
+      Icon = Bluesky;
       break;
   }
 

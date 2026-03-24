@@ -124,7 +124,7 @@ const ScheduleHeader: React.FC<{
   onCategoryChange: (id: string) => void;
 }> = ({ categories, selectedCategoryId, onCategoryChange }) => (
   <div className="pb-10 bg-black text-white monospace flex flex-col sm:flex-row w-full mb-16 gap-4">
-    <div className="container-lg w-full">
+    <div className="container-xl w-full">
       <div className="flex flex-col md:flex-row flex-wrap gap-2">
         {categories.map((cat) => (
           <button
@@ -182,7 +182,7 @@ const AllSchedules: React.FC<Props> = ({ children, className, agenda }) => {
         onCategoryChange={handleCategoryChange}
       />
       {selectedCategory.days.map((day, dayIndex) => (
-        <section key={dayIndex} className="container-lg mb-20">
+        <section key={dayIndex} className="container-xl mb-20">
           <h5 className="h5 mb-4">{day.date}</h5>
           {day.timezone && (
             <div className="border-b border-white mb-3 pb-2">
@@ -191,7 +191,7 @@ const AllSchedules: React.FC<Props> = ({ children, className, agenda }) => {
           )}
           {day.slots.map((slot, slotIndex) => (
             <div
-              className={` text-black container-lg relative w-full flex flex-row transition-all duration-300 p-2 md:p-4 mb-2
+              className={` text-black container-xl relative w-full flex flex-row transition-all duration-300 p-2 md:p-4 mb-2
             ${slot.isHighlighted ? 'bg-nextflow-600' : 'bg-nextflow-200'}
             `}
             >

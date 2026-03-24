@@ -1,5 +1,4 @@
-import React, { useState, useMemo } from "react";
-
+import React, { useState, useMemo } from 'react';
 
 // ─── Component types ──────────────────────────────────────────────────────────
 
@@ -44,28 +43,28 @@ type Props = {
 // ─── Sanity → ScheduleConfig transform ───────────────────────────────────────
 
 const timezoneLabels: Record<string, string> = {
-  est: "EST (UTC-5)",
-  cest: "CEST (UTC+2)",
-  cet: "CET (UTC+1)",
+  est: 'EST (UTC-5)',
+  cest: 'CEST (UTC+2)',
+  cet: 'CET (UTC+1)',
 };
 
 const formatTime = (t?: string): string => {
-  if (!t || t.length < 3) return t ?? "";
-  const padded = t.padStart(4, "0");
+  if (!t || t.length < 3) return t ?? '';
+  const padded = t.padStart(4, '0');
   const h = parseInt(padded.slice(0, 2), 10);
   const m = padded.slice(2);
-  const suffix = h >= 12 ? "PM" : "AM";
+  const suffix = h >= 12 ? 'PM' : 'AM';
   const h12 = h % 12 || 12;
-  return m === "00" ? `${h12}${suffix}` : `${h12}:${m}${suffix}`;
+  return m === '00' ? `${h12}${suffix}` : `${h12}:${m}${suffix}`;
 };
 
 const formatDate = (dateStr?: string): string => {
-  if (!dateStr) return "";
-  const [year, month, day] = dateStr.split("-").map(Number);
-  return new Date(year, month - 1, day).toLocaleDateString("en-US", {
-    weekday: "long",
-    month: "long",
-    day: "numeric",
+  if (!dateStr) return '';
+  const [year, month, day] = dateStr.split('-').map(Number);
+  return new Date(year, month - 1, day).toLocaleDateString('en-US', {
+    weekday: 'long',
+    month: 'long',
+    day: 'numeric',
   });
 };
 
@@ -77,13 +76,13 @@ const toTimeSlot = (item: AgendaItem): TimeSlot => {
 
   return {
     time,
-    highlighted: item?.tags?.includes("highlight"),
+    highlighted: item?.tags?.includes('highlight'),
     sessions: [
       {
         title: item?.title,
         speaker: speakers[0]?.name,
         speaker2: speakers[1]?.name,
-        category: item?.tags?.filter((t) => t !== "highlight")[0],
+        category: item?.tags?.filter((t) => t !== 'highlight')[0],
         url: item?.associatedEvents?._id
           ? `/agenda/${item.associatedEvents._id}`
           : undefined,
@@ -100,10 +99,18 @@ const toScheduleDay = (): ScheduleDay => ({
 
 const transformAgenda = (): ScheduleConfig => ({
   categories: [
-    { id: "summit", label: "Summit", sections: agenda.summitAgenda },
-    { id: "hackathon", label: "Hackathon", sections: agenda.hackathonAgenda },
-    { id: "beginner", label: "Beginner Training", sections: agenda.beginnerTrainingAgenda },
-    { id: "advanced", label: "Advanced Training", sections: agenda.advancedTrainingAgenda },
+    { id: 'summit', label: 'Summit', sections: agenda.summitAgenda },
+    { id: 'hackathon', label: 'Hackathon', sections: agenda.hackathonAgenda },
+    {
+      id: 'beginner',
+      label: 'Beginner Training',
+      sections: agenda.beginnerTrainingAgenda,
+    },
+    {
+      id: 'advanced',
+      label: 'Advanced Training',
+      sections: agenda.advancedTrainingAgenda,
+    },
   ]
     .filter((cat) => cat.sections?.length)
     .map(({ id, label, sections }) => ({
@@ -115,7 +122,13 @@ const transformAgenda = (): ScheduleConfig => ({
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
 
-const SessionItem: React.FC<SessionProps> = ({session, title, associatedSpeakers, category, url }) => {
+const SessionItem: React.FC<SessionProps> = ({
+  session,
+  title,
+  associatedSpeakers,
+  category,
+  url,
+}) => {
   const content = (
     <div className="container-lg w-full border-b border-gray-200 last:border-b-0 pb-3 opacity-90 group transition-all duration-300">
       {category && (
@@ -125,12 +138,13 @@ const SessionItem: React.FC<SessionProps> = ({session, title, associatedSpeakers
       )}
       <h4
         className={`font-semibold display mb-1 text-[1rem] md:text-[1.2rem] mt-1 ${
-          url && "underline group-hover:text-nextflow transition-all duration-300"
+          url &&
+          'underline group-hover:text-nextflow transition-all duration-300'
         }`}
       >
-        {title} test
+        {title} 
       </h4>
-{associatedSpeakers && associatedSpeakers.length > 0 && (
+      {associatedSpeakers && associatedSpeakers.length > 0 && (
         <div className="flex flex-col gap-0.5 mt-1">
           {associatedSpeakers.map((speaker) => (
             <p
@@ -139,7 +153,10 @@ const SessionItem: React.FC<SessionProps> = ({session, title, associatedSpeakers
             >
               {speaker.name}
               {speaker.role && (
-                <span className="font-normal text-gray-400"> · {speaker.role}</span>
+                <span className="font-normal text-gray-400">
+                  {' '}
+                  · {speaker.role}
+                </span>
               )}
             </p>
           ))}
@@ -150,7 +167,11 @@ const SessionItem: React.FC<SessionProps> = ({session, title, associatedSpeakers
 
   if (url) {
     return (
-      <a href={url} className="block transition-colors px-4 -mx-4" target="_blank">
+      <a
+        href={url}
+        className="block transition-colors px-4 -mx-4"
+        target="_blank"
+      >
         {content}
       </a>
     );
@@ -160,8 +181,6 @@ const SessionItem: React.FC<SessionProps> = ({session, title, associatedSpeakers
 };
 
 const TimeSlotItem: React.FC<TimeSlot> = ({ time, highlighted, sessions }) => {
-
-
   return (
     <div className="bg-blue-200 text-black container-lg relative w-full flex flex-row border border-nextflow transition-all duration-300 p-4 mb-2">
       <div className="basis-2/6 sm:basis-1/6 sm:w-full uppercase items-start pt-2 text-[.8rem] md:text-[1rem]">
@@ -169,7 +188,7 @@ const TimeSlotItem: React.FC<TimeSlot> = ({ time, highlighted, sessions }) => {
       </div>
       <div className="basis-4/6 sm:basis-5/6 w-full">
         {sessions
-          .filter((s) => s.title !== "N/A")
+          .filter((s) => s.title !== 'N/A')
           .map((session, idx) => (
             <SessionItem key={idx} {...session} />
           ))}
@@ -192,8 +211,8 @@ const ScheduleHeader: React.FC<{
             onClick={() => onCategoryChange(cat.id)}
             className={`monospace px-4 py-2 border transition-all duration-300 ${
               selectedCategoryId === cat.id
-                ? "bg-nextflow border-nextflow text-white"
-                : "bg-transparent border-white hover:bg-white hover:text-black"
+                ? 'bg-nextflow border-nextflow text-white'
+                : 'bg-transparent border-white hover:bg-white hover:text-black'
             }`}
           >
             {cat.label}
@@ -210,30 +229,32 @@ const AllSchedules: React.FC<Props> = ({ children, className, agenda }) => {
   const config = useMemo(() => transformAgenda(agenda), [agenda]);
 
   const getInitialCategory = (): string => {
-    if (typeof window !== "undefined") {
-      const hash = window.location.hash.replace("#", "");
+    if (typeof window !== 'undefined') {
+      const hash = window.location.hash.replace('#', '');
       const match = config.categories.find((cat) => cat.id === hash);
-      return match ? hash : config.categories[0]?.id ?? "";
+      return match ? hash : config.categories[0]?.id ?? '';
     }
-    return config.categories[0]?.id ?? "";
+    return config.categories[0]?.id ?? '';
   };
 
-  const [selectedCategoryId, setSelectedCategoryId] = useState<string>(getInitialCategory);
+  const [selectedCategoryId, setSelectedCategoryId] =
+    useState<string>(getInitialCategory);
 
   const handleCategoryChange = (categoryId: string) => {
     setSelectedCategoryId(categoryId);
-    if (typeof window !== "undefined") {
-      window.history.replaceState(null, "", `#${categoryId}`);
+    if (typeof window !== 'undefined') {
+      window.history.replaceState(null, '', `#${categoryId}`);
     }
   };
 
   const selectedCategory =
-    config.categories.find((cat) => cat.id === selectedCategoryId) ?? config.categories[0];
+    config.categories.find((cat) => cat.id === selectedCategoryId) ??
+    config.categories[0];
 
   if (!selectedCategory) return null;
 
   return (
-    <div className={`w-full ${className ?? ""}`}>
+    <div className={`w-full ${className ?? ''}`}>
       <ScheduleHeader
         categories={config.categories}
         selectedCategoryId={selectedCategoryId}
