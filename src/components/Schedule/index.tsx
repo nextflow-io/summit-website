@@ -1,461 +1,232 @@
-import clsx from "clsx";
-import styles from "./schedule.module.css";
+import React, { useState, useMemo } from 'react';
 
-type ScheduleItemProps = {
-  className?: string;
-  time?: string;
-  name?: string;
-  room?: string;
-  name2?: string;
-  room2?: string;
-  speakers?: string;
+// ─── Component types ──────────────────────────────────────────────────────────
+
+type SessionProps = {
+  title: string;
+  speaker?: string;
+  speaker2?: string;
   category?: string;
-  highlighted?: boolean;
   url?: string;
+  associatedSpeakers?: any;
 };
 
-export const ScheduleItem: React.FC<ScheduleItemProps> = ({
-  className,
-  time,
-  name,
-  name2,
-  room,
-  room2,
-  speakers,
-  category,
-  highlighted,
-  url,
-}) => {
-  return (
-    <div
-      className={`relative w-full flex flex-row border border-nextflow transition-all duration-300 p-4 rounded-sm mb-2 ${url && "hover:border-nextflow-200"}`}
-    >
-      <div
-        className={`${highlighted ? "absolute bg-nextflow-100 w-full h-full z-0 top-0 right-0 left-0 opacity-25" : "hidden"} `}
-      ></div>
-      <div className="basis-2/6 sm:basis-1/5 sm:w-full uppercase">{time}</div>
-
-      <div className="hidden sm:basis-2/5 w-full sm:flex flex-row pr-6">
-        <div className={`w-full ${name2 && "basis-1/2"}`}>
-          <h4 className="font-semibold display">{name}</h4>
-          <p>{room && room}</p>
-        </div>
-        <div className={`w-full ${name2 ? "basis-1/2" : "hidden"}`}>
-          <h4 className="font-semibold display">{name2}</h4>
-          <p>{room2 && room2}</p>
-        </div>
-      </div>
-      <div className="hidden sm:flex w-full sm:basis-1/5 sm:pr-4">
-        <h4 className="font-semibold display">{speakers}</h4>
-      </div>
-      <div className="hidden sm:flex w-full sm:basis-1/5">
-        <h4 className="font-semibold display">{category}</h4>
-      </div>
-
-      <div className="basis-4/6 w-full flex flex-col sm:hidden">
-        <div className="w-full sm:basis-2/5 flex flex-col">
-          <div className={`w-full`}>
-            <h4 className="font-semibold display">{name}</h4>
-            <p>{room && room}</p>
-          </div>
-          <div className={`w-full ${name2 ? "" : "hidden"}`}>
-            <h4 className="font-semibold display">{name2}</h4>
-            <p>{room2 && room2}</p>
-          </div>
-        </div>
-        <div className="w-full sm:basis-1/5">
-          <h4 className="monospace text-nextflow text-sm">{speakers}</h4>
-        </div>
-      </div>
-
-      {url && (
-        <a
-          href={url}
-          className="w-full h-full absolute top-0 left-0 right-0 bottom-0 z-10"
-        />
-      )}
-    </div>
-  );
-};
-
-export const ScheduleHeader = ({ timezone = "EDT" }: { timezone?: string }) => {
-  return (
-    <div className="monospace hidden sm:flex flex-row w-full border-b border-white p-4 mb-6">
-      <div className="w-full basis-1/5">Time: {timezone}</div>
-      <div className="w-full basis-2/5">Name</div>
-      <div className="w-full basis-1/5">Speakers</div>
-      <div className="w-full basis-1/5">Category</div>
-    </div>
-  );
+type TimeSlot = {
+  time: string;
+  highlighted?: boolean;
+  sessions: SessionProps[];
+  session?: any;
 };
 
 type ScheduleDay = {
   date: string;
-  timezone: string;
-  items: Omit<ScheduleItemProps, "className">[];
+  timezone?: string;
+  slots: TimeSlot[];
+};
+
+type TrainingCategory = {
+  id: string;
+  label: string;
+  days: ScheduleDay[];
 };
 
 type ScheduleConfig = {
-  city: string;
-  year: string;
-  days: ScheduleDay[];
+  categories: TrainingCategory[];
 };
 
 type Props = {
   children?: React.ReactNode;
   className?: string;
-  config: ScheduleConfig;
+  agenda: any;
 };
 
-// Boston Schedule Configuration
-export const bostonScheduleConfig: ScheduleConfig = {
-  city: "boston",
-  year: "2025",
-  days: [
-    {
-      date: "Tuesday, May 13",
-      timezone: "EDT",
-      items: [
-        {
-          time: "9:00am",
-          name: "Registration and Breakfast",
-          highlighted: true,
-        },
-        {
-          time: "10:00am",
-          name: "Hackathon Welcome",
-          name2: "Training Welcome",
-        },
-        {
-          time: "10:30am",
-          name: "Hackathon Session 1",
-          name2: "Training Session 1",
-        },
-        { time: "1:00pm", name: "Lunch", highlighted: true },
-        {
-          time: "2:00pm",
-          name: "Hackathon Session 2",
-          name2: "Training Session 2",
-        },
-        {
-          time: "4:45pm",
-          name: "Hackathon Wrap-up",
-          name2: "Training Wrap-up",
-        },
-        {
-          time: "5:00pm",
-          name: "Hackathon and Training: Social Event",
-          highlighted: true,
-        },
-        { time: "8:00pm", name: "Hackathon and Training: Social Event Ends" },
-      ],
-    },
-    {
-      date: "Wednesday, May 14",
-      timezone: "EDT",
-      items: [
-        {
-          time: "9:00am",
-          name: "Registration and Breakfast",
-          highlighted: true,
-        },
-        {
-          time: "10:00am",
-          name: "Hackathon Session 3",
-          name2: "Training Session 3",
-        },
-        { time: "1:00pm", name: "Lunch", highlighted: true },
-        {
-          time: "2:00pm",
-          name: "Hackathon Session 4",
-          name2: "Training Session 4",
-        },
-        {
-          time: "4:45pm",
-          name: "Hackathon Wrap-up",
-          name2: "Training Wrap-up",
-          highlighted: true,
-        },
-        { time: "5:00pm", name: "Hackathon and Training: End" },
-      ],
-    },
-    {
-      date: "Thursday, May 15",
-      timezone: "EDT",
-      items: [
-        {
-          time: "8:30am",
-          name: "Registration, coffee and breakfast",
-          highlighted: true,
-        },
-        {
-          time: "9:30am",
-          name: "Welcome",
-          category: "Welcome",
-          speakers: "Evan Floden",
-        },
-        {
-          time: "9:40am",
-          name: "Product Keynote: From Pipelines to Platform",
-          speakers: "Evan Floden",
-          category: "Enabling Science",
-          url: "/2026/boston/agenda/from-pipelines-to-platform",
-        },
-        {
-          time: "10:20am",
-          name: "From Technical Debt to Sustainable Workflows: The AI-MARRVEL Nextflow Journey",
-          category: "Enabling Science",
-          speakers: "Hyun-Hwan Jeong",
-          url: "/2026/boston/agenda/from-technical-debt-to-sustainable-workflows-the-ai-marrvel-nextflow-journey",
-        },
-        {
-          time: "10:40am",
-          name: "Streamlining RNA-Seq Data Analysis with rnaseq-reports",
-          category: "Enabling Science",
-          speakers: "Alexandra Bartlett",
-          url: "/2026/boston/agenda/streamlining-rna-seq-data-analysis-with-rnaseq-reports",
-        },
-        { time: "11:00am", name: "Coffee break", highlighted: true },
-        {
-          time: "11:30am",
-          name: "Closing the Metadata Gap: Linking Sample Context to Nextflow Outputs with Quilt",
-          speakers: "Kevin Moore",
-          category: "Organizational Impact",
-          url: "/2026/boston/agenda/closing-the-metadata-gap-linking-sample-context-to-nextflow-outputs-with-quilt",
-        },
-        {
-          time: "11:50am",
-          name: "Create the best protein annotation pipeline in the world, aka Protein fasta → ??? → Profit!",
-          category: "Enabling Science",
-          speakers: "Olga Botvinnik",
-          url: "/2026/boston/agenda/create-the-best-protein-annotation-pipeline-in-the-world-aka-protein-fasta-profit",
-        },
-        {
-          time: "12:10pm",
-          name: "SCALPEL, a Nextflow based pipeline for quantification of isoform at single-cell resolution",
-          category: "Enabling Science",
-          speakers: "Franz Arnold Ake",
-          url: "/2026/boston/agenda/scalpel-a-nextflow-based-pipeline-for-quantification-of-isoform-at-single-cell-resolution",
-        },
-        {
-          time: "12:30pm",
-          name: "Developing a Scalable Workflow for Analyzing Long-Read 16S Sequences from Oxford Nanopore Sequencing",
-          category: "Enabling Science",
-          speakers: "Adriana Messyasz",
-          url: "/2026/boston/agenda/developing-a-scalable-workflow-for-analyzing-long-read-16s-sequences-from-oxford-nanopore",
-        },
-        {
-          time: "12:50pm",
-          name: "Lightning Round",
-          category: "Poster Pitches",
-        },
-        { time: "1:00pm", name: "Lunch", highlighted: true },
-        {
-          time: "2:00pm",
-          name: "What's new in Nextflow: Defining the future of reproducible workflows",
-          speakers: "Paolo Di Tommaso",
-          category: "Big Nextflow",
-          url: "/2026/boston/agenda/nextflow-updates",
-        },
-        {
-          time: "2:30pm",
-          name: "What it took to run a pipeline on aarch64",
-          category: "Big Nextflow",
-          speakers: "Angel Pizarro and Yan Fisher",
-          url: "/2026/boston/agenda/what-it-took-to-run-a-pipeline-on-aarch64",
-        },
-        {
-          time: "3:00pm",
-          name: "Unified, community-developed analysis guidelines and templates for multi-omics data interpretability",
-          category: "Big Nextflow",
-          speakers: "Lorena Pantano",
-          url: "/2026/boston/agenda/unified-community-developed-analysis-guidelines-and-templates-for-multi-omics-data",
-        },
-        { time: "3:20pm", name: "Lightning Round", category: "Poster Pitches" },
-        { time: "3:30pm", name: "Coffee break", highlighted: true },
-        {
-          time: "4:00pm",
-          name: "Running Nextflow on Microsoft Azure: selecting executors and infrastructure components",
-          speakers: "Wolfgang De Salvador",
-          category: "Big Nextflow",
-          url: "/2026/boston/agenda/running-nextflow-on-microsoft-azure-selecting-executors-and-infrastructure-components/",
-        },
-        {
-          time: "4:20pm",
-          name: "Seqera Fusion x NVIDIA Parabricks for Accelerated Analysis",
-          category: "Big Nextflow",
-          speakers: "Gary Burnett and Edmund Miller",
-          url: "/2026/boston/agenda/seqera-fusion-x-nvidia-parabricks-for-accelerated-analysis",
-        },
-        {
-          time: "4:40pm",
-          name: "Keynote: Responsible AI in Genomics: How to Prepare for a Future That's Already Here",
-          category: "Big Nextflow",
-          speakers: "Luisa Herrmann",
-          url: "/2026/boston/agenda/responsible-ai-in-genomics",
-        },
-        { time: "5:30pm", name: "Summit Reception", highlighted: true },
-        { time: "7:30pm", name: "Summit Reception: End" },
-      ],
-    },
-    {
-      date: "Friday, May 16",
-      timezone: "EDT",
-      items: [
-        {
-          time: "7:00am",
-          name: "Network: Morning Walk and Run to Seaport",
-          highlighted: true,
-        },
-        { time: "8:30am", name: "Coffee and breakfast", highlighted: true },
-        {
-          time: "9:30am",
-          name: "Scale with Seqera: Accelerate, Expand, and Collaborate",
-          category: "Organizational Impact",
-          speakers: "Esha Joshi",
-          url: "/2026/boston/agenda/scale-with-seqera-accelerate-expand-and-collaborate",
-        },
-        {
-          time: "10:00am",
-          name: "Integrating Bioinformatics into the Regulated Pharmaceutical Lifecycle",
-          category: "Organizational Impact",
-          speakers: "Brice Sarver and Kostis Karagiannis",
-          url: "/2026/boston/agenda/integrating-bioinformatics-into-the-regulated-pharmaceutical-lifecycle",
-        },
-        {
-          time: "10:20am",
-          name: "Building an Omics Data Infrastructure to Bridge Data Management and Data Science",
-          category: "Organizational Impact",
-          speakers: "Juliana Assis",
-          url: "/2026/boston/agenda/building-an-omics-data-infrastructure-to-bridge-data-management-and-data-science",
-        },
-        {
-          time: "10:40am",
-          name: "How Genie Empowers Genomic England's Generation Study",
-          category: "Organizational Impact",
-          speakers: "Adrianto Wirawan",
-          url: "/2026/boston/agenda/how-genie-empowers-genomic-englands-generation-study",
-        },
-        { time: "11:00am", name: "Coffee break", highlighted: true },
-        {
-          time: "11:30am",
-          name: "Optimizing Compute Costs with Seqera Cloud: Champions Oncology's PDX Bank and Multi-Omics Data",
-          speakers: "Gervaise Henry",
-          category: "Organizational Impact",
-          url: "/2026/boston/agenda/optimizing-compute-costs-with-seqera-cloud-champions-oncology-s-pdx-bank-and-multi-omics-data",
-        },
-        {
-          time: "11:45am",
-          name: "DRAGoN - Divide-and-conquer strategy for processing large DRUG-seq experiments",
-          speakers: "Scott Norton",
-          url: "/2026/boston/agenda/dragon-divide-and-conquer-strategy-for-processing-large-drug-seq-experiments",
-        },
-        {
-          time: "12:00pm",
-          name: "Enabling Reproducible Science and African Representation in Science through Nextflow Workshops",
-          category: "Organizational Impact",
-          speakers: "Olaitan Awe",
-          url: "/2026/boston/agenda/enabling-reproducible-science-and-african-representation-in-science-through-nextflow-workshops",
-        },
-        {
-          time: "12:20pm",
-          name: "Panel Discussion: Beyond the Pipeline: Advancing Diversity in Challenging Times",
-          speakers: "Saba Nafees, Lorena Pantano and Francine Camacho",
-          url: "/2026/boston/agenda/beyond-the-pipeline-advancing-diversity-in-challenging-times",
-        },
-        { time: "1:00pm", name: "Summit: Wrap-up", highlighted: true },
-        { time: "1:10pm", name: "Summit: End", highlighted: true },
-      ],
-    },
-  ],
+// ─── Sanity → ScheduleConfig transform ───────────────────────────────────────
+
+const timezoneLabels: Record<string, string> = {
+  est: 'EST (UTC-5)',
+  cest: 'CEST (UTC+2)',
+  cet: 'CET (UTC+1)',
 };
 
-// Barcelona Schedule Configuration
-export const barcelonaScheduleConfig: ScheduleConfig = {
-  city: "barcelona",
-  year: "2025",
-  days: [
-    {
-      date: "Tuesday, October 28",
-      timezone: "CEST (UTC+2)",
-      items: [
-        {
-          time: "9:00am",
-          name: "Registration and Breakfast",
-          highlighted: true,
-        },
-        {
-          time: "10:00am",
-          name: "Hackathon Welcome",
-          name2: "Training Welcome",
-        },
-        {
-          time: "10:30am",
-          name: "Hackathon Session 1",
-          name2: "Training Session 1",
-        },
-        { time: "1:00pm", name: "Lunch", highlighted: true },
-        {
-          time: "2:00pm",
-          name: "Hackathon Session 2",
-          name2: "Training Session 2",
-        },
-        {
-          time: "4:45pm",
-          name: "Hackathon Wrap-up",
-          name2: "Training Wrap-up",
-        },
-        {
-          time: "5:30pm",
-          name: "Hackathon and Training: Social Event",
-          highlighted: true,
-        },
-        { time: "8:00pm", name: "Hackathon and Training: Social Event Ends" },
-      ],
-    },
-    {
-      date: "Wednesday, October 29",
-      timezone: "CEST (UTC+2)",
-      items: [
-        {
-          time: "9:00am",
-          name: "Registration and Breakfast",
-          highlighted: true,
-        },
-        {
-          time: "10:00am",
-          name: "Hackathon Session 3",
-          name2: "Training Session 3",
-        },
-        { time: "1:00pm", name: "Lunch", highlighted: true },
-        {
-          time: "2:00pm",
-          name: "Hackathon Session 4",
-          name2: "Training Session 4",
-        },
-        {
-          time: "4:45pm",
-          name: "Hackathon Wrap-up",
-          name2: "Training Wrap-up",
-          highlighted: true,
-        },
-        { time: "5:00pm", name: "Hackathon and Training: End" },
-      ],
-    },
-  ],
+const formatTime = (t?: string): string => {
+  if (!t || t.length < 3) return t ?? '';
+  const padded = t.padStart(4, '0');
+  const h = parseInt(padded.slice(0, 2), 10);
+  const m = padded.slice(2);
+  const suffix = h >= 12 ? 'PM' : 'AM';
+  const h12 = h % 12 || 12;
+  return m === '00' ? `${h12}${suffix}` : `${h12}:${m}${suffix}`;
 };
 
+const formatDate = (dateStr?: string): string => {
+  if (!dateStr) return '';
+  const [year, month, day] = dateStr.split('-').map(Number);
+  return new Date(year, month - 1, day).toLocaleDateString('en-US', {
+    weekday: 'long',
+    month: 'long',
+    day: 'numeric',
+  });
+};
 
+const toTimeSlot = (item): TimeSlot => {
+  const speakers = item?.associatedSpeakers ?? [];
+  const startTime = formatTime(item?.startTime);
+  const endTime = formatTime(item?.endTime);
+  const time = startTime && endTime ? `${startTime} – ${endTime}` : startTime;
+  const title = item.title;
+  const associatedSpeakers = item?.associatedSpeakers ?? [];
+  const isHighlighted = item.isHighlighted;
+  const tags = item?.tags ?? [];
 
-const Schedule: React.FC<Props> = ({ children, className, config }) => {
+  return {
+    time,
+    title,
+    tags,
+    isHighlighted,
+    associatedSpeakers,
+    highlighted: item?.tags?.includes('highlight'),
+    sessions: [,],
+  };
+};
+
+const toScheduleDay = (section): ScheduleDay => ({
+  date: formatDate(section.date),
+  timezone: section.timezone ? timezoneLabels[section.timezone] : undefined,
+  slots: (section.agendaItems ?? []).map(toTimeSlot),
+});
+
+const transformAgenda = (agenda): ScheduleConfig => ({
+  categories: [
+    { id: 'summit', label: 'Summit', sections: agenda.summitAgenda },
+    { id: 'hackathon', label: 'Hackathon', sections: agenda.hackathonAgenda },
+    {
+      id: 'beginner',
+      label: 'Beginner Training',
+      sections: agenda.beginnerTrainingAgenda,
+    },
+    {
+      id: 'advanced',
+      label: 'Advanced Training',
+      sections: agenda.advancedTrainingAgenda,
+    },
+  ]
+    .filter((cat) => cat.sections?.length)
+    .map(({ id, label, sections }) => ({
+      id,
+      label,
+      days: (sections ?? []).map(toScheduleDay),
+    })),
+});
+
+const ScheduleHeader: React.FC<{
+  categories: TrainingCategory[];
+  selectedCategoryId: string;
+  onCategoryChange: (id: string) => void;
+}> = ({ categories, selectedCategoryId, onCategoryChange }) => (
+  <div className="pb-10 bg-black text-white monospace flex flex-col sm:flex-row w-full mb-16 gap-4">
+    <div className="container-lg w-full">
+      <div className="flex flex-col md:flex-row flex-wrap gap-2">
+        {categories.map((cat) => (
+          <button
+            key={cat.id}
+            onClick={() => onCategoryChange(cat.id)}
+            className={`monospace px-4 py-1 md:py-2 border transition-all duration-300 ${
+              selectedCategoryId === cat.id
+                ? 'bg-nextflow border-nextflow text-white'
+                : 'bg-transparent border-white hover:bg-white hover:text-black'
+            }`}
+          >
+            {cat.label}
+          </button>
+        ))}
+      </div>
+    </div>
+  </div>
+);
+
+// ─── Main component ───────────────────────────────────────────────────────────
+
+const AllSchedules: React.FC<Props> = ({ children, className, agenda }) => {
+  const config = useMemo(() => transformAgenda(agenda), [agenda]);
+
+  const getInitialCategory = (): string => {
+    if (typeof window !== 'undefined') {
+      const hash = window.location.hash.replace('#', '');
+      const match = config.categories.find((cat) => cat.id === hash);
+      return match ? hash : config.categories[0]?.id ?? '';
+    }
+    return config.categories[0]?.id ?? '';
+  };
+
+  const [selectedCategoryId, setSelectedCategoryId] =
+    useState<string>(getInitialCategory);
+
+  const handleCategoryChange = (categoryId: string) => {
+    setSelectedCategoryId(categoryId);
+    if (typeof window !== 'undefined') {
+      window.history.replaceState(null, '', `#${categoryId}`);
+    }
+  };
+
+  const selectedCategory =
+    config.categories.find((cat) => cat.id === selectedCategoryId) ??
+    config.categories[0];
+
+  if (!selectedCategory) return null;
+
   return (
-    <div className={clsx(styles.schedule, className)}>
-      {config.days.map((day, dayIndex) => (
-        <section key={dayIndex} className="mb-20">
-          <h5 className="h5 mb-2">{day.date}</h5>
-          <ScheduleHeader timezone={day.timezone} />
-          {day.items.map((item, itemIndex) => (
-            <ScheduleItem key={itemIndex} {...item} />
+    <div className={`w-full ${className ?? ''}`}>
+      <ScheduleHeader
+        categories={config.categories}
+        selectedCategoryId={selectedCategoryId}
+        onCategoryChange={handleCategoryChange}
+      />
+      {selectedCategory.days.map((day, dayIndex) => (
+        <section key={dayIndex} className="container-lg mb-20">
+          <h5 className="h5 mb-4">{day.date}</h5>
+          {day.timezone && (
+            <div className="border-b border-white mb-3 pb-2">
+              Time: {day.timezone}
+            </div>
+          )}
+          {day.slots.map((slot, slotIndex) => (
+            <div
+              className={` text-black container-lg relative w-full flex flex-row transition-all duration-300 p-2 md:p-4 mb-2
+            ${slot.isHighlighted ? 'bg-nextflow-600' : 'bg-nextflow-200'}
+            `}
+            >
+              <div className="mt-[1px] basis-2/6 sm:basis-1/6 sm:w-full uppercase items-start text-[.7rem] md:text-[1rem]">
+                {slot.time}
+              </div>
+              <div className="pl-2 md:pl-0 basis-4/6 sm:basis-5/6 w-full">
+               {slot?.tags.length > 0 && (
+                <div className="mb-2">
+                  {slot?.tags.map((tag) => (
+                    <span
+                      key={tag._id}
+                      className="py-1 px-2 text-[.6rem] mr-1  transition-all duration-300 uppercase monospace bg-black text-white"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+               )}
+                <div className="font-medium mb-1 text-xs md:text-base">{slot.title}</div>
+                <div>
+                  {slot?.associatedSpeakers.map((speaker) => (
+                    <p
+                      key={speaker._id}
+                      className=" text-sm  transition-all duration-300"
+                    >
+                      {speaker.name}
+                      {speaker.role && (
+                        <span className="font-normal">, {speaker.role}</span>
+                      )}
+                    </p>
+                  ))}
+                </div>
+              </div>
+            </div>
           ))}
         </section>
       ))}
@@ -464,4 +235,5 @@ const Schedule: React.FC<Props> = ({ children, className, config }) => {
   );
 };
 
-export default Schedule;
+export { AllSchedules };
+export default AllSchedules;

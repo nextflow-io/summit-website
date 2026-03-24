@@ -1,11 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
+
+
+// ─── Component types ──────────────────────────────────────────────────────────
 
 type SessionProps = {
-  title: string;
+  session?: any;
+  title?: string;
   speaker?: string;
   speaker2?: string;
   category?: string;
   url?: string;
+  associatedSpeakers?: any;
 };
 
 type TimeSlot = {
@@ -16,127 +21,136 @@ type TimeSlot = {
 
 type ScheduleDay = {
   date: string;
-  timezone: string;
+  timezone?: string;
   slots: TimeSlot[];
 };
 
-type ScheduleConfig = {
-  city: string;
-  year: string;
+type TrainingCategory = {
+  id: string;
+  label: string;
   days: ScheduleDay[];
+};
+
+type ScheduleConfig = {
+  categories: TrainingCategory[];
 };
 
 type Props = {
   children?: React.ReactNode;
   className?: string;
-  config: ScheduleConfig;
+  agenda: any;
 };
 
-// Timezone conversion utility
-const TIMEZONES = [
-  { label: "Barcelona (CEST)", value: "Europe/Madrid", offset: 2 },
-  { label: "London (BST)", value: "Europe/London", offset: 1 },
-  { label: "New York (EDT)", value: "America/New_York", offset: -4 },
-  { label: "Chicago (CDT)", value: "America/Chicago", offset: -5 },
-  { label: "Denver (MDT)", value: "America/Denver", offset: -6 },
-  { label: "Los Angeles (PDT)", value: "America/Los_Angeles", offset: -7 },
-  { label: "São Paulo (BRT)", value: "America/Sao_Paulo", offset: -3 },
-  { label: "Paris (CEST)", value: "Europe/Paris", offset: 2 },
-  { label: "Berlin (CEST)", value: "Europe/Berlin", offset: 2 },
-  { label: "Dubai (GST)", value: "Asia/Dubai", offset: 4 },
-  { label: "Singapore (SGT)", value: "Asia/Singapore", offset: 8 },
-  { label: "Beijing (CST)", value: "Asia/Shanghai", offset: 8 },
-  { label: "Seoul (KST)", value: "Asia/Seoul", offset: 9 },
-  { label: "Tokyo (JST)", value: "Asia/Tokyo", offset: 9 },
-  { label: "Sydney (AEDT)", value: "Australia/Sydney", offset: 11 },
-  { label: "Auckland (NZDT)", value: "Pacific/Auckland", offset: 13 },
-];
+// ─── Sanity → ScheduleConfig transform ───────────────────────────────────────
 
-const convertTime = (
-  time: string,
-  sourceOffset: number,
-  targetOffset: number,
-): { time: string; dayOffset: number } => {
-  // Extract hours and minutes
-  const timeMatch = time.match(/(\d+):?(\d+)?\s*(AM|PM)/i);
-  if (!timeMatch) return { time, dayOffset: 0 };
-
-  const [, hourStr, mins = "0", period] = timeMatch;
-  const hour12 = parseInt(hourStr);
-  const minutes = parseInt(mins);
-
-  // Convert to 24-hour format
-  let hour24 = hour12;
-  if (period.toUpperCase() === "PM" && hour12 !== 12) {
-    hour24 = hour12 + 12;
-  } else if (period.toUpperCase() === "AM" && hour12 === 12) {
-    hour24 = 0;
-  }
-
-  // Convert timezone
-  const convertedHour = hour24 + (targetOffset - sourceOffset);
-  const normalizedHour = ((convertedHour % 24) + 24) % 24;
-  const dayOffset = Math.floor(convertedHour / 24);
-
-  // Format output
-  let displayHour = normalizedHour;
-  let displayPeriod = "AM";
-
-  if (normalizedHour === 0) {
-    displayHour = 12;
-  } else if (normalizedHour === 12) {
-    displayHour = 12;
-    displayPeriod = "PM";
-  } else if (normalizedHour > 12) {
-    displayHour = normalizedHour - 12;
-    displayPeriod = "PM";
-  }
-
-  const minuteStr =
-    minutes > 0 ? `:${minutes.toString().padStart(2, "0")}` : "";
-  const timeStr = `${displayHour}${minuteStr}${displayPeriod}`;
-
-  return { time: timeStr, dayOffset };
+const timezoneLabels: Record<string, string> = {
+  est: "EST (UTC-5)",
+  cest: "CEST (UTC+2)",
+  cet: "CET (UTC+1)",
 };
 
-const SessionItem: React.FC<SessionProps> = ({
-  title,
-  speaker,
-  speaker2,
-  category,
-  url,
-}) => {
+const formatTime = (t?: string): string => {
+  if (!t || t.length < 3) return t ?? "";
+  const padded = t.padStart(4, "0");
+  const h = parseInt(padded.slice(0, 2), 10);
+  const m = padded.slice(2);
+  const suffix = h >= 12 ? "PM" : "AM";
+  const h12 = h % 12 || 12;
+  return m === "00" ? `${h12}${suffix}` : `${h12}:${m}${suffix}`;
+};
+
+const formatDate = (dateStr?: string): string => {
+  if (!dateStr) return "";
+  const [year, month, day] = dateStr.split("-").map(Number);
+  return new Date(year, month - 1, day).toLocaleDateString("en-US", {
+    weekday: "long",
+    month: "long",
+    day: "numeric",
+  });
+};
+
+const toTimeSlot = (item: AgendaItem): TimeSlot => {
+  const speakers = item?.associatedSpeakers ?? [];
+  const startTime = formatTime(item?.startTime);
+  const endTime = formatTime(item?.endTime);
+  const time = startTime && endTime ? `${startTime} – ${endTime}` : startTime;
+
+  return {
+    time,
+    highlighted: item?.tags?.includes("highlight"),
+    sessions: [
+      {
+        title: item?.title,
+        speaker: speakers[0]?.name,
+        speaker2: speakers[1]?.name,
+        category: item?.tags?.filter((t) => t !== "highlight")[0],
+        url: item?.associatedEvents?._id
+          ? `/agenda/${item.associatedEvents._id}`
+          : undefined,
+      },
+    ],
+  };
+};
+
+const toScheduleDay = (): ScheduleDay => ({
+  date: formatDate(section.date),
+  timezone: section.timezone ? timezoneLabels[section.timezone] : undefined,
+  slots: (section.agendaItems ?? []).map(toTimeSlot),
+});
+
+const transformAgenda = (): ScheduleConfig => ({
+  categories: [
+    { id: "summit", label: "Summit", sections: agenda.summitAgenda },
+    { id: "hackathon", label: "Hackathon", sections: agenda.hackathonAgenda },
+    { id: "beginner", label: "Beginner Training", sections: agenda.beginnerTrainingAgenda },
+    { id: "advanced", label: "Advanced Training", sections: agenda.advancedTrainingAgenda },
+  ]
+    .filter((cat) => cat.sections?.length)
+    .map(({ id, label, sections }) => ({
+      id,
+      label,
+      days: (sections ?? []).map(toScheduleDay),
+    })),
+});
+
+// ─── Sub-components ───────────────────────────────────────────────────────────
+
+const SessionItem: React.FC<SessionProps> = ({session, title, associatedSpeakers, category, url }) => {
   const content = (
-    <div className="w-full border-b border-gray-200 last:border-b-0 pb-3 opacity-90 group transition-all duration-300">
+    <div className="container-lg w-full border-b border-gray-200 last:border-b-0 pb-3 opacity-90 group transition-all duration-300">
       {category && (
-        <h4 className="monospace text-xs bg-nextflow-500 inline text-brand rounded-sm px-2 p-[.15rem]">
+        <h4 className="monospace text-xs bg-nextflow-500 inline text-brand px-2 p-[.15rem]">
           {category}
         </h4>
       )}
-      <h4 className="font-semibold display mb-1 text-[1rem] md:text-[1.2rem] mt-1 group-hover:text-nextflow transition-all duration-300">
-        {title}
+      <h4
+        className={`font-semibold display mb-1 text-[1rem] md:text-[1.2rem] mt-1 ${
+          url && "underline group-hover:text-nextflow transition-all duration-300"
+        }`}
+      >
+        {title} test
       </h4>
-      {speaker && speaker !== "N/A" && (
-        <>
-          <p className="font-semibold display text-sm text-gray-300  group-hover:text-nextflow transition-all duration-300">
-            {speaker}
-          </p>
-          {speaker2 && (
-            <p className="font-semibold display text-sm text-gray-300  group-hover:text-nextflow transition-all duration-300">
-              {speaker2}
+{associatedSpeakers && associatedSpeakers.length > 0 && (
+        <div className="flex flex-col gap-0.5 mt-1">
+          {associatedSpeakers.map((speaker) => (
+            <p
+              key={speaker._id}
+              className="font-semibold display text-sm text-gray-300 group-hover:text-nextflow transition-all duration-300"
+            >
+              {speaker.name}
+              {speaker.role && (
+                <span className="font-normal text-gray-400"> · {speaker.role}</span>
+              )}
             </p>
-          )}
-        </>
+          ))}
+        </div>
       )}
     </div>
   );
 
   if (url) {
     return (
-      <a
-        href={`/2026/virtual/agenda/${url}`}
-        className="block transition-colors px-4 -mx-4 "
-      >
+      <a href={url} className="block transition-colors px-4 -mx-4" target="_blank">
         {content}
       </a>
     );
@@ -145,52 +159,13 @@ const SessionItem: React.FC<SessionProps> = ({
   return <div className="px-4 -mx-4">{content}</div>;
 };
 
-const TimeSlotItem: React.FC<
-  TimeSlot & { sourceOffset: number; targetOffset: number }
-> = ({ time, highlighted, sessions, sourceOffset, targetOffset }) => {
-  const converted = convertTime(time, sourceOffset, targetOffset);
-  const displayTime =
-    converted.dayOffset !== 0
-      ? `${converted.time} ${converted.dayOffset > 0 ? "+1 day" : "-1 day"}`
-      : converted.time;
+const TimeSlotItem: React.FC<TimeSlot> = ({ time, highlighted, sessions }) => {
 
-  if (highlighted) {
-    return (
-      <div
-        className={`relative w-full flex flex-row border border-nextflow ${sessions[0].url && "hover:border-nextflow-200  hover:text-white transition-all duration-300"} p-4 rounded-sm mb-2 group`}
-      >
-        <div
-          className={`absolute bg-nextflow-100 w-full h-full z-0 top-0 right-0 left-0 opacity-25 ${sessions[0].url && "group-hover:opacity-100 group-hover:bg-nextflow-800"} transition-opacity duration-300`}
-        ></div>
 
-        <div className="basis-2/6 sm:basis-1/6 sm:w-full uppercase z-10 pointer-events-none text-[.8rem] md:text-[1rem] pt-1">
-          {displayTime}
-        </div>
-        <div className="basis-4/6 sm:basis-5/6 w-full z-10 pointer-events-none">
-          <h4 className="font-semibold  text-[1rem] md:text-[1.2rem] display  transition-colors duration-300">
-            {sessions[0].title}
-          </h4>
-          {sessions[0].speaker && (
-            <p className="font-semibold display text-sm text-white  transition-colors duration-300">
-              {sessions[0].speaker}
-            </p>
-          )}
-        </div>
-
-        {sessions[0].url && (
-          <a
-            href={`/2026/virtual/agenda/${sessions[0].url}`}
-            className="absolute inset-0 z-20 cursor-pointer"
-            aria-label={`View ${sessions[0].title}`}
-          ></a>
-        )}
-      </div>
-    );
-  }
   return (
-    <div className="relative w-full flex flex-row border border-nextflow transition-all duration-300 p-4 rounded-sm mb-2">
-      <div className="basis-2/6 sm:basis-1/6 sm:w-full uppercase self-start pt-6 text-[.8rem] md:text-[1rem]">
-        {displayTime}
+    <div className="bg-blue-200 text-black container-lg relative w-full flex flex-row border border-nextflow transition-all duration-300 p-4 mb-2">
+      <div className="basis-2/6 sm:basis-1/6 sm:w-full uppercase items-start pt-2 text-[.8rem] md:text-[1rem]">
+        {time}
       </div>
       <div className="basis-4/6 sm:basis-5/6 w-full">
         {sessions
@@ -204,533 +179,76 @@ const TimeSlotItem: React.FC<
 };
 
 const ScheduleHeader: React.FC<{
-  timezone: string;
-  selectedTimezone: (typeof TIMEZONES)[0];
-  onTimezoneChange: (tz: (typeof TIMEZONES)[0]) => void;
-}> = ({ timezone, selectedTimezone, onTimezoneChange }) => {
-  return (
-    <div className="monospace flex flex-col sm:flex-row w-full border-b border-white p-4 mb-6 gap-4">
-      <div className="w-full ">
-        Time:{" "}
-        <select
-          value={selectedTimezone.value}
-          onChange={(e) => {
-            const tz = TIMEZONES.find((t) => t.value === e.target.value);
-            if (tz) onTimezoneChange(tz);
-          }}
-          className="monospace bg-transparent border border-white px-3 py-1 rounded-sm cursor-pointer hover:bg-white hover:text-black transition-all duration-300"
-        >
-          {TIMEZONES.map((tz) => (
-            <option
-              key={tz.value}
-              value={tz.value}
-              className="bg-black text-white"
-            >
-              {tz.label}
-            </option>
-          ))}
-        </select>
+  categories: TrainingCategory[];
+  selectedCategoryId: string;
+  onCategoryChange: (id: string) => void;
+}> = ({ categories, selectedCategoryId, onCategoryChange }) => (
+  <div className="pb-10 bg-black text-white monospace flex flex-col sm:flex-row w-full mb-16 gap-4">
+    <div className="container-lg w-full">
+      <div className="flex flex-wrap gap-2">
+        {categories.map((cat) => (
+          <button
+            key={cat.id}
+            onClick={() => onCategoryChange(cat.id)}
+            className={`monospace px-4 py-2 border transition-all duration-300 ${
+              selectedCategoryId === cat.id
+                ? "bg-nextflow border-nextflow text-white"
+                : "bg-transparent border-white hover:bg-white hover:text-black"
+            }`}
+          >
+            {cat.label}
+          </button>
+        ))}
       </div>
     </div>
-  );
-};
+  </div>
+);
 
-const virtualScheduleConfig: ScheduleConfig = {
-  city: "virtual",
-  year: "2025",
-  days: [
-    {
-      date: "Thursday, October 23",
-      timezone: "CEST (UTC+2)",
-      slots: [
-        {
-          time: "1PM",
-          highlighted: true,
-          sessions: [
-            {
-              title: "Opening Keynote",
-              speaker: "Evan Floden, CEO & Co-Founder, Seqera",
-              url: "opening-keynote",
-            },
-          ],
-        },
-        {
-          time: "2:40PM",
-          sessions: [
-            {
-              title: "Happy Nextflow Summit from AWS",
-              speaker: "Brendan Bouffler, HPC Engineering, AWS",
-              category: "Infrastructure & Automation",
-              url: "happy-nextflow-summit",
-            },
-            {
-              title:
-                "Enabling reproducibility in Agri-Ecology and Evolutionary biology",
-              speaker:
-                "Christopher Wyatt, Bioinformatician, University College London",
-              category: "Microbiology & Ecology",
-              url: "enabling-reproducibility-in-agri-ecology-and-evolutionary-biology",
-            },
-            {
-              title:
-                "Building bioinformatics skills with Nextflow/nf-core: a program for early–mid-career researchers",
-              speaker:
-                "Patricia Agudelo-Romero, Senior Research Fellow, The Kids Research Institute Australia",
-              category: "Community & Training",
-              url: "building-bioinformatics-skills-with-nextflow-nf-core-a-program-for-early-mid-career-researchers",
-            },
-          ],
-        },
-        {
-          time: "3PM",
-          sessions: [
-            {
-              title:
-                "Integrating Seqera into Enhanced Process Automation to Fuel Nucleome's Discovery Engine",
-              speaker:
-                "Pauline Fourgoux, Senior Bioinformatician, Nucleome Therapeutics",
-              category: "Infrastructure & Automation",
-              url: "integrating-seqera-into-enhanced-process-automation-to-fuel-nucleomes-discovery-engine",
-            },
-            {
-              title: "Nextflow v25 Broke Bactopia, So We Rewrote It",
-              speaker:
-                "Robert A Petit III, Senior Bioinformatics Scientist, Wyoming Public Health Laboratory",
-              category: "Microbiology & Ecology",
-              url: "nextflow-v25-broke-bactopia-so-we-rewrote-it",
-            },
-            {
-              title:
-                "Collaborative Nextflow training for Australia's dispersed research landscape",
-              speaker:
-                "Giorgia Mori, BioCloud Training and Communication Officer, Australian BioCommons",
-              category: "Community & Training",
-              url: "collaborative-nextflow-training-for-australias-dispersed-research-landscape",
-            },
-          ],
-        },
-        {
-          time: "3:20PM",
-          highlighted: true,
-          sessions: [
-            {
-              title: "Coffee break",
-            },
-          ],
-        },
-        {
-          time: "3:40PM",
-          sessions: [
-            {
-              title:
-                "Orchestrating Large Scale Omics Workflows​ with Seqera at Arcus Biosciences",
-              speaker: "Vinay Vyas, Sr DevOps Engineer, Arcus Biosciences",
-              speaker2:
-                "Stav Grossfeld, Bioinformatics Engineer, Arcus Biosciences",
-              category: "Infrastructure & Automation",
-              url: "orchestrating-large-scale-omics-workflows-with-seqera-at-arcus-biosciences",
-            },
-            {
-              title:
-                "WasteFlow 2.0: Multi-Pathogen Respiratory Virus Surveillance in Canada",
-              speaker:
-                "Zohaib Anwar, Bioinformatician, BC Centre for Disease Control",
-              category: "Microbiology & Ecology",
-              url: "wasteflow-multi-pathogen-respiratory-virus-surveillance-in-canada",
-            },
-            {
-              title: "Updates from the Community Team",
-              speaker:
-                "Geraldine Van der Auwera, Lead Developer Advocate, Seqera",
-              category: "Community & Training",
-              url: "updates-from-the-community-team",
-            },
-          ],
-        },
-        {
-          time: "4PM",
-          sessions: [
-            {
-              title:
-                "Elevating a Legacy Institute: A Hybrid HPC Strategy with Nextflow",
-              speaker:
-                "Melanie Nuesch, Head of the High Performance Computing Platform, DRFZ Berlin",
-              category: "Infrastructure & Automation",
-              url: "elevating-a-legacy-institute-a-hybrid-hpc-strategy-with-nextflow",
-            },
-            {
-              title:
-                "Metagenome quality metrics and taxonomical annotation visualization through BIgMAG/MAGFlow",
-              speaker:
-                "Jeferyd Yepes-García, PhD Candidate, University of Fribourg",
-              category: "Microbiology & Ecology",
-              url: "metagenome-quality-metrics-and-taxonomical-annotation-visualization-through-bigmag-magflow",
-            },
-            {
-              title: "Act local, think global: The Nextflow Ambassador Journey",
-              speaker:
-                "Marcel Ribeiro-Dantas, Senior Developer Advocate, Seqera",
-              category: "Community & Training",
-              url: "act-local-think-global-the-nextflow-ambassador-journey",
-            },
-          ],
-        },
-        {
-          time: "4:20PM",
-          sessions: [
-            {
-              title:
-                "Optimizing Genomics Workflows with Nextflow & Cloud Computing: Insights from a Research Institution",
-              speaker: "Jacopo Tartaglia, Bioinformatician, CREA-GB",
-              category: "Infrastructure & Automation",
-              url: "optimizing-genomics-workflows-with-nextflow-and-cloud-computing",
-            },
-            {
-              title:
-                "Development of the VARITAS Database and Pipeline for Rapid Microbial Testing in Biomanufacturing",
-              speaker:
-                "Tyler Laird, Bioinformatician, National Institute of Standards and Technology",
-              category: "Microbiology & Ecology",
-              url: "development-of-the-varitas-database-and-pipeline-for-rapid-microbial-testing-in-biomanufacturing",
-            },
-            {
-              title: "How I Built the Nextflow Community in Korea",
-              speaker: "Jehee Lee, Nextflow Ambassador of Korea",
-              category: "Community & Training",
-              url: "how-i-built-the-nextflow-community-in-korea",
-            },
-          ],
-        },
-        {
-          time: "4:40PM",
-          sessions: [
-            {
-              title:
-                "Benchmarking nf-core/scrnaseq for Mouse Prostate Single-cell RNA-seq: Practical Insights",
-              speaker:
-                "Nikhila T Suresh, Post Doctoral Research Associate, Purdue University",
-              category: "Infrastructure & Automation",
-              url: "benchmarking-nf-core-scrnaseq-for-mouse-prostate-single-cell-rna-seq-practical-insights",
-            },
-            {
-              title:
-                "Using Nextflow to Break Computational Barriers: NASA's Approach to Democratizing Space Omics Data",
-              speaker:
-                "Barbara Novak, NASA GeneLab Data Processing Lead, Blue Marble Space Institute of Science",
-              category: "Microbiology & Ecology",
-              url: "using-nextflow-to-break-computational-barriers-nasas-approach-to-democratizing-space-omics-data",
-            },
-            {
-              title:
-                "From FASTQ to Kappa: My First Experience with nf-core/viralrecon",
-              speaker:
-                "Mariam Sulaiman, Graduate Research Intern, International Institute of Tropical Agriculture",
-              category: "Community & Training",
-              url: "from-fastq-to-kappa-my-first-experience-with-nf-core-viralrecon",
-            },
-          ],
-        },
-        {
-          time: "5PM",
-          sessions: [
-            {
-              title:
-                "OpenProblems.bio: Reproducible Benchmarks for Single-Cell Omics at Scale",
-              speaker:
-                "Robrecht Cannoodt, Data Science Consultant, Data Intuitive",
-              category: "Infrastructure & Automation",
-              url: "openproblems-bio-reproducible-benchmarks-for-single-cell-omics-at-scale",
-            },
-            {
-              title:
-                "Earth Observation with Nextflow: A Use Case–Driven Introduction",
-              speaker:
-                "Felix Kummer, Research Associate, Humboldt-Universität zu Berlin",
-              category: "Microbiology & Ecology",
-              url: "earth-observation-with-nextflow-a-use-case-driven-introduction",
-            },
-            {
-              title: "From beginner to nf-core contributor",
-              speaker:
-                "Nour Mahfel, Trainee Clinical Scientist (Bioinformatics - Genomics), Birmingham Women's and Children's NHS Foundation Trust",
-              category: "Community & Training",
-              url: "from-beginner-to-nf-core-contributor",
-            },
-          ],
-        },
-        {
-          time: "5:20PM",
-          highlighted: true,
-          sessions: [
-            {
-              title: "Day One Wrap Up",
-              speaker: "Leslie Denson, VP of Marketing, Seqera",
-            },
-          ],
-        },
-      ],
-    },
-    {
-      date: "Friday, October 24",
-      timezone: "CEST (UTC+2)",
-      slots: [
-        {
-          time: "1PM",
-          highlighted: true,
-          sessions: [
-            {
-              title: "What's New With Nextflow",
-              speaker: "Ben Sherman, Senior Software Engineer, Seqera",
-              url: "whats-new-with-nextflow",
-            },
-          ],
-        },
-        {
-          time: "2PM",
-          highlighted: true,
-          sessions: [
-            {
-              title: "Keynote: Building a Truly Global Genomic Future: From Bioinformatics Pipelines to People",
-              speaker:
-                "Segun Fatumo, Professor and Chair of Genomic Diversity, Queen Mary University of London",
-              url: "keynote-segun-fatumo",
-            },
-          ],
-        },
-        {
-          time: "2:40PM",
-          sessions: [
-            {
-              title: "Accelerating Cross-Assay Correlation with GenAI",
-              speaker: "Kevin Moore, CEO, Quilt.bio",
-              speaker2:
-                "Vasisht Tadigotla, Head of Data and Engineering, Sail Biomedicines",
-              category: "AI-Assisted Research",
-              url: "accelerating-cross-assay-correlation-with-genai",
-            },
-            {
-              title: "Validated Infrastructure for Reproducible Science",
-              speaker: "Gisela Pattarone, Lead Bioinformatician, ZS",
-              category: "Translational Research",
-              url: "validated-infrastructure-for-reproducible-science",
-            },
-            {
-              title: "Updates from the nf-core community",
-              speaker: "Chris Hakaart, Education Engineer, Seqera",
-              speaker2: "Franziska Bonath, Bioinformatician at NGI Sweden",
-              category: "Nextflow Ecosystem & nf-core",
-              url: "updates-from-the-nf-core-community",
-            },
-          ],
-        },
-        {
-          time: "3PM",
-          sessions: [
-            {
-              title:
-                "Reproducible LLM Driven Molecular Design with Nextflow and BioLM",
-              speaker: "Andrew Stewart, COO, BioLM",
-              category: "AI-Assisted Research",
-              url: "reproducible-llm-driven-molecular-design-with-nextflow-and-biolm",
-            },
-            {
-              title:
-                "nf-core/oncoanalyser: an accessible and portable pipeline to unify cancer DNA and RNA analysis",
-              speaker:
-                "Oliver Hofmann, Head of Bioinformatics, Collaborative Centre for Genomic Cancer Medicine",
-              category: "Translational Research",
-              url: "nf-core-oncoanalyser-an-accessible-and-portable-pipeline-to-unify-cancer-dna-and-rna-analysis",
-            },
-            {
-              title: "What's new from the nf-core infrastructure team in 2025",
-              speaker:
-                "Matthias Hörtenhuber, Systems Developer, SciLifeLab Data Centre",
-              category: "Nextflow Ecosystem & nf-core",
-              url: "whats-new-from-the-nf-core-infrastructure-team-in-2025",
-            },
-          ],
-        },
-        {
-          time: "3:20PM",
-          highlighted: true,
-          sessions: [
-            {
-              title: "Lightning Talks",
-            },
-          ],
-        },
-        {
-          time: "3:30PM",
-          highlighted: true,
-          sessions: [
-            {
-              title: "Coffee break",
-            },
-          ],
-        },
-        {
-          time: "3:40PM",
-          sessions: [
-            {
-              title:
-                "AI-Driven Spatial Transcriptomics for Predicting Drug Response in the Tumor Microenvironment",
-              speaker:
-                "Kayode Raheem, PhD Researcher, University of Nebraska Medical Center",
-              category: "AI-Assisted Research",
-              url: "ai-driven-spatial-transcriptomics-for-predicting-drug-response-in-the-tumor-microenvironment",
-            },
-            {
-              title:
-                "Pipeline Hubs: A Concept for Live, Reproducible Method Comparison in Bioinformatics",
-              speaker: "Cedric Notredame, PI, CRG",
-              category: "Translational Research",
-              url: "pipeline-hubs-a-concept-for-live-reproducible-method-comparison-in-bioinformatics",
-            },
-            {
-              title:
-                "MetroFlow : Generating Interactive Metro-Maps from Workflow Code",
-              speaker: "George Marchment, Université Paris-Saclay",
-              category: "Nextflow Ecosystem & nf-core",
-              url: "metroflow-generating-interactive-metro-maps-from-workflow-code",
-            },
-          ],
-        },
-        {
-          time: "4PM",
-          sessions: [
-            {
-              title:
-                "Somatem: a modular and open source metagenomic analysis pipeline for long-reads with an LLM co-pilot",
-              speaker:
-                "Prashant Kalvapalle, Postdoctoral Researcher, Rice University",
-              category: "AI-Assisted Research",
-              url: "somatem-a-modular-and-open-source-metagenomic-analysis-pipeline",
-            },
-            {
-              title:
-                "DelMoro: A Nextflow Pipeline for Variant Calling and Streamlined Reporting in Clinical Genomics",
-              speaker: "Firas Zemzem, PhD Candidate",
-              category: "Translational Research",
-              url: "delmoro-a-nextflow-pipeline-for-variant-calling-and-streamlined-reporting-in-clinical-genomics",
-            },
-            {
-              title:
-                "Contributing to nf-core within a translational project for personalized cancer medicine in Germany",
-              speaker: "Famke Bäuerle, PhD Student, University Clinic Tübingen",
-              category: "Nextflow Ecosystem & nf-core",
-              url: "contributing-to-nf-core-within-a-translational-project-for-personalized-cancer-medicine",
-            },
-          ],
-        },
-        {
-          time: "4:20PM",
-          sessions: [
-            {
-              title: "10 years of MultiQC",
-              speaker:
-                "Phil Ewels, Senior Product Manager for Open Source, Seqera",
-              category: "AI-Assisted Research",
-              url: "10-years-of-multiqc",
-            },
-            {
-              title:
-                "nf-core/differentialabundance: a unified framework for differential analysis",
-              speaker:
-                "Suzanne Jin, PhD Student, Centre for Genomic Regulation",
-              category: "Translational Research",
-              url: "nf-core-differentialabundance-a-unified-framework-for-differential-analysis",
-            },
-          ],
-        },
-        {
-          time: "4:40PM",
-          sessions: [
-            {
-              title: "AI Workflows For Bioinformaticians",
-              speaker: "Sasha Dagayev, Head of Growth and AI, Seqera",
-              category: "AI-Assisted Research",
-              url: "ai-workflows-for-bioinformaticians",
-            },
-            {
-              title:
-                "nf-core/proteinfamilies: A scalable pipeline for the generation of protein families",
-              speaker: "Evangelos Karatzas, Research Fellow, EMBL-EBI",
-              category: "Translational Research",
-              url: "nf-core-proteinfamilies-a-scalable-pipeline-for-the-generation-of-protein-families",
-            },
-            {
-              title: "Python ♡ Nextflow: How to use the nf-python plugin",
-              speaker:
-                "Roy Jacobson, MSc Student, Weizmann Institute of Science",
-              category: "Nextflow Ecosystem & nf-core",
-              url: "python-nextflow-how-to-use-the-nf-python-plugin",
-            },
-          ],
-        },
-        {
-          time: "5PM",
-          sessions: [
-            {
-              title:
-                "Bioinformatics pipelines through the ages: From Bash to Workflows to Agents",
-              speaker: "Ken Brewer, Scientific Solutions Lead, Seqera",
-              category: "AI-Assisted Research",
-              url: "bioinformatics-pipelines-through-the-ages-from-bash-to-workflows-to-agents",
-            },
-            {
-              title:
-                "Advancing the nf-core/sammyseq pipeline for 4f-SAMMY-seq toward its first release",
-              speaker:
-                "Ugo Maria Iannacchero, PhD Student, Institute of Biomedical Technologies, National Research Council",
-              speaker2: "Margherita Mutarelli, Researcher, ISASI-CNR",
-              category: "Translational Research",
-              url: "advancing-the-nf-core-sammyseq-pipeline-for-4f-sammy-seq-toward-its-first-release",
-            },
-            {
-              title:
-                "Tracking the Carbon Footprint of Pipeline Runs with nf-co2footprint, a Nextflow Plugin",
-              speaker:
-                "Josua Carl & Nadja Volkmann, Software Development, QBiC",
-              category: "Nextflow Ecosystem & nf-core",
-              url: "tracking-the-carbon-footprint-of-pipeline-runs-with-nf-co2footprint-a-nextflow-plugin",
-            },
-          ],
-        },
-        {
-          time: "5:20PM",
-          highlighted: true,
-          sessions: [
-            {
-              title: "Summit Wrap Up",
-              speaker: "Drew DiPalma, VP of Product, Seqera",
-            },
-          ],
-        },
-      ],
-    },
-  ],
-};
+// ─── Main component ───────────────────────────────────────────────────────────
 
-const ScheduleVirtual: React.FC<Props> = ({ children, className, config }) => {
-  const [selectedTimezone, setSelectedTimezone] = useState(TIMEZONES[0]); // Barcelona CEST default
+const AllSchedules: React.FC<Props> = ({ children, className, agenda }) => {
+  const config = useMemo(() => transformAgenda(agenda), [agenda]);
+
+  const getInitialCategory = (): string => {
+    if (typeof window !== "undefined") {
+      const hash = window.location.hash.replace("#", "");
+      const match = config.categories.find((cat) => cat.id === hash);
+      return match ? hash : config.categories[0]?.id ?? "";
+    }
+    return config.categories[0]?.id ?? "";
+  };
+
+  const [selectedCategoryId, setSelectedCategoryId] = useState<string>(getInitialCategory);
+
+  const handleCategoryChange = (categoryId: string) => {
+    setSelectedCategoryId(categoryId);
+    if (typeof window !== "undefined") {
+      window.history.replaceState(null, "", `#${categoryId}`);
+    }
+  };
+
+  const selectedCategory =
+    config.categories.find((cat) => cat.id === selectedCategoryId) ?? config.categories[0];
+
+  if (!selectedCategory) return null;
 
   return (
-    <div className={`w-full ${className || ""}`}>
-      {config.days.map((day, dayIndex) => (
-        <section key={dayIndex} className="mb-20">
-          <h5 className="text-xxl mb-2">{day.date}</h5>
-          <ScheduleHeader
-            timezone={day.timezone}
-            selectedTimezone={selectedTimezone}
-            onTimezoneChange={setSelectedTimezone}
-          />
+    <div className={`w-full ${className ?? ""}`}>
+      <ScheduleHeader
+        categories={config.categories}
+        selectedCategoryId={selectedCategoryId}
+        onCategoryChange={handleCategoryChange}
+      />
+      {selectedCategory.days.map((day, dayIndex) => (
+        <section key={dayIndex} className="container-lg mb-20">
+          <h5 className="h5 mb-4">{day.date}</h5>
+          {day.timezone && (
+            <div className="border-b border-white mb-3 pb-2">
+              Time: {day.timezone}
+            </div>
+          )}
           {day.slots.map((slot, slotIndex) => (
-            <TimeSlotItem
-              key={slotIndex}
-              {...slot}
-              sourceOffset={2} // CEST is UTC+2
-              targetOffset={selectedTimezone.offset}
-            />
+            <TimeSlotItem key={slotIndex} {...slot} />
           ))}
         </section>
       ))}
@@ -739,10 +257,5 @@ const ScheduleVirtual: React.FC<Props> = ({ children, className, config }) => {
   );
 };
 
-// Demo wrapper component
-const VirtualScheduleDemo = () => {
-  return <ScheduleVirtual config={virtualScheduleConfig} />;
-};
-
-export { virtualScheduleConfig, ScheduleVirtual };
-export default VirtualScheduleDemo;
+export { AllSchedules };
+export default AllSchedules;

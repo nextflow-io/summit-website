@@ -3,9 +3,6 @@ import SpeakerCard from "@components/SpeakerCard";
 
 const SpeakersSection = ({ person, index , location}) => {
   const [activeIndex, setActiveIndex] = useState(null);
-  const handleItemClick = (index) => {
-    setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
-  };
 
   return (
     <SpeakerCard
@@ -23,7 +20,6 @@ const SpeakersSection = ({ person, index , location}) => {
       image={person.image}
       pageUrl={person.associatedEvent?.slug.current}
       isOpen={activeIndex === index}
-      onClick={() => handleItemClick(index)}
       location={location}
       associatedTalks={person?.associatedTalks} 
     />

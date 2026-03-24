@@ -1,25 +1,26 @@
 ---
 import Layout from '@layouts/Base.astro';
 import Meta from '@components/Meta/Meta.astro';
-import StandardPage from '@modules/StandardPage';
-import { fetchBostonTravel } from '@data/fetchers';
-import type { PageData } from '@data/types';
-import LandingHero from '@components/LandingHero';
-import { fetchSettings, type SettingsData } from '@data/settings'; 
-const travel: PageData = await fetchBostonTravel();
+import { fetchSettings, type SettingsData } from '@data/settings';
+import { fetchBostonAgenda } from '@data/agenda';
+import { AllSchedules } from '@components/Schedule';
+
 const settings: SettingsData = await fetchSettings();
+const agenda = await fetchBostonAgenda();
 ---
 
 <Layout>
-  <Meta title="Agenda" sanityImage="default"  settings={settings}/>
-  <div class="bg-black text-white">
-      <section class="py-20 bg-black text-white">
+  <Meta title="Agenda" sanityImage="default" settings={settings} />
+  <div class="bg-white text-black">
+    <section class="py-20 bg-black text-white">
       <div class="container-lg">
         <h1 class="h3 mb-4">Agenda</h1>
-        <p>
-          Check back soon to view the schedule for Nextflow Summit Boston 2026.
-        </p>
+        <p>Select the category to view the schedule.</p>
       </div>
+    </section>
+
+    <section>
+      <AllSchedules agenda={agenda} client:load />
     </section>
   </div>
 </Layout>
