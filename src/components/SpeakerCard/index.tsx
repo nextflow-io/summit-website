@@ -25,10 +25,9 @@ type Props = {
   bio?: any;
   keynote?: boolean;
   image?: any;
-  isOpen: boolean;
   pageUrl?: string;
   location?: string;
-  associatedTalks?: Array<{
+  associatedEvents?: Array<{
     title: string;
     slug: string;
   }>;
@@ -46,10 +45,9 @@ const SpeakerCard: React.FC<Props> = ({
   bio,
   keynote,
   image,
-  isOpen,
   pageUrl,
   location,
-  associatedTalks,
+  associatedEvents,
 }) => {
   const monthDate = date
     ? dayjs.utc(date).tz('America/New_York').format('dddd, MMM D')
@@ -169,12 +167,12 @@ const SpeakerCard: React.FC<Props> = ({
   };
 
   const renderAssociatedTalks = () => {
-    if (!associatedTalks || associatedTalks.length === 0) return null;
+    // if (associatedEvents || associatedEvents.length === 0) return null;
 
     return (
       <div className="border-t border-nextflow pt-2">
         <div className="space-y-2">
-          {associatedTalks.map((talk) => {
+          {associatedEvents?.map((talk) => {
             return (
               <div key={talk.slug} className="text-[.875rem]">
                 <a

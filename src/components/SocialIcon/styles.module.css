@@ -2,14 +2,14 @@
   display: inline-block;
   line-height: 1;
   & svg {
-    transition: color 0.5s;
+    transition: opacity 0.5s;
     width: 18px;
     height: 18px;
     object-fit: cover;
   }
   &:hover {
     & svg {
-      color: var(--color-nextflow-500);
+      opacity: .5;
     }
   }
 }

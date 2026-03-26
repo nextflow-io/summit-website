@@ -1,12 +1,14 @@
 import { sanityClient } from "sanity:client";
 
 const getAllEventPosts = await sanityClient.fetch(
-  `*[_type == "eventPost"]{
+  `*[_type == "event"]{
    ...,
    title,
    body,
    youtube,
    projectLink,
+   startTime,
+   endTime,
    poster {
       asset->{
         url,
@@ -20,7 +22,7 @@ const getAllEventPosts = await sanityClient.fetch(
       url,
       },
     },
-   associatedPerson[]->{
+   associatedSpeakers[]->{
      ...,
      name,
      role,
@@ -28,6 +30,7 @@ const getAllEventPosts = await sanityClient.fetch(
      linkedin,
      github,
      twitter,
+     bluesky,
      image{
        asset-> {
        url,
@@ -46,6 +49,7 @@ const getAllVirtualEventPosts = await sanityClient.fetch(
    youtube,
    projectLink,
    publishedAt,
+   startTime,
    endTime,
    poster {
       asset->{

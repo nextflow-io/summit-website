@@ -17,7 +17,7 @@ const settings: SettingsData = await fetchSettings();
 
 <Layout namespace="2026/boston">
   <Meta title="Agenda" sanityImage="default" settings={settings}/>
-    <section class="mt-10 md:mt-20 mb-24 container smaller mx-auto">
+    <section class="">
     <EventPost post={post}   client:only="react" />
   </section>
 </Layout>

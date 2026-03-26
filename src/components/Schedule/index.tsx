@@ -77,13 +77,17 @@ const toTimeSlot = (item): TimeSlot => {
   const associatedSpeakers = item?.associatedSpeakers ?? [];
   const isHighlighted = item.isHighlighted;
   const tags = item?.tags ?? [];
+  const associatedEvents = item?.associatedEvents;
+  const bodycopy = item?.bodycopy;
 
   return {
     time,
     title,
+    bodycopy,
     tags,
     isHighlighted,
     associatedSpeakers,
+    associatedEvents,
     highlighted: item?.tags?.includes('highlight'),
     sessions: [,],
   };
@@ -191,41 +195,54 @@ const AllSchedules: React.FC<Props> = ({ children, className, agenda }) => {
           )}
           {day.slots.map((slot, slotIndex) => (
             <div
-              className={` text-black container-xl relative w-full flex flex-row transition-all duration-300 p-2 md:p-4 mb-2
-            ${slot.isHighlighted ? 'bg-nextflow-600' : 'bg-nextflow-200'}
+              className={`relative text-black relative w-full flex flex-row transition-all duration-300 p-2 md:p-4 mb-2
+              ${slot.isHighlighted ? 'bg-nextflow-600' : 'bg-nextflow-200'}
+              ${slot?.associatedEvents?.slug.current != null ? 'hover:bg-black hover:text-white' : ''}
             `}
             >
               <div className="mt-[1px] basis-2/6 sm:basis-1/6 sm:w-full uppercase items-start text-[.7rem] md:text-[1rem]">
                 {slot.time}
               </div>
               <div className="pl-2 md:pl-0 basis-4/6 sm:basis-5/6 w-full">
-               {slot?.tags.length > 0 && (
-                <div className="mb-2">
-                  {slot?.tags.map((tag) => (
-                    <span
-                      key={tag._id}
-                      className="py-1 px-2 text-[.6rem] mr-1  transition-all duration-300 uppercase monospace bg-black text-white"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+                {slot?.tags.length > 0 && (
+                  <div className="mb-2">
+                    {slot?.tags.map((tag) => (
+                      <span
+                        key={tag._id}
+                        className="py-1 px-2 text-[.6rem] mr-1  transition-all duration-300 uppercase monospace bg-black text-white"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+                <div className="font-medium mb-1 text-xs md:text-base">
+                  {slot.title}
                 </div>
-               )}
-                <div className="font-medium mb-1 text-xs md:text-base">{slot.title}</div>
-                <div>
-                  {slot?.associatedSpeakers.map((speaker) => (
-                    <p
-                      key={speaker._id}
-                      className=" text-sm  transition-all duration-300"
-                    >
-                      {speaker.name}
-                      {speaker.role && (
-                        <span className="font-normal">, {speaker.role}</span>
-                      )}
-                    </p>
-                  ))}
-                </div>
+
+                {/* display speakers from assocated event */}
+                {slot?.associatedEvents?.associatedSpeakers.map((speaker) => (
+                  <p
+                    key={speaker._id}
+                    className="text-sm transition-all duration-300"
+                  >
+                    {speaker.name}
+                    {speaker.role && (
+                      <span className="font-normal">, {speaker.role}</span>
+                    )}
+                  </p>
+                ))}
+                {/* display optional text  */}
+                {slot.bodycopy && <p className="text-sm">{slot.bodycopy}</p>}
               </div>
+
+              {/* display url if it exists */}
+              {slot?.associatedEvents?.slug.current && (
+                <a
+                  href={`/2026/boston/agenda/${slot?.associatedEvents?.slug.current}`}
+                  className="absolute w-full h-full top-0 left-0"
+                ></a>
+              )}
             </div>
           ))}
         </section>
