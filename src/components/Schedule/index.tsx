@@ -79,10 +79,12 @@ const toTimeSlot = (item): TimeSlot => {
   const tags = item?.tags ?? [];
   const associatedEvents = item?.associatedEvents;
   const bodycopy = item?.bodycopy;
+  const externalLink = item?.externalLink;
 
   return {
     time,
     title,
+    externalLink,
     bodycopy,
     tags,
     isHighlighted,
@@ -217,7 +219,11 @@ const AllSchedules: React.FC<Props> = ({ children, className, agenda }) => {
                   </div>
                 )}
                 <div className="font-medium mb-1 text-xs md:text-base">
-                  {slot.title}
+                  {slot.externalLink ? (
+                    <a className="underline hover:opacity-50 transition-all" href={slot.externalLink}>{slot.title}</a>
+                  ) : (
+                    <> {slot.title}</>
+                  )}
                 </div>
 
                 {/* display speakers from assocated event */}
