@@ -16,8 +16,9 @@ const settings: SettingsData = await fetchSettings();
 ---
 
 <Layout namespace="2026/boston">
-  <Meta title="Agenda" sanityImage="default" settings={settings}/>
+  <Meta title="Agenda" imgUrl={post.mainImage.asset.url} settings={settings}/>
     <section class="">
+      
     <EventPost post={post}   client:only="react" />
   </section>
 </Layout>
