@@ -115,7 +115,7 @@ const EventPosts: React.FC<Props> = ({ post, date }) => {
 
       {/* body */}
       {post?.body && (
-        <div className=" bg-white w-full  py-4 md:py-10 px-4">
+        <div className=" bg-white w-full  py-4 md:pt-10 md:pb-0 px-4">
           <div className="container-md bg-nextflow  text-black p-4 md:p-8">
             <PortableText
               className=" container-lg t-4 monospace text-sm"
@@ -134,7 +134,7 @@ const EventPosts: React.FC<Props> = ({ post, date }) => {
       {/* youtube */}
 
       {/* poster */}
-      {post.poster?.asset?.url && (
+      {/* {post.poster?.asset?.url && (
         <div className=" bg-white">
           <div className="container-md w-full h-full min-h-[600px] bg-black py-8">
             <iframe
@@ -152,7 +152,7 @@ const EventPosts: React.FC<Props> = ({ post, date }) => {
             </div>
           </div>
         </div>
-      )}
+      )} */}
 
       {/* speaker bios */}
       <div className="py-6 md:py-10  bg-white">
@@ -163,10 +163,10 @@ const EventPosts: React.FC<Props> = ({ post, date }) => {
           >
             <div className="container-xl w-full">
               <div className="container-md !p-0 bg-nextflow w-full flex  flex-col md:flex-row justify-between start">
-                <div className="w-[34%]">
+                <div className="md:w-[34%]">
                   {person?.image ? (
                     <img
-                      className="w-full p-8"
+                      className="w-full p-6 md:p-8"
                       src={person.image.asset.url}
                       alt={`image of ${person.name}`}
                     />
@@ -174,7 +174,7 @@ const EventPosts: React.FC<Props> = ({ post, date }) => {
                     <div className="w-full h-full bg-nextflow-200" />
                   )}
                 </div>
-                <div className="w-full px-6 py-4">
+                <div className="w-full px-6 py-2 md:py-4">
                   <h3 className="font-display text-[2rem]">{person.name}</h3>
                   <p className="">{person?.role}</p>
                   <div className="flex flex-row mt-2">
@@ -208,7 +208,7 @@ const EventPosts: React.FC<Props> = ({ post, date }) => {
                     )}
                   </div>
                   {person.bio && (
-                    <div className="mt-8 pt-4">
+                    <div className="mt-4 md:mt-8 pt-4 pb-2">
                       <PortableText
                         className={clsx(styles.speakerBio)}
                         value={person.bio}
