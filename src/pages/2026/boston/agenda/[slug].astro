@@ -1,13 +1,13 @@
 ---
-import Layout from "@layouts/Base.astro";
-import{getAllEventPosts} from "@data/events";
-import EventPost from "@components/EventPost";
+import Layout from '@layouts/Base.astro';
+import { getAllEventPosts } from '@data/events';
+import EventPost from '@components/EventPost';
 import Meta from '@components/Meta/Meta.astro';
-import { fetchSettings, type SettingsData } from '@data/settings'; 
+import { fetchSettings, type SettingsData } from '@data/settings';
 export function getStaticPaths() {
   return getAllEventPosts?.map((post) => ({
     params: { slug: post.slug.current },
-    props: {post},
+    props: { post },
   }));
 }
 
@@ -16,8 +16,12 @@ const settings: SettingsData = await fetchSettings();
 ---
 
 <Layout namespace="2026/boston">
-  <Meta title="Agenda" sanityImage="default" settings={settings}/>
-    <section class="mt-10 md:mt-20 mb-24 container smaller mx-auto">
-    <EventPost post={post}   client:only="react" />
+  <Meta
+    title={`${post.title} – ${post.associatedSpeakers?.map((s) => s.name).join(', ')}`}
+    imgUrl={post.mainImage?.asset.url}
+    settings={settings}
+  />
+  <section class="">
+    <EventPost post={post} client:only="react" />
   </section>
 </Layout>

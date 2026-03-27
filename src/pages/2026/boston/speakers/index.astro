@@ -15,14 +15,14 @@ const settings: SettingsData = await fetchSettings();
 <Layout namespace="2026/boston">
   <Meta title="Speakers" sanityImage="default" settings={settings} />
   <section class="py-20">
-    <div class="container-lg">
+    <div class="container-xl">
       <h1 class="h3 mb-4">Speakers</h1>
-      <p>Check back soon for a list of this year's speakers and presenters.</p>
+
     </div>
   </section>
 
-  <!-- <section class="bg-white text-black py-10">
-    <div class="container-lg">
+  <section class="bg-white text-black py-10">
+    <div class="container-xl">
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {
           sortedMembers.map((name, index) => (
@@ -38,5 +38,5 @@ const settings: SettingsData = await fetchSettings();
         }
       </div>
     </div>
-  </section> -->
+  </section>
 </Layout>

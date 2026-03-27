@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import SpeakerCard from "@components/SpeakerCard";
 
 const SpeakersSection = ({ person, index , location}) => {
-  const [activeIndex, setActiveIndex] = useState(null);
 
   return (
     <SpeakerCard
@@ -19,9 +18,9 @@ const SpeakersSection = ({ person, index , location}) => {
       linkedin={person.linkedin}
       image={person.image}
       pageUrl={person.associatedEvent?.slug.current}
-      isOpen={activeIndex === index}
+     
       location={location}
-      associatedTalks={person?.associatedTalks} 
+      associatedEvents={person?.associatedEvents} 
     />
   );
 };

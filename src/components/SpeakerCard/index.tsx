@@ -25,10 +25,9 @@ type Props = {
   bio?: any;
   keynote?: boolean;
   image?: any;
-  isOpen: boolean;
   pageUrl?: string;
   location?: string;
-  associatedTalks?: Array<{
+  associatedEvents?: Array<{
     title: string;
     slug: string;
   }>;
@@ -46,10 +45,9 @@ const SpeakerCard: React.FC<Props> = ({
   bio,
   keynote,
   image,
-  isOpen,
   pageUrl,
   location,
-  associatedTalks,
+  associatedEvents,
 }) => {
   const monthDate = date
     ? dayjs.utc(date).tz('America/New_York').format('dddd, MMM D')
@@ -92,7 +90,7 @@ const SpeakerCard: React.FC<Props> = ({
           key={twitter}
           href={twitter}
           type="Twitter"
-          className="pr-2 text-brand"
+          className="pr-2 text-white"
         />
       )}
       {linkedin && (
@@ -100,7 +98,7 @@ const SpeakerCard: React.FC<Props> = ({
           key={linkedin}
           href={linkedin}
           type="LinkedIn"
-          className="pr-2 text-brand"
+          className="pr-2 text-white"
         />
       )}
       {github && (
@@ -108,7 +106,7 @@ const SpeakerCard: React.FC<Props> = ({
           key={github}
           href={github}
           type="GitHub"
-          className="pr-2 text-brand"
+          className="pr-2 text-white"
         />
       )}
     </>
@@ -134,9 +132,9 @@ const SpeakerCard: React.FC<Props> = ({
     if (!date) return null;
 
     return (
-      <div className={`flex flex-row uppercase`}>
-        <p className="text-xs  monospace">{monthDate},</p>
-        <p className="text-xs monospace">
+      <div className={`flex flex-row`}>
+        <p className="text-sm  monospace text-nextflow-500">{monthDate},</p>
+        <p className="text-sm monospace text-nextflow-500">
           {timeStart} {location == 'virtual' ? 'CEST' : ''}
         </p>
       </div>
@@ -169,12 +167,12 @@ const SpeakerCard: React.FC<Props> = ({
   };
 
   const renderAssociatedTalks = () => {
-    if (!associatedTalks || associatedTalks.length === 0) return null;
+    // if (associatedEvents || associatedEvents.length === 0) return null;
 
     return (
       <div className="border-t border-nextflow pt-2">
         <div className="space-y-2">
-          {associatedTalks.map((talk) => {
+          {associatedEvents?.map((talk) => {
             return (
               <div key={talk.slug} className="text-[.875rem]">
                 <a
@@ -194,18 +192,17 @@ const SpeakerCard: React.FC<Props> = ({
   return (
     <div>
       {/* Speaker Card */}
-      <div className="speaker-card bg-nextflow text-brand transition-all duration-300 p-4 flex flex-col h-full">
+      <div className="speaker-card bg-black text-white transition-all duration-300 p-4 flex flex-col h-full">
         <div className="flex-1 flex flex-row">
           <div className="w-full">
             <div className="w-full mb-2">{renderProfileImage()}</div>
-            <h3 className=" text-[1.75rem] font-display mb-0 leading-tight">
+            <h3 className=" text-[1.85rem] font-display mb-0 leading-tight">
               {name}
             </h3>
-            <p className="monospace flex items-center  text-[.8rem] leading-tight">
+            <p className="flex items-center  text-[.85rem] leading-tight">
               {jobTitle}
             </p>
-              <div className=" flex mt-2">{renderSocialIcons()}</div>
-   
+            <div className=" flex mt-2">{renderSocialIcons()}</div>
 
             <div className="mb-2 w-full">
               {keynote && (
@@ -218,13 +215,8 @@ const SpeakerCard: React.FC<Props> = ({
               {renderDateTime()}
               {renderSubmissionTitle()}
               {renderAssociatedTalks()}
-            
-          
             </div>
-          
           </div>
-
-          
         </div>
       </div>
     </div>

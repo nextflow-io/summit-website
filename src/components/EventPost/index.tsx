@@ -1,9 +1,8 @@
-import { useEffect, useState } from "react";
-import PortableText from "@components/PortableText";
-import SocialIcon from "@components/SocialIcon";
-import Button from "@components/Button";
-import clsx from "clsx";
-import styles from "./styles.module.css";
+import PortableText from '@components/PortableText';
+import SocialIcon from '@components/SocialIcon';
+import Button from '@components/Button';
+import clsx from 'clsx';
+import styles from './styles.module.css';
 
 type Props = {
   post: any;
@@ -12,265 +11,224 @@ type Props = {
 
 const YouTubeEmbed = ({ id }) => {
   if (!id) return null;
-
-  const embedUrl = `https://www.youtube.com/embed/${id}`;
-
   return (
     <div className="w-full h-0 relative pb-[56.75%] overflow-hidden">
       <iframe
         width="100%"
         height="100%"
-        src={embedUrl}
+        src={`https://www.youtube.com/embed/${id}`}
         title=""
         className="absolute top-0 left-0 right-0 bottom-0 w-full h-full"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
-      ></iframe>
+      />
     </div>
   );
 };
-const formatDateTime = (dateString: string) => {
-  if (!dateString) return "";
+const formatTime = (t?: string): string => {
+  if (!t || t.length < 3) return t ?? '';
+  const padded = t.padStart(4, '0');
+  const h = parseInt(padded.slice(0, 2), 10);
+  const m = padded.slice(2);
+  const suffix = h >= 12 ? 'PM' : 'AM';
+  const h12 = h % 12 || 12;
+  return m === '00' ? `${h12}${suffix}` : `${h12}:${m}${suffix}`;
+};
 
-  const date = new Date(dateString);
-  
-  // Convert UTC to EDT (UTC-4)
-  const edtDate = new Date(date.getTime() - 4 * 60 * 60 * 1000);
-  
-  const month = edtDate.toLocaleDateString("en-US", { 
-    month: "long",
-    timeZone: "UTC" 
+const formatDate = (dateStr?: string): string => {
+  if (!dateStr) return '';
+  const [year, month, day] = dateStr.split('-').map(Number);
+  return new Date(year, month - 1, day).toLocaleDateString('en-US', {
+    weekday: 'long',
+    month: 'long',
+    day: 'numeric',
   });
-  const day = edtDate.getUTCDate();
-  const hours = edtDate.getUTCHours();
-  const minutes = edtDate.getUTCMinutes();
-
-  const period = hours >= 12 ? "pm" : "am";
-  const displayHours = hours % 12 || 12;
-
-  const timeString =
-    minutes === 0
-      ? `${displayHours}:00${period}`
-      : `${displayHours}:${minutes.toString().padStart(2, "0")}${period}`;
-
-  return `${month} ${day}, ${timeString}`;
 };
 
-const formatTime = (dateString: string) => {
-  if (!dateString) return "";
-
-  const date = new Date(dateString);
-  
-  // Convert UTC to EDT (UTC-4)
-  const edtDate = new Date(date.getTime() - 4 * 60 * 60 * 1000);
-  
-  const hours = edtDate.getUTCHours();
-  const minutes = edtDate.getUTCMinutes();
-
-  const period = hours >= 12 ? "pm" : "am";
-  const displayHours = hours % 12 || 12;
-
-  const timeString =
-    minutes === 0
-      ? `${displayHours}:00${period}`
-      : `${displayHours}:${minutes.toString().padStart(2, "0")}${period}`;
-
-  return timeString;
+const getAgendaPath = () => {
+  if (typeof window !== 'undefined') {
+    const p = window.location.pathname;
+    if (p.includes('/virtual/')) return '/2026/virtual/agenda';
+    if (p.includes('/boston/')) return '/2026/boston/agenda';
+    if (p.includes('/barcelona/')) return '/2026/barcelona/agenda';
+  }
+  return '/2026/boston/agenda';
 };
-const EventPosts: React.FC<Props> = ({ post }) => {
-  // Determine the agenda path based on location or speaker type flags
-  const getAgendaPath = () => {
-    // First, try to detect from current URL
-    if (typeof window !== "undefined") {
-      const currentPath = window.location.pathname;
-      if (currentPath.includes("/virtual/")) return "/2026/virtual/agenda";
-      if (currentPath.includes("/boston/")) return "/2026/boston/agenda";
-      if (currentPath.includes("/barcelona/")) return "/2026/barcelona/agenda";
-    }
 
-    // Default fallback
-    return "/2026/boston/agenda";
-  };
+const getTimezone = () => {
+  if (typeof window !== 'undefined') {
+    const p = window.location.pathname;
+    if (p.includes('/virtual/')) return 'CET';
+    if (p.includes('/boston/')) return 'EST';
+    if (p.includes('/barcelona/')) return 'CET';
+  }
+  return 'CET';
+};
 
-  const timezonePrint = () => {
-    // First, try to detect from current URL
-    if (typeof window !== "undefined") {
-      const currentPath = window.location.pathname;
-      if (currentPath.includes("/virtual/")) return "CET";
-      if (currentPath.includes("/boston/")) return "EST";
-      if (currentPath.includes("/barcelona/")) return "CET";
-    }
-
-    // Default fallback
-    return "CET";
-  };
-
+const EventPosts: React.FC<Props> = ({ post, date }) => {
   const agendaPath = getAgendaPath();
-  const timezone = timezonePrint();
+  const timezone = getTimezone();
 
   return (
-    <section className="flex flex-col h-full">
-   {post.publishedAt && (
-  <div className="relative border border-nextflow p-4 mb-6 hover:border-nextflow-200 transition-all duration-400">
-    ← {formatDateTime(post.publishedAt)}
-    {post.endTime && ` - ${formatTime(post.endTime)}`}
-    {` `}{timezone}
-    
-     <a  href={agendaPath}
-      className="absolute top-0 right-0 bottom-0 left-0 w-full h-full hover:text-nextflow-200 duration-400 transition-all"
-    ></a>
-  </div>
-)}
-      <div className="border border-nextflow p-4">
-        <div className="">
-          {post?.category && (
-            <p className="text-nextflow-200 text-sm mb-2">{post.category}</p>
-          )}
-          <h1 className="h4 py-2">{post?.title}</h1>
+    <section className="flex flex-col w-full py-4">
+      {/* {post.startTime && (
+        <div className="container-xl w-full relative bg-black text-white p-4 mb-6 transition-all duration-400">
+          {date && formatDate(date)}{post.startTime && `${formatTime(post.startTime)}`}
+          {post.endTime && ` – ${formatTime(post.endTime)}`}
+          {` `}{timezone}
+        </div>
+      )} */}
 
-          <div className="pb-6 mt-6">
-            <div className="inline-flex">
-              {post.associatedPerson?.map((person, index) => (
-                <span key={index}>
-                  {person.name}
-                  {index < post.associatedPerson.length - 1 && ",\u00A0"}
-                </span>
-              ))}
-            </div>
-            {post.coauthors && (
-              <div className="mt-2">Coauthors: {post.coauthors}</div>
+      {/* hero */}
+      <div className="pt-20 pb-10  md:py-10 container-xl w-full bg-black text-white">
+        <h1 className="h4 py-2">{post?.title}</h1>
+        <div className="pb-6 mt-6">
+          <div className="inline-flex">
+            {post.associatedSpeakers?.map((person, index) => (
+              <span key={person._id ?? index}>
+                {person.name}
+                {index < (post.associatedSpeakers?.length ?? 0) - 1 &&
+                  ',\u00A0'}
+              </span>
+            ))}
+          </div>
+          {post.coauthors && (
+            <div className="mt-2">Coauthors: {post.coauthors}</div>
+          )}
+
+          <div className="flex flex-row pt-10 ">
+            {post.projectLink && (
+              <div className="mr-4">
+                <Button light arrow href={post.projectLink}>
+                  Link to Project
+                </Button>
+              </div>
+            )}
+            {post.poster?.asset.url && (
+              <Button light arrow href={post.poster.asset.url}>
+                View Poster
+              </Button>
             )}
           </div>
-
-          <div className="border-t border-nextflow py-2">
-            <PortableText
-              className="mt-4 monospace text-sm"
-              value={post?.body}
-            />
-          </div>
-
-          {post.projectLink && (
-            <div className="mt-10">
-              <Button
-                white
-                arrowAfter
-                className="monospace"
-                href={post.projectLink}
-              >
-                Link to Project
-              </Button>
-            </div>
-          )}
         </div>
       </div>
 
-      {post.youtube && (
-        <div className="w-full h-full my-10 border border-nextflow">
-          <div className="w-full h-full">
-            <YouTubeEmbed id={post.youtube} />
+      {/* body */}
+      {post?.body && (
+        <div className=" bg-white w-full  py-4 md:pt-10 md:pb-0 px-4">
+          <div className="container-md bg-nextflow  text-black p-4 md:p-8">
+            <PortableText
+              className=" container-lg t-4 monospace text-sm"
+              value={post.body}
+            />
           </div>
+
+          {post.youtube && (
+            <div className="container-md w-full h-full  bg-nextflow py-8">
+              <YouTubeEmbed id={post.youtube} />
+            </div>
+          )}
         </div>
       )}
 
-      {post.poster?.asset?.url && (
-        <div className="my-10 border border-nextflow">
-          <div className="w-full h-full min-h-[600px]">
+      {/* youtube */}
+
+      {/* poster */}
+      {/* {post.poster?.asset?.url && (
+        <div className=" bg-white">
+          <div className="container-md w-full h-full min-h-[600px] bg-black py-8">
             <iframe
               className="min-h-[600px]"
               src={`${post.poster.asset.url}#zoom=page-fit`}
               width="100%"
               height="100%"
-              style={{ border: "none" }}
+              style={{ border: 'none' }}
               title="PDF Preview"
             />
-          </div>
-
-          <div className="mt-10 mb-4 px-4">
-            <Button
-              white
-              arrowAfter
-              className="monospace"
-              href={post.poster.asset.url}
-            >
-              View Poster
-            </Button>
+            <div className="pt-8">
+              <Button light arrow href={post.poster.asset.url}>
+                View Poster
+              </Button>
+            </div>
           </div>
         </div>
-      )}
+      )} */}
 
-      {post.associatedPerson?.map((person, index) => (
-        <div
-          key={index}
-          className="mt-8 speaker-card border border-nextflow p-4 flex flex-col h-full"
-        >
-          <div className="flex flex-col justify-center items-center w-full pt-2">
-            <div className="speaker-card__image rounded-full w-[150px] h-[150px] object-cover overflow-hidden">
-              {person?.image ? (
-                <img
-                  className="imageBlend w-full h-full object-cover"
-                  src={person.image.asset.url}
-                  alt={`image of ${person.name}`}
-                />
-              ) : (
-                <div className="w-full h-full bg-nextflow"></div>
-              )}
-            </div>
-            <div className="text-center mt-6 w-full">
-              <h3 className="font-display text-xl mb-1">{person.name}</h3>
-              <p className="monospace">{person?.role}</p>
-              {person?.keynote && (
-                <div className="text-nextflow mt-2 font-display font-medium text-[1.1rem]">
-                  Keynote Speaker
+      {/* speaker bios */}
+      <div className="py-6 md:py-10  bg-white">
+        {post.associatedSpeakers?.map((person, index) => (
+          <div
+            key={person._id ?? index}
+            className="w-full bg-white text-black pb-6 md:pb-8"
+          >
+            <div className="container-xl w-full">
+              <div className="container-md !p-0 bg-nextflow w-full flex  flex-col md:flex-row justify-between start">
+                <div className="md:w-[34%]">
+                  {person?.image ? (
+                    <img
+                      className="w-full p-6 md:p-8"
+                      src={person.image.asset.url}
+                      alt={`image of ${person.name}`}
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-nextflow-200" />
+                  )}
                 </div>
-              )}
-
-              <div className="flex flex-row justify-center">
-                {person.twitter && (
-                  <SocialIcon
-                    key={person.twitter}
-                    href={person.twitter}
-                    type="Twitter"
-                    className="p-2 text-nextflow"
-                  />
-                )}
-                {person.linkedin && (
-                  <SocialIcon
-                    key={person.linkedin}
-                    href={person.linkedin}
-                    type="LinkedIn"
-                    className="p-2 text-nextflow"
-                  />
-                )}
-                {person.github && (
-                  <SocialIcon
-                    key={person.github}
-                    href={person.github}
-                    type="GitHub"
-                    className="p-2 text-nextflow"
-                  />
-                )}
+                <div className="w-full px-6 py-2 md:py-4">
+                  <h3 className="font-display text-[2rem]">{person.name}</h3>
+                  <p className="">{person?.role}</p>
+                  <div className="flex flex-row mt-2">
+                    {person.twitter && (
+                      <SocialIcon
+                        href={person.twitter}
+                        type="Twitter"
+                        className="pr-2 text-black"
+                      />
+                    )}
+                    {person.linkedin && (
+                      <SocialIcon
+                        href={person.linkedin}
+                        type="LinkedIn"
+                        className="pr-2 text-black"
+                      />
+                    )}
+                    {person.github && (
+                      <SocialIcon
+                        href={person.github}
+                        type="GitHub"
+                        className="pr-2 text-black"
+                      />
+                    )}
+                    {person.bluesky && (
+                      <SocialIcon
+                        href={person.bluesky}
+                        type="Bluesky"
+                        className="pr-2 text-black"
+                      />
+                    )}
+                  </div>
+                  {person.bio && (
+                    <div className="mt-4 md:mt-8 pt-4 pb-2">
+                      <PortableText
+                        className={clsx(styles.speakerBio)}
+                        value={person.bio}
+                      />
+                    </div>
+                  )}
+                </div>
               </div>
-            {person.bio && (
-              <div className="mt-8 w-full border-t border-nextflow pt-4">
-           
-                <PortableText
-                  className={clsx(
-                  styles.speakerBio)}
-                  value={person.bio}
-                />
-              </div>
-            )}
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
 
-      <div className="relative border border-nextflow p-4 mt-8 hover:border-nextflow-200 transition-all duration-400">
-        ← Back to agenda
-        <a
-          href={agendaPath}
-          className="absolute top-0 right-0 bottom-0 left-0 w-full h-full hover:text-nextflow-200 duration-400 transition-all"
-        ></a>
+      {/* back to agenda */}
+      <div className="bg-black text-white text-center py-10 w-full relative transition-all duration-400">
+        <div className="container-xl w-full">
+          <Button light arrow className="" href={agendaPath}>
+            Return to Agenda
+          </Button>
+        </div>
       </div>
     </section>
   );

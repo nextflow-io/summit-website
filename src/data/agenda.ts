@@ -50,11 +50,12 @@ const agendaItemFragment = `
   startTime,
   endTime,
   externalLink,
+  bodycopy,
   associatedEvents->{
     _id,
     title,
-  },
-  associatedSpeakers[]->{
+    slug,
+      associatedSpeakers[]->{
     _id,
     name,
     role,
@@ -69,6 +70,7 @@ const agendaItemFragment = `
     },
     bio,
   },
+  }
 `;
 
 const agendaSectionFragment = `
