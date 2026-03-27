@@ -5,19 +5,19 @@ const SpeakersSection = ({ person, index , location}) => {
 
   return (
     <SpeakerCard
-      key={person.name}
-      name={person.name}
-      jobTitle={person.role}
-      keynote={person.keynote}
+      key={person?.name}
+      name={person?.name}
+      jobTitle={person?.role}
+      keynote={person?.keynote}
       date={person.associatedEvent?.publishedAt}
       endTime={person.associatedEvent?.endTime}
-      submissionTitle={person.associatedEvent?.title}
-      bio={person.bio}
-      github={person.github}
-      twitter={person.twitter}
-      linkedin={person.linkedin}
-      image={person.image}
-      pageUrl={person.associatedEvent?.slug.current}
+      submissionTitle={person?.associatedEvent?.title}
+      bio={person?.bio}
+      github={person?.github}
+      twitter={person?.twitter}
+      linkedin={person?.linkedin}
+      image={person?.image}
+      pageUrl={person?.associatedEvent?.slug.current}
      
       location={location}
       associatedEvents={person?.associatedEvents} 

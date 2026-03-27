@@ -5,7 +5,7 @@ import SpeakersSection from '@modules/SpeakersSection';
 import { fetchSettings, type SettingsData } from '@data/settings';
 import { getAllSpeakers } from '@data/speakers';
 
-const sortedMembers = getAllSpeakers[0].speakers.sort((a, b) =>
+const sortedMembers = getAllSpeakers[0].speakers?.sort((a, b) =>
   a.name.localeCompare(b.name)
 );
 
@@ -25,7 +25,7 @@ const settings: SettingsData = await fetchSettings();
     <div class="container-xl">
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {
-          sortedMembers.map((name, index) => (
+          sortedMembers?.map((name, index) => (
             <div>
               <SpeakersSection
                 person={name}
