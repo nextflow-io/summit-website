@@ -1,93 +1,65 @@
 import { sanityClient } from "sanity:client";
 
-
 const getAllPosters = await sanityClient.fetch(
-  `*[_type == "posterListing"] {
+  `*[_type == "bostonPosters"] {
     posters[]-> {
-    name,
-    role,
-    associatedTalks[]-> {
-    title,
-   "slug": slug.current,
-    },
-    associatedEvent-> {
-    title,
-   "slug": slug.current,
-    associatedPerson[] {
-     name,
-    },
-    coauthors,
-    associatedCategory,
-    publishedAt,
-    endTime,
-    ...,
-    mainImage {
-      ...,
-      asset-> {
-      url,
+      name,
+      role,
+      keynote,
+      linkedin,
+      github,
+      twitter,
+      company,
+      bio,
+      image {
+        ...,
+        asset-> { url }
       },
-     },
-    },
-    keynote,
-    linkedin,
-    github,
-    twitter,
-    company,
-    bio,
-    image {
-      ...,
-      asset-> {
-      url,
-      },
-    },
-    },
+      associatedEvents[]-> {
+        title,
+        "slug": slug.current,
+        publishedAt,
+        endTime,
+        associatedPerson[] { name },
+        coauthors,
+        associatedCategory,
+        mainImage {
+          asset-> { url }
+        }
+      }
+    }
   }`
 );
 
-
-const getAllPostersVirtual = await sanityClient.fetch(
-  `*[_type == "posterListingVirtual"] {
-    posters[]-> {
-    name,
-    role,
-    associatedTalks[]-> {
-    title,
-   "slug": slug.current,
-    },
-    associatedEvent-> {
-    title,
-   "slug": slug.current,
-    associatedPerson[] {
-     name,
-    },
-    coauthors,
-    associatedCategory,
-    publishedAt,
-    endTime,
-    ...,
-    mainImage {
-      ...,
-      asset-> {
-      url,
+const getAllVirtualSpeakers = await sanityClient.fetch(
+  `*[_type == "speakerListingVirtual"] {
+    speakers[]-> {
+      name,
+      role,
+      keynote,
+      linkedin,
+      github,
+      twitter,
+      company,
+      bio,
+      image {
+        ...,
+        asset-> { url }
       },
-     },
-    },
-    keynote,
-    linkedin,
-    github,
-    twitter,
-    company,
-    bio,
-    image {
-      ...,
-      asset-> {
-      url,
-      },
-    },
-    },
+      associatedEvents[]-> {
+        title,
+        "slug": slug.current,
+        publishedAt,
+        endTime,
+        associatedPerson[] { name },
+        coauthors,
+        associatedCategory,
+        mainImage {
+          asset-> { url }
+        }
+      }
+    }
   }`
 );
 
-
-export { getAllPosters, getAllPostersVirtual };
-
+export { getAllPosters, getAllVirtualSpeakers };

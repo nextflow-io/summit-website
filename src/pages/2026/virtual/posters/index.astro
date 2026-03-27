@@ -1,11 +1,8 @@
 ---
 import Layout from "@layouts/Base.astro";
 import Meta from '@components/Meta/Meta.astro';
-import {getAllPostersVirtual} from "@data/posters";
 import { fetchSettings, type SettingsData } from '@data/settings'; 
-const sortedMembers = getAllPostersVirtual[0].posters.sort((a, b) =>
-  a.name.localeCompare(b.name)
-);
+
 const settings: SettingsData = await fetchSettings();
 ---
 
