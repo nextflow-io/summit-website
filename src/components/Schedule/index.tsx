@@ -299,7 +299,7 @@ const AllSchedules: React.FC<Props> = ({ children, className, agenda }) => {
                   )}
                   <div className="font-medium mb-1 text-xs md:text-base">
                     {slot.externalLink ? (
-                      <a className="underline hover:opacity-50 transition-all" href={slot.externalLink}>
+                      <a className="underline hover:opacity-70 transition-all" href={slot.externalLink}>
                         {slot.title}
                       </a>
                     ) : (
