@@ -1,11 +1,7 @@
-import React from 'react';
+import React, { useCallback, useEffect, useId, useState } from 'react';
 import IconClose from './IconClose.svg';
-import clsx from 'clsx';
-import styles from './speakers.module.css';
 import SocialIcon from '@components/SocialIcon';
-import { motion } from 'framer-motion';
 import { urlFor } from '@data/sanity-image';
-import PortableText from '@components/PortableText';
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
 import timezone from 'dayjs/plugin/timezone';
@@ -42,13 +38,16 @@ const SpeakerCard: React.FC<Props> = ({
   twitter,
   github,
   linkedin,
-  bio,
+  bio: _bio,
   keynote,
   image,
   pageUrl,
   location,
   associatedEvents,
 }) => {
+  const [talksOpen, setTalksOpen] = useState(false);
+  const overlayId = useId();
+
   const monthDate = date
     ? dayjs.utc(date).tz('America/New_York').format('dddd, MMM D')
     : null;
@@ -60,12 +59,8 @@ const SpeakerCard: React.FC<Props> = ({
     : null;
 
   const getEventPath = () => {
-    // Prioritize location prop if provided
-
     if (typeof window !== 'undefined') {
       const pathname = window.location.pathname;
-
-      // Extract event location from current path
       if (pathname.includes('/virtual/')) return '/2026/virtual/agenda';
       if (pathname.includes('/boston/')) return '/2026/boston/agenda';
       if (pathname.includes('/barcelona/')) return '/2026/barcelona/agenda';
@@ -76,12 +71,27 @@ const SpeakerCard: React.FC<Props> = ({
       if (locationLower === 'boston') return '/2026/boston/agenda';
       if (locationLower === 'barcelona') return '/2026/barcelona/agenda';
     }
-
-    // Default fallback
     return '/2026/boston/agenda';
   };
 
   const eventPath = getEventPath();
+
+  const hasAssociatedTalks = Boolean(
+    associatedEvents && associatedEvents.length > 0
+  );
+  const hasPrimaryTalk = Boolean(date || submissionTitle);
+  const showTalksButton = hasPrimaryTalk || hasAssociatedTalks;
+
+  const closeOverlay = useCallback(() => setTalksOpen(false), []);
+
+  useEffect(() => {
+    if (!talksOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') closeOverlay();
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [talksOpen, closeOverlay]);
 
   const renderSocialIcons = () => (
     <>
@@ -113,11 +123,18 @@ const SpeakerCard: React.FC<Props> = ({
   );
 
   const renderProfileImage = () => {
+    const hasSanityImage =
+      image &&
+      (image.asset?._ref ||
+        image.asset?._id ||
+        image.asset?.url ||
+        image._ref);
+
     return (
-      <div className={`w-full h-0 pb-[100%] relative overflow-hidden`}>
-        {image ? (
+      <div className="w-full h-0 pb-[100%] relative overflow-hidden">
+        {hasSanityImage ? (
           <img
-            className={`w-full h-full object-cover absolute`}
+            className="w-full h-full object-cover absolute"
             src={urlFor(image).width(600).height(600).url()}
             alt={`image of ${name}`}
           />
@@ -128,96 +145,148 @@ const SpeakerCard: React.FC<Props> = ({
     );
   };
 
-  const renderDateTime = () => {
-    if (!date) return null;
-
-    return (
-      <div className={`flex flex-row`}>
-        <p className="text-sm  monospace text-nextflow-500">{monthDate},</p>
-        <p className="text-sm monospace text-nextflow-500">
-          {timeStart} {location == 'virtual' ? 'CEST' : ''}
-        </p>
-      </div>
-    );
-  };
-
-  const renderSubmissionTitle = () => {
-    if (!submissionTitle) return null;
-
-    return (
-      <div className={``}>
-        <h5 className=" leading-tight font-medium">
-          {pageUrl ? (
-            <div className="">
-              <a
-                href={`${eventPath}/${pageUrl}`}
-                className=" transition-all duration-300 "
-              >
-                {submissionTitle}
-              </a>
-            </div>
-          ) : (
-            submissionTitle && (
-              <div className="text-[1rem]">{submissionTitle}</div>
-            )
-          )}
-        </h5>
-      </div>
-    );
-  };
-
-  const renderAssociatedTalks = () => {
-    // if (associatedEvents || associatedEvents.length === 0) return null;
-
-    return (
-      <div className="border-t border-nextflow pt-2">
-        <div className="space-y-2">
-          {associatedEvents?.map((talk) => {
-            return (
-              <div key={talk.slug} className="text-[.875rem]">
-                <a
-                  href={`${eventPath}/${talk.slug}`}
-                  className="hover:text-nextflow-200 transition-all duration-300"
-                >
-                  {talk.title}
-                </a>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    );
-  };
+  const closeIconSrc =
+    typeof IconClose === 'string'
+      ? IconClose
+      : (IconClose as { src?: string }).src;
 
   return (
-    <div>
-      {/* Speaker Card */}
-      <div className="speaker-card bg-black text-white transition-all duration-300 p-4 flex flex-col h-full">
-        <div className="flex-1 flex flex-row">
-          <div className="w-full">
-            <div className="w-full mb-2">{renderProfileImage()}</div>
-            <h3 className=" text-[1.85rem] font-display mb-0 leading-tight">
+    <div className="h-full">
+      <div className="speaker-card relative z-0 flex h-full min-h-full flex-col overflow-hidden bg-black p-4 text-white transition-all duration-300">
+        <div className="flex min-h-0 flex-1 flex-row">
+          <div className="flex min-h-0 w-full min-w-0 flex-col">
+            <div className="mb-2 w-full">{renderProfileImage()}</div>
+            <h3 className="mb-0 font-display text-[1.85rem] leading-tight">
               {name}
             </h3>
-            <p className="flex items-center  text-[.85rem] leading-tight">
+            <p className="flex items-center text-[.85rem] leading-tight">
               {jobTitle}
             </p>
-            <div className=" flex mt-2">{renderSocialIcons()}</div>
 
-            <div className="mb-2 w-full">
-              {keynote && (
-                <div className="text-nextflow mt-2 font-medium text-[1rem] h-8">
-                  Keynote Speaker
+            <div className="mt-2 flex flex-row flex-wrap items-center justify-between gap-x-3 gap-y-2">
+              <div className="flex min-w-0 flex-row flex-wrap items-center">
+                {renderSocialIcons()}
+              </div>
+              {showTalksButton && (
+                <button
+                  type="button"
+                  className="shrink-0 border border-nextflow bg-nextflow px-3 py-1.5 text-[0.65rem] font-medium uppercase tracking-wide text-black transition-all duration-300 hover:bg-nextflow-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-nextflow focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+                  aria-expanded={talksOpen}
+                  aria-controls={overlayId}
+                  onClick={() => setTalksOpen(true)}
+                >
+                  Talks
+                </button>
+              )}
+            </div>
+
+
+          </div>
+        </div>
+
+        {talksOpen && (
+          <div
+            id={overlayId}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby={`${overlayId}-title`}
+            className="absolute inset-0 z-10 flex flex-col border border-nextflow bg-black/95 p-4 text-left shadow-inner backdrop-blur-[1px]"
+          >
+            <div className="mb-2 flex shrink-0 justify-end">
+              <button
+                type="button"
+                className="-m-1 rounded p-1 text-nextflow hover:opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-nextflow"
+                onClick={closeOverlay}
+                aria-label="Close"
+              >
+                {closeIconSrc ? (
+                  <img src={closeIconSrc} alt="" width={22} height={22} />
+                ) : (
+                  <span className="text-2xl leading-none" aria-hidden>
+                    ×
+                  </span>
+                )}
+              </button>
+            </div>
+            <div className="min-h-0 flex-1 overflow-y-auto pr-1">
+              <h3
+                id={`${overlayId}-title`}
+                className="font-display leading-tight text-white font-display text-[1.85rem]"
+              >
+                {name}
+              </h3>
+
+              {hasPrimaryTalk && (
+                <div className="mt-4 space-y-3 border-t border-nextflow/60 pt-4">
+                  {date && (
+                    <p className="monospace text-sm leading-relaxed text-nextflow-500">
+                      {monthDate}
+                      {timeStart && (
+                        <>
+                          {' · '}
+                          {timeStart}
+                          {timeEnd ? ` – ${timeEnd}` : ''}
+                          {location == 'virtual' ? ' CEST' : ''}
+                        </>
+                      )}
+                    </p>
+                  )}
+                  {submissionTitle && (
+                    <div>
+                      <h5 className="text-[1rem] font-medium leading-snug">
+                        {pageUrl ? (
+                          <a
+                            href={`${eventPath}/${pageUrl}`}
+                            className="transition-all duration-300 hover:text-nextflow-200"
+                          >
+                            {submissionTitle}
+                          </a>
+                        ) : (
+                          submissionTitle
+                        )}
+                      </h5>
+                    </div>
+                  )}
+                  <div className="mb-2 w-full">
+                    {keynote && (
+                      <div className="mt-2 h-8 text-[1rem] font-medium text-nextflow">
+                        Keynote Speaker
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
+
+              {hasAssociatedTalks && (
+                <div
+                  className={
+                    hasPrimaryTalk
+                      ? 'mt-5 space-y-2 border-t border-nextflow/60 pt-4'
+                      : 'mt-4 space-y-2 border-t border-nextflow/60 pt-4'
+                  }
+                >
+                  {hasPrimaryTalk && (
+                    <p className="mb-2 text-xs uppercase tracking-wide text-nextflow-500">
+                      Also on the agenda
+                    </p>
+                  )}
+                  <ul className="m-0 list-none space-y-2 p-0">
+                    {associatedEvents!.map((talk) => (
+                      <li key={talk.slug} className="text-[.875rem]">
+                        <a
+                          href={`${eventPath}/${talk.slug}`}
+                          className="transition-all duration-300 hover:text-nextflow-200"
+                        >
+                          {talk.title}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               )}
             </div>
-            <div className="mt-4 py-4">
-              {renderDateTime()}
-              {renderSubmissionTitle()}
-              {renderAssociatedTalks()}
-            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );
