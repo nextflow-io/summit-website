@@ -1,27 +1,30 @@
-import React, { useState } from "react";
-import SpeakerCard from "@components/SpeakerCard";
+import React from 'react';
+import SpeakerCard from '@components/SpeakerCard';
 
-const SpeakersSection = ({ person, index , location}) => {
+const SpeakersSection = ({ person, location }) => {
+  const primaryEvent = person?.associatedEvents?.[0];
+  const moreEvents = person?.associatedEvents?.slice(1);
 
   return (
-    <SpeakerCard
-      key={person?.name}
-      name={person?.name}
-      jobTitle={person?.role}
-      keynote={person?.keynote}
-      date={person.associatedEvent?.publishedAt}
-      endTime={person.associatedEvent?.endTime}
-      submissionTitle={person?.associatedEvent?.title}
-      bio={person?.bio}
-      github={person?.github}
-      twitter={person?.twitter}
-      linkedin={person?.linkedin}
-      image={person?.image}
-      pageUrl={person?.associatedEvent?.slug.current}
-     
-      location={location}
-      associatedEvents={person?.associatedEvents} 
-    />
+    <div className="h-full">
+      <SpeakerCard
+        key={person?.name}
+        name={person?.name}
+        jobTitle={person?.role}
+        keynote={person?.keynote}
+        date={primaryEvent?.publishedAt}
+        endTime={primaryEvent?.endTime}
+        submissionTitle={primaryEvent?.title}
+        bio={person?.bio}
+        github={person?.github}
+        twitter={person?.twitter}
+        linkedin={person?.linkedin}
+        image={person?.image}
+        pageUrl={primaryEvent?.slug}
+        location={location}
+        associatedEvents={moreEvents?.length ? moreEvents : undefined}
+      />
+    </div>
   );
 };
 

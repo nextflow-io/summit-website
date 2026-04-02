@@ -27,3 +27,29 @@
     scrollbar-color: var(--color-nextflow) var(--color-nextflow);
     scrollbar-width:thin;
   }
+
+.talkList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.talkListItem {
+  position: relative;
+  padding-left: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.talkListItem:last-child {
+  margin-bottom: 0;
+}
+
+.talkListItem::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 6px;
+  height: 6px;
+  background: var(--color-nextflow, #0dc09d);
+}
