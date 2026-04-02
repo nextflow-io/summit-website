@@ -154,33 +154,41 @@ const SpeakerCard: React.FC<Props> = ({
     <div className="h-full">
       <div className="speaker-card relative z-0 flex h-full min-h-full flex-col overflow-hidden bg-black p-4 text-white transition-all duration-300">
         <div className="flex min-h-0 flex-1 flex-row">
-          <div className="flex min-h-0 w-full min-w-0 flex-col">
-            <div className="mb-2 w-full">{renderProfileImage()}</div>
-            <h3 className="mb-0 font-display text-[1.85rem] leading-tight">
-              {name}
-            </h3>
-            <p className="flex items-center text-[.85rem] leading-tight">
-              {jobTitle}
-            </p>
+          <div className="flex min-h-0 w-full min-w-0 flex-1 flex-col">
+            <div className="mb-2 w-full shrink-0">{renderProfileImage()}</div>
 
-            <div className="mt-2 flex flex-row flex-wrap items-center justify-between gap-x-3 gap-y-2">
-              <div className="flex min-w-0 flex-row flex-wrap items-center">
-                {renderSocialIcons()}
+            <div className="flex min-h-0 flex-1 flex-col justify-between gap-3">
+              <div className="shrink-0 space-y-1">
+                <h3 className="mb-0 font-display text-[24px] leading-tight">
+                  {name}
+                </h3>
+                <p className="flex items-center text-[.85rem] leading-tight">
+                  {jobTitle}
+                </p>
+                {keynote && (
+                  <p className="text-[1rem] font-medium leading-tight text-nextflow">
+                    Keynote Speaker
+                  </p>
+                )}
               </div>
-              {showTalksButton && (
-                <button
-                  type="button"
-                  className="shrink-0 border border-nextflow bg-nextflow px-3 py-1.5 text-[0.65rem] font-medium uppercase tracking-wide text-black transition-all duration-300 hover:bg-nextflow-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-nextflow focus-visible:ring-offset-2 focus-visible:ring-offset-black"
-                  aria-expanded={talksOpen}
-                  aria-controls={overlayId}
-                  onClick={() => setTalksOpen(true)}
-                >
-                  Talks
-                </button>
-              )}
+
+              <div className="flex shrink-0 flex-row flex-wrap items-center justify-between gap-x-3 gap-y-2">
+                <div className="flex min-w-0 flex-row flex-wrap items-center">
+                  {renderSocialIcons()}
+                </div>
+                {showTalksButton && (
+                  <button
+                    type="button"
+                    className="shrink-0 border border-nextflow bg-nextflow px-3 py-1.5 text-[0.65rem] font-medium uppercase tracking-wide text-black transition-all duration-300 hover:bg-nextflow-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-nextflow focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+                    aria-expanded={talksOpen}
+                    aria-controls={overlayId}
+                    onClick={() => setTalksOpen(true)}
+                  >
+                    Talks
+                  </button>
+                )}
+              </div>
             </div>
-
-
           </div>
         </div>
 
@@ -211,7 +219,7 @@ const SpeakerCard: React.FC<Props> = ({
             <div className="min-h-0 flex-1 overflow-y-auto pr-1">
               <h3
                 id={`${overlayId}-title`}
-                className="font-display leading-tight text-white font-display text-[1.85rem]"
+                className="font-display text-[24px] leading-tight text-white"
               >
                 {name}
               </h3>
