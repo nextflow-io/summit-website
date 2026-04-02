@@ -1,5 +1,5 @@
-import React, { useCallback, useEffect, useId, useState } from 'react';
-import IconClose from './IconClose.svg';
+import React from 'react';
+import styles from './speakers.module.css';
 import SocialIcon from '@components/SocialIcon';
 import { urlFor } from '@data/sanity-image';
 import dayjs from 'dayjs';
@@ -45,9 +45,6 @@ const SpeakerCard: React.FC<Props> = ({
   location,
   associatedEvents,
 }) => {
-  const [talksOpen, setTalksOpen] = useState(false);
-  const overlayId = useId();
-
   const monthDate = date
     ? dayjs.utc(date).tz('America/New_York').format('dddd, MMM D')
     : null;
@@ -76,22 +73,8 @@ const SpeakerCard: React.FC<Props> = ({
 
   const eventPath = getEventPath();
 
-  const hasAssociatedTalks = Boolean(
-    associatedEvents && associatedEvents.length > 0
-  );
+  const hasAssociatedTalks = Boolean(associatedEvents && associatedEvents.length > 0);
   const hasPrimaryTalk = Boolean(date || submissionTitle);
-  const showTalksButton = hasPrimaryTalk || hasAssociatedTalks;
-
-  const closeOverlay = useCallback(() => setTalksOpen(false), []);
-
-  useEffect(() => {
-    if (!talksOpen) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') closeOverlay();
-    };
-    window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
-  }, [talksOpen, closeOverlay]);
 
   const renderSocialIcons = () => (
     <>
@@ -122,126 +105,63 @@ const SpeakerCard: React.FC<Props> = ({
     </>
   );
 
-  const renderProfileImage = () => {
-    const hasSanityImage =
-      image &&
-      (image.asset?._ref ||
-        image.asset?._id ||
-        image.asset?.url ||
-        image._ref);
-
-    return (
-      <div className="w-full h-0 pb-[100%] relative overflow-hidden">
-        {hasSanityImage ? (
-          <img
-            className="w-full h-full object-cover absolute"
-            src={urlFor(image).width(600).height(600).url()}
-            alt={`image of ${name}`}
-          />
-        ) : (
-          <div className="w-full h-full bg-nextflow" />
-        )}
-      </div>
-    );
-  };
-
-  const closeIconSrc =
-    typeof IconClose === 'string'
-      ? IconClose
-      : (IconClose as { src?: string }).src;
+  const hasSanityImage =
+    image &&
+    (image.asset?._ref ||
+      image.asset?._id ||
+      image.asset?.url ||
+      image._ref);
 
   return (
     <div className="h-full">
-      <div className="speaker-card relative z-0 flex h-full min-h-full flex-col overflow-hidden bg-black p-4 text-white transition-all duration-300">
-        <div className="flex min-h-0 flex-1 flex-row">
-          <div className="flex min-h-0 w-full min-w-0 flex-1 flex-col">
-            <div className="mb-2 w-full shrink-0">{renderProfileImage()}</div>
-
-            <div className="flex min-h-0 flex-1 flex-col justify-between gap-3">
-              <div className="shrink-0 space-y-1">
-                <h3 className="mb-0 font-display text-[24px] leading-tight">
-                  {name}
-                </h3>
-                <p className="flex items-center text-[.85rem] leading-tight">
-                  {jobTitle}
-                </p>
-                {keynote && (
-                  <p className="text-[1rem] font-medium leading-tight text-nextflow">
-                    Keynote Speaker
-                  </p>
-                )}
-              </div>
-
-              <div className="flex shrink-0 flex-row flex-wrap items-center justify-between gap-x-3 gap-y-2">
-                <div className="flex min-w-0 flex-row flex-wrap items-center">
-                  {renderSocialIcons()}
-                </div>
-                {showTalksButton && (
-                  <button
-                    type="button"
-                    className="shrink-0 border border-nextflow bg-nextflow px-3 py-1.5 text-[0.65rem] font-medium uppercase tracking-wide text-black transition-all duration-300 hover:bg-nextflow-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-nextflow focus-visible:ring-offset-2 focus-visible:ring-offset-black"
-                    aria-expanded={talksOpen}
-                    aria-controls={overlayId}
-                    onClick={() => setTalksOpen(true)}
-                  >
-                    Talks
-                  </button>
-                )}
-              </div>
-            </div>
+      <div className="speaker-card flex h-full min-h-full flex-col gap-4 overflow-hidden bg-black p-4 text-white text-balance transition-all duration-300 sm:flex-row sm:gap-4">
+        {/* Photo: full width on mobile; tall column on larger screens */}
+        <div className="relative aspect-[4/3] max-h-[min(64vw,220px)] w-full shrink-0 overflow-hidden sm:max-h-none sm:aspect-auto sm:h-full sm:min-h-[200px] sm:w-[40%] sm:min-w-[150px] sm:max-w-[240px]">
+          <div className="absolute inset-0">
+            {hasSanityImage ? (
+              <img
+                className="h-full w-full object-cover object-[50%_28%]"
+                src={urlFor(image).width(600).height(600).url()}
+                alt={`image of ${name}`}
+              />
+            ) : (
+              <div className="h-full w-full bg-nextflow" />
+            )}
           </div>
         </div>
 
-        {talksOpen && (
-          <div
-            id={overlayId}
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby={`${overlayId}-title`}
-            className="absolute inset-0 z-10 flex flex-col border border-nextflow bg-black/95 p-4 text-left shadow-inner backdrop-blur-[1px]"
-          >
-            <div className="mb-2 flex shrink-0 justify-end">
-              <button
-                type="button"
-                className="-m-1 rounded p-1 text-nextflow hover:opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-nextflow"
-                onClick={closeOverlay}
-                aria-label="Close"
-              >
-                {closeIconSrc ? (
-                  <img src={closeIconSrc} alt="" width={22} height={22} />
-                ) : (
-                  <span className="text-2xl leading-none" aria-hidden>
-                    ×
-                  </span>
-                )}
-              </button>
-            </div>
-            <div className="min-h-0 flex-1 overflow-y-auto pr-1">
-              <h3
-                id={`${overlayId}-title`}
-                className="font-display text-[24px] leading-tight text-white"
-              >
-                {name}
-              </h3>
+        {/* Text + sessions + socials */}
+        <div className="flex min-h-0 min-w-0 flex-1 flex-col justify-between gap-3">
+          <div className="min-w-0 shrink-0 space-y-1">
+            <h3 className="mb-0 font-display text-[24px] leading-tight">{name}</h3>
+            <p className="flex items-center text-[.85rem] leading-tight">{jobTitle}</p>
+            {keynote && (
+              <p className="text-[1rem] font-medium leading-tight text-nextflow">
+                Keynote Speaker
+              </p>
+            )}
+          </div>
 
-              {hasPrimaryTalk && (
-                <div className="mt-4 space-y-3 border-t border-nextflow/60 pt-4">
-                  {date && (
-                    <p className="monospace text-sm leading-relaxed text-nextflow-500">
-                      {monthDate}
-                      {timeStart && (
-                        <>
-                          {' · '}
-                          {timeStart}
-                          {timeEnd ? ` – ${timeEnd}` : ''}
-                          {location == 'virtual' ? ' CEST' : ''}
-                        </>
-                      )}
-                    </p>
-                  )}
-                  {submissionTitle && (
-                    <div>
-                      <h5 className="text-[1rem] font-medium leading-snug">
+          <div className="min-w-0 flex-1 space-y-3 text-left">
+            {hasPrimaryTalk && (
+              <div className="border-t border-nextflow/50 pt-3">
+                <ul className={styles.talkList}>
+                  <li className={styles.talkListItem}>
+                    {date && (
+                      <p className="monospace text-sm leading-relaxed text-nextflow-500">
+                        {monthDate}
+                        {timeStart && (
+                          <>
+                            {' · '}
+                            {timeStart}
+                            {timeEnd ? ` – ${timeEnd}` : ''}
+                            {location == 'virtual' ? ' CEST' : ''}
+                          </>
+                        )}
+                      </p>
+                    )}
+                    {submissionTitle && (
+                      <h5 className="text-[14px] font-medium leading-snug">
                         {pageUrl ? (
                           <a
                             href={`${eventPath}/${pageUrl}`}
@@ -253,48 +173,42 @@ const SpeakerCard: React.FC<Props> = ({
                           submissionTitle
                         )}
                       </h5>
-                    </div>
-                  )}
-                  <div className="mb-2 w-full">
-                    {keynote && (
-                      <div className="mt-2 h-8 text-[1rem] font-medium text-nextflow">
-                        Keynote Speaker
-                      </div>
                     )}
-                  </div>
-                </div>
-              )}
+                  </li>
+                </ul>
+              </div>
+            )}
 
-              {hasAssociatedTalks && (
-                <div
-                  className={
-                    hasPrimaryTalk
-                      ? 'mt-5 space-y-2 border-t border-nextflow/60 pt-4'
-                      : 'mt-4 space-y-2 border-t border-nextflow/60 pt-4'
-                  }
-                >
-                  {hasPrimaryTalk && (
-                    <p className="mb-2 text-xs uppercase tracking-wide text-nextflow-500">
-                      Also on the agenda
-                    </p>
-                  )}
-                  <ul className="m-0 list-none space-y-2 p-0">
-                    {associatedEvents!.map((talk) => (
-                      <li key={talk.slug} className="text-[.875rem]">
-                        <a
-                          href={`${eventPath}/${talk.slug}`}
-                          className="transition-all duration-300 hover:text-nextflow-200"
-                        >
-                          {talk.title}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
+            {hasAssociatedTalks && (
+              <div className="space-y-2 border-t border-nextflow/50 pt-3">
+                {hasPrimaryTalk && (
+                  <p className="text-xs uppercase tracking-wide text-nextflow-500">
+                    Also on the agenda
+                  </p>
+                )}
+                <ul className={styles.talkList}>
+                  {associatedEvents!.map((talk) => (
+                    <li
+                      key={talk.slug}
+                      className={`${styles.talkListItem} text-[14px]`}
+                    >
+                      <a
+                        href={`${eventPath}/${talk.slug}`}
+                        className="transition-all duration-300 hover:text-nextflow-200"
+                      >
+                        {talk.title}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
-        )}
+
+          <div className="flex shrink-0 flex-row flex-wrap items-center gap-x-1 pt-1">
+            {renderSocialIcons()}
+          </div>
+        </div>
       </div>
     </div>
   );
