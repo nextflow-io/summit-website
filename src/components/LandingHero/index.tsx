@@ -55,6 +55,7 @@ const LandingHero: React.FC<HeroProps> = ({
   isHome,
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [pacmanMode, setPacmanMode] = useState(false);
   const pixelsRef = useRef<{ getCanvas: () => HTMLCanvasElement | null }>(null);
 
   const [hashtagCopied, setHashtagCopied] = useState(false);
@@ -76,6 +77,16 @@ const LandingHero: React.FC<HeroProps> = ({
       document.body.style.overflow = 'unset';
     };
   }, [isModalOpen]);
+
+  // Exit pacman mode on Escape key
+  useEffect(() => {
+    if (!pacmanMode) return;
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setPacmanMode(false);
+    };
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [pacmanMode]);
 
   const handleDownload = () => {
     const canvas = pixelsRef.current?.getCanvas();
@@ -140,6 +151,7 @@ const LandingHero: React.FC<HeroProps> = ({
         initialSpeed={100}
         initialDensity={0.002}
         colorScheme="green"
+        pacmanMode={pacmanMode}
       />
 
       <div className={clsx(styles.landingHero, 'w-full h-full relative')}>
@@ -236,6 +248,20 @@ const LandingHero: React.FC<HeroProps> = ({
           )}
         </div>
       </div>
+
+      {/* Pacman Button */}
+      <button
+        onClick={() => setPacmanMode((v) => !v)}
+        className={`z-50 cursor-pointer absolute top-4 right-8 w-[18px] h-[18px] flex justify-center items-center transition-colors monospace text-[10px] leading-none ${
+          pacmanMode
+            ? 'bg-nextflow-600 text-black hover:bg-nextflow-800'
+            : 'bg-gray-100 text-black hover:bg-gray-300'
+        }`}
+        aria-label={pacmanMode ? 'Exit Pacman' : 'Play Pacman'}
+        title={pacmanMode ? 'Exit Pacman (Esc)' : 'Play Pacman'}
+      >
+        {pacmanMode ? 'x' : '\u25CF'}
+      </button>
 
       {/* Help Button */}
       <button
