@@ -7,6 +7,8 @@ import styles from './styles.module.css';
 type Props = {
   post: any;
   title?: string;
+  /** YYYY-MM-DD from agenda (Boston build); event docs often omit `date`. */
+  sessionDate?: string;
 };
 
 const YouTubeEmbed = ({ id }) => {
@@ -35,53 +37,60 @@ const formatTime = (t?: string): string => {
   return m === '00' ? `${h12}${suffix}` : `${h12}:${m}${suffix}`;
 };
 
-const formatDate = (dateStr?: string): string => {
-  if (!dateStr) return '';
-  const [year, month, day] = dateStr.split('-').map(Number);
-  return new Date(year, month - 1, day).toLocaleDateString('en-US', {
-    weekday: 'long',
-    month: 'long',
-    day: 'numeric',
-  });
+const dateOpts: Intl.DateTimeFormatOptions = {
+  weekday: 'long',
+  month: 'long',
+  day: 'numeric',
 };
 
-const getAgendaPath = () => {
-  if (typeof window !== 'undefined') {
-    const p = window.location.pathname;
-    if (p.includes('/virtual/')) return '/2026/virtual/agenda';
-    if (p.includes('/boston/')) return '/2026/boston/agenda';
-    if (p.includes('/barcelona/')) return '/2026/barcelona/agenda';
+/** Calendar day for display: `YYYY-MM-DD` (local noon-safe) or ISO datetime. */
+const formatDay = (raw?: string): string => {
+  if (!raw) return '';
+  if (raw.includes('T') || raw.length > 10) {
+    const d = new Date(raw);
+    return Number.isNaN(d.getTime()) ? '' : d.toLocaleDateString('en-US', dateOpts);
   }
-  return '/2026/boston/agenda';
+  const [y, m, day] = raw.split('-').map(Number);
+  if (!y || !m || !day) return '';
+  return new Date(y, m - 1, day).toLocaleDateString('en-US', dateOpts);
 };
 
-const getTimezone = () => {
-  if (typeof window !== 'undefined') {
-    const p = window.location.pathname;
-    if (p.includes('/virtual/')) return 'CET';
-    if (p.includes('/boston/')) return 'EST';
-    if (p.includes('/barcelona/')) return 'CET';
+const pathContext = (): { agendaPath: string; tz: string } => {
+  if (typeof window === 'undefined') {
+    return { agendaPath: '/2026/boston/agenda', tz: 'CET' };
   }
-  return 'CET';
+  const p = window.location.pathname;
+  if (p.includes('/virtual/'))
+    return { agendaPath: '/2026/virtual/agenda', tz: 'CET' };
+  if (p.includes('/boston/'))
+    return { agendaPath: '/2026/boston/agenda', tz: 'EST' };
+  if (p.includes('/barcelona/'))
+    return { agendaPath: '/2026/barcelona/agenda', tz: 'CET' };
+  return { agendaPath: '/2026/boston/agenda', tz: 'CET' };
 };
 
-const EventPosts: React.FC<Props> = ({ post, date }) => {
-  const agendaPath = getAgendaPath();
-  const timezone = getTimezone();
+const EventPosts: React.FC<Props> = ({ post, sessionDate }) => {
+  const { agendaPath, tz } = pathContext();
+  const datePart =
+    formatDay(post.date || sessionDate) || formatDay(post.publishedAt);
+  const timePart =
+    post.startTime &&
+    `${formatTime(post.startTime)}${
+      post.endTime ? ` - ${formatTime(post.endTime)}` : ''
+    }`;
+  const scheduleLine = [datePart, timePart].filter(Boolean).join(' · ');
 
   return (
     <section className="flex flex-col w-full py-4">
-      {/* {post.startTime && (
-        <div className="container-xl w-full relative bg-black text-white p-4 mb-6 transition-all duration-400">
-          {date && formatDate(date)}{post.startTime && `${formatTime(post.startTime)}`}
-          {post.endTime && ` – ${formatTime(post.endTime)}`}
-          {` `}{timezone}
-        </div>
-      )} */}
-
+      
       {/* hero */}
       <div className="pt-20 pb-10  md:py-10 container-xl w-full bg-black text-white">
         <h1 className="h4 py-2">{post?.title}</h1>
+        {scheduleLine && (
+          <p className="monospace text-sm md:text-base text-nextflow-500 mt-3">
+            {scheduleLine} {tz}
+          </p>
+        )}
         <div className="pb-6 mt-6">
           <div className="inline-flex">
             {post.associatedSpeakers?.map((person, index) => (

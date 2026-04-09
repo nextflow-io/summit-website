@@ -22,7 +22,11 @@ export interface AgendaItem {
   startTime?: string;
   endTime?: string;
   externalLink?: string;
-  associatedEvents?: { _id: string; title?: string };
+  associatedEvents?: {
+    _id: string;
+    title?: string;
+    slug?: { current?: string } | string;
+  };
   associatedSpeakers?: AgendaItemSpeaker[];
 }
 
@@ -102,3 +106,25 @@ export const fetchBostonAgenda = () =>
 
 export const fetchBcnAgenda = () =>
   sanityClient.fetch<AgendaData>(`*[_type == "bcnAgenda"][0]{ ${agendaFields} }`);
+
+/** Section `date` (YYYY-MM-DD) for a talk slug (matches `associatedEvents` on the agenda). */
+export function findAgendaDateForEventSlug(
+  agenda: AgendaData | null | undefined,
+  eventSlug: string,
+): string | undefined {
+  if (!agenda || !eventSlug) return undefined;
+  const sections = [
+    ...(agenda.summitAgenda ?? []),
+    ...(agenda.hackathonAgenda ?? []),
+    ...(agenda.beginnerTrainingAgenda ?? []),
+    ...(agenda.advancedTrainingAgenda ?? []),
+  ];
+  for (const section of sections) {
+    for (const item of section.agendaItems ?? []) {
+      const slug = item.associatedEvents?.slug;
+      const s = typeof slug === 'string' ? slug : slug?.current;
+      if (s === eventSlug) return section.date;
+    }
+  }
+  return undefined;
+}
