@@ -4,14 +4,28 @@ import { getAllEventPosts } from '@data/events';
 import EventPost from '@components/EventPost';
 import Meta from '@components/Meta/Meta.astro';
 import { fetchSettings, type SettingsData } from '@data/settings';
-export function getStaticPaths() {
-  return getAllEventPosts?.map((post) => ({
-    params: { slug: post.slug.current },
-    props: { post },
-  }));
+import {
+  fetchBostonAgenda,
+  findAgendaDateForEventSlug,
+} from '@data/agenda';
+
+export async function getStaticPaths() {
+  const agenda = await fetchBostonAgenda();
+  return (
+    getAllEventPosts?.map((post) => {
+      const slug = post.slug.current;
+      return {
+        params: { slug },
+        props: {
+          post,
+          sessionDate: findAgendaDateForEventSlug(agenda, slug),
+        },
+      };
+    }) ?? []
+  );
 }
 
-const { post } = Astro.props;
+const { post, sessionDate } = Astro.props;
 const settings: SettingsData = await fetchSettings();
 ---
 
@@ -22,6 +36,6 @@ const settings: SettingsData = await fetchSettings();
     settings={settings}
   />
   <section class="">
-    <EventPost post={post} client:only="react" />
+    <EventPost post={post} sessionDate={sessionDate} client:only="react" />
   </section>
 </Layout>
