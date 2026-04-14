@@ -1,5 +1,5 @@
 import { sanityClient } from "sanity:client";
-import { buildPageQuery, buildHomepageQuery,  buildFaqPageQuery } from "./queries";
+import { buildPageQuery, buildHomepageQuery,  buildFaqPageQuery , buildBostonGalleryQuery} from "./queries";
 import type { PageData, HomepageData,  FAQPageData  } from "./types";
 
 // Generic page fetcher
@@ -50,7 +50,9 @@ export async function fetchBostonTravel(): Promise<PageData> {
 }
 
 export async function fetchBostonGallery(): Promise<PageData> {
-  return fetchPage("bostonGallery");
+  const query = buildBostonGalleryQuery();
+  const data = await sanityClient.fetch(query);
+  return data;
 }
 
 export async function fetchBostonHackathon(): Promise<PageData> {
