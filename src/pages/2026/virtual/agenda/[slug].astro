@@ -11,18 +11,18 @@ import {
 
 export async function getStaticPaths() {
   const agenda = await fetchVirtualAgenda();
-  return (
-    getAllEventPosts?.map((post) => {
-      const slug = post.slug.current;
-      return {
-        params: { slug },
-        props: {
-          post,
-          sessionDate: findAgendaDateForEventSlug(agenda, slug),
-        },
-      };
-    }) ?? []
-  );
+  const bcnEvents = getAllEventPosts?.filter((post) => post.location === 'virtual') ?? [];
+
+  return bcnEvents.map((post) => {
+    const slug = post.slug.current;
+    return {
+      params: { slug },
+      props: {
+        post,
+        sessionDate: findAgendaDateForEventSlug(agenda, slug),
+      },
+    };
+  });
 }
 
 const { post, sessionDate } = Astro.props;

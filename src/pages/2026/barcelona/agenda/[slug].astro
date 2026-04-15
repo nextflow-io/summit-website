@@ -11,20 +11,19 @@ import {
 
 export async function getStaticPaths() {
   const agenda = await fetchBcnAgenda();
-  return (
-    getAllEventPosts?.map((post) => {
-      const slug = post.slug.current;
-      return {
-        params: { slug },
-        props: {
-          post,
-          sessionDate: findAgendaDateForEventSlug(agenda, slug),
-        },
-      };
-    }) ?? []
-  );
-}
+  const bcnEvents = getAllEventPosts?.filter((post) => post.location === 'barcelona') ?? [];
 
+  return bcnEvents.map((post) => {
+    const slug = post.slug.current;
+    return {
+      params: { slug },
+      props: {
+        post,
+        sessionDate: findAgendaDateForEventSlug(agenda, slug),
+      },
+    };
+  });
+}
 const { post, sessionDate } = Astro.props;
 const settings: SettingsData = await fetchSettings();
 ---
