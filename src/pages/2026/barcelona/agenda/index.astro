@@ -27,7 +27,7 @@ const hasAgenda = agenda && agenda != null;
 
     <section>
       {hasAgenda ? (
-        <AllSchedules agenda={agenda} client:load />
+        <AllSchedules agenda={agenda} client:load location="barcelona"  />
       ) : (
        <></>
       )}

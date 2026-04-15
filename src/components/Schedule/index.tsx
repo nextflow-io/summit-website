@@ -38,6 +38,7 @@ type Props = {
   children?: React.ReactNode;
   className?: string;
   agenda: any;
+  location?: string; // e.g. 'boston' | 'barcelona' | 'virtual'
 };
 
 // ─── Timezone config ──────────────────────────────────────────────────────────
@@ -214,7 +215,7 @@ const ScheduleHeader: React.FC<{
 
 // ─── Main component ───────────────────────────────────────────────────────────
 
-const AllSchedules: React.FC<Props> = ({ children, className, agenda }) => {
+const AllSchedules: React.FC<Props> = ({ children, className, agenda , location}) => {
   const config = useMemo(() => transformAgenda(agenda), [agenda]);
 
   const getInitialCategory = (): string => {
@@ -318,7 +319,7 @@ const AllSchedules: React.FC<Props> = ({ children, className, agenda }) => {
 
                 {slot?.associatedEvents?.slug.current && (
                   <a
-                    href={`/2026/boston/agenda/${slot?.associatedEvents?.slug.current}`}
+                    href={`/2026/${location}/agenda/${slot.associatedEvents?.slug.current}`}
                     className="absolute w-full h-full top-0 left-0"
                   ></a>
                 )}
