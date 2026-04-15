@@ -2,25 +2,26 @@
 import Layout from '@layouts/Base.astro';
 import Meta from '@components/Meta/Meta.astro';
 import SpeakersSection from '@modules/SpeakersSection';
-import { fetchSettings, type SettingsData } from '@data/settings';
-import { getAllVirtualSpeakers } from '@data/speakers';
-
-const sortedMembers = getAllVirtualSpeakers[0].speakers?.sort((a, b) =>
+import { getAllVirtualPosters } from '@data/posters';
+import { fetchSettings, type SettingsData } from '@data/settings'; 
+const sortedMembers = getAllVirtualPosters[0].posters?.sort((a, b) =>
   a.name.localeCompare(b.name)
 );
 
 const settings: SettingsData = await fetchSettings();
+
 ---
 
 <Layout namespace="2026/virtual">
-  <Meta title="Speakers" sanityImage="default" settings={settings} />
-  <section class="py-20">
-    <div class="container-xl">
-      <h1 class="h3 mb-4">Speakers</h1>
+  <Meta title="Posters" sanityImage="default"  settings={settings}/>
 
-    </div>
-  </section>
-
+  <div class="">
+    <section class="py-20 bg-black text-white">
+      <div class="container-xl">
+        <h1 class="h3 mb-4">Posters</h1>
+      </div>
+    </section>
+  
   <section class="bg-white text-black py-10">
     <div class="container-xl">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
@@ -39,4 +40,5 @@ const settings: SettingsData = await fetchSettings();
       </div>
     </div>
   </section>
+  </div>
 </Layout>

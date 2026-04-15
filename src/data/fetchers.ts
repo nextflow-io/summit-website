@@ -1,5 +1,5 @@
 import { sanityClient } from "sanity:client";
-import { buildPageQuery, buildHomepageQuery,  buildFaqPageQuery , buildBostonGalleryQuery} from "./queries";
+import { buildPageQuery, buildHomepageQuery,  buildFaqPageQuery , buildBostonGalleryQuery, buildBcnGalleryQuery} from "./queries";
 import type { PageData, HomepageData,  FAQPageData  } from "./types";
 
 // Generic page fetcher
@@ -66,3 +66,34 @@ export async function fetchBostonTraining(): Promise<PageData> {
 export async function fetchBostonRegister(): Promise<PageData> {
   return fetchPage("bostonRegister");
 }
+
+// bcn pages
+export async function fetchBcnRegister(): Promise<PageData> {
+  return fetchPage("bcnRegister");
+}
+
+export async function fetchBcnGallery(): Promise<PageData> {
+  const query = buildBostonGalleryQuery();
+  const data = await sanityClient.fetch(query);
+  return data;
+}
+export async function fetchBcnTravel(): Promise<PageData> {
+  return fetchPage("bcnTravel");
+}
+
+export async function fetchBcnHackathon(): Promise<PageData> {
+  return fetchPage("bcnHackathon");
+}
+
+export async function fetchBcnTraining(): Promise<PageData> {
+  return fetchPage("bcnTraining");
+}
+
+// virtual pages
+export async function fetchVirtualRegister(): Promise<PageData> {
+  return fetchPage("virtualRegister");
+}
+export async function fetchVirtualOverview(): Promise<PageData> {
+  return fetchPage("virtualOverview");
+}
+

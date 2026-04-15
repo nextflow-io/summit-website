@@ -238,3 +238,13 @@ export const buildBostonGalleryQuery = () => `
     
   }
 `;
+
+export const buildBcnGalleryQuery = () => `
+  *[_type == "bcnGallery"][0]{
+    _id,
+    _type,
+    ${heroFragment},
+    ${imageGalleryFragment},
+    
+  }
+`;

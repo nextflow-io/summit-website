@@ -32,7 +32,7 @@ const getAllSpeakers = await sanityClient.fetch(
 );
 
 const getAllVirtualSpeakers = await sanityClient.fetch(
-  `*[_type == "speakerListingVirtual"] {
+  `*[_type == "virtualSpeakers"] {
     speakers[]-> {
       name,
       role,
@@ -62,4 +62,5 @@ const getAllVirtualSpeakers = await sanityClient.fetch(
   }`
 );
 
-export { getAllSpeakers, getAllVirtualSpeakers };
+
+export { getAllSpeakers, getAllVirtualSpeakers};

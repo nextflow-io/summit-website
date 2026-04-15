@@ -1,10 +1,33 @@
 ---
 import Layout from "@layouts/Base.astro";
 import Meta from '@components/Meta/Meta.astro';
-import { fetchSettings, type SettingsData } from '@data/settings';
+import StandardPage from "@modules/StandardPage"
+import ImageGallery from "@components/Gallery";
+import { fetchBcnGallery } from '@data/fetchers';
+import type { PageData } from '@data/types';
+import { fetchSettings, type SettingsData } from '@data/settings'; 
+
+interface SanityImage {
+  _key: string;
+  alt?: string;
+  asset: {
+    _id: string;
+    url: string;
+    metadata: {
+      dimensions: { width: number; height: number };
+      lqip: string;
+    };
+  };
+}
+
+const gallery = await fetchBcnGallery() as PageData & { images?: SanityImage[] };
 const settings: SettingsData = await fetchSettings();
 ---
 
 <Layout namespace="2026/barcelona">
-   <Meta title="Gallery" sanityImage="default"  settings={settings}/>
+  <Meta title="Gallery" sanityImage="default" settings={settings} />
+  <StandardPage data={gallery} client:load />
+  {gallery?.images?.length && (
+    <ImageGallery images={gallery.images} client:load />
+  )}
 </Layout>
