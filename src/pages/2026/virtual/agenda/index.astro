@@ -1,45 +1,36 @@
 ---
-import Layout from "@layouts/Base.astro";
+import Layout from '@layouts/Base.astro';
 import Meta from '@components/Meta/Meta.astro';
-import { fetchSettings, type SettingsData } from '@data/settings'; 
+import { fetchSettings, type SettingsData } from '@data/settings';
+import { fetchVirtualAgenda } from '@data/agenda';
+import { AllSchedules } from '@components/Schedule';
+
 const settings: SettingsData = await fetchSettings();
+const agenda = await fetchVirtualAgenda();
+
+const hasAgenda = agenda && agenda != null;
 ---
 
-<Layout namespace="2026/virtual" altBG>
-  <Meta title="Agenda" sanityImage="default" settings={settings}/>
- <div class="bg-black text-white">
-      <section class="py-20 bg-black text-white">
-      <div class="container-lg">
+<Layout>
+  <Meta title="Agenda" sanityImage="default" settings={settings} />
+  <div class="bg-white text-black">
+    <section class="py-20 bg-black text-white">
+      <div class="container-xl">
         <h1 class="h3 mb-4">Agenda</h1>
-        <p>
-          Check back soon to view the schedule for Nextflow Summit Virtual 2026.
-        </p>
+           {hasAgenda ? (
+        <p>Select the category to view the schedule.</p>
+           ) : (
+        <p class="">The agenda is coming soon. Check back later.</p>
+           )}
       </div>
     </section>
+
+    <section>
+      {hasAgenda ? (
+        <AllSchedules agenda={agenda} client:load />
+      ) : (
+       <></>
+      )}
+    </section>
   </div>
-
-  <!-- <section class="pb-6 pt-16 md:pt-20 mb-20">
-      <div class="container">
-      <h1 class="h1 mb-4 md:mb-6">Agenda</h1>
-        <div class="monospace mt-6 text-brand-100 mb-10">
-        Subscribe to calendar:
-        <a
-          class="text-nextflow"
-          href="https://calendar.google.com/calendar/ical/c_6fcf2965db184555c52131dac98866739ec4536b396c440688d48392bf2d9f22%40group.calendar.google.com/public/basic.ics" target="blank">iCal</a
-        > |
-        <a
-          class="text-nextflow"
-          href="https://calendar.google.com/calendar/u/0?cid=Y182ZmNmMjk2NWRiMTg0NTU1YzUyMTMxZGFjOTg4NjY3MzllYzQ1MzZiMzk2YzQ0MDY4OGQ0ODM5MmJmMmQ5ZjIyQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20" target="_blank"
-          >Google Calendar</a
-        >
-      </div>
-
-     <ScheduleVirtual config={virtualScheduleConfig}  client:only="react"/>
-
-    </div>
-
-  </section> -->
-
-  
-
 </Layout>

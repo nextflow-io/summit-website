@@ -1,18 +1,41 @@
 ---
-import Layout from "@layouts/Base.astro";
-import{getAllEventPosts} from "@data/events";
+import Layout from '@layouts/Base.astro';
+import { getAllEventPosts } from '@data/events';
+import EventPost from '@components/EventPost';
 import Meta from '@components/Meta/Meta.astro';
-export function getStaticPaths() {
-  return getAllEventPosts?.map((post) => ({
-    params: { slug: post.slug.current },
-    props: {post},
-  }));
+import { fetchSettings, type SettingsData } from '@data/settings';
+import {
+  fetchBcnAgenda,
+  findAgendaDateForEventSlug,
+} from '@data/agenda';
+
+export async function getStaticPaths() {
+  const agenda = await fetchBcnAgenda();
+  return (
+    getAllEventPosts?.map((post) => {
+      const slug = post.slug.current;
+      return {
+        params: { slug },
+        props: {
+          post,
+          sessionDate: findAgendaDateForEventSlug(agenda, slug),
+        },
+      };
+    }) ?? []
+  );
 }
-import { fetchSettings, type SettingsData } from '@data/settings'; 
-const { post } = Astro.props;
+
+const { post, sessionDate } = Astro.props;
 const settings: SettingsData = await fetchSettings();
 ---
 
 <Layout namespace="2026/barcelona">
-   <Meta title="Agenda" sanityImage="default" settings={settings}/>
+  <Meta
+    title={`${post.title} – ${post.associatedSpeakers?.map((s) => s.name).join(', ')}`}
+    imgUrl={post.mainImage?.asset.url}
+    settings={settings}
+  />
+  <section class="">
+    <EventPost post={post} sessionDate={sessionDate} client:only="react" />
+  </section>
 </Layout>

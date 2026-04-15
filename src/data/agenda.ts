@@ -107,6 +107,9 @@ export const fetchBostonAgenda = () =>
 export const fetchBcnAgenda = () =>
   sanityClient.fetch<AgendaData>(`*[_type == "bcnAgenda"][0]{ ${agendaFields} }`);
 
+export const fetchVirtualAgenda = () =>
+  sanityClient.fetch<AgendaData>(`*[_type == "virtualAgenda"][0]{ ${agendaFields} }`);
+
 /** Section `date` (YYYY-MM-DD) for a talk slug (matches `associatedEvents` on the agenda). */
 export function findAgendaDateForEventSlug(
   agenda: AgendaData | null | undefined,

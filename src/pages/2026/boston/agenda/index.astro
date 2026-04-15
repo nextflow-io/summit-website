@@ -7,6 +7,9 @@ import { AllSchedules } from '@components/Schedule';
 
 const settings: SettingsData = await fetchSettings();
 const agenda = await fetchBostonAgenda();
+
+const hasAgenda = agenda && agenda != null;
+
 ---
 
 <Layout>
@@ -15,12 +18,20 @@ const agenda = await fetchBostonAgenda();
     <section class="py-20 bg-black text-white">
       <div class="container-xl">
         <h1 class="h3 mb-4">Agenda</h1>
+           {hasAgenda ? (
         <p>Select the category to view the schedule.</p>
+           ) : (
+        <p class="">The agenda is coming soon. Check back later.</p>
+           )}
       </div>
     </section>
 
     <section>
-      <AllSchedules agenda={agenda} client:load />
+      {hasAgenda ? (
+        <AllSchedules agenda={agenda} client:load />
+      ) : (
+       <></>
+      )}
     </section>
   </div>
 </Layout>
