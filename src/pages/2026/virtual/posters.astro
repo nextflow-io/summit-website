@@ -4,7 +4,7 @@ import Meta from '@components/Meta/Meta.astro';
 import SpeakersSection from '@modules/SpeakersSection';
 import { getAllVirtualPosters } from '@data/posters';
 import { fetchSettings, type SettingsData } from '@data/settings'; 
-const sortedMembers = getAllVirtualPosters[0].posters?.sort((a, b) =>
+const sortedMembers = getAllVirtualPosters[0]?.posters?.sort((a, b) =>
   a.name.localeCompare(b.name)
 );
 

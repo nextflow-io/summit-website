@@ -5,7 +5,7 @@ import SpeakersSection from '@modules/SpeakersSection';
 import { fetchSettings, type SettingsData } from '@data/settings';
 import { getAllVirtualSpeakers } from '@data/speakers';
 
-const sortedMembers = getAllVirtualSpeakers[0].speakers?.sort((a, b) =>
+const sortedMembers = getAllVirtualSpeakers[0]?.speakers?.sort((a, b) =>
   a.name.localeCompare(b.name)
 );
 
