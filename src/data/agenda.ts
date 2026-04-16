@@ -16,16 +16,19 @@ export interface AgendaItemSpeaker {
 
 export interface AgendaItem {
   _id: string;
+  location?: string;
   tags?: string[];
   title: string;
   isHighlighted?: boolean;
   startTime?: string;
   endTime?: string;
   externalLink?: string;
+  bodycopy?: string;
   associatedEvents?: {
     _id: string;
     title?: string;
     slug?: { current?: string } | string;
+    associatedSpeakers?: AgendaItemSpeaker[];
   };
   associatedSpeakers?: AgendaItemSpeaker[];
 }
@@ -44,7 +47,7 @@ export interface AgendaData {
   advancedTrainingAgenda?: AgendaSection[];
 }
 
-// ─── Fetchers ─────────────────────────────────────────────────────────────────
+// ─── GROQ fragments ───────────────────────────────────────────────────────────
 
 const agendaItemFragment = `
   _id,
@@ -55,25 +58,26 @@ const agendaItemFragment = `
   endTime,
   externalLink,
   bodycopy,
+  location,
   associatedEvents->{
     _id,
     title,
     slug,
-      associatedSpeakers[]->{
-    _id,
-    name,
-    role,
-    keynote,
-    linkedin,
-    github,
-    twitter,
-    image{
-      asset->{
-        url,
+    associatedSpeakers[]->{
+      _id,
+      name,
+      role,
+      keynote,
+      linkedin,
+      github,
+      twitter,
+      image{
+        asset->{
+          url,
+        },
       },
+      bio,
     },
-    bio,
-  },
   }
 `;
 
@@ -101,11 +105,55 @@ const agendaFields = `
   },
 `;
 
-export const fetchBostonAgenda = () =>
-  sanityClient.fetch<AgendaData>(`*[_type == "bostonAgenda"][0]{ ${agendaFields} }`);
+// ─── Location filter ──────────────────────────────────────────────────────────
 
-export const fetchBcnAgenda = () =>
-  sanityClient.fetch<AgendaData>(`*[_type == "bcnAgenda"][0]{ ${agendaFields} }`);
+const filterByLocation = (
+  agenda: AgendaData | null,
+  location: string
+): AgendaData | null => {
+  if (!agenda) return null;
+
+  const filterSections = (sections?: AgendaSection[]) =>
+    sections?.map((section) => ({
+      ...section,
+      agendaItems: section.agendaItems?.filter(
+        (item) => !item.location || item.location === location
+      ),
+    }));
+
+  return {
+    ...agenda,
+    summitAgenda: filterSections(agenda.summitAgenda),
+    hackathonAgenda: filterSections(agenda.hackathonAgenda),
+    beginnerTrainingAgenda: filterSections(agenda.beginnerTrainingAgenda),
+    advancedTrainingAgenda: filterSections(agenda.advancedTrainingAgenda),
+  };
+};
+
+// ─── Fetchers ─────────────────────────────────────────────────────────────────
+
+export const fetchBostonAgenda = async (): Promise<AgendaData | null> => {
+  const data = await sanityClient.fetch<AgendaData>(
+    `*[_type == "bostonAgenda"][0]{ ${agendaFields} }`
+  );
+  return filterByLocation(data, 'boston');
+};
+
+export const fetchBcnAgenda = async (): Promise<AgendaData | null> => {
+  const data = await sanityClient.fetch<AgendaData>(
+    `*[_type == "bcnAgenda"][0]{ ${agendaFields} }`
+  );
+  return filterByLocation(data, 'barcelona');
+};
+
+export const fetchVirtualAgenda = async (): Promise<AgendaData | null> => {
+  const data = await sanityClient.fetch<AgendaData>(
+    `*[_type == "virtualAgenda"][0]{ ${agendaFields} }`
+  );
+  return filterByLocation(data, 'virtual');
+};
+
+// ─── Helpers ──────────────────────────────────────────────────────────────────
 
 /** Section `date` (YYYY-MM-DD) for a talk slug (matches `associatedEvents` on the agenda). */
 export function findAgendaDateForEventSlug(

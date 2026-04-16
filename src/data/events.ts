@@ -9,6 +9,7 @@ const getAllEventPosts = await sanityClient.fetch(
    projectLink,
    startTime,
    endTime,
+   location,
    poster {
       asset->{
         url,

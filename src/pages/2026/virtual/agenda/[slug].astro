@@ -1,22 +1,41 @@
 ---
-import Layout from "@layouts/Base.astro";
-import{getAllVirtualEventPosts} from "@data/events";
+import Layout from '@layouts/Base.astro';
+import { getAllEventPosts } from '@data/events';
+import EventPost from '@components/EventPost';
 import Meta from '@components/Meta/Meta.astro';
-import { fetchSettings, type SettingsData } from '@data/settings'; 
-export function getStaticPaths() {
-  return getAllVirtualEventPosts?.map((post) => ({
-    params: { slug: post.slug.current },
-    props: {post},
-  }));
+import { fetchSettings, type SettingsData } from '@data/settings';
+import {
+  fetchVirtualAgenda,
+  findAgendaDateForEventSlug,
+} from '@data/agenda';
+
+export async function getStaticPaths() {
+  const agenda = await fetchVirtualAgenda();
+  const bcnEvents = getAllEventPosts?.filter((post) => post.location === 'virtual') ?? [];
+
+  return bcnEvents.map((post) => {
+    const slug = post.slug.current;
+    return {
+      params: { slug },
+      props: {
+        post,
+        sessionDate: findAgendaDateForEventSlug(agenda, slug),
+      },
+    };
+  });
 }
 
-const { post } = Astro.props;
+const { post, sessionDate } = Astro.props;
 const settings: SettingsData = await fetchSettings();
 ---
 
 <Layout namespace="2026/virtual">
-    <Meta title="Agenda" sanityImage="default"   settings={settings}/>
-  <!-- <section class="mt-10 md:mt-20 mb-24 container smaller mx-auto">
-    <EventPost post={post}   client:only="react" />
-  </section> -->
+  <Meta
+    title={`${post.title} – ${post.associatedSpeakers?.map((s) => s.name).join(', ')}`}
+    imgUrl={post.mainImage?.asset.url}
+    settings={settings}
+  />
+  <section class="">
+    <EventPost post={post} sessionDate={sessionDate} client:only="react" />
+  </section>
 </Layout>

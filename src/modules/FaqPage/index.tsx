@@ -111,19 +111,19 @@ const FaqPage: React.FC<Props> = ({ data }) => {
                   className={` mb-4 md:max-w-[800px] z-30 relative h3
                 `}
                 >
-                  {data.hero?.headline}
+                  {data?.hero?.headline}
                 </h1>
               </div>
             </div>
 
             <div className="flex flex-col sm:max-w-[550px] relative">
               <div className="z-50 pointer-events-none">
-                <PortableText value={data.hero?.bodycopy} />
+                <PortableText value={data?.hero?.bodycopy} />
               </div>
             </div>
 
             <div className="mt-10 relative z-50">
-              {data.faqSection && data.faqSection.length > 0 && (
+              {data.faqSection && data?.faqSection.length > 0 && (
                 <div className="inline-flex flex-col text-xl">
                   {data.faqSection.map((section, index) => (
                     <a

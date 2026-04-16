@@ -31,9 +31,9 @@ const getAllPosters = await sanityClient.fetch(
   }`
 );
 
-const getAllVirtualSpeakers = await sanityClient.fetch(
-  `*[_type == "speakerListingVirtual"] {
-    speakers[]-> {
+const getAllVirtualPosters = await sanityClient.fetch(
+  `*[_type == "virtualPosters"] {
+    posters[]-> {
       name,
       role,
       keynote,
@@ -62,4 +62,4 @@ const getAllVirtualSpeakers = await sanityClient.fetch(
   }`
 );
 
-export { getAllPosters, getAllVirtualSpeakers };
+export { getAllPosters, getAllVirtualPosters };

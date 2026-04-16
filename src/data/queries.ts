@@ -153,6 +153,24 @@ export const faqSectionFragment = `
   }
 `;
 
+// Gallery module
+export const imageGalleryFragment = `
+  images[] {
+    asset-> {
+      _id,
+      url,
+      metadata {
+        dimensions {
+          width,
+          height
+        },
+        lqip
+      }
+    },
+    alt
+  }
+`;
+
 // FAQ page
 export const faqPageSectionFragment = `
   faqSection[]{
@@ -208,5 +226,25 @@ export const buildHomepageQuery = () => `
     ${keyDatesSectionFragment},
     ${pastEventsFragment},
     ${faqSectionFragment}
+  }
+`;
+
+export const buildBostonGalleryQuery = () => `
+  *[_type == "bostonGallery"][0]{
+    _id,
+    _type,
+    ${heroFragment},
+    ${imageGalleryFragment},
+    
+  }
+`;
+
+export const buildBcnGalleryQuery = () => `
+  *[_type == "bcnGallery"][0]{
+    _id,
+    _type,
+    ${heroFragment},
+    ${imageGalleryFragment},
+    
   }
 `;

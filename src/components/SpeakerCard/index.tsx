@@ -116,7 +116,7 @@ const SpeakerCard: React.FC<Props> = ({
     <div className="h-full">
       <div className="speaker-card flex h-full min-h-full flex-col gap-4 overflow-hidden bg-black p-4 text-white text-balance transition-all duration-300 sm:flex-row sm:gap-4">
         {/* Photo: full width on mobile; tall column on larger screens */}
-        <div className="relative aspect-[4/3] max-h-[min(64vw,220px)] w-full shrink-0 overflow-hidden sm:max-h-none sm:aspect-auto sm:h-full sm:min-h-[200px] sm:w-[40%] sm:min-w-[150px] sm:max-w-[240px]">
+        <div className="relative aspect-square w-full shrink-0 overflow-hidden sm:max-h-none sm:aspect-auto sm:h-full sm:min-h-[200px] sm:w-[40%] sm:min-w-[150px] sm:max-w-[240px]">
           <div className="absolute inset-0">
             {hasSanityImage ? (
               <img
@@ -182,7 +182,7 @@ const SpeakerCard: React.FC<Props> = ({
             {hasAssociatedTalks && (
               <div className="space-y-2 border-t border-nextflow/50 pt-3">
                 {hasPrimaryTalk && (
-                  <p className="text-xs uppercase tracking-wide text-nextflow-500">
+                  <p className="text-[10px] uppercase tracking-wide text-nextflow-500">
                     Also on the agenda
                   </p>
                 )}
@@ -190,11 +190,11 @@ const SpeakerCard: React.FC<Props> = ({
                   {associatedEvents!.map((talk) => (
                     <li
                       key={talk.slug}
-                      className={`${styles.talkListItem} text-[14px]`}
+                      className={`${styles.talkListItem}`}
                     >
                       <a
                         href={`${eventPath}/${talk.slug}`}
-                        className="transition-all duration-300 hover:text-nextflow-200"
+                        className=" transition-all duration-300 hover:text-nextflow-200"
                       >
                         {talk.title}
                       </a>

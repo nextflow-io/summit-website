@@ -43,6 +43,9 @@
 .talkListItem:last-child {
   margin-bottom: 0;
 }
+.talkListItem {
+  font-size: 12px;
+}
 
 .talkListItem::before {
   content: '';
