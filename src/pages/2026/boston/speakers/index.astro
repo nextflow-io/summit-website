@@ -5,7 +5,7 @@ import SpeakersSection from '@modules/SpeakersSection';
 import { fetchSettings, type SettingsData } from '@data/settings';
 import { getAllSpeakers } from '@data/speakers';
 
-const sortedMembers = getAllSpeakers[0].speakers?.sort((a, b) =>
+const sortedMembers = getAllSpeakers?.speakers?.sort((a, b) =>
   a.name.localeCompare(b.name)
 );
 
@@ -25,11 +25,10 @@ const settings: SettingsData = await fetchSettings();
     <div class="container-xl">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
         {
-          sortedMembers?.map((name, index) => (
+          sortedMembers?.map((person) => (
             <div class="h-full min-h-0">
               <SpeakersSection
-                person={name}
-                index={index}
+                person={person}
                 location="boston"
                 client:only="react"
               />
