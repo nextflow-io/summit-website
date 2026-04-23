@@ -62,4 +62,20 @@ const getAllVirtualPosters = await sanityClient.fetch(
   }`
 );
 
-export { getAllPosters, getAllVirtualPosters };
+const extractPosterSlugs = (postersData: any): Set<string> =>
+  new Set(
+    postersData?.[0]?.posters
+      ?.flatMap((person) => person?.associatedEvents ?? [])
+      ?.map((event) => event?.slug)
+      ?.filter(Boolean) ?? []
+  );
+
+const bostonPosterSlugs = extractPosterSlugs(getAllPosters);
+const virtualPosterSlugs = extractPosterSlugs(getAllVirtualPosters);
+
+export {
+  getAllPosters,
+  getAllVirtualPosters,
+  bostonPosterSlugs,
+  virtualPosterSlugs,
+};
