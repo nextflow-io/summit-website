@@ -4,10 +4,15 @@ import Meta from '@components/Meta/Meta.astro';
 import SpeakersSection from '@modules/SpeakersSection';
 import { fetchSettings, type SettingsData } from '@data/settings';
 import { getAllSpeakers } from '@data/speakers';
+import { getAllPosters } from '@data/posters';
 
-const sortedMembers = getAllSpeakers?.speakers?.sort((a, b) =>
-  a.name.localeCompare(b.name)
+const posterNames = new Set(
+  getAllPosters?.[0]?.posters?.map((person) => person?.name).filter(Boolean) ?? []
 );
+
+const sortedMembers = (getAllSpeakers?.speakers ?? [])
+  .filter((person) => !posterNames.has(person?.name))
+  .sort((a, b) => a.name.localeCompare(b.name));
 
 const settings: SettingsData = await fetchSettings();
 ---

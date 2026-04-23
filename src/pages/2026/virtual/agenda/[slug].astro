@@ -1,6 +1,7 @@
 ---
 import Layout from '@layouts/Base.astro';
 import { getAllEventPosts } from '@data/events';
+import { virtualPosterSlugs } from '@data/posters';
 import EventPost from '@components/EventPost';
 import Meta from '@components/Meta/Meta.astro';
 import { fetchSettings, type SettingsData } from '@data/settings';
@@ -11,21 +12,22 @@ import {
 
 export async function getStaticPaths() {
   const agenda = await fetchVirtualAgenda();
-  const bcnEvents = getAllEventPosts?.filter((post) => post.location === 'virtual') ?? [];
+  const locationEvents = getAllEventPosts?.filter((post) => post.location === 'virtual') ?? [];
 
-  return bcnEvents.map((post) => {
-    const slug = post.slug.current;
+  return locationEvents.map((post) => {
+    const slug = typeof post.slug === 'string' ? post.slug : post.slug?.current;
     return {
       params: { slug },
       props: {
         post,
         sessionDate: findAgendaDateForEventSlug(agenda, slug),
+        sessionType: virtualPosterSlugs.has(slug) ? 'Poster' : 'Talk',
       },
     };
   });
 }
 
-const { post, sessionDate } = Astro.props;
+const { post, sessionDate, sessionType } = Astro.props;
 const settings: SettingsData = await fetchSettings();
 ---
 
@@ -36,6 +38,11 @@ const settings: SettingsData = await fetchSettings();
     settings={settings}
   />
   <section class="">
-    <EventPost post={post} sessionDate={sessionDate} client:only="react" />
+    <EventPost
+      post={post}
+      sessionDate={sessionDate}
+      sessionType={sessionType}
+      client:only="react"
+    />
   </section>
 </Layout>

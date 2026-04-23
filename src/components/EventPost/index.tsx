@@ -9,6 +9,7 @@ type Props = {
   title?: string;
   /** YYYY-MM-DD from agenda (Boston build); event docs often omit `date`. */
   sessionDate?: string;
+  sessionType?: 'Talk' | 'Poster';
 };
 
 const YouTubeEmbed = ({ id }) => {
@@ -69,8 +70,10 @@ const pathContext = (): { agendaPath: string; tz: string } => {
   return { agendaPath: '/2026/boston/agenda', tz: 'CET' };
 };
 
-const EventPosts: React.FC<Props> = ({ post, sessionDate }) => {
+const EventPosts: React.FC<Props> = ({ post, sessionDate, sessionType }) => {
   const { agendaPath, tz } = pathContext();
+  const resolvedSessionType =
+    sessionType ?? (post?.poster?.asset?.url ? 'Poster' : 'Talk');
   const datePart =
     formatDay(post.date || sessionDate) || formatDay(post.publishedAt);
   const timePart =
@@ -85,6 +88,12 @@ const EventPosts: React.FC<Props> = ({ post, sessionDate }) => {
       
       {/* hero */}
       <div className="pt-20 pb-10  md:py-10 container-xl w-full bg-black text-white">
+      <div className="uppercase monospace py-[3px] px-2 text-[.6rem]  items-center flex bg-nextflow  w-fit">
+      <div className="w-[4px] h-[4px] bg-black mt-[-1px]"></div>
+        <span className=" ml-2 text-black">
+          {resolvedSessionType}
+        </span>
+        </div>
         <h1 className="h4 py-2">{post?.title}</h1>
         {scheduleLine && (
           <p className="monospace text-sm md:text-base text-nextflow-500 mt-3">
