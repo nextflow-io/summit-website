@@ -1,21 +1,87 @@
 ---
-import Layout from "@layouts/Base.astro";
+import Layout from '@layouts/Base.astro';
 import Meta from '@components/Meta/Meta.astro';
-import { fetchSettings, type SettingsData } from '@data/settings'; 
+import { fetchSettings, type SettingsData } from '@data/settings';
 const settings: SettingsData = await fetchSettings();
 ---
 
 <Layout namespace="2026/barcelona">
-   <Meta title="Overview" sanityImage="default"  settings={settings}/>
+  <Meta title="Overview" sanityImage="default" settings={settings} />
   <div class="bg-black text-white">
-      <section class="py-20 bg-black text-white">
+    <section class="py-20 bg-black text-white">
       <div class="container-lg">
-        <h1 class="h3 max-w-[700px] mb-6">Nextflow Hackathon & nf-core Training</h1>
-        <p class="max-w-[500px]">
-          Check back soon to view information for this year's Nextflow Hackathon & nf-core Training in Barcelona 2026.
+        <h1 class="h3 max-w-[700px] mb-6">Nextflow Summit 2026 Barcelona</h1>
+        <p class="max-w-[500px] mb-10">
+          Join us in Barcelona for the Nextflow Summit, followed by the Nextflow
+          Hackathon & nf-core Training.
         </p>
       </div>
     </section>
-  </div>
 
+    <section class="container-xl pb-20">
+      <h5 class="h4 mb-4 md:mb-0">Key Dates</h5>
+      <div class="w-full relative flex flex-col sm:flex-row h-full">
+        <div class="relative w-full border-t">
+          <div class="flex flex-wrap border-b">
+            <div class="w-full flex flex-row items-center">
+              <h4
+                class="font-semibold md:font-medium h6 pt-6 pb-6 w-full max-w-[110px] sm:max-w-[175px] text-balance"
+              >
+                Oct 13-14
+              </h4>
+              <div class="pl-4 sm:pl-10 flex flex-col w-full monospace">
+                <div
+                  class="border-b last:border-b-0 py-6 leading-tight font-sans text-sm md:text-base"
+                >
+                  Nextflow Summit 2026 (Virtual)
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-wrap border-b">
+            <div class="w-full flex flex-row items-center">
+              <h4
+                class="font-semibold md:font-medium h6 pt-6 pb-6 w-full max-w-[110px] sm:max-w-[175px] text-balance"
+              >
+                Oct 15–16
+              </h4>
+              <div class="pl-4 sm:pl-10 flex flex-col w-full monospace">
+                <div
+                  class="border-b last:border-b-0 py-6 leading-tight font-sans text-sm md:text-base"
+                >
+                  Nextflow Hackathon & nf-core Training
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container-xl pb-20">
+      <h5 class="h4 mb-6">Register</h5>
+      <a
+        href="https://hubs.la/Q04fBnsf0"
+        target="_blank"
+        class="inline-flex items-center uppercase text-[.8rem] tracking-wide bg-nextflow-600 text-black px-6 py-3 hover:bg-nextflow-700 transition-all duration-400"
+      >
+        Register for Virtual Summit
+        <svg
+          class="ml-2 w-4 h-4"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+        </svg>
+      </a>
+      <p class="mt-6 text-sm text-white/70">
+        Registration for Hackathon & Training opening soon.
+      </p>
+    </section>
+  </div>
 </Layout>
