@@ -73,7 +73,7 @@ export async function fetchBcnRegister(): Promise<PageData> {
 }
 
 export async function fetchBcnGallery(): Promise<PageData> {
-  const query = buildBostonGalleryQuery();
+  const query = buildBcnGalleryQuery();
   const data = await sanityClient.fetch(query);
   return data;
 }

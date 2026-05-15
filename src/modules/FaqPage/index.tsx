@@ -3,9 +3,10 @@ import Faq from '@components/Faq';
 import PortableText from '@components/PortableText';
 import { motion, AnimatePresence } from 'framer-motion';
 import Pixels from '@modules/Pixels';
+import shareOverlay from '@images/pixel-share-overlay.svg';
 
 type Props = {
-  data: any;
+  data?: any;
 };
 
 const fadeIn = {
@@ -14,7 +15,8 @@ const fadeIn = {
   viewport: { once: true },
 };
 
-const FaqPage: React.FC<Props> = ({ data }) => {
+const FaqPage: React.FC<Props> = (props) => {
+  const data = props?.data;
   const [isModalOpen, setIsModalOpen] = useState(false);
   const pixelsRef = useRef<{ getCanvas: () => HTMLCanvasElement | null }>(null);
 
@@ -123,10 +125,11 @@ const FaqPage: React.FC<Props> = ({ data }) => {
             </div>
 
             <div className="mt-10 relative z-50">
-              {data.faqSection && data?.faqSection.length > 0 && (
+              {data?.faqSection && data.faqSection.length > 0 && (
                 <div className="inline-flex flex-col text-xl">
                   {data.faqSection.map((section, index) => (
                     <a
+                      key={`${section.faqTitle}-${index}`}
                       className="hover:text-nextflow-600"
                       href={`#${section.faqTitle}`}
                     >
@@ -241,7 +244,7 @@ const FaqPage: React.FC<Props> = ({ data }) => {
         </motion.div>
       </section>
 
-      {data.faqSection && data.faqSection.length > 0 && (
+      {data?.faqSection && data.faqSection.length > 0 && (
         <>
           {data.faqSection.map((section, index) => (
             <Faq
