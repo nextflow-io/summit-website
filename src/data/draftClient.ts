@@ -5,7 +5,7 @@ import { sanityClient } from 'sanity:client'
 export function getDraftClient() {
   return sanityClient.withConfig({
     useCdn: false,
-    token: import.meta.env.SANITY_API_READ_TOKEN,
+    token: import.meta.env.SANITY_READ_TOKEN,
     perspective: 'previewDrafts',
   })
 }

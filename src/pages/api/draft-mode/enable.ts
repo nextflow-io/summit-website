@@ -5,10 +5,10 @@ import { sanityClient } from 'sanity:client'
 export const prerender = false
 
 export const GET: APIRoute = async ({ request, cookies, redirect }) => {
-  const token = import.meta.env.SANITY_API_READ_TOKEN
+  const token = import.meta.env.SANITY_READ_TOKEN
 
   if (!token) {
-    return new Response('SANITY_API_READ_TOKEN is not set', { status: 500 })
+    return new Response('SANITY_READ_TOKEN is not set', { status: 500 })
   }
 
   const clientWithToken = sanityClient.withConfig({
