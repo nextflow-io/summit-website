@@ -2,14 +2,14 @@
 export const prerender = false
 
 const secret = Astro.url.searchParams.get('secret')
-const path = Astro.url.searchParams.get('path') || '/'
+const previewPath = Astro.url.searchParams.get('path') || '/'
 
 const expected = import.meta.env.SANITY_PREVIEW_SECRET
 if (expected && secret !== expected) {
   return new Response('Invalid preview secret', { status: 401 })
 }
 
-if (!path.startsWith('/')) {
+if (!previewPath.startsWith('/')) {
   return new Response('Invalid path', { status: 400 })
 }
 
@@ -17,13 +17,8 @@ if (!import.meta.env.SANITY_READ_TOKEN?.trim()) {
   return new Response('SANITY_READ_TOKEN is not set', { status: 503 })
 }
 
-Astro.cookies.set('sanity-draft-mode', 'true', {
-  httpOnly: true,
-  sameSite: 'lax',
-  secure: import.meta.env.PROD,
-  path: '/',
-  maxAge: 60 * 60,
-})
+// Activate draft mode for the rewritten page (locals are inherited by Astro.rewrite)
+Astro.locals.draftMode = true
 
-return Astro.redirect(path)
+return Astro.rewrite(previewPath)
 ---
