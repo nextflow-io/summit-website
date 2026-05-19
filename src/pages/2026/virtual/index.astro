@@ -1,10 +1,12 @@
 ---
+export const prerender = false
 import Layout from "@layouts/Base.astro";
 import { fetchSettings, type SettingsData } from '@data/settings'; 
 import Meta from '@components/Meta/Meta.astro';
 
-const settings: SettingsData = await fetchSettings();
+const settings: SettingsData = await fetchSettings(draftMode);
 
+const draftMode = Astro.locals.draftMode ?? false
 ---
 
 <Layout namespace="2026/boston" redirect="/2026/virtual/overview">

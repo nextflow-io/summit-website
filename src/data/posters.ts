@@ -1,65 +1,38 @@
-import { sanityClient } from "sanity:client";
+import {getContentClient} from './client'
 
-const getAllPosters = await sanityClient.fetch(
-  `*[_type == "bostonPosters"] {
-    posters[]-> {
-      name,
-      role,
-      keynote,
-      linkedin,
-      github,
-      twitter,
-      company,
-      bio,
-      image {
-        ...,
+const posterProjection = `
+  posters[]-> {
+    name,
+    role,
+    keynote,
+    linkedin,
+    github,
+    twitter,
+    company,
+    bio,
+    image {
+      ...,
+      asset-> { url }
+    },
+    associatedEvents[]-> {
+      title,
+      "slug": slug.current,
+      publishedAt,
+      endTime,
+      associatedPerson[] { name },
+      coauthors,
+      associatedCategory,
+      mainImage {
         asset-> { url }
-      },
-      associatedEvents[]-> {
-        title,
-        "slug": slug.current,
-        publishedAt,
-        endTime,
-        associatedPerson[] { name },
-        coauthors,
-        associatedCategory,
-        mainImage {
-          asset-> { url }
-        }
       }
     }
-  }`
-);
+  }
+`
 
-const getAllVirtualPosters = await sanityClient.fetch(
-  `*[_type == "virtualPosters"] {
-    posters[]-> {
-      name,
-      role,
-      keynote,
-      linkedin,
-      github,
-      twitter,
-      company,
-      bio,
-      image {
-        ...,
-        asset-> { url }
-      },
-      associatedEvents[]-> {
-        title,
-        "slug": slug.current,
-        publishedAt,
-        endTime,
-        associatedPerson[] { name },
-        coauthors,
-        associatedCategory,
-        mainImage {
-          asset-> { url }
-        }
-      }
-    }
-  }`
-);
+export async function getAllPosters(draftMode = false) {
+  return getContentClient(draftMode).fetch(`*[_type == "bostonPosters"] { ${posterProjection} }`)
+}
 
-export { getAllPosters, getAllVirtualPosters };
+export async function getAllVirtualPosters(draftMode = false) {
+  return getContentClient(draftMode).fetch(`*[_type == "virtualPosters"] { ${posterProjection} }`)
+}

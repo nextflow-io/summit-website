@@ -1,12 +1,14 @@
 ---
+export const prerender = false
 import Layout from '@layouts/Base.astro';
 import FaqPage from "@modules/FaqPage"
 import { fetchFaq } from '@data/fetchers';
 import type { FAQPageData } from '@data/types';
 import Meta from '../components/Meta/Meta.astro';
 import { fetchSettings, type SettingsData } from '@data/settings'; 
-const faq: FAQPageData = await fetchFaq();
-const settings: SettingsData = await fetchSettings();
+const draftMode = Astro.locals.draftMode ?? false
+const faq: FAQPageData = await fetchFaq(draftMode);
+const settings: SettingsData = await fetchSettings(draftMode);
 ---
 
 <Layout showHeader={false}>

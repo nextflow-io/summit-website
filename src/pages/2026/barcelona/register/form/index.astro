@@ -1,13 +1,15 @@
 ---
+export const prerender = false
 import Layout from "@layouts/Base.astro";
 import NoFooter from "@layouts/NoFooter.astro";
 import Meta from '@components/Meta/Meta.astro';
 import { fetchBcnRegister} from '@data/fetchers';
 import type { PageData } from '@data/types';
 import { fetchSettings, type SettingsData } from '@data/settings'; 
-const register: PageData = await fetchBcnRegister();
-const settings: SettingsData = await fetchSettings();
+const register: PageData = await fetchBcnRegister(draftMode);
+const settings: SettingsData = await fetchSettings(draftMode);
 
+const draftMode = Astro.locals.draftMode ?? false
 ---
 
 <NoFooter showNav={false} namespace="2026/barcelona">

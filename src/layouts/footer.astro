@@ -3,7 +3,8 @@ import FooterLogo from '@icons/FooterLogo';
 import Subscribe from '@modules/Subscribe';
 import { fetchMenus } from '@data/menus';
 
-const menus = await fetchMenus();
+const draftMode = Astro.locals.draftMode ?? false;
+const menus = await fetchMenus(draftMode);
 const currentYear = new Date().getFullYear();
 ---
 

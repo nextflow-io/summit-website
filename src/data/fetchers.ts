@@ -1,99 +1,94 @@
-import { sanityClient } from "sanity:client";
-import { buildPageQuery, buildHomepageQuery,  buildFaqPageQuery , buildBostonGalleryQuery, buildBcnGalleryQuery} from "./queries";
-import type { PageData, HomepageData,  FAQPageData  } from "./types";
+import {getContentClient} from './client'
+import {
+  buildPageQuery,
+  buildHomepageQuery,
+  buildFaqPageQuery,
+  buildBostonGalleryQuery,
+  buildBcnGalleryQuery,
+} from './queries'
+import type {PageData, HomepageData, FAQPageData} from './types'
 
-// Generic page fetcher
-async function fetchPage(contentType: string): Promise<PageData> {
-  const query = buildPageQuery(contentType);
-  const data = await sanityClient.fetch(query);
-  return data;
-}
-
-// Homepage fetcher 
-export async function fetchHomepage(): Promise<HomepageData> {
-  const query = buildHomepageQuery();
-  const data = await sanityClient.fetch(query);
-  return data;
+async function fetchPage(contentType: string, draftMode = false): Promise<PageData> {
+  const query = buildPageQuery(contentType)
+  return getContentClient(draftMode).fetch(query)
 }
 
-// FAQ page fetcher 
-export async function fetchFaq(): Promise<FAQPageData> {
-  const query = buildFaqPageQuery();
-  const data = await sanityClient.fetch(query);
-  return data;
+export async function fetchHomepage(draftMode = false): Promise<HomepageData> {
+  const query = buildHomepageQuery()
+  return getContentClient(draftMode).fetch(query)
 }
 
-// Specific page fetchers
-export async function fetchCFA(): Promise<PageData> {
-  return fetchPage("cfa");
+export async function fetchFaq(draftMode = false): Promise<FAQPageData> {
+  const query = buildFaqPageQuery()
+  return getContentClient(draftMode).fetch(query)
 }
 
-export async function fetchWhyAttend(): Promise<PageData> {
-  return fetchPage("whyAttend");
+export async function fetchCFA(draftMode = false): Promise<PageData> {
+  return fetchPage('cfa', draftMode)
 }
 
-export async function fetchPastEvents(): Promise<PageData> {
-  return fetchPage("pastEvents");
+export async function fetchWhyAttend(draftMode = false): Promise<PageData> {
+  return fetchPage('whyAttend', draftMode)
 }
 
-export async function fetchFAQ(): Promise<PageData> {
-  return fetchPage("faqPage");
+export async function fetchPastEvents(draftMode = false): Promise<PageData> {
+  return fetchPage('pastEvents', draftMode)
 }
 
-// boston pages
-export async function fetchBostonOverview(): Promise<PageData> {
-  return fetchPage("bostonOverview");
+export async function fetchFAQ(draftMode = false): Promise<PageData> {
+  return fetchPage('faqPage', draftMode)
 }
 
-export async function fetchBostonTravel(): Promise<PageData> {
-  return fetchPage("bostonTravel");
+export async function fetchBostonOverview(draftMode = false): Promise<PageData> {
+  return fetchPage('bostonOverview', draftMode)
 }
 
-export async function fetchBostonGallery(): Promise<PageData> {
-  const query = buildBostonGalleryQuery();
-  const data = await sanityClient.fetch(query);
-  return data;
+export async function fetchBostonTravel(draftMode = false): Promise<PageData> {
+  return fetchPage('bostonTravel', draftMode)
 }
 
-export async function fetchBostonHackathon(): Promise<PageData> {
-  return fetchPage("bostonHackathon");
+export async function fetchBostonGallery(draftMode = false): Promise<PageData> {
+  const query = buildBostonGalleryQuery()
+  return getContentClient(draftMode).fetch(query)
 }
 
-export async function fetchBostonTraining(): Promise<PageData> {
-  return fetchPage("bostonTraining");
+export async function fetchBostonHackathon(draftMode = false): Promise<PageData> {
+  return fetchPage('bostonHackathon', draftMode)
 }
 
-export async function fetchBostonRegister(): Promise<PageData> {
-  return fetchPage("bostonRegister");
+export async function fetchBostonTraining(draftMode = false): Promise<PageData> {
+  return fetchPage('bostonTraining', draftMode)
 }
 
-// bcn pages
-export async function fetchBcnRegister(): Promise<PageData> {
-  return fetchPage("bcnRegister");
+export async function fetchBostonRegister(draftMode = false): Promise<PageData> {
+  return fetchPage('bostonRegister', draftMode)
 }
 
-export async function fetchBcnGallery(): Promise<PageData> {
-  const query = buildBostonGalleryQuery();
-  const data = await sanityClient.fetch(query);
-  return data;
-}
-export async function fetchBcnTravel(): Promise<PageData> {
-  return fetchPage("bcnTravel");
+export async function fetchBcnRegister(draftMode = false): Promise<PageData> {
+  return fetchPage('bcnRegister', draftMode)
 }
 
-export async function fetchBcnHackathon(): Promise<PageData> {
-  return fetchPage("bcnHackathon");
+export async function fetchBcnGallery(draftMode = false): Promise<PageData> {
+  const query = buildBcnGalleryQuery()
+  return getContentClient(draftMode).fetch(query)
 }
 
-export async function fetchBcnTraining(): Promise<PageData> {
-  return fetchPage("bcnTraining");
+export async function fetchBcnTravel(draftMode = false): Promise<PageData> {
+  return fetchPage('bcnTravel', draftMode)
 }
 
-// virtual pages
-export async function fetchVirtualRegister(): Promise<PageData> {
-  return fetchPage("virtualRegister");
-}
-export async function fetchVirtualOverview(): Promise<PageData> {
-  return fetchPage("virtualOverview");
+export async function fetchBcnHackathon(draftMode = false): Promise<PageData> {
+  return fetchPage('bcnHackathon', draftMode)
 }
 
+export async function fetchBcnTraining(draftMode = false): Promise<PageData> {
+  return fetchPage('bcnTraining', draftMode)
+}
+
+export async function fetchVirtualRegister(draftMode = false): Promise<PageData> {
+  return fetchPage('virtualRegister', draftMode)
+}
+
+export async function fetchVirtualOverview(draftMode = false): Promise<PageData> {
+  return fetchPage('virtualOverview', draftMode)
+}

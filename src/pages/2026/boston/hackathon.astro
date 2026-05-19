@@ -1,4 +1,5 @@
 ---
+export const prerender = false
 import Layout from '@layouts/Base.astro';
 import StandardPage from "@modules/StandardPage"
 
@@ -7,9 +8,10 @@ import type { PageData } from '@data/types';
 import { fetchSettings, type SettingsData } from '@data/settings'; 
 import Meta from '@components/Meta/Meta.astro';
 
-const settings: SettingsData = await fetchSettings();
-const hackathon: PageData = await fetchBostonHackathon();
+const settings: SettingsData = await fetchSettings(draftMode);
+const hackathon: PageData = await fetchBostonHackathon(draftMode);
 
+const draftMode = Astro.locals.draftMode ?? false
 ---
 
 <Layout>

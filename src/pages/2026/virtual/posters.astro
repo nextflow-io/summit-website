@@ -1,15 +1,17 @@
 ---
+export const prerender = false
 import Layout from '@layouts/Base.astro';
 import Meta from '@components/Meta/Meta.astro';
 import SpeakersSection from '@modules/SpeakersSection';
 import { getAllVirtualPosters } from '@data/posters';
-import { fetchSettings, type SettingsData } from '@data/settings'; 
-const sortedMembers = getAllVirtualPosters[0]?.posters?.sort((a, b) =>
+import { fetchSettings, type SettingsData } from '@data/settings';
+
+const draftMode = Astro.locals.draftMode ?? false
+const postersData = await getAllVirtualPosters(draftMode)
+const sortedMembers = postersData[0]?.posters?.sort((a, b) =>
   a.name.localeCompare(b.name)
 );
-
-const settings: SettingsData = await fetchSettings();
-
+const settings: SettingsData = await fetchSettings(draftMode);
 ---
 
 <Layout namespace="2026/virtual">

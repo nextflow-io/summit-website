@@ -1,4 +1,5 @@
 ---
+export const prerender = false
 import Layout from "@layouts/Base.astro";
 import Meta from '@components/Meta/Meta.astro';
 import StandardPage from "@modules/StandardPage"
@@ -20,8 +21,9 @@ interface SanityImage {
   };
 }
 
-const gallery = await fetchBostonGallery() as PageData & { images?: SanityImage[] };
-const settings: SettingsData = await fetchSettings();
+const draftMode = Astro.locals.draftMode ?? false
+const gallery = await fetchBostonGallery(draftMode) as PageData & { images?: SanityImage[] };
+const settings: SettingsData = await fetchSettings(draftMode);
 ---
 
 <Layout namespace="2026/boston">

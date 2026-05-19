@@ -1,7 +1,7 @@
-import { sanityClient } from "sanity:client";
+import {getContentClient} from './client'
 
-const SUMMIT_YEAR = 2026;
-const YEAR_FILTER = "!defined(year) || year == $year || string(year) == string($year)";
+const SUMMIT_YEAR = 2026
+const YEAR_FILTER = "!defined(year) || year == $year || string(year) == string($year)"
 
 const speakerProjection = `
   name,
@@ -28,44 +28,51 @@ const speakerProjection = `
       asset-> { url }
     }
   }
-`;
+`
 
-type SpeakersPayload = { speakers?: any[] } | null;
+type SpeakersPayload = {speakers?: unknown[]} | null
 
-async function fetchCanonicalSpeakers(location: "boston" | "virtual"): Promise<SpeakersPayload> {
-  return sanityClient.fetch(
+async function fetchCanonicalSpeakers(
+  location: 'boston' | 'virtual',
+  draftMode = false,
+): Promise<SpeakersPayload> {
+  return getContentClient(draftMode).fetch(
     `{
       "speakers": *[_type == "speaker" && location == $location && (${YEAR_FILTER})]
         | order(name asc) {
           ${speakerProjection}
         }
     }`,
-    { location, year: SUMMIT_YEAR }
-  );
+    {location, year: SUMMIT_YEAR},
+  )
 }
 
-async function fetchCuratedSpeakers(curatedType: "bostonSpeakers" | "virtualSpeakers"): Promise<SpeakersPayload> {
-  return sanityClient.fetch(
+async function fetchCuratedSpeakers(
+  curatedType: 'bostonSpeakers' | 'virtualSpeakers',
+  draftMode = false,
+): Promise<SpeakersPayload> {
+  return getContentClient(draftMode).fetch(
     `*[_type == $curatedType && (${YEAR_FILTER})]
       | order(_updatedAt desc)[0]{
         speakers[]-> {
           ${speakerProjection}
         }
       }`,
-    { curatedType, year: SUMMIT_YEAR }
-  );
+    {curatedType, year: SUMMIT_YEAR},
+  )
 }
 
 async function fetchLegacySpeakers(
-  legacyType: "speakerListing" | "speakerListingVirtual",
-  legacyField: "person" | "personVirtual"
+  legacyType: 'speakerListing' | 'speakerListingVirtual',
+  legacyField: 'person' | 'personVirtual',
+  draftMode = false,
 ): Promise<SpeakersPayload> {
   const legacyProjection =
-    legacyField === "personVirtual"
+    legacyField === 'personVirtual'
       ? `personVirtual[]-> { ${speakerProjection} }`
-      : `person[]-> { ${speakerProjection} }`;
+      : `person[]-> { ${speakerProjection} }`
 
-  return sanityClient.fetch(
+  return getContentClient(draftMode).fetch(
     `*[_type == $legacyType && (${YEAR_FILTER})]
       | order(_updatedAt desc)[0]{
         "speakers": coalesce(
@@ -74,39 +81,48 @@ async function fetchLegacySpeakers(
           ${legacyProjection}
         )
       }`,
-    { legacyType, year: SUMMIT_YEAR }
-  );
+    {legacyType, year: SUMMIT_YEAR},
+  )
 }
 
-async function resolveSpeakers(options: {
-  location: "boston" | "virtual";
-  curatedType: "bostonSpeakers" | "virtualSpeakers";
-  legacyType: "speakerListing" | "speakerListingVirtual";
-  legacyField: "person" | "personVirtual";
-}): Promise<SpeakersPayload> {
-  const canonical = await fetchCanonicalSpeakers(options.location);
-  if (canonical?.speakers?.length) return canonical;
+async function resolveSpeakers(
+  options: {
+    location: 'boston' | 'virtual'
+    curatedType: 'bostonSpeakers' | 'virtualSpeakers'
+    legacyType: 'speakerListing' | 'speakerListingVirtual'
+    legacyField: 'person' | 'personVirtual'
+  },
+  draftMode = false,
+): Promise<SpeakersPayload> {
+  const canonical = await fetchCanonicalSpeakers(options.location, draftMode)
+  if (canonical?.speakers?.length) return canonical
 
-  const curated = await fetchCuratedSpeakers(options.curatedType);
-  if (curated?.speakers?.length) return curated;
+  const curated = await fetchCuratedSpeakers(options.curatedType, draftMode)
+  if (curated?.speakers?.length) return curated
 
-  return fetchLegacySpeakers(options.legacyType, options.legacyField);
+  return fetchLegacySpeakers(options.legacyType, options.legacyField, draftMode)
 }
 
-const [getAllSpeakers, getAllVirtualSpeakers] = await Promise.all([
-  resolveSpeakers({
-    location: "boston",
-    curatedType: "bostonSpeakers",
-    legacyType: "speakerListing",
-    legacyField: "person",
-  }),
-  resolveSpeakers({
-    location: "virtual",
-    curatedType: "virtualSpeakers",
-    legacyType: "speakerListingVirtual",
-    legacyField: "personVirtual",
-  }),
-]);
+export async function getAllSpeakers(draftMode = false): Promise<SpeakersPayload> {
+  return resolveSpeakers(
+    {
+      location: 'boston',
+      curatedType: 'bostonSpeakers',
+      legacyType: 'speakerListing',
+      legacyField: 'person',
+    },
+    draftMode,
+  )
+}
 
-
-export { getAllSpeakers, getAllVirtualSpeakers };
+export async function getAllVirtualSpeakers(draftMode = false): Promise<SpeakersPayload> {
+  return resolveSpeakers(
+    {
+      location: 'virtual',
+      curatedType: 'virtualSpeakers',
+      legacyType: 'speakerListingVirtual',
+      legacyField: 'personVirtual',
+    },
+    draftMode,
+  )
+}

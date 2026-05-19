@@ -1,15 +1,17 @@
 ---
+export const prerender = false
 import Layout from '@layouts/Base.astro';
 import Meta from '@components/Meta/Meta.astro';
 import SpeakersSection from '@modules/SpeakersSection';
 import { fetchSettings, type SettingsData } from '@data/settings';
 import { getAllVirtualSpeakers } from '@data/speakers';
 
-const sortedMembers = getAllVirtualSpeakers?.speakers?.sort((a, b) =>
+const draftMode = Astro.locals.draftMode ?? false
+const speakersData = await getAllVirtualSpeakers(draftMode)
+const sortedMembers = speakersData?.speakers?.sort((a, b) =>
   a.name.localeCompare(b.name)
 );
-
-const settings: SettingsData = await fetchSettings();
+const settings: SettingsData = await fetchSettings(draftMode);
 ---
 
 <Layout namespace="2026/virtual">

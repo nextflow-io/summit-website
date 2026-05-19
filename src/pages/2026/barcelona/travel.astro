@@ -1,12 +1,14 @@
 ---
+export const prerender = false
 import Layout from '@layouts/Base.astro';
 import Meta from '@components/Meta/Meta.astro';
 import StandardPage from "@modules/StandardPage"
 import { fetchBcnTravel} from '@data/fetchers';
 import type { PageData } from '@data/types';
 import { fetchSettings, type SettingsData } from '@data/settings'; 
-const travel: PageData = await fetchBcnTravel();
-const settings: SettingsData = await fetchSettings();
+const draftMode = Astro.locals.draftMode ?? false
+const travel: PageData = await fetchBcnTravel(draftMode);
+const settings: SettingsData = await fetchSettings(draftMode);
 ---
 
 <Layout>

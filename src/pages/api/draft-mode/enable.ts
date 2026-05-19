@@ -24,8 +24,8 @@ export const GET: APIRoute = async ({ request, cookies, redirect }) => {
 
   cookies.set('sanity-draft-mode', 'true', {
     httpOnly: true,
-    sameSite: 'none',
-    secure: true,
+    sameSite: 'lax',
+    secure: import.meta.env.PROD,
     path: '/',
     maxAge: 60 * 60, // 1 hour
   })

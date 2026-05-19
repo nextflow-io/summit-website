@@ -1,4 +1,4 @@
-import { sanityClient } from "sanity:client";
+import {getContentClient} from './client'
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -132,22 +132,22 @@ const filterByLocation = (
 
 // ─── Fetchers ─────────────────────────────────────────────────────────────────
 
-export const fetchBostonAgenda = async (): Promise<AgendaData | null> => {
-  const data = await sanityClient.fetch<AgendaData>(
+export const fetchBostonAgenda = async (draftMode = false): Promise<AgendaData | null> => {
+  const data = await getContentClient(draftMode).fetch<AgendaData>(
     `*[_type == "bostonAgenda"][0]{ ${agendaFields} }`
   );
   return filterByLocation(data, 'boston');
 };
 
-export const fetchBcnAgenda = async (): Promise<AgendaData | null> => {
-  const data = await sanityClient.fetch<AgendaData>(
+export const fetchBcnAgenda = async (draftMode = false): Promise<AgendaData | null> => {
+  const data = await getContentClient(draftMode).fetch<AgendaData>(
     `*[_type == "bcnAgenda"][0]{ ${agendaFields} }`
   );
   return filterByLocation(data, 'barcelona');
 };
 
-export const fetchVirtualAgenda = async (): Promise<AgendaData | null> => {
-  const data = await sanityClient.fetch<AgendaData>(
+export const fetchVirtualAgenda = async (draftMode = false): Promise<AgendaData | null> => {
+  const data = await getContentClient(draftMode).fetch<AgendaData>(
     `*[_type == "virtualAgenda"][0]{ ${agendaFields} }`
   );
   return filterByLocation(data, 'virtual');

@@ -1,4 +1,4 @@
-import { sanityClient } from 'sanity:client';
+import {getContentClient} from './client'
 
 export interface SettingsData {
   _id: string;
@@ -27,8 +27,8 @@ export interface SettingsData {
   };
 }
 
-export async function fetchSettings(): Promise<SettingsData> {
-  const data = await sanityClient.fetch(`*[_type == "settings"][0]{
+export async function fetchSettings(draftMode = false): Promise<SettingsData> {
+  const data = await getContentClient(draftMode).fetch(`*[_type == "settings"][0]{
     _id,
     _type,
     title,

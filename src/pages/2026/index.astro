@@ -1,8 +1,10 @@
 ---
+export const prerender = false
 import Layout from "@layouts/Base.astro";
 import Meta from '@components/Meta/Meta.astro';
 import { fetchSettings, type SettingsData } from '@data/settings'; 
-const settings: SettingsData = await fetchSettings();
+const draftMode = Astro.locals.draftMode ?? false
+const settings: SettingsData = await fetchSettings(draftMode);
 ---
 
 <Layout redirect="/">

@@ -1,0 +1,39 @@
+---
+export const prerender = false
+
+const DRAFT_MODE_COOKIE = 'sanity-draft-mode'
+
+function isValidSecret(provided: string | null): boolean {
+  const expected = import.meta.env.SANITY_PREVIEW_SECRET
+  if (!expected) return import.meta.env.DEV
+  return provided === expected
+}
+
+const path = Astro.url.searchParams.get('path') || '/'
+const secret = Astro.url.searchParams.get('secret')
+
+if (!isValidSecret(secret)) {
+  return new Response('Invalid preview secret', {status: 401})
+}
+
+if (!path.startsWith('/')) {
+  return new Response('Invalid path', {status: 400})
+}
+
+if (!import.meta.env.SANITY_READ_TOKEN?.trim()) {
+  return new Response(
+    'Draft preview requires SANITY_READ_TOKEN in summit-website/.env — see .env.example for setup.',
+    {status: 503, headers: {'Content-Type': 'text/plain; charset=utf-8'}},
+  )
+}
+
+Astro.cookies.set(DRAFT_MODE_COOKIE, 'true', {
+  httpOnly: true,
+  sameSite: 'lax',
+  secure: import.meta.env.PROD,
+  path: '/',
+  maxAge: 60 * 60,
+})
+
+return Astro.redirect(path)
+---

@@ -1,5 +1,5 @@
 // data/menus.ts or lib/sanity/menus.ts
-import { sanityClient } from 'sanity:client';
+import {getContentClient} from './client'
 
 export interface Link {
   isExternal?: boolean;
@@ -61,8 +61,8 @@ export interface MenusData {
   mobileBtn2?: Button;
 }
 
-export async function fetchMenus(): Promise<MenusData> {
-  const data = await sanityClient.fetch(`*[_type == "menus"][0]{
+export async function fetchMenus(draftMode = false): Promise<MenusData> {
+  const data = await getContentClient(draftMode).fetch(`*[_type == "menus"][0]{
     _id,
     _type,
     headerMenu[]{

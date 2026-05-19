@@ -1,4 +1,5 @@
 ---
+export const prerender = false
 import Layout from "@layouts/Base.astro";
 import NoFooter from "@layouts/NoFooter.astro";
 import { fetchCFA} from '@data/fetchers';
@@ -6,9 +7,10 @@ import type { PageData } from '@data/types';
 import { fetchSettings, type SettingsData } from '@data/settings'; 
 import Meta from '@components/Meta/Meta.astro';
 
-const cfa: PageData = await fetchCFA();
-const settings: SettingsData = await fetchSettings();
+const cfa: PageData = await fetchCFA(draftMode);
+const settings: SettingsData = await fetchSettings(draftMode);
 
+const draftMode = Astro.locals.draftMode ?? false
 ---
 
 <NoFooter showNav={false} namespace="2026/boston">

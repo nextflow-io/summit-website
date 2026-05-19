@@ -1,13 +1,15 @@
 ---
+export const prerender = false
 import Layout from '@layouts/Base.astro';
 import Meta from '@components/Meta/Meta.astro';
 import { fetchSettings, type SettingsData } from '@data/settings';
 import { fetchBcnAgenda } from '@data/agenda';
 import { AllSchedules } from '@components/Schedule';
 
-const settings: SettingsData = await fetchSettings();
-const agenda = await fetchBcnAgenda();
+const settings: SettingsData = await fetchSettings(draftMode);
+const agenda = await fetchBcnAgenda(draftMode);
 
+const draftMode = Astro.locals.draftMode ?? false
 const hasAgenda = agenda && agenda != null;
 ---
 
