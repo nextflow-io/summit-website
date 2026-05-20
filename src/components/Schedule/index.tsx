@@ -315,6 +315,11 @@ const AllSchedules: React.FC<Props> = ({ children, className, agenda , location}
                     </p>
                   ))}
                   {slot.bodycopy && <p className="text-sm">{slot.bodycopy}</p>}
+                  {slot?.associatedEvents?.youtube && (
+                    <span className="inline-flex items-center gap-1 mt-2 text-[.6rem] uppercase monospace px-2 py-0.5 bg-black text-white">
+                      ▶ Recording
+                    </span>
+                  )}
                 </div>
 
                 {slot?.associatedEvents?.slug.current && (

@@ -29,6 +29,7 @@ export interface AgendaItem {
     _id: string;
     title?: string;
     slug?: { current?: string } | string;
+    youtube?: string;
     associatedSpeakers?: AgendaItemSpeaker[];
   };
   associatedSpeakers?: AgendaItemSpeaker[];
@@ -64,6 +65,7 @@ const agendaItemFragment = `
     _id,
     title,
     slug,
+    youtube,
     associatedSpeakers[]->{
       _id,
       name,
