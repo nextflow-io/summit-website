@@ -115,11 +115,6 @@ const EventPosts: React.FC<Props> = ({ post, sessionDate, sessionType }) => {
           )}
 
           <div className="flex flex-row flex-wrap gap-3 pt-10">
-            {post.youtube && (
-              <Button light arrow href="#recording">
-                Watch Recording
-              </Button>
-            )}
             {post.projectLink && (
               <Button light arrow href={post.projectLink}>
                 Link to Project
