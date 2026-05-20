@@ -96,6 +96,10 @@ export async function fetchBostonRegister(draftMode = false): Promise<PageData> 
 }
 
 // bcn pages
+export async function fetchBcnOverview(draftMode = false): Promise<PageData> {
+  return fetchPage("bcnOverview", draftMode);
+}
+
 export async function fetchBcnRegister(draftMode = false): Promise<PageData> {
   return fetchPage("bcnRegister", draftMode);
 }

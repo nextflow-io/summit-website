@@ -1,0 +1,45 @@
+---
+import Layout from '@layouts/Base.astro';
+import Meta from '@components/Meta/Meta.astro';
+import SpeakersSection from '@modules/SpeakersSection';
+import { fetchSettings, type SettingsData } from '@data/settings';
+import { getAllBcnSpeakers } from '@data/speakers';
+import { getAllBcnPosters } from '@data/posters';
+
+const posterNames = new Set(
+  getAllBcnPosters?.[0]?.posters?.map((person) => person?.name).filter(Boolean) ?? []
+);
+
+const sortedMembers = (getAllBcnSpeakers?.speakers ?? [])
+  .filter((person) => !posterNames.has(person?.name))
+  .sort((a, b) => a.name.localeCompare(b.name));
+
+const settings: SettingsData = await fetchSettings();
+---
+
+<Layout namespace="2026/barcelona">
+  <Meta title="Speakers" sanityImage="default" settings={settings} />
+  <section class="py-20">
+    <div class="container-xl">
+      <h1 class="h3 mb-4">Speakers</h1>
+    </div>
+  </section>
+
+  <section class="bg-white text-black py-10">
+    <div class="container-xl">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+        {
+          sortedMembers?.map((person) => (
+            <div class="h-full min-h-0">
+              <SpeakersSection
+                person={person}
+                location="barcelona"
+                client:only="react"
+              />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</Layout>
