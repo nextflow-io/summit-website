@@ -185,8 +185,8 @@ export const faqPageSectionFragment = `
 `;
 
 // Query builders
-export const buildFaqPageQuery = () => `
-  *[_type == "faqPage"][0]{
+export const buildFaqPageQuery = (type = 'faqPage') => `
+  *[_type == "${type}"][0]{
     _id,
     _type,
     ${heroFragment},

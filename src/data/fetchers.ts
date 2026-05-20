@@ -24,9 +24,36 @@ export async function fetchFaq(): Promise<FAQPageData> {
   return data;
 }
 
+export async function fetchBostonFaq(draftMode = false): Promise<FAQPageData> {
+  const client = draftMode ? getDraftClient() : sanityClient;
+  return client.fetch(buildFaqPageQuery('bostonFaq'));
+}
+
+export async function fetchBcnFaq(draftMode = false): Promise<FAQPageData> {
+  const client = draftMode ? getDraftClient() : sanityClient;
+  return client.fetch(buildFaqPageQuery('bcnFaq'));
+}
+
+export async function fetchVirtualFaq(draftMode = false): Promise<FAQPageData> {
+  const client = draftMode ? getDraftClient() : sanityClient;
+  return client.fetch(buildFaqPageQuery('virtualFaq'));
+}
+
 // Specific page fetchers
 export async function fetchCFA(): Promise<PageData> {
   return fetchPage("cfa");
+}
+
+export async function fetchBostonCfa(draftMode = false): Promise<PageData> {
+  return fetchPage("bostonCfa", draftMode);
+}
+
+export async function fetchBcnCfa(draftMode = false): Promise<PageData> {
+  return fetchPage("bcnCfa", draftMode);
+}
+
+export async function fetchVirtualCfa(draftMode = false): Promise<PageData> {
+  return fetchPage("virtualCfa", draftMode);
 }
 
 export async function fetchWhyAttend(): Promise<PageData> {
