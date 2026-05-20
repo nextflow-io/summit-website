@@ -1,4 +1,5 @@
 import { sanityClient } from "sanity:client";
+import { getDraftClient } from "./draftClient";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -28,6 +29,7 @@ export interface AgendaItem {
     _id: string;
     title?: string;
     slug?: { current?: string } | string;
+    youtube?: string;
     associatedSpeakers?: AgendaItemSpeaker[];
   };
   associatedSpeakers?: AgendaItemSpeaker[];
@@ -63,6 +65,7 @@ const agendaItemFragment = `
     _id,
     title,
     slug,
+    youtube,
     associatedSpeakers[]->{
       _id,
       name,
@@ -132,22 +135,25 @@ const filterByLocation = (
 
 // ─── Fetchers ─────────────────────────────────────────────────────────────────
 
-export const fetchBostonAgenda = async (): Promise<AgendaData | null> => {
-  const data = await sanityClient.fetch<AgendaData>(
+export const fetchBostonAgenda = async (draftMode = false): Promise<AgendaData | null> => {
+  const client = draftMode ? getDraftClient() : sanityClient;
+  const data = await client.fetch<AgendaData>(
     `*[_type == "bostonAgenda"][0]{ ${agendaFields} }`
   );
   return filterByLocation(data, 'boston');
 };
 
-export const fetchBcnAgenda = async (): Promise<AgendaData | null> => {
-  const data = await sanityClient.fetch<AgendaData>(
+export const fetchBcnAgenda = async (draftMode = false): Promise<AgendaData | null> => {
+  const client = draftMode ? getDraftClient() : sanityClient;
+  const data = await client.fetch<AgendaData>(
     `*[_type == "bcnAgenda"][0]{ ${agendaFields} }`
   );
   return filterByLocation(data, 'barcelona');
 };
 
-export const fetchVirtualAgenda = async (): Promise<AgendaData | null> => {
-  const data = await sanityClient.fetch<AgendaData>(
+export const fetchVirtualAgenda = async (draftMode = false): Promise<AgendaData | null> => {
+  const client = draftMode ? getDraftClient() : sanityClient;
+  const data = await client.fetch<AgendaData>(
     `*[_type == "virtualAgenda"][0]{ ${agendaFields} }`
   );
   return filterByLocation(data, 'virtual');

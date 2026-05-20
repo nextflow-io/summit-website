@@ -9,7 +9,8 @@ declare namespace App {
 }
 
 interface ImportMetaEnv {
-  readonly SANITY_READ_TOKEN: string;
+  readonly SANITY_READ_TOKEN?: string;
+  readonly SANITY_PREVIEW_SECRET?: string;
 }
 
 interface Window {

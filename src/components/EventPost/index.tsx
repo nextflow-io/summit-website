@@ -114,13 +114,11 @@ const EventPosts: React.FC<Props> = ({ post, sessionDate, sessionType }) => {
             <div className="mt-2">Coauthors: {post.coauthors}</div>
           )}
 
-          <div className="flex flex-row pt-10 ">
+          <div className="flex flex-row flex-wrap gap-3 pt-10">
             {post.projectLink && (
-              <div className="mr-4">
-                <Button light arrow href={post.projectLink}>
-                  Link to Project
-                </Button>
-              </div>
+              <Button light arrow href={post.projectLink}>
+                Link to Project
+              </Button>
             )}
             {post.poster?.asset.url && (
               <Button light arrow href={post.poster.asset.url}>
@@ -133,23 +131,24 @@ const EventPosts: React.FC<Props> = ({ post, sessionDate, sessionType }) => {
 
       {/* body */}
       {post?.body && (
-        <div className=" bg-white w-full  py-4 md:pt-10 md:pb-0 px-4">
-          <div className="container-md bg-nextflow  text-black p-4 md:p-8">
+        <div className="bg-white w-full py-4 md:pt-10 md:pb-0 px-4">
+          <div className="container-md bg-nextflow text-black p-4 md:p-8">
             <PortableText
-              className=" container-lg t-4 monospace text-sm"
+              className="container-lg t-4 monospace text-sm"
               value={post.body}
             />
           </div>
-
-          {post.youtube && (
-            <div className="container-md w-full h-full  bg-nextflow py-8">
-              <YouTubeEmbed id={post.youtube} />
-            </div>
-          )}
         </div>
       )}
 
       {/* youtube */}
+      {post.youtube && (
+        <div id="recording" className="bg-white w-full px-4 py-8">
+          <div className="container-md w-full h-full bg-nextflow py-8">
+            <YouTubeEmbed id={post.youtube} />
+          </div>
+        </div>
+      )}
 
       {/* poster */}
       {/* {post.poster?.asset?.url && (

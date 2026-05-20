@@ -32,7 +32,7 @@ const speakerProjection = `
 
 type SpeakersPayload = { speakers?: any[] } | null;
 
-async function fetchCanonicalSpeakers(location: "boston" | "virtual"): Promise<SpeakersPayload> {
+async function fetchCanonicalSpeakers(location: "boston" | "barcelona" | "virtual"): Promise<SpeakersPayload> {
   return sanityClient.fetch(
     `{
       "speakers": *[_type == "speaker" && location == $location && (${YEAR_FILTER})]
@@ -44,7 +44,7 @@ async function fetchCanonicalSpeakers(location: "boston" | "virtual"): Promise<S
   );
 }
 
-async function fetchCuratedSpeakers(curatedType: "bostonSpeakers" | "virtualSpeakers"): Promise<SpeakersPayload> {
+async function fetchCuratedSpeakers(curatedType: "bostonSpeakers" | "bcnSpeakers" | "virtualSpeakers"): Promise<SpeakersPayload> {
   return sanityClient.fetch(
     `*[_type == $curatedType && (${YEAR_FILTER})]
       | order(_updatedAt desc)[0]{
@@ -79,8 +79,8 @@ async function fetchLegacySpeakers(
 }
 
 async function resolveSpeakers(options: {
-  location: "boston" | "virtual";
-  curatedType: "bostonSpeakers" | "virtualSpeakers";
+  location: "boston" | "barcelona" | "virtual";
+  curatedType: "bostonSpeakers" | "bcnSpeakers" | "virtualSpeakers";
   legacyType: "speakerListing" | "speakerListingVirtual";
   legacyField: "person" | "personVirtual";
 }): Promise<SpeakersPayload> {
@@ -93,10 +93,16 @@ async function resolveSpeakers(options: {
   return fetchLegacySpeakers(options.legacyType, options.legacyField);
 }
 
-const [getAllSpeakers, getAllVirtualSpeakers] = await Promise.all([
+const [getAllSpeakers, getAllBcnSpeakers, getAllVirtualSpeakers] = await Promise.all([
   resolveSpeakers({
     location: "boston",
     curatedType: "bostonSpeakers",
+    legacyType: "speakerListing",
+    legacyField: "person",
+  }),
+  resolveSpeakers({
+    location: "barcelona",
+    curatedType: "bcnSpeakers",
     legacyType: "speakerListing",
     legacyField: "person",
   }),
@@ -108,5 +114,4 @@ const [getAllSpeakers, getAllVirtualSpeakers] = await Promise.all([
   }),
 ]);
 
-
-export { getAllSpeakers, getAllVirtualSpeakers };
+export { getAllSpeakers, getAllBcnSpeakers, getAllVirtualSpeakers };

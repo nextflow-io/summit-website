@@ -1,11 +1,12 @@
 ---
+export const prerender = false
 import Layout from "@layouts/Base.astro";
 import Meta from '@components/Meta/Meta.astro';
 import StandardPage from "@modules/StandardPage"
 import ImageGallery from "@components/Gallery";
 import { fetchBcnGallery } from '@data/fetchers';
 import type { PageData } from '@data/types';
-import { fetchSettings, type SettingsData } from '@data/settings'; 
+import { fetchSettings, type SettingsData } from '@data/settings';
 
 interface SanityImage {
   _key: string;
@@ -20,7 +21,8 @@ interface SanityImage {
   };
 }
 
-const gallery = await fetchBcnGallery() as PageData & { images?: SanityImage[] };
+const draftMode = Astro.locals.draftMode ?? false
+const gallery = await fetchBcnGallery(draftMode) as PageData & { images?: SanityImage[] };
 const settings: SettingsData = await fetchSettings();
 ---
 

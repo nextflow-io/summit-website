@@ -1,11 +1,13 @@
 ---
+export const prerender = false
 import Layout from "@layouts/Base.astro";
 import NoFooter from "@layouts/NoFooter.astro";
 import Meta from '@components/Meta/Meta.astro';
 import { fetchBcnRegister} from '@data/fetchers';
 import type { PageData } from '@data/types';
-import { fetchSettings, type SettingsData } from '@data/settings'; 
-const register: PageData = await fetchBcnRegister();
+import { fetchSettings, type SettingsData } from '@data/settings';
+const draftMode = Astro.locals.draftMode ?? false
+const register: PageData = await fetchBcnRegister(draftMode);
 const settings: SettingsData = await fetchSettings();
 
 ---
