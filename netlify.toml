@@ -3,6 +3,14 @@
   path = "/og.png"
 
 
+# Allow assets to be loaded cross-origin so the site works when
+# proxied from https://summit.nextflow.io/2025/...
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+
+
 [[redirects]]
   from = "https://summit.nextflow.io/2025/boston/agenda/product-keynote"
   to = "/2025/boston/agenda/from-pipelines-to-platform"
