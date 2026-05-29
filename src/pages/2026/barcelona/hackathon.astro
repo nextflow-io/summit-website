@@ -1,11 +1,24 @@
 ---
-import Layout from "@layouts/Base.astro";
-import Meta from '@components/Meta/Meta.astro';
-import { fetchSettings, type SettingsData } from '@data/settings'; 
+export const prerender = false
+import Layout from '@layouts/Base.astro';
+import StandardPage from "@modules/StandardPage"
 
+import { fetchBcnHackathon } from '@data/fetchers';
+import type { PageData } from '@data/types';
+import { fetchSettings, type SettingsData } from '@data/settings';
+import Meta from '@components/Meta/Meta.astro';
+
+const draftMode = Astro.locals.draftMode ?? false
 const settings: SettingsData = await fetchSettings();
+const hackathon: PageData = await fetchBcnHackathon(draftMode);
+
 ---
 
-<Layout namespace="2026/barcelona">
-   <Meta title="Hackathon" sanityImage="default" settings={settings}/>
+<Layout>
+   <Meta
+    title={hackathon?.seo?.title}
+    settings={settings}
+    imgUrl={hackathon?.seo?.shareImage?.asset?.url}
+  />
+  <StandardPage data={hackathon} client:load/>
 </Layout>
