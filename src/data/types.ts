@@ -105,9 +105,21 @@ export interface FAQPageData {
   faqs: FAQItem[];
 }
 
+export interface PageMeta {
+  title?: string;
+  description?: string;
+  noIndex?: boolean;
+  shareImage?: {
+    asset?: {
+      url: string;
+    };
+  };
+}
+
 export interface PageData {
   _id: string;
   _type: string;
+  seo?: PageMeta;
   hero: Hero;
   featureSection?: FeatureSection[];
   faqSection?: FAQItem[];
