@@ -1,0 +1,22 @@
+---
+export const prerender = false
+import Layout from '@layouts/Base.astro';
+import StandardPage from '@modules/StandardPage';
+import { fetchVirtualCfa } from '@data/fetchers';
+import type { PageData } from '@data/types';
+import { fetchSettings, type SettingsData } from '@data/settings';
+import Meta from '@components/Meta/Meta.astro';
+
+const draftMode = Astro.locals.draftMode ?? false
+const settings: SettingsData = await fetchSettings();
+const cfa: PageData = await fetchVirtualCfa(draftMode);
+---
+
+<Layout>
+  <Meta
+    title="Call for Speakers and Posters"
+    settings={settings}
+    imgUrl={cfa?.seo?.shareImage?.asset?.url}
+  />
+  <StandardPage data={cfa} client:load />
+</Layout>

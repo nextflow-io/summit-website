@@ -1,21 +1,22 @@
 ---
-import Layout from "@layouts/Base.astro";
+export const prerender = false
+import Layout from '@layouts/Base.astro';
 import Meta from '@components/Meta/Meta.astro';
-import { fetchSettings, type SettingsData } from '@data/settings'; 
+import StandardPage from "@modules/StandardPage"
+import { fetchBcnOverview } from '@data/fetchers';
+import type { PageData } from '@data/types';
+import { fetchSettings, type SettingsData } from '@data/settings';
+
+const draftMode = Astro.locals.draftMode ?? false
+const overview: PageData = await fetchBcnOverview(draftMode);
 const settings: SettingsData = await fetchSettings();
 ---
 
-<Layout namespace="2026/barcelona">
-   <Meta title="Overview" sanityImage="default"  settings={settings}/>
-  <div class="bg-black text-white">
-      <section class="py-20 bg-black text-white">
-      <div class="container-lg">
-        <h1 class="h3 max-w-[700px] mb-6">Nextflow Hackathon & nf-core Training</h1>
-        <p class="max-w-[500px]">
-          Check back soon to view information for this year's Nextflow Hackathon & nf-core Training in Barcelona 2026.
-        </p>
-      </div>
-    </section>
-  </div>
-
+<Layout showHeader={false}>
+  <Meta
+    title="Overview"
+    settings={settings}
+    imgUrl={overview?.seo?.shareImage?.asset?.url}
+  />
+  <StandardPage data={overview} client:load />
 </Layout>

@@ -37,16 +37,16 @@ const PageLayout: React.FC<PageLayoutProps> = ({
   children 
 }) => {
   return (
-    <div className="bg-black text-white">
+    <div className=" text-white">
       {hero && (
         <LandingHero
-          title={hero.headline}
-          content={hero.bodycopy}
+          title={hero?.headline}
+          content={hero?.bodycopy}
           ctaText1={hero.button1?.buttonText}
           ctaLink1={formatLink(hero.button1?.buttonUrl)}
           ctaText2={hero.button2?.buttonText}
           ctaLink2={formatLink(hero.button2?.buttonUrl)}
-          headlineSize={hero.headlineSize}
+          headlineSize={hero?.headlineSize}
           image={hero.image?.image ? urlFor(hero.image.image).url() : null}
           imageAlt={hero.image?.imageAlt || hero.image?.alt}
         />
@@ -56,16 +56,16 @@ const PageLayout: React.FC<PageLayoutProps> = ({
         const sectionButtonUrl = getButtonUrl(section?.button);
         return (
           section?.boxes &&
-          section.boxes.length > 0 && (
+          section?.boxes?.length > 0 && (
             <FeatureBlocks
               key={index}
-              headline={section.headline}
-              bodycopy={section.bodycopy}
+              headline={section?.headline}
+              bodycopy={section?.bodycopy}
               buttonText={section.button?.buttonText}
-              buttonUrl={sectionButtonUrl}
-              boxes={section.boxes.map(transformFeatureBox)}
-              bgStyle={section.bgStyle}
-              hideSection={section.hideSection}
+              buttonUrl={section?.button?.buttonUrl}
+              boxes={section.boxes?.map(transformFeatureBox)}
+              bgStyle={section?.bgStyle}
+              hideSection={section?.hideSection}
             />
           )
         );

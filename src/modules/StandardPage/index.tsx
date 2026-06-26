@@ -7,9 +7,9 @@ type Props = {
 const StandardPage: React.FC<Props> = ({ data }) => {
   return (
     <PageLayout
-      hero={data.hero}
-      featureSection={data.featureSection}
-      faqSection={data.faqSection}
+      hero={data?.hero}
+      featureSection={data?.featureSection}
+      faqSection={data?.faqSection}
     />
   );
 };

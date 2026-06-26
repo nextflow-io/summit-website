@@ -1,39 +1,41 @@
 ---
-import Layout from "@layouts/Base.astro";
+import Layout from '@layouts/Base.astro';
 import Meta from '@components/Meta/Meta.astro';
-import {getAllVirtualSpeakers} from "@data/speakers";
-import { fetchSettings, type SettingsData } from '@data/settings'; 
-const sortedMembers = getAllVirtualSpeakers[0].speakers.sort((a, b) =>
+import SpeakersSection from '@modules/SpeakersSection';
+import { fetchSettings, type SettingsData } from '@data/settings';
+import { getAllVirtualSpeakers } from '@data/speakers';
+
+const sortedMembers = getAllVirtualSpeakers?.speakers?.sort((a, b) =>
   a.name.localeCompare(b.name)
 );
+
 const settings: SettingsData = await fetchSettings();
 ---
 
 <Layout namespace="2026/virtual">
-  <Meta title="Speakers" sanityImage="default" settings={settings}/>
-
-  <section class="py-20 bg-black text-white">
-    <div class="container-lg">
+  <Meta title="Speakers" sanityImage="default" settings={settings} />
+  <section class="py-20">
+    <div class="container-xl">
       <h1 class="h3 mb-4">Speakers</h1>
-      <p>Check back soon for a list of this year's speakers and presenters.</p>
+
     </div>
   </section>
 
-  <!-- <div class="container mt-14">
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
-      {
-        sortedMembers.map((name, index) => (
-           <div>
-           <SpeakersSection 
-           person={name} 
-           index={index}
-           location="virtual"
-           client:only="react"/>
-           </div>
-        ))
-      }
-
+  <section class="bg-white text-black py-10">
+    <div class="container-xl">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+        {
+          sortedMembers?.map((person) => (
+            <div class="h-full min-h-0">
+              <SpeakersSection
+                person={person}
+                location="virtual"
+                client:only="react"
+              />
+            </div>
+          ))
+        }
+      </div>
     </div>
-  </div> -->
-
+  </section>
 </Layout>

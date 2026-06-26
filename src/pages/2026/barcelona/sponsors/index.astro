@@ -1,13 +1,34 @@
 ---
 import Layout from '@layouts/Base.astro';
+import sponsors from '@data/sponsors';
+import Sponsor from '@components/Sponsor';
 import Meta from '@components/Meta/Meta.astro';
-import { fetchSettings, type SettingsData } from '@data/settings'; 
+import { fetchSettings, type SettingsData } from '@data/settings';
 const settings: SettingsData = await fetchSettings();
 ---
 
 <Layout namespace="2026/barcelona">
-  <Meta title="Sponsors" sanityImage="default"  settings={settings}/>
-  <section class="mt-10 md:mt-20 mb-24 container">
-    <h1 class="h1 mb-4 md:mb-8">Sponsors</h1>
-  </section>
+  <Meta title="Sponsors" sanityImage="default" settings={settings} />
+  <div class="bg-white text-black">
+    <div class="bg-black text-white">
+      <h1 class="container-xl pt-24 pb-10  md:py-16 h3 max-w-[600px]">
+        {
+          sponsors.barcelona?.length > 0 ? (
+            <>Thanks to our Sponsors</>
+          ) : (
+            <>Coming soon.</>
+          )
+        }
+      </h1>
+    </div>
+    <section class="container-xl py-10 md:py-14">
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
+        {
+          sponsors.barcelona?.map((sponsor) => (
+            <Sponsor sponsor={sponsor} location="barcelona" />
+          ))
+        }
+      </div>
+    </section>
+  </div>
 </Layout>

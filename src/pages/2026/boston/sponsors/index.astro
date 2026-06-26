@@ -3,24 +3,32 @@ import Layout from '@layouts/Base.astro';
 import sponsors from '@data/sponsors';
 import Sponsor from '@components/Sponsor';
 import Meta from '@components/Meta/Meta.astro';
-import { fetchSettings, type SettingsData } from '@data/settings'; 
+import { fetchSettings, type SettingsData } from '@data/settings';
 const settings: SettingsData = await fetchSettings();
 ---
 
 <Layout namespace="2026/boston">
-  <Meta title="Sponsors" sanityImage="default"  settings={settings}/>
-  <section class="container-xl py-16">
-    <h1 class="h3 mb-4 md:mb-8 max-w-[600px]">
-      {sponsors.boston?.length > 0 ? (<>Thanks to our Sponsors</>) : (
-        <>Coming soon.</>
-      )}
-    </h1>
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
-      {
-        sponsors.boston?.map((sponsor) => (
-          <Sponsor sponsor={sponsor} location="boston" />
-        ))
-      }
+  <Meta title="Sponsors" sanityImage="default" settings={settings} />
+  <div class="bg-white text-black">
+    <div class="bg-black text-white">
+      <h1 class="container-xl pt-24 pb-10  md:py-16 h3 max-w-[600px]">
+        {
+          sponsors.boston?.length > 0 ? (
+            <>Thanks to our Sponsors</>
+          ) : (
+            <>Coming soon.</>
+          )
+        }
+      </h1>
     </div>
-  </section>
+    <section class="container-xl py-10 md:py-14">
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
+        {
+          sponsors.boston?.map((sponsor) => (
+            <Sponsor sponsor={sponsor} location="boston" />
+          ))
+        }
+      </div>
+    </section>
+  </div>
 </Layout>

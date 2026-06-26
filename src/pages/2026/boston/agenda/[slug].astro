@@ -1,23 +1,48 @@
 ---
-import Layout from "@layouts/Base.astro";
-import{getAllEventPosts} from "@data/events";
-import EventPost from "@components/EventPost";
+import Layout from '@layouts/Base.astro';
+import { getAllEventPosts } from '@data/events';
+import { bostonPosterSlugs } from '@data/posters';
+import EventPost from '@components/EventPost';
 import Meta from '@components/Meta/Meta.astro';
-import { fetchSettings, type SettingsData } from '@data/settings'; 
-export function getStaticPaths() {
-  return getAllEventPosts?.map((post) => ({
-    params: { slug: post.slug.current },
-    props: {post},
-  }));
+import { fetchSettings, type SettingsData } from '@data/settings';
+import {
+  fetchBostonAgenda,
+  findAgendaDateForEventSlug,
+} from '@data/agenda';
+
+export async function getStaticPaths() {
+  const agenda = await fetchBostonAgenda();
+  const locationEvents = getAllEventPosts?.filter((post) => post.location === 'boston') ?? [];
+
+  return locationEvents.map((post) => {
+    const slug = typeof post.slug === 'string' ? post.slug : post.slug?.current;
+    return {
+      params: { slug },
+      props: {
+        post,
+        sessionDate: findAgendaDateForEventSlug(agenda, slug),
+        sessionType: bostonPosterSlugs.has(slug) ? 'Poster' : 'Talk',
+      },
+    };
+  });
 }
 
-const { post } = Astro.props;
+const { post, sessionDate, sessionType } = Astro.props;
 const settings: SettingsData = await fetchSettings();
 ---
 
 <Layout namespace="2026/boston">
-  <Meta title="Agenda" sanityImage="default" settings={settings}/>
-    <section class="mt-10 md:mt-20 mb-24 container smaller mx-auto">
-    <EventPost post={post}   client:only="react" />
+  <Meta
+    title={`${post.title} – ${post.associatedSpeakers?.map((s) => s.name).join(', ')}`}
+    imgUrl={post.mainImage?.asset.url}
+    settings={settings}
+  />
+  <section class="">
+    <EventPost
+      post={post}
+      sessionDate={sessionDate}
+      sessionType={sessionType}
+      client:only="react"
+    />
   </section>
 </Layout>

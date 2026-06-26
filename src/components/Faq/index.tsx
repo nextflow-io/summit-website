@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import styles from './faq.module.css';
 import PortableText from '@components/PortableText';
 import { SquarePixel } from '@components/SquarePixel';
+import { motion, AnimatePresence } from 'framer-motion';
 
 type FaqItemProps = {
   question: string;
@@ -19,8 +20,16 @@ const DropDownItem: React.FC<FaqItemProps> = ({
 }) => {
   const contentHeight = useRef<HTMLDivElement>(null);
 
+  const fadeIn = {
+    initial: { opacity: 0 },
+    whileInView: { opacity: 1 },
+    viewport: { once: true },
+  };
+
   return (
-    <div className={`border-white border-b first:border-t py-6 md:py-8`}>
+    <div
+      className={`text-white border-white border-b first:border-t py-6 md:py-8`}
+    >
       <button
         className={`flex flex-row justify-between items-start w-full hover:text-nextflow transition-all duration-500 ease-in-out ${isOpen ? 'active text-nextflow' : ''}`}
         onClick={onClick}
@@ -48,9 +57,7 @@ const DropDownItem: React.FC<FaqItemProps> = ({
             : { height: '0px', overflow: 'hidden', opacity: 0 }
         }
       >
-        <div
-          className={clsx(styles.faqAnswer, `bodycopy text-nextflow`)}
-        >
+        <div className={clsx(styles.faqAnswer, `bodycopy text-nextflow`)}>
           {answer && Array.isArray(answer) && answer.length > 0 ? (
             <PortableText value={answer} />
           ) : typeof answer === 'string' ? (
@@ -73,7 +80,13 @@ type FaqProps = {
   noPixels?: boolean;
 };
 
-const Faq: React.FC<FaqProps> = ({ className, data, title = 'FAQ', noSticky, noPixels }) => {
+const Faq: React.FC<FaqProps> = ({
+  className,
+  data,
+  title = 'FAQ',
+  noSticky,
+  noPixels,
+}) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const handleItemClick = (index: number) => {
@@ -84,37 +97,63 @@ const Faq: React.FC<FaqProps> = ({ className, data, title = 'FAQ', noSticky, noP
     return null;
   }
 
+  const fadeIn = {
+    initial: { opacity: 0 },
+    whileInView: { opacity: 1 },
+    viewport: { once: true },
+  };
+
   return (
-    <section className={`${className} relative bg-black py-20`}>
-      <div className={`hidden ${noPixels ? 'hidden': 'md:block'} absolute top-40 left-0 z-10`}>
-          <SquarePixel className="absolute top-0 left-0" initialColor="#31C9AC" />
-          <SquarePixel className="absolute top-[18px] left-[18px]" />
-          <SquarePixel className="absolute top-[36px] left-[36px]"  initialColor="#B6ECE2"/>
-          <SquarePixel className="absolute top-[54px] left-[18px]" initialColor="#31C9AC" />
-          <SquarePixel className="absolute top-[72px] left-0" initialColor="#31C9AC"/>
+    <motion.section
+      {...fadeIn}
+      transition={{ duration: 0.3, ease: 'linear' }}
+      className={`${className} relative bg-black py-20`}
+    >
+      <div
+        className={`hidden ${noPixels ? 'hidden' : 'md:block'} absolute top-40 left-0 z-10`}
+      >
+        <SquarePixel className="absolute top-0 left-0" initialColor="#31C9AC" />
+        <SquarePixel className="absolute top-[18px] left-[18px]" />
+        <SquarePixel
+          className="absolute top-[36px] left-[36px]"
+          initialColor="#B6ECE2"
+        />
+        <SquarePixel
+          className="absolute top-[54px] left-[18px]"
+          initialColor="#31C9AC"
+        />
+        <SquarePixel
+          className="absolute top-[72px] left-0"
+          initialColor="#31C9AC"
+        />
       </div>
-      
-      <div className={`${noPixels ? 'hidden': 'md:block'}`}>
-      <SquarePixel className="absolute top-6 right-0" />
-      <SquarePixel
-        initialColor="#B6ECE2"
-        className="absolute bottom-0 right-0"
-      />
-      <SquarePixel
-        initialColor="#fff"
-        className="absolute bottom-[18px] right-[18px]"
-      />
-      <SquarePixel
-        initialColor="#56D3BA"
-        className="absolute bottom-[0px] left-[18px]"
-      />
-      <SquarePixel
-        initialColor="#fff"
-        className="absolute bottom-[18px] left-[36px]"
-      />
+
+      <div className={`${noPixels ? 'hidden' : 'md:block'}`}>
+        <SquarePixel className="absolute top-6 right-0" />
+        <SquarePixel
+          initialColor="#B6ECE2"
+          className="absolute bottom-0 right-0"
+        />
+        <SquarePixel
+          initialColor="#fff"
+          className="absolute bottom-[18px] right-[18px]"
+        />
+        <SquarePixel
+          initialColor="#56D3BA"
+          className="absolute bottom-[0px] left-[18px]"
+        />
+        <SquarePixel
+          initialColor="#fff"
+          className="absolute bottom-[18px] left-[36px]"
+        />
       </div>
-      <div id={title} className="container-xl relative w-full flex flex-col sm:flex-row">
-        <div className={`w-full mb-6 sm:mb-0 ${noSticky ? '' : 'sm:sticky'} sm:top-40 self-start`}>
+      <div
+        id={title}
+        className="container-xl relative w-full flex flex-col sm:flex-row text-white"
+      >
+        <div
+          className={`w-full mb-6 sm:mb-0 ${noSticky ? '' : 'sm:sticky'} sm:top-40 self-start`}
+        >
           <h2 className="h4 relative z-20">{title}</h2>
         </div>
         <div className="w-full">
@@ -129,7 +168,7 @@ const Faq: React.FC<FaqProps> = ({ className, data, title = 'FAQ', noSticky, noP
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

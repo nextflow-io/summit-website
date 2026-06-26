@@ -1,10 +1,24 @@
 ---
-import Layout from "@layouts/Base.astro";
+export const prerender = false
+import Layout from '@layouts/Base.astro';
 import Meta from '@components/Meta/Meta.astro';
-import { fetchSettings, type SettingsData } from '@data/settings'; 
+import StandardPage from "@modules/StandardPage"
+import { fetchVirtualOverview} from '@data/fetchers';
+import type { PageData } from '@data/types';
+import SignUpForm from '@modules/SignUpForm';
+import { fetchSettings, type SettingsData } from '@data/settings';
+
+const draftMode = Astro.locals.draftMode ?? false
+const overview: PageData = await fetchVirtualOverview(draftMode);
 const settings: SettingsData = await fetchSettings();
 ---
 
-<Layout namespace="2026/virtual">
-  <Meta title="Virtual" sanityImage="default"  settings={settings}/>
+<Layout showHeader={false}>
+    <Meta 
+    title="Overview" 
+    settings={settings}
+    sanityImage="virtual"
+  />
+  <StandardPage data={overview}  client:load/>
+  <!-- <SignUpForm client:load /> -->
 </Layout>
