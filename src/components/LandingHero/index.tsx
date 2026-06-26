@@ -39,6 +39,17 @@ const fadeInUp = {
   viewport: { once: true },
 };
 
+// Right-facing pacman in a 0–20 viewBox (circle centred at 10,10, radius 10 so
+// it touches the box edges). The mouth is the wedge cut out on the right; the
+// open/closed pair is morphed by the SMIL <animate> below to make it chomp.
+const PAC_MOUTH_OPEN = 'M10 10 L2.12 3.84 A10 10 0 1 1 2.12 16.16 Z';
+const PAC_MOUTH_CLOSED = 'M10 10 L0.02 9.3 A10 10 0 1 1 0.02 10.7 Z';
+
+// Smallest signed rotation (degrees) from `current` to `target`, so the icon
+// always turns the short way (e.g. left → down is 90°, never 270°).
+const shortestAngleDelta = (target: number, current: number) =>
+  ((((target - current) % 360) + 540) % 360) - 180;
+
 const LandingHero: React.FC<HeroProps> = ({
   title,
   subtitle,
@@ -57,6 +68,10 @@ const LandingHero: React.FC<HeroProps> = ({
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [pacmanMode, setPacmanMode] = useState(false);
   const pixelsRef = useRef<{ getCanvas: () => HTMLCanvasElement | null }>(null);
+
+  // Pacman launch icon faces the cursor, snapped to the nearest 90°
+  const pacBtnRef = useRef<HTMLButtonElement>(null);
+  const [pacDir, setPacDir] = useState(0);
 
   const [hashtagCopied, setHashtagCopied] = useState(false);
 
@@ -77,6 +92,37 @@ const LandingHero: React.FC<HeroProps> = ({
       document.body.style.overflow = 'unset';
     };
   }, [isModalOpen]);
+
+  // Point the pacman launch icon's mouth towards the cursor, in 90° jumps.
+  // Throttled to one update per frame since this listens on the whole window.
+  useEffect(() => {
+    if (pacmanMode) return;
+    let queued = false;
+    let last = { x: 0, y: 0 };
+    const update = () => {
+      queued = false;
+      const btn = pacBtnRef.current;
+      if (!btn) return;
+      const r = btn.getBoundingClientRect();
+      const dx = last.x - (r.left + r.width / 2);
+      const dy = last.y - (r.top + r.height / 2);
+      // atan2 yields [-180,180]; +180 maps it to [0,360] for the snap below.
+      const deg = (Math.atan2(dy, dx) * 180) / Math.PI + 180;
+      const target = ((Math.round(deg / 90) * 90) % 360 + 360) % 360;
+      // pacDir is a continuous accumulator: adding the shortest delta keeps the
+      // CSS rotation turning the short way (returning prev unchanged when the
+      // direction holds, so React skips the re-render).
+      setPacDir((prev) => prev + shortestAngleDelta(target, ((prev % 360) + 360) % 360));
+    };
+    const handleMove = (e: MouseEvent) => {
+      last = { x: e.clientX, y: e.clientY };
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(update);
+    };
+    window.addEventListener('mousemove', handleMove);
+    return () => window.removeEventListener('mousemove', handleMove);
+  }, [pacmanMode]);
 
   // Exit pacman mode on Escape key
   useEffect(() => {
@@ -251,16 +297,40 @@ const LandingHero: React.FC<HeroProps> = ({
 
       {/* Pacman Button */}
       <button
+        ref={pacBtnRef}
         onClick={() => setPacmanMode((v) => !v)}
         className={`z-50 cursor-pointer absolute top-4 right-8 w-[18px] h-[18px] flex justify-center items-center transition-colors monospace text-[10px] leading-none ${
           pacmanMode
             ? 'bg-nextflow-600 text-black hover:bg-nextflow-800'
-            : 'bg-gray-100 text-black hover:bg-gray-300'
+            : 'text-nextflow-600'
         }`}
         aria-label={pacmanMode ? 'Exit Pacman' : 'Play Pacman'}
         title={pacmanMode ? 'Exit Pacman (Esc)' : 'Play Pacman'}
       >
-        {pacmanMode ? 'x' : '\u25CF'}
+        {pacmanMode ? (
+          'x'
+        ) : (
+          <svg
+            viewBox="0 0 20 20"
+            width="18"
+            height="18"
+            aria-hidden="true"
+            focusable="false"
+            style={{
+              transform: `rotate(${pacDir}deg)`,
+              transition: 'transform 0.15s ease-out',
+            }}
+          >
+            <path fill="#0DC09D">
+              <animate
+                attributeName="d"
+                dur="0.4s"
+                repeatCount="indefinite"
+                values={`${PAC_MOUTH_OPEN};${PAC_MOUTH_CLOSED};${PAC_MOUTH_OPEN}`}
+              />
+            </path>
+          </svg>
+        )}
       </button>
 
       {/* Help Button */}
