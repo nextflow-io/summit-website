@@ -1,14 +1,16 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import clsx from 'clsx';
 import Button from '@components/Button';
 import {
   categories,
+  defaultColors,
   defaultSelection,
+  palette,
   pickableCategories,
-  resolveLayers,
+  type ColorSelection,
   type Selection,
 } from './manifest';
-import { composeCard } from './compose';
+import { composeCard, renderAvatar } from './compose';
 
 /** Decorative checkered corner, echoing the arcade "console" motif on the site. */
 const Corner: React.FC<{ className?: string }> = ({ className }) => (
@@ -25,29 +27,33 @@ const Corner: React.FC<{ className?: string }> = ({ className }) => (
   </svg>
 );
 
-const LivePreview: React.FC<{ selection: Selection }> = ({ selection }) => {
-  const layers = resolveLayers(selection);
+const LivePreview: React.FC<{ selection: Selection; colors: ColorSelection }> = ({
+  selection,
+  colors,
+}) => {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  useEffect(() => {
+    if (canvasRef.current) {
+      renderAvatar(selection, colors, canvasRef.current).catch(() => {});
+    }
+  }, [selection, colors]);
   return (
     <div
       className="relative w-full max-w-[280px] mx-auto bg-nextflow-100"
       style={{ aspectRatio: '300 / 432' }}
     >
-      {layers.map((src) => (
-        <img
-          key={src}
-          src={src}
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 w-full h-full object-contain"
-          style={{ imageRendering: 'pixelated' }}
-        />
-      ))}
+      <canvas
+        ref={canvasRef}
+        className="absolute inset-0 w-full h-full object-contain"
+        style={{ imageRendering: 'pixelated' }}
+      />
     </div>
   );
 };
 
 const AvatarConsole: React.FC = () => {
   const [selection, setSelection] = useState<Selection>(defaultSelection);
+  const [colors, setColors] = useState<ColorSelection>(defaultColors);
   const [generating, setGenerating] = useState(false);
   const [cardUrl, setCardUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -68,12 +74,25 @@ const AvatarConsole: React.FC = () => {
     setCardUrl(null);
   };
 
+  const setColor = (channelId: string, optionId: string) => {
+    setColors((prev) => ({ ...prev, [channelId]: optionId }));
+    setCardUrl(null);
+  };
+
   const randomize = () => {
-    setSelection(() =>
+    setSelection(
       Object.fromEntries(
         categories.map((c) => {
           const v = c.variants[Math.floor(Math.random() * c.variants.length)];
           return [c.id, v.id];
+        })
+      )
+    );
+    setColors(
+      Object.fromEntries(
+        palette.map((ch) => {
+          const o = ch.options[Math.floor(Math.random() * ch.options.length)];
+          return [ch.id, o.id];
         })
       )
     );
@@ -84,7 +103,7 @@ const AvatarConsole: React.FC = () => {
     setGenerating(true);
     setError(null);
     try {
-      const blob = await composeCard(selection);
+      const blob = await composeCard(selection, colors);
       if (cardUrl) URL.revokeObjectURL(cardUrl);
       const url = URL.createObjectURL(blob);
       setCardUrl(url);
@@ -146,7 +165,7 @@ const AvatarConsole: React.FC = () => {
             {/* Live preview */}
             <div className="flex flex-col items-center justify-center">
               <div className="w-full bg-black border border-nextflow-600/20 p-6">
-                <LivePreview selection={selection} />
+                <LivePreview selection={selection} colors={colors} />
               </div>
               <button
                 type="button"
@@ -192,6 +211,37 @@ const AvatarConsole: React.FC = () => {
                       >
                         &#9654;
                       </button>
+                    </div>
+                  </div>
+                );
+              })}
+
+              {/* Color swatches */}
+              {palette.map((channel) => {
+                const activeId = colors[channel.id] ?? channel.options[0].id;
+                return (
+                  <div key={channel.id}>
+                    <div className="monospace text-xxs uppercase tracking-widest text-gray-600 mb-1">
+                      {channel.label}
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {channel.options.map((opt) => (
+                        <button
+                          key={opt.id}
+                          type="button"
+                          title={opt.label}
+                          aria-label={`${channel.label}: ${opt.label}`}
+                          aria-pressed={activeId === opt.id}
+                          onClick={() => setColor(channel.id, opt.id)}
+                          className={clsx(
+                            'w-7 h-7 border-2 transition-transform',
+                            activeId === opt.id
+                              ? 'border-nextflow-600 scale-110'
+                              : 'border-white/20 hover:border-white/50'
+                          )}
+                          style={{ backgroundColor: opt.color }}
+                        />
+                      ))}
                     </div>
                   </div>
                 );
