@@ -53,14 +53,30 @@ const LivePreview: React.FC<{ selection: Selection; colors: ColorSelection }> = 
   );
 };
 
+type Mode = 'avatar' | 'photo';
+
 const AvatarConsole: React.FC = () => {
+  const [mode, setMode] = useState<Mode>('avatar');
   const [selection, setSelection] = useState<Selection>(defaultSelection);
   const [colors, setColors] = useState<ColorSelection>(defaultColors);
   const [event, setEvent] = useState<string>(defaultEvent);
+  const [photoUrl, setPhotoUrl] = useState<string | null>(null);
   const [generating, setGenerating] = useState(false);
   const [cardUrl, setCardUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const resultRef = useRef<HTMLDivElement>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const handlePhoto = (file?: File) => {
+    if (!file) return;
+    const url = URL.createObjectURL(file);
+    setPhotoUrl((prev) => {
+      if (prev) URL.revokeObjectURL(prev);
+      return url;
+    });
+    setCardUrl(null);
+    setError(null);
+  };
 
   const cycle = (categoryId: string, dir: 1 | -1) => {
     const category = categories.find((c) => c.id === categoryId);
@@ -103,10 +119,19 @@ const AvatarConsole: React.FC = () => {
   };
 
   const generate = async () => {
+    if (mode === 'photo' && !photoUrl) {
+      setError('Please upload a photo first.');
+      return;
+    }
     setGenerating(true);
     setError(null);
     try {
-      const blob = await composeCard(selection, colors, event);
+      const blob = await composeCard(
+        selection,
+        colors,
+        event,
+        mode === 'photo' ? photoUrl : null
+      );
       if (cardUrl) URL.revokeObjectURL(cardUrl);
       const url = URL.createObjectURL(blob);
       setCardUrl(url);
@@ -141,9 +166,10 @@ const AvatarConsole: React.FC = () => {
           Nextflow Summit
         </h1>
         <p className="text-lg text-gray-400 max-w-[560px] mt-6">
-          Build a pixel-style avatar and generate a shareable card to let the
-          community know you&rsquo;ll be there. Pick your look, hit generate, and
-          download a ready-to-post image &mdash; all in your browser.
+          Build a pixel-style avatar &mdash; or upload your own photo &mdash; and
+          generate a shareable card to let the community know you&rsquo;ll be there.
+          Pick your look, hit generate, and download a ready-to-post image, all in
+          your browser.
         </p>
         <Button arrow href="#console" className="mt-10">
           Build your avatar
@@ -160,23 +186,101 @@ const AvatarConsole: React.FC = () => {
 
           {/* Title bar */}
           <div className="flex items-center justify-between border-b border-nextflow-600/40 px-6 py-3 monospace text-xxs uppercase tracking-widest text-nextflow-600">
-            <span>Avatar Builder</span>
+            <span>{mode === 'photo' ? 'Photo Card' : 'Avatar Builder'}</span>
             <span className="hidden xs:inline">1UP</span>
+          </div>
+
+          {/* Step: mode */}
+          <div className="border-b border-nextflow-600/40 p-6 md:px-10">
+            <div className="monospace text-xxs uppercase tracking-widest text-gray-600 mb-2">
+              How do you want to appear?
+            </div>
+            <div className="grid grid-cols-1 xxs:grid-cols-2 gap-2 max-w-[520px]">
+              {(
+                [
+                  { id: 'avatar', label: 'Build an avatar' },
+                  { id: 'photo', label: 'Upload a photo' },
+                ] as { id: Mode; label: string }[]
+              ).map((m) => (
+                <button
+                  key={m.id}
+                  type="button"
+                  aria-pressed={mode === m.id}
+                  onClick={() => {
+                    setMode(m.id);
+                    setCardUrl(null);
+                    setError(null);
+                  }}
+                  className={clsx(
+                    'monospace text-xs px-3 py-3 border transition-colors text-center',
+                    mode === m.id
+                      ? 'border-nextflow-600 bg-nextflow-600 text-black'
+                      : 'border-nextflow-600/30 text-white hover:border-nextflow-600'
+                  )}
+                >
+                  {m.label}
+                </button>
+              ))}
+            </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 p-6 md:p-10">
             {/* Live preview */}
             <div className="flex flex-col items-center justify-center">
-              <div className="w-full bg-black border border-nextflow-600/20 p-6">
-                <LivePreview selection={selection} colors={colors} />
-              </div>
-              <button
-                type="button"
-                onClick={randomize}
-                className="mt-4 monospace text-xxs uppercase tracking-widest text-nextflow-600 hover:text-nextflow-400 transition-colors"
-              >
-                &#8635; Randomize
-              </button>
+              {mode === 'avatar' ? (
+                <>
+                  <div className="w-full bg-black border border-nextflow-600/20 p-6">
+                    <LivePreview selection={selection} colors={colors} />
+                  </div>
+                  <button
+                    type="button"
+                    onClick={randomize}
+                    className="mt-4 monospace text-xxs uppercase tracking-widest text-nextflow-600 hover:text-nextflow-400 transition-colors"
+                  >
+                    &#8635; Randomize
+                  </button>
+                </>
+              ) : (
+                <>
+                  <button
+                    type="button"
+                    onClick={() => fileInputRef.current?.click()}
+                    className={clsx(
+                      'w-full border overflow-hidden transition-colors',
+                      photoUrl
+                        ? 'border-nextflow-600/40'
+                        : 'border-dashed border-nextflow-600/40 hover:border-nextflow-600'
+                    )}
+                    style={{ aspectRatio: '400 / 430' }}
+                  >
+                    {photoUrl ? (
+                      <img
+                        src={photoUrl}
+                        alt="Your uploaded photo"
+                        className="w-full h-full object-cover bg-nextflow-200"
+                      />
+                    ) : (
+                      <span className="flex h-full items-center justify-center px-6 text-center monospace text-xs text-gray-500">
+                        Click to upload a photo
+                      </span>
+                    )}
+                  </button>
+                  <input
+                    ref={fileInputRef}
+                    type="file"
+                    accept="image/*"
+                    className="hidden"
+                    onChange={(e) => handlePhoto(e.target.files?.[0])}
+                  />
+                  <button
+                    type="button"
+                    onClick={() => fileInputRef.current?.click()}
+                    className="mt-4 monospace text-xxs uppercase tracking-widest text-nextflow-600 hover:text-nextflow-400 transition-colors"
+                  >
+                    {photoUrl ? '↺ Change photo' : '↑ Upload photo'}
+                  </button>
+                </>
+              )}
             </div>
 
             {/* Pickers */}
@@ -209,7 +313,16 @@ const AvatarConsole: React.FC = () => {
                 </div>
               </div>
 
-              {pickableCategories.map((category) => {
+              {mode === 'photo' && (
+                <p className="monospace text-xs text-gray-500 leading-relaxed">
+                  Your photo is placed on the right of the card. A square-ish image
+                  works best &mdash; it&rsquo;s cropped to fill the panel. Nothing is
+                  uploaded to a server; everything stays in your browser.
+                </p>
+              )}
+
+              {mode === 'avatar' &&
+                pickableCategories.map((category) => {
                 const currentId =
                   selection[category.id] ?? category.variants[0].id;
                 const i = category.variants.findIndex((v) => v.id === currentId);
@@ -248,7 +361,8 @@ const AvatarConsole: React.FC = () => {
               })}
 
               {/* Color swatches */}
-              {palette.map((channel) => {
+              {mode === 'avatar' &&
+                palette.map((channel) => {
                 const activeId = colors[channel.id] ?? channel.options[0].id;
                 return (
                   <div key={channel.id}>

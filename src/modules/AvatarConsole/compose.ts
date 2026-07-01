@@ -130,7 +130,8 @@ export async function renderAvatar(
 export async function composeCard(
   selection: Selection,
   colors: ColorSelection,
-  eventId: string
+  eventId: string,
+  photoSrc?: string | null
 ): Promise<Blob> {
   const { width: W, height: H, padding: P } = EXPORT;
 
@@ -156,18 +157,34 @@ export async function composeCard(
   const b = contain(branding.naturalWidth, branding.naturalHeight, brandRegionW, innerH);
   ctx.drawImage(branding, innerX, innerY + (innerH - b.h) / 2, b.w, b.h);
 
-  // --- Right: avatar (crisp, it's pixel art) on a nextflow-100 panel ---
+  // --- Right: avatar OR uploaded photo on a nextflow-100 panel ---
   const rx = innerX + brandRegionW;
   const rw = innerW - brandRegionW;
   const pad = 24;
   ctx.fillStyle = '#E2F7F3'; // nextflow-100
   ctx.fillRect(rx, innerY, rw, innerH);
-  const avatar = await renderAvatar(selection, colors);
-  const a = contain(avatar.width, avatar.height, rw - pad * 2, innerH - pad * 2);
-  const ax = rx + (rw - a.w) / 2;
-  const ay = innerY + innerH - pad - a.h; // bottom-anchored within the panel
-  ctx.imageSmoothingEnabled = false;
-  ctx.drawImage(avatar, ax, ay, a.w, a.h);
+
+  if (photoSrc) {
+    // Uploaded photo: cover-fit the whole panel, clipped to it.
+    const photo = await loadImage(photoSrc);
+    const scale = Math.max(rw / photo.naturalWidth, innerH / photo.naturalHeight);
+    const pw = photo.naturalWidth * scale;
+    const ph = photo.naturalHeight * scale;
+    ctx.save();
+    ctx.beginPath();
+    ctx.rect(rx, innerY, rw, innerH);
+    ctx.clip();
+    ctx.imageSmoothingEnabled = true;
+    ctx.drawImage(photo, rx + (rw - pw) / 2, innerY + (innerH - ph) / 2, pw, ph);
+    ctx.restore();
+  } else {
+    const avatar = await renderAvatar(selection, colors);
+    const a = contain(avatar.width, avatar.height, rw - pad * 2, innerH - pad * 2);
+    const ax = rx + (rw - a.w) / 2;
+    const ay = innerY + innerH - pad - a.h; // bottom-anchored within the panel
+    ctx.imageSmoothingEnabled = false;
+    ctx.drawImage(avatar, ax, ay, a.w, a.h);
+  }
 
   return new Promise<Blob>((resolve, reject) => {
     canvas.toBlob((blob) => {
