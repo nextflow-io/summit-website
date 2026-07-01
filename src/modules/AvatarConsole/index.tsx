@@ -39,12 +39,12 @@ const LivePreview: React.FC<{ selection: Selection; colors: ColorSelection }> = 
   }, [selection, colors]);
   return (
     <div
-      className="relative w-full max-w-[280px] mx-auto bg-nextflow-100"
+      className="relative w-full max-w-[280px] mx-auto bg-nextflow-200"
       style={{ aspectRatio: '300 / 432' }}
     >
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 w-full h-full object-contain"
+        className="absolute inset-0 w-full h-full object-contain p-10"
         style={{ imageRendering: 'pixelated' }}
       />
     </div>
