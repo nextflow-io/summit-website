@@ -132,7 +132,7 @@ export async function composeCard(
   colors: ColorSelection,
   eventId: string
 ): Promise<Blob> {
-  const { width: W, height: H } = EXPORT;
+  const { width: W, height: H, padding: P } = EXPORT;
 
   const canvas = document.createElement('canvas');
   canvas.width = W;
@@ -143,23 +143,29 @@ export async function composeCard(
   ctx.fillStyle = '#000000';
   ctx.fillRect(0, 0, W, H);
 
+  // Content sits inside a black `P`px margin on every side.
+  const innerX = P;
+  const innerY = P;
+  const innerW = W - P * 2;
+  const innerH = H - P * 2;
+
   // --- Left: branding panel (smooth, it's anti-aliased type) ---
-  const brandRegionW = Math.round(W * 0.6);
+  const brandRegionW = Math.round(innerW * 0.6);
   const branding = await loadImage(getEventBranding(eventId));
   ctx.imageSmoothingEnabled = true;
-  const b = contain(branding.naturalWidth, branding.naturalHeight, brandRegionW, H);
-  ctx.drawImage(branding, 0, (H - b.h) / 2, b.w, b.h);
+  const b = contain(branding.naturalWidth, branding.naturalHeight, brandRegionW, innerH);
+  ctx.drawImage(branding, innerX, innerY + (innerH - b.h) / 2, b.w, b.h);
 
   // --- Right: avatar (crisp, it's pixel art) on a nextflow-100 panel ---
-  const rx = brandRegionW;
-  const rw = W - brandRegionW;
-  const pad = 40;
+  const rx = innerX + brandRegionW;
+  const rw = innerW - brandRegionW;
+  const pad = 24;
   ctx.fillStyle = '#E2F7F3'; // nextflow-100
-  ctx.fillRect(rx, 0, rw, H);
+  ctx.fillRect(rx, innerY, rw, innerH);
   const avatar = await renderAvatar(selection, colors);
-  const a = contain(avatar.width, avatar.height, rw - pad * 2, H - pad * 2);
+  const a = contain(avatar.width, avatar.height, rw - pad * 2, innerH - pad * 2);
   const ax = rx + (rw - a.w) / 2;
-  const ay = H - pad - a.h; // bottom-anchored
+  const ay = innerY + innerH - pad - a.h; // bottom-anchored within the panel
   ctx.imageSmoothingEnabled = false;
   ctx.drawImage(avatar, ax, ay, a.w, a.h);
 

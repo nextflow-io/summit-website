@@ -59,8 +59,9 @@ export interface PaletteChannel {
 /** Intrinsic size every layer asset is authored at (keeps compositing trivial). */
 export const AVATAR_CANVAS = { width: 300, height: 432 } as const;
 
-/** Final downloadable share card (OG / Twitter / LinkedIn). */
-export const EXPORT = { width: 1200, height: 630 } as const;
+/** Final downloadable share card (OG / Twitter / LinkedIn). `padding` is the
+ * black margin (px) kept around the branding + avatar content. */
+export const EXPORT = { width: 1200, height: 630, padding: 70 } as const;
 
 /**
  * The event the attendee is announcing. Each option swaps the static branding
