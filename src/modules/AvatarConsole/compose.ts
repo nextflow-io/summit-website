@@ -1,7 +1,7 @@
 import {
   AVATAR_CANVAS,
-  CARD_BRANDING,
   EXPORT,
+  getEventBranding,
   resolveColors,
   resolveLayers,
   type ColorSelection,
@@ -129,7 +129,8 @@ export async function renderAvatar(
  */
 export async function composeCard(
   selection: Selection,
-  colors: ColorSelection
+  colors: ColorSelection,
+  eventId: string
 ): Promise<Blob> {
   const { width: W, height: H } = EXPORT;
 
@@ -144,9 +145,9 @@ export async function composeCard(
 
   // --- Left: branding panel (smooth, it's anti-aliased type) ---
   const brandRegionW = Math.round(W * 0.6);
-  const branding = await loadImage(CARD_BRANDING.src);
+  const branding = await loadImage(getEventBranding(eventId));
   ctx.imageSmoothingEnabled = true;
-  const b = contain(CARD_BRANDING.width, CARD_BRANDING.height, brandRegionW, H);
+  const b = contain(branding.naturalWidth, branding.naturalHeight, brandRegionW, H);
   ctx.drawImage(branding, 0, (H - b.h) / 2, b.w, b.h);
 
   // --- Right: avatar (crisp, it's pixel art) on a nextflow-100 panel ---

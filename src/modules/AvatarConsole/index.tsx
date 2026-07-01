@@ -4,7 +4,9 @@ import Button from '@components/Button';
 import {
   categories,
   defaultColors,
+  defaultEvent,
   defaultSelection,
+  events,
   palette,
   pickableCategories,
   type ColorSelection,
@@ -54,6 +56,7 @@ const LivePreview: React.FC<{ selection: Selection; colors: ColorSelection }> = 
 const AvatarConsole: React.FC = () => {
   const [selection, setSelection] = useState<Selection>(defaultSelection);
   const [colors, setColors] = useState<ColorSelection>(defaultColors);
+  const [event, setEvent] = useState<string>(defaultEvent);
   const [generating, setGenerating] = useState(false);
   const [cardUrl, setCardUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -103,7 +106,7 @@ const AvatarConsole: React.FC = () => {
     setGenerating(true);
     setError(null);
     try {
-      const blob = await composeCard(selection, colors);
+      const blob = await composeCard(selection, colors, event);
       if (cardUrl) URL.revokeObjectURL(cardUrl);
       const url = URL.createObjectURL(blob);
       setCardUrl(url);
@@ -178,6 +181,34 @@ const AvatarConsole: React.FC = () => {
 
             {/* Pickers */}
             <div className="flex flex-col gap-4">
+              {/* Step: what are you attending? */}
+              <div>
+                <div className="monospace text-xxs uppercase tracking-widest text-gray-600 mb-1">
+                  What are you attending?
+                </div>
+                <div className="grid grid-cols-1 xxs:grid-cols-3 gap-2">
+                  {events.map((ev) => (
+                    <button
+                      key={ev.id}
+                      type="button"
+                      aria-pressed={event === ev.id}
+                      onClick={() => {
+                        setEvent(ev.id);
+                        setCardUrl(null);
+                      }}
+                      className={clsx(
+                        'monospace text-xs px-3 py-3 border transition-colors text-center',
+                        event === ev.id
+                          ? 'border-nextflow-600 bg-nextflow-600 text-black'
+                          : 'border-nextflow-600/30 text-white hover:border-nextflow-600'
+                      )}
+                    >
+                      {ev.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
               {pickableCategories.map((category) => {
                 const currentId =
                   selection[category.id] ?? category.variants[0].id;

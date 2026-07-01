@@ -62,12 +62,41 @@ export const AVATAR_CANVAS = { width: 300, height: 432 } as const;
 /** Final downloadable share card (OG / Twitter / LinkedIn). */
 export const EXPORT = { width: 1200, height: 630 } as const;
 
-/** Static branding panel that sits on the left of the final card. */
-export const CARD_BRANDING = {
-  src: '/summit-avatar/card/branding.png',
-  width: 1024,
-  height: 791,
-} as const;
+/**
+ * The event the attendee is announcing. Each option swaps the static branding
+ * panel on the left of the final card. Add another event = drop its branding PNG
+ * in `public/summit-avatar/card/` and add one entry here.
+ */
+export interface EventOption {
+  id: string;
+  label: string;
+  /** Branding panel PNG for the left side of the card. */
+  branding: string;
+}
+
+export const events: EventOption[] = [
+  {
+    id: 'summit',
+    label: 'Nextflow Summit',
+    branding: '/summit-avatar/card/branding-summit.png',
+  },
+  {
+    id: 'training',
+    label: 'Nextflow Training',
+    branding: '/summit-avatar/card/branding-training.png',
+  },
+  {
+    id: 'hackathon',
+    label: 'nf-core Hackathon',
+    branding: '/summit-avatar/card/branding-hackathon.png',
+  },
+];
+
+export const defaultEvent = events[0].id;
+
+export function getEventBranding(eventId: string): string {
+  return (events.find((e) => e.id === eventId) ?? events[0]).branding;
+}
 
 const NONE: AvatarVariant = { id: 'none', label: 'None', src: null };
 
