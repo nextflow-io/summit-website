@@ -14,7 +14,7 @@ const fadeIn = {
   viewport: { once: true },
 };
 
-const FaqPage: React.FC<Props> = ({ data }) => {
+const FaqPage: React.FC<Props> = ({ data } = {} as Props) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const pixelsRef = useRef<{ getCanvas: () => HTMLCanvasElement | null }>(null);
 
@@ -123,10 +123,11 @@ const FaqPage: React.FC<Props> = ({ data }) => {
             </div>
 
             <div className="mt-10 relative z-50">
-              {data.faqSection && data?.faqSection.length > 0 && (
+              {data?.faqSection && data.faqSection.length > 0 && (
                 <div className="inline-flex flex-col text-xl">
                   {data.faqSection.map((section, index) => (
                     <a
+                      key={section.faqTitle ?? index}
                       className="hover:text-nextflow-600"
                       href={`#${section.faqTitle}`}
                     >
@@ -241,7 +242,7 @@ const FaqPage: React.FC<Props> = ({ data }) => {
         </motion.div>
       </section>
 
-      {data.faqSection && data.faqSection.length > 0 && (
+      {data?.faqSection && data.faqSection.length > 0 && (
         <>
           {data.faqSection.map((section, index) => (
             <Faq
