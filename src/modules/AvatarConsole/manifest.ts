@@ -63,6 +63,10 @@ export const AVATAR_CANVAS = { width: 300, height: 432 } as const;
  * black margin (px) kept around the branding + avatar content. */
 export const EXPORT = { width: 1200, height: 630, padding: 70 } as const;
 
+/** Full-bleed background PNG for the share card (black canvas + decorative pixel
+ * corners). Shared across every event; stretched to the card size. */
+export const CARD_BACKGROUND = '/summit-avatar/card/bg.png';
+
 /**
  * The event the attendee is announcing. Each option swaps the static branding
  * panel on the left of the final card. Add another event = drop its branding PNG

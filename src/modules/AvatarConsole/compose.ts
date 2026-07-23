@@ -1,5 +1,6 @@
 import {
   AVATAR_CANVAS,
+  CARD_BACKGROUND,
   EXPORT,
   getEventBranding,
   resolveColors,
@@ -141,8 +142,17 @@ export async function composeCard(
   const ctx = canvas.getContext('2d');
   if (!ctx) throw new Error('No 2D context');
 
+  // Full-bleed background (black canvas + decorative pixel corners). Fall back to
+  // a flat black fill if the asset ever fails to load, so export never breaks.
   ctx.fillStyle = '#000000';
   ctx.fillRect(0, 0, W, H);
+  try {
+    const bg = await loadImage(CARD_BACKGROUND);
+    ctx.imageSmoothingEnabled = false;
+    ctx.drawImage(bg, 0, 0, W, H);
+  } catch {
+    /* keep the flat black fallback */
+  }
 
   // Content sits inside a black `P`px margin on every side.
   const innerX = P;
