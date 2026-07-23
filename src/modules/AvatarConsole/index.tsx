@@ -61,6 +61,7 @@ const AvatarConsole: React.FC = () => {
   const [colors, setColors] = useState<ColorSelection>(defaultColors);
   const [event, setEvent] = useState<string>(defaultEvent);
   const [photoUrl, setPhotoUrl] = useState<string | null>(null);
+  const [dragActive, setDragActive] = useState(false);
   const [generating, setGenerating] = useState(false);
   const [cardUrl, setCardUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -69,6 +70,10 @@ const AvatarConsole: React.FC = () => {
 
   const handlePhoto = (file?: File) => {
     if (!file) return;
+    if (!file.type.startsWith('image/')) {
+      setError('Please choose an image file.');
+      return;
+    }
     const url = URL.createObjectURL(file);
     setPhotoUrl((prev) => {
       if (prev) URL.revokeObjectURL(prev);
@@ -76,6 +81,22 @@ const AvatarConsole: React.FC = () => {
     });
     setCardUrl(null);
     setError(null);
+  };
+
+  const handleDrop = (e: React.DragEvent) => {
+    e.preventDefault();
+    setDragActive(false);
+    handlePhoto(e.dataTransfer.files?.[0]);
+  };
+
+  const handleDragOver = (e: React.DragEvent) => {
+    e.preventDefault();
+    if (!dragActive) setDragActive(true);
+  };
+
+  const handleDragLeave = (e: React.DragEvent) => {
+    e.preventDefault();
+    setDragActive(false);
   };
 
   const cycle = (categoryId: string, dir: 1 | -1) => {
@@ -245,11 +266,17 @@ const AvatarConsole: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => fileInputRef.current?.click()}
+                    onDragEnter={handleDragOver}
+                    onDragOver={handleDragOver}
+                    onDragLeave={handleDragLeave}
+                    onDrop={handleDrop}
                     className={clsx(
                       'w-full border overflow-hidden transition-colors',
-                      photoUrl
-                        ? 'border-nextflow-600/40'
-                        : 'border-dashed border-nextflow-600/40 hover:border-nextflow-600'
+                      dragActive
+                        ? 'border-nextflow-600 bg-nextflow-600/10'
+                        : photoUrl
+                          ? 'border-nextflow-600/40'
+                          : 'border-dashed border-nextflow-600/40 hover:border-nextflow-600'
                     )}
                     style={{ aspectRatio: '400 / 430' }}
                   >
@@ -257,11 +284,14 @@ const AvatarConsole: React.FC = () => {
                       <img
                         src={photoUrl}
                         alt="Your uploaded photo"
-                        className="w-full h-full object-cover bg-nextflow-200"
+                        className={clsx(
+                          'w-full h-full object-cover bg-nextflow-200 pointer-events-none',
+                          dragActive && 'opacity-50'
+                        )}
                       />
                     ) : (
-                      <span className="flex h-full items-center justify-center px-6 text-center monospace text-xs text-gray-500">
-                        Click to upload a photo
+                      <span className="flex h-full items-center justify-center px-6 text-center monospace text-xs text-gray-500 pointer-events-none">
+                        {dragActive ? 'Drop your photo here' : 'Click or drag a photo here'}
                       </span>
                     )}
                   </button>
