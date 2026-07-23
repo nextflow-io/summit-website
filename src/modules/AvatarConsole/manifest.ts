@@ -168,16 +168,21 @@ export const categories: AvatarCategory[] = [
     variants: [
       NONE,
       { id: 'beard', label: 'Beard', src: asset('facial-hair', 'beard.png') },
-      { id: 'beard-1', label: 'Full beard', src: asset('facial-hair', 'beard-1.png') },
       { id: 'moustache', label: 'Moustache', src: asset('facial-hair', 'moustache.png') },
     ],
   },
   {
-    // Ready for future variants — see public/summit-avatar/glasses/
-    id: 'glasses',
-    label: 'Glasses',
+    // Generic decorative add-ons (eyewear now, more complements later — e.g. hats,
+    // badges, earrings). Drop the PNG in public/summit-avatar/accessory/ and add a
+    // line below. Art is kept as-authored (no recolor) so each asset owns its colors.
+    id: 'accessory',
+    label: 'Accessories',
     z: 40,
-    variants: [NONE],
+    variants: [
+      NONE,
+      { id: 'glasses', label: 'Glasses', src: asset('accessory', 'glasses.png') },
+      { id: 'sunglasses', label: 'Sunglasses', src: asset('accessory', 'sunglasses.png') },
+    ],
   },
   {
     id: 'hair',
@@ -185,14 +190,16 @@ export const categories: AvatarCategory[] = [
     z: 50,
     // All-black art → tint every opaque pixel to the hair color.
     recolor: [{ channel: 'hair' }],
-    variants: [NONE, { id: 'hair-3', label: 'Style 3', src: asset('hair', 'hair-3.png') }],
-  },
-  {
-    // Ready for future variants (hat, badge, …) — see public/summit-avatar/accessory/
-    id: 'accessory',
-    label: 'Accessory',
-    z: 60,
-    variants: [NONE],
+    variants: [
+      NONE,
+      { id: 'hair-2', label: 'Style 2', src: asset('hair', 'hair-2.png') },
+      { id: 'hair-3', label: 'Style 3', src: asset('hair', 'hair-3.png') },
+      { id: 'hair-4', label: 'Style 4', src: asset('hair', 'hair-4.png') },
+      { id: 'hair-5', label: 'Style 5', src: asset('hair', 'hair-5.png') },
+      { id: 'hair-6', label: 'Style 6', src: asset('hair', 'hair-6.png') },
+      { id: 'hair-7', label: 'Style 7', src: asset('hair', 'hair-7.png') },
+      { id: 'hair-8', label: 'Style 8', src: asset('hair', 'hair-8.png') },
+    ],
   },
 ];
 
