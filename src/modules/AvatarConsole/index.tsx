@@ -187,11 +187,11 @@ const AvatarConsole: React.FC = () => {
           <br />
           Nextflow Summit
         </h1>
-        <p className="text-lg text-gray-400 max-w-[560px] mt-6">
-          Build a pixel-style avatar &mdash; or upload your own photo &mdash; and
-          generate a shareable card to let the community know you&rsquo;ll be there.
-          Pick your look, hit generate, and download a ready-to-post image, all in
-          your browser.
+        <p className="text-lg text-gray-400 max-w-[960px] mt-6">
+          Build a pixel-style avatar, or upload your own photo, and generate a
+          shareable card to let the community know you&rsquo;ll be there. Pick your
+          look, hit generate, and download a ready-to-post image, all in your
+          browser.
         </p>
         <Button arrow href="#console" className="mt-10">
           Build your avatar
@@ -347,7 +347,7 @@ const AvatarConsole: React.FC = () => {
               {mode === 'photo' && (
                 <p className="monospace text-xs text-gray-500 leading-relaxed">
                   Your photo is placed on the right of the card. A square-ish image
-                  works best &mdash; it&rsquo;s cropped to fill the panel. Nothing is
+                  works best, since it&rsquo;s cropped to fill the panel. Nothing is
                   uploaded to a server; everything stays in your browser.
                 </p>
               )}
