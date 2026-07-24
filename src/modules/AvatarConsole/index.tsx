@@ -29,16 +29,17 @@ const Corner: React.FC<{ className?: string }> = ({ className }) => (
   </svg>
 );
 
-const LivePreview: React.FC<{ selection: Selection; colors: ColorSelection }> = ({
-  selection,
-  colors,
-}) => {
+const LivePreview: React.FC<{
+  selection: Selection;
+  colors: ColorSelection;
+  event: string;
+}> = ({ selection, colors, event }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   useEffect(() => {
     if (canvasRef.current) {
-      renderAvatar(selection, colors, canvasRef.current).catch(() => {});
+      renderAvatar(selection, colors, event, canvasRef.current).catch(() => {});
     }
-  }, [selection, colors]);
+  }, [selection, colors, event]);
   return (
     <div
       className="relative w-full max-w-[280px] mx-auto bg-nextflow-200"
@@ -251,7 +252,7 @@ const AvatarConsole: React.FC = () => {
               {mode === 'avatar' ? (
                 <>
                   <div className="w-full bg-black border border-nextflow-600/20 p-6">
-                    <LivePreview selection={selection} colors={colors} />
+                    <LivePreview selection={selection} colors={colors} event={event} />
                   </div>
                   <button
                     type="button"

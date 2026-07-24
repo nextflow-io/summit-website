@@ -109,6 +109,27 @@ const asset = (category: string, file: string) =>
   `/summit-avatar/${category}/${file}`;
 
 /**
+ * Chest logo baked onto every avatar. It is intentionally *not* a pickable
+ * category: it can't be edited and is never recolored. Nextflow shows by
+ * default (on top of the base); the nf-core logo only appears when the nf-core
+ * event is selected.
+ */
+export const logo = {
+  /** Stacking order — just above the base, below face features. */
+  z: 5,
+  default: asset('logo', 'nextflow.png'),
+  /** Event id -> logo override. */
+  byEvent: {
+    hackathon: asset('logo', 'nf-core.png'),
+  } as Record<string, string>,
+};
+
+/** Resolve the chest logo src for a given event (Nextflow unless nf-core). */
+export function getLogoSrc(eventId?: string): string {
+  return (eventId && logo.byEvent[eventId]) || logo.default;
+}
+
+/**
  * Recolorable palette channels. Add a swatch = add one line to `options`.
  * Add a new channel (e.g. 'shirt') = add an entry here and reference it from a
  * category's `recolor` rules.
@@ -242,16 +263,25 @@ export interface ResolvedLayer {
   recolor?: RecolorRule[];
 }
 
-/** Layers to draw, bottom-to-top, for a given selection (skips empty ones). */
-export function resolveLayers(selection: Selection): ResolvedLayer[] {
-  return [...categories]
-    .sort((a, b) => a.z - b.z)
-    .map((c) => {
+/**
+ * Layers to draw, bottom-to-top, for a given selection (skips empty ones).
+ * The chest logo is always injected at its own `z` (Nextflow by default,
+ * nf-core for the nf-core event) and is never recolored.
+ */
+export function resolveLayers(selection: Selection, eventId?: string): ResolvedLayer[] {
+  const layers: { z: number; src: string | null; recolor?: RecolorRule[] }[] = categories.map(
+    (c) => {
       const variantId = selection[c.id] ?? c.variants[0].id;
       const variant = c.variants.find((v) => v.id === variantId) ?? c.variants[0];
-      return { src: variant.src, recolor: c.recolor };
-    })
-    .filter((l): l is ResolvedLayer => Boolean(l.src));
+      return { z: c.z, src: variant.src, recolor: c.recolor };
+    }
+  );
+  layers.push({ z: logo.z, src: getLogoSrc(eventId) });
+
+  return layers
+    .sort((a, b) => a.z - b.z)
+    .filter((l): l is typeof l & { src: string } => Boolean(l.src))
+    .map(({ src, recolor }) => ({ src, recolor }));
 }
 
 export function getVariant(categoryId: string, variantId: string): AvatarVariant | undefined {

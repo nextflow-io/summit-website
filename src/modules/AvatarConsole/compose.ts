@@ -100,6 +100,7 @@ function recolorLayer(
 export async function renderAvatar(
   selection: Selection,
   colors: ColorSelection,
+  eventId?: string,
   target?: HTMLCanvasElement
 ): Promise<HTMLCanvasElement> {
   const canvas = target ?? document.createElement('canvas');
@@ -111,7 +112,7 @@ export async function renderAvatar(
   ctx.imageSmoothingEnabled = false;
 
   const resolvedColors = resolveColors(colors);
-  const layers = resolveLayers(selection);
+  const layers = resolveLayers(selection, eventId);
   const images = await Promise.all(layers.map((l) => loadImage(l.src)));
   layers.forEach((layer, i) => {
     const source =
@@ -188,7 +189,7 @@ export async function composeCard(
     ctx.drawImage(photo, rx + (rw - pw) / 2, innerY + (innerH - ph) / 2, pw, ph);
     ctx.restore();
   } else {
-    const avatar = await renderAvatar(selection, colors);
+    const avatar = await renderAvatar(selection, colors, eventId);
     const a = contain(avatar.width, avatar.height, rw - pad * 2, innerH - pad * 2);
     const ax = rx + (rw - a.w) / 2;
     const ay = innerY + innerH - pad - a.h; // bottom-anchored within the panel
