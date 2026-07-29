@@ -14,21 +14,6 @@ import {
 } from './manifest';
 import { composeCard, renderAvatar } from './compose';
 
-/** Decorative checkered corner, echoing the arcade "console" motif on the site. */
-const Corner: React.FC<{ className?: string }> = ({ className }) => (
-  <svg
-    viewBox="0 0 40 40"
-    className={clsx('w-8 h-8 text-nextflow-600', className)}
-    aria-hidden="true"
-  >
-    <g fill="currentColor">
-      <rect x="0" y="0" width="10" height="10" />
-      <rect x="10" y="10" width="10" height="10" opacity="0.5" />
-      <rect x="20" y="20" width="10" height="10" opacity="0.25" />
-    </g>
-  </svg>
-);
-
 const LivePreview: React.FC<{
   selection: Selection;
   colors: ColorSelection;
@@ -201,10 +186,6 @@ const AvatarConsole: React.FC = () => {
       {/* Console */}
       <section id="console" className="bg-black text-white container-xl w-full pb-24">
         <div className="relative border border-nextflow-600/60 bg-[#020806]">
-          <Corner className="absolute -top-1 -left-1" />
-          <Corner className="absolute -top-1 -right-1 rotate-90" />
-          <Corner className="absolute -bottom-1 -left-1 -rotate-90" />
-          <Corner className="absolute -bottom-1 -right-1 rotate-180" />
 
           {/* Title bar */}
           <div className="flex items-center justify-between border-b border-nextflow-600/40 px-6 py-3 monospace text-xxs uppercase tracking-widest text-nextflow-600">

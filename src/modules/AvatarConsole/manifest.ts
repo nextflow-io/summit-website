@@ -151,7 +151,7 @@ export const palette: PaletteChannel[] = [
     id: 'hair',
     label: 'Hair color',
     options: [
-      { id: 'black', label: 'Black', color: '#1a1a1a' },
+      { id: 'black', label: 'Black', color: '#483F39' },
       { id: 'brown', label: 'Brown', color: '#6B4423' },
       { id: 'blonde', label: 'Blonde', color: '#D8B15A' },
       { id: 'red', label: 'Red', color: '#A63D1E' },
