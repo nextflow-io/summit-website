@@ -159,6 +159,16 @@ export const palette: PaletteChannel[] = [
       { id: 'nextflow', label: 'Nextflow', color: '#0DC09D' },
     ],
   },
+  {
+    id: 'eye',
+    label: 'Eye color',
+    options: [
+      { id: 'dark', label: 'Dark', color: '#392B2B' },
+      { id: 'blue', label: 'Blue', color: '#0095CB' },
+      { id: 'green', label: 'Green', color: '#009B10' },
+      { id: 'teal', label: 'Teal', color: '#31C9AC' },
+    ],
+  },
 ];
 
 export const categories: AvatarCategory[] = [
@@ -178,11 +188,30 @@ export const categories: AvatarCategory[] = [
     variants: [NONE, { id: 'smile', label: 'Smile', src: asset('mouth', 'smile.png') }],
   },
   {
-    // Ready for future variants — see public/summit-avatar/eyes/
+    // Eye shape — the dark upper part of the eye. Kept in its original color
+    // (no recolor); the tintable iris lives in the separate `eye-color` layer.
     id: 'eyes',
     label: 'Eyes',
     z: 20,
-    variants: [NONE],
+    // Always present — no "None" option; defaults to the first shape.
+    required: true,
+    variants: [
+      { id: 'eyes-1', label: 'Style 1', src: asset('eyes', 'eyes-1.png') },
+      { id: 'eyes-2', label: 'Style 2', src: asset('eyes', 'eyes-2.png') },
+    ],
+  },
+  {
+    // Iris / lower eye — a single always-present shape sitting just under the eye
+    // shape. This is the layer the "Eye color" picker recolors (tints every
+    // opaque pixel), while the eye shape above keeps its original black.
+    id: 'eye-color',
+    label: 'Eye color',
+    z: 21,
+    required: true,
+    recolor: [{ channel: 'eye' }],
+    variants: [
+      { id: 'default', label: 'Default', src: asset('eyes', 'eye-color.png') },
+    ],
   },
   {
     id: 'facial-hair',
