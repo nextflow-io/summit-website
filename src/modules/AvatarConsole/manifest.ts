@@ -236,7 +236,6 @@ export const categories: AvatarCategory[] = [
       { id: 'hair-13', label: 'Style 13', src: asset('hair', 'hair-13.png') },
       { id: 'hair-14', label: 'Style 14', src: asset('hair', 'hair-14.png') },
       { id: 'hair-15', label: 'Style 15', src: asset('hair', 'hair-15.png') },
-      { id: 'hair-16', label: 'Style 16', src: asset('hair', 'hair-16.png') },
     ],
   },
 ];
