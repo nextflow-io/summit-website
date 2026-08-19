@@ -2,7 +2,9 @@ import {
   AVATAR_CANVAS,
   CARD_BACKGROUND,
   EXPORT,
+  categories,
   getEventBranding,
+  logo,
   resolveColors,
   resolveLayers,
   type ColorSelection,
@@ -64,7 +66,7 @@ function recolorLayer(
   const canvas = document.createElement('canvas');
   canvas.width = AVATAR_CANVAS.width;
   canvas.height = AVATAR_CANVAS.height;
-  const ctx = canvas.getContext('2d');
+  const ctx = canvas.getContext('2d', { willReadFrequently: true });
   if (!ctx) throw new Error('No 2D context');
   ctx.imageSmoothingEnabled = false;
   ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
@@ -96,24 +98,63 @@ function recolorLayer(
   return canvas;
 }
 
-/** Draw the stacked (recolored) avatar layers onto a canvas (native asset size). */
+/** Public paths of every layer PNG the builder can show. */
+export function allAvatarAssetSrcs(): string[] {
+  const srcs = new Set<string>();
+  for (const category of categories) {
+    for (const variant of category.variants) {
+      if (variant.src) srcs.add(variant.src);
+    }
+  }
+  srcs.add(logo.default);
+  for (const src of Object.values(logo.byEvent)) srcs.add(src);
+  return [...srcs];
+}
+
+/** Warm the image cache so swapping hair / eyes / etc. does not wait on decode. */
+export function preloadAvatarAssets(): Promise<HTMLImageElement[]> {
+  return Promise.all(allAvatarAssetSrcs().map(loadImage));
+}
+
+/**
+ * Copy a fully composed avatar onto a visible canvas in one synchronous paint.
+ * Does not reset `target.width`/`height` unless the size changed — assigning those
+ * always clears the bitmap and is what made the preview flash empty.
+ */
+export function presentAvatar(
+  source: HTMLCanvasElement,
+  target: HTMLCanvasElement
+): void {
+  if (target.width !== source.width) target.width = source.width;
+  if (target.height !== source.height) target.height = source.height;
+  const ctx = target.getContext('2d');
+  if (!ctx) throw new Error('No 2D context');
+  ctx.imageSmoothingEnabled = false;
+  ctx.clearRect(0, 0, target.width, target.height);
+  ctx.drawImage(source, 0, 0);
+}
+
+/**
+ * Compose the stacked (recolored) avatar onto an *offscreen* canvas.
+ * Never touches a live preview canvas: load + recolor first, then the caller
+ * presents the result so the previous frame stays visible until this one is ready.
+ */
 export async function renderAvatar(
   selection: Selection,
   colors: ColorSelection,
-  eventId?: string,
-  target?: HTMLCanvasElement
+  eventId?: string
 ): Promise<HTMLCanvasElement> {
-  const canvas = target ?? document.createElement('canvas');
+  const resolvedColors = resolveColors(colors);
+  const layers = resolveLayers(selection, eventId);
+  const images = await Promise.all(layers.map((l) => loadImage(l.src)));
+
+  const canvas = document.createElement('canvas');
   canvas.width = AVATAR_CANVAS.width;
   canvas.height = AVATAR_CANVAS.height;
   const ctx = canvas.getContext('2d');
   if (!ctx) throw new Error('No 2D context');
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.imageSmoothingEnabled = false;
 
-  const resolvedColors = resolveColors(colors);
-  const layers = resolveLayers(selection, eventId);
-  const images = await Promise.all(layers.map((l) => loadImage(l.src)));
   layers.forEach((layer, i) => {
     const source =
       layer.recolor && layer.recolor.length > 0

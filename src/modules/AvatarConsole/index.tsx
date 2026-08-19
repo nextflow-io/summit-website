@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import clsx from 'clsx';
 import Button from '@components/Button';
 import {
+  AVATAR_CANVAS,
   categories,
   defaultColors,
   defaultEvent,
@@ -12,7 +13,7 @@ import {
   type ColorSelection,
   type Selection,
 } from './manifest';
-import { composeCard, renderAvatar } from './compose';
+import { composeCard, presentAvatar, preloadAvatarAssets, renderAvatar } from './compose';
 
 const LivePreview: React.FC<{
   selection: Selection;
@@ -20,10 +21,27 @@ const LivePreview: React.FC<{
   event: string;
 }> = ({ selection, colors, event }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+
   useEffect(() => {
-    if (canvasRef.current) {
-      renderAvatar(selection, colors, event, canvasRef.current).catch(() => {});
-    }
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    canvas.width = AVATAR_CANVAS.width;
+    canvas.height = AVATAR_CANVAS.height;
+  }, []);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    let cancelled = false;
+    renderAvatar(selection, colors, event)
+      .then((composed) => {
+        if (cancelled || !canvasRef.current) return;
+        presentAvatar(composed, canvasRef.current);
+      })
+      .catch(() => {});
+    return () => {
+      cancelled = true;
+    };
   }, [selection, colors, event]);
   return (
     <div
@@ -53,6 +71,10 @@ const AvatarConsole: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const resultRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    preloadAvatarAssets().catch(() => {});
+  }, []);
 
   const handlePhoto = (file?: File) => {
     if (!file) return;
