@@ -139,7 +139,6 @@ export const palette: PaletteChannel[] = [
     id: 'skin',
     label: 'Skin tone',
     options: [
-      { id: 'original', label: 'Original', color: '#FFFFFF' },
       { id: 'light', label: 'Light', color: '#F8D7C2' },
       { id: 'medium', label: 'Medium', color: '#E7B08A' },
       { id: 'tan', label: 'Tan', color: '#C68642' },
