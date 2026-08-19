@@ -45,12 +45,12 @@ const LivePreview: React.FC<{
   }, [selection, colors, event]);
   return (
     <div
-      className="relative w-full max-w-[280px] mx-auto bg-nextflow-200"
+      className="relative w-full max-w-[148px] xs:max-w-[220px] sm:max-w-[280px] mx-auto bg-nextflow-200"
       style={{ aspectRatio: '300 / 432' }}
     >
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 w-full h-full object-contain p-10"
+        className="absolute inset-0 w-full h-full object-contain p-4 sm:p-10"
         style={{ imageRendering: 'pixelated' }}
       />
     </div>
@@ -206,61 +206,91 @@ const AvatarConsole: React.FC = () => {
       </section>
 
       {/* Console */}
-      <section id="console" className="bg-black text-white container-xl w-full pb-24">
+      <section id="console" className="bg-black text-white container-xl w-full pb-24 scroll-mt-[60px] xs:scroll-mt-0">
         <div className="relative border border-nextflow-600/60 bg-[#020806]">
 
           {/* Title bar */}
-          <div className="flex items-center justify-between border-b border-nextflow-600/40 px-6 py-3 monospace text-xxs uppercase tracking-widest text-nextflow-600">
+          <div className="flex items-center justify-between border-b border-nextflow-600/40 px-4 py-2.5 md:px-6 md:py-3 monospace text-xxs uppercase tracking-widest text-nextflow-600">
             <span>{mode === 'photo' ? 'Photo Card' : 'Avatar Builder'}</span>
             <span className="hidden xs:inline">1UP</span>
           </div>
 
-          {/* Step: mode */}
-          <div className="border-b border-nextflow-600/40 p-6 md:px-10">
-            <div className="monospace text-xxs uppercase tracking-widest text-gray-600 mb-2">
-              How do you want to appear?
-            </div>
-            <div className="grid grid-cols-1 xxs:grid-cols-2 gap-2 max-w-[520px]">
-              {(
-                [
-                  { id: 'avatar', label: 'Build an avatar' },
-                  { id: 'photo', label: 'Upload a photo' },
-                ] as { id: Mode; label: string }[]
-              ).map((m) => (
-                <button
-                  key={m.id}
-                  type="button"
-                  aria-pressed={mode === m.id}
-                  onClick={() => {
-                    setMode(m.id);
-                    setCardUrl(null);
-                    setError(null);
-                  }}
-                  className={clsx(
-                    'monospace text-xs px-3 py-3 border transition-colors text-center',
-                    mode === m.id
-                      ? 'border-nextflow-600 bg-nextflow-600 text-black'
-                      : 'border-nextflow-600/30 text-white hover:border-nextflow-600'
-                  )}
-                >
-                  {m.label}
-                </button>
-              ))}
+          {/* Setup: mode + event sit above the preview so pickers aren't pushed down */}
+          <div className="border-b border-nextflow-600/40 p-4 md:px-10 md:py-6">
+            <div className="grid grid-cols-1 xs:grid-cols-2 gap-4 xs:gap-8">
+              <div>
+                <div className="monospace text-xxs uppercase tracking-widest text-gray-600 mb-2">
+                  How do you want to appear?
+                </div>
+                <div className="grid grid-cols-2 gap-2">
+                  {(
+                    [
+                      { id: 'avatar', label: 'Build an avatar' },
+                      { id: 'photo', label: 'Upload a photo' },
+                    ] as { id: Mode; label: string }[]
+                  ).map((m) => (
+                    <button
+                      key={m.id}
+                      type="button"
+                      aria-pressed={mode === m.id}
+                      onClick={() => {
+                        setMode(m.id);
+                        setCardUrl(null);
+                        setError(null);
+                      }}
+                      className={clsx(
+                        'monospace text-xs px-2 py-2.5 xs:px-3 xs:py-3 border transition-colors text-center',
+                        mode === m.id
+                          ? 'border-nextflow-600 bg-nextflow-600 text-black'
+                          : 'border-nextflow-600/30 text-white hover:border-nextflow-600'
+                      )}
+                    >
+                      {m.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <div className="monospace text-xxs uppercase tracking-widest text-gray-600 mb-2">
+                  What are you attending?
+                </div>
+                <div className="grid grid-cols-3 gap-2">
+                  {events.map((ev) => (
+                    <button
+                      key={ev.id}
+                      type="button"
+                      aria-pressed={event === ev.id}
+                      onClick={() => {
+                        setEvent(ev.id);
+                        setCardUrl(null);
+                      }}
+                      className={clsx(
+                        'monospace text-xs px-1.5 py-2.5 xs:px-3 xs:py-3 border transition-colors text-center leading-tight',
+                        event === ev.id
+                          ? 'border-nextflow-600 bg-nextflow-600 text-black'
+                          : 'border-nextflow-600/30 text-white hover:border-nextflow-600'
+                      )}
+                    >
+                      {ev.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 p-6 md:p-10">
-            {/* Live preview */}
-            <div className="flex flex-col items-center justify-center">
+          <div className="grid grid-cols-1 xs:grid-cols-2 gap-6 md:gap-10 p-4 md:p-10">
+            {/* Live preview — compact + sticky on small screens so controls stay in view */}
+            <div className="flex flex-col items-center xs:justify-center sticky top-[60px] z-10 -mx-4 px-4 py-3 mb-1 bg-[#020806] border-b border-nextflow-600/30 xs:static xs:z-auto xs:mx-0 xs:px-0 xs:py-0 xs:mb-0 xs:bg-transparent xs:border-0">
               {mode === 'avatar' ? (
                 <>
-                  <div className="w-full bg-black border border-nextflow-600/20 p-6">
+                  <div className="w-full bg-black border border-nextflow-600/20 p-2 xs:p-4 sm:p-6">
                     <LivePreview selection={selection} colors={colors} event={event} />
                   </div>
                   <button
                     type="button"
                     onClick={randomize}
-                    className="mt-4 monospace text-xxs uppercase tracking-widest text-nextflow-600 hover:text-nextflow-400 transition-colors"
+                    className="mt-3 xs:mt-4 monospace text-xxs uppercase tracking-widest text-nextflow-600 hover:text-nextflow-400 transition-colors"
                   >
                     &#8635; Randomize
                   </button>
@@ -275,7 +305,7 @@ const AvatarConsole: React.FC = () => {
                     onDragLeave={handleDragLeave}
                     onDrop={handleDrop}
                     className={clsx(
-                      'w-full border overflow-hidden transition-colors',
+                      'w-full max-w-[200px] xs:max-w-none mx-auto border overflow-hidden transition-colors',
                       dragActive
                         ? 'border-nextflow-600 bg-nextflow-600/10'
                         : photoUrl
@@ -309,7 +339,7 @@ const AvatarConsole: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => fileInputRef.current?.click()}
-                    className="mt-4 monospace text-xxs uppercase tracking-widest text-nextflow-600 hover:text-nextflow-400 transition-colors"
+                    className="mt-3 xs:mt-4 monospace text-xxs uppercase tracking-widest text-nextflow-600 hover:text-nextflow-400 transition-colors"
                   >
                     {photoUrl ? '↺ Change photo' : '↑ Upload photo'}
                   </button>
@@ -318,35 +348,7 @@ const AvatarConsole: React.FC = () => {
             </div>
 
             {/* Pickers */}
-            <div className="flex flex-col gap-4">
-              {/* Step: what are you attending? */}
-              <div>
-                <div className="monospace text-xxs uppercase tracking-widest text-gray-600 mb-1">
-                  What are you attending?
-                </div>
-                <div className="grid grid-cols-1 xxs:grid-cols-3 gap-2">
-                  {events.map((ev) => (
-                    <button
-                      key={ev.id}
-                      type="button"
-                      aria-pressed={event === ev.id}
-                      onClick={() => {
-                        setEvent(ev.id);
-                        setCardUrl(null);
-                      }}
-                      className={clsx(
-                        'monospace text-xs px-3 py-3 border transition-colors text-center',
-                        event === ev.id
-                          ? 'border-nextflow-600 bg-nextflow-600 text-black'
-                          : 'border-nextflow-600/30 text-white hover:border-nextflow-600'
-                      )}
-                    >
-                      {ev.label}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
+            <div className="flex flex-col gap-3 xs:gap-4">
               {mode === 'photo' && (
                 <p className="monospace text-xs text-gray-500 leading-relaxed">
                   Your photo is placed on the right of the card. A square-ish image
@@ -371,7 +373,7 @@ const AvatarConsole: React.FC = () => {
                         type="button"
                         aria-label={`Previous ${category.label}`}
                         onClick={() => cycle(category.id, -1)}
-                        className="px-4 py-3 text-nextflow-600 hover:bg-nextflow-600 hover:text-black transition-colors"
+                        className="px-3 py-2.5 xs:px-4 xs:py-3 text-nextflow-600 hover:bg-nextflow-600 hover:text-black transition-colors"
                       >
                         &#9664;
                       </button>
@@ -385,7 +387,7 @@ const AvatarConsole: React.FC = () => {
                         type="button"
                         aria-label={`Next ${category.label}`}
                         onClick={() => cycle(category.id, 1)}
-                        className="px-4 py-3 text-nextflow-600 hover:bg-nextflow-600 hover:text-black transition-colors"
+                        className="px-3 py-2.5 xs:px-4 xs:py-3 text-nextflow-600 hover:bg-nextflow-600 hover:text-black transition-colors"
                       >
                         &#9654;
                       </button>
