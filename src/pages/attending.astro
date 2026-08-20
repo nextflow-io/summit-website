@@ -1,0 +1,20 @@
+---
+import Layout from '@layouts/Base.astro';
+import Meta from '@components/Meta/Meta.astro';
+import AvatarConsole from '@modules/AvatarConsole';
+import { fetchSettings, type SettingsData } from '@data/settings';
+
+const settings: SettingsData = await fetchSettings();
+---
+
+<Layout>
+  <Fragment slot="head">
+    <meta name="robots" content="noindex, nofollow" />
+  </Fragment>
+  <Meta
+    title="I'm Attending"
+    description="Build a pixel-style avatar and generate a shareable card to announce you're attending Nextflow Summit."
+    settings={settings}
+  />
+  <AvatarConsole client:load />
+</Layout>
