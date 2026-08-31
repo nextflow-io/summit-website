@@ -333,6 +333,26 @@ const LandingHero: React.FC<HeroProps> = ({
         )}
       </button>
 
+      {/* Pacman controls hint — fades in, holds, then fades out. */}
+      <AnimatePresence>
+        {pacmanMode && (
+          <motion.div
+            key="pac-hint"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: [0, 1, 1, 0] }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 4.5, times: [0, 0.1, 0.7, 1], ease: 'linear' }}
+            className="pointer-events-none z-50 absolute top-1/2 left-[calc(100%-270px)] -translate-x-1/2 -translate-y-1/2 bg-black border-2 border-nextflow-600 outline outline-[3px] outline-black px-6 py-4 monospace text-base sm:text-lg text-nextflow-600 text-center leading-relaxed whitespace-nowrap"
+          >
+            Arrow keys / WASD to move
+            <br />
+            Map pixels are editable too!
+            <br />
+            Esc to exit
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* Help Button */}
       <button
         onClick={() => setIsModalOpen(true)}
@@ -420,6 +440,10 @@ const LandingHero: React.FC<HeroProps> = ({
                       </svg>
                     )}
                   </span>
+                  <br />
+                  <br /> Psst… find the{' '}
+                  <span className="text-nextflow-800 monospace">Pac-Man</span> in
+                  the top-right corner to play a hidden game.
                 </p>
 
                 <div className="mt-4 flex justify-start gap-2">
