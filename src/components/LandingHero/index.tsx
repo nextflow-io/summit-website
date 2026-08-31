@@ -69,9 +69,13 @@ const LandingHero: React.FC<HeroProps> = ({
   const [pacmanMode, setPacmanMode] = useState(false);
   const pixelsRef = useRef<{ getCanvas: () => HTMLCanvasElement | null }>(null);
 
-  // Pacman launch icon faces the cursor, snapped to the nearest 90°
+  // Pacman launch icon faces the cursor, snapped to the nearest 90°, and slides
+  // along the x-axis to sit under the cursor. pacXRef mirrors pacX so the home
+  // position can be recovered from the (translated) rect each frame.
   const pacBtnRef = useRef<HTMLButtonElement>(null);
   const [pacDir, setPacDir] = useState(0);
+  const [pacX, setPacX] = useState(0);
+  const pacXRef = useRef(0);
 
   const [hashtagCopied, setHashtagCopied] = useState(false);
 
@@ -93,35 +97,71 @@ const LandingHero: React.FC<HeroProps> = ({
     };
   }, [isModalOpen]);
 
-  // Point the pacman launch icon's mouth towards the cursor, in 90° jumps.
-  // Throttled to one update per frame since this listens on the whole window.
+  // The pacman launch icon chases the cursor's x at the in-game pacman speed
+  // (one 18px cell per 150ms tick = 120px/s), its mouth facing the cursor from
+  // its current position, snapped to the nearest 90°. Only x moves, never y.
   useEffect(() => {
     if (pacmanMode) return;
-    let queued = false;
-    let last = { x: 0, y: 0 };
-    const update = () => {
-      queued = false;
+    const SPEED = 18 / 150; // px per ms — matches the game's pacman
+    const cursor = { x: 0, y: 0 };
+    let raf = 0;
+    let running = false;
+    let lastTs = 0;
+
+    const step = (ts: number) => {
       const btn = pacBtnRef.current;
-      if (!btn) return;
+      if (!btn) {
+        running = false;
+        return;
+      }
+      // Cap dt so a throttled/backgrounded tab can't produce a giant step.
+      const dt = Math.min(lastTs ? ts - lastTs : 16, 100);
+      lastTs = ts;
       const r = btn.getBoundingClientRect();
-      const dx = last.x - (r.left + r.width / 2);
-      const dy = last.y - (r.top + r.height / 2);
-      // atan2 yields [-180,180]; +180 maps it to [0,360] for the snap below.
-      const deg = (Math.atan2(dy, dx) * 180) / Math.PI + 180;
-      const target = ((Math.round(deg / 90) * 90) % 360 + 360) % 360;
+      // Recover the untranslated home centre from the (translated) rect.
+      const homeX = r.left + r.width / 2 - pacXRef.current;
+      // Target x sits under the cursor, but never right of the home corner.
+      const targetX = Math.min(0, cursor.x - homeX);
+      // Move toward the target a fixed distance this frame (no overshoot).
+      const delta = targetX - pacXRef.current;
+      const maxStep = SPEED * dt;
+      const nextX =
+        Math.abs(delta) <= maxStep
+          ? targetX
+          : pacXRef.current + Math.sign(delta) * maxStep;
+      pacXRef.current = nextX;
+      setPacX(nextX);
+      // Face the way it's travelling; once it has reached the target x and
+      // stopped, face the cursor vertically instead. Base SVG opens left at 0°,
+      // so: left=0°, up=90°, right=180°, down=270°.
+      const arrived = Math.abs(targetX - nextX) <= 0.5;
+      const dy = cursor.y - (r.top + r.height / 2);
+      const target = !arrived ? (delta < 0 ? 0 : 180) : dy > 0 ? 270 : 90;
       // pacDir is a continuous accumulator: adding the shortest delta keeps the
-      // CSS rotation turning the short way (returning prev unchanged when the
-      // direction holds, so React skips the re-render).
+      // CSS rotation turning the short way.
       setPacDir((prev) => prev + shortestAngleDelta(target, ((prev % 360) + 360) % 360));
+      // Keep animating until it has arrived; then idle until the next move.
+      if (Math.abs(targetX - nextX) > 0.5) {
+        raf = requestAnimationFrame(step);
+      } else {
+        running = false;
+        lastTs = 0;
+      }
     };
     const handleMove = (e: MouseEvent) => {
-      last = { x: e.clientX, y: e.clientY };
-      if (queued) return;
-      queued = true;
-      requestAnimationFrame(update);
+      cursor.x = e.clientX;
+      cursor.y = e.clientY;
+      if (!running) {
+        running = true;
+        lastTs = 0;
+        raf = requestAnimationFrame(step);
+      }
     };
     window.addEventListener('mousemove', handleMove);
-    return () => window.removeEventListener('mousemove', handleMove);
+    return () => {
+      window.removeEventListener('mousemove', handleMove);
+      cancelAnimationFrame(raf);
+    };
   }, [pacmanMode]);
 
   // Exit pacman mode on Escape key
@@ -306,6 +346,7 @@ const LandingHero: React.FC<HeroProps> = ({
         }`}
         aria-label={pacmanMode ? 'Exit Pacman' : 'Play Pacman'}
         title={pacmanMode ? 'Exit Pacman (Esc)' : 'Play Pacman'}
+        style={{ transform: pacmanMode ? undefined : `translateX(${pacX}px)` }}
       >
         {pacmanMode ? (
           'x'
@@ -332,6 +373,26 @@ const LandingHero: React.FC<HeroProps> = ({
           </svg>
         )}
       </button>
+
+      {/* Pacman controls hint — fades in, holds, then fades out. */}
+      <AnimatePresence>
+        {pacmanMode && (
+          <motion.div
+            key="pac-hint"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: [0, 1, 1, 0] }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 4.5, times: [0, 0.1, 0.7, 1], ease: 'linear' }}
+            className="pointer-events-none z-50 absolute top-1/2 left-[calc(100%-270px)] -translate-x-1/2 -translate-y-1/2 bg-black border-2 border-nextflow-600 outline outline-[3px] outline-black px-6 py-4 monospace text-base sm:text-lg text-nextflow-600 text-center leading-relaxed whitespace-nowrap"
+          >
+            Arrow keys / WASD to move
+            <br />
+            Map pixels are editable too!
+            <br />
+            Esc to exit
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Help Button */}
       <button
@@ -420,6 +481,10 @@ const LandingHero: React.FC<HeroProps> = ({
                       </svg>
                     )}
                   </span>
+                  <br />
+                  <br /> Psst… find the{' '}
+                  <span className="text-nextflow-800 monospace">Pac-Man</span> in
+                  the top-right corner to play a hidden game.
                 </p>
 
                 <div className="mt-4 flex justify-start gap-2">
