@@ -78,15 +78,15 @@ const PromoBanner: React.FC<PromoBannerType> = ({
         className="container-xl relative z-20 py-10 md:py-12 flex flex-col md:flex-row items-center gap-6 md:gap-10"
       >
         {/* Copy + CTA */}
-        <div className="w-full md:flex-1 text-center md:text-left">
-          {headline && <h2 className="h4 mb-3">{headline}</h2>}
+        <div className="w-full md:w-2/3 text-left">
+          {headline && <h2 className="h4 mb-3 text-balance">{headline}</h2>}
           {bodycopy && (
-            <div className="max-w-[440px] mx-auto md:mx-0 text-[1rem] leading-relaxed text-white/80">
+            <div className=" mx-auto md:mx-0 text-[1rem] leading-relaxed  text-white/80">
               <PortableText value={bodycopy} />
             </div>
           )}
           {ctaText && ctaUrl && (
-            <Button className="mt-6" href={ctaUrl}>
+            <Button className="mt-6 w-full sm:w-auto" href={ctaUrl}>
               {ctaText}
             </Button>
           )}
@@ -95,13 +95,13 @@ const PromoBanner: React.FC<PromoBannerType> = ({
         {/* Image — kept in a mint tile so the GIF's transparent areas resolve to
             a solid backdrop on the black banner (and it echoes the pixel dots). */}
         {imageSrc && (
-          <div className="w-full max-w-[150px] md:max-w-[180px] shrink-0">
-            <div className="bg-nextflow-200 p-2">
+          <div className="w-ful flex justify-center max-w-[250px] md:max-w-none md:w-1/3">
+            <div className="bg-nextflow-200 justify-center items-center p-2 max-w-[250px] ">
               <img
                 src={imageSrc}
                 alt={imageAlt}
                 loading="lazy"
-                className="w-full h-auto"
+                className="w-full h-auto "
                 style={gif ? { imageRendering: 'pixelated' } : undefined}
               />
             </div>
