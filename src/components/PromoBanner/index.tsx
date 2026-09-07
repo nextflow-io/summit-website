@@ -1,6 +1,7 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import Button from '@components/Button';
 import PortableText from '@components/PortableText';
+import { SquarePixel } from '@components/SquarePixel';
 import { urlFor } from '@data/sanity-image';
 import { getButtonUrl } from '@utils/linkFormatter';
 import type { PromoBanner as PromoBannerType } from '@data/types';
@@ -40,37 +41,62 @@ const PromoBanner: React.FC<PromoBannerType> = ({
   const fade = reduceMotion
     ? {}
     : {
-        initial: { opacity: 0, y: 8 },
-        whileInView: { opacity: 1, y: 0 },
+        initial: { opacity: 0 },
+        whileInView: { opacity: 1 },
         viewport: { once: true },
-        transition: { duration: 0.35, ease: 'linear' as const },
+        transition: { duration: 0.3, ease: 'linear' as const },
       };
 
   return (
-    <section className="w-full bg-nextflow-400 text-black">
+    <section className="relative bg-black text-white overflow-hidden">
+      {/* Editable pixel-art accents, matching the FAQ section's SquarePixel dots. */}
+      <div className="hidden md:block absolute top-6 left-0 z-10">
+        <SquarePixel className="absolute top-0 left-0" initialColor="#31C9AC" />
+        <SquarePixel className="absolute top-[18px] left-[18px]" />
+        <SquarePixel
+          className="absolute top-[36px] left-0"
+          initialColor="#B6ECE2"
+        />
+      </div>
+      <div className="hidden md:block absolute bottom-6 right-0 z-10">
+        <SquarePixel
+          className="absolute bottom-0 right-0"
+          initialColor="#56D3BA"
+        />
+        <SquarePixel
+          className="absolute bottom-[18px] right-[18px]"
+          initialColor="#fff"
+        />
+        <SquarePixel
+          className="absolute bottom-[36px] right-0"
+          initialColor="#31C9AC"
+        />
+      </div>
+
       <motion.div
         {...fade}
-        className="container-xl py-14 md:py-20 flex flex-col md:flex-row items-center gap-8 md:gap-14"
+        className="container-xl relative z-20 py-10 md:py-12 flex flex-col md:flex-row items-center gap-6 md:gap-10"
       >
         {/* Copy + CTA */}
         <div className="w-full md:flex-1 text-center md:text-left">
-          {headline && <h2 className="h3 mb-4">{headline}</h2>}
+          {headline && <h2 className="h4 mb-3">{headline}</h2>}
           {bodycopy && (
-            <div className="max-w-[500px] mx-auto md:mx-0 text-[1.05rem] leading-relaxed">
+            <div className="max-w-[440px] mx-auto md:mx-0 text-[1rem] leading-relaxed text-white/80">
               <PortableText value={bodycopy} />
             </div>
           )}
           {ctaText && ctaUrl && (
-            <Button dark className="mt-8" href={ctaUrl}>
+            <Button className="mt-6" href={ctaUrl}>
               {ctaText}
             </Button>
           )}
         </div>
 
-        {/* Image */}
+        {/* Image — kept in a mint tile so the GIF's transparent areas resolve to
+            a solid backdrop on the black banner (and it echoes the pixel dots). */}
         {imageSrc && (
-          <div className="w-full max-w-[260px] md:max-w-[300px] shrink-0">
-            <div className="bg-nextflow-200 p-4">
+          <div className="w-full max-w-[150px] md:max-w-[180px] shrink-0">
+            <div className="bg-nextflow-200 p-2">
               <img
                 src={imageSrc}
                 alt={imageAlt}
