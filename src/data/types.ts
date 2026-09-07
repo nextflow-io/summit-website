@@ -90,6 +90,23 @@ export interface PastEventsSection {
   button?: Button;
 }
 
+export interface PromoBanner {
+  hideSection?: boolean;
+  headline?: string;
+  bodycopy?: any;
+  button?: Button;
+  image?: {
+    image?: {
+      asset?: {
+        _id: string;
+        url: string;
+      };
+    };
+    imageAlt?: string;
+    alt?: string;
+  };
+}
+
 export interface FAQItem {
   question: string;
   answer: any;
@@ -123,6 +140,7 @@ export interface PageData {
   hero: Hero;
   featureSection?: FeatureSection[];
   faqSection?: FAQItem[];
+  promoBanners?: PromoBanner[];
   swoogoUrl?: string;
 }
 

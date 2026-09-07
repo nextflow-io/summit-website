@@ -2,9 +2,11 @@ import React from 'react';
 import LandingHero from '@components/LandingHero';
 import FeatureBlocks from '@modules/FeatureBlocks';
 import Faq from '@components/Faq';
+import PromoBanner from '@components/PromoBanner';
 import { urlFor } from '@data/sanity-image';
 import { formatLink, getButtonUrl } from '@utils/linkFormatter';
 import { transformFeatureBox } from '@utils/boxTransformer';
+import type { PromoBanner as PromoBannerType } from '@data/types';
 
 type PageLayoutProps = {
   hero?: {
@@ -27,14 +29,16 @@ type PageLayoutProps = {
   };
   featureSection?: any[];
   faqSection?: any[];
+  promoBanners?: PromoBannerType[];
   children?: React.ReactNode;
 };
 
-const PageLayout: React.FC<PageLayoutProps> = ({ 
-  hero, 
+const PageLayout: React.FC<PageLayoutProps> = ({
+  hero,
   featureSection,
-  faqSection, 
-  children 
+  faqSection,
+  promoBanners,
+  children
 }) => {
   return (
     <div className=" text-white">
@@ -74,6 +78,12 @@ const PageLayout: React.FC<PageLayoutProps> = ({
       {children}
 
       {faqSection && faqSection.length > 0 && <Faq data={faqSection} />}
+
+      {/* Promo banners: last block of the page, after the FAQ and before the
+          global Contact/Footer (rendered by Base.astro). */}
+      {promoBanners?.map((banner, index) => (
+        <PromoBanner key={index} {...banner} />
+      ))}
     </div>
   );
 };
