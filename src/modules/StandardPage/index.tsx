@@ -10,6 +10,7 @@ const StandardPage: React.FC<Props> = ({ data }) => {
       hero={data?.hero}
       featureSection={data?.featureSection}
       faqSection={data?.faqSection}
+      promoBanners={data?.promoBanners}
     />
   );
 };

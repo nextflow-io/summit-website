@@ -40,6 +40,23 @@ const buttonFragment = `
   }
 `;
 
+// Promo banner module (bottom-of-page CTA banner). Reuses the shared button and
+// image object fragments. The image asset `url` is fetched raw so the frontend can
+// serve animated GIFs unprocessed (urlFor()/the image CDN freezes them).
+const promoBannerFragment = `
+  hideSection,
+  headline,
+  bodycopy[]{
+    ${portableTextFragment}
+  },
+  button {
+    ${buttonFragment}
+  },
+  image {
+    ${imageObjectFragment}
+  }
+`;
+
 const contentBoxFragment = `
   title {
     title,
@@ -212,6 +229,9 @@ export const buildPageQuery = (contentType: string) => `
     ${heroFragment},
     ${featureSectionsArrayFragment},
     ${faqSectionFragment},
+    promoBanners[]{
+      ${promoBannerFragment}
+    },
     swoogoUrl,
   }
 `;
