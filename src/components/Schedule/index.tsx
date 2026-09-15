@@ -134,10 +134,10 @@ const toScheduleDay = (section): ScheduleDay & { _sourceTzKey: string } => ({
 
 const transformAgenda = (agenda): ScheduleConfig => ({
   categories: [
-    { id: 'summit',    label: 'Summit',            sections: agenda?.summitAgenda },
-    { id: 'hackathon', label: 'Hackathon',          sections: agenda?.hackathonAgenda },
-    { id: 'beginner',  label: 'Beginner Training',  sections: agenda?.beginnerTrainingAgenda },
-    { id: 'advanced',  label: 'Advanced Training',  sections: agenda?.advancedTrainingAgenda },
+    { id: 'summit',    label: 'Summit',            sections: agenda.summitAgenda },
+    { id: 'hackathon', label: 'Hackathon',          sections: agenda.hackathonAgenda },
+    { id: 'beginner',  label: 'Beginner Training',  sections: agenda.beginnerTrainingAgenda },
+    { id: 'advanced',  label: 'Advanced Training',  sections: agenda.advancedTrainingAgenda },
   ]
     .filter((cat) => cat.sections?.length)
     .map(({ id, label, sections }) => ({
@@ -215,7 +215,7 @@ const ScheduleHeader: React.FC<{
 
 // ─── Main component ───────────────────────────────────────────────────────────
 
-const AllSchedules: React.FC<Props> = ({ children, className, agenda, location } = {} as Props) => {
+const AllSchedules: React.FC<Props> = ({ children, className, agenda, location }) => {
   const config = useMemo(() => transformAgenda(agenda), [agenda]);
 
   const getInitialCategory = (): string => {
@@ -286,9 +286,9 @@ const AllSchedules: React.FC<Props> = ({ children, className, agenda, location }
                   {computeSlotTime(slot as any, deltaMins)}
                 </div>
                 <div className="pl-2 md:pl-0 basis-4/6 sm:basis-5/6 w-full">
-                  {slot?.tags?.length > 0 && (
+                  {slot?.tags.length > 0 && (
                     <div className="mb-2">
-                      {slot?.tags?.map((tag, tagIndex) => (
+                      {slot?.tags.map((tag, tagIndex) => (
                         <span
                           key={`${tag}-${tagIndex}`}
                           className="py-1 px-2 text-[.6rem] mr-1 transition-all duration-300 uppercase monospace bg-black text-white"
@@ -322,7 +322,7 @@ const AllSchedules: React.FC<Props> = ({ children, className, agenda, location }
                   )}
                 </div>
 
-                {slot?.associatedEvents?.slug?.current && (
+                {location && slot?.associatedEvents?.slug?.current && (
                   <a
                     href={`/2026/${location}/agenda/${slot.associatedEvents?.slug?.current}`}
                     className="absolute w-full h-full top-0 left-0"
