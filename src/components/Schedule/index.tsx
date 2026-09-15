@@ -118,7 +118,6 @@ const toTimeSlot = (item): TimeSlot & { _startMins: number | null; _endMins: num
     bodycopy: item?.bodycopy,
     tags: item?.tags ?? [],
     isHighlighted: item.isHighlighted,
-    associatedSpeakers: item?.associatedSpeakers ?? [],
     associatedEvents: item?.associatedEvents,
     highlighted: item?.tags?.includes('highlight'),
     sessions: [,],
@@ -215,7 +214,7 @@ const ScheduleHeader: React.FC<{
 
 // ─── Main component ───────────────────────────────────────────────────────────
 
-const AllSchedules: React.FC<Props> = ({ children, className, agenda , location}) => {
+const AllSchedules: React.FC<Props> = ({ children, className, agenda, location }) => {
   const config = useMemo(() => transformAgenda(agenda), [agenda]);
 
   const getInitialCategory = (): string => {
@@ -258,13 +257,9 @@ const AllSchedules: React.FC<Props> = ({ children, className, agenda , location}
         // Compute offset delta: how many minutes to add to source times
         const sourceTzKey = (day as any)._sourceTzKey ?? 'est';
         const sourceUtcOffset = SOURCE_TZ_OFFSETS[sourceTzKey] ?? -5;
-        const targetUtcOffset = selectedTz.offsetHours - 5 + sourceUtcOffset;
-        // Simpler: delta = (targetUtcOffset - sourceUtcOffset) * 60
-        const offsetDeltaMins = (selectedTz.offsetHours + sourceUtcOffset) * 60;
-        // Actually: target UTC offset = selectedTz.offsetHours + (-5) [since selectedTz.offsetHours is relative to EST=-5]
-        // delta from source = (targetUTC - sourceUTC) * 60
-        const targetActualUtc = selectedTz.offsetHours + (-5); // selectedTz offset is relative to EST
-        const deltaMins = (targetActualUtc - sourceUtcOffset) * 60;
+        // selectedTz.offsetHours is relative to EST (UTC-5); make it an absolute UTC offset.
+        const targetUtcOffset = selectedTz.offsetHours - 5;
+        const deltaMins = (targetUtcOffset - sourceUtcOffset) * 60;
 
         return (
           <section key={dayIndex} className="container-xl mb-20">
@@ -279,7 +274,7 @@ const AllSchedules: React.FC<Props> = ({ children, className, agenda , location}
                 key={slotIndex}
                 className={`relative text-black relative w-full flex flex-row transition-all duration-300 p-2 md:p-4 mb-2
                   ${slot.isHighlighted ? 'bg-nextflow-600' : 'bg-nextflow-200'}
-                  ${slot?.associatedEvents?.slug.current != null ? 'hover:bg-black hover:text-white' : ''}
+                  ${location && slot?.associatedEvents?.slug?.current != null ? 'hover:bg-black hover:text-white' : ''}
                 `}
               >
                 <div className="mt-[1px] basis-2/6 sm:basis-1/6 sm:w-full uppercase items-start text-[.7rem] md:text-[1rem]">
@@ -288,9 +283,9 @@ const AllSchedules: React.FC<Props> = ({ children, className, agenda , location}
                 <div className="pl-2 md:pl-0 basis-4/6 sm:basis-5/6 w-full">
                   {slot?.tags.length > 0 && (
                     <div className="mb-2">
-                      {slot?.tags.map((tag) => (
+                      {slot?.tags.map((tag, tagIndex) => (
                         <span
-                          key={tag._id}
+                          key={`${tag}-${tagIndex}`}
                           className="py-1 px-2 text-[.6rem] mr-1 transition-all duration-300 uppercase monospace bg-black text-white"
                         >
                           {tag}
@@ -308,7 +303,7 @@ const AllSchedules: React.FC<Props> = ({ children, className, agenda , location}
                     )}
                   </div>
 
-                  {slot?.associatedEvents?.associatedSpeakers.map((speaker) => (
+                  {slot?.associatedEvents?.associatedSpeakers?.map((speaker) => (
                     <p key={speaker._id} className="text-sm transition-all duration-300">
                       {speaker.name}
                       {speaker.role && <span className="font-normal">, {speaker.role}</span>}
@@ -322,9 +317,9 @@ const AllSchedules: React.FC<Props> = ({ children, className, agenda , location}
                   )}
                 </div>
 
-                {slot?.associatedEvents?.slug.current && (
+                {location && slot?.associatedEvents?.slug?.current && (
                   <a
-                    href={`/2026/${location}/agenda/${slot.associatedEvents?.slug.current}`}
+                    href={`/2026/${location}/agenda/${slot.associatedEvents?.slug?.current}`}
                     className="absolute w-full h-full top-0 left-0"
                   ></a>
                 )}
