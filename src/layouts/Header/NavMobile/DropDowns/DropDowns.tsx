@@ -87,7 +87,7 @@ const DropDownItem: React.FC<DropDownItemProps> = ({
           style={
             isOpen
               ? {
-                  height: contentHeight?.current?.scrollHeight,
+                  height: contentHeight?.current?.scrollHeight ?? 'auto',
                   marginTop: '1.5rem',
                   marginBottom: '1.5rem',
                 }
@@ -120,8 +120,35 @@ const DropDownItem: React.FC<DropDownItemProps> = ({
   );
 };
 
-const DropDowns: React.FC<Props> = ({ mobileMenu }) => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+/** First two URL segments, e.g. "/2026/virtual/agenda" -> "2026/virtual". */
+const sectionOf = (path?: string): string =>
+  (path ?? '').replace(/^\/+/, '').split('/').filter(Boolean).slice(0, 2).join('/');
+
+/** The group whose links belong to the section being viewed, so it starts expanded. */
+const activeGroupIndex = (
+  mobileMenu: MobileMenuItem[] | undefined,
+  pathname?: string
+): number | null => {
+  const current = sectionOf(pathname);
+  if (!current || !mobileMenu) return null;
+
+  const index = mobileMenu.findIndex(
+    (item) =>
+      item._type === 'menuGroup' &&
+      item.menuLinks?.some(
+        (menuLink) =>
+          !menuLink.link?.isExternal &&
+          sectionOf(menuLink.link?.internalLink) === current
+      )
+  );
+
+  return index === -1 ? null : index;
+};
+
+const DropDowns: React.FC<Props> = ({ pathname, mobileMenu }) => {
+  const [activeIndex, setActiveIndex] = useState<number | null>(() =>
+    activeGroupIndex(mobileMenu, pathname)
+  );
 
   const handleItemClick = (index: number) => {
     setActiveIndex((prevIndex) => (prevIndex === index ? null : index));

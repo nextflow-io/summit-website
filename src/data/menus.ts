@@ -56,6 +56,7 @@ export interface MenusData {
   /** Single ordered list of header tabs. A tab with `secondaryNav` shows a sub-bar across its section. */
   headerMenu?: MenuItem[];
   headerBtn?: Button;
+  /** @deprecated superseded by `headerMenu[].secondaryNav`; only used if `headerMenu` is empty. */
   mobileMenu?: MobileMenuItem[];
   footerMenu?: FooterGroup[];
   mobileBtn?: Button;
@@ -121,6 +122,37 @@ export function resolveSecondaryMenu(
   }
 
   return null;
+}
+
+/**
+ * Builds the mobile navigation from the same `headerMenu` data the desktop header uses,
+ * so the two can never drift: a tab with sub-links becomes an expandable group, a tab
+ * without them stays a plain link. Falls back to the legacy hand-maintained `mobileMenu`
+ * only when there is no `headerMenu` to derive from.
+ */
+export function buildMobileMenu(menus: MenusData | undefined): MobileMenuItem[] {
+  const headerMenu = menus?.headerMenu ?? [];
+
+  if (headerMenu.length === 0) return menus?.mobileMenu ?? [];
+
+  return headerMenu.map((item): MobileMenuItem => {
+    if (item.secondaryNav && item.secondaryNav.length > 0) {
+      return {
+        _type: 'menuGroup',
+        menuTitle: item.linkTitle,
+        menuLinks: item.secondaryNav.map(({ linkTitle, link }) => ({
+          linkTitle,
+          link,
+        })),
+      };
+    }
+
+    return {
+      _type: 'singleLink',
+      linkTitle: item.linkTitle,
+      link: item.link,
+    };
+  });
 }
 
 export async function fetchMenus(): Promise<MenusData> {
