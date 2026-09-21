@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 
 // ─── Component types ──────────────────────────────────────────────────────────
 
@@ -44,30 +44,167 @@ type Props = {
 // ─── Timezone config ──────────────────────────────────────────────────────────
 
 type TzOption = {
-  label: string;
+  zone: string; // IANA timezone identifier
   city: string;
-  offsetHours: number; // offset from EST (UTC-5)
+  label: string; // e.g. "Boston, New York — EDT (UTC-4)"
+  offsetMins: number; // offset from UTC at the schedule's date
+  isLocal?: boolean;
 };
 
-// Offsets relative to EST (UTC-5). Positive = ahead of EST.
-const TIMEZONE_OPTIONS: TzOption[] = [
-  { label: 'EST (UTC-5)',    city: 'Boston',    offsetHours: 0    },
-  { label: 'CST (UTC-6)',    city: 'Chicago',   offsetHours: -1   },
-  { label: 'MST (UTC-7)',    city: 'Denver',    offsetHours: -2   },
-  { label: 'PST (UTC-8)',    city: 'LA',        offsetHours: -3   },
-  { label: 'GMT (UTC+0)',    city: 'London',    offsetHours: 5    },
-  { label: 'CET (UTC+1)',    city: 'Paris',     offsetHours: 6    },
-  { label: 'CEST (UTC+2)',   city: 'Barcelona', offsetHours: 7    },
-  { label: 'IST (UTC+5:30)', city: 'Mumbai',    offsetHours: 10.5 },
-  { label: 'SGT (UTC+8)',    city: 'Singapore', offsetHours: 13   },
-  { label: 'AEST (UTC+10)',  city: 'Sydney',    offsetHours: 15   },
+// Cities offered in the picker. Order here doesn't matter — the list is sorted
+// west → east by actual UTC offset on the day of the event.
+const TIMEZONE_CITIES: { zone: string; city: string }[] = [
+  { zone: 'America/Los_Angeles', city: 'Los Angeles' },
+  { zone: 'America/Denver', city: 'Denver' },
+  { zone: 'America/Chicago', city: 'Chicago' },
+  { zone: 'America/New_York', city: 'Boston, New York' },
+  { zone: 'Europe/London', city: 'London' },
+  { zone: 'Europe/Madrid', city: 'Barcelona, Paris' },
+  { zone: 'Asia/Kolkata', city: 'Mumbai' },
+  { zone: 'Asia/Singapore', city: 'Singapore' },
+  { zone: 'Australia/Sydney', city: 'Sydney' },
 ];
 
-// Source timezone offsets from UTC — used to detect the schedule's base tz
-const SOURCE_TZ_OFFSETS: Record<string, number> = {
-  est: -5,
-  cest: 2,
-  cet: 1,
+// The `timezone` field on a Sanity agenda section tells us which wall clock the
+// authored start/end times belong to. Map it onto a real IANA zone so that
+// daylight saving is handled for us.
+const SOURCE_ZONES: Record<string, string> = {
+  est: 'America/New_York',
+  cet: 'Europe/Madrid',
+  cest: 'Europe/Madrid',
+};
+
+const DEFAULT_SOURCE_ZONE = 'America/New_York';
+
+// ─── Timezone helpers ─────────────────────────────────────────────────────────
+
+const partsIn = (instant: Date, timeZone: string): Record<string, string> => {
+  const parts = new Intl.DateTimeFormat('en-US', {
+    timeZone,
+    hour12: false,
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+  }).formatToParts(instant);
+  const out: Record<string, string> = {};
+  for (const { type, value } of parts) out[type] = value;
+  return out;
+};
+
+// Offset (in minutes) of `timeZone` from UTC at a given instant. DST aware.
+const offsetMinutesAt = (instant: Date, timeZone: string): number => {
+  const p = partsIn(instant, timeZone);
+  const asUtc = Date.UTC(
+    Number(p.year),
+    Number(p.month) - 1,
+    Number(p.day),
+    Number(p.hour) % 24,
+    Number(p.minute),
+    Number(p.second)
+  );
+  // Round: `instant` can carry milliseconds that the formatted parts (second
+  // precision) drop, which would otherwise leak into the offset.
+  return Math.round((asUtc - instant.getTime()) / 60000);
+};
+
+// A wall-clock time ("2026-03-10", 9 * 60) in `timeZone` → the UTC instant.
+const zonedTimeToInstant = (isoDate: string, minutes: number, timeZone: string): Date | null => {
+  const [year, month, day] = isoDate.split('-').map(Number);
+  if (!year || !month || !day) return null;
+  const naive = Date.UTC(year, month - 1, day) + minutes * 60000;
+  // Two passes: the first offset guess can be wrong right on a DST boundary.
+  let ts = naive - offsetMinutesAt(new Date(naive), timeZone) * 60000;
+  ts = naive - offsetMinutesAt(new Date(ts), timeZone) * 60000;
+  return new Date(ts);
+};
+
+// "9AM" / "9:30AM", matching the original formatting.
+const formatInZone = (instant: Date, timeZone: string): string => {
+  const parts = new Intl.DateTimeFormat('en-US', {
+    timeZone,
+    hour: 'numeric',
+    minute: '2-digit',
+    hour12: true,
+  }).formatToParts(instant);
+  const get = (type: string) => parts.find((p) => p.type === type)?.value ?? '';
+  const minute = get('minute');
+  const period = get('dayPeriod').toUpperCase();
+  return minute === '00' ? `${get('hour')}${period}` : `${get('hour')}:${minute}${period}`;
+};
+
+const dayKeyInZone = (instant: Date, timeZone: string): string => {
+  const p = partsIn(instant, timeZone);
+  return `${p.year}-${p.month}-${p.day}`;
+};
+
+const formatUtcOffset = (offsetMins: number): string => {
+  const sign = offsetMins < 0 ? '-' : '+';
+  const abs = Math.abs(offsetMins);
+  const h = Math.floor(abs / 60);
+  const m = abs % 60;
+  return m === 0 ? `UTC${sign}${h}` : `UTC${sign}${h}:${String(m).padStart(2, '0')}`;
+};
+
+// Short zone name ("EDT", "BST") where the platform gives us a real
+// abbreviation, otherwise just the UTC offset.
+const zoneAbbreviation = (instant: Date, timeZone: string): string | null => {
+  try {
+    const parts = new Intl.DateTimeFormat('en-US', { timeZone, timeZoneName: 'short' }).formatToParts(
+      instant
+    );
+    const name = parts.find((p) => p.type === 'timeZoneName')?.value ?? '';
+    return /^[A-Z]{2,5}$/.test(name) ? name : null;
+  } catch {
+    return null;
+  }
+};
+
+const buildTzOption = (zone: string, city: string, referenceInstant: Date): TzOption | null => {
+  let offsetMins: number;
+  try {
+    offsetMins = offsetMinutesAt(referenceInstant, zone);
+  } catch {
+    return null; // unknown IANA zone on this platform
+  }
+  const abbr = zoneAbbreviation(referenceInstant, zone);
+  const offsetLabel = formatUtcOffset(offsetMins);
+  return {
+    zone,
+    city,
+    offsetMins,
+    label: `${city} — ${abbr ? `${abbr} (${offsetLabel})` : offsetLabel}`,
+  };
+};
+
+// Midday UTC on an ISO date — a safe sampling point for "what is this zone's
+// offset on that day", well clear of any DST transition.
+const middayInstantOn = (isoDate?: string): Date | null => {
+  const [year, month, day] = (isoDate ?? '').split('-').map(Number);
+  return year && month && day ? new Date(Date.UTC(year, month - 1, day, 12)) : null;
+};
+
+// Fallback formatter for sections with no date, where we cannot convert at all.
+const minutesToDisplay = (totalMins: number): string => {
+  const wrapped = ((totalMins % 1440) + 1440) % 1440;
+  const h24 = Math.floor(wrapped / 60);
+  const m = wrapped % 60;
+  const period = h24 >= 12 ? 'PM' : 'AM';
+  const h12 = h24 % 12 || 12;
+  return m === 0 ? `${h12}${period}` : `${h12}:${String(m).padStart(2, '0')}${period}`;
+};
+
+const cityFromZone = (zone: string): string =>
+  (zone.split('/').pop() ?? zone).replace(/_/g, ' ');
+
+const detectBrowserZone = (): string | null => {
+  try {
+    return Intl.DateTimeFormat().resolvedOptions().timeZone || null;
+  } catch {
+    return null;
+  }
 };
 
 // Parse a raw time string like "0900" or "900" into total minutes since midnight
@@ -79,23 +216,7 @@ const parseRawMinutes = (raw?: string): number | null => {
   return h * 60 + m;
 };
 
-const minutesToDisplay = (totalMins: number): string => {
-  // Wrap around midnight properly
-  const wrapped = ((totalMins % 1440) + 1440) % 1440;
-  const h24 = Math.floor(wrapped / 60);
-  const m = wrapped % 60;
-  const suffix = h24 >= 12 ? 'PM' : 'AM';
-  const h12 = h24 % 12 || 12;
-  return m === 0 ? `${h12}${suffix}` : `${h12}:${String(m).padStart(2, '0')}${suffix}`;
-};
-
-// ─── Original helpers (kept for non-time fields) ──────────────────────────────
-
-const timezoneLabels: Record<string, string> = {
-  est: 'EST (UTC-5)',
-  cest: 'CEST (UTC+2)',
-  cet: 'CET (UTC+1)',
-};
+// ─── Sanity → ScheduleConfig transform ────────────────────────────────────────
 
 const formatDate = (dateStr?: string): string => {
   if (!dateStr) return '';
@@ -110,7 +231,7 @@ const formatDate = (dateStr?: string): string => {
 // Build a slot but preserve raw start/end minutes for tz conversion
 const toTimeSlot = (item): TimeSlot & { _startMins: number | null; _endMins: number | null } => {
   return {
-    time: '', // computed later with offset
+    time: '', // computed later in the viewer's timezone
     _startMins: parseRawMinutes(item?.startTime),
     _endMins: parseRawMinutes(item?.endTime),
     title: item.title,
@@ -124,10 +245,11 @@ const toTimeSlot = (item): TimeSlot & { _startMins: number | null; _endMins: num
   };
 };
 
-const toScheduleDay = (section): ScheduleDay & { _sourceTzKey: string } => ({
+const toScheduleDay = (section): ScheduleDay & { _isoDate?: string; _sourceZone: string } => ({
   date: formatDate(section.date),
-  timezone: section.timezone ? timezoneLabels[section.timezone] : undefined,
-  _sourceTzKey: section.timezone ?? 'est',
+  timezone: section.timezone,
+  _isoDate: section.date,
+  _sourceZone: SOURCE_ZONES[section.timezone] ?? DEFAULT_SOURCE_ZONE,
   slots: (section.agendaItems ?? []).map(toTimeSlot),
 });
 
@@ -146,16 +268,33 @@ const transformAgenda = (agenda): ScheduleConfig => ({
     })),
 });
 
-// Compute display time string for a slot given an offset delta (in hours)
+// Render a slot's start/end in the viewer's timezone, flagging the rare case
+// where the session lands on a different calendar day for them.
 const computeSlotTime = (
   slot: { _startMins: number | null; _endMins: number | null },
-  offsetDeltaMins: number
+  isoDate: string | undefined,
+  sourceZone: string,
+  targetZone: string
 ): string => {
   if (slot._startMins == null) return '';
-  const start = minutesToDisplay(slot._startMins + offsetDeltaMins);
-  if (slot._endMins == null) return start;
-  const end = minutesToDisplay(slot._endMins + offsetDeltaMins);
-  return `${start} – ${end}`;
+
+  // `date` is optional on a Sanity agenda section. Without it there is nothing
+  // to anchor the conversion to, so show the authored times unconverted rather
+  // than an empty time column.
+  const startInstant = isoDate ? zonedTimeToInstant(isoDate, slot._startMins, sourceZone) : null;
+  if (!isoDate || !startInstant) {
+    const start = minutesToDisplay(slot._startMins);
+    return slot._endMins == null ? start : `${start} – ${minutesToDisplay(slot._endMins)}`;
+  }
+
+  const start = formatInZone(startInstant, targetZone);
+  const endInstant =
+    slot._endMins == null ? null : zonedTimeToInstant(isoDate, slot._endMins, sourceZone);
+  const time = endInstant ? `${start} – ${formatInZone(endInstant, targetZone)}` : start;
+
+  const shownDay = dayKeyInZone(startInstant, targetZone);
+  if (shownDay === isoDate) return time;
+  return `${time} (${shownDay > isoDate ? '+1 day' : '-1 day'})`;
 };
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
@@ -164,9 +303,10 @@ const ScheduleHeader: React.FC<{
   categories: TrainingCategory[];
   selectedCategoryId: string;
   onCategoryChange: (id: string) => void;
-  selectedTzLabel: string;
-  onTzChange: (label: string) => void;
-}> = ({ categories, selectedCategoryId, onCategoryChange, selectedTzLabel, onTzChange }) => (
+  timezones: TzOption[];
+  selectedZone: string;
+  onTzChange: (zone: string) => void;
+}> = ({ categories, selectedCategoryId, onCategoryChange, timezones, selectedZone, onTzChange }) => (
   <div className="pb-10 bg-black text-white monospace flex flex-col sm:flex-row w-full mb-16 gap-4">
     <div className="container-xl w-full">
       <div className="flex flex-col md:flex-row flex-wrap gap-2 justify-between">
@@ -193,16 +333,16 @@ const ScheduleHeader: React.FC<{
           </label>
           <select
             id="tz-select"
-            value={selectedTzLabel}
+            value={selectedZone}
             onChange={(e) => onTzChange(e.target.value)}
             className="rounded-none monospace bg-black border border-white text-white px-3 py-1 md:py-2 hover:bg-white hover:text-black transition-all duration-300 cursor-pointer appearance-none pr-8"
             style={{ outline: 'none', borderRadius: 0 }}
             onFocus={e => { e.currentTarget.style.outline = '2px solid #31C9AC'; e.currentTarget.style.borderRadius = '0'; }}
             onBlur={e => { e.currentTarget.style.outline = 'none'; }}
           >
-            {TIMEZONE_OPTIONS.map((tz) => (
-              <option key={tz.label} value={tz.label} style={{ background: '#000' }}>
-                {tz.city} — {tz.label}
+            {timezones.map((tz) => (
+              <option key={tz.zone} value={tz.zone} style={{ background: '#000' }}>
+                {tz.label}{tz.isLocal ? ' (your timezone)' : ''}
               </option>
             ))}
           </select>
@@ -227,7 +367,60 @@ const AllSchedules: React.FC<Props> = ({ children, className, agenda, location }
   };
 
   const [selectedCategoryId, setSelectedCategoryId] = useState<string>(getInitialCategory);
-  const [selectedTzLabel, setSelectedTzLabel] = useState<string>(TIMEZONE_OPTIONS[0].label);
+
+  const selectedCategory =
+    config.categories.find((cat) => cat.id === selectedCategoryId) ??
+    config.categories[0];
+
+  // The picker can only show one offset per zone, so its labels and ordering are
+  // evaluated on the first day of the schedule rather than today — that way they
+  // reflect whether DST is in force while the summit is running. Each day's own
+  // header and times are computed from that day's date further down.
+  const referenceInstant = useMemo(() => {
+    const firstIso = config.categories
+      .flatMap((cat) => cat.days as any[])
+      .map((day) => day?._isoDate)
+      .find(Boolean);
+    return middayInstantOn(firstIso) ?? new Date();
+  }, [config]);
+
+  const scheduleZone =
+    ((selectedCategory?.days?.[0] as any)?._sourceZone as string | undefined) ?? DEFAULT_SOURCE_ZONE;
+
+  const [browserZone, setBrowserZone] = useState<string | null>(null);
+  const [selectedZone, setSelectedZone] = useState<string>(scheduleZone);
+  const [tzTouched, setTzTouched] = useState(false);
+
+  // Detect after mount: reading the browser timezone during render would not
+  // match what was rendered on the server.
+  useEffect(() => {
+    const detected = detectBrowserZone();
+    if (!detected) return;
+    setBrowserZone(detected);
+    if (!tzTouched) setSelectedZone(detected);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const timezones = useMemo(() => {
+    const options = TIMEZONE_CITIES.map(({ zone, city }) =>
+      buildTzOption(zone, city, referenceInstant)
+    ).filter(Boolean) as TzOption[];
+
+    const known = new Set(options.map((tz) => tz.zone));
+    for (const zone of [browserZone, scheduleZone, selectedZone]) {
+      if (!zone || known.has(zone)) continue;
+      const extra = buildTzOption(zone, cityFromZone(zone), referenceInstant);
+      if (extra) {
+        options.push(extra);
+        known.add(zone);
+      }
+    }
+
+    for (const tz of options) tz.isLocal = tz.zone === browserZone;
+
+    // West → east, so the list reads in a single direction around the globe.
+    return options.sort((a, b) => a.offsetMins - b.offsetMins || a.city.localeCompare(b.city));
+  }, [referenceInstant, browserZone, scheduleZone, selectedZone]);
 
   const handleCategoryChange = (categoryId: string) => {
     setSelectedCategoryId(categoryId);
@@ -236,13 +429,22 @@ const AllSchedules: React.FC<Props> = ({ children, className, agenda, location }
     }
   };
 
-  const selectedCategory =
-    config.categories.find((cat) => cat.id === selectedCategoryId) ??
-    config.categories[0];
+  const handleTzChange = (zone: string) => {
+    setTzTouched(true);
+    setSelectedZone(zone);
+  };
 
   if (!selectedCategory) return null;
 
-  const selectedTz = TIMEZONE_OPTIONS.find((tz) => tz.label === selectedTzLabel) ?? TIMEZONE_OPTIONS[0];
+  // Label each day from its own date: a summit that straddles a DST changeover
+  // would otherwise caption a later day "EDT" above times rendered in EST. A
+  // day with no date isn't converted at all, so it is captioned with the zone
+  // its times were authored in.
+  const tzLabelFor = (isoDate: string | undefined, sourceZone: string): string => {
+    const zone = isoDate ? selectedZone : sourceZone;
+    const city = timezones.find((tz) => tz.zone === zone)?.city ?? cityFromZone(zone);
+    return buildTzOption(zone, city, middayInstantOn(isoDate) ?? referenceInstant)?.label ?? zone;
+  };
 
   return (
     <div className={`w-full ${className ?? ''}`}>
@@ -250,23 +452,20 @@ const AllSchedules: React.FC<Props> = ({ children, className, agenda, location }
         categories={config.categories}
         selectedCategoryId={selectedCategoryId}
         onCategoryChange={handleCategoryChange}
-        selectedTzLabel={selectedTzLabel}
-        onTzChange={setSelectedTzLabel}
+        timezones={timezones}
+        selectedZone={selectedZone}
+        onTzChange={handleTzChange}
       />
       {selectedCategory.days.map((day, dayIndex) => {
-        // Compute offset delta: how many minutes to add to source times
-        const sourceTzKey = (day as any)._sourceTzKey ?? 'est';
-        const sourceUtcOffset = SOURCE_TZ_OFFSETS[sourceTzKey] ?? -5;
-        // selectedTz.offsetHours is relative to EST (UTC-5); make it an absolute UTC offset.
-        const targetUtcOffset = selectedTz.offsetHours - 5;
-        const deltaMins = (targetUtcOffset - sourceUtcOffset) * 60;
+        const isoDate = (day as any)._isoDate as string | undefined;
+        const sourceZone = ((day as any)._sourceZone as string | undefined) ?? DEFAULT_SOURCE_ZONE;
 
         return (
           <section key={dayIndex} className="container-xl mb-20">
             <h5 className="h5 mb-4">{day.date}</h5>
             {day.timezone && (
               <div className="border-b border-white mb-3 pb-2">
-                Time: {selectedTzLabel}
+                Time: {tzLabelFor(isoDate, sourceZone)}
               </div>
             )}
             {day.slots.map((slot, slotIndex) => (
@@ -278,7 +477,7 @@ const AllSchedules: React.FC<Props> = ({ children, className, agenda, location }
                 `}
               >
                 <div className="mt-[1px] basis-2/6 sm:basis-1/6 sm:w-full uppercase items-start text-[.7rem] md:text-[1rem]">
-                  {computeSlotTime(slot as any, deltaMins)}
+                  {computeSlotTime(slot as any, isoDate, sourceZone, selectedZone)}
                 </div>
                 <div className="pl-2 md:pl-0 basis-4/6 sm:basis-5/6 w-full">
                   {slot?.tags.length > 0 && (
