@@ -180,6 +180,13 @@ const buildTzOption = (zone: string, city: string, referenceInstant: Date): TzOp
 const cityFromZone = (zone: string): string =>
   (zone.split('/').pop() ?? zone).replace(/_/g, ' ');
 
+// Midday UTC on a given calendar date — a safe point to sample that day's
+// UTC offsets from, whichever zone we ask about.
+const isoNoonInstant = (isoDate?: string): Date | null => {
+  const [year, month, day] = (isoDate ?? '').split('-').map(Number);
+  return year && month && day ? new Date(Date.UTC(year, month - 1, day, 12)) : null;
+};
+
 const detectBrowserZone = (): string | null => {
   try {
     return Intl.DateTimeFormat().resolvedOptions().timeZone || null;
@@ -257,9 +264,16 @@ const computeSlotTime = (
   sourceZone: string,
   targetZone: string
 ): string => {
-  if (slot._startMins == null || !isoDate) return '';
-  const startInstant = zonedTimeToInstant(isoDate, slot._startMins, sourceZone);
-  if (!startInstant) return '';
+  if (slot._startMins == null) return '';
+
+  // No date on the section — we can't convert, so show the authored times as-is.
+  const startInstant = isoDate ? zonedTimeToInstant(isoDate, slot._startMins, sourceZone) : null;
+  if (!startInstant) {
+    const raw = (mins: number) => formatInZone(new Date(mins * 60000), 'UTC');
+    return slot._endMins == null
+      ? raw(slot._startMins)
+      : `${raw(slot._startMins)} – ${raw(slot._endMins)}`;
+  }
 
   const start = formatInZone(startInstant, targetZone);
   const endInstant =
@@ -353,8 +367,7 @@ const AllSchedules: React.FC<Props> = ({ children, className, agenda, location }
       .flatMap((cat) => cat.days as any[])
       .map((day) => day?._isoDate)
       .find(Boolean);
-    const [year, month, day] = (firstIso ?? '').split('-').map(Number);
-    return year && month && day ? new Date(Date.UTC(year, month - 1, day, 12)) : new Date();
+    return isoNoonInstant(firstIso) ?? new Date();
   }, [config]);
 
   const scheduleZone =
@@ -409,8 +422,14 @@ const AllSchedules: React.FC<Props> = ({ children, className, agenda, location }
 
   if (!selectedCategory) return null;
 
-  const selectedTzLabel =
-    timezones.find((tz) => tz.zone === selectedZone)?.label ?? selectedZone;
+  const selectedTzCity =
+    timezones.find((tz) => tz.zone === selectedZone)?.city ?? cityFromZone(selectedZone);
+
+  // Labels carry a UTC offset, so they're built per day: a multi-day event can
+  // straddle a DST changeover and the header must match the times below it.
+  const tzLabelOn = (isoDate?: string): string =>
+    buildTzOption(selectedZone, selectedTzCity, isoNoonInstant(isoDate) ?? referenceInstant)
+      ?.label ?? selectedZone;
 
   return (
     <div className={`w-full ${className ?? ''}`}>
@@ -431,7 +450,7 @@ const AllSchedules: React.FC<Props> = ({ children, className, agenda, location }
             <h5 className="h5 mb-4">{day.date}</h5>
             {day.timezone && (
               <div className="border-b border-white mb-3 pb-2">
-                Time: {selectedTzLabel}
+                Time: {tzLabelOn(isoDate)}
               </div>
             )}
             {day.slots.map((slot, slotIndex) => (
