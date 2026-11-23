@@ -1,6 +1,7 @@
-import { useRef, useState } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
 import DownCaret from '@images/icons/DownCaret';
 import { formatLink } from '@utils/linkFormatter';
+import { mostSpecificSectionIndex, sectionOfLink } from '@utils/navSection';
 
 type Link = {
   isExternal?: boolean;
@@ -22,6 +23,8 @@ type SingleLink = {
 type MenuGroup = {
   _type: 'menuGroup';
   menuTitle: string;
+  /** The group's own landing page, mirroring what the desktop tab links to. */
+  link?: Link;
   menuLinks?: MenuLink[];
 };
 
@@ -41,6 +44,8 @@ type DropDownItemProps = {
   onClick?: () => void;
 };
 
+const titleClasses = 'text-[1.6rem] leading-tight';
+
 const DropDownItem: React.FC<DropDownItemProps> = ({
   name,
   url,
@@ -48,53 +53,71 @@ const DropDownItem: React.FC<DropDownItemProps> = ({
   isOpen,
   onClick,
 }) => {
-  const contentHeight = useRef<HTMLDivElement>(null);
-  const hasDropdown = menuLinks && menuLinks.length > 0;
+  const listRef = useRef<HTMLUListElement>(null);
+  const [contentHeight, setContentHeight] = useState(0);
+  const hasDropdown = Boolean(menuLinks && menuLinks.length > 0);
+
+  // Measure the expanded height after mount so collapsing animates from a pixel
+  // value: a group that starts open would otherwise sit at `auto` and snap shut.
+  useLayoutEffect(() => {
+    const list = listRef.current;
+    if (!list) return;
+
+    const measure = () => setContentHeight(list.scrollHeight);
+    measure();
+
+    if (typeof ResizeObserver === 'undefined') return;
+    const observer = new ResizeObserver(measure);
+    observer.observe(list);
+    return () => observer.disconnect();
+  }, [menuLinks]);
 
   return (
-    <div className={`border-b py-2 overflow-hidden`}>
-      <button
-        className={`dropdownBtn flex flex-row justify-between items-center text-left w-full transition-all duration-400 hover:opacity-80 ${isOpen ? 'active ' : ''}`}
-        onClick={hasDropdown ? onClick : undefined}
-      >
-        {hasDropdown ? (
-          <h3 className="text-[1.6rem] leading-tight">{name}</h3>
+    <div className="border-b py-2 overflow-hidden">
+      <div className="flex flex-row justify-between items-center w-full">
+        {url ? (
+          // The group's own landing page stays reachable; the caret toggles the sub-links.
+          <a
+            className="flex-1 py-1 transition-all duration-400 hover:opacity-80"
+            href={url}
+          >
+            <h3 className={titleClasses}>{name}</h3>
+          </a>
+        ) : hasDropdown ? (
+          <button
+            className="dropdownBtn flex-1 text-left py-1 transition-all duration-400 hover:opacity-80"
+            onClick={onClick}
+            aria-expanded={isOpen}
+          >
+            <h3 className={titleClasses}>{name}</h3>
+          </button>
         ) : (
-          <div className="relative w-full h-full flex flex-row">
-            <h3 className="text-[1.6rem] leading-tight">{name}</h3>
-            {url && (
-              <a
-                className="absolute top-0 left-0 right-0 bottom-0 w-full h-full"
-                href={url}
-              />
-            )}
-          </div>
+          <h3 className={titleClasses}>{name}</h3>
         )}
 
         {hasDropdown && (
-          <div
-            className={`caret transition-all duration-500 ease-in-out ${isOpen ? 'active rotate-180' : ''}`}
+          <button
+            className={`caret p-2 -mr-2 transition-all duration-500 ease-in-out ${isOpen ? 'active rotate-180' : ''}`}
+            onClick={onClick}
+            aria-expanded={isOpen}
+            aria-label={`${isOpen ? 'Collapse' : 'Expand'} ${name} menu`}
           >
             <DownCaret />
-          </div>
+          </button>
         )}
-      </button>
+      </div>
 
       {hasDropdown && (
         <div
-          ref={contentHeight}
-          className={`transition-all duration-500 ease-in-out`}
-          style={
-            isOpen
-              ? {
-                  height: contentHeight?.current?.scrollHeight,
-                  marginTop: '1.5rem',
-                  marginBottom: '1.5rem',
-                }
-              : { height: '0px', overflow: 'hidden' }
-          }
+          className="transition-all duration-500 ease-in-out overflow-hidden"
+          style={{
+            height: isOpen ? contentHeight : 0,
+            marginTop: isOpen ? '1.5rem' : 0,
+            marginBottom: isOpen ? '1.5rem' : 0,
+          }}
+          aria-hidden={!isOpen}
         >
-          <ul className="dropdown__links ">
+          <ul className="dropdown__links" ref={listRef}>
             {menuLinks?.map((item, index) => {
               const href = formatLink(item.link);
 
@@ -107,6 +130,7 @@ const DropDownItem: React.FC<DropDownItemProps> = ({
                     rel={
                       item.link?.isExternal ? 'noopener noreferrer' : undefined
                     }
+                    tabIndex={isOpen ? undefined : -1}
                   >
                     {item.linkTitle}
                   </a>
@@ -120,8 +144,33 @@ const DropDownItem: React.FC<DropDownItemProps> = ({
   );
 };
 
-const DropDowns: React.FC<Props> = ({ mobileMenu }) => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+/**
+ * The group whose section owns the current path, so it starts expanded.
+ * Keyed off each group's *own* link with the same rule the desktop secondary bar
+ * uses, so the two navs always agree on the current section.
+ */
+const activeGroupIndex = (
+  mobileMenu: MobileMenuItem[] | undefined,
+  pathname?: string
+): number | null => {
+  if (!mobileMenu || !pathname) return null;
+
+  const groups = mobileMenu.filter(
+    (item): item is MenuGroup => item._type === 'menuGroup'
+  );
+  const matchIndex = mostSpecificSectionIndex(
+    groups.map((group) => sectionOfLink(group.link)),
+    pathname
+  );
+  if (matchIndex === null) return null;
+
+  return mobileMenu.indexOf(groups[matchIndex]);
+};
+
+const DropDowns: React.FC<Props> = ({ pathname, mobileMenu }) => {
+  const [activeIndex, setActiveIndex] = useState<number | null>(() =>
+    activeGroupIndex(mobileMenu, pathname)
+  );
 
   const handleItemClick = (index: number) => {
     setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
@@ -150,12 +199,13 @@ const DropDowns: React.FC<Props> = ({ mobileMenu }) => {
           );
         }
 
-        // Menu Group with Dropdown
+        // Menu Group: its own landing page plus a toggle for the sub-links
         if (item._type === 'menuGroup') {
           return (
             <DropDownItem
               key={index}
               name={item.menuTitle}
+              url={formatLink(item.link)}
               menuLinks={item.menuLinks}
               isOpen={activeIndex === index}
               onClick={() => handleItemClick(index)}

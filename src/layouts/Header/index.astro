@@ -9,7 +9,12 @@ import SecondaryMenu from './SecondaryMenu';
 import Logo from './Logo';
 import Button from '@components/Button';
 
-import { fetchMenus, resolveSecondaryMenu, buildPrimaryNav } from '@data/menus';
+import {
+  fetchMenus,
+  resolveSecondaryMenu,
+  buildPrimaryNav,
+  buildMobileMenu,
+} from '@data/menus';
 import { formatLink } from '@utils/linkFormatter';
 
 const menus = await fetchMenus();
@@ -19,6 +24,7 @@ if (typeof Astro.props.showNav !== 'undefined') showNav = Astro.props.showNav;
 
 const primaryMenuItems = buildPrimaryNav(menus);
 const secondaryMenuItems = resolveSecondaryMenu(menus, pathname);
+const mobileMenuItems = buildMobileMenu(menus);
 ---
 
 <header
@@ -86,7 +92,7 @@ const secondaryMenuItems = resolveSecondaryMenu(menus, pathname);
   pathname={pathname}
   namespace={namespace}
   showNav={showNav}
-  mobileMenu={menus?.mobileMenu}
+  mobileMenu={mobileMenuItems}
   mobileButton={menus?.mobileBtn}
   mobileButton2={menus?.mobileBtn2}
   client:only="react"

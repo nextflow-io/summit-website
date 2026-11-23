@@ -1,5 +1,9 @@
 // data/menus.ts or lib/sanity/menus.ts
 import { sanityClient } from 'sanity:client';
+import {
+  mostSpecificSectionIndex,
+  sectionOfLink,
+} from '@utils/navSection';
 
 export interface Link {
   isExternal?: boolean;
@@ -35,6 +39,12 @@ export interface MenuLink {
 export interface MenuGroup {
   _type: 'menuGroup';
   menuTitle: string;
+  /**
+   * The group's own landing page — the same destination the desktop tab links to.
+   * Without it a group header would only toggle, leaving the section's overview
+   * page unreachable on mobile.
+   */
+  link?: Link;
   menuLinks: MenuLink[];
 }
 
@@ -56,6 +66,7 @@ export interface MenusData {
   /** Single ordered list of header tabs. A tab with `secondaryNav` shows a sub-bar across its section. */
   headerMenu?: MenuItem[];
   headerBtn?: Button;
+  /** @deprecated superseded by `headerMenu[].secondaryNav`; only used if `headerMenu` is empty. */
   mobileMenu?: MobileMenuItem[];
   footerMenu?: FooterGroup[];
   mobileBtn?: Button;
@@ -67,18 +78,10 @@ export interface MenusData {
   secondaryMenu?: MenuItem[];
 }
 
-/**
- * The "section" a header tab owns, used to decide where its secondary bar shows.
- * It is the first two URL segments of the tab's own internal link
- * (e.g. "2026/barcelona/overview" -> "2026/barcelona"). External or empty links have no section.
- */
-function sectionOf(link?: Link): string | null {
-  if (!link || link.isExternal) return null;
-  const internal = link.internalLink;
-  if (!internal) return null;
-  const segments = internal.replace(/^\/+/, '').split('/').filter(Boolean);
-  if (segments.length === 0) return null;
-  return segments.slice(0, 2).join('/');
+/** Whether a link actually resolves to somewhere (`formatLink` would return a URL). */
+function hasDestination(link?: Link): boolean {
+  if (!link) return false;
+  return Boolean(link.isExternal ? link.externalUrl : link.internalLink);
 }
 
 /**
@@ -102,13 +105,15 @@ export function resolveSecondaryMenu(
 ): MenuItem[] | null {
   if (!menus || !pathname) return null;
 
-  const match = (menus.headerMenu ?? [])
-    .filter((item) => item?.secondaryNav && item.secondaryNav.length > 0)
-    .map((item) => ({ section: sectionOf(item.link), nav: item.secondaryNav! }))
-    .filter((c) => c.section && pathname.includes(c.section))
-    .sort((a, b) => (b.section!.length ?? 0) - (a.section!.length ?? 0))[0];
+  const tabs = (menus.headerMenu ?? []).filter(
+    (item) => item?.secondaryNav && item.secondaryNav.length > 0
+  );
+  const matchIndex = mostSpecificSectionIndex(
+    tabs.map((item) => sectionOfLink(item.link)),
+    pathname
+  );
 
-  if (match?.nav) return match.nav;
+  if (matchIndex !== null) return tabs[matchIndex].secondaryNav!;
 
   // transition fallback: legacy single secondary nav (removable once CMS data is migrated)
   if (
@@ -121,6 +126,44 @@ export function resolveSecondaryMenu(
   }
 
   return null;
+}
+
+/**
+ * Builds the mobile navigation from the same `headerMenu` data the desktop header uses,
+ * so the two can never drift: a tab with sub-links becomes an expandable group, a tab
+ * without them stays a plain link. Falls back to the legacy hand-maintained `mobileMenu`
+ * only when there is no `headerMenu` to derive from.
+ */
+export function buildMobileMenu(menus: MenusData | undefined): MobileMenuItem[] {
+  const headerMenu = menus?.headerMenu ?? [];
+
+  if (headerMenu.length === 0) return menus?.mobileMenu ?? [];
+
+  return headerMenu
+    .map((item): MobileMenuItem | null => {
+      if (item.secondaryNav && item.secondaryNav.length > 0) {
+        return {
+          _type: 'menuGroup',
+          menuTitle: item.linkTitle,
+          link: item.link,
+          menuLinks: item.secondaryNav.map(({ linkTitle, link }) => ({
+            linkTitle,
+            link,
+          })),
+        };
+      }
+
+      // A tab with neither sub-links nor a destination would render as inert
+      // heading text, so leave it out rather than show a dead menu entry.
+      if (!hasDestination(item.link)) return null;
+
+      return {
+        _type: 'singleLink',
+        linkTitle: item.linkTitle,
+        link: item.link,
+      };
+    })
+    .filter((item): item is MobileMenuItem => item !== null);
 }
 
 export async function fetchMenus(): Promise<MenusData> {
