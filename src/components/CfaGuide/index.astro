@@ -1,0 +1,191 @@
+---
+// "Before you start" block for a Call for Abstracts landing page.
+//
+// Typeform shows one question at a time and can't be saved part-way or edited
+// after submitting, so this section front-loads everything: every question the
+// form will ask, a one-click drafting template, key dates, and how to fix a
+// mistake. Applicants should never meet a surprise inside the form.
+import type { CfaConfig } from '@data/cfa';
+import { buildDraftTemplate } from '@data/cfa';
+
+type Props = {
+  config: CfaConfig;
+  applyUrl: string;
+};
+
+const { config, applyUrl } = Astro.props;
+const template = buildDraftTemplate(config);
+const dates = config.dates.filter((d) => d.value);
+const pad = (n: number) => String(n).padStart(2, '0');
+---
+
+<section id="before-you-start" class="cfa-guide bg-black text-white border-t border-white/15">
+  <div class="container-xl py-16 md:py-24">
+    <div class="grid grid-cols-1 sm:grid-cols-12 gap-12 sm:gap-8 lg:gap-16">
+      <!-- Left: the full question list -->
+      <div class="sm:col-span-7">
+        <p class="monospace text-xs uppercase tracking-wider text-nextflow mb-4">
+          Before you start
+        </p>
+        <h2 class="h4 mb-6 max-w-[16ch]">Every question, up front.</h2>
+        <p class="text-lg text-white/75 max-w-[56ch] mb-10">
+          The form takes about {config.minutes} minutes. It can't be saved
+          part-way or edited after you submit, so we recommend drafting your
+          answers first. Here's exactly what we'll ask.
+        </p>
+
+        <ol class="border-t border-white/15" aria-label="Questions in the submission form">
+          {
+            config.questions.map((q, i) => (
+              <li class="flex gap-5 md:gap-8 py-5 border-b border-white/15">
+                <span class="monospace text-sm text-nextflow pt-1 shrink-0" aria-hidden="true">
+                  {pad(i + 1)}
+                </span>
+                <div class="flex-1 min-w-0">
+                  <p class="text-lg leading-snug">{q.label}</p>
+                  {q.hint && <p class="text-sm text-white/60 mt-1">{q.hint}</p>}
+                </div>
+                {!q.required && (
+                  <span class="monospace text-xxs uppercase tracking-wider text-white/50 border border-white/25 px-2 py-1 self-start shrink-0">
+                    Optional
+                  </span>
+                )}
+              </li>
+            ))
+          }
+        </ol>
+
+        <div class="mt-8 flex flex-wrap items-center gap-4">
+          <button
+            type="button"
+            class="cfa-copy monospace text-xs uppercase tracking-wider border border-white/40 hover:border-nextflow hover:text-nextflow transition-colors px-4 py-3 inline-flex items-center gap-3"
+            data-template={template}
+          >
+            <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="9" y="9" width="13" height="13" rx="0"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+            <span class="cfa-copy-label">Copy questions as a template</span>
+          </button>
+          <span class="cfa-copy-status text-sm text-nextflow" role="status" aria-live="polite"></span>
+        </div>
+      </div>
+
+      <!-- Right: sticky action card -->
+      <aside class="sm:col-span-5">
+        <div class="sm:sticky sm:top-32 border border-white/20 bg-white/[0.03]">
+          <div class="p-6 md:p-8">
+            <p class="monospace text-xs uppercase tracking-wider text-white/60 mb-6">
+              How it works
+            </p>
+            <ol class="space-y-5 mb-8">
+              <li class="flex gap-4">
+                <span class="cfa-step">1</span>
+                <div>
+                  <p class="font-medium">Draft your answers</p>
+                  <p class="text-sm text-white/60">Use the template, a doc, anything that saves.</p>
+                </div>
+              </li>
+              <li class="flex gap-4">
+                <span class="cfa-step">2</span>
+                <div>
+                  <p class="font-medium">Paste and submit</p>
+                  <p class="text-sm text-white/60">About {config.minutes} minutes, one sitting.</p>
+                </div>
+              </li>
+              <li class="flex gap-4">
+                <span class="cfa-step">3</span>
+                <div>
+                  <p class="font-medium">Hear back from us</p>
+                  <p class="text-sm text-white/60">The programme committee reviews every submission.</p>
+                </div>
+              </li>
+            </ol>
+
+            <a
+              href={applyUrl}
+              data-astro-reload
+              class="cfa-cta monospace uppercase text-sm bg-nextflow text-black flex items-center justify-between w-full pl-5 pr-2 py-2 transition-colors hover:bg-white"
+            >
+              Start your submission
+              <span class="cfa-cta-arrow bg-black text-white p-2" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"></path></svg>
+              </span>
+            </a>
+          </div>
+
+          {
+            dates.length > 0 && (
+              <dl class="border-t border-white/20 px-6 md:px-8 py-6 space-y-3">
+                {dates.map((d) => (
+                  <div class="flex justify-between gap-4 text-sm">
+                    <dt class="text-white/60">{d.label}</dt>
+                    <dd class="text-right">{d.value}</dd>
+                  </div>
+                ))}
+              </dl>
+            )
+          }
+
+          <p class="border-t border-white/20 px-6 md:px-8 py-5 text-sm text-white/60">
+            Spotted a mistake after submitting? Email
+            <a class="underline text-white hover:text-nextflow" href={`mailto:${config.contactEmail}`}>{config.contactEmail}</a>
+            with your title and we'll update it before the deadline.
+          </p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cfa-step {
+    flex-shrink: 0;
+    width: 1.75rem;
+    height: 1.75rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'PT Mono', monospace;
+    font-size: 0.75rem;
+    border: 1px solid rgb(255 255 255 / 0.35);
+  }
+  .cfa-cta:hover .cfa-cta-arrow {
+    background: var(--color-nextflow, #0dc09d);
+    color: black;
+  }
+  .cfa-cta:focus-visible,
+  .cfa-copy:focus-visible {
+    outline: 2px solid var(--color-nextflow, #0dc09d);
+    outline-offset: 3px;
+  }
+</style>
+
+<script>
+  // Re-bind after every view-transition navigation, not just the first load.
+  document.addEventListener('astro:page-load', () => {
+    document.querySelectorAll<HTMLButtonElement>('.cfa-copy').forEach((btn) => {
+      if (btn.dataset.bound) return;
+      btn.dataset.bound = 'true';
+      const status = btn.parentElement?.querySelector('.cfa-copy-status');
+      btn.addEventListener('click', async () => {
+        const text = btn.dataset.template ?? '';
+        try {
+          await navigator.clipboard.writeText(text);
+          if (status) status.textContent = 'Copied — paste it into any doc.';
+        } catch {
+          // Clipboard blocked (e.g. insecure context): fall back to a download.
+          const a = document.createElement('a');
+          a.href = URL.createObjectURL(new Blob([text], { type: 'text/plain' }));
+          a.download = 'nextflow-summit-abstract-draft.txt';
+          a.click();
+          URL.revokeObjectURL(a.href);
+          if (status) status.textContent = 'Downloaded as a text file.';
+        }
+        window.setTimeout(() => {
+          if (status) status.textContent = '';
+        }, 4000);
+      });
+    });
+  });
+</script>

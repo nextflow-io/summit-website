@@ -2,7 +2,9 @@
 export const prerender = false
 import Layout from '@layouts/Base.astro';
 import StandardPage from '@modules/StandardPage';
+import CfaGuide from '@components/CfaGuide/index.astro';
 import { fetchBostonCfa } from '@data/fetchers';
+import { cfaConfig } from '@data/cfa';
 import type { PageData } from '@data/types';
 import { fetchSettings, type SettingsData } from '@data/settings';
 import Meta from '@components/Meta/Meta.astro';
@@ -10,6 +12,7 @@ import Meta from '@components/Meta/Meta.astro';
 const draftMode = Astro.locals.draftMode ?? false
 const settings: SettingsData = await fetchSettings();
 const cfa: PageData = await fetchBostonCfa(draftMode);
+const guide = cfaConfig.boston;
 ---
 
 <Layout>
@@ -18,5 +21,13 @@ const cfa: PageData = await fetchBostonCfa(draftMode);
     settings={settings}
     imgUrl={cfa?.seo?.shareImage?.asset?.url}
   />
-  <StandardPage data={cfa} client:load />
+  <StandardPage data={cfa} client:load>
+    {guide && (
+      <CfaGuide
+        slot="afterHero"
+        config={guide}
+        applyUrl="/2026/boston/call-for-abstracts/apply/"
+      />
+    )}
+  </StandardPage>
 </Layout>

@@ -1,0 +1,120 @@
+---
+// Body of a `/call-for-abstracts/apply` page.
+//
+// Embeds the Typeform inline when a form ID can be resolved (Sanity URL first,
+// then `src/data/cfa.ts`); otherwise falls back to iframing whatever URL is in
+// Sanity, which keeps any location still on the legacy Swoogo form working.
+import type { CfaLocation } from '@data/cfa';
+import { resolveTypeformId } from '@data/cfa';
+
+type Props = {
+  location: CfaLocation;
+  /** Form URL from Sanity (field is still named `swoogoUrl`). */
+  formUrl?: string | null;
+  /** Landing page to return to. */
+  backUrl: string;
+};
+
+const { location, formUrl, backUrl } = Astro.props;
+const typeformId = resolveTypeformId(location, formUrl);
+const openUrl = typeformId ? `https://form.typeform.com/to/${typeformId}` : formUrl;
+---
+
+<div class="cfa-apply flex flex-col bg-black text-white">
+  <div class="cfa-apply-bar container-xl w-full flex items-center justify-between gap-4 border-b border-white/15">
+    <a href={backUrl} class="monospace text-xs uppercase tracking-wider text-white/70 hover:text-nextflow inline-flex items-center gap-2">
+      <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 19l-7-7 7-7"></path></svg>
+      <span>Submission guidelines</span>
+    </a>
+    {
+      openUrl && (
+        <a href={openUrl} target="_blank" rel="noopener noreferrer" class="monospace text-xs uppercase tracking-wider text-white/70 hover:text-nextflow inline-flex items-center gap-2">
+          <span>Open in new tab</span>
+          <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M8 7h9v9"></path></svg>
+        </a>
+      )
+    }
+  </div>
+
+  {
+    typeformId ? (
+      <div
+        class="cfa-embed flex-1"
+        data-typeform-id={typeformId}
+        data-location={location}
+      >
+        <noscript>
+          <p class="container-xl py-12">
+            The submission form needs JavaScript.
+            <a class="underline" href={openUrl}>Open it on Typeform instead</a>.
+          </p>
+        </noscript>
+      </div>
+    ) : formUrl ? (
+      <iframe
+        class="cfa-embed flex-1 w-full"
+        src={formUrl}
+        title="Call for abstracts submission form"
+      />
+    ) : (
+      <p class="container-xl py-16 text-lg">
+        Submissions aren't open yet. <a class="underline" href={backUrl}>See the guidelines</a>.
+      </p>
+    )
+  }
+</div>
+
+<style>
+  /* Fill the viewport under the sticky 48px site header so the form never
+     double-scrolls. Below 1000px the header is a fixed 60px mobile bar. */
+  .cfa-apply {
+    height: calc(100svh - 48px);
+  }
+  @media (max-width: 999px) {
+    .cfa-apply {
+      padding-top: 60px;
+      height: 100svh;
+    }
+  }
+  .cfa-apply-bar {
+    height: 48px;
+    flex-shrink: 0;
+  }
+  .cfa-embed {
+    min-height: 0;
+  }
+  .cfa-embed :global(iframe) {
+    border: 0;
+  }
+</style>
+
+<script>
+  import { createWidget } from '@typeform/embed';
+  import '@typeform/embed/build/css/widget.css';
+
+  type Unmountable = { unmount: () => void };
+  let widget: Unmountable | undefined;
+
+  const mount = () => {
+    const container = document.querySelector<HTMLElement>('.cfa-embed[data-typeform-id]');
+    if (!container || container.dataset.mounted) return;
+    container.dataset.mounted = 'true';
+    widget = createWidget(container.dataset.typeformId!, {
+      container,
+      // Tag every response with where it came from. Add `location` (and the
+      // utm_* fields) as hidden fields in Typeform for these to be stored.
+      hidden: { location: container.dataset.location ?? '' },
+      transitiveSearchParams: ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'],
+      inlineOnMobile: true,
+      autoFocus: true,
+      iframeProps: { title: 'Call for abstracts submission form' },
+      medium: 'summit-website',
+    });
+  };
+
+  document.addEventListener('astro:page-load', mount);
+  document.addEventListener('astro:before-swap', () => {
+    widget?.unmount();
+    widget = undefined;
+  });
+</script>

@@ -30,6 +30,8 @@ type PageLayoutProps = {
   featureSection?: any[];
   faqSection?: any[];
   promoBanners?: PromoBannerType[];
+  /** Rendered directly under the hero (e.g. an Astro named slot). */
+  afterHero?: React.ReactNode;
   children?: React.ReactNode;
 };
 
@@ -38,6 +40,7 @@ const PageLayout: React.FC<PageLayoutProps> = ({
   featureSection,
   faqSection,
   promoBanners,
+  afterHero,
   children
 }) => {
   return (
@@ -55,6 +58,8 @@ const PageLayout: React.FC<PageLayoutProps> = ({
           imageAlt={hero.image?.imageAlt || hero.image?.alt}
         />
       )}
+
+      {afterHero}
 
       {featureSection?.map((section, index) => {
         const sectionButtonUrl = getButtonUrl(section?.button);
