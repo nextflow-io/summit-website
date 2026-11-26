@@ -1,10 +1,7 @@
-# 2027 holding site: everything lives on the homepage
-/call-for-abstracts         /#call-for-abstracts   301
-/call-for-abstracts/*       /#call-for-abstracts   301
-/2027/boston/call-for-abstracts   /#call-for-abstracts   301
-/2027/boston/call-for-abstracts/  /#call-for-abstracts   301
-/2027                       /                      301
-/2027/*                     /                      301
+# 2027 - Call for Abstracts (Typeform) replaces the old Swoogo CFA pages
+/call-for-abstracts         /2027/boston/call-for-abstracts/   301
+/call-for-abstracts/*       /2027/boston/call-for-abstracts/   301
+/2027                       /                                  301
 
 # 2026 - archive site proxy
 /2026/*       https://nextflow-summit-2026.netlify.app/2026/:splat    200!

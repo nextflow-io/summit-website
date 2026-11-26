@@ -1,0 +1,134 @@
+---
+// 2027 Call for Abstracts, built in code (no Sanity) until the 2027 rebrand.
+// Copy is verbatim from marketing's landing-page doc
+// ("FY26Q4 - [Landing Page] Nextflow Summit Boston 2027", 2027 Copy tab).
+//
+// Layout: full-width hero; two columns (About + topics | Typeform, sticky; on
+// mobile the form comes first); then Talks / Posters cards.
+import Layout from '@layouts/Base.astro';
+import Meta from '@components/Meta/Meta.astro';
+import Button from '@components/Button';
+import TypeformEmbed from '@components/TypeformEmbed';
+import FeatureBlocks from '@modules/FeatureBlocks';
+import { SUMMIT_YEAR, CFA_TYPEFORM_ID } from '@data/site';
+import { PAST_EVENTS } from '@data/pastEvents';
+
+const typeformUrl = `https://seqera.typeform.com/to/${CFA_TYPEFORM_ID}`;
+
+const topics = [
+  'Real-world applications of Nextflow',
+  'Lessons learned from pipeline development',
+  'Building with and contributing to nf-core',
+  'Bio/ML and foundation models in practice',
+  'Regulatory genomics and single-cell models',
+  'Protein and molecular design',
+  'AI across drug discovery and development',
+  'Agents and autonomous science',
+  'Connecting the wet lab and the dry lab',
+  'Clinical genomics and diagnostics',
+  'Data, GPUs and compute at scale',
+];
+
+// Talks / Posters cards: rendered with FeatureBlocks + Box (white section, green
+// cards), the same pattern as the other pages. Bodycopy is Portable Text, with
+// the "Format:" style labels in bold.
+const line = (label: string, value: string, i: number) => ({
+  _type: 'block',
+  _key: `l${i}`,
+  style: 'normal',
+  markDefs: [],
+  children: [
+    { _type: 'span', _key: `l${i}a`, marks: ['strong'], text: `${label}: ` },
+    { _type: 'span', _key: `l${i}b`, marks: [], text: value },
+  ],
+});
+const card = (title: string, rows: [string, string][]) => ({
+  title,
+  boxStyle: 'green',
+  bodycopy: rows.map(([label, value], i) => line(label, value, i)),
+});
+const formats = [
+  card('Talks', [
+    ['Format', 'In-person talk on stage'],
+    ['Length', '30 minutes, including Q&A'],
+    ['Abstract', 'Up to 250 words, plus a title, speaker bio, and author list.'],
+    ['Perks', 'Free event registration for selected speakers'],
+  ]),
+  card('Posters', [
+    ['Format', 'In-person poster session and lightning talk on stage'],
+    ['Length', '2 min lightning talks followed by a poster session'],
+    ['Abstract', 'Up to 250 words, plus a title, speaker bio, and author list.'],
+    ['Perks', 'Free event registration for poster presenters.'],
+  ]),
+];
+---
+
+<Layout>
+  <Meta
+    title={`Call for Abstracts | Boston ${SUMMIT_YEAR}`}
+    description="Whether you're running Nextflow at scale, designing proteins, training models or building agents, we want to hear how your work is moving discovery and development forward."
+    imgUrl={PAST_EVENTS[0].image.replace('w=900&h=675', 'w=1200&h=630')}
+  />
+
+  {/* Hero (full width) */}
+  <section class="container-xl pt-16 md:pt-24 pb-12">
+    <div class="max-w-[900px]">
+      <p class="monospace uppercase text-xs mb-4 text-nextflow">
+        Nextflow Summit Boston · April 29–30, 2027
+      </p>
+      <h1 class="h3 mb-6">Call for Abstracts for Talks and Posters are Now Open</h1>
+      <p class="mb-8">
+        Whether you're running Nextflow at scale, designing proteins, training models or
+        building agents, we want to hear how your work is moving discovery and development
+        forward. Tell us what you built, what it changed and what you learned along the way.
+        Submit your abstract by Friday, February 5, 2027.
+      </p>
+      <Button arrow href="#form" className="w-fit">Deadline: February 5, 2027</Button>
+    </div>
+  </section>
+
+  {/* Two columns: About + topics on the left, Typeform on the right (sticky). On mobile the form comes first. */}
+  <div id="form" class="scroll-mt-28 container-xl pb-20 grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-12">
+    <section class="lg:col-start-2 lg:row-start-1">
+      <div class="lg:sticky lg:top-28">
+        <TypeformEmbed
+          formId={CFA_TYPEFORM_ID}
+          title={`Nextflow Summit Boston ${SUMMIT_YEAR}: Call for Abstracts`}
+          client:only="react"
+        />
+        <noscript>
+          <p class="mt-4"><a class="underline" href={typeformUrl}>Open the abstract submission form</a></p>
+        </noscript>
+        <p class="text-xs mt-4 opacity-70">
+          Having trouble viewing the form? <a class="underline" href={typeformUrl} target="_blank" rel="noopener noreferrer">Open it in a new window</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="lg:col-start-1 lg:row-start-1 space-y-12">
+      <div class="space-y-4">
+        <h2 class="h4">About the Nextflow Summit</h2>
+        <p>
+          Nextflow Summit brings together the scientists, bioinformaticians, engineers, and
+          leaders who turn biological data into discoveries. Join us in Boston for two days of
+          talks, posters and networking.
+        </p>
+        <p>
+          For 2027 we are adding an additional theme to our usual Nextflow Summit topics:
+          machine learning. Our field is undergoing a revolution and Nextflow sits right at the
+          heart of it. We want to hear about your work!
+        </p>
+      </div>
+
+      <div>
+        <h2 class="h4 mb-4">Need inspiration? Here are some topic ideas</h2>
+        <ul class="list-disc pl-5 space-y-1">
+          {topics.map((t) => <li>{t}</li>)}
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  {/* Talks / Posters (single column, white section with green cards) */}
+  <FeatureBlocks boxes={formats} client:load />
+</Layout>

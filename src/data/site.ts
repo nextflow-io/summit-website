@@ -1,8 +1,7 @@
 // Site-wide settings for the current Summit edition.
 //
-// Until the 2027 rebrand, the site is a single homepage built entirely in code
-// (no Sanity): header/footer navigation is defined here and points at sections
-// of the homepage. The Sanity `menus` document is also shared with the archived
+// Until the 2027 rebrand, the 2027 pages are built entirely in code (no Sanity),
+// and the header/footer navigation is defined here. The Sanity `menus` document is also shared with the archived
 // 2026 site (served from the `archive/summit-2026` branch and proxied at /2026/*),
 // whose SSR pages read it on every request, so it must not be repurposed for 2027.
 // When Sanity is linked again for 2027, switch `USE_CMS_MENUS` back to true.
@@ -13,9 +12,8 @@ export const SUMMIT_YEAR = 2027;
 /** Typeform ID for the 2027 Call for Abstracts (https://seqera.typeform.com/to/<id>). */
 export const CFA_TYPEFORM_ID = 'kLPH8WrD';
 
-/** Homepage section anchors. */
-export const CFA_ANCHOR = '/#call-for-abstracts';
-export const PAST_EVENTS_ANCHOR = '/#past-events';
+export const CFA_PATH = `/${SUMMIT_YEAR}/boston/call-for-abstracts`;
+export const PAST_EVENTS_PATH = '/past-events';
 
 export const USE_CMS_MENUS = false;
 
@@ -26,24 +24,24 @@ export const HOLDING_MENUS: MenusData = {
   _id: 'holding-menus',
   _type: 'menus',
   headerMenu: [
-    { linkTitle: 'Call for Abstracts', link: internal(CFA_ANCHOR) },
-    { linkTitle: 'Past Events', link: internal(PAST_EVENTS_ANCHOR) },
+    { linkTitle: 'Call for Abstracts', link: internal(CFA_PATH) },
+    { linkTitle: 'Past Events', link: internal(PAST_EVENTS_PATH) },
   ],
-  headerBtn: { buttonText: 'Submit an abstract', buttonUrl: internal(CFA_ANCHOR) },
+  headerBtn: { buttonText: 'Submit an abstract', buttonUrl: internal(CFA_PATH) },
   mobileMenu: [
-    { _type: 'singleLink', linkTitle: 'Call for Abstracts', link: internal(CFA_ANCHOR) },
-    { _type: 'singleLink', linkTitle: 'Past Events', link: internal(PAST_EVENTS_ANCHOR) },
+    { _type: 'singleLink', linkTitle: 'Call for Abstracts', link: internal(CFA_PATH) },
+    { _type: 'singleLink', linkTitle: 'Past Events', link: internal(PAST_EVENTS_PATH) },
   ],
-  mobileBtn: { buttonText: 'Submit an abstract', buttonUrl: internal(CFA_ANCHOR) },
+  mobileBtn: { buttonText: 'Submit an abstract', buttonUrl: internal(CFA_PATH) },
   footerMenu: [
     {
       footerTitle: `${SUMMIT_YEAR}`,
-      footerLinks: [{ linkTitle: 'Call for Abstracts', link: internal(CFA_ANCHOR) }],
+      footerLinks: [{ linkTitle: 'Call for Abstracts', link: internal(CFA_PATH) }],
     },
     {
       footerTitle: 'Information',
       footerLinks: [
-        { linkTitle: 'Past Events', link: internal(PAST_EVENTS_ANCHOR) },
+        { linkTitle: 'Past Events', link: internal(PAST_EVENTS_PATH) },
         { linkTitle: '2026 Summit', link: internal('2026/boston/overview') },
       ],
     },
