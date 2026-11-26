@@ -12,6 +12,8 @@ import shareOverlay from '@images/pixel-share-overlay.svg';
 import SeqeraLogoDarkmode from '@icons/seqera-logo-darkmode.svg';
 
 interface HeroProps {
+  /** Small monospace line above the headline, e.g. location and dates. */
+  eyebrow?: string;
   title?: string;
   subtitle?: string;
   content: string;
@@ -52,6 +54,7 @@ const shortestAngleDelta = (target: number, current: number) =>
   ((((target - current) % 360) + 540) % 360) - 180;
 
 const LandingHero: React.FC<HeroProps> = ({
+  eyebrow,
   title,
   subtitle,
   content,
@@ -250,6 +253,11 @@ const LandingHero: React.FC<HeroProps> = ({
             className="w-full h-full sm:pr-10 md:mt-10 md:pb-15"
           >
             <div className="flex flex-col">
+              {eyebrow && (
+                <p className="monospace uppercase text-xs mb-4 text-nextflow bg-black w-fit relative z-30">
+                  {eyebrow}
+                </p>
+              )}
               <h1
                 className={`w-full md:max-w-[800px] relative
                   ${!headlineSize && 'h3'}

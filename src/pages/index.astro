@@ -1,34 +1,150 @@
 ---
-// 2027 holding page. Copy lives in code (not the Sanity `homepage` doc) until the
-// 2027 site is built out — see src/data/site.ts.
+// 2027 homepage: a single page built in code (no Sanity) until the 2027 rebrand.
+// Copy is verbatim from marketing's landing-page doc
+// ("FY26Q4 - [Landing Page] Nextflow Summit Boston 2027", 2027 Copy tab).
+//
+// Sections: hero; two columns (About + topics | Typeform, sticky); Talks / Posters
+// cards; Past Events. Header/footer links point at the section anchors.
 import Layout from '@layouts/Base.astro';
+import Meta from '@components/Meta/Meta.astro';
 import LandingHero from '@components/LandingHero';
-import { fetchSettings, type SettingsData } from '../data/settings';
-import Meta from '../components/Meta/Meta.astro';
-import { CFA_PATH } from '@data/site';
+import TypeformEmbed from '@components/TypeformEmbed';
+import FeatureBlocks from '@modules/FeatureBlocks';
+import { SUMMIT_YEAR, CFA_TYPEFORM_ID } from '@data/site';
+import { PAST_EVENTS } from '@data/pastEvents';
 import { textBlocks } from '@utils/textBlocks';
 
-const settings: SettingsData = await fetchSettings();
+const typeformUrl = `https://seqera.typeform.com/to/${CFA_TYPEFORM_ID}`;
 
-// Copy taken from marketing's 2027 landing-page doc (see the CFA page).
-const content = textBlocks(
-  'Nextflow Summit Boston · April 29–30, 2027',
-  'Nextflow Summit brings together the scientists, bioinformaticians, engineers, and leaders who turn biological data into discoveries. Join us in Boston for two days of talks, posters and networking.',
-  'Call for Abstracts for Talks and Posters are Now Open. Submit your abstract by Friday, February 5, 2027.',
+const heroCopy = textBlocks(
+  "Whether you're running Nextflow at scale, designing proteins, training models or building agents, we want to hear how your work is moving discovery and development forward. Tell us what you built, what it changed and what you learned along the way. Submit your abstract by Friday, February 5, 2027.",
 );
+
+const topics = [
+  'Real-world applications of Nextflow',
+  'Lessons learned from pipeline development',
+  'Building with and contributing to nf-core',
+  'Bio/ML and foundation models in practice',
+  'Regulatory genomics and single-cell models',
+  'Protein and molecular design',
+  'AI across drug discovery and development',
+  'Agents and autonomous science',
+  'Connecting the wet lab and the dry lab',
+  'Clinical genomics and diagnostics',
+  'Data, GPUs and compute at scale',
+];
+
+// Talks / Posters cards: rendered with FeatureBlocks + Box (white section, green
+// cards), the same pattern as the other pages. Bodycopy is Portable Text, with
+// the "Format:" style labels in bold.
+const line = (label: string, value: string, i: number) => ({
+  _type: 'block',
+  _key: `l${i}`,
+  style: 'normal',
+  markDefs: [],
+  children: [
+    { _type: 'span', _key: `l${i}a`, marks: ['strong'], text: `${label}: ` },
+    { _type: 'span', _key: `l${i}b`, marks: [], text: value },
+  ],
+});
+const card = (title: string, rows: [string, string][]) => ({
+  title,
+  boxStyle: 'green',
+  bodycopy: rows.map(([label, value], i) => line(label, value, i)),
+});
+const formats = [
+  card('Talks', [
+    ['Format', 'In-person talk on stage'],
+    ['Length', '30 minutes, including Q&A'],
+    ['Abstract', 'Up to 250 words, plus a title, speaker bio, and author list.'],
+    ['Perks', 'Free event registration for selected speakers'],
+  ]),
+  card('Posters', [
+    ['Format', 'In-person poster session and lightning talk on stage'],
+    ['Length', '2 min lightning talks followed by a poster session'],
+    ['Abstract', 'Up to 250 words, plus a title, speaker bio, and author list.'],
+    ['Perks', 'Free event registration for poster presenters.'],
+  ]),
+];
+
+const pastEvents = PAST_EVENTS.map((e) => ({
+  title: e.title,
+  href: e.href,
+  image: e.image,
+  imageAlt: `Nextflow Summit ${e.title}`,
+  externalLink: e.href.startsWith('http'),
+}));
 ---
 
 <Layout>
-  <Meta title="Home" settings={settings} />
+  <Meta
+    description="Whether you're running Nextflow at scale, designing proteins, training models or building agents, we want to hear how your work is moving discovery and development forward."
+    imgUrl={PAST_EVENTS[0].image.replace('w=900&h=675', 'w=1200&h=630')}
+  />
+
   <LandingHero
     isHome
-    title="Nextflow Summit"
-    content={content}
-    headlineSize="xl"
-    ctaText1="Submit an abstract"
-    ctaLink1={CFA_PATH}
-    ctaText2="Past events"
-    ctaLink2="/past-events"
+    eyebrow="Nextflow Summit Boston · April 29–30, 2027"
+    title="Call for Abstracts for Talks and Posters are Now Open"
+    headlineSize="large"
+    content={heroCopy}
+    ctaText1="Deadline: February 5, 2027"
+    ctaLink1="#call-for-abstracts"
     client:load
   />
+
+  {/* Two columns: About + topics on the left, Typeform on the right (sticky). On mobile the form comes first. */}
+  <div id="call-for-abstracts" class="scroll-mt-28 container-xl py-16 md:py-20 grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-12">
+    <section class="lg:col-start-2 lg:row-start-1">
+      <div class="lg:sticky lg:top-28">
+        <TypeformEmbed
+          formId={CFA_TYPEFORM_ID}
+          title={`Nextflow Summit Boston ${SUMMIT_YEAR}: Call for Abstracts`}
+          client:only="react"
+        />
+        <noscript>
+          <p class="mt-4"><a class="underline" href={typeformUrl}>Open the abstract submission form</a></p>
+        </noscript>
+        <p class="text-xs mt-4 opacity-70">
+          Having trouble viewing the form? <a class="underline" href={typeformUrl} target="_blank" rel="noopener noreferrer">Open it in a new window</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="lg:col-start-1 lg:row-start-1 space-y-12">
+      <div class="space-y-4">
+        <h2 class="h4">About the Nextflow Summit</h2>
+        <p>
+          Nextflow Summit brings together the scientists, bioinformaticians, engineers, and
+          leaders who turn biological data into discoveries. Join us in Boston for two days of
+          talks, posters and networking.
+        </p>
+        <p>
+          For 2027 we are adding an additional theme to our usual Nextflow Summit topics:
+          machine learning. Our field is undergoing a revolution and Nextflow sits right at the
+          heart of it. We want to hear about your work!
+        </p>
+      </div>
+
+      <div>
+        <h2 class="h4 mb-4">Need inspiration? Here are some topic ideas</h2>
+        <ul class="list-disc pl-5 space-y-1">
+          {topics.map((t) => <li>{t}</li>)}
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  {/* Talks / Posters (single column, white section with green cards) */}
+  <FeatureBlocks boxes={formats} client:load />
+
+  {/* Past Events */}
+  <div id="past-events" class="scroll-mt-28">
+    <FeatureBlocks
+      headline="Past Events"
+      bodycopy={textBlocks('Explore Nextflow Summit throughout the years')}
+      boxes={pastEvents}
+      client:load
+    />
+  </div>
 </Layout>
