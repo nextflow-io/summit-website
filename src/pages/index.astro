@@ -5,14 +5,16 @@ import Layout from '@layouts/Base.astro';
 import LandingHero from '@components/LandingHero';
 import { fetchSettings, type SettingsData } from '../data/settings';
 import Meta from '../components/Meta/Meta.astro';
-import { SUMMIT_YEAR, CFA_PATH } from '@data/site';
+import { CFA_PATH } from '@data/site';
 import { textBlocks } from '@utils/textBlocks';
 
 const settings: SettingsData = await fetchSettings();
 
+// Copy taken from marketing's 2027 landing-page doc (see the CFA page).
 const content = textBlocks(
-  'Nextflow Summit, presented by Seqera, brings together scientists from around the world to shape the future of biotech R&D through community-driven innovation in data science and computational biology.',
-  `Nextflow Summit ${SUMMIT_YEAR} is coming to Boston. The call for abstracts is now open: share your work with the Nextflow community.`,
+  'Nextflow Summit Boston · April 29–30, 2027',
+  'Nextflow Summit brings together the scientists, bioinformaticians, engineers, and leaders who turn biological data into discoveries. Join us in Boston for two days of talks, posters and networking.',
+  'Call for Abstracts for Talks and Posters are Now Open. Submit your abstract by Friday, February 5, 2027.',
 );
 ---
 
@@ -20,7 +22,7 @@ const content = textBlocks(
   <Meta title="Home" settings={settings} />
   <LandingHero
     isHome
-    title={`Nextflow Summit ${SUMMIT_YEAR}`}
+    title="Nextflow Summit"
     content={content}
     headlineSize="xl"
     ctaText1="Submit an abstract"

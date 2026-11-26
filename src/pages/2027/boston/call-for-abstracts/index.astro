@@ -1,46 +1,135 @@
 ---
-// 2027 Call for Abstracts: intro copy + embedded Typeform.
-// Intro copy is a placeholder until the Bio/ML-themed landing copy is approved.
+// 2027 Call for Abstracts. Copy is verbatim from marketing's landing-page doc
+// ("FY26Q4 - [Landing Page] Nextflow Summit Boston 2027", 2027 Copy tab).
+//
+// Layout: copy on the left, Typeform on the right (sticky) from `lg` up.
+// On smaller screens the form comes straight after the hero, before the longer
+// "About" copy, so people don't have to scroll past everything to reach it.
 import Layout from '@layouts/Base.astro';
 import Meta from '@components/Meta/Meta.astro';
+import Button from '@components/Button';
 import TypeformEmbed from '@components/TypeformEmbed';
 import { fetchSettings, type SettingsData } from '@data/settings';
 import { SUMMIT_YEAR, CFA_TYPEFORM_ID } from '@data/site';
 
 const settings: SettingsData = await fetchSettings();
 const typeformUrl = `https://seqera.typeform.com/to/${CFA_TYPEFORM_ID}`;
+
+const topics = [
+  'Real-world applications of Nextflow',
+  'Lessons learned from pipeline development',
+  'Building with and contributing to nf-core',
+  'Bio/ML and foundation models in practice',
+  'Regulatory genomics and single-cell models',
+  'Protein and molecular design',
+  'AI across drug discovery and development',
+  'Agents and autonomous science',
+  'Connecting the wet lab and the dry lab',
+  'Clinical genomics and diagnostics',
+  'Data, GPUs and compute at scale',
+];
+
+const formats = [
+  {
+    title: 'Talks',
+    rows: [
+      ['Format', 'In-person talk on stage'],
+      ['Length', '30 minutes, including Q&A'],
+      ['Abstract', 'Up to 250 words, plus a title, speaker bio, and author list.'],
+      ['Perks', 'Free event registration for selected speakers'],
+    ],
+  },
+  {
+    title: 'Posters',
+    rows: [
+      ['Format', 'In-person poster session and lightning talk on stage'],
+      ['Length', '2 min lightning talks followed by a poster session'],
+      ['Abstract', 'Up to 250 words, plus a title, speaker bio, and author list.'],
+      ['Perks', 'Free event registration for poster presenters.'],
+    ],
+  },
+];
 ---
 
 <Layout>
   <Meta
     title={`Call for Abstracts | Boston ${SUMMIT_YEAR}`}
-    description={`Submit a talk or poster abstract for Nextflow Summit ${SUMMIT_YEAR} in Boston.`}
+    description="Whether you're running Nextflow at scale, designing proteins, training models or building agents, we want to hear how your work is moving discovery and development forward."
     sanityImage="boston"
     settings={settings}
   />
-  <section class="container-xl pt-16 md:pt-24 pb-10">
-    <p class="monospace uppercase text-xs mb-4 text-nextflow">Nextflow Summit {SUMMIT_YEAR} · Boston</p>
-    <h1 class="h2 mb-6">Call for Abstracts</h1>
-    <div class="max-w-[720px] space-y-4">
-      <p>
-        We're looking for talks and posters from across the Nextflow community. Whether
-        you're building pipelines, scaling analyses or bringing new methods to life, we'd
-        love to hear about your work.
+
+  <div class="container-xl pt-16 md:pt-24 pb-20 grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-12">
+    <!-- Hero (left column) -->
+    <section class="lg:col-start-1 lg:row-start-1">
+      <p class="monospace uppercase text-xs mb-4 text-nextflow">
+        Nextflow Summit Boston · April 29–30, 2027
       </p>
-      <p>
-        Fill in the form below to submit your abstract. Responses can't be edited after
-        submission, so have your title, abstract and speaker details ready before you
-        start.
+      <h1 class="h3 mb-6">Call for Abstracts for Talks and Posters are Now Open</h1>
+      <p class="mb-8">
+        Whether you're running Nextflow at scale, designing proteins, training models or
+        building agents, we want to hear how your work is moving discovery and development
+        forward. Tell us what you built, what it changed and what you learned along the way.
+        Submit your abstract by Friday, February 5, 2027.
       </p>
-    </div>
-  </section>
-  <section id="form" class="container-xl pb-20">
-    <TypeformEmbed formId={CFA_TYPEFORM_ID} title={`Nextflow Summit ${SUMMIT_YEAR} Boston: Call for Abstracts`} client:only="react" />
-    <noscript>
-      <p class="mt-4"><a class="underline" href={typeformUrl}>Open the abstract submission form</a></p>
-    </noscript>
-    <p class="text-xs mt-4 opacity-70">
-      Having trouble viewing the form? <a class="underline" href={typeformUrl} target="_blank" rel="noopener noreferrer">Open it in a new window</a>.
-    </p>
-  </section>
+      <Button arrow href="#form" className="w-fit">Deadline: February 5, 2027</Button>
+    </section>
+
+    <!-- Typeform (right column, sticky on desktop; directly after the hero on mobile) -->
+    <section id="form" class="scroll-mt-28 lg:col-start-2 lg:row-start-1 lg:row-span-2">
+      <div class="lg:sticky lg:top-28">
+        <TypeformEmbed
+          formId={CFA_TYPEFORM_ID}
+          title={`Nextflow Summit Boston ${SUMMIT_YEAR}: Call for Abstracts`}
+          client:only="react"
+        />
+        <noscript>
+          <p class="mt-4"><a class="underline" href={typeformUrl}>Open the abstract submission form</a></p>
+        </noscript>
+        <p class="text-xs mt-4 opacity-70">
+          Having trouble viewing the form? <a class="underline" href={typeformUrl} target="_blank" rel="noopener noreferrer">Open it in a new window</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- About, topics and formats (left column) -->
+    <section class="lg:col-start-1 lg:row-start-2 space-y-12">
+      <div class="space-y-4">
+        <h2 class="h4">About the Nextflow Summit</h2>
+        <p>
+          Nextflow Summit brings together the scientists, bioinformaticians, engineers, and
+          leaders who turn biological data into discoveries. Join us in Boston for two days of
+          talks, posters and networking.
+        </p>
+        <p>
+          For 2027 we are adding an additional theme to our usual Nextflow Summit topics:
+          machine learning. Our field is undergoing a revolution and Nextflow sits right at the
+          heart of it. We want to hear about your work!
+        </p>
+      </div>
+
+      <div>
+        <h2 class="h4 mb-4">Need inspiration? Here are some topic ideas</h2>
+        <ul class="list-disc pl-5 space-y-1">
+          {topics.map((t) => <li>{t}</li>)}
+        </ul>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {formats.map((f) => (
+          <div class="border border-white/20 p-6">
+            <h3 class="h4 mb-4">{f.title}</h3>
+            <dl class="space-y-3 text-sm">
+              {f.rows.map(([label, value]) => (
+                <div>
+                  <dt class="monospace uppercase text-xs text-nextflow">{label}</dt>
+                  <dd>{value}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        ))}
+      </div>
+    </section>
+  </div>
 </Layout>
