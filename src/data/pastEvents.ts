@@ -20,3 +20,12 @@ export const PAST_EVENTS: PastEvent[] = [
   { title: 'nf-hack 2018', href: 'https://github.com/nextflow-io/nf-hack18/blob/master/schedule.md', image: img('066b60cec126f96035c6cfa4973be75fc7e32bb9-1790x1010.png') },
   { title: 'nf-hack 2017', href: 'https://github.com/nextflow-io/nf-hack17/blob/master/schedule.md', image: img('441f4739d26b617ebd0d5ce08fd632da766664be-928x638.jpg') },
 ];
+
+/** Shape expected by FeatureBlocks / Box. */
+export const toBox = (e: PastEvent) => ({
+  title: e.title,
+  href: e.href,
+  image: e.image,
+  imageAlt: `Nextflow Summit ${e.title}`,
+  externalLink: e.href.startsWith('http'),
+});
