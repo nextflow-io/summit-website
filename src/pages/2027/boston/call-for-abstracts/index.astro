@@ -1,0 +1,46 @@
+---
+// 2027 Call for Abstracts: intro copy + embedded Typeform.
+// Intro copy is a placeholder until the Bio/ML-themed landing copy is approved.
+import Layout from '@layouts/Base.astro';
+import Meta from '@components/Meta/Meta.astro';
+import TypeformEmbed from '@components/TypeformEmbed';
+import { fetchSettings, type SettingsData } from '@data/settings';
+import { SUMMIT_YEAR, CFA_TYPEFORM_ID } from '@data/site';
+
+const settings: SettingsData = await fetchSettings();
+const typeformUrl = `https://seqera.typeform.com/to/${CFA_TYPEFORM_ID}`;
+---
+
+<Layout>
+  <Meta
+    title={`Call for Abstracts | Boston ${SUMMIT_YEAR}`}
+    description={`Submit a talk or poster abstract for Nextflow Summit ${SUMMIT_YEAR} in Boston.`}
+    sanityImage="boston"
+    settings={settings}
+  />
+  <section class="container-xl pt-16 md:pt-24 pb-10">
+    <p class="monospace uppercase text-xs mb-4 text-nextflow">Nextflow Summit {SUMMIT_YEAR} · Boston</p>
+    <h1 class="h2 mb-6">Call for Abstracts</h1>
+    <div class="max-w-[720px] space-y-4">
+      <p>
+        We're looking for talks and posters from across the Nextflow community. Whether
+        you're building pipelines, scaling analyses or bringing new methods to life, we'd
+        love to hear about your work.
+      </p>
+      <p>
+        Fill in the form below to submit your abstract. Responses can't be edited after
+        submission, so have your title, abstract and speaker details ready before you
+        start.
+      </p>
+    </div>
+  </section>
+  <section id="form" class="container-xl pb-20">
+    <TypeformEmbed formId={CFA_TYPEFORM_ID} title={`Nextflow Summit ${SUMMIT_YEAR} Boston: Call for Abstracts`} client:only="react" />
+    <noscript>
+      <p class="mt-4"><a class="underline" href={typeformUrl}>Open the abstract submission form</a></p>
+    </noscript>
+    <p class="text-xs mt-4 opacity-70">
+      Having trouble viewing the form? <a class="underline" href={typeformUrl} target="_blank" rel="noopener noreferrer">Open it in a new window</a>.
+    </p>
+  </section>
+</Layout>

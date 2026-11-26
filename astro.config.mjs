@@ -26,7 +26,7 @@ export default defineConfig({
     sitemap({
       // Keep the unlisted "I'm Attending" avatar page out of the sitemap.
       filter: (page) =>
-        page !== `${host}/2025/` &&
+        page !== `${host}/2027/` &&
         page !== `${host}/attending/` &&
         page !== `${host}/attending`,
     }),

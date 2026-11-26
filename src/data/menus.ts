@@ -1,5 +1,6 @@
 // data/menus.ts or lib/sanity/menus.ts
 import { sanityClient } from 'sanity:client';
+import { USE_CMS_MENUS, HOLDING_MENUS } from './site';
 
 export interface Link {
   isExternal?: boolean;
@@ -208,4 +209,12 @@ export async function fetchMenus(): Promise<MenusData> {
   }`);
 
   return data;
+}
+
+/**
+ * Menus for the current site: the code-defined holding menus while
+ * `USE_CMS_MENUS` is false (see `src/data/site.ts`), otherwise the Sanity doc.
+ */
+export async function fetchSiteMenus(): Promise<MenusData> {
+  return USE_CMS_MENUS ? fetchMenus() : HOLDING_MENUS;
 }

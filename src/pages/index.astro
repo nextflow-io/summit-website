@@ -1,19 +1,32 @@
 ---
+// 2027 holding page. Copy lives in code (not the Sanity `homepage` doc) until the
+// 2027 site is built out — see src/data/site.ts.
 import Layout from '@layouts/Base.astro';
-
-import Banner from '@components/Banner';
-import Homepage from "@modules/Homepage"
-import { fetchHomepage } from '@data/fetchers';
-import type { HomepageData } from '@data/types';
-import { fetchSettings, type SettingsData } from '../data/settings'; 
+import LandingHero from '@components/LandingHero';
+import { fetchSettings, type SettingsData } from '../data/settings';
 import Meta from '../components/Meta/Meta.astro';
+import { SUMMIT_YEAR, CFA_PATH } from '@data/site';
+import { textBlocks } from '@utils/textBlocks';
 
-const home: HomepageData = await fetchHomepage();
 const settings: SettingsData = await fetchSettings();
+
+const content = textBlocks(
+  'Nextflow Summit, presented by Seqera, brings together scientists from around the world to shape the future of biotech R&D through community-driven innovation in data science and computational biology.',
+  `Nextflow Summit ${SUMMIT_YEAR} is coming to Boston. The call for abstracts is now open: share your work with the Nextflow community.`,
+);
 ---
 
 <Layout>
-    <Meta title="Home" settings={settings} />
-  <!-- <Banner title="Register to access the event recordings" ctaText="Register Now" ctaLink="https://seqera.swoogo.com/nextflow-summit-boston-2025" client:load />  -->
-   <Homepage data={home}  client:load/>
+  <Meta title="Home" settings={settings} />
+  <LandingHero
+    isHome
+    title={`Nextflow Summit ${SUMMIT_YEAR}`}
+    content={content}
+    headlineSize="xl"
+    ctaText1="Submit an abstract"
+    ctaLink1={CFA_PATH}
+    ctaText2="Past events"
+    ctaLink2="/past-events"
+    client:load
+  />
 </Layout>

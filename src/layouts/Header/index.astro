@@ -9,10 +9,11 @@ import SecondaryMenu from './SecondaryMenu';
 import Logo from './Logo';
 import Button from '@components/Button';
 
-import { fetchMenus, resolveSecondaryMenu, buildPrimaryNav } from '@data/menus';
+import { fetchSiteMenus, resolveSecondaryMenu, buildPrimaryNav } from '@data/menus';
+import { SUMMIT_YEAR } from '@data/site';
 import { formatLink } from '@utils/linkFormatter';
 
-const menus = await fetchMenus();
+const menus = await fetchSiteMenus();
 
 let showNav = true;
 if (typeof Astro.props.showNav !== 'undefined') showNav = Astro.props.showNav;
@@ -36,7 +37,7 @@ const secondaryMenuItems = resolveSecondaryMenu(menus, pathname);
             <div
               class="ml-2 p-[12px] w-[16px] h-[16px] flex justify-center items-center font-display bg-black text-white  text-[15px] font-semibold"
             >
-              26
+              {String(SUMMIT_YEAR).slice(-2)}
             </div>
             <a class="absolute top-0 left-0 w-full h-full z-10" href="/" aria-label="Navigate to home"></a>
           </div>

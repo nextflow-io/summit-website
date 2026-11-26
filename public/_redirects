@@ -1,3 +1,10 @@
+# 2027 - Call for Abstracts (Typeform) replaces the old Swoogo CFA pages
+/call-for-abstracts         /2027/boston/call-for-abstracts/   301
+/call-for-abstracts/*       /2027/boston/call-for-abstracts/   301
+
+# 2026 - archive site proxy
+/2026/*       https://nextflow-summit-2026.netlify.app/2026/:splat    200!
+
 
 # 2025 - archive site proxy
 /2025/*       https://nextflow-summit-2025.netlify.app/2025/:splat    200!

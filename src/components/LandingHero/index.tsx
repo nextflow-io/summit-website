@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { SUMMIT_YEAR } from '@data/site';
 import Button from '@components/Button';
 import styles from './styles.module.css';
 import clsx from 'clsx';
@@ -217,7 +218,7 @@ const LandingHero: React.FC<HeroProps> = ({
         if (!blob) return;
         const url = URL.createObjectURL(blob);
         const link = document.createElement('a');
-        link.download = `nextflow-summit-2026-${Date.now()}.png`;
+        link.download = `nextflow-summit-${SUMMIT_YEAR}-${Date.now()}.png`;
         link.href = url;
         link.click();
         URL.revokeObjectURL(url);

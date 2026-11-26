@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { SUMMIT_YEAR } from '@data/site';
 import clsx from 'clsx';
 import Button from '@components/Button';
 import {
@@ -177,7 +178,7 @@ const AvatarConsole: React.FC = () => {
   const download = () => {
     if (!cardUrl) return;
     const link = document.createElement('a');
-    link.download = 'nextflow-summit-2026-attending.png';
+    link.download = `nextflow-summit-${SUMMIT_YEAR}-attending.png`;
     link.href = cardUrl;
     link.click();
   };
