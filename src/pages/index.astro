@@ -67,7 +67,8 @@ const formats = [
   ]),
 ];
 
-const pastEvents = PAST_EVENTS.map((e) => ({
+// Only the three most recent editions on the homepage.
+const pastEvents = PAST_EVENTS.slice(0, 3).map((e) => ({
   title: e.title,
   href: e.href,
   image: e.image,
