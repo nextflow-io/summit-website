@@ -7,6 +7,8 @@ import type { PageData } from '@data/types';
 import { fetchSettings, type SettingsData } from '@data/settings';
 const draftMode = Astro.locals.draftMode ?? false
 const register: PageData = await fetchVirtualRegister(draftMode);
+// No Sanity document for this page: send visitors to the virtual overview instead.
+if (!register) return Astro.redirect('/2026/virtual/overview');
 const settings: SettingsData = await fetchSettings();
 
 ---
