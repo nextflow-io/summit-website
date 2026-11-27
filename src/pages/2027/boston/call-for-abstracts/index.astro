@@ -19,8 +19,8 @@ import {
   CFA_DEADLINE_DAY,
   CFA_HEADLINE,
   EVENT_LINE,
+  SHARE_IMAGE,
 } from '@data/site';
-import { PAST_EVENTS } from '@data/pastEvents';
 
 const typeformUrl = `https://seqera.typeform.com/to/${CFA_TYPEFORM_ID}`;
 
@@ -101,7 +101,7 @@ const cardCorner: Px[] = [
   <Meta
     title={`Call for Abstracts | Boston ${SUMMIT_YEAR}`}
     description="Whether you're running Nextflow at scale, designing proteins, training models or building agents, we want to hear how your work is moving discovery and development forward."
-    imgUrl={PAST_EVENTS[0].image.replace('w=900&h=675', 'w=1200&h=630')}
+    imgUrl={SHARE_IMAGE}
   />
 
   {/* 1. Hero */}

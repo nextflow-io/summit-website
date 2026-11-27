@@ -7,6 +7,8 @@ const img = (file: string) =>
 export type PastEvent = { title: string; href: string; image: string };
 
 export const PAST_EVENTS: PastEvent[] = [
+  { title: 'Virtual 2026', href: '/2026/virtual/overview', image: img('e8a7d90b96184e21574ca7dec9dabaca272836ee-900x600.jpg') },
+  { title: 'Barcelona 2026', href: '/2026/barcelona/overview', image: img('52520731607c6269bb9ad164fd7a23d8802ad7ce-2214x1453.jpg') },
   { title: 'Boston 2026', href: '/2026/boston/overview', image: img('555c7f3a7c348fded134cd8e1ba6563e139ac77c-6960x4640.jpg') },
   { title: 'Virtual 2025', href: '/2025/virtual/', image: img('9bfec78f269951dae7b912ca7be3f3594c5bdcf5-2366x1328.png') },
   { title: 'Barcelona 2025', href: '/2025/barcelona/', image: img('6d03ed2b3798569284255abebb44b6da59393e95-600x400.webp') },

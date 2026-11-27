@@ -6,7 +6,7 @@ import Layout from '@layouts/Base.astro';
 import Meta from '@components/Meta/Meta.astro';
 import LandingHero from '@components/LandingHero';
 import FeatureBlocks from '@modules/FeatureBlocks';
-import { CFA_PATH, CFA_DEADLINE, CFA_DEADLINE_DAY, CFA_HEADLINE, EVENT_LINE } from '@data/site';
+import { CFA_PATH, SHARE_IMAGE, CFA_DEADLINE, CFA_DEADLINE_DAY, CFA_HEADLINE, EVENT_LINE } from '@data/site';
 import { PAST_EVENTS, toBox } from '@data/pastEvents';
 import { textBlocks } from '@utils/textBlocks';
 
@@ -23,7 +23,7 @@ const pastEvents = PAST_EVENTS.slice(0, 3).map(toBox);
   <Meta
     title="Home"
     description="Nextflow Summit brings together the scientists, bioinformaticians, engineers, and leaders who turn biological data into discoveries."
-    imgUrl={PAST_EVENTS[0].image.replace('w=900&h=675', 'w=1200&h=630')}
+    imgUrl={SHARE_IMAGE}
   />
 
   <LandingHero

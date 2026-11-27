@@ -21,6 +21,10 @@ export const EVENT_LINE = `Nextflow Summit ${EVENT_LOCATION} · ${EVENT_DATES}`;
 export const CFA_DEADLINE = 'February 5, 2027';
 export const CFA_DEADLINE_DAY = 'Friday';
 export const CFA_HEADLINE = 'Call for Abstracts for Talks and Posters is Now Open';
+
+/** Social share image (og:image) for the 2027 pages: a Boston 2026 photo, 1200×630. */
+export const SHARE_IMAGE =
+  'https://cdn.sanity.io/images/o2y1bt2g/summit/555c7f3a7c348fded134cd8e1ba6563e139ac77c-6960x4640.jpg?w=1200&h=630&fit=crop&auto=format';
 export const PAST_EVENTS_PATH = '/past-events';
 
 export const USE_CMS_MENUS = false;
