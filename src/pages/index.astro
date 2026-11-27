@@ -6,13 +6,13 @@ import Layout from '@layouts/Base.astro';
 import Meta from '@components/Meta/Meta.astro';
 import LandingHero from '@components/LandingHero';
 import FeatureBlocks from '@modules/FeatureBlocks';
-import { CFA_PATH } from '@data/site';
+import { CFA_PATH, CFA_DEADLINE, CFA_DEADLINE_DAY, CFA_HEADLINE, EVENT_LINE } from '@data/site';
 import { PAST_EVENTS, toBox } from '@data/pastEvents';
 import { textBlocks } from '@utils/textBlocks';
 
 const content = textBlocks(
   'Nextflow Summit brings together the scientists, bioinformaticians, engineers, and leaders who turn biological data into discoveries. Join us in Boston for two days of talks, posters and networking.',
-  'Call for Abstracts for Talks and Posters are Now Open. Submit your abstract by Friday, February 5, 2027.',
+  `${CFA_HEADLINE}. Submit your abstract by ${CFA_DEADLINE_DAY}, ${CFA_DEADLINE}.`,
 );
 
 // Only the three most recent editions on the homepage; the rest are on /past-events.
@@ -28,7 +28,7 @@ const pastEvents = PAST_EVENTS.slice(0, 3).map(toBox);
 
   <LandingHero
     isHome
-    eyebrow="Nextflow Summit Boston · April 29–30, 2027"
+    eyebrow={EVENT_LINE}
     title="Nextflow Summit"
     headlineSize="xl"
     content={content}

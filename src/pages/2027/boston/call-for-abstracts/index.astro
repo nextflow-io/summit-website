@@ -12,7 +12,14 @@ import Layout from '@layouts/Base.astro';
 import Meta from '@components/Meta/Meta.astro';
 import Pixels from '@modules/Pixels';
 import TypeformEmbed from '@components/TypeformEmbed';
-import { SUMMIT_YEAR, CFA_TYPEFORM_ID } from '@data/site';
+import {
+  SUMMIT_YEAR,
+  CFA_TYPEFORM_ID,
+  CFA_DEADLINE,
+  CFA_DEADLINE_DAY,
+  CFA_HEADLINE,
+  EVENT_LINE,
+} from '@data/site';
 import { PAST_EVENTS } from '@data/pastEvents';
 
 const typeformUrl = `https://seqera.typeform.com/to/${CFA_TYPEFORM_ID}`;
@@ -52,7 +59,8 @@ const formats = [
   },
 ];
 
-// Decorative 18px squares, matching the site's pixel motif. [top|bottom, left|right, colour]
+// Decorative 18px squares: the site's pixel motif (same cell size as the hero's
+// animated pixels), so they stay at 18px rather than the 4px spacing scale.
 type Px = { pos: string; color: string };
 const px = (pos: string, color: string): Px => ({ pos, color });
 const greenCorners: Px[] = [
@@ -97,27 +105,27 @@ const cardCorner: Px[] = [
   />
 
   {/* 1. Hero */}
-  <section class="relative bg-black text-white overflow-hidden py-20 md:pt-28 md:pb-32">
+  <section class="relative bg-black text-white overflow-hidden py-20 sm:pt-28 sm:pb-32">
     <Pixels initialCellSize={18} initialSpeed={100} initialDensity={0.002} colorScheme="green" client:only="react" />
     <div class="container-xl relative z-30 pointer-events-none">
       <div class="flex flex-col gap-7 max-w-[900px]">
-        <p class="self-start bg-nextflow text-black monospace uppercase text-[13px] px-2.5 py-1">
-          Nextflow Summit Boston · April 29–30, 2027
-        </p>
-        <h1 class="text-[3.25rem] md:text-[6rem] leading-[1.04] tracking-[-0.025em]">
-          <span class="bg-black box-decoration-clone">Call for Abstracts for Talks and Posters is Now Open</span>
+        <p class="self-start bg-nextflow text-black monospace uppercase text-sm px-2.5 py-1">{EVENT_LINE}</p>
+        <h1 class="h2 tracking-tight">
+          <span class="bg-black box-decoration-clone">{CFA_HEADLINE}</span>
         </h1>
-        <p class="max-w-[760px] text-lg md:text-xl leading-[1.55]">
+        <p class="max-w-[760px] text-lg sm:text-xl leading-relaxed">
           <span class="bg-black box-decoration-clone">Whether you're running Nextflow at scale, designing proteins, training models or
           building agents, we want to hear how your work is moving discovery and development
           forward. Tell us what you built, what it changed and what you learned along the way.
-          Submit your abstract by Friday, February 5, 2027.</span>
+          Submit your abstract by {CFA_DEADLINE_DAY}, {CFA_DEADLINE}.</span>
         </p>
+        {/* Visible text is the deadline (marketing brief); the accessible name also says what the link does. */}
         <a
           href="#submit"
-          class="pointer-events-auto self-start inline-flex items-center gap-3.5 min-h-[48px] px-[18px] bg-nextflow text-black monospace uppercase text-sm hover:bg-nextflow-400 transition-colors"
+          aria-label={`Deadline: ${CFA_DEADLINE}. Submit an abstract`}
+          class="pointer-events-auto self-start inline-flex items-center gap-3.5 min-h-12 px-5 bg-nextflow text-black monospace uppercase text-sm hover:bg-nextflow-400 transition-colors"
         >
-          Deadline: February 5, 2027
+          Deadline: {CFA_DEADLINE}
           <span aria-hidden="true" class="inline-flex items-center justify-center w-5 h-5 bg-black text-nextflow">
             <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
           </span>
@@ -127,31 +135,29 @@ const cardCorner: Px[] = [
   </section>
 
   {/* 2. About + topics, with the form pinned alongside */}
-  <section class="relative bg-nextflow text-black py-20 md:pt-28 md:pb-32">
+  <section class="relative bg-nextflow text-black py-20 sm:pt-28 sm:pb-32">
     {greenCorners.map((c) => <div aria-hidden="true" class={`absolute w-[18px] h-[18px] ${c.pos} ${c.color}`}></div>)}
-    <div class="container-xl relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-[72px] items-start">
-      <div class="order-2 lg:order-1 flex flex-col gap-16 md:gap-20 min-w-0">
+    <div class="container-xl relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-16 md:gap-18 items-start">
+      <div class="order-2 sm:order-1 flex flex-col gap-16 sm:gap-20 min-w-0">
         <div class="flex flex-col gap-7">
-          <h2 class="text-[2.5rem] md:text-[3.5rem] leading-[1.08] tracking-[-0.025em]">About the Nextflow Summit</h2>
-          <p class="text-lg md:text-[22px] leading-[1.55]">
+          <h2 class="h4 tracking-tight">About the Nextflow Summit</h2>
+          <p class="text-lg sm:text-xl leading-relaxed">
             Nextflow Summit brings together the scientists, bioinformaticians, engineers, and
             leaders who turn biological data into discoveries. Join us in Boston for two days of
             talks, posters and networking.
           </p>
-          <p class="text-lg md:text-[22px] leading-[1.55]">
+          <p class="text-lg sm:text-xl leading-relaxed">
             For 2027 we are adding an additional theme to our usual Nextflow Summit topics:
             machine learning. Our field is undergoing a revolution and Nextflow sits right at the
             heart of it. We want to hear about your work!
           </p>
         </div>
         <div class="flex flex-col gap-7">
-          <h2 class="text-[2rem] md:text-[2.75rem] leading-[1.08] tracking-[-0.025em]">
-            Need inspiration? Here are some topic ideas
-          </h2>
+          <h2 class="h5 tracking-tight">Need inspiration? Here are some topic ideas</h2>
           <ul class="flex flex-col gap-3.5">
             {topics.map((t) => (
-              <li class="flex items-baseline gap-3.5 text-lg md:text-[19px] leading-[1.4]">
-                <span aria-hidden="true" class="shrink-0 w-[9px] h-[9px] bg-black -translate-y-0.5"></span>
+              <li class="flex items-baseline gap-3.5 text-lg leading-snug">
+                <span aria-hidden="true" class="shrink-0 w-2 h-2 bg-black -translate-y-0.5"></span>
                 {t}
               </li>
             ))}
@@ -159,7 +165,7 @@ const cardCorner: Px[] = [
         </div>
       </div>
 
-      <div id="submit" class="order-1 lg:order-2 scroll-mt-24 min-w-0 lg:sticky lg:top-24 flex flex-col gap-3">
+      <div id="submit" class="order-1 sm:order-2 scroll-mt-24 min-w-0 sm:sticky sm:top-24 flex flex-col gap-3">
         <div class="relative bg-black border border-nextflow">
           {formCorners.map((c) => <div aria-hidden="true" class={`absolute z-10 w-[18px] h-[18px] ${c.pos} ${c.color}`}></div>)}
           <TypeformEmbed
@@ -172,7 +178,7 @@ const cardCorner: Px[] = [
         <noscript>
           <p><a class="underline" href={typeformUrl}>Open the abstract submission form</a></p>
         </noscript>
-        <p class="text-[13px]">
+        <p class="text-sm">
           Having trouble viewing the form? <a class="underline" href={typeformUrl} target="_blank" rel="noopener noreferrer">Open it in a new window</a>.
         </p>
       </div>
@@ -180,18 +186,18 @@ const cardCorner: Px[] = [
   </section>
 
   {/* 3. Talks / Posters */}
-  <section class="relative bg-white text-black py-20 md:py-[120px]">
+  <section class="relative bg-white text-black py-20 sm:py-30">
     {whiteCorners.map((c) => <div aria-hidden="true" class={`absolute w-[18px] h-[18px] ${c.pos} ${c.color}`}></div>)}
-    <div class="container-xl relative z-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="container-xl relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
       {formats.map((f) => (
-        <article class="relative bg-nextflow-500 px-6 pt-10 pb-6 md:px-12 md:pt-12 md:pb-[30px] flex flex-col gap-10">
+        <article class="relative bg-nextflow-500 px-6 pt-10 pb-6 sm:px-12 sm:pt-12 sm:pb-8 flex flex-col gap-10">
           {cardCorner.map((c) => <div aria-hidden="true" class={`absolute w-[18px] h-[18px] ${c.pos} ${c.color}`}></div>)}
-          <h3 class="text-[3rem] md:text-[4rem] leading-none tracking-[-0.025em]">{f.title}</h3>
+          <h3 class="h4 tracking-tight">{f.title}</h3>
           <dl class="flex flex-col border-b border-black">
             {f.rows.map(([label, value]) => (
-              <div class="grid grid-cols-[96px_minmax(0,1fr)] md:grid-cols-[112px_minmax(0,1fr)] gap-x-6 py-[18px] border-t border-black">
-                <dt class="monospace text-[13px] leading-[1.6]">{label}:</dt>
-                <dd class="text-[17px] leading-[1.5]">{value}</dd>
+              <div class="flex gap-6 py-4 border-t border-black">
+                <dt class="monospace text-sm leading-relaxed w-24 sm:w-28 shrink-0">{label}:</dt>
+                <dd class="text-base sm:text-lg leading-normal">{value}</dd>
               </div>
             ))}
           </dl>

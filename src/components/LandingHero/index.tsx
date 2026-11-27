@@ -287,7 +287,7 @@ const LandingHero: React.FC<HeroProps> = ({
                 />
               </div>
             </div>
-            <h1 className="h1 my-4 sm:max-w-[500px]  ">{subtitle}</h1>
+            {subtitle && <p className="h1 my-4 sm:max-w-[500px]">{subtitle}</p>}
 
             <div className="flex flex-col sm:max-w-[550px] relative">
               <div className={clsx('z-50 pointer-events-auto bg-black')}>

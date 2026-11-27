@@ -13,6 +13,14 @@ export const SUMMIT_YEAR = 2027;
 export const CFA_TYPEFORM_ID = 'kLPH8WrD';
 
 export const CFA_PATH = `/${SUMMIT_YEAR}/boston/call-for-abstracts`;
+
+/** Event and Call for Abstracts details, shared by the homepage and the CFA page. */
+export const EVENT_LOCATION = 'Boston';
+export const EVENT_DATES = 'April 29–30, 2027';
+export const EVENT_LINE = `Nextflow Summit ${EVENT_LOCATION} · ${EVENT_DATES}`;
+export const CFA_DEADLINE = 'February 5, 2027';
+export const CFA_DEADLINE_DAY = 'Friday';
+export const CFA_HEADLINE = 'Call for Abstracts for Talks and Posters is Now Open';
 export const PAST_EVENTS_PATH = '/past-events';
 
 export const USE_CMS_MENUS = false;
