@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { SUMMIT_YEAR } from '@data/site';
 import Faq from '@components/Faq';
 import PortableText from '@components/PortableText';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -81,7 +82,7 @@ const FaqPage: React.FC<Props> = ({ data } = {} as Props) => {
         if (!blob) return;
         const url = URL.createObjectURL(blob);
         const link = document.createElement('a');
-        link.download = `nextflow-summit-2026-${Date.now()}.png`;
+        link.download = `nextflow-summit-${SUMMIT_YEAR}-${Date.now()}.png`;
         link.href = url;
         link.click();
         URL.revokeObjectURL(url);

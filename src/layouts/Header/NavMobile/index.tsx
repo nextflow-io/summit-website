@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { SUMMIT_YEAR } from '@data/site';
 import clsx from 'clsx';
 import Button from '@components/Button';
 import styles from './styles.module.css';
@@ -95,7 +96,7 @@ const NavMobile: React.FC<Props> = ({
             <div
               className={`ml-2 p-[11px] w-[16px] h-[16px] flex justify-center items-center font-display text-[14px] md:text-[15px] font-semibold ${isOpen ? 'bg-white text-black' : 'bg-black text-white '}`}
             >
-              26
+              {String(SUMMIT_YEAR).slice(-2)}
             </div>
             <a className="absolute top-0 left-0 w-full h-full z-10" href="/" arial-label="Navigate to home"></a>
           </div>

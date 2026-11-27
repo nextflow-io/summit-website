@@ -22,6 +22,7 @@
     "@sanity/client": "^6.11.2",
     "@sanity/image-url": "^1.0.2",
     "@splidejs/react-splide": "^0.7.12",
+    "@typeform/embed-react": "5.5.0",
     "@types/react": "^18.2.51",
     "@types/react-dom": "^18.2.18",
     "@uidotdev/usehooks": "^2.4.1",

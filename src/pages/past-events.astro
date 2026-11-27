@@ -1,15 +1,17 @@
 ---
+// All past events, built in code (no Sanity) until the 2027 rebrand.
 import Layout from '@layouts/Base.astro';
-import StandardPage from "@modules/StandardPage"
-import { fetchPastEvents } from '@data/fetchers';
-import type { PageData } from '@data/types';
 import Meta from '@components/Meta/Meta.astro';
-import { fetchSettings, type SettingsData } from '@data/settings'; 
-const past: PageData = await fetchPastEvents();
-const settings: SettingsData = await fetchSettings();
+import FeatureBlocks from '@modules/FeatureBlocks';
+import { PAST_EVENTS, toBox } from '@data/pastEvents';
+import { SHARE_IMAGE } from '@data/site';
 ---
 
 <Layout>
-  <Meta title="Past Events" sanityImage="default" settings={settings}/>
-  <StandardPage data={past}  client:load/>
+  <Meta title="Past Events" description="Explore Nextflow Summit throughout the years" imgUrl={SHARE_IMAGE} />
+  <section class="container-xl pt-16 md:pt-24 pb-12">
+    <h1 class="h2 mb-4">Past Events</h1>
+    <p>Explore Nextflow Summit throughout the years</p>
+  </section>
+  <FeatureBlocks boxes={PAST_EVENTS.map(toBox)} client:load />
 </Layout>

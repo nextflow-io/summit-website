@@ -1,0 +1,208 @@
+---
+// 2027 Call for Abstracts, built in code (no Sanity) until the 2027 rebrand.
+// Copy is from marketing's landing-page doc
+// ("FY26Q4 - [Landing Page] Nextflow Summit Boston 2027", 2027 Copy tab).
+// Layout follows design direction E ("Hero A + body B, form high") from the
+// Call for Abstracts design canvas:
+//   1. Black hero with the animated pixels.
+//   2. Green section: About + topic ideas on the left, the Typeform pinned on
+//      the right (form near the fold; on mobile the form comes first).
+//   3. White section: Talks / Posters specs.
+import Layout from '@layouts/Base.astro';
+import Meta from '@components/Meta/Meta.astro';
+import Pixels from '@modules/Pixels';
+import TypeformEmbed from '@components/TypeformEmbed';
+import {
+  SUMMIT_YEAR,
+  CFA_TYPEFORM_ID,
+  CFA_DEADLINE,
+  CFA_DEADLINE_DAY,
+  CFA_HEADLINE,
+  EVENT_LINE,
+  SHARE_IMAGE,
+} from '@data/site';
+
+const typeformUrl = `https://seqera.typeform.com/to/${CFA_TYPEFORM_ID}`;
+
+const topics = [
+  'Real-world applications of Nextflow',
+  'Lessons learned from pipeline development',
+  'Building with and contributing to nf-core',
+  'Bio/ML and foundation models in practice',
+  'Regulatory genomics and single-cell models',
+  'Protein and molecular design',
+  'AI across drug discovery and development',
+  'Agents and autonomous science',
+  'Connecting the wet lab and the dry lab',
+  'Clinical genomics and diagnostics',
+  'Data, GPUs and compute at scale',
+];
+
+const formats = [
+  {
+    title: 'Talks',
+    rows: [
+      ['Format', 'In-person talk on stage'],
+      ['Length', '30 minutes, including Q&A'],
+      ['Abstract', 'Up to 250 words, plus a title, speaker bio, and author list.'],
+      ['Perks', 'Free event registration for selected speakers.'],
+    ],
+  },
+  {
+    title: 'Posters',
+    rows: [
+      ['Format', 'In-person poster session and lightning talk on stage'],
+      ['Length', '2 min lightning talks followed by a poster session'],
+      ['Abstract', 'Up to 250 words, plus a title, speaker bio, and author list.'],
+      ['Perks', 'Free event registration for poster presenters.'],
+    ],
+  },
+];
+
+// Decorative 18px squares: the site's pixel motif (same cell size as the hero's
+// animated pixels), so they stay at 18px rather than the 4px spacing scale.
+type Px = { pos: string; color: string };
+const px = (pos: string, color: string): Px => ({ pos, color });
+const greenCorners: Px[] = [
+  px('right-0 top-0', 'bg-black'),
+  px('right-[18px] top-[18px]', 'bg-black'),
+  px('right-[36px] top-[36px]', 'bg-nextflow-200'),
+  px('left-0 bottom-0', 'bg-nextflow-200'),
+  px('left-[18px] bottom-[18px]', 'bg-white'),
+  px('left-0 bottom-[36px]', 'bg-black'),
+];
+const formCorners: Px[] = [
+  px('top-0 left-0', 'bg-nextflow'),
+  px('top-[18px] left-[18px]', 'bg-nextflow-200'),
+  px('top-0 left-[36px]', 'bg-nextflow-400'),
+  px('top-[36px] left-0', 'bg-white'),
+  px('bottom-0 right-0', 'bg-nextflow'),
+  px('bottom-[18px] right-[18px]', 'bg-white'),
+  px('bottom-0 right-[36px]', 'bg-nextflow-200'),
+  px('bottom-[36px] right-0', 'bg-nextflow-400'),
+];
+const whiteCorners: Px[] = [
+  px('left-0 top-0', 'bg-nextflow'),
+  px('left-[18px] top-0', 'bg-nextflow'),
+  px('left-0 top-[18px]', 'bg-nextflow'),
+  px('left-[54px] top-0', 'bg-nextflow-400'),
+  px('right-0 bottom-0', 'bg-nextflow-200'),
+  px('right-[18px] bottom-[18px]', 'bg-nextflow'),
+  px('right-[36px] bottom-0', 'bg-black'),
+];
+const cardCorner: Px[] = [
+  px('top-0 right-0', 'bg-black'),
+  px('top-[18px] right-[18px]', 'bg-nextflow-200'),
+  px('top-[36px] right-0', 'bg-white'),
+];
+---
+
+<Layout>
+  <Meta
+    title={`Call for Abstracts | Boston ${SUMMIT_YEAR}`}
+    description="Whether you're running Nextflow at scale, designing proteins, training models or building agents, we want to hear how your work is moving discovery and development forward."
+    imgUrl={SHARE_IMAGE}
+  />
+
+  {/* 1. Hero */}
+  <section class="relative bg-black text-white overflow-hidden py-20 sm:pt-28 sm:pb-32">
+    <Pixels initialCellSize={18} initialSpeed={100} initialDensity={0.002} colorScheme="green" client:only="react" />
+    <div class="container-xl relative z-30 pointer-events-none">
+      <div class="flex flex-col gap-7 max-w-[900px]">
+        <p class="self-start bg-nextflow text-black monospace uppercase text-sm px-2.5 py-1">{EVENT_LINE}</p>
+        <h1 class="h2 tracking-tight">
+          <span class="bg-black box-decoration-clone">{CFA_HEADLINE}</span>
+        </h1>
+        <p class="max-w-[760px] text-lg sm:text-xl leading-relaxed">
+          <span class="bg-black box-decoration-clone">Whether you're running Nextflow at scale, designing proteins, training models or
+          building agents, we want to hear how your work is moving discovery and development
+          forward. Tell us what you built, what it changed and what you learned along the way.
+          Submit your abstract by {CFA_DEADLINE_DAY}, {CFA_DEADLINE}.</span>
+        </p>
+        {/* Visible text is the deadline (marketing brief); the accessible name also says what the link does. */}
+        <a
+          href="#submit"
+          aria-label={`Deadline: ${CFA_DEADLINE}. Submit an abstract`}
+          class="pointer-events-auto self-start inline-flex items-center gap-3.5 min-h-12 px-5 bg-nextflow text-black monospace uppercase text-sm hover:bg-nextflow-400 transition-colors"
+        >
+          Deadline: {CFA_DEADLINE}
+          <span aria-hidden="true" class="inline-flex items-center justify-center w-5 h-5 bg-black text-nextflow">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  {/* 2. About + topics, with the form pinned alongside */}
+  <section class="relative bg-nextflow text-black py-20 sm:pt-28 sm:pb-32">
+    {greenCorners.map((c) => <div aria-hidden="true" class={`absolute w-[18px] h-[18px] ${c.pos} ${c.color}`}></div>)}
+    <div class="container-xl relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-16 md:gap-18 items-start">
+      <div class="order-2 sm:order-1 flex flex-col gap-16 sm:gap-20 min-w-0">
+        <div class="flex flex-col gap-7">
+          <h2 class="h4 tracking-tight">About the Nextflow Summit</h2>
+          <p class="text-lg sm:text-xl leading-relaxed">
+            Nextflow Summit brings together the scientists, bioinformaticians, engineers, and
+            leaders who turn biological data into discoveries. Join us in Boston for two days of
+            talks, posters and networking.
+          </p>
+          <p class="text-lg sm:text-xl leading-relaxed">
+            For 2027 we are adding an additional theme to our usual Nextflow Summit topics:
+            machine learning. Our field is undergoing a revolution and Nextflow sits right at the
+            heart of it. We want to hear about your work!
+          </p>
+        </div>
+        <div class="flex flex-col gap-7">
+          <h2 class="h5 tracking-tight">Need inspiration? Here are some topic ideas</h2>
+          <ul class="flex flex-col gap-3.5">
+            {topics.map((t) => (
+              <li class="flex items-baseline gap-3.5 text-lg leading-snug">
+                <span aria-hidden="true" class="shrink-0 w-2 h-2 bg-black -translate-y-0.5"></span>
+                {t}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <div id="submit" class="order-1 sm:order-2 scroll-mt-24 min-w-0 sm:sticky sm:top-24 flex flex-col gap-3">
+        <div class="relative bg-black border border-nextflow">
+          {formCorners.map((c) => <div aria-hidden="true" class={`absolute z-10 w-[18px] h-[18px] ${c.pos} ${c.color}`}></div>)}
+          <TypeformEmbed
+            formId={CFA_TYPEFORM_ID}
+            title={`Nextflow Summit Boston ${SUMMIT_YEAR}: Call for Abstracts`}
+            height="600px"
+            client:only="react"
+          />
+        </div>
+        <noscript>
+          <p><a class="underline" href={typeformUrl}>Open the abstract submission form</a></p>
+        </noscript>
+        <p class="text-sm">
+          Having trouble viewing the form? <a class="underline" href={typeformUrl} target="_blank" rel="noopener noreferrer">Open it in a new window</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {/* 3. Talks / Posters */}
+  <section class="relative bg-white text-black py-20 sm:py-30">
+    {whiteCorners.map((c) => <div aria-hidden="true" class={`absolute w-[18px] h-[18px] ${c.pos} ${c.color}`}></div>)}
+    <div class="container-xl relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
+      {formats.map((f) => (
+        <article class="relative bg-nextflow-500 px-6 pt-10 pb-6 sm:px-12 sm:pt-12 sm:pb-8 flex flex-col gap-10">
+          {cardCorner.map((c) => <div aria-hidden="true" class={`absolute w-[18px] h-[18px] ${c.pos} ${c.color}`}></div>)}
+          <h3 class="h4 tracking-tight">{f.title}</h3>
+          <dl class="flex flex-col border-b border-black">
+            {f.rows.map(([label, value]) => (
+              <div class="flex gap-6 py-4 border-t border-black">
+                <dt class="monospace text-sm leading-relaxed w-24 sm:w-28 shrink-0">{label}:</dt>
+                <dd class="text-base sm:text-lg leading-normal">{value}</dd>
+              </div>
+            ))}
+          </dl>
+        </article>
+      ))}
+    </div>
+  </section>
+</Layout>

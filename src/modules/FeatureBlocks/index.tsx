@@ -73,12 +73,16 @@ const FeatureBlocks: React.FC<Props> = ({
     ${!bgStyle ? 'bg-white' : ''}
      text-black py-10 md:pt-16 md:pb-20 ${hideSection ? 'hidden' : ''}`}
     >
-      <div className="container-xl">
-        <h3 className="h4 mb-4 sm:max-w-[60%] text-balance">{headline}</h3>
-        <div className="sm:max-w-[470px] mb-6">
-          <PortableText value={bodycopy} />
+      {(headline || bodycopy) && (
+        <div className="container-xl">
+          {headline && <h3 className="h4 mb-4 sm:max-w-[60%] text-balance">{headline}</h3>}
+          {bodycopy && (
+            <div className="sm:max-w-[470px] mb-6">
+              <PortableText value={bodycopy} />
+            </div>
+          )}
         </div>
-      </div>
+      )}
       <div
         className={`container-xl grid items-self gap-6 xl:gap-8 ${gridCols}`}
       >

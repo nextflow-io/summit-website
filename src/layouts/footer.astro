@@ -1,9 +1,9 @@
 ---
 import FooterLogo from '@icons/FooterLogo';
 import Subscribe from '@modules/Subscribe';
-import { fetchMenus } from '@data/menus';
+import { fetchSiteMenus } from '@data/menus';
 
-const menus = await fetchMenus();
+const menus = await fetchSiteMenus();
 const currentYear = new Date().getFullYear();
 ---
 

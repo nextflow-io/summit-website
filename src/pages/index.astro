@@ -1,19 +1,48 @@
 ---
+// 2027 holding homepage, built in code (no Sanity) until the 2027 rebrand.
+// Hero copy is taken from marketing's landing-page doc; the full Call for
+// Abstracts lives on its own page (CFA_PATH).
 import Layout from '@layouts/Base.astro';
+import Meta from '@components/Meta/Meta.astro';
+import LandingHero from '@components/LandingHero';
+import FeatureBlocks from '@modules/FeatureBlocks';
+import { CFA_PATH, SHARE_IMAGE, CFA_DEADLINE, CFA_DEADLINE_DAY, CFA_HEADLINE, EVENT_LINE } from '@data/site';
+import { PAST_EVENTS, toBox } from '@data/pastEvents';
+import { textBlocks } from '@utils/textBlocks';
 
-import Banner from '@components/Banner';
-import Homepage from "@modules/Homepage"
-import { fetchHomepage } from '@data/fetchers';
-import type { HomepageData } from '@data/types';
-import { fetchSettings, type SettingsData } from '../data/settings'; 
-import Meta from '../components/Meta/Meta.astro';
+const content = textBlocks(
+  'Nextflow Summit brings together the scientists, bioinformaticians, engineers, and leaders who turn biological data into discoveries. Join us in Boston for two days of talks, posters and networking.',
+  `${CFA_HEADLINE}. Submit your abstract by ${CFA_DEADLINE_DAY}, ${CFA_DEADLINE}.`,
+);
 
-const home: HomepageData = await fetchHomepage();
-const settings: SettingsData = await fetchSettings();
+// Only the three most recent editions on the homepage; the rest are on /past-events.
+const pastEvents = PAST_EVENTS.slice(0, 3).map(toBox);
 ---
 
 <Layout>
-    <Meta title="Home" settings={settings} />
-  <!-- <Banner title="Register to access the event recordings" ctaText="Register Now" ctaLink="https://seqera.swoogo.com/nextflow-summit-boston-2025" client:load />  -->
-   <Homepage data={home}  client:load/>
+  <Meta
+    title="Home"
+    description="Nextflow Summit brings together the scientists, bioinformaticians, engineers, and leaders who turn biological data into discoveries."
+    imgUrl={SHARE_IMAGE}
+  />
+
+  <LandingHero
+    isHome
+    eyebrow={EVENT_LINE}
+    title="Nextflow Summit"
+    headlineSize="xl"
+    content={content}
+    ctaText1="Submit an abstract"
+    ctaLink1={CFA_PATH}
+    client:load
+  />
+
+  <FeatureBlocks
+    headline="Past Events"
+    bodycopy={textBlocks('Explore Nextflow Summit throughout the years')}
+    boxes={pastEvents}
+    buttonText="See all past events"
+    buttonUrl="/past-events"
+    client:load
+  />
 </Layout>
