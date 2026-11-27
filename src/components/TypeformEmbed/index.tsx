@@ -6,15 +6,17 @@ type Props = {
   formId: string;
   title: string;
   className?: string;
+  /** CSS height of the embed (default: 80vh, min 560px). */
+  height?: string;
 };
 
 // Inline Typeform embed. `transitive-search-params` forwards UTM params from the
 // page URL into the form's hidden fields (if the form defines them).
-const TypeformEmbed: React.FC<Props> = ({ formId, title, className }) => (
+const TypeformEmbed: React.FC<Props> = ({ formId, title, className, height = '80vh' }) => (
   <Widget
     id={formId}
     className={className}
-    style={{ width: '100%', height: '80vh', minHeight: 560 }}
+    style={{ width: '100%', height, minHeight: 560 }}
     opacity={100}
     inlineOnMobile
     medium="summit-website"
